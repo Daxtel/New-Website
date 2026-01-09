@@ -10,7 +10,7 @@
 }
 
 .App-header {
-    background-color: #0f0f10;
+    background-color: #1a1c1b;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
 }
 
 .App-link {
-    color: #61dafb;
+    color: #d9fb06;
 }
 
 @keyframes App-logo-spin {
@@ -31,4 +31,33 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1c1b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f4816;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d9fb06;
+}
+
+/* Selection */
+::selection {
+    background: rgba(217, 251, 6, 0.3);
+    color: #d9fb06;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
