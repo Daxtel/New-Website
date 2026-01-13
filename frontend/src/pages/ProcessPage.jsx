@@ -14,14 +14,14 @@ const ProcessPage = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-24 md:pb-32 bg-[#1a1c1b]">
+      <section className="pt-28 md:pt-32 pb-16 md:pb-24 lg:pb-32 bg-[#1a1c1b]">
         <div className="max-w-[87.5rem] mx-auto px-5 md:px-10">
           {/* Header */}
-          <div className="max-w-3xl mb-20">
-            <h1 className="font-black text-[#d9fb06] text-[clamp(3rem,7vw,5rem)] uppercase leading-[0.85] tracking-tight">
+          <div className="max-w-3xl mb-16 md:mb-20">
+            <h1 className="font-black text-[#d9fb06] text-[clamp(2.5rem,8vw,5rem)] uppercase leading-[0.85] tracking-tight">
               {pageContent.title}
             </h1>
-            <p className="mt-6 text-[#888680] text-lg md:text-xl">
+            <p className="mt-4 md:mt-6 text-[#888680] text-base md:text-lg lg:text-xl">
               {pageContent.subtitle}
             </p>
           </div>
@@ -31,24 +31,24 @@ const ProcessPage = () => {
             {process.steps.map((step, index) => (
               <div
                 key={index}
-                className={`border-t border-[#3f4816]/50 py-12 md:py-20 ${
+                className={`border-t border-[#3f4816]/50 py-10 md:py-16 lg:py-20 ${
                   index === process.steps.length - 1 ? 'border-b' : ''
                 }`}
               >
-                <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-20">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-6 md:gap-8 lg:gap-20">
                   {/* Number */}
                   <div className="flex-shrink-0">
-                    <span className="text-[#d9fb06] font-black text-6xl md:text-8xl leading-none">
+                    <span className="text-[#d9fb06] font-black text-5xl md:text-6xl lg:text-8xl leading-none">
                       {step.number}
                     </span>
                   </div>
 
                   {/* Content */}
                   <div className="flex-grow max-w-2xl">
-                    <h3 className="text-[#d9fb06] font-bold text-3xl md:text-4xl mb-4">
+                    <h3 className="text-[#d9fb06] font-bold text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-[#888680] text-lg md:text-xl leading-relaxed">
+                    <p className="text-[#888680] text-base md:text-lg lg:text-xl leading-relaxed">
                       {step.description}
                     </p>
                     
