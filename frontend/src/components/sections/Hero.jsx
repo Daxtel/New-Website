@@ -11,7 +11,7 @@ const Hero = () => {
   const hero = content[language].hero;
 
   return (
-    <section className="relative min-h-screen flex items-center bg-[#1a1c1b] overflow-hidden">
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center bg-[#1a1c1b] overflow-hidden">
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -24,40 +24,40 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[87.5rem] mx-auto px-5 md:px-10 pt-32 pb-20">
+      <div className="relative z-10 max-w-[87.5rem] mx-auto px-5 md:px-10 pt-24 md:pt-32 pb-16 md:pb-20">
         <div className="max-w-4xl">
           {/* Headline */}
           <h1 className="font-black text-[#d9fb06] uppercase leading-[0.85] tracking-tight">
-            <span className="block text-[clamp(3rem,8vw,6rem)]">
+            <span className="block text-[clamp(2.75rem,9vw,6rem)]">
               {language === 'en' ? 'Creative' : 'クリエイティブ'}
             </span>
-            <span className="block text-[clamp(3rem,8vw,6rem)]">
+            <span className="block text-[clamp(2.75rem,9vw,6rem)]">
               {language === 'en' ? 'Production' : 'プロダクション'}
             </span>
-            <span className="block text-[clamp(2rem,5vw,4rem)] text-[#3f4816] mt-2">
+            <span className="block text-[clamp(1.75rem,6vw,4rem)] text-[#3f4816] mt-2">
               {language === 'en' ? 'for Japan' : 'for Japan'}
             </span>
           </h1>
 
           {/* Subtext */}
-          <p className="mt-10 text-[#d9fb06]/80 text-lg md:text-xl max-w-2xl leading-relaxed">
+          <p className="mt-8 md:mt-10 text-[#d9fb06]/80 text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed">
             {hero.subtext}
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#d9fb06] text-[#1a1c1b] px-8 py-4 rounded-full font-semibold uppercase tracking-tight text-sm hover:scale-[1.02] hover:opacity-90 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-[#d9fb06] text-[#1a1c1b] px-8 py-4 md:py-5 rounded-full font-semibold uppercase tracking-tight text-sm hover:scale-[1.02] hover:opacity-90 transition-all min-h-[48px] touch-manipulation"
             >
               {hero.cta}
               <ArrowRight className="w-4 h-4" />
             </a>
             <Link
               to="/work"
-              className="inline-flex items-center justify-center gap-2 border border-[#d9fb06] text-[#d9fb06] px-8 py-4 rounded-full font-semibold uppercase tracking-tight text-sm hover:bg-[#d9fb06] hover:text-[#1a1c1b] transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#d9fb06] text-[#d9fb06] px-8 py-4 md:py-5 rounded-full font-semibold uppercase tracking-tight text-sm hover:bg-[#d9fb06] hover:text-[#1a1c1b] transition-all min-h-[48px] touch-manipulation"
             >
               {hero.ctaSecondary}
             </Link>
