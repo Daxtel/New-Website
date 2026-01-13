@@ -434,7 +434,7 @@ export const servicesData = {
       en: ['TV commercials', 'Digital advertising', 'Brand documentaries', 'Product videos'],
       ja: ['テレビCM', 'デジタル広告', 'ブランドドキュメンタリー', '商品動画']
     },
-    relatedProjects: ['luxury-brand-campaign', 'product-launch-film'],
+    relatedProjects: ['tokyo-luxury-brand-video-campaign', '3d-product-visualization-japan'],
     relatedServices: ['japan-market-localization', '3d-cgi-production', 'hospitality-creative-strategy-japan']
   },
   'japan-market-localization': {
