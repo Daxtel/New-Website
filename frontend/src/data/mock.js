@@ -158,9 +158,12 @@ export const content = {
         submit: 'Send Message'
       },
       info: {
-        email: 'hello@streetshow.jp',
-        phone: '+81 3-XXXX-XXXX',
+        email: 'admin@streetshowproduction.com',
         address: 'Tokyo & Fukuoka, Japan'
+      },
+      calendly: {
+        text: 'Prefer a call? Book a consultation via Google Meet.',
+        button: 'Schedule a Call'
       }
     },
     workPage: {
