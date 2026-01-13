@@ -394,7 +394,7 @@ export const servicesData = {
       en: ['Product launches', 'Brand awareness campaigns', 'Market entry activations', 'Seasonal promotions'],
       ja: ['新商品ローンチ', 'ブランド認知キャンペーン', '市場参入活動', 'シーズナルプロモーション']
     },
-    relatedProjects: ['shibuya-3d-billboard'],
+    relatedProjects: ['shibuya-3d-anamorphic-billboard'],
     relatedServices: ['3d-cgi-production', 'video-production-japan']
   },
   'video-production-japan': {
