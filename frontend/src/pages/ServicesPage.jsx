@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Video, Globe, Camera, Layers, ArrowRight } from 'lucide-react';
+import { Box, Video, Globe, Camera, Layers, ArrowRight, ArrowUpRight } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { useLanguage } from '../context/LanguageContext';
-import { content } from '../data/mock';
+import { content, servicesData } from '../data/mock';
 import { useSEO } from '../hooks/useSEO';
 
 const iconMap = {
@@ -14,11 +14,22 @@ const iconMap = {
   box: Layers,
 };
 
+// Service order matching the priority in requirements
+const serviceOrder = [
+  '3d-anamorphic-billboards',
+  'video-production-japan',
+  'japan-market-localization',
+  'commercial-photography-japan',
+  '3d-cgi-production'
+];
+
 const ServicesPage = () => {
   useSEO('services');
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const pageContent = content[language].servicesPage;
-  const services = content[language].services;
+
+  // Get services in the correct order
+  const orderedServices = serviceOrder.map(slug => servicesData[slug]).filter(Boolean);
 
   return (
     <Layout>
@@ -36,17 +47,18 @@ const ServicesPage = () => {
 
           {/* Services List */}
           <div className="space-y-px">
-            {services.items.map((service, index) => {
+            {orderedServices.map((service, index) => {
               const Icon = iconMap[service.icon] || Box;
               return (
-                <div
-                  key={service.id}
-                  className="bg-[#302f2c] p-8 md:p-12 group hover:bg-[#3f4816]/20 transition-colors duration-300"
+                <Link
+                  key={service.slug}
+                  to={`/services/${service.slug}`}
+                  className="block bg-[#302f2c] p-8 md:p-12 group hover:bg-[#3f4816]/20 transition-colors duration-300"
                 >
                   <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12">
                     {/* Number & Icon */}
                     <div className="flex items-center gap-6 flex-shrink-0">
-                      <span className="text-[#3f4816] text-4xl md:text-5xl font-black">
+                      <span className="text-[#3f4816] text-4xl md:text-5xl font-black group-hover:text-[#d9fb06]/30 transition-colors">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <div className="w-16 h-16 rounded-full bg-[#d9fb06]/10 flex items-center justify-center group-hover:bg-[#d9fb06]/20 transition-colors">
@@ -56,15 +68,30 @@ const ServicesPage = () => {
 
                     {/* Content */}
                     <div className="flex-grow">
-                      <h3 className="text-[#d9fb06] font-bold text-2xl md:text-3xl mb-3">
-                        {service.title}
+                      <h3 className="text-[#d9fb06] font-bold text-2xl md:text-3xl mb-3 group-hover:opacity-90 transition-opacity">
+                        {t(service.title)}
                       </h3>
                       <p className="text-[#888680] text-base md:text-lg leading-relaxed max-w-2xl">
-                        {service.description}
+                        {t(service.intro).substring(0, 150)}...
                       </p>
                     </div>
+
+                    {/* Arrow */}
+                    <div className="flex-shrink-0 hidden lg:block">
+                      <div className="w-12 h-12 rounded-full bg-[#3f4816]/30 flex items-center justify-center group-hover:bg-[#d9fb06] transition-colors">
+                        <ArrowUpRight className="w-5 h-5 text-[#d9fb06] group-hover:text-[#1a1c1b] transition-colors" />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                  
+                  {/* Mobile Arrow */}
+                  <div className="mt-4 lg:hidden flex items-center gap-2 text-[#d9fb06]/70 group-hover:text-[#d9fb06] transition-colors">
+                    <span className="text-sm uppercase tracking-wider">
+                      {language === 'en' ? 'Learn More' : '詳しく見る'}
+                    </span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+                </Link>
               );
             })}
           </div>
