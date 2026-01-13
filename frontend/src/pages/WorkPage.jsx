@@ -4,8 +4,10 @@ import { ArrowUpRight } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { useLanguage } from '../context/LanguageContext';
 import { content, projects } from '../data/mock';
+import { useSEO } from '../hooks/useSEO';
 
 const WorkPage = () => {
+  useSEO('work');
   const { language, t } = useLanguage();
   const pageContent = content[language].workPage;
   const [activeFilter, setActiveFilter] = useState('All');
