@@ -515,7 +515,7 @@ export const servicesData = {
       ja: ['広告キャンペーン', 'EC用画像', 'ホテル・ホスピタリティ', 'ファッション・ライフスタイル']
     },
     relatedProjects: ['editorial-photography'],
-    relatedServices: ['video-production-japan', 'japan-market-localization']
+    relatedServices: ['video-production-japan', 'japan-market-localization', 'hospitality-creative-strategy-japan']
   },
   '3d-cgi-production': {
     slug: '3d-cgi-production',
@@ -556,6 +556,44 @@ export const servicesData = {
     },
     relatedProjects: ['product-launch-film', 'product-cgi-visualization'],
     relatedServices: ['3d-anamorphic-billboards', 'video-production-japan']
+  },
+  'hospitality-creative-strategy-japan': {
+    slug: 'hospitality-creative-strategy-japan',
+    icon: 'hotel',
+    title: {
+      en: 'Hospitality Creative Strategy',
+      ja: 'ホスピタリティ クリエイティブ戦略'
+    },
+    headline: {
+      en: 'Creative Strategy & Content for Hotels and Hospitality Brands in Japan',
+      ja: '日本のホテル・宿泊施設向け クリエイティブ戦略とコンテンツ制作'
+    },
+    intro: {
+      en: 'We help hotels, resorts, and hospitality brands in Japan increase bookings and long-term revenue through strategy-first creative. From content planning to production and campaign execution, we design visuals that attract the right guests and convert attention into reservations.',
+      ja: 'ホテルやリゾート向けに、戦略設計から映像・写真制作、キャンペーン展開まで一貫して支援します。見た目だけでなく、予約率やROI向上につながるクリエイティブ設計を行います。'
+    },
+    features: {
+      en: [
+        'Hospitality-focused creative strategy',
+        'Video and photography for hotels and resorts',
+        'Campaign planning for peak and off-peak seasons',
+        'Content systems designed to increase bookings and ROI',
+        'Creative optimization for ads, social, and digital platforms'
+      ],
+      ja: [
+        'ホスピタリティ業界向けクリエイティブ戦略',
+        'ホテル・リゾート向け映像・写真制作',
+        '繁忙期・閑散期を見据えたキャンペーン設計',
+        '予約・集客につながるコンテンツ設計',
+        '広告・SNS・デジタル施策向け最適化'
+      ]
+    },
+    idealFor: {
+      en: ['Luxury and boutique hotels', 'Resorts and destination properties', 'Hospitality brands entering or repositioning in Japan', 'Hotels looking to improve online conversion and visibility'],
+      ja: ['高級ホテル・ブティックホテル', 'リゾート・観光施設', '日本市場でのブランディングを強化したい宿泊施設', 'オンライン集客・予約率を改善したいホテル']
+    },
+    relatedProjects: ['editorial-photography'],
+    relatedServices: ['video-production-japan', 'commercial-photography-japan', 'japan-market-localization']
   }
 };
 
