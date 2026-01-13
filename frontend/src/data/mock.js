@@ -592,7 +592,7 @@ export const servicesData = {
       en: ['Luxury and boutique hotels', 'Resorts and destination properties', 'Hospitality brands entering or repositioning in Japan', 'Hotels looking to improve online conversion and visibility'],
       ja: ['高級ホテル・ブティックホテル', 'リゾート・観光施設', '日本市場でのブランディングを強化したい宿泊施設', 'オンライン集客・予約率を改善したいホテル']
     },
-    relatedProjects: ['editorial-photography'],
+    relatedProjects: ['luxury-resort-rebrand', 'editorial-photography'],
     relatedServices: ['video-production-japan', 'commercial-photography-japan', 'japan-market-localization']
   }
 };
