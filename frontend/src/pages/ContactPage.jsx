@@ -43,19 +43,19 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-24 md:pb-32 bg-[#1a1c1b]">
+      <section className="pt-28 md:pt-32 pb-16 md:pb-24 lg:pb-32 bg-[#1a1c1b]">
         <div className="max-w-[87.5rem] mx-auto px-5 md:px-10">
           {/* Header */}
-          <div className="max-w-3xl mb-16">
-            <h1 className="font-black text-[#d9fb06] text-[clamp(3rem,7vw,5rem)] uppercase leading-[0.85] tracking-tight">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <h1 className="font-black text-[#d9fb06] text-[clamp(2.5rem,8vw,5rem)] uppercase leading-[0.85] tracking-tight">
               {contactContent.title}
             </h1>
-            <p className="mt-6 text-[#888680] text-lg md:text-xl">
+            <p className="mt-4 md:mt-6 text-[#888680] text-base md:text-lg lg:text-xl">
               {contactContent.subtitle}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-12 lg:gap-20">
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <form onSubmit={handleSubmit} className="space-y-6">
