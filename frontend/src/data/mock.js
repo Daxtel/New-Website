@@ -600,107 +600,318 @@ export const servicesData = {
 export const projects = [
   {
     id: 1,
-    slug: 'shibuya-3d-billboard',
+    slug: 'shibuya-3d-anamorphic-billboard',
     title: { en: 'Shibuya 3D Billboard', ja: '渋谷3Dビルボード' },
     category: { en: '3D Anamorphic', ja: '3Dアナモルフィック' },
+    // SEO fields
+    seo: {
+      projectType: { en: '3D Anamorphic Billboard', ja: '3Dアナモルフィックビルボード制作' },
+      location: { en: 'Shibuya', ja: '渋谷' },
+      primaryService: { en: '3D Billboard Production', ja: '3Dビルボード制作' },
+      metaTitle: {
+        en: '3D Anamorphic Billboard in Shibuya | 3D Billboard Production | Streetshow Productions',
+        ja: '渋谷の3Dアナモルフィックビルボード制作｜3Dビルボード制作｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'Immersive 3D anamorphic billboard campaign in Shibuya designed to capture attention and drive brand awareness. Creative production by Streetshow Productions, specializing in 3D billboard advertising in Japan.',
+        ja: '渋谷で展開したネイキッドアイ3Dビルボード映像制作。ブランド認知向上を目的とした没入型キャンペーン。日本市場向けの3Dビルボード制作を提供するStreetshow Productionsによるクリエイティブ制作。'
+      },
+      h1: { en: '3D Anamorphic Billboard in Shibuya', ja: '渋谷の3Dアナモルフィックビルボード制作' },
+      intro: {
+        en: 'A high-impact naked-eye 3D billboard campaign for a global tech brand launching in Shibuya, one of Tokyo\'s most iconic advertising locations. Designed to maximize visibility and drive brand awareness during the product launch window.',
+        ja: '東京を代表する広告ロケーションである渋谷で、グローバルテック企業の新商品ローンチに向けたネイキッドアイ3Dビルボードキャンペーンを制作。商品発売期間中の視認性最大化とブランド認知向上を目的としたクリエイティブ。'
+      }
+    },
     description: {
       en: 'Immersive 3D billboard campaign for global tech brand launch in Shibuya.',
       ja: 'グローバルテック企業の渋谷での新商品ローンチに向けた没入型3Dビルボードキャンペーン。'
     },
     client: 'Global Tech Co.',
     year: '2024',
-    deliverables: { en: ['3D Animation', 'Billboard Content', 'Social Cutdowns'], ja: ['3Dアニメーション', 'ビルボードコンテンツ', 'SNS用カット'] },
+    servicesProvided: {
+      en: ['3D Animation & Modeling', 'Anamorphic Perspective Design', 'Billboard Content Production', 'Screen-Specific Optimization'],
+      ja: ['3Dアニメーション・モデリング', 'アナモルフィック視点設計', 'ビルボードコンテンツ制作', 'スクリーン別最適化']
+    },
+    deliverables: { 
+      en: ['3D Animation', 'Billboard Content', 'Social Cutdowns', 'Campaign Assets'], 
+      ja: ['3Dアニメーション', 'ビルボードコンテンツ', 'SNS用カット', 'キャンペーン素材'] 
+    },
+    projectFocus: {
+      en: ['Brand awareness at product launch', 'High-traffic location visibility', 'Social media shareability', 'Market entry impact'],
+      ja: ['商品ローンチ時のブランド認知', '高トラフィックロケーションでの視認性', 'SNSでのシェア拡散', '市場参入インパクト']
+    },
     image: '/placeholder-work-1.jpg',
-    serviceSlug: '3d-anamorphic-billboards'
+    serviceSlug: '3d-anamorphic-billboards',
+    relatedServices: ['3d-anamorphic-billboards', '3d-cgi-production']
   },
   {
     id: 2,
-    slug: 'luxury-brand-campaign',
+    slug: 'tokyo-luxury-brand-video-campaign',
     title: { en: 'Luxury Brand Campaign', ja: 'ラグジュアリーブランドキャンペーン' },
     category: { en: 'Video Production', ja: '映像制作' },
+    seo: {
+      projectType: { en: 'Brand Video Campaign', ja: 'ブランド映像キャンペーン' },
+      location: { en: 'Tokyo', ja: '東京' },
+      primaryService: { en: 'Video Production', ja: '映像制作' },
+      metaTitle: {
+        en: 'Luxury Brand Video Campaign in Tokyo | Video Production | Streetshow Productions',
+        ja: '東京のラグジュアリーブランド映像制作｜映像制作｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'Full video campaign production for European fashion house entering the Japan market. Creative production by Streetshow Productions, specializing in video production for the Japan market.',
+        ja: '日本市場参入を目指すヨーロッパのファッションブランド向けフルキャンペーン映像制作。日本市場向けの映像制作を提供するStreetshow Productionsによるクリエイティブ制作。'
+      },
+      h1: { en: 'Luxury Brand Video Campaign in Tokyo', ja: '東京のラグジュアリーブランド映像キャンペーン' },
+      intro: {
+        en: 'A comprehensive video campaign for a European luxury fashion house entering the Japanese market. From TVC to digital content, we produced culturally adapted visuals that resonate with Japanese consumers while maintaining global brand consistency.',
+        ja: '日本市場に参入するヨーロッパのラグジュアリーファッションブランド向けの包括的な映像キャンペーン。TVCMからデジタルコンテンツまで、グローバルなブランド一貫性を保ちながら日本の消費者に響くビジュアルを制作。'
+      }
+    },
     description: {
       en: 'Full campaign production for European fashion house entering Japan market.',
       ja: '日本市場進出を図るヨーロッパのファッションブランドのフルキャンペーン制作。'
     },
     client: 'Fashion House',
     year: '2024',
-    deliverables: { en: ['TVC', 'Digital Films', 'Photography'], ja: ['TVCM', 'デジタルフィルム', 'フォトグラフィー'] },
+    servicesProvided: {
+      en: ['Creative Direction', 'Video Production', 'Location Scouting', 'Talent Coordination', 'Post-Production'],
+      ja: ['クリエイティブディレクション', '映像制作', 'ロケハン', 'タレント調整', 'ポストプロダクション']
+    },
+    deliverables: { 
+      en: ['TVC', 'Digital Films', 'Photography', 'Social Content'], 
+      ja: ['TVCM', 'デジタルフィルム', 'フォトグラフィー', 'SNSコンテンツ'] 
+    },
+    projectFocus: {
+      en: ['Japan market entry', 'Cultural adaptation', 'Premium brand positioning', 'Multi-channel campaign'],
+      ja: ['日本市場参入', '文化的アダプテーション', 'プレミアムブランドポジショニング', 'マルチチャネルキャンペーン']
+    },
     image: '/placeholder-work-2.jpg',
-    serviceSlug: 'video-production-japan'
+    serviceSlug: 'video-production-japan',
+    relatedServices: ['video-production-japan', 'japan-market-localization']
   },
   {
     id: 3,
-    slug: 'product-launch-film',
+    slug: '3d-product-visualization-japan',
     title: { en: 'Product Launch Film', ja: 'プロダクトローンチフィルム' },
     category: { en: 'CGI / Video', ja: 'CGI / 映像' },
+    seo: {
+      projectType: { en: 'CGI Product Film', ja: 'CGIプロダクトフィルム' },
+      location: { en: 'Japan', ja: '日本' },
+      primaryService: { en: '3D & CGI Production', ja: '3D・CGI制作' },
+      metaTitle: {
+        en: 'CGI Product Launch Film in Japan | 3D & CGI Production | Streetshow Productions',
+        ja: '日本のCGIプロダクトローンチフィルム｜3D・CGI制作｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'CGI-integrated product film for automotive brand regional launch in Japan. Creative production by Streetshow Productions, specializing in 3D & CGI advertising production in Japan.',
+        ja: '自動車ブランドの日本地域ローンチに向けたCGI統合型プロダクトフィルム。日本市場向けの3D・CGI広告制作を提供するStreetshow Productionsによるクリエイティブ制作。'
+      },
+      h1: { en: 'CGI Product Launch Film in Japan', ja: '日本のCGIプロダクトローンチフィルム' },
+      intro: {
+        en: 'A photorealistic CGI-integrated product film for an automotive brand\'s regional launch in Japan. Combining live-action footage with CGI product shots to showcase vehicle features in a premium, cinematic format.',
+        ja: '自動車ブランドの日本地域ローンチに向けたフォトリアルCGI統合型プロダクトフィルム。実写映像とCGIプロダクトショットを組み合わせ、プレミアムでシネマティックなフォーマットで車両の特徴を表現。'
+      }
+    },
     description: {
       en: 'CGI-integrated product film for automotive brand regional launch.',
       ja: '自動車ブランドの地域ローンチに向けたCGI統合型プロダクトフィルム。'
     },
     client: 'Automotive Brand',
     year: '2023',
-    deliverables: { en: ['Hero Film', 'CGI Product Shots', 'Social Content'], ja: ['メインフィルム', 'CGIプロダクトショット', 'SNSコンテンツ'] },
+    servicesProvided: {
+      en: ['3D Product Modeling', 'CGI Animation', 'Live-Action Integration', 'Post-Production', 'Color Grading'],
+      ja: ['3Dプロダクトモデリング', 'CGIアニメーション', '実写統合', 'ポストプロダクション', 'カラーグレーディング']
+    },
+    deliverables: { 
+      en: ['Hero Film', 'CGI Product Shots', 'Social Content', 'Digital Ads'], 
+      ja: ['メインフィルム', 'CGIプロダクトショット', 'SNSコンテンツ', 'デジタル広告'] 
+    },
+    projectFocus: {
+      en: ['Product feature showcase', 'Premium brand perception', 'Regional market launch', 'Multi-platform deployment'],
+      ja: ['商品特徴の訴求', 'プレミアムブランド認知', '地域市場ローンチ', 'マルチプラットフォーム展開']
+    },
     image: '/placeholder-work-3.jpg',
-    serviceSlug: '3d-cgi-production'
+    serviceSlug: '3d-cgi-production',
+    relatedServices: ['3d-cgi-production', 'video-production-japan']
   },
   {
     id: 4,
-    slug: 'beauty-brand-localization',
+    slug: 'japan-beauty-brand-localization',
     title: { en: 'Beauty Brand Localization', ja: 'ビューティーブランドローカライズ' },
     category: { en: 'Localization', ja: 'ローカライズ' },
+    seo: {
+      projectType: { en: 'Brand Localization Campaign', ja: 'ブランドローカライズキャンペーン' },
+      location: { en: 'Japan', ja: '日本' },
+      primaryService: { en: 'Japan Market Localization', ja: '日本市場ローカライズ' },
+      metaTitle: {
+        en: 'Beauty Brand Localization in Japan | Japan Market Localization | Streetshow Productions',
+        ja: '日本のビューティーブランドローカライズ｜日本市場ローカライズ｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'Japan market adaptation for international beauty brand campaign including creative strategy and KOL integration. Creative production by Streetshow Productions, specializing in Japan market localization.',
+        ja: '海外ビューティーブランドの日本市場向けキャンペーンアダプテーション。クリエイティブ戦略とKOL連携を含む。日本市場ローカライズを提供するStreetshow Productionsによるクリエイティブ制作。'
+      },
+      h1: { en: 'Beauty Brand Localization in Japan', ja: '日本のビューティーブランドローカライズ' },
+      intro: {
+        en: 'A comprehensive localization project for an international beauty brand entering Japan. We adapted global campaign assets for the Japanese market, including creative strategy, visual adaptation, and KOL integration to ensure cultural relevance and brand resonance.',
+        ja: '日本市場に参入する海外ビューティーブランド向けの包括的なローカライズプロジェクト。クリエイティブ戦略、ビジュアルアダプテーション、KOL連携を含むグローバルキャンペーン素材の日本市場向け最適化。文化的適合性とブランド共感を確保。'
+      }
+    },
     description: {
       en: 'Japan market adaptation for international beauty brand campaign.',
       ja: '海外ビューティーブランドキャンペーンの日本市場向けアダプテーション。'
     },
     client: 'Beauty Brand',
     year: '2024',
-    deliverables: { en: ['Creative Strategy', 'Adapted Content', 'KOL Integration'], ja: ['クリエイティブ戦略', 'アダプテッドコンテンツ', 'KOL連携'] },
+    servicesProvided: {
+      en: ['Cultural Consulting', 'Creative Adaptation', 'KOL Strategy', 'Visual Localization', 'Campaign Management'],
+      ja: ['文化コンサルティング', 'クリエイティブアダプテーション', 'KOL戦略', 'ビジュアルローカライズ', 'キャンペーンマネジメント']
+    },
+    deliverables: { 
+      en: ['Creative Strategy', 'Adapted Content', 'KOL Integration', 'Social Assets'], 
+      ja: ['クリエイティブ戦略', 'アダプテッドコンテンツ', 'KOL連携', 'SNS素材'] 
+    },
+    projectFocus: {
+      en: ['Cultural adaptation', 'Market entry support', 'Influencer marketing', 'Brand consistency'],
+      ja: ['文化的アダプテーション', '市場参入支援', 'インフルエンサーマーケティング', 'ブランド一貫性']
+    },
     image: '/placeholder-work-4.jpg',
-    serviceSlug: 'japan-market-localization'
+    serviceSlug: 'japan-market-localization',
+    relatedServices: ['japan-market-localization', 'video-production-japan']
   },
   {
     id: 5,
-    slug: 'editorial-photography',
+    slug: 'tokyo-editorial-photography',
     title: { en: 'Editorial Photography', ja: 'エディトリアルフォトグラフィー' },
     category: { en: 'Photography', ja: 'フォトグラフィー' },
+    seo: {
+      projectType: { en: 'Editorial Photography', ja: 'エディトリアル撮影' },
+      location: { en: 'Tokyo', ja: '東京' },
+      primaryService: { en: 'Commercial Photography', ja: '商業写真撮影' },
+      metaTitle: {
+        en: 'Editorial Photography in Tokyo | Commercial Photography | Streetshow Productions',
+        ja: '東京のエディトリアル撮影｜商業写真撮影｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'High-end editorial photography series for luxury lifestyle magazine feature in Tokyo. Creative production by Streetshow Productions, specializing in commercial photography in Japan.',
+        ja: '東京で撮影したラグジュアリーライフスタイル誌向けハイエンドエディトリアルシリーズ。日本市場向けの商業写真撮影を提供するStreetshow Productionsによるクリエイティブ制作。'
+      },
+      h1: { en: 'Editorial Photography in Tokyo', ja: '東京のエディトリアル撮影' },
+      intro: {
+        en: 'A premium editorial photography series for a luxury lifestyle magazine, shot across multiple iconic Tokyo locations. The project showcased high-end fashion and lifestyle content for both print and digital publication.',
+        ja: '東京の象徴的なロケーションで撮影したラグジュアリーライフスタイル誌向けのプレミアムエディトリアルシリーズ。印刷媒体とデジタル出版の両方に向けたハイエンドファッション・ライフスタイルコンテンツを制作。'
+      }
+    },
     description: {
       en: 'Editorial series for luxury lifestyle magazine feature.',
       ja: 'ラグジュアリーライフスタイル誌の特集向けエディトリアルシリーズ。'
     },
     client: 'Lifestyle Magazine',
     year: '2023',
-    deliverables: { en: ['Editorial Shoot', 'Post-Production', 'Print Assets'], ja: ['エディトリアル撮影', 'ポストプロダクション', '印刷素材'] },
+    servicesProvided: {
+      en: ['Editorial Photography', 'Location Coordination', 'Styling Direction', 'Post-Production', 'Asset Management'],
+      ja: ['エディトリアル撮影', 'ロケーション調整', 'スタイリングディレクション', 'ポストプロダクション', 'アセット管理']
+    },
+    deliverables: { 
+      en: ['Editorial Shoot', 'Post-Production', 'Print Assets', 'Digital Assets'], 
+      ja: ['エディトリアル撮影', 'ポストプロダクション', '印刷素材', 'デジタル素材'] 
+    },
+    projectFocus: {
+      en: ['Premium visual storytelling', 'Multi-location production', 'Print and digital optimization', 'Lifestyle brand alignment'],
+      ja: ['プレミアムビジュアルストーリーテリング', 'マルチロケーション制作', '印刷・デジタル最適化', 'ライフスタイルブランド適合']
+    },
     image: '/placeholder-work-5.jpg',
-    serviceSlug: 'commercial-photography-japan'
+    serviceSlug: 'commercial-photography-japan',
+    relatedServices: ['commercial-photography-japan', 'hospitality-creative-strategy-japan']
   },
   {
     id: 6,
-    slug: 'product-cgi-visualization',
+    slug: 'japan-electronics-cgi-visualization',
     title: { en: 'Product CGI Visualization', ja: 'プロダクトCGIビジュアライゼーション' },
     category: { en: 'CGI', ja: 'CGI' },
+    seo: {
+      projectType: { en: 'CGI Product Visualization', ja: 'CGIプロダクトビジュアライゼーション' },
+      location: { en: 'Japan', ja: '日本' },
+      primaryService: { en: '3D & CGI Production', ja: '3D・CGI制作' },
+      metaTitle: {
+        en: 'CGI Product Visualization in Japan | 3D & CGI Production | Streetshow Productions',
+        ja: '日本のCGIプロダクトビジュアライゼーション｜3D・CGI制作｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'Photorealistic CGI product visualization for electronics brand advertising in Japan. Creative production by Streetshow Productions, specializing in 3D & CGI advertising production in Japan.',
+        ja: 'エレクトロニクスブランドの日本向け広告用フォトリアルCGIプロダクトビジュアライゼーション。日本市場向けの3D・CGI広告制作を提供するStreetshow Productionsによるクリエイティブ制作。'
+      },
+      h1: { en: 'CGI Product Visualization in Japan', ja: '日本のCGIプロダクトビジュアライゼーション' },
+      intro: {
+        en: 'Photorealistic 3D product visualization for a global electronics brand\'s Japan market campaign. We created high-quality CGI renders and animations that showcase product features with studio-quality precision.',
+        ja: 'グローバルエレクトロニクスブランドの日本市場キャンペーン向けフォトリアル3Dプロダクトビジュアライゼーション。スタジオ品質の精度で商品特徴を表現する高品質CGIレンダリングとアニメーションを制作。'
+      }
+    },
     description: {
       en: 'Photorealistic CGI product visualization for electronics brand.',
       ja: 'エレクトロニクスブランド向けフォトリアリスティックCGIプロダクトビジュアライゼーション。'
     },
     client: 'Electronics Brand',
     year: '2024',
-    deliverables: { en: ['CGI Renders', 'Animation', 'Key Visuals'], ja: ['CGIレンダリング', 'アニメーション', 'キービジュアル'] },
+    servicesProvided: {
+      en: ['3D Product Modeling', 'Photorealistic Rendering', 'Animation', 'Key Visual Creation', 'Multi-Format Output'],
+      ja: ['3Dプロダクトモデリング', 'フォトリアルレンダリング', 'アニメーション', 'キービジュアル制作', 'マルチフォーマット出力']
+    },
+    deliverables: { 
+      en: ['CGI Renders', 'Animation', 'Key Visuals', 'Digital Assets'], 
+      ja: ['CGIレンダリング', 'アニメーション', 'キービジュアル', 'デジタル素材'] 
+    },
+    projectFocus: {
+      en: ['Product feature visualization', 'Premium brand perception', 'Multi-channel deployment', 'Campaign consistency'],
+      ja: ['商品特徴のビジュアライゼーション', 'プレミアムブランド認知', 'マルチチャネル展開', 'キャンペーン一貫性']
+    },
     image: '/placeholder-work-6.jpg',
-    serviceSlug: '3d-cgi-production'
+    serviceSlug: '3d-cgi-production',
+    relatedServices: ['3d-cgi-production', '3d-anamorphic-billboards']
   },
   {
     id: 7,
-    slug: 'luxury-resort-rebrand',
+    slug: 'japan-luxury-resort-video-campaign',
     title: { en: 'Luxury Resort Rebrand', ja: 'ラグジュアリーリゾート リブランド' },
     category: { en: 'Hospitality', ja: 'ホスピタリティ' },
+    seo: {
+      projectType: { en: 'Hotel Video Campaign', ja: 'ホテル映像キャンペーン' },
+      location: { en: 'Japan', ja: '日本' },
+      primaryService: { en: 'Hospitality Creative Strategy', ja: 'ホスピタリティ クリエイティブ戦略' },
+      metaTitle: {
+        en: 'Hotel Video Campaign in Japan | Hospitality Creative Strategy | Streetshow Productions',
+        ja: '日本のホテル向け映像キャンペーン｜ホスピタリティ クリエイティブ戦略｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'High-end hotel video campaign and brand repositioning in Japan designed to increase visibility and bookings. Creative production by Streetshow Productions, specializing in hospitality marketing in Japan.',
+        ja: 'ホテルの集客・予約率向上を目的とした映像キャンペーンとリブランディング。日本市場向けのホスピタリティ施策を支援するStreetshow Productionsによるクリエイティブ制作。'
+      },
+      h1: { en: 'Hotel Video Campaign in Japan', ja: '日本のホテル向け映像キャンペーン' },
+      intro: {
+        en: 'A comprehensive creative strategy and content production project for a luxury resort group repositioning in the Japan market. We developed brand video, photography, and campaign assets designed to increase bookings and long-term revenue.',
+        ja: '日本市場でのリポジショニングを目指すラグジュアリーリゾートグループ向けの包括的なクリエイティブ戦略とコンテンツ制作。予約率向上と長期的な収益増加を目的としたブランド映像、フォトグラフィー、キャンペーン素材を開発。'
+      }
+    },
     description: {
       en: 'Full creative strategy and content production for luxury resort repositioning in Japan market.',
       ja: '日本市場向けラグジュアリーリゾートのリポジショニングに伴うクリエイティブ戦略とコンテンツ制作。'
     },
     client: 'Luxury Resort Group',
     year: '2024',
-    deliverables: { en: ['Creative Strategy', 'Brand Video', 'Photography', 'Campaign Assets'], ja: ['クリエイティブ戦略', 'ブランド映像', 'フォトグラフィー', 'キャンペーン素材'] },
+    servicesProvided: {
+      en: ['Creative Strategy', 'Video Production', 'Photography', 'Campaign Planning', 'Digital Optimization'],
+      ja: ['クリエイティブ戦略', '映像制作', 'フォトグラフィー', 'キャンペーン企画', 'デジタル最適化']
+    },
+    deliverables: { 
+      en: ['Creative Strategy', 'Brand Video', 'Photography', 'Campaign Assets', 'Digital Content'], 
+      ja: ['クリエイティブ戦略', 'ブランド映像', 'フォトグラフィー', 'キャンペーン素材', 'デジタルコンテンツ'] 
+    },
+    projectFocus: {
+      en: ['Brand repositioning', 'Booking conversion increase', 'Visibility improvement', 'Long-term revenue growth'],
+      ja: ['ブランドリポジショニング', '予約コンバージョン向上', '視認性改善', '長期的収益成長']
+    },
     image: '/placeholder-work-7.jpg',
-    serviceSlug: 'hospitality-creative-strategy-japan'
+    serviceSlug: 'hospitality-creative-strategy-japan',
+    relatedServices: ['hospitality-creative-strategy-japan', 'video-production-japan', 'commercial-photography-japan']
   }
 ];
