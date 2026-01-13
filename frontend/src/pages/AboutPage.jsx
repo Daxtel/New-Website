@@ -4,8 +4,10 @@ import { ArrowRight } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { useLanguage } from '../context/LanguageContext';
 import { content } from '../data/mock';
+import { useSEO } from '../hooks/useSEO';
 
 const AboutPage = () => {
+  useSEO('about');
   const { language } = useLanguage();
   const about = content[language].about;
   const whyUs = content[language].whyUs;
