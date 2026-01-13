@@ -355,6 +355,210 @@ export const content = {
   }
 };
 
+// Detailed service data for individual service pages
+export const servicesData = {
+  '3d-anamorphic-billboards': {
+    slug: '3d-anamorphic-billboards',
+    icon: 'cube',
+    title: {
+      en: '3D Anamorphic Billboards',
+      ja: '3Dアナモルフィックビルボード'
+    },
+    headline: {
+      en: 'Naked-Eye 3D That Stops Traffic',
+      ja: '人々の足を止めるネイキッドアイ3D'
+    },
+    intro: {
+      en: 'We create immersive 3D billboard content for premium LED screens across Japan. From Shibuya Crossing to Shinjuku, our anamorphic visuals turn heads and drive brand awareness.',
+      ja: '日本全国のプレミアムLEDスクリーン向けに没入型3Dビルボードコンテンツを制作。渋谷スクランブル交差点から新宿まで、アナモルフィック映像で注目を集め、ブランド認知を高めます。'
+    },
+    features: {
+      en: [
+        'Concept development and creative direction',
+        '3D modeling and animation',
+        'Anamorphic perspective calculation',
+        'Screen-specific optimization',
+        'Media placement coordination',
+        'Campaign performance tracking'
+      ],
+      ja: [
+        'コンセプト開発とクリエイティブディレクション',
+        '3Dモデリングとアニメーション',
+        'アナモルフィック視点計算',
+        'スクリーン別最適化',
+        'メディア枠調整',
+        'キャンペーン効果測定'
+      ]
+    },
+    idealFor: {
+      en: ['Product launches', 'Brand awareness campaigns', 'Market entry activations', 'Seasonal promotions'],
+      ja: ['新商品ローンチ', 'ブランド認知キャンペーン', '市場参入活動', 'シーズナルプロモーション']
+    },
+    relatedProjects: ['shibuya-3d-billboard'],
+    relatedServices: ['3d-cgi-production', 'video-production-japan']
+  },
+  'video-production-japan': {
+    slug: 'video-production-japan',
+    icon: 'video',
+    title: {
+      en: 'Video Production',
+      ja: '映像制作'
+    },
+    headline: {
+      en: 'Commercials & Brand Films Made in Japan',
+      ja: '日本で制作するCM・ブランドフィルム'
+    },
+    intro: {
+      en: 'Full-service video production for brands targeting the Japanese market. We handle everything from concept to final delivery—commercials, brand films, social content, and campaign videos.',
+      ja: '日本市場をターゲットとするブランド向けのフルサービス映像制作。コンセプトから最終納品まで—CM、ブランドフィルム、SNSコンテンツ、キャンペーン動画を一貫して対応。'
+    },
+    features: {
+      en: [
+        'Creative concept and scripting',
+        'Location scouting across Japan',
+        'Talent casting and coordination',
+        'Full production crew',
+        'Post-production and color grading',
+        'Multi-format delivery'
+      ],
+      ja: [
+        'クリエイティブコンセプトと脚本',
+        '日本全国でのロケハン',
+        'タレントキャスティングと調整',
+        'フル制作クルー',
+        'ポストプロダクションとカラーグレーディング',
+        'マルチフォーマット納品'
+      ]
+    },
+    idealFor: {
+      en: ['TV commercials', 'Digital advertising', 'Brand documentaries', 'Product videos'],
+      ja: ['テレビCM', 'デジタル広告', 'ブランドドキュメンタリー', '商品動画']
+    },
+    relatedProjects: ['luxury-brand-campaign', 'product-launch-film'],
+    relatedServices: ['japan-market-localization', '3d-cgi-production']
+  },
+  'japan-market-localization': {
+    slug: 'japan-market-localization',
+    icon: 'globe',
+    title: {
+      en: 'Japan Market Localization',
+      ja: '日本市場ローカライズ'
+    },
+    headline: {
+      en: 'Adapt Global Creative for Japan',
+      ja: 'グローバルクリエイティブを日本向けに最適化'
+    },
+    intro: {
+      en: 'We don\'t just translate—we adapt. Our localization service transforms global campaigns into culturally resonant content that connects with Japanese audiences while maintaining brand consistency.',
+      ja: '私たちは単なる翻訳ではなく、アダプテーションを行います。ローカライズサービスでは、グローバルキャンペーンをブランドの一貫性を保ちながら、日本のオーディエンスに響くコンテンツへと変換します。'
+    },
+    features: {
+      en: [
+        'Cultural consulting and market research',
+        'Creative adaptation and transcreation',
+        'Visual and messaging localization',
+        'Talent and influencer coordination',
+        'Media strategy for Japan',
+        'Ongoing campaign optimization'
+      ],
+      ja: [
+        '文化コンサルティングと市場調査',
+        'クリエイティブアダプテーションとトランスクリエーション',
+        'ビジュアルとメッセージングのローカライズ',
+        'タレント・インフルエンサー調整',
+        '日本向けメディア戦略',
+        '継続的なキャンペーン最適化'
+      ]
+    },
+    idealFor: {
+      en: ['Foreign brands entering Japan', 'Global campaign rollouts', 'Product launches', 'Rebranding for Japan'],
+      ja: ['日本市場参入を目指す海外ブランド', 'グローバルキャンペーン展開', '商品ローンチ', '日本向けリブランディング']
+    },
+    relatedProjects: ['beauty-brand-localization'],
+    relatedServices: ['video-production-japan', 'commercial-photography-japan']
+  },
+  'commercial-photography-japan': {
+    slug: 'commercial-photography-japan',
+    icon: 'camera',
+    title: {
+      en: 'Commercial Photography',
+      ja: '商業写真撮影'
+    },
+    headline: {
+      en: 'High-End Photography Across Japan',
+      ja: '日本全国でのハイエンド撮影'
+    },
+    intro: {
+      en: 'From product photography to editorial shoots, we deliver premium visual content for advertising, hospitality, lifestyle, and brand campaigns. Studio and location shoots available nationwide.',
+      ja: '商品撮影からエディトリアル撮影まで、広告、ホスピタリティ、ライフスタイル、ブランドキャンペーン向けのプレミアムビジュアルコンテンツを提供。スタジオ・ロケ撮影、全国対応。'
+    },
+    features: {
+      en: [
+        'Product and still life photography',
+        'Lifestyle and editorial shoots',
+        'Location scouting and coordination',
+        'Studio rental and set design',
+        'Post-production and retouching',
+        'Multi-platform asset delivery'
+      ],
+      ja: [
+        '商品・静物撮影',
+        'ライフスタイル・エディトリアル撮影',
+        'ロケハンと調整',
+        'スタジオレンタルとセットデザイン',
+        'ポストプロダクションとレタッチ',
+        'マルチプラットフォーム素材納品'
+      ]
+    },
+    idealFor: {
+      en: ['Advertising campaigns', 'E-commerce imagery', 'Hotel and hospitality', 'Fashion and lifestyle'],
+      ja: ['広告キャンペーン', 'EC用画像', 'ホテル・ホスピタリティ', 'ファッション・ライフスタイル']
+    },
+    relatedProjects: ['editorial-photography'],
+    relatedServices: ['video-production-japan', 'japan-market-localization']
+  },
+  '3d-cgi-production': {
+    slug: '3d-cgi-production',
+    icon: 'box',
+    title: {
+      en: '3D & CGI Production',
+      ja: '3D・CGI制作'
+    },
+    headline: {
+      en: 'Photorealistic 3D for Any Medium',
+      ja: 'あらゆるメディア向けフォトリアル3D'
+    },
+    intro: {
+      en: 'From product visualization to full CGI commercials, we create photorealistic 3D content that brings products and concepts to life across digital, broadcast, and outdoor media.',
+      ja: 'プロダクトビジュアライゼーションからフルCGI CMまで、デジタル、放送、屋外メディア全般で商品やコンセプトを生き生きと表現するフォトリアル3Dコンテンツを制作。'
+    },
+    features: {
+      en: [
+        '3D product visualization',
+        'CGI commercials and animations',
+        'Motion graphics',
+        'AR/VR content development',
+        'Real-time rendering',
+        'Integration with live footage'
+      ],
+      ja: [
+        '3Dプロダクトビジュアライゼーション',
+        'CGI CM・アニメーション',
+        'モーショングラフィックス',
+        'AR/VRコンテンツ開発',
+        'リアルタイムレンダリング',
+        '実写映像との統合'
+      ]
+    },
+    idealFor: {
+      en: ['Product launches', 'Automotive advertising', 'Tech and electronics', 'Luxury goods'],
+      ja: ['商品ローンチ', '自動車広告', 'テック・エレクトロニクス', 'ラグジュアリーグッズ']
+    },
+    relatedProjects: ['product-launch-film', 'product-cgi-visualization'],
+    relatedServices: ['3d-anamorphic-billboards', 'video-production-japan']
+  }
+};
+
 export const projects = [
   {
     id: 1,
