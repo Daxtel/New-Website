@@ -5,6 +5,8 @@ import { useLanguage } from '../../context/LanguageContext';
 import { content } from '../../data/mock';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 
+const CALENDLY_URL = 'https://calendly.com/jackson-streetshowproduction/discovery-meeting';
+
 const Header = () => {
   const { language, toggleLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
@@ -73,12 +75,14 @@ const Header = () => {
               <Globe className="w-4 h-4" />
               <span>{language === 'en' ? 'JP' : 'EN'}</span>
             </button>
-            <Link
-              to="/contact"
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#d9fb06] text-[#1a1c1b] px-6 py-2.5 rounded-full text-sm font-semibold uppercase tracking-tight hover:scale-[1.02] hover:opacity-90 transition-all"
             >
               {content[language].hero.cta}
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu */}
@@ -120,13 +124,15 @@ const Header = () => {
                     ))}
                   </nav>
                   <div className="mt-auto pb-8">
-                    <Link
-                      to="/contact"
+                    <a
+                      href={CALENDLY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setMobileOpen(false)}
                       className="block w-full bg-[#d9fb06] text-[#1a1c1b] px-6 py-3 rounded-full text-center font-semibold uppercase tracking-tight"
                     >
                       {content[language].hero.cta}
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </SheetContent>
