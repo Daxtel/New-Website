@@ -124,50 +124,115 @@ const seoData = {
   },
 };
 
+// Hook for static pages
 export const useSEO = (page = 'home') => {
   const { language } = useLanguage();
 
   useEffect(() => {
     const data = seoData[page]?.[language] || seoData.home[language];
+    updateMetaTags(data.title, data.description, language);
+  }, [language, page]);
+};
+
+// Hook for dynamic project pages
+export const useProjectSEO = (project) => {
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    if (!project?.seo) return;
     
-    // Update document title
-    document.title = data.title;
+    const seo = project.seo;
+    const title = seo.metaTitle?.[language] || `${project.title?.[language]} | Streetshow Productions`;
+    const description = seo.metaDescription?.[language] || project.description?.[language];
     
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', data.description);
-    }
+    updateMetaTags(title, description, language);
     
-    // Update meta title
-    const metaTitle = document.querySelector('meta[name="title"]');
-    if (metaTitle) {
-      metaTitle.setAttribute('content', data.title);
-    }
+    // Add CreativeWork schema markup
+    addProjectSchema(project, language);
     
-    // Update OG tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute('content', data.title);
-    }
-    
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute('content', data.description);
-    }
-    
-    // Update Twitter tags
-    const twitterTitle = document.querySelector('meta[property="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute('content', data.title);
-    }
-    
-    const twitterDescription = document.querySelector('meta[property="twitter:description"]');
-    if (twitterDescription) {
-      twitterDescription.setAttribute('content', data.description);
-    }
-    
-    // Update html lang attribute
+  }, [language, project]);
+};
+
+// Helper function to update meta tags
+const updateMetaTags = (title, description, language) => {
+  // Update document title
+  document.title = title;
+  
+  // Update meta description
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.setAttribute('content', description);
+  }
+  
+  // Update meta title
+  const metaTitle = document.querySelector('meta[name="title"]');
+  if (metaTitle) {
+    metaTitle.setAttribute('content', title);
+  }
+  
+  // Update OG tags
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) {
+    ogTitle.setAttribute('content', title);
+  }
+  
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+  if (ogDescription) {
+    ogDescription.setAttribute('content', description);
+  }
+  
+  // Update Twitter tags
+  const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+  if (twitterTitle) {
+    twitterTitle.setAttribute('content', title);
+  }
+  
+  const twitterDescription = document.querySelector('meta[property="twitter:description"]');
+  if (twitterDescription) {
+    twitterDescription.setAttribute('content', description);
+  }
+  
+  // Update html lang attribute
+  document.documentElement.lang = language;
+};
+
+// Helper function to add CreativeWork schema markup
+const addProjectSchema = (project, language) => {
+  // Remove existing schema if present
+  const existingSchema = document.querySelector('script[data-schema="project"]');
+  if (existingSchema) {
+    existingSchema.remove();
+  }
+  
+  if (!project) return;
+  
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: project.seo?.h1?.[language] || project.title?.[language],
+    description: project.seo?.metaDescription?.[language] || project.description?.[language],
+    creator: {
+      '@type': 'Organization',
+      name: 'Streetshow Productions',
+      url: 'https://streetshow.jp'
+    },
+    locationCreated: {
+      '@type': 'Place',
+      name: project.seo?.location?.[language] || 'Japan'
+    },
+    dateCreated: project.year,
+    genre: project.category?.[language],
+    keywords: project.seo?.projectType?.[language]
+  };
+  
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.setAttribute('data-schema', 'project');
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+};
+
+export default useSEO;
     document.documentElement.lang = language;
     
   }, [language, page]);
