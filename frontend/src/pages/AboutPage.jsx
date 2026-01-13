@@ -73,11 +73,11 @@ const AboutPage = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {whyUs.points.map((point, idx) => (
-                <div key={idx} className="border-l-2 border-[#d9fb06] pl-6">
-                  <h3 className="text-[#d9fb06] font-semibold text-xl mb-2">
+                <div key={idx} className="border-l-2 border-[#d9fb06] pl-4 md:pl-6">
+                  <h3 className="text-[#d9fb06] font-semibold text-lg md:text-xl mb-2">
                     {point.title}
                   </h3>
-                  <p className="text-[#888680] leading-relaxed">
+                  <p className="text-[#888680] text-sm md:text-base leading-relaxed">
                     {point.description}
                   </p>
                 </div>
