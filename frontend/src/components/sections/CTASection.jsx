@@ -37,15 +37,8 @@ const CTASection = () => {
             </Link>
           </div>
 
-          {/* Contact Info */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-[#888680]">
-            <a
-              href="mailto:admin@streetshowproduction.com"
-              className="hover:text-[#d9fb06] transition-colors"
-            >
-              admin@streetshowproduction.com
-            </a>
-            <span className="hidden sm:block">·</span>
+          {/* Location Info */}
+          <div className="mt-12 text-center text-[#888680]">
             <span>Tokyo · Fukuoka</span>
           </div>
         </div>
