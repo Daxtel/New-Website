@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, ArrowRight } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { useLanguage } from '../context/LanguageContext';
-import { content, projects } from '../data/mock';
+import { content, projects, servicesData } from '../data/mock';
 
 const ProjectDetailPage = () => {
   const { slug } = useParams();
@@ -30,6 +30,9 @@ const ProjectDetailPage = () => {
 
   const currentIndex = projects.findIndex(p => p.slug === slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
+  
+  // Get related service
+  const relatedService = project.serviceSlug ? servicesData[project.serviceSlug] : null;
 
   return (
     <Layout>
@@ -71,7 +74,7 @@ const ProjectDetailPage = () => {
           </div>
 
           {/* Project Details */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
             <div className="border-l-2 border-[#d9fb06] pl-6">
               <h3 className="text-[#888680] text-sm uppercase tracking-wider mb-2">
                 {language === 'en' ? 'Client' : 'クライアント'}
@@ -92,6 +95,20 @@ const ProjectDetailPage = () => {
                 {t(project.deliverables).join(', ')}
               </p>
             </div>
+            {relatedService && (
+              <div className="border-l-2 border-[#d9fb06] pl-6">
+                <h3 className="text-[#888680] text-sm uppercase tracking-wider mb-2">
+                  {language === 'en' ? 'Service' : 'サービス'}
+                </h3>
+                <Link 
+                  to={`/services/${project.serviceSlug}`}
+                  className="text-[#d9fb06] font-medium hover:opacity-80 transition-opacity inline-flex items-center gap-1"
+                >
+                  {t(relatedService.title)}
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Gallery Placeholders */}
@@ -99,6 +116,32 @@ const ProjectDetailPage = () => {
             <div className="aspect-[4/3] bg-[#302f2c]" />
             <div className="aspect-[4/3] bg-[#302f2c]" />
           </div>
+
+          {/* Related Service CTA */}
+          {relatedService && (
+            <div className="mb-16 bg-[#302f2c] p-8 md:p-10 border border-[#3f4816]/30">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                  <span className="text-[#888680] text-sm uppercase tracking-wider">
+                    {language === 'en' ? 'Related Service' : '関連サービス'}
+                  </span>
+                  <h3 className="mt-2 text-[#d9fb06] font-bold text-xl md:text-2xl">
+                    {t(relatedService.title)}
+                  </h3>
+                  <p className="mt-2 text-[#888680] max-w-xl">
+                    {t(relatedService.intro).substring(0, 120)}...
+                  </p>
+                </div>
+                <Link
+                  to={`/services/${project.serviceSlug}`}
+                  className="inline-flex items-center justify-center gap-2 bg-[#d9fb06] text-[#1a1c1b] px-6 py-3 rounded-full font-semibold uppercase tracking-tight text-sm hover:scale-[1.02] transition-transform flex-shrink-0"
+                >
+                  {language === 'en' ? 'Learn More' : '詳しく見る'}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          )}
 
           {/* Next Project */}
           <div className="border-t border-[#3f4816]/50 pt-16">
