@@ -554,7 +554,7 @@ export const servicesData = {
       en: ['Product launches', 'Automotive advertising', 'Tech and electronics', 'Luxury goods'],
       ja: ['商品ローンチ', '自動車広告', 'テック・エレクトロニクス', 'ラグジュアリーグッズ']
     },
-    relatedProjects: ['product-launch-film', 'product-cgi-visualization'],
+    relatedProjects: ['3d-product-visualization-japan', 'japan-electronics-cgi-visualization'],
     relatedServices: ['3d-anamorphic-billboards', 'video-production-japan']
   },
   'hospitality-creative-strategy-japan': {
