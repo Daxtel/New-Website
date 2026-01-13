@@ -4,6 +4,7 @@ import { Box, Video, Globe, Camera, Layers, ArrowRight } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { useLanguage } from '../context/LanguageContext';
 import { content } from '../data/mock';
+import { useSEO } from '../hooks/useSEO';
 
 const iconMap = {
   cube: Box,
@@ -14,6 +15,7 @@ const iconMap = {
 };
 
 const ServicesPage = () => {
+  useSEO('services');
   const { language } = useLanguage();
   const pageContent = content[language].servicesPage;
   const services = content[language].services;
