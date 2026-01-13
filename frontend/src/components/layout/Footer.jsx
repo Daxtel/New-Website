@@ -49,23 +49,23 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[#d9fb06] font-semibold mb-4 uppercase text-sm tracking-wider">
+            <h4 className="text-[#d9fb06] font-semibold mb-3 md:mb-4 uppercase text-xs md:text-sm tracking-wider">
               {language === 'en' ? 'Contact' : 'お問い合わせ'}
             </h4>
-            <div className="flex flex-col gap-3 text-[#888680]">
+            <div className="flex flex-col gap-2 md:gap-3 text-[#888680] text-sm md:text-base">
               <span>Tokyo · Fukuoka</span>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-[#3f4816]/30 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[#888680] text-sm">
+        <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-[#3f4816]/30 flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-4">
+          <p className="text-[#888680] text-xs md:text-sm text-center sm:text-left">
             {footer.copyright}
           </p>
           <a 
             href={`mailto:${EMAIL}`}
-            className="text-[#888680]/70 text-sm hover:text-[#888680] transition-colors"
+            className="text-[#888680]/70 text-xs md:text-sm hover:text-[#888680] transition-colors min-h-[44px] flex items-center touch-manipulation"
           >
             {language === 'en' ? 'Contact' : 'お問い合わせ'}: {EMAIL}
           </a>
