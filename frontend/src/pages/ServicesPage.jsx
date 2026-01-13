@@ -35,14 +35,14 @@ const ServicesPage = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-24 md:pb-32 bg-[#1a1c1b]">
+      <section className="pt-28 md:pt-32 pb-16 md:pb-24 lg:pb-32 bg-[#1a1c1b]">
         <div className="max-w-[87.5rem] mx-auto px-5 md:px-10">
           {/* Header */}
-          <div className="max-w-3xl mb-16">
-            <h1 className="font-black text-[#d9fb06] text-[clamp(3rem,7vw,5rem)] uppercase leading-[0.85] tracking-tight">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <h1 className="font-black text-[#d9fb06] text-[clamp(2.5rem,8vw,5rem)] uppercase leading-[0.85] tracking-tight">
               {pageContent.title}
             </h1>
-            <p className="mt-6 text-[#888680] text-lg md:text-xl">
+            <p className="mt-4 md:mt-6 text-[#888680] text-base md:text-lg lg:text-xl">
               {pageContent.subtitle}
             </p>
           </div>
@@ -55,30 +55,30 @@ const ServicesPage = () => {
                 <Link
                   key={service.slug}
                   to={`/services/${service.slug}`}
-                  className="block bg-[#302f2c] p-8 md:p-12 group hover:bg-[#3f4816]/20 transition-colors duration-300"
+                  className="block bg-[#302f2c] p-6 md:p-8 lg:p-12 group hover:bg-[#3f4816]/20 transition-colors duration-300 touch-manipulation"
                 >
                   <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12">
                     {/* Number & Icon */}
-                    <div className="flex items-center gap-6 flex-shrink-0">
-                      <span className="text-[#3f4816] text-4xl md:text-5xl font-black group-hover:text-[#d9fb06]/30 transition-colors">
+                    <div className="flex items-center gap-4 md:gap-6 flex-shrink-0">
+                      <span className="text-[#3f4816] text-3xl md:text-4xl lg:text-5xl font-black group-hover:text-[#d9fb06]/30 transition-colors">
                         {String(index + 1).padStart(2, '0')}
                       </span>
-                      <div className="w-16 h-16 rounded-full bg-[#d9fb06]/10 flex items-center justify-center group-hover:bg-[#d9fb06]/20 transition-colors">
-                        <Icon className="w-8 h-8 text-[#d9fb06]" />
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#d9fb06]/10 flex items-center justify-center group-hover:bg-[#d9fb06]/20 transition-colors">
+                        <Icon className="w-7 h-7 md:w-8 md:h-8 text-[#d9fb06]" />
                       </div>
                     </div>
 
                     {/* Content */}
-                    <div className="flex-grow">
-                      <h3 className="text-[#d9fb06] font-bold text-2xl md:text-3xl mb-3 group-hover:opacity-90 transition-opacity">
+                    <div className="flex-grow min-w-0">
+                      <h3 className="text-[#d9fb06] font-bold text-xl md:text-2xl lg:text-3xl mb-2 md:mb-3 group-hover:opacity-90 transition-opacity">
                         {t(service.title)}
                       </h3>
-                      <p className="text-[#888680] text-base md:text-lg leading-relaxed max-w-2xl">
+                      <p className="text-[#888680] text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl">
                         {t(service.intro).substring(0, 150)}...
                       </p>
                     </div>
 
-                    {/* Arrow */}
+                    {/* Arrow - Desktop */}
                     <div className="flex-shrink-0 hidden lg:block">
                       <div className="w-12 h-12 rounded-full bg-[#3f4816]/30 flex items-center justify-center group-hover:bg-[#d9fb06] transition-colors">
                         <ArrowUpRight className="w-5 h-5 text-[#d9fb06] group-hover:text-[#1a1c1b] transition-colors" />
@@ -99,13 +99,13 @@ const ServicesPage = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 bg-[#d9fb06] p-8 md:p-12">
+          <div className="mt-12 md:mt-16 bg-[#d9fb06] p-6 md:p-8 lg:p-12">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
-                <h3 className="text-[#1a1c1b] font-bold text-2xl md:text-3xl">
+                <h3 className="text-[#1a1c1b] font-bold text-xl md:text-2xl lg:text-3xl">
                   {language === 'en' ? 'Have a project in mind?' : 'プロジェクトのご相談はこちら'}
                 </h3>
-                <p className="mt-2 text-[#1a1c1b]/70">
+                <p className="mt-2 text-[#1a1c1b]/70 text-sm md:text-base">
                   {language === 'en' 
                     ? 'Let\'s discuss how we can help bring your vision to life in Japan.'
                     : '日本でのビジョン実現について、お気軽にご相談ください。'
@@ -114,7 +114,7 @@ const ServicesPage = () => {
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#1a1c1b] text-[#d9fb06] px-8 py-4 rounded-full font-semibold uppercase tracking-tight text-sm hover:scale-[1.02] transition-transform"
+                className="inline-flex items-center justify-center gap-2 bg-[#1a1c1b] text-[#d9fb06] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold uppercase tracking-tight text-sm hover:scale-[1.02] transition-transform min-h-[48px] touch-manipulation self-start md:self-auto"
               >
                 {content[language].hero.cta}
                 <ArrowRight className="w-4 h-4" />
