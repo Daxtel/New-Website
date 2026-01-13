@@ -15,20 +15,20 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="text-[#d9fb06] font-bold text-2xl tracking-tight">
+            <Link to="/" className="text-[#d9fb06] font-bold text-xl md:text-2xl tracking-tight">
               STREETSHOW
             </Link>
-            <p className="mt-4 text-[#888680] max-w-md">
+            <p className="mt-3 md:mt-4 text-[#888680] text-sm md:text-base max-w-md">
               {footer.tagline}
             </p>
-            <p className="mt-2 text-[#888680]">
+            <p className="mt-2 text-[#888680] text-sm md:text-base">
               {footer.locations}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="text-[#d9fb06] font-semibold mb-4 uppercase text-sm tracking-wider">
+            <h4 className="text-[#d9fb06] font-semibold mb-3 md:mb-4 uppercase text-xs md:text-sm tracking-wider">
               {language === 'en' ? 'Navigation' : 'ナビゲーション'}
             </h4>
             <nav className="flex flex-col gap-3">
