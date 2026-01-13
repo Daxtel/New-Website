@@ -166,7 +166,7 @@ export const content = {
     workPage: {
       title: 'Our Work',
       subtitle: 'Selected projects across video, 3D, and localization.',
-      categories: ['All', '3D Anamorphic', 'Video Production', 'Localization', 'Photography', 'CGI']
+      categories: ['All', '3D Anamorphic', 'Video Production', 'Localization', 'Photography', 'CGI', 'Hospitality']
     },
     servicesPage: {
       title: 'Services',
