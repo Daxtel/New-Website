@@ -342,7 +342,7 @@ export const content = {
     workPage: {
       title: '制作実績',
       subtitle: '映像、3D、ローカライズの厳選プロジェクト。',
-      categories: ['すべて', '3Dアナモルフィック', '映像制作', 'ローカライズ', 'フォトグラフィー', 'CGI']
+      categories: ['すべて', '3Dアナモルフィック', '映像制作', 'ローカライズ', 'フォトグラフィー', 'CGI', 'ホスピタリティ']
     },
     servicesPage: {
       title: 'サービス',
