@@ -94,12 +94,12 @@ const ProcessPage = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-20 bg-[#302f2c] p-10 md:p-16">
+          <div className="mt-16 md:mt-20 bg-[#302f2c] p-6 md:p-10 lg:p-16">
             <div className="max-w-3xl">
-              <h2 className="font-black text-[#d9fb06] text-3xl md:text-4xl uppercase tracking-tight">
+              <h2 className="font-black text-[#d9fb06] text-2xl md:text-3xl lg:text-4xl uppercase tracking-tight">
                 {language === 'en' ? 'Ready to Start?' : '始めましょう'}
               </h2>
-              <p className="mt-4 text-[#888680] text-lg">
+              <p className="mt-3 md:mt-4 text-[#888680] text-base md:text-lg">
                 {language === 'en'
                   ? 'Book a consultation to discuss your project and see how we can help.'
                   : 'プロジェクトについて相談し、どのようにお手伝いできるかご確認ください。'
@@ -107,7 +107,7 @@ const ProcessPage = () => {
               </p>
               <Link
                 to="/contact"
-                className="mt-8 inline-flex items-center justify-center gap-3 bg-[#d9fb06] text-[#1a1c1b] px-10 py-5 rounded-full font-semibold uppercase tracking-tight text-base hover:scale-[1.02] hover:opacity-90 transition-all"
+                className="mt-6 md:mt-8 inline-flex items-center justify-center gap-3 bg-[#d9fb06] text-[#1a1c1b] px-8 md:px-10 py-4 md:py-5 rounded-full font-semibold uppercase tracking-tight text-sm md:text-base hover:scale-[1.02] hover:opacity-90 transition-all min-h-[48px] touch-manipulation"
               >
                 {content[language].hero.cta}
                 <ArrowRight className="w-5 h-5" />
