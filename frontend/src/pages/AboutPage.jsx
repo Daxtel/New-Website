@@ -14,26 +14,26 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-24 md:pb-32 bg-[#1a1c1b]">
+      <section className="pt-28 md:pt-32 pb-16 md:pb-24 lg:pb-32 bg-[#1a1c1b]">
         <div className="max-w-[87.5rem] mx-auto px-5 md:px-10">
           {/* Header */}
-          <div className="max-w-4xl mb-20">
-            <h1 className="font-black text-[#d9fb06] text-[clamp(3rem,7vw,5rem)] uppercase leading-[0.85] tracking-tight">
+          <div className="max-w-4xl mb-16 md:mb-20">
+            <h1 className="font-black text-[#d9fb06] text-[clamp(2.5rem,8vw,5rem)] uppercase leading-[0.85] tracking-tight">
               {about.title}
             </h1>
-            <p className="mt-8 text-[#d9fb06]/80 text-xl md:text-2xl leading-relaxed">
+            <p className="mt-6 md:mt-8 text-[#d9fb06]/80 text-lg md:text-xl lg:text-2xl leading-relaxed">
               {about.intro}
             </p>
-            <p className="mt-6 text-[#888680] text-lg leading-relaxed">
+            <p className="mt-4 md:mt-6 text-[#888680] text-base md:text-lg leading-relaxed">
               {about.mission}
             </p>
           </div>
 
           {/* Stats/Locations */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#3f4816]/30 mb-20">
-            <div className="bg-[#1a1c1b] p-8 md:p-12">
-              <span className="text-[#d9fb06] font-black text-5xl md:text-6xl">2</span>
-              <p className="mt-2 text-[#888680] uppercase tracking-wider text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-[#3f4816]/30 mb-16 md:mb-20">
+            <div className="bg-[#1a1c1b] p-6 md:p-8 lg:p-12">
+              <span className="text-[#d9fb06] font-black text-4xl md:text-5xl lg:text-6xl">2</span>
+              <p className="mt-2 text-[#888680] uppercase tracking-wider text-xs md:text-sm">
                 {language === 'en' ? 'Offices in Japan' : '日本の拠点'}
               </p>
               <p className="mt-1 text-[#d9fb06]/70">Tokyo · Fukuoka</p>
