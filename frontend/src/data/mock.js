@@ -474,7 +474,7 @@ export const servicesData = {
       en: ['Foreign brands entering Japan', 'Global campaign rollouts', 'Product launches', 'Rebranding for Japan'],
       ja: ['日本市場参入を目指す海外ブランド', 'グローバルキャンペーン展開', '商品ローンチ', '日本向けリブランディング']
     },
-    relatedProjects: ['beauty-brand-localization'],
+    relatedProjects: ['japan-beauty-brand-localization'],
     relatedServices: ['video-production-japan', 'commercial-photography-japan', 'hospitality-creative-strategy-japan']
   },
   'commercial-photography-japan': {
