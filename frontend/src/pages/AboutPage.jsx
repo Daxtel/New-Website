@@ -50,28 +50,28 @@ const AboutPage = () => {
               <p className="mt-2 text-[#888680] uppercase tracking-wider text-xs md:text-sm">
                 {language === 'en' ? 'Production Capability' : '制作体制'}
               </p>
-              <p className="mt-1 text-[#d9fb06]/70">
+              <p className="mt-1 text-[#d9fb06]/70 text-sm md:text-base">
                 {language === 'en' ? 'Strategy to Delivery' : '戦略から納品まで'}
               </p>
             </div>
           </div>
 
           {/* Team Section */}
-          <div className="mb-20">
-            <h2 className="font-black text-[#d9fb06] text-3xl md:text-4xl uppercase tracking-tight mb-6">
+          <div className="mb-16 md:mb-20">
+            <h2 className="font-black text-[#d9fb06] text-2xl md:text-3xl lg:text-4xl uppercase tracking-tight mb-4 md:mb-6">
               {about.team}
             </h2>
-            <p className="text-[#888680] text-lg max-w-3xl leading-relaxed">
+            <p className="text-[#888680] text-base md:text-lg max-w-3xl leading-relaxed">
               {about.teamDescription}
             </p>
           </div>
 
           {/* Why Us Points */}
-          <div className="border-t border-[#3f4816]/50 pt-16">
-            <h2 className="font-black text-[#d9fb06] text-3xl md:text-4xl uppercase tracking-tight mb-12">
+          <div className="border-t border-[#3f4816]/50 pt-12 md:pt-16">
+            <h2 className="font-black text-[#d9fb06] text-2xl md:text-3xl lg:text-4xl uppercase tracking-tight mb-10 md:mb-12">
               {whyUs.title}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {whyUs.points.map((point, idx) => (
                 <div key={idx} className="border-l-2 border-[#d9fb06] pl-6">
                   <h3 className="text-[#d9fb06] font-semibold text-xl mb-2">
