@@ -4,8 +4,10 @@ import Layout from '../components/layout/Layout';
 import { useLanguage } from '../context/LanguageContext';
 import { content } from '../data/mock';
 import { toast } from 'sonner';
+import { useSEO } from '../hooks/useSEO';
 
 const ContactPage = () => {
+  useSEO('contact');
   const { language } = useLanguage();
   const contactContent = content[language].contact;
   
