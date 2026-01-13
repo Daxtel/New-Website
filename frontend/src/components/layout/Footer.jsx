@@ -31,17 +31,17 @@ const Footer = () => {
             <h4 className="text-[#d9fb06] font-semibold mb-3 md:mb-4 uppercase text-xs md:text-sm tracking-wider">
               {language === 'en' ? 'Navigation' : 'ナビゲーション'}
             </h4>
-            <nav className="flex flex-col gap-3">
-              <Link to="/work" className="text-[#888680] hover:text-[#d9fb06] transition-colors">
+            <nav className="flex flex-col gap-2 md:gap-3">
+              <Link to="/work" className="text-[#888680] hover:text-[#d9fb06] transition-colors text-sm md:text-base min-h-[44px] flex items-center touch-manipulation">
                 {footer.links.work}
               </Link>
-              <Link to="/services" className="text-[#888680] hover:text-[#d9fb06] transition-colors">
+              <Link to="/services" className="text-[#888680] hover:text-[#d9fb06] transition-colors text-sm md:text-base min-h-[44px] flex items-center touch-manipulation">
                 {footer.links.services}
               </Link>
-              <Link to="/about" className="text-[#888680] hover:text-[#d9fb06] transition-colors">
+              <Link to="/about" className="text-[#888680] hover:text-[#d9fb06] transition-colors text-sm md:text-base min-h-[44px] flex items-center touch-manipulation">
                 {footer.links.about}
               </Link>
-              <Link to="/contact" className="text-[#888680] hover:text-[#d9fb06] transition-colors">
+              <Link to="/contact" className="text-[#888680] hover:text-[#d9fb06] transition-colors text-sm md:text-base min-h-[44px] flex items-center touch-manipulation">
                 {footer.links.contact}
               </Link>
             </nav>
