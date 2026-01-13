@@ -36,18 +36,18 @@ const AboutPage = () => {
               <p className="mt-2 text-[#888680] uppercase tracking-wider text-xs md:text-sm">
                 {language === 'en' ? 'Offices in Japan' : '日本の拠点'}
               </p>
-              <p className="mt-1 text-[#d9fb06]/70">Tokyo · Fukuoka</p>
+              <p className="mt-1 text-[#d9fb06]/70 text-sm md:text-base">Tokyo · Fukuoka</p>
             </div>
-            <div className="bg-[#1a1c1b] p-8 md:p-12">
-              <span className="text-[#d9fb06] font-black text-5xl md:text-6xl">100%</span>
-              <p className="mt-2 text-[#888680] uppercase tracking-wider text-sm">
+            <div className="bg-[#1a1c1b] p-6 md:p-8 lg:p-12">
+              <span className="text-[#d9fb06] font-black text-4xl md:text-5xl lg:text-6xl">100%</span>
+              <p className="mt-2 text-[#888680] uppercase tracking-wider text-xs md:text-sm">
                 {language === 'en' ? 'Bilingual Team' : 'バイリンガルチーム'}
               </p>
-              <p className="mt-1 text-[#d9fb06]/70">EN · JP</p>
+              <p className="mt-1 text-[#d9fb06]/70 text-sm md:text-base">EN · JP</p>
             </div>
-            <div className="bg-[#1a1c1b] p-8 md:p-12">
-              <span className="text-[#d9fb06] font-black text-5xl md:text-6xl">E2E</span>
-              <p className="mt-2 text-[#888680] uppercase tracking-wider text-sm">
+            <div className="bg-[#1a1c1b] p-6 md:p-8 lg:p-12">
+              <span className="text-[#d9fb06] font-black text-4xl md:text-5xl lg:text-6xl">E2E</span>
+              <p className="mt-2 text-[#888680] uppercase tracking-wider text-xs md:text-sm">
                 {language === 'en' ? 'Production Capability' : '制作体制'}
               </p>
               <p className="mt-1 text-[#d9fb06]/70">
