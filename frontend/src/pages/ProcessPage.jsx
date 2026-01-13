@@ -4,8 +4,10 @@ import { ArrowRight } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { useLanguage } from '../context/LanguageContext';
 import { content } from '../data/mock';
+import { useSEO } from '../hooks/useSEO';
 
 const ProcessPage = () => {
+  useSEO('process');
   const { language } = useLanguage();
   const pageContent = content[language].processPage;
   const process = content[language].process;
