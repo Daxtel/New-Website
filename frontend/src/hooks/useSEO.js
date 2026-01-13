@@ -233,4 +233,3 @@ const addProjectSchema = (project, language) => {
 };
 
 export default useSEO;
-export default useSEO;
