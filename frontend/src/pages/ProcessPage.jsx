@@ -53,7 +53,7 @@ const ProcessPage = () => {
                     </p>
                     
                     {/* Extended description based on step */}
-                    <div className="mt-6 text-[#888680]/80 space-y-3">
+                    <div className="mt-4 md:mt-6 text-[#888680]/80 text-sm md:text-base space-y-3">
                       {index === 0 && (
                         <p>
                           {language === 'en'
