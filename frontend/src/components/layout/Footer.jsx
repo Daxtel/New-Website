@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { content } from '../../data/mock';
 
+const EMAIL = 'admin@streetshowproduction.com';
+
 const Footer = () => {
   const { language } = useLanguage();
   const footer = content[language].footer;
@@ -51,9 +53,6 @@ const Footer = () => {
               {language === 'en' ? 'Contact' : 'お問い合わせ'}
             </h4>
             <div className="flex flex-col gap-3 text-[#888680]">
-              <a href="mailto:hello@streetshow.jp" className="hover:text-[#d9fb06] transition-colors">
-                hello@streetshow.jp
-              </a>
               <span>Tokyo · Fukuoka</span>
             </div>
           </div>
@@ -64,6 +63,12 @@ const Footer = () => {
           <p className="text-[#888680] text-sm">
             {footer.copyright}
           </p>
+          <a 
+            href={`mailto:${EMAIL}`}
+            className="text-[#888680]/70 text-sm hover:text-[#888680] transition-colors"
+          >
+            {language === 'en' ? 'Contact' : 'お問い合わせ'}: {EMAIL}
+          </a>
         </div>
       </div>
     </footer>
