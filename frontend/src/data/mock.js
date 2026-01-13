@@ -514,7 +514,7 @@ export const servicesData = {
       en: ['Advertising campaigns', 'E-commerce imagery', 'Hotel and hospitality', 'Fashion and lifestyle'],
       ja: ['広告キャンペーン', 'EC用画像', 'ホテル・ホスピタリティ', 'ファッション・ライフスタイル']
     },
-    relatedProjects: ['editorial-photography'],
+    relatedProjects: ['tokyo-editorial-photography'],
     relatedServices: ['video-production-japan', 'japan-market-localization', 'hospitality-creative-strategy-japan']
   },
   '3d-cgi-production': {
