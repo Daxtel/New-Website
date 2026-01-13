@@ -687,5 +687,20 @@ export const projects = [
     deliverables: { en: ['CGI Renders', 'Animation', 'Key Visuals'], ja: ['CGIレンダリング', 'アニメーション', 'キービジュアル'] },
     image: '/placeholder-work-6.jpg',
     serviceSlug: '3d-cgi-production'
+  },
+  {
+    id: 7,
+    slug: 'luxury-resort-rebrand',
+    title: { en: 'Luxury Resort Rebrand', ja: 'ラグジュアリーリゾート リブランド' },
+    category: { en: 'Hospitality', ja: 'ホスピタリティ' },
+    description: {
+      en: 'Full creative strategy and content production for luxury resort repositioning in Japan market.',
+      ja: '日本市場向けラグジュアリーリゾートのリポジショニングに伴うクリエイティブ戦略とコンテンツ制作。'
+    },
+    client: 'Luxury Resort Group',
+    year: '2024',
+    deliverables: { en: ['Creative Strategy', 'Brand Video', 'Photography', 'Campaign Assets'], ja: ['クリエイティブ戦略', 'ブランド映像', 'フォトグラフィー', 'キャンペーン素材'] },
+    image: '/placeholder-work-7.jpg',
+    serviceSlug: 'hospitality-creative-strategy-japan'
   }
 ];
