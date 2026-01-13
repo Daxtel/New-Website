@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Video, Globe, Camera, Layers, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Box, Video, Globe, Camera, Layers, ArrowRight, ArrowUpRight, Hotel } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { useLanguage } from '../context/LanguageContext';
 import { content, servicesData } from '../data/mock';
@@ -12,6 +12,7 @@ const iconMap = {
   globe: Globe,
   camera: Camera,
   box: Layers,
+  hotel: Hotel,
 };
 
 // Service order matching the priority in requirements
@@ -20,7 +21,8 @@ const serviceOrder = [
   'video-production-japan',
   'japan-market-localization',
   'commercial-photography-japan',
-  '3d-cgi-production'
+  '3d-cgi-production',
+  'hospitality-creative-strategy-japan'
 ];
 
 const ServicesPage = () => {
