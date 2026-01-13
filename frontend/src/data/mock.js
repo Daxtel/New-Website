@@ -435,7 +435,7 @@ export const servicesData = {
       ja: ['テレビCM', 'デジタル広告', 'ブランドドキュメンタリー', '商品動画']
     },
     relatedProjects: ['luxury-brand-campaign', 'product-launch-film'],
-    relatedServices: ['japan-market-localization', '3d-cgi-production']
+    relatedServices: ['japan-market-localization', '3d-cgi-production', 'hospitality-creative-strategy-japan']
   },
   'japan-market-localization': {
     slug: 'japan-market-localization',
@@ -475,7 +475,7 @@ export const servicesData = {
       ja: ['日本市場参入を目指す海外ブランド', 'グローバルキャンペーン展開', '商品ローンチ', '日本向けリブランディング']
     },
     relatedProjects: ['beauty-brand-localization'],
-    relatedServices: ['video-production-japan', 'commercial-photography-japan']
+    relatedServices: ['video-production-japan', 'commercial-photography-japan', 'hospitality-creative-strategy-japan']
   },
   'commercial-photography-japan': {
     slug: 'commercial-photography-japan',
