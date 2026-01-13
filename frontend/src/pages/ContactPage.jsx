@@ -122,7 +122,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-3 bg-[#d9fb06] text-[#1a1c1b] px-10 py-5 rounded-full font-semibold uppercase tracking-tight text-base hover:scale-[1.02] hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex items-center justify-center gap-3 bg-[#d9fb06] text-[#1a1c1b] px-8 md:px-10 py-4 md:py-5 rounded-full font-semibold uppercase tracking-tight text-sm md:text-base hover:scale-[1.02] hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px] touch-manipulation"
                 >
                   {isSubmitting 
                     ? (language === 'en' ? 'Sending...' : '送信中...')
