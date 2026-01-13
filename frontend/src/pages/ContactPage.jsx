@@ -58,8 +58,8 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-12 lg:gap-20">
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                   <div>
                     <label className="block text-[#d9fb06] text-sm font-medium mb-2 uppercase tracking-wider">
                       {contactContent.form.name}
