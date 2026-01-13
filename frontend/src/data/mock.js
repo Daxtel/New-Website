@@ -337,9 +337,12 @@ export const content = {
         submit: '送信する'
       },
       info: {
-        email: 'hello@streetshow.jp',
-        phone: '+81 3-XXXX-XXXX',
+        email: 'admin@streetshowproduction.com',
         address: '東京・福岡'
+      },
+      calendly: {
+        text: 'オンラインでのご相談をご希望の方は、Google Meetでの無料相談をご予約ください。',
+        button: '相談を予約する'
       }
     },
     workPage: {
