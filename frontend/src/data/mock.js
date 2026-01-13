@@ -572,7 +572,8 @@ export const projects = [
     client: 'Global Tech Co.',
     year: '2024',
     deliverables: { en: ['3D Animation', 'Billboard Content', 'Social Cutdowns'], ja: ['3Dアニメーション', 'ビルボードコンテンツ', 'SNS用カット'] },
-    image: '/placeholder-work-1.jpg'
+    image: '/placeholder-work-1.jpg',
+    serviceSlug: '3d-anamorphic-billboards'
   },
   {
     id: 2,
@@ -586,7 +587,8 @@ export const projects = [
     client: 'Fashion House',
     year: '2024',
     deliverables: { en: ['TVC', 'Digital Films', 'Photography'], ja: ['TVCM', 'デジタルフィルム', 'フォトグラフィー'] },
-    image: '/placeholder-work-2.jpg'
+    image: '/placeholder-work-2.jpg',
+    serviceSlug: 'video-production-japan'
   },
   {
     id: 3,
@@ -600,7 +602,8 @@ export const projects = [
     client: 'Automotive Brand',
     year: '2023',
     deliverables: { en: ['Hero Film', 'CGI Product Shots', 'Social Content'], ja: ['メインフィルム', 'CGIプロダクトショット', 'SNSコンテンツ'] },
-    image: '/placeholder-work-3.jpg'
+    image: '/placeholder-work-3.jpg',
+    serviceSlug: '3d-cgi-production'
   },
   {
     id: 4,
@@ -614,7 +617,8 @@ export const projects = [
     client: 'Beauty Brand',
     year: '2024',
     deliverables: { en: ['Creative Strategy', 'Adapted Content', 'KOL Integration'], ja: ['クリエイティブ戦略', 'アダプテッドコンテンツ', 'KOL連携'] },
-    image: '/placeholder-work-4.jpg'
+    image: '/placeholder-work-4.jpg',
+    serviceSlug: 'japan-market-localization'
   },
   {
     id: 5,
@@ -628,7 +632,8 @@ export const projects = [
     client: 'Lifestyle Magazine',
     year: '2023',
     deliverables: { en: ['Editorial Shoot', 'Post-Production', 'Print Assets'], ja: ['エディトリアル撮影', 'ポストプロダクション', '印刷素材'] },
-    image: '/placeholder-work-5.jpg'
+    image: '/placeholder-work-5.jpg',
+    serviceSlug: 'commercial-photography-japan'
   },
   {
     id: 6,
@@ -642,6 +647,7 @@ export const projects = [
     client: 'Electronics Brand',
     year: '2024',
     deliverables: { en: ['CGI Renders', 'Animation', 'Key Visuals'], ja: ['CGIレンダリング', 'アニメーション', 'キービジュアル'] },
-    image: '/placeholder-work-6.jpg'
+    image: '/placeholder-work-6.jpg',
+    serviceSlug: '3d-cgi-production'
   }
 ];
