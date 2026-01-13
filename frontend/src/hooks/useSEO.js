@@ -82,6 +82,16 @@ const seoData = {
       description: '3Dビジュアライゼーション、CGI広告映像、モーショングラフィックス制作に対応。',
     },
   },
+  'hospitality-creative-strategy-japan': {
+    en: {
+      title: 'Hospitality Creative Strategy & Hotel Marketing in Japan | Streetshow Productions',
+      description: 'Creative strategy, content production, and campaign planning for hotels and resorts in Japan. We help hospitality brands increase bookings, visibility, and ROI through high-end visuals and performance-driven creative.',
+    },
+    ja: {
+      title: 'ホテル・宿泊施設向け クリエイティブ戦略・マーケティング｜Streetshow Productions',
+      description: 'ホテル・リゾート向けのクリエイティブ戦略とコンテンツ制作。映像・写真・広告設計を通じて、集客・予約率・ROI向上を支援します。',
+    },
+  },
   about: {
     en: {
       title: 'About Us | Streetshow Productions',
