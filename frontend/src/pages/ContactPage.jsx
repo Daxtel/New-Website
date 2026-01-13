@@ -135,8 +135,8 @@ const ContactPage = () => {
 
             {/* Contact Info */}
             <div className="lg:col-span-2">
-              <div className="bg-[#302f2c] p-8 md:p-10">
-                <h3 className="text-[#d9fb06] font-bold text-xl mb-8 uppercase tracking-wider">
+              <div className="bg-[#302f2c] p-6 md:p-8 lg:p-10">
+                <h3 className="text-[#d9fb06] font-bold text-lg md:text-xl mb-6 md:mb-8 uppercase tracking-wider">
                   {language === 'en' ? 'Contact Information' : '連絡先'}
                 </h3>
                 
