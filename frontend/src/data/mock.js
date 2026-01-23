@@ -797,11 +797,13 @@ export const projects = [
       ja: ['日本市場参入', '文化的アダプテーション', 'プレミアムブランドポジショニング', 'マルチチャネルキャンペーン']
     },
     image: '/placeholder-work-2.jpg',
-    featuredImage: {
-      url: 'https://customer-assets.emergentagent.com/job_nippon-replace/artifacts/0ox8zb63_treetshow-luxury-video-campaign-japan-placeholder.jpg',
+    featuredVideo: {
+      url: 'https://customer-assets.emergentagent.com/job_nippon-replace/artifacts/npmmou26_Shein%20Japan%20Market%20Entry%20.mp4',
+      poster: 'https://customer-assets.emergentagent.com/job_nippon-replace/artifacts/0ox8zb63_treetshow-luxury-video-campaign-japan-placeholder.jpg',
+      autoplay: true,
       alt: {
         en: 'Luxury brand video campaign production for Japan market entry',
-        ja: '日本市場参入のためのラグジュアリーブランド映像キャンペーン制作'
+        ja: '日本市場向けラグジュアリーブランド映像キャンペーン制作'
       }
     },
     serviceSlug: 'video-production-japan',
