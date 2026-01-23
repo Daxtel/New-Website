@@ -120,7 +120,24 @@ export const useSEO = (page = 'home') => {
 
   useEffect(() => {
     const data = seoData[page]?.[language] || seoData.home[language];
-    updateMetaTags(data.title, data.description, language);
+    
+    // Determine canonical URL based on page
+    const baseUrl = 'https://streetshowproduction.com';
+    let canonicalUrl = baseUrl + '/';
+    
+    if (page !== 'home') {
+      if (page.startsWith('3d-anamorphic-billboards') || 
+          page.startsWith('video-production') || 
+          page.startsWith('japan-market') || 
+          page.startsWith('hospitality') || 
+          page.startsWith('photography')) {
+        canonicalUrl = `${baseUrl}/services/${page}`;
+      } else {
+        canonicalUrl = `${baseUrl}/${page}`;
+      }
+    }
+    
+    updateMetaTags(data.title, data.description, language, canonicalUrl);
   }, [language, page]);
 };
 
