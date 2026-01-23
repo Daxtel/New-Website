@@ -84,26 +84,32 @@ export const content = {
       ]
     },
     whyUs: {
-      title: 'Why Streetshow',
-      subtitle: 'Strategy and execution, rooted in Japan.',
-      points: [
+      title: 'Why Streetshow Productions',
+      subtitle: 'We are not just a production studio. We help brands succeed in Japan by combining strategy, cultural intelligence, and high-end execution.',
+      pillars: [
         {
-          title: 'Japan Expertise',
-          description: 'Deep understanding of Japanese market, culture, and consumer behavior.'
+          title: 'Strategy Before Production',
+          description: 'Most studios start with cameras. We start with business goals, audience behavior, and market context.'
         },
         {
-          title: 'End-to-End Production',
-          description: 'From strategy to final delivery. No handoffs, no gaps.'
+          title: 'Built for the Japanese Market',
+          description: 'Japan is not a "translated" market. We design creative that aligns with Japanese culture, consumer behavior, and local expectations.'
         },
         {
-          title: 'Bilingual Team',
-          description: 'Native-level English and Japanese. Clear communication, no friction.'
-        },
-        {
-          title: 'Premium Network',
-          description: 'Access to top talent, locations, and media placements across Japan.'
+          title: 'Execution Without Compromise',
+          description: 'From 3D anamorphic billboards to brand films and hospitality campaigns, we deliver premium-quality work built for real-world performance.'
         }
-      ]
+      ],
+      credibility: 'Trusted by global brands and institutions entering or operating in Japan.',
+      idealFor: {
+        title: 'We work best with brands that:',
+        points: [
+          'Are entering or scaling in the Japanese market',
+          'Require localization, not generic assets',
+          'Care about long-term brand value and ROI'
+        ]
+      },
+      cta: 'Let's discuss your project'
     },
     process: {
       title: 'Our Process',
