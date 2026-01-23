@@ -61,10 +61,10 @@ const TrustedBy = () => {
           {brands.map((brand) => {
             // Scale multipliers and opacity adjustments for visual normalization
             const adjustments = {
-              'Jägermeister': { scale: 0.85, opacity: 0.65 },
-              'Kubota Spears': { scale: 0.92, opacity: 0.70 }
+              'Jägermeister': { scale: 0.85, opacity: 0.82, filter: 'none' }, // No filter to preserve original colors
+              'Kubota Spears': { scale: 0.92, opacity: 0.70, filter: 'brightness(0) invert(1)' }
             };
-            const config = adjustments[brand.name] || { scale: 1, opacity: 1 };
+            const config = adjustments[brand.name] || { scale: 1, opacity: 1, filter: 'brightness(0) invert(1)' };
             
             return (
               <div
@@ -77,7 +77,7 @@ const TrustedBy = () => {
                   alt={brand.name}
                   className="h-full w-auto object-contain"
                   style={{ 
-                    filter: 'brightness(0) invert(1)',
+                    filter: config.filter,
                     transform: `scale(${config.scale})`,
                     opacity: config.opacity
                   }}
