@@ -799,6 +799,14 @@ export const projects = [
     title: { en: 'Japan Market Localization Campaign', ja: '日本市場ローカライズキャンペーン' },
     category: { en: 'Localization', ja: 'ローカライズ' },
     tags: { en: 'Localization · Creative Strategy · Japan', ja: 'ローカライズ · クリエイティブ戦略 · 日本' },
+    heroVideo: {
+      url: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/ybfqoebd_streetshow-japan-market-localization-hero.mp4',
+      poster: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/ybfqoebd_streetshow-japan-market-localization-hero.mp4', // Will use video URL as fallback
+      alt: {
+        en: 'Japan market entry and localization campaign execution by Streetshow Productions',
+        ja: 'Streetshow Productionsによる日本市場向けローカライズ施策の制作・実行'
+      }
+    },
     seo: {
       projectType: { en: 'Campaign Localization', ja: 'キャンペーンローカライズ' },
       location: { en: 'Japan', ja: '日本' },
