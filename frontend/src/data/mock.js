@@ -23,23 +23,26 @@ export const content = {
       projects: [
         {
           id: 1,
-          title: 'Shibuya 3D Billboard',
+          title: 'Shibuya 3D Anamorphic Billboard',
           category: '3D Anamorphic',
-          description: 'Immersive 3D billboard campaign for global tech brand launch in Shibuya.',
+          description: 'Immersive 3D billboard campaign for a global brand launch in Tokyo.',
+          tags: '3D Anamorphic · OOH · Tokyo',
           image: '/placeholder-work-1.jpg'
         },
         {
           id: 2,
-          title: 'Luxury Brand Campaign',
+          title: 'Luxury Brand Video Campaign',
           category: 'Video Production',
-          description: 'Full campaign production for European fashion house entering Japan market.',
+          description: 'Full campaign production for a European fashion brand entering the Japanese market.',
+          tags: 'Video Production · Campaign · Japan Market Entry',
           image: '/placeholder-work-2.jpg'
         },
         {
           id: 3,
-          title: 'Product Launch Film',
-          category: 'CGI / Video',
-          description: 'CGI-integrated product film for automotive brand regional launch.',
+          title: 'Japan Market Localization Campaign',
+          category: 'Localization',
+          description: 'Creative localization of a global campaign for Japanese audiences across digital platforms.',
+          tags: 'Localization · Creative Strategy · Japan',
           image: '/placeholder-work-3.jpg'
         }
       ]
