@@ -538,44 +538,59 @@ export const servicesData = {
     relatedProjects: ['japan-market-localization-campaign'],
     relatedServices: ['video-production-japan', 'photography-cgi-japan', 'hospitality-creative-strategy-japan']
   },
-  'commercial-photography-japan': {
-    slug: 'commercial-photography-japan',
+  'photography-cgi-japan': {
+    slug: 'photography-cgi-japan',
+    oldSlug: 'commercial-photography-japan', // For backwards compatibility
     icon: 'camera',
+    seo: {
+      metaTitle: {
+        en: 'Commercial Photography & CGI in Japan | Streetshow Productions',
+        ja: '日本の商業写真・CGI制作｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'High-end commercial photography and CGI visuals for advertising, digital, and OOH use across Japan.',
+        ja: '広告・デジタル・OOH向けの高品質な商業写真およびCGIビジュアルを日本国内で制作。'
+      },
+      h1: {
+        en: 'Photography & CGI',
+        ja: '写真・CGI制作'
+      }
+    },
     title: {
-      en: 'Commercial Photography',
-      ja: '商業写真撮影'
+      en: 'Photography & CGI',
+      ja: '写真・CGI制作'
     },
     headline: {
-      en: 'High-End Photography Across Japan',
-      ja: '日本全国でのハイエンド撮影'
+      en: 'High-End Photography & CGI Across Japan',
+      ja: '日本全国でのハイエンド撮影・CGI制作'
     },
     intro: {
-      en: 'From product photography to editorial shoots, we deliver premium visual content for advertising, hospitality, lifestyle, and brand campaigns. Studio and location shoots available nationwide.',
-      ja: '商品撮影からエディトリアル撮影まで、広告、ホスピタリティ、ライフスタイル、ブランドキャンペーン向けのプレミアムビジュアルコンテンツを提供。スタジオ・ロケ撮影、全国対応。'
+      en: 'From product photography to editorial shoots and CGI visuals, we deliver premium visual content for advertising, hospitality, lifestyle, and brand campaigns. Studio and location shoots available nationwide.',
+      ja: '商品撮影からエディトリアル撮影、CGIビジュアルまで、広告、ホスピタリティ、ライフスタイル、ブランドキャンペーン向けのプレミアムビジュアルコンテンツを提供。スタジオ・ロケ撮影、全国対応。'
     },
     features: {
       en: [
         'Product and still life photography',
         'Lifestyle and editorial shoots',
+        'CGI product visualization',
         'Location scouting and coordination',
         'Studio rental and set design',
-        'Post-production and retouching',
-        'Multi-platform asset delivery'
+        'Post-production and retouching'
       ],
       ja: [
         '商品・静物撮影',
         'ライフスタイル・エディトリアル撮影',
+        'CGIプロダクトビジュアライゼーション',
         'ロケハンと調整',
         'スタジオレンタルとセットデザイン',
-        'ポストプロダクションとレタッチ',
-        'マルチプラットフォーム素材納品'
+        'ポストプロダクションとレタッチ'
       ]
     },
     idealFor: {
       en: ['Advertising campaigns', 'E-commerce imagery', 'Hotel and hospitality', 'Fashion and lifestyle'],
       ja: ['広告キャンペーン', 'EC用画像', 'ホテル・ホスピタリティ', 'ファッション・ライフスタイル']
     },
-    relatedProjects: ['tokyo-editorial-photography'],
+    relatedProjects: [],
     relatedServices: ['video-production-japan', 'japan-market-localization', 'hospitality-creative-strategy-japan']
   },
   '3d-cgi-production': {
