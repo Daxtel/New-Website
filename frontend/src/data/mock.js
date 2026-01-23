@@ -10,8 +10,8 @@ export const content = {
       contact: 'Contact'
     },
     hero: {
-      headline: 'Creative Production for Japan',
-      subtext: 'Strategy-first creative studio specializing in high-end video, 3D anamorphic billboards, and Japan market localization. Based in Tokyo & Fukuoka.',
+      headline: 'Creative Production for the Japanese Market',
+      subtext: 'Strategy-first creative studio for global brands entering or scaling in Japan. High-end video, 3D anamorphic billboards, and localization from Tokyo & Fukuoka.',
       cta: 'Book a Consultation',
       ctaSecondary: 'View Work'
     },
