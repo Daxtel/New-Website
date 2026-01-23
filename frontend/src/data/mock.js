@@ -744,6 +744,13 @@ export const projects = [
       ja: ['商品ローンチ時のブランド認知', '高トラフィックロケーションでの視認性', 'SNSでのシェア拡散', '市場参入インパクト']
     },
     image: '/placeholder-work-1.jpg',
+    featuredImage: {
+      url: 'https://customer-assets.emergentagent.com/job_nippon-replace/artifacts/unjldvln_Tokyo-Japan%203D%20Anamorphic%20Billboard%20%20.jpg',
+      alt: {
+        en: '3D anamorphic billboard campaign execution in Tokyo, Japan',
+        ja: '東京での3Dアナモルフィックビルボードキャンペーン制作'
+      }
+    },
     serviceSlug: '3d-anamorphic-billboards-japan',
     relatedServices: ['3d-anamorphic-billboards-japan', '3d-cgi-production']
   },
@@ -790,6 +797,13 @@ export const projects = [
       ja: ['日本市場参入', '文化的アダプテーション', 'プレミアムブランドポジショニング', 'マルチチャネルキャンペーン']
     },
     image: '/placeholder-work-2.jpg',
+    featuredImage: {
+      url: 'https://customer-assets.emergentagent.com/job_nippon-replace/artifacts/0ox8zb63_treetshow-luxury-video-campaign-japan-placeholder.jpg',
+      alt: {
+        en: 'Luxury brand video campaign production for Japan market entry',
+        ja: '日本市場参入のためのラグジュアリーブランド映像キャンペーン制作'
+      }
+    },
     serviceSlug: 'video-production-japan',
     relatedServices: ['video-production-japan', 'japan-market-localization']
   },
@@ -805,6 +819,13 @@ export const projects = [
       alt: {
         en: 'Japan market entry and localization campaign execution by Streetshow Productions',
         ja: 'Streetshow Productionsによる日本市場向けローカライズ施策の制作・実行'
+      }
+    },
+    featuredVideo: {
+      url: 'https://customer-assets.emergentagent.com/job_nippon-replace/artifacts/1kk0p1lc_streetshow-japan-market-localization-placeholder.mp4',
+      alt: {
+        en: 'Japan market localization strategy and creative adaptation process',
+        ja: '日本市場ローカライズ戦略とクリエイティブアダプテーションプロセス'
       }
     },
     seo: {
