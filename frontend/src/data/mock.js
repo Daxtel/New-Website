@@ -487,6 +487,20 @@ export const servicesData = {
   'japan-market-localization': {
     slug: 'japan-market-localization',
     icon: 'globe',
+    seo: {
+      metaTitle: {
+        en: 'Japan Market Localization for Global Brands | Streetshow Productions',
+        ja: '海外ブランド向け 日本市場ローカライズ支援｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'Adapt global campaigns for Japanese audiences. Cultural consulting, creative direction, and localized execution for brands entering Japan.',
+        ja: '海外ブランドの日本市場参入・展開を支援。文化理解に基づいたローカライズ設計とクリエイティブ実行を提供。'
+      },
+      h1: {
+        en: 'Japan Market Localization',
+        ja: '日本市場ローカライズ'
+      }
+    },
     title: {
       en: 'Japan Market Localization',
       ja: '日本市場ローカライズ'
@@ -521,8 +535,8 @@ export const servicesData = {
       en: ['Foreign brands entering Japan', 'Global campaign rollouts', 'Product launches', 'Rebranding for Japan'],
       ja: ['日本市場参入を目指す海外ブランド', 'グローバルキャンペーン展開', '商品ローンチ', '日本向けリブランディング']
     },
-    relatedProjects: ['japan-beauty-brand-localization'],
-    relatedServices: ['video-production-japan', 'commercial-photography-japan', 'hospitality-creative-strategy-japan']
+    relatedProjects: ['japan-market-localization-campaign'],
+    relatedServices: ['video-production-japan', 'photography-cgi-japan', 'hospitality-creative-strategy-japan']
   },
   'commercial-photography-japan': {
     slug: 'commercial-photography-japan',
