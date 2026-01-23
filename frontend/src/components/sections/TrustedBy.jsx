@@ -6,7 +6,7 @@ const TrustedBy = () => {
   const { language } = useLanguage();
   const section = content[language].trustedBy;
 
-  // Client logos with public URLs
+  // Client logos with public URLs (7 total)
   const brands = [
     { 
       id: 1, 
@@ -32,6 +32,16 @@ const TrustedBy = () => {
       id: 5, 
       name: 'TATA Elxsi',
       logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/468nhcgw_streetshow-client-logo-TATA-Elxsi.png'
+    },
+    { 
+      id: 6, 
+      name: 'Jägermeister',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/bejc5szc_streetshow-client-logo-jagermeister.png'
+    },
+    { 
+      id: 7, 
+      name: 'Ritz-Carlton',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/lw93gedy_streetshow-client-logo-ritz-carlton.png'
     }
   ];
 
@@ -52,34 +62,40 @@ const TrustedBy = () => {
         
         <div className="flex">
           {/* First set of logos */}
-          <div className="flex gap-12 md:gap-16 lg:gap-20 animate-marquee">
+          <div className="flex gap-16 md:gap-20 lg:gap-24 animate-marquee items-center">
             {brands.map((brand) => (
               <div
                 key={`first-${brand.id}`}
-                className="flex-shrink-0 flex items-center justify-center h-12 md:h-14"
+                className="flex-shrink-0 flex items-center justify-center h-16 md:h-20"
               >
                 <img 
                   src={brand.logo}
                   alt={brand.name}
-                  className="h-full w-auto object-contain opacity-70 grayscale brightness-200"
-                  style={{ filter: 'grayscale(100%) brightness(2)' }}
+                  className="h-full w-auto object-contain"
+                  style={{ 
+                    filter: 'brightness(0) invert(1)',
+                    opacity: 0.85
+                  }}
                 />
               </div>
             ))}
           </div>
 
           {/* Duplicate set for seamless loop */}
-          <div className="flex gap-12 md:gap-16 lg:gap-20 animate-marquee" aria-hidden="true">
+          <div className="flex gap-16 md:gap-20 lg:gap-24 animate-marquee items-center" aria-hidden="true">
             {brands.map((brand) => (
               <div
                 key={`second-${brand.id}`}
-                className="flex-shrink-0 flex items-center justify-center h-12 md:h-14"
+                className="flex-shrink-0 flex items-center justify-center h-16 md:h-20"
               >
                 <img 
                   src={brand.logo}
                   alt={brand.name}
-                  className="h-full w-auto object-contain opacity-70 grayscale brightness-200"
-                  style={{ filter: 'grayscale(100%) brightness(2)' }}
+                  className="h-full w-auto object-contain"
+                  style={{ 
+                    filter: 'brightness(0) invert(1)',
+                    opacity: 0.85
+                  }}
                 />
               </div>
             ))}
