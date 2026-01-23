@@ -151,8 +151,9 @@ export const useProjectSEO = (project) => {
     const seo = project.seo;
     const title = seo.metaTitle?.[language] || `${project.title?.[language]} | Streetshow Productions`;
     const description = seo.metaDescription?.[language] || project.description?.[language];
+    const canonicalUrl = `https://streetshowproduction.com/work/${project.slug}`;
     
-    updateMetaTags(title, description, language);
+    updateMetaTags(title, description, language, canonicalUrl);
     
     // Add CreativeWork schema markup
     addProjectSchema(project, language);
