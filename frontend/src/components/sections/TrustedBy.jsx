@@ -6,7 +6,7 @@ const TrustedBy = () => {
   const { language } = useLanguage();
   const section = content[language].trustedBy;
 
-  // Client logos - 5 logos in exact order, increased size by 50%
+  // Client logos - 7 logos in exact order, increased size by 50%
   const brands = [
     { 
       id: 1, 
@@ -32,6 +32,16 @@ const TrustedBy = () => {
       id: 5, 
       name: 'TATA Elxsi',
       logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/hlqeo3l0_streetshow-client-logo-TATA-Elxsi.png'
+    },
+    { 
+      id: 6, 
+      name: 'Ritz-Carlton',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/tjnyazzf_streetshow-client-logo-ritz-carlton.png'
+    },
+    { 
+      id: 7, 
+      name: 'Jägermeister',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/blm3q0ce_streetshow-client-logo-jagermeister.png'
     }
   ];
 
