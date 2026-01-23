@@ -197,6 +197,9 @@ export const content = {
       cta: '無料相談を予約する',
       ctaSecondary: '制作実績を見る'
     },
+    trustedBy: {
+      title: 'グローバルブランドとの実績'
+    },
     featuredWork: {
       title: '制作実績',
       projects: [
