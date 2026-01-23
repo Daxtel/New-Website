@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage';
 import ProcessPage from './pages/ProcessPage';
 import ContactPage from './pages/ContactPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import JapanMarketEntryPage from './pages/JapanMarketEntryPage';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/process" element={<ProcessPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/japan-market-entry" element={<JapanMarketEntryPage />} />
+            <Route path="/localization" element={<JapanMarketEntryPage />} />
           </Routes>
         </BrowserRouter>
         <Toaster position="bottom-right" />
