@@ -17,11 +17,10 @@ const iconMap = {
 
 // Service order matching the priority in requirements
 const serviceOrder = [
-  '3d-anamorphic-billboards',
+  '3d-anamorphic-billboards-japan',
   'video-production-japan',
   'japan-market-localization',
-  'commercial-photography-japan',
-  '3d-cgi-production',
+  'photography-cgi-japan',
   'hospitality-creative-strategy-japan'
 ];
 
