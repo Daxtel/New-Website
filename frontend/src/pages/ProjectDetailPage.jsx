@@ -263,16 +263,18 @@ const ProjectDetailPage = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-[#1a1c1b] text-[#d9fb06] px-8 py-4 rounded-full font-semibold uppercase tracking-tight text-sm hover:scale-[1.02] transition-transform"
+                <a
+                  href="https://calendly.com/jackson-streetshowproduction/discovery-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-[#1a1c1b] text-[#d9fb06] px-8 py-4 rounded-full font-semibold uppercase tracking-tight text-sm hover:scale-[1.02] transition-transform min-h-[48px] touch-manipulation"
                 >
-                  {content[language].hero.cta}
+                  {language === 'en' ? 'Book a Consultation' : '無料相談を予約する'}
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
                 <Link
                   to="/work"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-[#1a1c1b] text-[#1a1c1b] px-8 py-4 rounded-full font-semibold uppercase tracking-tight text-sm hover:bg-[#1a1c1b]/10 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-[#1a1c1b] text-[#1a1c1b] px-8 py-4 rounded-full font-semibold uppercase tracking-tight text-sm hover:bg-[#1a1c1b]/10 transition-colors min-h-[48px] touch-manipulation"
                 >
                   {content[language].hero.ctaSecondary}
                 </Link>
