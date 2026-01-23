@@ -59,12 +59,12 @@ const TrustedBy = () => {
           style={{ opacity: 0.82 }}
         >
           {brands.map((brand) => {
-            // Scale multipliers for visual size normalization
-            const scaleMultipliers = {
-              'Jägermeister': 0.85,
-              'Kubota Spears': 0.92
+            // Scale multipliers and opacity adjustments for visual normalization
+            const adjustments = {
+              'Jägermeister': { scale: 0.85, opacity: 0.65 },
+              'Kubota Spears': { scale: 0.92, opacity: 0.70 }
             };
-            const scale = scaleMultipliers[brand.name] || 1;
+            const config = adjustments[brand.name] || { scale: 1, opacity: 1 };
             
             return (
               <div
@@ -78,7 +78,8 @@ const TrustedBy = () => {
                   className="h-full w-auto object-contain"
                   style={{ 
                     filter: 'brightness(0) invert(1)',
-                    transform: `scale(${scale})`
+                    transform: `scale(${config.scale})`,
+                    opacity: config.opacity
                   }}
                   draggable="false"
                 />
