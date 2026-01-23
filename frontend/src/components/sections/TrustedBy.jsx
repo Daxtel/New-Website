@@ -58,7 +58,7 @@ const TrustedBy = () => {
           {brands.map((brand) => (
             <div
               key={brand.id}
-              className="flex items-center justify-center h-12 md:h-16"
+              className="flex items-center justify-center h-20 md:h-28"
               style={{ pointerEvents: 'none' }}
             >
               <img 
