@@ -732,8 +732,8 @@ export const projects = [
       ja: ['商品ローンチ時のブランド認知', '高トラフィックロケーションでの視認性', 'SNSでのシェア拡散', '市場参入インパクト']
     },
     image: '/placeholder-work-1.jpg',
-    serviceSlug: '3d-anamorphic-billboards',
-    relatedServices: ['3d-anamorphic-billboards', '3d-cgi-production']
+    serviceSlug: '3d-anamorphic-billboards-japan',
+    relatedServices: ['3d-anamorphic-billboards-japan', '3d-cgi-production']
   },
   {
     id: 2,
