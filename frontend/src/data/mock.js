@@ -15,6 +15,9 @@ export const content = {
       cta: 'Book a Consultation',
       ctaSecondary: 'View Work'
     },
+    trustedBy: {
+      title: 'Trusted by Global Brands'
+    },
     featuredWork: {
       title: 'Featured Work',
       projects: [
