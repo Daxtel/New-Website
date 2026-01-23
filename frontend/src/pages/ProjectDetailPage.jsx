@@ -83,6 +83,29 @@ const ProjectDetailPage = () => {
 
   return (
     <Layout>
+      {/* Hero Video Section - Only show if project has heroVideo */}
+      {project.heroVideo && (
+        <HeroVideo
+          videoUrl={project.heroVideo.url}
+          posterUrl={project.heroVideo.poster}
+          posterAlt={project.heroVideo.alt[language]}
+          aspectRatio="16/9"
+          overlayStrength={0.5}
+        >
+          <div className="max-w-4xl">
+            <span className="text-[#d9fb06]/70 text-sm uppercase tracking-wider mb-4 block">
+              {t(project.category)} · {project.year}
+            </span>
+            <h1 className="font-black text-[#d9fb06] text-[clamp(2.5rem,7vw,5rem)] uppercase leading-[0.9] tracking-tight mb-6">
+              {h1}
+            </h1>
+            <p className="text-white/90 text-lg md:text-xl lg:text-2xl leading-relaxed">
+              {intro}
+            </p>
+          </div>
+        </HeroVideo>
+      )}
+
       <section className="pt-32 pb-24 md:pb-32 bg-[#1a1c1b]">
         <div className="max-w-[87.5rem] mx-auto px-5 md:px-10">
           {/* Breadcrumb */}
@@ -94,31 +117,37 @@ const ProjectDetailPage = () => {
             {language === 'en' ? 'Back to Work' : '制作実績に戻る'}
           </Link>
 
-          {/* Project Header with SEO H1 */}
-          <div className="mb-16">
-            <span className="text-[#888680] text-sm uppercase tracking-wider">
-              {t(project.category)} · {project.year}
-            </span>
-            <h1 className="mt-4 font-black text-[#d9fb06] text-[clamp(2rem,5vw,3.5rem)] uppercase leading-[0.9] tracking-tight max-w-4xl">
-              {h1}
-            </h1>
-          </div>
+          {/* Project Header with SEO H1 - Only show if no hero video */}
+          {!project.heroVideo && (
+            <>
+              <div className="mb-16">
+                <span className="text-[#888680] text-sm uppercase tracking-wider">
+                  {t(project.category)} · {project.year}
+                </span>
+                <h1 className="mt-4 font-black text-[#d9fb06] text-[clamp(2rem,5vw,3.5rem)] uppercase leading-[0.9] tracking-tight max-w-4xl">
+                  {h1}
+                </h1>
+              </div>
 
-          {/* Intro Paragraph */}
-          <div className="mb-16 max-w-3xl">
-            <p className="text-[#d9fb06]/80 text-lg md:text-xl leading-relaxed">
-              {intro}
-            </p>
-          </div>
+              {/* Intro Paragraph */}
+              <div className="mb-16 max-w-3xl">
+                <p className="text-[#d9fb06]/80 text-lg md:text-xl leading-relaxed">
+                  {intro}
+                </p>
+              </div>
+            </>
+          )}
 
-          {/* Main Image Placeholder */}
-          <div className="aspect-video bg-[#302f2c] mb-16 relative overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[#d9fb06]/10 text-9xl font-black">
-                {String(project.id).padStart(2, '0')}
-              </span>
+          {/* Main Image Placeholder - Hide if hero video exists */}
+          {!project.heroVideo && (
+            <div className="aspect-video bg-[#302f2c] mb-16 relative overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-[#d9fb06]/10 text-9xl font-black">
+                  {String(project.id).padStart(2, '0')}
+                </span>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Project Details Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
