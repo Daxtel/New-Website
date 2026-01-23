@@ -711,30 +711,31 @@ export const projects = [
   },
   {
     id: 3,
-    slug: '3d-product-visualization-japan',
-    title: { en: 'Product Launch Film', ja: 'プロダクトローンチフィルム' },
-    category: { en: 'CGI / Video', ja: 'CGI / 映像' },
+    slug: 'japan-market-localization-campaign',
+    title: { en: 'Japan Market Localization Campaign', ja: '日本市場ローカライズキャンペーン' },
+    category: { en: 'Localization', ja: 'ローカライズ' },
+    tags: { en: 'Localization · Creative Strategy · Japan', ja: 'ローカライズ · クリエイティブ戦略 · 日本' },
     seo: {
-      projectType: { en: 'CGI Product Film', ja: 'CGIプロダクトフィルム' },
+      projectType: { en: 'Campaign Localization', ja: 'キャンペーンローカライズ' },
       location: { en: 'Japan', ja: '日本' },
-      primaryService: { en: '3D & CGI Production', ja: '3D・CGI制作' },
+      primaryService: { en: 'Japan Market Localization', ja: '日本市場ローカライズ' },
       metaTitle: {
-        en: 'CGI Product Launch Film in Japan | 3D & CGI Production | Streetshow Productions',
-        ja: '日本のCGIプロダクトローンチフィルム｜3D・CGI制作｜Streetshow Productions'
+        en: 'Japan Market Localization Campaign | Creative Localization | Streetshow Productions',
+        ja: '日本市場ローカライズキャンペーン｜クリエイティブローカライズ｜Streetshow Productions'
       },
       metaDescription: {
-        en: 'CGI-integrated product film for automotive brand regional launch in Japan. Creative production by Streetshow Productions, specializing in 3D & CGI advertising production in Japan.',
-        ja: '自動車ブランドの日本地域ローンチに向けたCGI統合型プロダクトフィルム。日本市場向けの3D・CGI広告制作を提供するStreetshow Productionsによるクリエイティブ制作。'
+        en: 'Creative localization of a global campaign for Japanese audiences across digital platforms. Strategic adaptation by Streetshow Productions, specializing in Japan market localization.',
+        ja: 'グローバルキャンペーンの日本のオーディエンス向けクリエイティブローカライズ（デジタルプラットフォーム展開）。日本市場ローカライズを専門とするStreetshow Productionsによる戦略的アダプテーション。'
       },
-      h1: { en: 'CGI Product Launch Film in Japan', ja: '日本のCGIプロダクトローンチフィルム' },
+      h1: { en: 'Japan Market Localization Campaign', ja: '日本市場ローカライズキャンペーン' },
       intro: {
-        en: 'A photorealistic CGI-integrated product film for an automotive brand\'s regional launch in Japan. Combining live-action footage with CGI product shots to showcase vehicle features in a premium, cinematic format.',
-        ja: '自動車ブランドの日本地域ローンチに向けたフォトリアルCGI統合型プロダクトフィルム。実写映像とCGIプロダクトショットを組み合わせ、プレミアムでシネマティックなフォーマットで車両の特徴を表現。'
+        en: 'Creative localization of a global digital campaign for Japanese audiences. We adapted creative direction, messaging, and visual language to resonate authentically with the Japanese market while maintaining brand consistency.',
+        ja: 'グローバルデジタルキャンペーンの日本のオーディエンス向けクリエイティブローカライズ。ブランドの一貫性を保ちながら、日本市場に本物の共感を生むために、クリエイティブディレクション、メッセージング、ビジュアル言語を最適化。'
       }
     },
     description: {
-      en: 'CGI-integrated product film for automotive brand regional launch.',
-      ja: '自動車ブランドの地域ローンチに向けたCGI統合型プロダクトフィルム。'
+      en: 'Creative localization of a global campaign for Japanese audiences across digital platforms.',
+      ja: 'グローバルキャンペーンの日本のオーディエンス向けクリエイティブローカライズ（デジタルプラットフォーム展開）。'
     },
     client: 'Automotive Brand',
     year: '2023',
