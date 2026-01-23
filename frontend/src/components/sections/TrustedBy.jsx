@@ -69,7 +69,7 @@ const TrustedBy = () => {
             return (
               <div
                 key={brand.id}
-                className="flex items-center justify-center h-[56px] md:h-[72px]"
+                className="flex items-center justify-center h-[78px] md:h-[100px]"
                 style={{ pointerEvents: 'none' }}
               >
                 <img 
