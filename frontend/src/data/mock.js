@@ -630,15 +630,29 @@ export const servicesData = {
       en: ['Product launches', 'Automotive advertising', 'Tech and electronics', 'Luxury goods'],
       ja: ['商品ローンチ', '自動車広告', 'テック・エレクトロニクス', 'ラグジュアリーグッズ']
     },
-    relatedProjects: ['3d-product-visualization-japan', 'japan-electronics-cgi-visualization'],
-    relatedServices: ['3d-anamorphic-billboards', 'video-production-japan']
+    relatedProjects: [],
+    relatedServices: ['3d-anamorphic-billboards-japan', 'video-production-japan']
   },
   'hospitality-creative-strategy-japan': {
     slug: 'hospitality-creative-strategy-japan',
     icon: 'hotel',
+    seo: {
+      metaTitle: {
+        en: 'Hospitality Creative Strategy for Hotels in Japan | Streetshow Productions',
+        ja: '日本のホテル向けクリエイティブ戦略・映像制作｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'Creative strategy and content production for hotels and resorts in Japan. Increase bookings, brand value, and guest engagement.',
+        ja: '日本のホテル・リゾート向けに、集客・予約率・ブランド価値向上を目的としたクリエイティブ戦略と映像制作を提供。'
+      },
+      h1: {
+        en: 'Hospitality Creative Strategy & Production',
+        ja: 'ホスピタリティ向け クリエイティブ戦略・制作'
+      }
+    },
     title: {
-      en: 'Hospitality Creative Strategy',
-      ja: 'ホスピタリティ クリエイティブ戦略'
+      en: 'Hospitality Creative Strategy & Production',
+      ja: 'ホスピタリティ向け クリエイティブ戦略・制作'
     },
     headline: {
       en: 'Creative Strategy & Content for Hotels and Hospitality Brands in Japan',
@@ -668,8 +682,8 @@ export const servicesData = {
       en: ['Luxury and boutique hotels', 'Resorts and destination properties', 'Hospitality brands entering or repositioning in Japan', 'Hotels looking to improve online conversion and visibility'],
       ja: ['高級ホテル・ブティックホテル', 'リゾート・観光施設', '日本市場でのブランディングを強化したい宿泊施設', 'オンライン集客・予約率を改善したいホテル']
     },
-    relatedProjects: ['japan-luxury-resort-video-campaign', 'tokyo-editorial-photography'],
-    relatedServices: ['video-production-japan', 'commercial-photography-japan', 'japan-market-localization']
+    relatedProjects: [],
+    relatedServices: ['video-production-japan', 'photography-cgi-japan', 'japan-market-localization']
   }
 };
 
