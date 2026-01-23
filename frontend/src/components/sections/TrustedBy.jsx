@@ -62,7 +62,7 @@ const TrustedBy = () => {
             // Scale multipliers and opacity adjustments for visual normalization
             const adjustments = {
               'Jägermeister': { scale: 0.85, opacity: 0.82, filter: 'none' }, // No filter to preserve original colors
-              'Kubota Spears': { scale: 0.92, opacity: 0.70, filter: 'brightness(0) invert(1)' }
+              'Kubota Spears': { scale: 0.92, opacity: 0.82, filter: 'none' } // No filter to preserve original colors
             };
             const config = adjustments[brand.name] || { scale: 1, opacity: 1, filter: 'brightness(0) invert(1)' };
             
