@@ -6,42 +6,42 @@ const TrustedBy = () => {
   const { language } = useLanguage();
   const section = content[language].trustedBy;
 
-  // Client logos with public URLs (7 total)
+  // Client logos - using exact filenames as provided
   const brands = [
     { 
       id: 1, 
       name: 'Shein',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/3kgdsk5q_streetshow-client-logo-Shein.png'
+      logo: '/logos/streetshow-client-logo-Shein.png'
     },
     { 
       id: 2, 
       name: 'QC',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/wpvyzn9t_streetshow-client-logo-QC.png'
+      logo: '/logos/streetshow-client-logo-QC.png'
     },
     { 
       id: 3, 
       name: 'New Balance',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/y89k2ym9_streetshow-client-logo-new-balance.png'
+      logo: '/logos/streetshow-client-logo-new-balance.png'
     },
     { 
       id: 4, 
       name: 'Kubota Spears',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/w7y3it7s_streetshow-client-logo-Kubota%20Spears.png'
+      logo: '/logos/streetshow-client-logo-Kubota Spears.png'
     },
     { 
       id: 5, 
       name: 'TATA Elxsi',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/468nhcgw_streetshow-client-logo-TATA-Elxsi.png'
+      logo: '/logos/streetshow-client-logo-TATA-Elxsi.png'
     },
     { 
       id: 6, 
       name: 'Jägermeister',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/bejc5szc_streetshow-client-logo-jagermeister.png'
+      logo: '/logos/streetshow-client-logo-jagermeister.png'
     },
     { 
       id: 7, 
       name: 'Ritz-Carlton',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/lw93gedy_streetshow-client-logo-ritz-carlton.png'
+      logo: '/logos/streetshow-client-logo-ritz-carlton.png'
     }
   ];
 
@@ -66,7 +66,8 @@ const TrustedBy = () => {
             {brands.map((brand) => (
               <div
                 key={`first-${brand.id}`}
-                className="flex-shrink-0 flex items-center justify-center h-16 md:h-20"
+                className="flex-shrink-0 flex items-center justify-center h-7 md:h-9"
+                style={{ pointerEvents: 'none' }}
               >
                 <img 
                   src={brand.logo}
@@ -74,8 +75,9 @@ const TrustedBy = () => {
                   className="h-full w-auto object-contain"
                   style={{ 
                     filter: 'brightness(0) invert(1)',
-                    opacity: 0.85
+                    opacity: 0.8
                   }}
+                  draggable="false"
                 />
               </div>
             ))}
@@ -86,7 +88,8 @@ const TrustedBy = () => {
             {brands.map((brand) => (
               <div
                 key={`second-${brand.id}`}
-                className="flex-shrink-0 flex items-center justify-center h-16 md:h-20"
+                className="flex-shrink-0 flex items-center justify-center h-7 md:h-9"
+                style={{ pointerEvents: 'none' }}
               >
                 <img 
                   src={brand.logo}
@@ -94,8 +97,9 @@ const TrustedBy = () => {
                   className="h-full w-auto object-contain"
                   style={{ 
                     filter: 'brightness(0) invert(1)',
-                    opacity: 0.85
+                    opacity: 0.8
                   }}
+                  draggable="false"
                 />
               </div>
             ))}
