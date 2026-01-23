@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, ArrowRight, Check } from 'lucide-react';
 import Layout from '../components/layout/Layout';
+import HeroVideo from '../components/sections/HeroVideo';
 import { useLanguage } from '../context/LanguageContext';
 import { content, projects, servicesData } from '../data/mock';
 import { useProjectSEO } from '../hooks/useSEO';
