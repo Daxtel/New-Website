@@ -48,7 +48,7 @@ const FeaturedWork = () => {
               {/* Content */}
               <div className="p-5 md:p-6">
                 <span className="text-[#888680] text-xs uppercase tracking-wider">
-                  {t(project.category)}
+                  {project.tags || t(project.category)}
                 </span>
                 <h3 className="mt-2 text-[#d9fb06] font-semibold text-lg md:text-xl group-hover:text-[#d9fb06] transition-colors">
                   {t(project.title)}
