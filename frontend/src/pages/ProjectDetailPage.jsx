@@ -8,6 +8,10 @@ import { useProjectSEO } from '../hooks/useSEO';
 
 // Service anchor text mapping for internal linking
 const serviceAnchorText = {
+  '3d-anamorphic-billboards-japan': {
+    en: '3D anamorphic billboard production in Japan',
+    ja: '日本の3Dアナモルフィックビルボード制作'
+  },
   '3d-anamorphic-billboards': {
     en: '3D anamorphic billboard production in Japan',
     ja: '日本の3Dアナモルフィックビルボード制作'
@@ -19,6 +23,10 @@ const serviceAnchorText = {
   'japan-market-localization': {
     en: 'Japan market localization services',
     ja: '日本市場ローカライズ'
+  },
+  'photography-cgi-japan': {
+    en: 'commercial photography & CGI in Japan',
+    ja: '日本の商業写真・CGI制作'
   },
   'commercial-photography-japan': {
     en: 'commercial photography in Japan',
