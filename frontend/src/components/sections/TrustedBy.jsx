@@ -6,42 +6,32 @@ const TrustedBy = () => {
   const { language } = useLanguage();
   const section = content[language].trustedBy;
 
-  // Client logos - using exact filenames as provided
+  // Client logos - 5 logos in exact order, increased size by 50%
   const brands = [
     { 
       id: 1, 
       name: 'Shein',
-      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-Shein.png`
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/y9f1dfls_streetshow-client-logo-Shein.png'
     },
     { 
       id: 2, 
       name: 'QC',
-      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-QC.png`
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/j3i6bdqn_streetshow-client-logo-QC.png'
     },
     { 
       id: 3, 
       name: 'New Balance',
-      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-new-balance.png`
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/rowqon6l_streetshow-client-logo-new-balance.png'
     },
     { 
       id: 4, 
       name: 'Kubota Spears',
-      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-kubota-spears.png`
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/cwyg3orx_streetshow-client-logo-Kubota%20Spears.png'
     },
     { 
       id: 5, 
       name: 'TATA Elxsi',
-      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-TATA-Elxsi.png`
-    },
-    { 
-      id: 6, 
-      name: 'Jägermeister',
-      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-jagermeister.png`
-    },
-    { 
-      id: 7, 
-      name: 'Ritz-Carlton',
-      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-ritz-carlton.png`
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/hlqeo3l0_streetshow-client-logo-TATA-Elxsi.png'
     }
   ];
 
