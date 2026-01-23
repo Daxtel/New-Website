@@ -48,13 +48,13 @@ const FeaturedWork = () => {
               {/* Content */}
               <div className="p-5 md:p-6">
                 <span className="text-[#888680] text-xs uppercase tracking-wider">
-                  {project.tags || t(project.category)}
+                  {project.tags ? project.tags[language] : t(project.category)}
                 </span>
                 <h3 className="mt-2 text-[#d9fb06] font-semibold text-lg md:text-xl group-hover:text-[#d9fb06] transition-colors">
-                  {t(project.title)}
+                  {typeof project.title === 'object' ? project.title[language] : t(project.title)}
                 </h3>
                 <p className="mt-2 text-[#888680] text-sm leading-relaxed line-clamp-2">
-                  {t(project.description)}
+                  {typeof project.description === 'object' ? project.description[language] : t(project.description)}
                 </p>
 
                 {/* Arrow */}
