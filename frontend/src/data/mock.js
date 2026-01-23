@@ -375,9 +375,24 @@ export const content = {
 
 // Detailed service data for individual service pages
 export const servicesData = {
-  '3d-anamorphic-billboards': {
-    slug: '3d-anamorphic-billboards',
+  '3d-anamorphic-billboards-japan': {
+    slug: '3d-anamorphic-billboards-japan',
+    oldSlug: '3d-anamorphic-billboards', // For backwards compatibility
     icon: 'cube',
+    seo: {
+      metaTitle: {
+        en: '3D Anamorphic Billboard Production in Japan | Streetshow Productions',
+        ja: '日本の3Dアナモルフィックビルボード制作｜Streetshow Productions'
+      },
+      metaDescription: {
+        en: 'Premium 3D anamorphic billboard production for high-traffic locations across Japan. Concept, 3D design, and delivery handled end-to-end.',
+        ja: '日本各地の主要ロケーション向け3Dアナモルフィックビルボード制作。企画・3D設計から納品まで一貫対応。'
+      },
+      h1: {
+        en: '3D Anamorphic Billboards',
+        ja: '3Dアナモルフィックビルボード'
+      }
+    },
     title: {
       en: '3D Anamorphic Billboards',
       ja: '3Dアナモルフィックビルボード'
