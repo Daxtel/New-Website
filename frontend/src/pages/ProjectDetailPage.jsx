@@ -269,10 +269,25 @@ const ProjectDetailPage = () => {
             </div>
           </div>
 
-          {/* Gallery Placeholders */}
+          {/* Gallery Images */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div className="aspect-[4/3] bg-[#302f2c]" />
-            <div className="aspect-[4/3] bg-[#302f2c]" />
+            {project.galleryImages && project.galleryImages.length > 0 ? (
+              project.galleryImages.map((imageUrl, idx) => (
+                <div key={idx} className="aspect-[4/3] bg-[#302f2c] overflow-hidden">
+                  <img 
+                    src={imageUrl} 
+                    alt={`${t(project.title)} - ${language === 'en' ? 'Gallery image' : 'ギャラリー画像'} ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ))
+            ) : (
+              <>
+                <div className="aspect-[4/3] bg-[#302f2c]" />
+                <div className="aspect-[4/3] bg-[#302f2c]" />
+              </>
+            )}
           </div>
 
           {/* CTA Section */}

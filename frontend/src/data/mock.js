@@ -844,6 +844,10 @@ export const projects = [
       ja: ['文化的アダプテーション', '日本市場での共感', 'ブランド一貫性', 'デジタルプラットフォーム最適化']
     },
     image: '/placeholder-work-3.jpg',
+    galleryImages: [
+      'https://customer-assets.emergentagent.com/job_03b4617a-d997-493a-9fa8-086dcef97522/artifacts/6zcnpeye_streetshow-japan-market-localization-Picture.jpg',
+      'https://customer-assets.emergentagent.com/job_03b4617a-d997-493a-9fa8-086dcef97522/artifacts/7ziy05pl_20250724-CEL00021.jpg'
+    ],
     serviceSlug: 'japan-market-localization',
     relatedServices: ['japan-market-localization', 'video-production-japan']
   },
