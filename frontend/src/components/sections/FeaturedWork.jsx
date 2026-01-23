@@ -47,9 +47,16 @@ const FeaturedWork = () => {
 const FeaturedWorkTile = ({ project, index, language, t }) => {
   const videoRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
 
+  const hasFeaturedImage = project.featuredImage?.url;
+  const hasFeaturedVideo = project.featuredVideo?.url;
+  const isAutoplayVideo = hasFeaturedVideo && project.featuredVideo?.autoplay;
+  const isHoverVideo = hasFeaturedVideo && !project.featuredVideo?.autoplay;
+
+  // Handle hover-triggered video playback
   useEffect(() => {
-    if (videoRef.current) {
+    if (videoRef.current && isHoverVideo) {
       if (isHovered) {
         videoRef.current.play().catch(() => {});
       } else {
@@ -57,10 +64,24 @@ const FeaturedWorkTile = ({ project, index, language, t }) => {
         videoRef.current.currentTime = 0;
       }
     }
-  }, [isHovered]);
+  }, [isHovered, isHoverVideo]);
 
-  const hasFeaturedImage = project.featuredImage?.url;
-  const hasFeaturedVideo = project.featuredVideo?.url;
+  // Handle autoplay video
+  useEffect(() => {
+    if (videoRef.current && isAutoplayVideo) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay failed, show poster image
+          setVideoFailed(true);
+        });
+      }
+    }
+  }, [isAutoplayVideo]);
+
+  const handleVideoError = () => {
+    setVideoFailed(true);
+  };
 
   return (
     <Link
@@ -71,17 +92,40 @@ const FeaturedWorkTile = ({ project, index, language, t }) => {
     >
       {/* Media Container */}
       <div className="aspect-[4/3] bg-[#3f4816]/20 relative overflow-hidden">
-        {hasFeaturedVideo ? (
-          // Video tile (for Japan Market Localization)
-          <video
-            ref={videoRef}
-            src={project.featuredVideo.url}
-            className="absolute inset-0 w-full h-full object-cover"
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-label={project.featuredVideo.alt[language]}
+        {hasFeaturedVideo && !videoFailed ? (
+          // Video tile (autoplay or hover-triggered)
+          <>
+            <video
+              ref={videoRef}
+              src={project.featuredVideo.url}
+              poster={project.featuredVideo.poster}
+              className="absolute inset-0 w-full h-full object-cover"
+              muted
+              loop
+              playsInline
+              preload={isAutoplayVideo ? "none" : "metadata"}
+              aria-label={project.featuredVideo.alt[language]}
+              onError={handleVideoError}
+              autoPlay={isAutoplayVideo}
+            />
+            {/* Poster fallback for autoplay videos */}
+            {isAutoplayVideo && project.featuredVideo.poster && (
+              <img
+                src={project.featuredVideo.poster}
+                alt={project.featuredVideo.alt[language]}
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ zIndex: -1 }}
+                loading="lazy"
+              />
+            )}
+          </>
+        ) : hasFeaturedVideo && videoFailed && project.featuredVideo.poster ? (
+          // Fallback to poster image if video fails
+          <img
+            src={project.featuredVideo.poster}
+            alt={project.featuredVideo.alt[language]}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
           />
         ) : hasFeaturedImage ? (
           // Image tile
