@@ -829,8 +829,8 @@ export const projects = [
       en: 'Creative localization of a global campaign for Japanese audiences across digital platforms.',
       ja: 'グローバルキャンペーンの日本のオーディエンス向けクリエイティブローカライズ（デジタルプラットフォーム展開）。'
     },
-    client: 'Global Tech Brand',
-    year: '2024',
+    client: 'Italian Food Brand',
+    year: '2025',
     servicesProvided: {
       en: ['Cultural Strategy', 'Creative Localization', 'Visual Adaptation', 'Digital Content Production', 'Campaign Management'],
       ja: ['文化戦略', 'クリエイティブローカライズ', 'ビジュアルアダプテーション', 'デジタルコンテンツ制作', 'キャンペーンマネジメント']
