@@ -6,16 +6,33 @@ const TrustedBy = () => {
   const { language } = useLanguage();
   const section = content[language].trustedBy;
 
-  // Placeholder brand logos (will be replaced with actual logos later)
+  // Client logos with public URLs
   const brands = [
-    { id: 1, name: 'Brand 01' },
-    { id: 2, name: 'Brand 02' },
-    { id: 3, name: 'Brand 03' },
-    { id: 4, name: 'Brand 04' },
-    { id: 5, name: 'Brand 05' },
-    { id: 6, name: 'Brand 06' },
-    { id: 7, name: 'Brand 07' },
-    { id: 8, name: 'Brand 08' },
+    { 
+      id: 1, 
+      name: 'Shein',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/3kgdsk5q_streetshow-client-logo-Shein.png'
+    },
+    { 
+      id: 2, 
+      name: 'QC',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/wpvyzn9t_streetshow-client-logo-QC.png'
+    },
+    { 
+      id: 3, 
+      name: 'New Balance',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/y89k2ym9_streetshow-client-logo-new-balance.png'
+    },
+    { 
+      id: 4, 
+      name: 'Kubota Spears',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/w7y3it7s_streetshow-client-logo-Kubota%20Spears.png'
+    },
+    { 
+      id: 5, 
+      name: 'TATA Elxsi',
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/468nhcgw_streetshow-client-logo-TATA-Elxsi.png'
+    }
   ];
 
   return (
@@ -35,35 +52,35 @@ const TrustedBy = () => {
         
         <div className="flex">
           {/* First set of logos */}
-          <div className="flex gap-12 md:gap-16 animate-marquee">
+          <div className="flex gap-12 md:gap-16 lg:gap-20 animate-marquee">
             {brands.map((brand) => (
               <div
                 key={`first-${brand.id}`}
-                className="flex-shrink-0 flex items-center justify-center h-12 md:h-16 w-32 md:w-40"
+                className="flex-shrink-0 flex items-center justify-center h-12 md:h-14"
               >
-                {/* Placeholder logo container */}
-                <div className="w-full h-full flex items-center justify-center opacity-70 hover:opacity-90 transition-opacity duration-300">
-                  <div className="text-[#888680] text-xs md:text-sm font-semibold uppercase tracking-wider border border-[#888680]/30 px-6 py-3 md:py-4 rounded whitespace-nowrap">
-                    {brand.name}
-                  </div>
-                </div>
+                <img 
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="h-full w-auto object-contain opacity-70 grayscale brightness-200"
+                  style={{ filter: 'grayscale(100%) brightness(2)' }}
+                />
               </div>
             ))}
           </div>
 
           {/* Duplicate set for seamless loop */}
-          <div className="flex gap-12 md:gap-16 animate-marquee" aria-hidden="true">
+          <div className="flex gap-12 md:gap-16 lg:gap-20 animate-marquee" aria-hidden="true">
             {brands.map((brand) => (
               <div
                 key={`second-${brand.id}`}
-                className="flex-shrink-0 flex items-center justify-center h-12 md:h-16 w-32 md:w-40"
+                className="flex-shrink-0 flex items-center justify-center h-12 md:h-14"
               >
-                {/* Placeholder logo container */}
-                <div className="w-full h-full flex items-center justify-center opacity-70 hover:opacity-90 transition-opacity duration-300">
-                  <div className="text-[#888680] text-xs md:text-sm font-semibold uppercase tracking-wider border border-[#888680]/30 px-6 py-3 md:py-4 rounded whitespace-nowrap">
-                    {brand.name}
-                  </div>
-                </div>
+                <img 
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="h-full w-auto object-contain opacity-70 grayscale brightness-200"
+                  style={{ filter: 'grayscale(100%) brightness(2)' }}
+                />
               </div>
             ))}
           </div>
