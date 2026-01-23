@@ -666,8 +666,9 @@ export const projects = [
   {
     id: 2,
     slug: 'tokyo-luxury-brand-video-campaign',
-    title: { en: 'Luxury Brand Campaign', ja: 'ラグジュアリーブランドキャンペーン' },
+    title: { en: 'Luxury Brand Video Campaign', ja: 'ラグジュアリーブランド映像キャンペーン' },
     category: { en: 'Video Production', ja: '映像制作' },
+    tags: { en: 'Video Production · Campaign · Japan Market Entry', ja: '映像制作 · キャンペーン · 日本市場参入' },
     seo: {
       projectType: { en: 'Brand Video Campaign', ja: 'ブランド映像キャンペーン' },
       location: { en: 'Tokyo', ja: '東京' },
@@ -687,8 +688,8 @@ export const projects = [
       }
     },
     description: {
-      en: 'Full campaign production for European fashion house entering Japan market.',
-      ja: '日本市場進出を図るヨーロッパのファッションブランドのフルキャンペーン制作。'
+      en: 'Full campaign production for a European fashion brand entering the Japanese market.',
+      ja: '日本市場に参入するヨーロッパのファッションブランド向けフルキャンペーン制作。'
     },
     client: 'Fashion House',
     year: '2024',
