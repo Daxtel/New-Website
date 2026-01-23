@@ -41,7 +41,7 @@ const TrustedBy = () => {
     { 
       id: 7, 
       name: 'Jägermeister',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/ei9s0het_streetshow-client-logo-jagermeister.png'
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/iamd1jxw_streetshow-client-logo-jagermeister.png'
     }
   ];
 
