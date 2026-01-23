@@ -43,37 +43,37 @@ export const content = {
     },
     services: {
       title: 'Services',
-      subtitle: 'End-to-end creative production with deep Japan market understanding.',
+      subtitle: 'Full-service creative production built specifically for the Japanese market.',
       items: [
         {
           id: 1,
           title: '3D Anamorphic Billboards',
-          description: 'Eye-catching 3D billboard content for premium locations across Japan. Concept to delivery.',
+          description: 'Eye-catching 3D billboard content for premium locations across Japan. From concept and 3D design to final delivery.',
           icon: 'cube'
         },
         {
           id: 2,
           title: 'Video Production',
-          description: 'Commercial, campaign, and brand films. Full production capability in Japan.',
+          description: 'Commercials, brand films, and campaign content produced in Japan. Full production support for local and international teams.',
           icon: 'video'
         },
         {
           id: 3,
           title: 'Japan Market Localization',
-          description: 'Adapt global campaigns for Japan. Cultural consulting and creative execution.',
+          description: 'Adapt global campaigns for Japanese audiences. Cultural consulting, creative direction, and localized execution.',
           icon: 'globe'
         },
         {
           id: 4,
-          title: 'Photography',
-          description: 'Commercial and editorial photography. Studio and location shoots nationwide.',
-          icon: 'camera'
+          title: 'Hospitality Creative Strategy & Production',
+          description: 'Creative strategy and content production for hotels, resorts, and hospitality brands in Japan. Increase bookings, brand value, and on-property engagement.',
+          icon: 'hotel'
         },
         {
           id: 5,
-          title: '3D / CGI',
-          description: 'Product visualization, animation, and CGI integration for any medium.',
-          icon: 'box'
+          title: 'Photography & CGI',
+          description: 'High-end photography and CGI visuals for advertising, digital, and OOH use.',
+          icon: 'camera'
         }
       ]
     },
