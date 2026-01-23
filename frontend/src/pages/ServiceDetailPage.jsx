@@ -63,7 +63,7 @@ const ServiceDetailPage = () => {
                 </div>
               </div>
               <h1 className="font-black text-[#d9fb06] text-[clamp(2.5rem,5vw,4rem)] uppercase leading-[0.85] tracking-tight">
-                {t(service.title)}
+                {service.seo?.h1 ? service.seo.h1[language] : t(service.title)}
               </h1>
             </div>
             <div className="flex flex-col justify-end">
