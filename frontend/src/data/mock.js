@@ -737,23 +737,23 @@ export const projects = [
       en: 'Creative localization of a global campaign for Japanese audiences across digital platforms.',
       ja: 'グローバルキャンペーンの日本のオーディエンス向けクリエイティブローカライズ（デジタルプラットフォーム展開）。'
     },
-    client: 'Automotive Brand',
-    year: '2023',
+    client: 'Global Tech Brand',
+    year: '2024',
     servicesProvided: {
-      en: ['3D Product Modeling', 'CGI Animation', 'Live-Action Integration', 'Post-Production', 'Color Grading'],
-      ja: ['3Dプロダクトモデリング', 'CGIアニメーション', '実写統合', 'ポストプロダクション', 'カラーグレーディング']
+      en: ['Cultural Strategy', 'Creative Localization', 'Visual Adaptation', 'Digital Content Production', 'Campaign Management'],
+      ja: ['文化戦略', 'クリエイティブローカライズ', 'ビジュアルアダプテーション', 'デジタルコンテンツ制作', 'キャンペーンマネジメント']
     },
     deliverables: { 
-      en: ['Hero Film', 'CGI Product Shots', 'Social Content', 'Digital Ads'], 
-      ja: ['メインフィルム', 'CGIプロダクトショット', 'SNSコンテンツ', 'デジタル広告'] 
+      en: ['Localized Campaign Assets', 'Digital Content', 'Social Media Content', 'Cultural Strategy Document'], 
+      ja: ['ローカライズキャンペーン素材', 'デジタルコンテンツ', 'SNSコンテンツ', '文化戦略ドキュメント'] 
     },
     projectFocus: {
-      en: ['Product feature showcase', 'Premium brand perception', 'Regional market launch', 'Multi-platform deployment'],
-      ja: ['商品特徴の訴求', 'プレミアムブランド認知', '地域市場ローンチ', 'マルチプラットフォーム展開']
+      en: ['Cultural adaptation', 'Japan market resonance', 'Brand consistency', 'Digital platform optimization'],
+      ja: ['文化的アダプテーション', '日本市場での共感', 'ブランド一貫性', 'デジタルプラットフォーム最適化']
     },
     image: '/placeholder-work-3.jpg',
-    serviceSlug: '3d-cgi-production',
-    relatedServices: ['3d-cgi-production', 'video-production-japan']
+    serviceSlug: 'japan-market-localization',
+    relatedServices: ['japan-market-localization', 'video-production-japan']
   },
   {
     id: 4,
