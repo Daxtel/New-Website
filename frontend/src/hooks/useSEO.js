@@ -144,7 +144,7 @@ export const useProjectSEO = (project) => {
 };
 
 // Helper function to update meta tags
-const updateMetaTags = (title, description, language) => {
+const updateMetaTags = (title, description, language, canonicalUrl = null) => {
   // Update document title
   document.title = title;
   
@@ -158,6 +158,28 @@ const updateMetaTags = (title, description, language) => {
   const metaTitle = document.querySelector('meta[name="title"]');
   if (metaTitle) {
     metaTitle.setAttribute('content', title);
+  }
+  
+  // Update canonical URL
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (canonicalUrl) {
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', canonicalUrl);
+  }
+  
+  // Update OG URL
+  let ogUrl = document.querySelector('meta[property="og:url"]');
+  if (canonicalUrl) {
+    if (!ogUrl) {
+      ogUrl = document.createElement('meta');
+      ogUrl.setAttribute('property', 'og:url');
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute('content', canonicalUrl);
   }
   
   // Update OG tags
