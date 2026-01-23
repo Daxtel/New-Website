@@ -109,7 +109,7 @@ export const content = {
           'Care about long-term brand value and ROI'
         ]
       },
-      cta: 'Let's discuss your project'
+      cta: 'Let\'s discuss your project'
     },
     process: {
       title: 'Our Process',
