@@ -208,23 +208,26 @@ export const content = {
       projects: [
         {
           id: 1,
-          title: '渋谷3Dビルボード',
+          title: '渋谷3Dアナモルフィックビルボード',
           category: '3Dアナモルフィック',
-          description: 'グローバルテック企業の渋谷での新商品ローンチに向けた没入型3Dビルボードキャンペーン。',
+          description: '東京でのグローバルブランドローンチに向けた没入型3Dビルボードキャンペーン。',
+          tags: '3Dアナモルフィック · OOH · 東京',
           image: '/placeholder-work-1.jpg'
         },
         {
           id: 2,
-          title: 'ラグジュアリーブランドキャンペーン',
+          title: 'ラグジュアリーブランド映像キャンペーン',
           category: '映像制作',
-          description: '日本市場進出を図るヨーロッパのファッションブランドのフルキャンペーン制作。',
+          description: '日本市場に参入するヨーロッパのファッションブランド向けフルキャンペーン制作。',
+          tags: '映像制作 · キャンペーン · 日本市場参入',
           image: '/placeholder-work-2.jpg'
         },
         {
           id: 3,
-          title: 'プロダクトローンチフィルム',
-          category: 'CGI / 映像',
-          description: '自動車ブランドの地域ローンチに向けたCGI統合型プロダクトフィルム。',
+          title: '日本市場ローカライズキャンペーン',
+          category: 'ローカライズ',
+          description: 'グローバルキャンペーンの日本のオーディエンス向けクリエイティブローカライズ（デジタルプラットフォーム展開）。',
+          tags: 'ローカライズ · クリエイティブ戦略 · 日本',
           image: '/placeholder-work-3.jpg'
         }
       ]
