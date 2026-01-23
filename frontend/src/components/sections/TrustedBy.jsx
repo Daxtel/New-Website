@@ -6,7 +6,7 @@ const TrustedBy = () => {
   const { language } = useLanguage();
   const section = content[language].trustedBy;
 
-  // Client logos - 7 logos in exact order, increased size by 50%
+  // Client logos - 7 logos, displayed once, no repetition
   const brands = [
     { 
       id: 1, 
@@ -46,64 +46,33 @@ const TrustedBy = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-[#1a1c1b] border-y border-[#3f4816]/30 overflow-hidden">
+    <section className="py-12 md:py-16 bg-[#1a1c1b] border-y border-[#3f4816]/30">
       <div className="max-w-[87.5rem] mx-auto px-5 md:px-10">
         {/* Section Title */}
         <h2 className="text-[#888680] text-xs md:text-sm uppercase tracking-widest text-center mb-8 md:mb-10">
           {section.title}
         </h2>
-      </div>
 
-      {/* Scrolling Marquee */}
-      <div className="relative">
-        {/* Gradient overlays for fade effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[#1a1c1b] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[#1a1c1b] to-transparent z-10 pointer-events-none" />
-        
-        <div className="flex">
-          {/* First set of logos */}
-          <div className="flex gap-16 md:gap-20 lg:gap-24 animate-marquee items-center">
-            {brands.map((brand) => (
-              <div
-                key={`first-${brand.id}`}
-                className="flex-shrink-0 flex items-center justify-center h-11 md:h-14"
-                style={{ pointerEvents: 'none' }}
-              >
-                <img 
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="h-full w-auto object-contain"
-                  style={{ 
-                    filter: 'brightness(0) invert(1)',
-                    opacity: 0.8
-                  }}
-                  draggable="false"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Duplicate set for seamless loop */}
-          <div className="flex gap-16 md:gap-20 lg:gap-24 animate-marquee items-center" aria-hidden="true">
-            {brands.map((brand) => (
-              <div
-                key={`second-${brand.id}`}
-                className="flex-shrink-0 flex items-center justify-center h-11 md:h-14"
-                style={{ pointerEvents: 'none' }}
-              >
-                <img 
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="h-full w-auto object-contain"
-                  style={{ 
-                    filter: 'brightness(0) invert(1)',
-                    opacity: 0.8
-                  }}
-                  draggable="false"
-                />
-              </div>
-            ))}
-          </div>
+        {/* Static Logo Row */}
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
+          {brands.map((brand) => (
+            <div
+              key={brand.id}
+              className="flex items-center justify-center h-7 md:h-9"
+              style={{ pointerEvents: 'none' }}
+            >
+              <img 
+                src={brand.logo}
+                alt={brand.name}
+                className="h-full w-auto object-contain"
+                style={{ 
+                  filter: 'brightness(0) invert(1)',
+                  opacity: 0.8
+                }}
+                draggable="false"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
