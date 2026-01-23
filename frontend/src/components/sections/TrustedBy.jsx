@@ -11,37 +11,37 @@ const TrustedBy = () => {
     { 
       id: 1, 
       name: 'Shein',
-      logo: '/logos/streetshow-client-logo-Shein.png'
+      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-Shein.png`
     },
     { 
       id: 2, 
       name: 'QC',
-      logo: '/logos/streetshow-client-logo-QC.png'
+      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-QC.png`
     },
     { 
       id: 3, 
       name: 'New Balance',
-      logo: '/logos/streetshow-client-logo-new-balance.png'
+      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-new-balance.png`
     },
     { 
       id: 4, 
       name: 'Kubota Spears',
-      logo: '/logos/streetshow-client-logo-Kubota Spears.png'
+      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-kubota-spears.png`
     },
     { 
       id: 5, 
       name: 'TATA Elxsi',
-      logo: '/logos/streetshow-client-logo-TATA-Elxsi.png'
+      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-TATA-Elxsi.png`
     },
     { 
       id: 6, 
       name: 'Jägermeister',
-      logo: '/logos/streetshow-client-logo-jagermeister.png'
+      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-jagermeister.png`
     },
     { 
       id: 7, 
       name: 'Ritz-Carlton',
-      logo: '/logos/streetshow-client-logo-ritz-carlton.png'
+      logo: `${process.env.PUBLIC_URL}/logos/streetshow-client-logo-ritz-carlton.png`
     }
   ];
 
