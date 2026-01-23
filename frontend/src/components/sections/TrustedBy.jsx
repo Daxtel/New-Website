@@ -26,7 +26,7 @@ const TrustedBy = () => {
     { 
       id: 4, 
       name: 'Kubota Spears',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/cwyg3orx_streetshow-client-logo-Kubota%20Spears.png'
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/prj3egii_streetshow-client-logo-Kubota%20Spears.png'
     },
     { 
       id: 5, 
@@ -41,7 +41,7 @@ const TrustedBy = () => {
     { 
       id: 7, 
       name: 'Jägermeister',
-      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/blm3q0ce_streetshow-client-logo-jagermeister.png'
+      logo: 'https://customer-assets.emergentagent.com/job_streetshow-preview/artifacts/ei9s0het_streetshow-client-logo-jagermeister.png'
     }
   ];
 
