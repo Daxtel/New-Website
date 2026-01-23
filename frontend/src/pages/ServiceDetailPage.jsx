@@ -208,13 +208,15 @@ const ServiceDetailPage = () => {
                   : '日本でのビジョン実現について、お気軽にご相談ください。'
                 }
               </p>
-              <Link
-                to="/contact"
+              <a
+                href="https://calendly.com/jackson-streetshowproduction/discovery-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center justify-center gap-3 bg-[#1a1c1b] text-[#d9fb06] px-10 py-5 rounded-full font-semibold uppercase tracking-tight text-base hover:scale-[1.02] transition-transform"
               >
-                {content[language].hero.cta}
+                {language === 'en' ? 'Book a Consultation' : '無料相談を予約する'}
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
