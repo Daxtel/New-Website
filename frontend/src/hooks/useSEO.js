@@ -24,72 +24,62 @@ const seoData = {
   },
   services: {
     en: {
-      title: 'Creative Production Services for the Japan Market | Streetshow Productions',
-      description: 'High-end creative production services for brands entering and growing in Japan. Video production, 3D anamorphic billboards, and Japan market localization.',
+      title: 'Creative Production & Japan Market Localization | Streetshow Productions',
+      description: 'Strategy-first creative production studio in Japan. High-end video, 3D anamorphic billboards, hospitality campaigns, and market localization for global brands.',
     },
     ja: {
-      title: '日本市場向けクリエイティブ制作サービス｜Streetshow Productions',
-      description: '日本市場に特化したクリエイティブ制作サービス。映像制作、3Dアナモルフィックビルボード、海外ブランド向けローカライズに対応。',
+      title: '日本市場向けクリエイティブ制作・ローカライズ｜Streetshow Productions',
+      description: '日本市場に特化した戦略主導型クリエイティブ制作スタジオ。映像制作、3Dアナモルフィックビルボード、ホテル向け施策、海外ブランドのローカライズに対応。',
     },
   },
-  '3d-anamorphic-billboards': {
+  '3d-anamorphic-billboards-japan': {
     en: {
       title: '3D Anamorphic Billboard Production in Japan | Streetshow Productions',
-      description: 'Naked-eye 3D billboard content designed for premium LED screens across Japan. Ideal for product launches, brand awareness, and market entry campaigns.',
+      description: 'Premium 3D anamorphic billboard production for high-traffic locations across Japan. Concept, 3D design, and delivery handled end-to-end.',
     },
     ja: {
       title: '日本の3Dアナモルフィックビルボード制作｜Streetshow Productions',
-      description: '日本国内の主要LEDビジョン向けネイキッドアイ3Dビルボード制作。新商品ローンチやブランド認知拡大に最適。',
+      description: '日本各地の主要ロケーション向け3Dアナモルフィックビルボード制作。企画・3D設計から納品まで一貫対応。',
     },
   },
   'video-production-japan': {
     en: {
-      title: 'Video Production Company in Japan | Streetshow Productions',
-      description: 'Commercials, brand films, and advertising videos produced in Japan. Culturally adapted video content for brands targeting the Japanese market.',
+      title: 'Video Production Company in Japan | Commercial & Brand Films',
+      description: 'High-end video production in Japan for commercials, brand campaigns, and launches. Full production support for local and international teams.',
     },
     ja: {
-      title: '日本の映像制作会社｜Streetshow Productions',
-      description: '日本市場向けの広告映像、ブランドムービー、プロモーション動画制作。文化理解に基づくローカライズ対応。',
+      title: '日本の映像制作会社｜CM・ブランド映像制作',
+      description: '日本国内でのCM・ブランドキャンペーン映像制作。海外チームとの連携を含め、企画から撮影・編集まで対応。',
     },
   },
   'japan-market-localization': {
     en: {
-      title: 'Japan Market Localization for Foreign Brands | Streetshow Productions',
-      description: 'We localize global creative for Japan by adapting visuals, messaging, and creative direction to align with Japanese culture and consumer behavior.',
+      title: 'Japan Market Localization for Global Brands | Streetshow Productions',
+      description: 'Adapt global campaigns for Japanese audiences. Cultural consulting, creative direction, and localized execution for brands entering Japan.',
     },
     ja: {
-      title: '海外ブランド向け 日本市場ローカライズ｜Streetshow Productions',
-      description: '海外クリエイティブを日本市場向けに最適化。翻訳ではなく、文化理解に基づく表現設計を行います。',
+      title: '海外ブランド向け 日本市場ローカライズ支援｜Streetshow Productions',
+      description: '海外ブランドの日本市場参入・展開を支援。文化理解に基づいたローカライズ設計とクリエイティブ実行を提供。',
     },
   },
-  'commercial-photography-japan': {
+  'photography-cgi-japan': {
     en: {
-      title: 'Commercial & Product Photography in Japan | Streetshow Productions',
-      description: 'High-end commercial and product photography in Japan for advertising, hospitality, lifestyle, and brand campaigns.',
+      title: 'Commercial Photography & CGI in Japan | Streetshow Productions',
+      description: 'High-end commercial photography and CGI visuals for advertising, digital, and OOH use across Japan.',
     },
     ja: {
-      title: '日本の商業写真・商品撮影｜Streetshow Productions',
-      description: '広告・商品・ホテル・ライフスタイル向けの商業写真撮影を日本国内で提供。',
-    },
-  },
-  '3d-cgi-production': {
-    en: {
-      title: '3D & CGI Advertising Production in Japan | Streetshow Productions',
-      description: '3D product visualization, CGI commercials, and motion graphics for advertising campaigns across digital and outdoor media in Japan.',
-    },
-    ja: {
-      title: '日本の3D・CGI広告制作｜Streetshow Productions',
-      description: '3Dビジュアライゼーション、CGI広告映像、モーショングラフィックス制作に対応。',
+      title: '日本の商業写真・CGI制作｜Streetshow Productions',
+      description: '広告・デジタル・OOH向けの高品質な商業写真およびCGIビジュアルを日本国内で制作。',
     },
   },
   'hospitality-creative-strategy-japan': {
     en: {
-      title: 'Hospitality Creative Strategy & Hotel Marketing in Japan | Streetshow Productions',
-      description: 'Creative strategy, content production, and campaign planning for hotels and resorts in Japan. We help hospitality brands increase bookings, visibility, and ROI through high-end visuals and performance-driven creative.',
+      title: 'Hospitality Creative Strategy for Hotels in Japan | Streetshow Productions',
+      description: 'Creative strategy and content production for hotels and resorts in Japan. Increase bookings, brand value, and guest engagement.',
     },
     ja: {
-      title: 'ホテル・宿泊施設向け クリエイティブ戦略・マーケティング｜Streetshow Productions',
-      description: 'ホテル・リゾート向けのクリエイティブ戦略とコンテンツ制作。映像・写真・広告設計を通じて、集客・予約率・ROI向上を支援します。',
+      title: '日本のホテル向けクリエイティブ戦略・映像制作｜Streetshow Productions',
+      description: '日本のホテル・リゾート向けに、集客・予約率・ブランド価値向上を目的としたクリエイティブ戦略と映像制作を提供。',
     },
   },
   about: {
