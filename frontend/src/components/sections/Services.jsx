@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Video, Globe, Camera, Layers, ArrowUpRight } from 'lucide-react';
+import { Box, Video, Globe, Camera, Layers, Hotel, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { content } from '../../data/mock';
 
@@ -10,6 +10,7 @@ const iconMap = {
   globe: Globe,
   camera: Camera,
   box: Layers,
+  hotel: Hotel,
 };
 
 const Services = () => {
