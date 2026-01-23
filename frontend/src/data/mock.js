@@ -619,8 +619,9 @@ export const projects = [
   {
     id: 1,
     slug: 'shibuya-3d-anamorphic-billboard',
-    title: { en: 'Shibuya 3D Billboard', ja: '渋谷3Dビルボード' },
+    title: { en: 'Shibuya 3D Anamorphic Billboard', ja: '渋谷3Dアナモルフィックビルボード' },
     category: { en: '3D Anamorphic', ja: '3Dアナモルフィック' },
+    tags: { en: '3D Anamorphic · OOH · Tokyo', ja: '3Dアナモルフィック · OOH · 東京' },
     // SEO fields
     seo: {
       projectType: { en: '3D Anamorphic Billboard', ja: '3Dアナモルフィックビルボード制作' },
@@ -636,13 +637,13 @@ export const projects = [
       },
       h1: { en: '3D Anamorphic Billboard in Shibuya', ja: '渋谷の3Dアナモルフィックビルボード制作' },
       intro: {
-        en: 'A high-impact naked-eye 3D billboard campaign for a global tech brand launching in Shibuya, one of Tokyo\'s most iconic advertising locations. Designed to maximize visibility and drive brand awareness during the product launch window.',
-        ja: '東京を代表する広告ロケーションである渋谷で、グローバルテック企業の新商品ローンチに向けたネイキッドアイ3Dビルボードキャンペーンを制作。商品発売期間中の視認性最大化とブランド認知向上を目的としたクリエイティブ。'
+        en: 'A high-impact naked-eye 3D billboard campaign for a global brand launching in Tokyo, one of Japan\'s most iconic advertising locations. Designed to maximize visibility and drive brand awareness during the product launch window.',
+        ja: '東京を代表する広告ロケーションで、グローバルブランドローンチに向けたネイキッドアイ3Dビルボードキャンペーンを制作。商品発売期間中の視認性最大化とブランド認知向上を目的としたクリエイティブ。'
       }
     },
     description: {
-      en: 'Immersive 3D billboard campaign for global tech brand launch in Shibuya.',
-      ja: 'グローバルテック企業の渋谷での新商品ローンチに向けた没入型3Dビルボードキャンペーン。'
+      en: 'Immersive 3D billboard campaign for a global brand launch in Tokyo.',
+      ja: '東京でのグローバルブランドローンチに向けた没入型3Dビルボードキャンペーン。'
     },
     client: 'Global Tech Co.',
     year: '2024',
