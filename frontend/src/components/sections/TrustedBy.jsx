@@ -53,26 +53,38 @@ const TrustedBy = () => {
           {section.title}
         </h2>
 
-        {/* Static Logo Row */}
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
-          {brands.map((brand) => (
-            <div
-              key={brand.id}
-              className="flex items-center justify-center h-20 md:h-28"
-              style={{ pointerEvents: 'none' }}
-            >
-              <img 
-                src={brand.logo}
-                alt={brand.name}
-                className="h-full w-auto object-contain"
-                style={{ 
-                  filter: 'brightness(0) invert(1)',
-                  opacity: 0.8
-                }}
-                draggable="false"
-              />
-            </div>
-          ))}
+        {/* Static Logo Row - with uniform opacity applied to container */}
+        <div 
+          className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16"
+          style={{ opacity: 0.82 }}
+        >
+          {brands.map((brand) => {
+            // Scale multipliers for visual size normalization
+            const scaleMultipliers = {
+              'Jägermeister': 0.75,
+              'Kubota Spears': 0.85
+            };
+            const scale = scaleMultipliers[brand.name] || 1;
+            
+            return (
+              <div
+                key={brand.id}
+                className="flex items-center justify-center h-[26px] md:h-[32px]"
+                style={{ pointerEvents: 'none' }}
+              >
+                <img 
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="h-full w-auto object-contain"
+                  style={{ 
+                    filter: 'brightness(0) invert(1)',
+                    transform: `scale(${scale})`
+                  }}
+                  draggable="false"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
