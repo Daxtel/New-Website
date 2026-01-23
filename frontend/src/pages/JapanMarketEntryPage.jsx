@@ -23,7 +23,7 @@ const JapanMarketEntryPage = () => {
       },
       approach: {
         title: 'Our Approach',
-        intro: 'We don't just translate—we adapt. Our localization service transforms global campaigns into culturally resonant content that connects with Japanese audiences while maintaining brand consistency.',
+        intro: "We don't just translate—we adapt. Our localization service transforms global campaigns into culturally resonant content that connects with Japanese audiences while maintaining brand consistency.",
         points: [
           {
             title: 'Cultural Strategy First',
