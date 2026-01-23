@@ -433,6 +433,20 @@ export const servicesData = {
   'video-production-japan': {
     slug: 'video-production-japan',
     icon: 'video',
+    seo: {
+      metaTitle: {
+        en: 'Video Production Company in Japan | Commercial & Brand Films',
+        ja: '日本の映像制作会社｜CM・ブランド映像制作'
+      },
+      metaDescription: {
+        en: 'High-end video production in Japan for commercials, brand campaigns, and launches. Full production support for local and international teams.',
+        ja: '日本国内でのCM・ブランドキャンペーン映像制作。海外チームとの連携を含め、企画から撮影・編集まで対応。'
+      },
+      h1: {
+        en: 'Video Production',
+        ja: '映像制作'
+      }
+    },
     title: {
       en: 'Video Production',
       ja: '映像制作'
@@ -467,7 +481,7 @@ export const servicesData = {
       en: ['TV commercials', 'Digital advertising', 'Brand documentaries', 'Product videos'],
       ja: ['テレビCM', 'デジタル広告', 'ブランドドキュメンタリー', '商品動画']
     },
-    relatedProjects: ['tokyo-luxury-brand-video-campaign', '3d-product-visualization-japan'],
+    relatedProjects: ['tokyo-luxury-brand-video-campaign', 'japan-market-localization-campaign'],
     relatedServices: ['japan-market-localization', '3d-cgi-production', 'hospitality-creative-strategy-japan']
   },
   'japan-market-localization': {
