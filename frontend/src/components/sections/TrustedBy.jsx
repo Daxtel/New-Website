@@ -55,21 +55,21 @@ const TrustedBy = () => {
 
         {/* Static Logo Row - with uniform opacity applied to container */}
         <div 
-          className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16"
+          className="flex flex-wrap items-center justify-center gap-10 md:gap-14 lg:gap-16"
           style={{ opacity: 0.82 }}
         >
           {brands.map((brand) => {
             // Scale multipliers for visual size normalization
             const scaleMultipliers = {
-              'Jägermeister': 0.75,
-              'Kubota Spears': 0.85
+              'Jägermeister': 0.85,
+              'Kubota Spears': 0.92
             };
             const scale = scaleMultipliers[brand.name] || 1;
             
             return (
               <div
                 key={brand.id}
-                className="flex items-center justify-center h-[26px] md:h-[32px]"
+                className="flex items-center justify-center h-[56px] md:h-[72px]"
                 style={{ pointerEvents: 'none' }}
               >
                 <img 
