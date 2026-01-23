@@ -29,9 +29,13 @@ const TrustedBy = () => {
 
       {/* Scrolling Marquee */}
       <div className="relative">
+        {/* Gradient overlays for fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[#1a1c1b] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[#1a1c1b] to-transparent z-10 pointer-events-none" />
+        
         <div className="flex">
           {/* First set of logos */}
-          <div className="flex animate-scroll gap-12 md:gap-16">
+          <div className="flex gap-12 md:gap-16 animate-marquee">
             {brands.map((brand) => (
               <div
                 key={`first-${brand.id}`}
@@ -39,7 +43,7 @@ const TrustedBy = () => {
               >
                 {/* Placeholder logo container */}
                 <div className="w-full h-full flex items-center justify-center opacity-70 hover:opacity-90 transition-opacity duration-300">
-                  <div className="text-[#888680] text-xs md:text-sm font-semibold uppercase tracking-wider border border-[#888680]/30 px-6 py-3 md:py-4 rounded">
+                  <div className="text-[#888680] text-xs md:text-sm font-semibold uppercase tracking-wider border border-[#888680]/30 px-6 py-3 md:py-4 rounded whitespace-nowrap">
                     {brand.name}
                   </div>
                 </div>
@@ -48,7 +52,7 @@ const TrustedBy = () => {
           </div>
 
           {/* Duplicate set for seamless loop */}
-          <div className="flex animate-scroll gap-12 md:gap-16" aria-hidden="true">
+          <div className="flex gap-12 md:gap-16 animate-marquee" aria-hidden="true">
             {brands.map((brand) => (
               <div
                 key={`second-${brand.id}`}
@@ -56,7 +60,7 @@ const TrustedBy = () => {
               >
                 {/* Placeholder logo container */}
                 <div className="w-full h-full flex items-center justify-center opacity-70 hover:opacity-90 transition-opacity duration-300">
-                  <div className="text-[#888680] text-xs md:text-sm font-semibold uppercase tracking-wider border border-[#888680]/30 px-6 py-3 md:py-4 rounded">
+                  <div className="text-[#888680] text-xs md:text-sm font-semibold uppercase tracking-wider border border-[#888680]/30 px-6 py-3 md:py-4 rounded whitespace-nowrap">
                     {brand.name}
                   </div>
                 </div>
@@ -65,28 +69,9 @@ const TrustedBy = () => {
           </div>
         </div>
       </div>
-
-      {/* CSS Animation */}
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 };
 
 export default TrustedBy;
+
