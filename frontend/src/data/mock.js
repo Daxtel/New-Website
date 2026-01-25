@@ -923,8 +923,8 @@ export const projects = [
         ja: 'ライティング機材を備えたプロフェッショナル撮影スタジオ環境'
       }
     },
-    serviceSlug: 'commercial-photography-japan',
-    relatedServices: ['commercial-photography-japan', 'hospitality-creative-strategy-japan']
+    serviceSlug: 'photography-cgi-japan',
+    relatedServices: ['photography-cgi-japan', 'hospitality-creative-strategy-japan']
   },
   {
     id: 5,
