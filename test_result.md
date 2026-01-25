@@ -102,111 +102,97 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: Site-Wide Linking + Media Consistency for Project Cards
+user_problem_statement: Finalize and Align About Us Page (Media + Linking)
 
 frontend:
-  - task: "Project cards clickable and linked to correct project pages"
+  - task: "About page hero section with optimized media"
     implemented: true
     working: true
-    file: "frontend/src/pages/WorkPage.jsx, frontend/src/components/sections/FeaturedWork.jsx"
+    file: "frontend/src/pages/AboutPage.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Work page project cards already link via Link component. Verified cards are clickable."
-        - working: true
-        - agent: "testing"
-        - comment: "✅ TESTED: All 6 project cards on Work page are clickable and navigate correctly to their respective project detail pages. All project slugs (shibuya-3d-anamorphic-billboard, tokyo-luxury-brand-video-campaign, japan-market-localization-campaign, tokyo-editorial-photography, japan-electronics-cgi-visualization, japan-luxury-resort-video-campaign) resolve to valid pages with no 404 errors. Featured Work section on homepage also works correctly."
+        - comment: "Added hero section with modern office workspace image, proper above-fold priority loading"
 
-  - task: "Related Projects on Service pages display consistent media"
+  - task: "About page team section with media"
     implemented: true
     working: true
-    file: "frontend/src/pages/ServiceDetailPage.jsx"
+    file: "frontend/src/pages/AboutPage.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Updated ServiceDetailPage to use featuredImage/featuredVideo from project data instead of placeholders. Related projects now show consistent media."
-        - working: true
-        - agent: "testing"
-        - comment: "Minor: ✅ TESTED: Related projects on service pages display media consistently. Found 2 related projects on video-production-japan service page, both showing proper images. One project (tokyo-luxury-brand-video-campaign) shows placeholder image but this is minor issue as functionality works correctly."
+        - comment: "Added team section with collaborative team environment image, lazy loaded"
 
-  - task: "Service pages link related projects to correct project detail pages"
+  - task: "About page Why Us pillars section"
     implemented: true
     working: true
-    file: "frontend/src/pages/ServiceDetailPage.jsx"
+    file: "frontend/src/pages/AboutPage.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Related projects on service pages link via /work/{slug} route. Verified linking is correct."
-        - working: true
-        - agent: "testing"
-        - comment: "✅ TESTED: Related project cards on service pages link correctly to their respective project detail pages. Tested navigation from video-production-japan service page to related projects - all links work properly and navigate to correct URLs."
+        - comment: "Fixed data access from whyUs.points to whyUs.pillars. Added subtitle and Ideal For section."
 
-  - task: "Service slug references corrected in projects data"
+  - task: "About page Services section with links"
     implemented: true
     working: true
-    file: "frontend/src/data/mock.js"
-    stuck_count: 0
-    priority: "medium"
-    needs_retesting: false
-    status_history:
-        - working: true
-        - agent: "main"
-        - comment: "Fixed serviceSlug references: commercial-photography-japan -> photography-cgi-japan, 3d-anamorphic-billboards -> 3d-anamorphic-billboards-japan"
-
-  - task: "Services have related projects assigned"
-    implemented: true
-    working: true
-    file: "frontend/src/data/mock.js"
-    stuck_count: 0
-    priority: "medium"
-    needs_retesting: false
-    status_history:
-        - working: true
-        - agent: "main"
-        - comment: "Added relatedProjects to photography-cgi-japan, 3d-cgi-production, hospitality-creative-strategy-japan services"
-
-  - task: "Language routing consistency (EN to EN, JP to JP)"
-    implemented: true
-    working: true
-    file: "frontend/src/App.js"
+    file: "frontend/src/pages/AboutPage.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Language context is preserved on navigation. Same routes work in both languages with translated content."
+        - comment: "Added featured services section with 3 services linking to respective service detail pages"
+
+  - task: "About page Featured Work section with links and consistent media"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/AboutPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
         - working: true
-        - agent: "testing"
-        - comment: "Minor: ✅ TESTED: Language switching works and routing remains functional. JP button switches homepage content to Japanese successfully. Project card navigation works in both EN and JP modes. Minor issue: Project detail pages don't fully switch content to Japanese (navigation works but content remains in English). Core routing functionality is working correctly."
+        - agent: "main"
+        - comment: "Added featured projects section using same media assets from projects data. Links to project detail pages."
+
+  - task: "About page EN/JP language switching"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/AboutPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: true
+        - agent: "main"
+        - comment: "All content switches properly between EN and JP. Verified via screenshots."
 
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 1
+  test_sequence: 2
   run_ui: false
 
 test_plan:
   current_focus:
-    - "Project cards clickable and linked to correct project pages"
-    - "Related Projects on Service pages display consistent media"
-    - "Service pages link related projects to correct project detail pages"
-    - "Language routing consistency (EN to EN, JP to JP)"
+    - "About page hero section with optimized media"
+    - "About page Services section with links"
+    - "About page Featured Work section with links and consistent media"
+    - "About page EN/JP language switching"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
 agent_communication:
     - agent: "main"
-    - message: "Implemented site-wide linking and media consistency. Updated ServiceDetailPage to show consistent media from project data (featuredImage or featuredVideo poster). Fixed service slug references in projects data. Added related projects to empty service entries. Need testing to verify: 1) All project cards are clickable and link correctly, 2) Related projects on service pages show correct media, 3) EN/JP routing consistency."
-    - agent: "testing"
-    - message: "TESTING COMPLETE - Comprehensive site-wide linking and media consistency test completed. RESULTS: ✅ All 6 project cards on Work page are clickable and link correctly. ✅ All project slugs resolve to valid pages (no 404s). ✅ Related projects on service pages link correctly. ✅ Featured Work section navigation works. ✅ Language switching (EN/JP) works with functional routing. ❌ MINOR ISSUE: One media inconsistency found in tokyo-luxury-brand-video-campaign project card (using placeholder image instead of real media). ❌ MINOR ISSUE: Project detail pages don't fully switch content to Japanese when JP language is selected (navigation works but content remains in English). Overall: Core functionality working well, only minor cosmetic issues found."
+    - message: "Enhanced About page with media and internal linking. Fixed critical bug where whyUs.points was undefined (should be whyUs.pillars). Added: hero image, team image, Why Us pillars with subtitle, Ideal For section, Our Services with links to service pages, Featured Work with links to project pages using consistent media. All content is bilingual (EN/JP). Need testing to verify all links work correctly."
