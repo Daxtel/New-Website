@@ -132,29 +132,56 @@ const ServiceDetailPage = () => {
                 </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {relatedProjectsData.map((project) => (
-                  <Link
-                    key={project.id}
-                    to={`/work/${project.slug}`}
-                    className="group bg-[#302f2c] overflow-hidden hover:bg-[#3f4816]/30 transition-colors"
-                  >
-                    <div className="aspect-video bg-[#3f4816]/20 relative">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-[#d9fb06]/10 text-6xl font-black">
-                          {String(project.id).padStart(2, '0')}
-                        </span>
+                {relatedProjectsData.map((project) => {
+                  // Use consistent media from project data
+                  const hasFeaturedImage = project.featuredImage?.url;
+                  const hasFeaturedVideo = project.featuredVideo?.url;
+                  const posterImage = project.featuredVideo?.poster;
+                  
+                  return (
+                    <Link
+                      key={project.id}
+                      to={`/work/${project.slug}`}
+                      className="group bg-[#302f2c] overflow-hidden hover:bg-[#3f4816]/30 transition-colors"
+                    >
+                      <div className="aspect-video bg-[#3f4816]/20 relative overflow-hidden">
+                        {hasFeaturedImage ? (
+                          <img
+                            src={project.featuredImage.url}
+                            alt={project.featuredImage.alt?.[language] || t(project.title)}
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        ) : hasFeaturedVideo && posterImage ? (
+                          <img
+                            src={posterImage}
+                            alt={project.featuredVideo.alt?.[language] || t(project.title)}
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-[#d9fb06]/10 text-6xl font-black">
+                              {String(project.id).padStart(2, '0')}
+                            </span>
+                          </div>
+                        )}
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-[#d9fb06]/0 group-hover:bg-[#d9fb06]/5 transition-colors duration-300" />
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1c1b]/60 via-transparent to-transparent" />
                       </div>
-                    </div>
-                    <div className="p-6">
-                      <span className="text-[#888680] text-xs uppercase tracking-wider">
-                        {t(project.category)}
-                      </span>
-                      <h4 className="mt-2 text-[#d9fb06] font-semibold text-xl group-hover:opacity-80 transition-opacity">
-                        {t(project.title)}
-                      </h4>
-                    </div>
-                  </Link>
-                ))}
+                      <div className="p-6">
+                        <span className="text-[#888680] text-xs uppercase tracking-wider">
+                          {t(project.category)}
+                        </span>
+                        <h4 className="mt-2 text-[#d9fb06] font-semibold text-xl group-hover:opacity-80 transition-opacity">
+                          {t(project.title)}
+                        </h4>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           )}
