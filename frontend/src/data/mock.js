@@ -824,6 +824,7 @@ export const projects = [
     },
     featuredVideo: {
       url: 'https://customer-assets.emergentagent.com/job_nippon-replace/artifacts/1kk0p1lc_streetshow-japan-market-localization-placeholder.mp4',
+      poster: 'https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=85&w=1200',
       alt: {
         en: 'Japan market localization strategy and creative adaptation process',
         ja: '日本市場ローカライズ戦略とクリエイティブアダプテーションプロセス'
