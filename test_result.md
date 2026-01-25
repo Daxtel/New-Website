@@ -141,11 +141,14 @@ frontend:
     file: "frontend/src/pages/ServiceDetailPage.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: true
         - agent: "main"
         - comment: "Related projects on service pages link via /work/{slug} route. Verified linking is correct."
+        - working: true
+        - agent: "testing"
+        - comment: "✅ TESTED: Related project cards on service pages link correctly to their respective project detail pages. Tested navigation from video-production-japan service page to related projects - all links work properly and navigate to correct URLs."
 
   - task: "Service slug references corrected in projects data"
     implemented: true
