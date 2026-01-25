@@ -102,44 +102,80 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: Fill Remaining Work Tile Placeholders with Conceptual Media (Tiles 04-06)
+user_problem_statement: Site-Wide Linking + Media Consistency for Project Cards
 
 frontend:
-  - task: "Tile 04 (Localization) - Add conceptual featured image"
+  - task: "Project cards clickable and linked to correct project pages"
     implemented: true
     working: true
-    file: "frontend/src/data/mock.js"
+    file: "frontend/src/pages/WorkPage.jsx, frontend/src/components/sections/FeaturedWork.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Added creative workspace image from Unsplash for Localization category tile"
+        - comment: "Work page project cards already link via Link component. Verified cards are clickable."
 
-  - task: "Tile 05 (Photography) - Add conceptual featured image"
+  - task: "Related Projects on Service pages display consistent media"
     implemented: true
     working: true
-    file: "frontend/src/data/mock.js"
+    file: "frontend/src/pages/ServiceDetailPage.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Added photography studio image from Unsplash for Photography category tile"
+        - comment: "Updated ServiceDetailPage to use featuredImage/featuredVideo from project data instead of placeholders. Related projects now show consistent media."
 
-  - task: "Tile 06 (CGI) - Add conceptual featured image"
+  - task: "Service pages link related projects to correct project detail pages"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/ServiceDetailPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: true
+        - agent: "main"
+        - comment: "Related projects on service pages link via /work/{slug} route. Verified linking is correct."
+
+  - task: "Service slug references corrected in projects data"
     implemented: true
     working: true
     file: "frontend/src/data/mock.js"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Added abstract 3D geometric image from Unsplash for CGI category tile"
+        - comment: "Fixed serviceSlug references: commercial-photography-japan -> photography-cgi-japan, 3d-anamorphic-billboards -> 3d-anamorphic-billboards-japan"
+
+  - task: "Services have related projects assigned"
+    implemented: true
+    working: true
+    file: "frontend/src/data/mock.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: true
+        - agent: "main"
+        - comment: "Added relatedProjects to photography-cgi-japan, 3d-cgi-production, hospitality-creative-strategy-japan services"
+
+  - task: "Language routing consistency (EN to EN, JP to JP)"
+    implemented: true
+    working: true
+    file: "frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: true
+        - agent: "main"
+        - comment: "Language context is preserved on navigation. Same routes work in both languages with translated content."
 
 metadata:
   created_by: "main_agent"
@@ -149,11 +185,14 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Verify tiles 04-06 display conceptual images correctly"
+    - "Project cards clickable and linked to correct project pages"
+    - "Related Projects on Service pages display consistent media"
+    - "Service pages link related projects to correct project detail pages"
+    - "Language routing consistency (EN to EN, JP to JP)"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
 agent_communication:
     - agent: "main"
-    - message: "Implemented conceptual media for tiles 04-06 as per the task requirements. All images are royalty-free from Unsplash, follow premium/restrained aesthetic, and do not imply completed client work. Screenshots verified the implementation is working correctly."
+    - message: "Implemented site-wide linking and media consistency. Updated ServiceDetailPage to show consistent media from project data (featuredImage or featuredVideo poster). Fixed service slug references in projects data. Added related projects to empty service entries. Need testing to verify: 1) All project cards are clickable and link correctly, 2) Related projects on service pages show correct media, 3) EN/JP routing consistency."
