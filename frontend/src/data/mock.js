@@ -976,7 +976,7 @@ export const projects = [
       }
     },
     serviceSlug: '3d-cgi-production',
-    relatedServices: ['3d-cgi-production', '3d-anamorphic-billboards']
+    relatedServices: ['3d-cgi-production', '3d-anamorphic-billboards-japan']
   },
   {
     id: 6,
