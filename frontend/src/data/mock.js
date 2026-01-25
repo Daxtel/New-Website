@@ -915,6 +915,13 @@ export const projects = [
       ja: ['文化的アダプテーション', '市場参入支援', 'インフルエンサーマーケティング', 'ブランド一貫性']
     },
     image: '/placeholder-work-4.jpg',
+    featuredImage: {
+      url: 'https://images.unsplash.com/photo-1502810190503-8303352d0dd1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwyfHxjcmVhdGl2ZSUyMHdvcmtzcGFjZXxlbnwwfHx8fDE3NjkzNTMxMzh8MA&ixlib=rb-4.1.0&q=85&w=1200',
+      alt: {
+        en: 'Creative workspace representing localization process and cultural strategy',
+        ja: 'ローカライズプロセスと文化戦略を表現するクリエイティブワークスペース'
+      }
+    },
     serviceSlug: 'japan-market-localization',
     relatedServices: ['japan-market-localization', 'video-production-japan']
   },
@@ -960,6 +967,13 @@ export const projects = [
       ja: ['プレミアムビジュアルストーリーテリング', 'マルチロケーション制作', '印刷・デジタル最適化', 'ライフスタイルブランド適合']
     },
     image: '/placeholder-work-5.jpg',
+    featuredImage: {
+      url: 'https://images.unsplash.com/photo-1617463874381-85b513b3e991?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxwaG90b2dyYXBoeSUyMHN0dWRpb3xlbnwwfHx8fDE3NjkzNTMxNDJ8MA&ixlib=rb-4.1.0&q=85&w=1200',
+      alt: {
+        en: 'Professional photography studio environment with lighting equipment',
+        ja: 'ライティング機材を備えたプロフェッショナル撮影スタジオ環境'
+      }
+    },
     serviceSlug: 'commercial-photography-japan',
     relatedServices: ['commercial-photography-japan', 'hospitality-creative-strategy-japan']
   },
@@ -1005,6 +1019,13 @@ export const projects = [
       ja: ['商品特徴のビジュアライゼーション', 'プレミアムブランド認知', 'マルチチャネル展開', 'キャンペーン一貫性']
     },
     image: '/placeholder-work-6.jpg',
+    featuredImage: {
+      url: 'https://images.unsplash.com/photo-1653299832314-5d3dc1e5a83c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMDNEfGVufDB8fHx8MTc2OTM1MzE0N3ww&ixlib=rb-4.1.0&q=85&w=1200',
+      alt: {
+        en: 'Abstract 3D geometric forms representing CGI and digital visualization',
+        ja: 'CGIとデジタルビジュアライゼーションを表現する抽象的な3Dジオメトリック形状'
+      }
+    },
     serviceSlug: '3d-cgi-production',
     relatedServices: ['3d-cgi-production', '3d-anamorphic-billboards']
   },
