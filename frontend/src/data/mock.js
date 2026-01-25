@@ -875,58 +875,6 @@ export const projects = [
   },
   {
     id: 4,
-    slug: 'japan-beauty-brand-localization',
-    title: { en: 'Beauty Brand Localization', ja: 'ビューティーブランドローカライズ' },
-    category: { en: 'Localization', ja: 'ローカライズ' },
-    seo: {
-      projectType: { en: 'Brand Localization Campaign', ja: 'ブランドローカライズキャンペーン' },
-      location: { en: 'Japan', ja: '日本' },
-      primaryService: { en: 'Japan Market Localization', ja: '日本市場ローカライズ' },
-      metaTitle: {
-        en: 'Beauty Brand Localization in Japan | Japan Market Localization | Streetshow Productions',
-        ja: '日本のビューティーブランドローカライズ｜日本市場ローカライズ｜Streetshow Productions'
-      },
-      metaDescription: {
-        en: 'Japan market adaptation for international beauty brand campaign including creative strategy and KOL integration. Creative production by Streetshow Productions, specializing in Japan market localization.',
-        ja: '海外ビューティーブランドの日本市場向けキャンペーンアダプテーション。クリエイティブ戦略とKOL連携を含む。日本市場ローカライズを提供するStreetshow Productionsによるクリエイティブ制作。'
-      },
-      h1: { en: 'Beauty Brand Localization in Japan', ja: '日本のビューティーブランドローカライズ' },
-      intro: {
-        en: 'A comprehensive localization project for an international beauty brand entering Japan. We adapted global campaign assets for the Japanese market, including creative strategy, visual adaptation, and KOL integration to ensure cultural relevance and brand resonance.',
-        ja: '日本市場に参入する海外ビューティーブランド向けの包括的なローカライズプロジェクト。クリエイティブ戦略、ビジュアルアダプテーション、KOL連携を含むグローバルキャンペーン素材の日本市場向け最適化。文化的適合性とブランド共感を確保。'
-      }
-    },
-    description: {
-      en: 'Japan market adaptation for international beauty brand campaign.',
-      ja: '海外ビューティーブランドキャンペーンの日本市場向けアダプテーション。'
-    },
-    client: 'Beauty Brand',
-    year: '2024',
-    servicesProvided: {
-      en: ['Cultural Consulting', 'Creative Adaptation', 'KOL Strategy', 'Visual Localization', 'Campaign Management'],
-      ja: ['文化コンサルティング', 'クリエイティブアダプテーション', 'KOL戦略', 'ビジュアルローカライズ', 'キャンペーンマネジメント']
-    },
-    deliverables: { 
-      en: ['Creative Strategy', 'Adapted Content', 'KOL Integration', 'Social Assets'], 
-      ja: ['クリエイティブ戦略', 'アダプテッドコンテンツ', 'KOL連携', 'SNS素材'] 
-    },
-    projectFocus: {
-      en: ['Cultural adaptation', 'Market entry support', 'Influencer marketing', 'Brand consistency'],
-      ja: ['文化的アダプテーション', '市場参入支援', 'インフルエンサーマーケティング', 'ブランド一貫性']
-    },
-    image: '/placeholder-work-4.jpg',
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1502810190503-8303352d0dd1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwyfHxjcmVhdGl2ZSUyMHdvcmtzcGFjZXxlbnwwfHx8fDE3NjkzNTMxMzh8MA&ixlib=rb-4.1.0&q=85&w=1200',
-      alt: {
-        en: 'Creative workspace representing localization process and cultural strategy',
-        ja: 'ローカライズプロセスと文化戦略を表現するクリエイティブワークスペース'
-      }
-    },
-    serviceSlug: 'japan-market-localization',
-    relatedServices: ['japan-market-localization', 'video-production-japan']
-  },
-  {
-    id: 5,
     slug: 'tokyo-editorial-photography',
     title: { en: 'Editorial Photography', ja: 'エディトリアルフォトグラフィー' },
     category: { en: 'Photography', ja: 'フォトグラフィー' },
