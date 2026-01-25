@@ -926,7 +926,7 @@ export const projects = [
     relatedServices: ['commercial-photography-japan', 'hospitality-creative-strategy-japan']
   },
   {
-    id: 6,
+    id: 5,
     slug: 'japan-electronics-cgi-visualization',
     title: { en: 'Product CGI Visualization', ja: 'プロダクトCGIビジュアライゼーション' },
     category: { en: 'CGI', ja: 'CGI' },
@@ -978,7 +978,7 @@ export const projects = [
     relatedServices: ['3d-cgi-production', '3d-anamorphic-billboards']
   },
   {
-    id: 7,
+    id: 6,
     slug: 'japan-luxury-resort-video-campaign',
     title: { en: 'Luxury Resort Rebrand', ja: 'ラグジュアリーリゾート リブランド' },
     category: { en: 'Hospitality', ja: 'ホスピタリティ' },
