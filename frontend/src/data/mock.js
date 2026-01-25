@@ -1028,6 +1028,6 @@ export const projects = [
       }
     },
     serviceSlug: 'hospitality-creative-strategy-japan',
-    relatedServices: ['hospitality-creative-strategy-japan', 'video-production-japan', 'commercial-photography-japan']
+    relatedServices: ['hospitality-creative-strategy-japan', 'video-production-japan', 'photography-cgi-japan']
   }
 ];
