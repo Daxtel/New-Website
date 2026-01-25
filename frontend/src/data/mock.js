@@ -1020,6 +1020,13 @@ export const projects = [
       ja: ['ブランドリポジショニング', '予約コンバージョン向上', '視認性改善', '長期的収益成長']
     },
     image: '/placeholder-work-7.jpg',
+    featuredImage: {
+      url: 'https://images.unsplash.com/photo-1628414233354-bec86a0e35ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=85&w=1200',
+      alt: {
+        en: 'Premium hospitality interior representing luxury hotel creative services',
+        ja: 'ラグジュアリーホテルクリエイティブサービスを表現するプレミアムホスピタリティ空間'
+      }
+    },
     serviceSlug: 'hospitality-creative-strategy-japan',
     relatedServices: ['hospitality-creative-strategy-japan', 'video-production-japan', 'commercial-photography-japan']
   }
