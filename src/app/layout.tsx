@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: pick(site.description, locale),
+  keywords: [
+    'Japan market entry',
+    'Japan localization',
+    'luxury hospitality marketing Japan',
+    'premium creative production Japan',
+    'Streetshow Productions',
+  ],
   openGraph: {
     title: site.name,
     description: pick(site.description, locale),
@@ -21,6 +28,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: 'en_JP',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: site.name,
+    description: pick(site.description, locale),
   },
   alternates: {
     canonical: '/',

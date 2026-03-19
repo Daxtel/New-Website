@@ -1,9 +1,9 @@
 # New Website
 
-Streetshow Productions' new website codebase built in Next.js.
+Streetshow Productions' new production website codebase built with Next.js.
 
-## Overview
-This repository contains the new migration-ready website foundation for Streetshow Productions, designed around:
+## Purpose
+This repository is the new website foundation for Streetshow Productions, focused on:
 
 - Japan market entry
 - localization-led brand strategy
@@ -14,14 +14,14 @@ This repository contains the new migration-ready website foundation for Streetsh
 - contact capture
 - bilingual architecture foundations (EN / JP)
 
-## Stack
+## Tech stack
 - Next.js 16
 - React 19
 - TypeScript
 - Tailwind CSS 4
 
-## Routes
-### Core pages
+## Route map
+### Main pages
 - `/`
 - `/japan-market-entry`
 - `/hospitality`
@@ -30,12 +30,16 @@ This repository contains the new migration-ready website foundation for Streetsh
 - `/about`
 - `/contact`
 
-### Dynamic routes
+### Dynamic detail routes
 - `/services/[slug]`
 - `/work/[slug]`
 
 ### API
 - `/api/contact`
+
+### SEO/support routes
+- `/robots.txt`
+- `/sitemap.xml`
 
 ## Local development
 ```bash
@@ -52,18 +56,30 @@ npm run build
 npm run start
 ```
 
-## Contact form behavior
-The current contact form posts to `/api/contact`.
-Right now, submissions are stored locally in:
+## Contact form
+The contact form currently posts to `/api/contact`.
 
-- `.submissions/contact.jsonl`
+Current behavior:
+- submissions are stored locally in `.submissions/contact.jsonl`
 
-This is a temporary local capture layer until email, CRM, or webhook delivery is connected.
+This is a temporary capture layer until production delivery is connected.
+
+## Deployment
+Recommended deployment target:
+- **Vercel**
+
+Quick start:
+1. import this GitHub repo into Vercel
+2. keep the default Next.js framework setting
+3. run the default build command: `npm run build`
+4. connect the production domain
+
+See `DEPLOYMENT.md` for the full deployment checklist.
 
 ## Current status
-This repo is in a strong handoff state and is suitable as the new website repo.
+This repository is now in a polished handoff state.
 
-What is already done:
+Already in place:
 - migrated top-level marketing pages
 - strategic positioning pages
 - service detail route layer
@@ -72,13 +88,15 @@ What is already done:
 - media-backed work surfaces
 - bilingual architecture foundation
 - local contact capture endpoint
+- robots and sitemap support
+- deployment guidance
 
-What still may be improved later:
+Still appropriate for future improvement:
 - deeper EN/JP translation completion across all nested content
 - production contact delivery integration
 - analytics
-- deployment configuration
-- final media replacement and optimization
+- image optimization and media replacement where needed
 
-## Notes
-See `READY_FOR_NEW_REPO.md` for the migration handoff summary.
+## Additional docs
+- `READY_FOR_NEW_REPO.md` — migration handoff summary
+- `DEPLOYMENT.md` — deployment and production checklist

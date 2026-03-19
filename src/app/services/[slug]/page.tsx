@@ -100,7 +100,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                 {relatedProjects.map((project) => (
                   <Link key={project.slug} href={`/work/${project.slug}`} className="overflow-hidden bg-[#302f2c] transition-colors hover:bg-lime-300/5">
                     <div className="relative aspect-[16/10] bg-lime-300/10">
-                      <Image src={project.media.image} alt={typeof project.media.alt === 'string' ? project.media.alt : pick(project.media.alt as any, locale)} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" unoptimized />
+                      <Image src={project.media.image} alt={typeof project.media.alt === 'string' ? project.media.alt : pick(project.media.alt as { en: string; ja: string }, locale)} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" unoptimized />
                     </div>
                     <div className="p-8">
                       <p className="text-xs uppercase tracking-[0.15em] text-white/45">{project.category}</p>

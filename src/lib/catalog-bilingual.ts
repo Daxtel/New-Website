@@ -1,5 +1,3 @@
-import type { Localized } from '@/lib/i18n';
-
 export const serviceCatalogBilingual = [
   {
     slug: 'japan-market-localization',

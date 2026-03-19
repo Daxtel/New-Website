@@ -46,7 +46,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           </div>
 
           <div className="relative mt-10 aspect-[16/8] overflow-hidden bg-lime-300/10">
-            <Image src={project.media.image} alt={typeof project.media.alt === 'string' ? project.media.alt : pick(project.media.alt as any, locale)} fill className="object-cover" sizes="100vw" unoptimized />
+            <Image src={project.media.image} alt={typeof project.media.alt === 'string' ? project.media.alt : pick(project.media.alt as { en: string; ja: string }, locale)} fill className="object-cover" sizes="100vw" unoptimized />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1c1b]/50 via-transparent to-transparent" />
           </div>
 
