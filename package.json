@@ -1,12 +1,13 @@
 {
-  "name": "next-frontend",
+  "name": "new-website",
   "version": "0.1.0",
   "private": true,
+  "description": "Streetshow Productions new Next.js website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "next": "16.2.0",
