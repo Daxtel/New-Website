@@ -54,7 +54,7 @@ function buildPlainText(body: ContactPayload): string {
 // Primary inbox (Resend's onboarding sender can only deliver to this verified owner address on the free tier).
 // Set CONTACT_TO_EMAIL in Vercel env to override. If you add a custom sending domain in Resend later,
 // you can set CONTACT_FROM_EMAIL to a branded from-address.
-const DEFAULT_TO = 'streetshow21@gmail.com';
+const DEFAULT_TO = 'jackson@streetshowproduction.com';
 const DEFAULT_FROM = 'Streetshow Website <onboarding@resend.dev>';
 
 export async function POST(req: Request) {
