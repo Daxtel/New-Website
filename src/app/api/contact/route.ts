@@ -39,7 +39,7 @@ function buildEmailHtml(body: ContactPayload): string {
 
 function buildPlainText(body: ContactPayload): string {
   const lines = [
-    `New Project Inquiry — streetshowproduction.com`,
+    `New Project Inquiry from streetshowproduction.com`,
     ``,
     body.name ? `Name: ${body.name}` : '',
     body.email ? `Email: ${body.email}` : '',
@@ -76,7 +76,7 @@ export async function POST(req: Request) {
           from: 'Streetshow Website <onboarding@resend.dev>',
           to: ['admin@streetshowproduction.com'],
           reply_to: body.email,
-          subject: `New Inquiry: ${body.name}${body.company ? ` — ${body.company}` : ''}`,
+          subject: `New Inquiry: ${body.name}${body.company ? ` / ${body.company}` : ''}`,
           html: buildEmailHtml(body),
           text: buildPlainText(body),
         }),

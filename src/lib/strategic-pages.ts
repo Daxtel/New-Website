@@ -79,7 +79,7 @@ export const japanMarketEntryPage = {
     cta: {
       title: 'Planning a Japan launch or repositioning effort?',
       body:
-        'If your brand is entering, adapting to, or relaunching in Japan — and execution quality matters — we should discuss fit.',
+        'If your brand is entering, adapting to, or relaunching in Japan, and execution quality matters, we should discuss fit.',
       reassurance:
         'Initial discovery calls are used to assess objectives, brand context, and the level of support required.',
     },

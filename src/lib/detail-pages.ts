@@ -4,7 +4,7 @@ export const serviceDetails = [
     title: 'Japan Market Localization',
     headline: 'Adapt Global Creative for Japan',
     intro:
-      'We do not just translate — we adapt. Streetshow helps premium brands reshape messaging, visuals, and execution for Japanese audiences while protecting core brand equity.',
+      'We do not just translate, we adapt. Streetshow helps premium brands reshape messaging, visuals, and execution for Japanese audiences while protecting core brand equity.',
     whyTitle: 'Why This Matters in Japan',
     whyBody:
       'Market entry in Japan fails when translation is mistaken for adaptation. Premium brands need positioning, messaging, and execution aligned with Japanese expectations from the start.',

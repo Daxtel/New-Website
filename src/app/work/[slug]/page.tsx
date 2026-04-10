@@ -15,11 +15,11 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const locale = await getLocale();
   const project = getCatalogProject(slug);
   if (!project) return { title: 'Case Study' };
-  const projectWithSeo = project as typeof project & { metaTitle?: string; metaDescription?: string };
-  const title = projectWithSeo.metaTitle || project.title;
-  const description = projectWithSeo.metaDescription || project.intro;
+  const title = pick(project.metaTitle, locale);
+  const description = pick(project.metaDescription, locale);
   const ogImage = project.media.image || '/og-image.jpg';
   return {
     title,
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'article',
       siteName: 'Streetshow Productions',
       url: `/work/${slug}`,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: project.media.alt }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: pick(project.media.alt, locale) }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -60,9 +60,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     .filter(Boolean);
 
   const projectUrl = `${site.url}/work/${slug}`;
+  const title = pick(project.title, locale);
   const caseStudySchema = buildCaseStudySchema({
-    title: project.title,
-    description: project.intro,
+    title,
+    description: pick(project.intro, locale),
     url: projectUrl,
     image: `${site.url}${project.media.image || '/og-image.jpg'}`,
     client: project.client,
@@ -72,7 +73,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', url: site.url },
     { name: 'Selected Work', url: `${site.url}/work` },
-    { name: project.title, url: projectUrl },
+    { name: title, url: projectUrl },
   ]);
 
   return (
@@ -85,12 +86,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </Link>
 
           <div className="max-w-5xl">
-            <p className="text-xs uppercase tracking-[0.15em] text-white/45">{project.proofLine}</p>
+            <p className="text-xs uppercase tracking-[0.15em] text-white/45">{pick(project.proofLine, locale)}</p>
             <h1 className="mt-4 text-[clamp(2.5rem,5vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
-              {project.title}
+              {title}
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#D4AF37]/80 md:text-xl">
-              {project.intro}
+              {pick(project.intro, locale)}
             </p>
           </div>
 
@@ -114,14 +115,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={project.media.image}
-                  alt={project.media.alt}
+                  alt={pick(project.media.alt, locale)}
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               );
             })()}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">{project.title}</span>
+              <span className="text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">{title}</span>
             </div>
           </div>
 
@@ -130,7 +131,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <div>
                 <h2 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.servicesProvided, locale)}</h2>
                 <div className="grid gap-4 md:grid-cols-2">
-                  {project.servicesProvided.map((item) => (
+                  {pick(project.servicesProvided, locale).map((item) => (
                     <div key={item} className="border border-[#D4AF37]/10 bg-[#141414] p-5 text-[#D4AF37]/85">
                       {item}
                     </div>
@@ -141,7 +142,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <div>
                 <h2 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.deliverables, locale)}</h2>
                 <div className="flex flex-wrap gap-3">
-                  {project.deliverables.map((item) => (
+                  {pick(project.deliverables, locale).map((item) => (
                     <span key={item} className="border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-4 py-2 text-sm text-[#D4AF37]/85">
                       {item}
                     </span>
@@ -152,7 +153,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <div>
                 <h2 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.projectFocus, locale)}</h2>
                 <div className="space-y-3">
-                  {project.projectFocus.map((item) => (
+                  {pick(project.projectFocus, locale).map((item) => (
                     <div key={item} className="flex items-start gap-3 text-white/65">
                       <span className="mt-1 text-[#D4AF37]">•</span>
                       <span>{item}</span>
@@ -165,11 +166,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <h2 className="mb-8 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.caseStudy, locale)}</h2>
                 <div className="space-y-8">
                   {[
-                    [ui.caseStudyLabels.context, project.caseStudy.context],
-                    [ui.caseStudyLabels.challenge, project.caseStudy.challenge],
-                    [ui.caseStudyLabels.strategicResponse, project.caseStudy.response],
-                    [ui.caseStudyLabels.execution, project.caseStudy.execution],
-                    [ui.caseStudyLabels.outcome, project.caseStudy.outcome],
+                    [ui.caseStudyLabels.context, pick(project.caseStudy.context, locale)],
+                    [ui.caseStudyLabels.challenge, pick(project.caseStudy.challenge, locale)],
+                    [ui.caseStudyLabels.strategicResponse, pick(project.caseStudy.response, locale)],
+                    [ui.caseStudyLabels.execution, pick(project.caseStudy.execution, locale)],
+                    [ui.caseStudyLabels.outcome, pick(project.caseStudy.outcome, locale)],
                   ].map(([label, value]) => (
                     <div key={(label as { en: string; ja: string }).en} className="grid gap-4 border-b border-[#D4AF37]/10 pb-8 md:grid-cols-[180px_1fr] md:gap-8 last:border-b-0 last:pb-0">
                       <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37] md:text-base">{pick(label as { en: string; ja: string }, locale)}</h3>
@@ -204,7 +205,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <div className="space-y-3">
                     {relatedServices.map((service) => (
                       <Link key={service!.slug} href={`/services/${service!.slug}`} className="block border border-[#D4AF37]/10 bg-[#141414] p-4 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]">
-                        <span className="text-sm text-[#D4AF37]/85">{service!.title}</span>
+                        <span className="text-sm text-[#D4AF37]/85">{pick(service!.title, locale)}</span>
                       </Link>
                     ))}
                   </div>

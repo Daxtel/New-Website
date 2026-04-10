@@ -20,8 +20,8 @@ export const aboutPageBilingual = {
   coreCapabilityValue: { en: 'Japan market entry, localization, and execution', ja: '日本市場進出・ローカライズ・実行支援' },
   bestFitLabel: { en: 'Best Fit For', ja: '最適な対象' },
   operatingEdge: {
-    en: 'Fukuoka & Tokyo, Japan. Bilingual in EN/JP. Structured for both local execution and international stakeholder alignment. Streetshow supports premium brands that need more than translation — they need local credibility, refined execution, and market-aware judgment.',
-    ja: '福岡・東京拠点。EN/JPバイリンガル体制。国内での実行と海外ステークホルダーとの連携の両方に対応。Streetshowは翻訳以上の対応を必要とするプレミアムブランド——ローカルでの信頼性、洗練された実行力、市場を見据えた判断力を求めるブランドを支援します。',
+    en: 'Fukuoka & Tokyo, Japan. Bilingual in EN/JP. Structured for both local execution and international stakeholder alignment. Streetshow supports premium brands that need more than translation, they need local credibility, refined execution, and market-aware judgment.',
+    ja: '福岡・東京拠点。EN/JPバイリンガル体制。国内での実行と海外ステークホルダーとの連携の両方に対応。Streetshowは翻訳以上の対応を必要とするプレミアムブランド、ローカルでの信頼性、洗練された実行力、市場を見据えた判断力を求めるブランドを支援します。',
   },
   credibility: {
     en: 'Streetshow Productions supports premium brands where strategic clarity, cultural nuance, and execution quality materially affect outcomes.',

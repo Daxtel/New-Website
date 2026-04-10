@@ -100,7 +100,7 @@ export const aboutPage = {
     { label: 'Model', value: 'Strategy through delivery' },
   ],
   operatingEdge:
-    'Fukuoka & Tokyo, Japan. Bilingual in EN/JP. Structured for both local execution and international stakeholder alignment. Streetshow supports premium brands that need more than translation — they need local credibility, refined execution, and market-aware judgment.',
+    'Fukuoka & Tokyo, Japan. Bilingual in EN/JP. Structured for both local execution and international stakeholder alignment. Streetshow supports premium brands that need more than translation, they need local credibility, refined execution, and market-aware judgment.',
   credibility:
     'Streetshow Productions supports premium brands where strategic clarity, cultural nuance, and execution quality materially affect outcomes.',
   bestFit: [

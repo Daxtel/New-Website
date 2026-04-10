@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { serviceCatalogBilingual } from '@/lib/catalog-bilingual';
+import { serviceCatalog } from '@/lib/catalog';
 import { pick, ui } from '@/lib/i18n';
 import { getLocale } from '@/lib/locale';
 import { aboutPageBilingual } from '@/lib/secondary-pages-bilingual';
@@ -31,7 +31,7 @@ export default async function ServicesPage() {
           </div>
 
           <div className="mt-12 space-y-px">
-            {serviceCatalogBilingual.map((service) => (
+            {serviceCatalog.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="block bg-[#141414] p-8 transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02] md:p-10 lg:p-12">
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                   <div className="flex items-center gap-5">

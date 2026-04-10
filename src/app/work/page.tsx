@@ -21,6 +21,7 @@ const CATEGORY_MAP: Record<string, 'HOSPITALITY' | 'LOCALIZATION' | 'JAPAN MARKE
   '3D Anamorphic': 'PRODUCTION / CGI / 3D',
   'Photography': 'PRODUCTION / CGI / 3D',
   'CGI': 'PRODUCTION / CGI / 3D',
+  'E-Commerce': 'GROWTH / E-COMMERCE',
   'Live Commerce': 'GROWTH / E-COMMERCE',
 };
 
@@ -31,14 +32,14 @@ export default async function WorkPage() {
     const projectVideo = (item.media as { video?: string }).video;
     return {
       slug: item.slug,
-      title: item.title,
-      proofLine: item.proofLine,
-      description: item.description,
+      title: pick(item.title, locale),
+      proofLine: pick(item.proofLine, locale),
+      description: pick(item.description, locale),
       category: CATEGORY_MAP[item.category] || ('PRODUCTION / CGI / 3D' as const),
       caseStudyLabel: pick(ui.cta.viewCaseStudy, locale),
       videoSrc: projectVideo,
       imageSrc: projectVideo ? undefined : item.media.image,
-      imageAlt: item.media.alt,
+      imageAlt: pick(item.media.alt, locale),
     };
   });
 

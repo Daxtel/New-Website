@@ -130,7 +130,7 @@ function WidescreenCard({ card }: { card: CampaignCard }) {
 function PhoneCard({ card }: { card: CampaignCard }) {
   return (
     <div className="flex flex-col items-center">
-      {/* iPhone frame — portrait */}
+      {/* iPhone frame - portrait */}
       <div
         className="group relative flex w-[220px] md:w-[280px] flex-col items-center rounded-[36px] bg-[#2A2A2A] p-[10px] md:p-[12px]"
         style={{ boxShadow: '0 24px 60px rgba(0,0,0,0.5)' }}
@@ -162,12 +162,12 @@ function PhoneCard({ card }: { card: CampaignCard }) {
 function PhoneLandscapeCard({ card }: { card: CampaignCard }) {
   return (
     <div className="flex flex-col items-center">
-      {/* iPhone frame — landscape (rotated 90°) */}
+      {/* iPhone frame - landscape (rotated 90°) */}
       <div
         className="group relative flex h-[220px] md:h-[280px] w-[440px] md:w-[516px] max-w-full flex-row items-center rounded-[36px] bg-[#2A2A2A] p-[10px] md:p-[12px]"
         style={{ boxShadow: '0 24px 60px rgba(0,0,0,0.5)' }}
       >
-        {/* Dynamic Island — on the left side when phone is landscape */}
+        {/* Dynamic Island - on the left side when phone is landscape */}
         <div className="absolute left-[14px] md:left-[16px] top-1/2 z-20 h-[60px] md:h-[72px] w-[14px] md:w-[16px] -translate-y-1/2 rounded-full bg-[#0A0A0A]" />
         {/* Screen with video + overlay content */}
         <div className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[12px] bg-[#111111]">

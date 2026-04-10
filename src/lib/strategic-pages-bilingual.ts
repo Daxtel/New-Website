@@ -101,7 +101,7 @@ export const japanMarketEntryPageBilingual = {
     cta: {
       title: { en: 'Planning a Japan launch or repositioning effort?', ja: '日本でのローンチまたは再構築を計画中ですか？' },
       body: {
-        en: 'If your brand is entering, adapting to, or relaunching in Japan — and execution quality matters — we should discuss fit.',
+        en: 'If your brand is entering, adapting to, or relaunching in Japan, and execution quality matters, we should discuss fit.',
         ja: 'ブランドが日本に進出、適応、またはリローンチを検討しており、実行品質が重要であれば、適合性についてご相談ください。',
       },
       reassurance: {

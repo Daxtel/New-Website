@@ -10,7 +10,7 @@ export const navLinks = [
 export const whoWeWorkWith = {
   title: { en: 'Who We Work With', ja: '対象クライアント' },
   intro: {
-    en: 'Streetshow Productions works with premium brands and operators entering, repositioning, or expanding in Japan — especially where brand perception, cultural nuance, and execution quality materially affect results.',
+    en: 'Streetshow Productions works with premium brands and operators entering, repositioning, or expanding in Japan, especially where brand perception, cultural nuance, and execution quality materially affect results.',
     ja: 'Streetshow Productionsは、日本市場への進出・再構築・拡大を図るプレミアムブランドや事業者を支援します。特にブランド認知、文化的ニュアンス、実行品質が成果に直結する案件を得意としています。',
   },
   items: [
@@ -86,7 +86,7 @@ export const services = {
     {
       title: { en: 'Video Production in Japan', ja: '日本での映像制作' },
       description: {
-        en: 'High-level production for campaigns, launches, and brand storytelling — managed locally in Japan with the quality control international teams expect.',
+        en: 'High-level production for campaigns, launches, and brand storytelling, managed locally in Japan with the quality control international teams expect.',
         ja: 'キャンペーン、ローンチ、ブランドストーリーテリング向けの日本国内でのハイレベル制作。国際チームが期待する品質管理体制を備えています。',
       },
     },
