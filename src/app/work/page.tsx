@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { projectCatalog } from '@/lib/catalog';
 import { pick, ui } from '@/lib/i18n';
-import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
 import { WorkFilter } from '@/components/work-filter';
 import Link from 'next/link';

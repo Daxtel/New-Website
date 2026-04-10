@@ -34,8 +34,11 @@ export function SiteFooter({ locale = 'en' }: { locale?: Locale }) {
             <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70">{pick(ui.sections.contact, locale)}</p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-white/65 md:text-base">
               <span>{pick(site.location, locale)}</span>
-              <a href="mailto:admin@streetshowproduction.com" className="transition-colors hover:text-[#D4AF37]">
+              <a href="mailto:admin@streetshowproduction.com" className="break-all transition-colors hover:text-[#D4AF37]">
                 admin@streetshowproduction.com
+              </a>
+              <a href="tel:+817048011725" className="transition-colors hover:text-[#D4AF37]">
+                +81 70-4801-1725
               </a>
             </div>
           </div>
