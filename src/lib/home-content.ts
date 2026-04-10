@@ -40,6 +40,16 @@ export const featuredWork = {
       },
     },
     {
+      slug: 'new-balance-japan-ohtani-activation',
+      videoSrc: '/videos/new-balance-ohtani.mp4',
+      title: { en: 'New Balance Japan × Shohei Ohtani Activation', ja: 'ニューバランス ジャパン × 大谷翔平 アクティベーション' },
+      proofLine: { en: 'Sports Marketing · Athlete Activation · 2024', ja: 'スポーツマーケティング・アスリートアクティベーション・2024' },
+      description: {
+        en: 'A high-visibility Shohei Ohtani activation for New Balance Japan, built to convert global athlete equity into Japan-market brand momentum.',
+        ja: 'グローバルなアスリートエクイティを日本市場でのブランドモメンタムへと転換する、ニューバランス ジャパン向け大谷翔平アクティベーション。',
+      },
+    },
+    {
       slug: 'kuoe-kyoto-brand-campaign',
       videoSrc: '/videos/kuoe-kyoto.mp4',
       title: { en: 'Luxury Brand Video Campaign in Tokyo', ja: '東京のラグジュアリーブランド映像キャンペーン' },
