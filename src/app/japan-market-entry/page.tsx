@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Japan Market Entry for Premium Brands',
   description:
     'Strategic Japan market entry, localization, and premium execution support for hospitality, real estate, and international brands.',
+  alternates: { canonical: '/japan-market-entry' },
 };
 
 export default async function JapanMarketEntry() {

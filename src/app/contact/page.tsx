@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Discuss Your Project',
   description:
     'Contact Streetshow Productions about Japan market entry, hospitality repositioning, premium campaign execution, and localization-led brand work.',
+  alternates: { canonical: '/contact' },
 };
 
 export default async function ContactPage() {

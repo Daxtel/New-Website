@@ -2,20 +2,37 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { serviceCatalog } from '@/lib/catalog';
 import { pick, ui } from '@/lib/i18n';
+import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
 import { aboutPageBilingual } from '@/lib/secondary-pages-bilingual';
+import { JsonLd, buildItemListSchema, buildBreadcrumbSchema } from '@/components/json-ld';
 
 export const metadata: Metadata = {
   title: 'Services',
   description:
     'Services for Japan market entry, localization, hospitality creative strategy, video production, photography, CGI, and 3D billboard execution.',
+  alternates: { canonical: '/services' },
 };
 
 export default async function ServicesPage() {
   const locale = await getLocale();
 
+  const servicesItemList = buildItemListSchema({
+    name: 'Services — Streetshow Productions',
+    items: serviceCatalog.map((s) => ({
+      name: pick(s.title, locale),
+      url: `${site.url}/services/${s.slug}`,
+      description: pick(s.description, locale),
+    })),
+  });
+  const servicesBreadcrumb = buildBreadcrumbSchema([
+    { name: 'Home', url: site.url },
+    { name: 'Services', url: `${site.url}/services` },
+  ]);
+
   return (
     <main className="bg-[#0A0A0A] text-white">
+      <JsonLd data={[servicesItemList, servicesBreadcrumb]} />
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">

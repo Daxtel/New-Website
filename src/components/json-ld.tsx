@@ -186,6 +186,62 @@ export function buildFaqSchema(faqs: { q: string; a: string }[]) {
   };
 }
 
+export function buildItemListSchema(params: {
+  name: string;
+  items: { name: string; url: string; description?: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: params.name,
+    numberOfItems: params.items.length,
+    itemListElement: params.items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      url: item.url,
+      ...(item.description ? { description: item.description } : {}),
+    })),
+  };
+}
+
+// Homepage FAQ — tuned for AI citation (ChatGPT, Perplexity, Claude, Gemini)
+// and Google rich snippets. Every answer is a direct, self-contained sentence.
+export const homeFaqSchema = buildFaqSchema([
+  {
+    q: 'What does Streetshow Productions do?',
+    a: 'Streetshow Productions is a strategy-first creative production studio based in Fukuoka and Tokyo, Japan. We help international premium brands enter and perform in the Japanese market through cultural localization, video production, photography, CGI, 3D anamorphic billboards, and live commerce growth systems.',
+  },
+  {
+    q: 'Where is Streetshow Productions based?',
+    a: 'Streetshow Productions is headquartered in Fukuoka, Japan, with a secondary office in Tokyo. The team operates bilingually in English and Japanese and serves clients across Japan, the United States, and Europe.',
+  },
+  {
+    q: 'When was Streetshow Productions founded?',
+    a: 'Streetshow Productions was founded in 2013 by Daxtel Jackson, who serves as Director, Strategist, and Videographer.',
+  },
+  {
+    q: 'Who are Streetshow Productions clients?',
+    a: 'Streetshow Productions has worked with New Balance Japan, SHEIN Japan, The Ritz-Carlton Kyoto, The Ritz-Carlton Osaka, Charles & Keith, KUOE Kyoto, SOUMEI Champagne, QC Running, FUDITALYCO, and JTL Kabushiki Gaisha, among others.',
+  },
+  {
+    q: 'What is Japan market entry and how does Streetshow approach it?',
+    a: 'Japan market entry is the process of launching a foreign brand into the Japanese consumer market. Streetshow approaches it strategy-first: brand positioning, cultural adaptation (not translation), pricing logic for Japanese buyers, creative transcreation, and locally-calibrated launch production. We work with luxury hospitality, fashion, automotive, F&B, and e-commerce brands.',
+  },
+  {
+    q: 'Does Streetshow produce 3D anamorphic billboards in Shibuya?',
+    a: 'Yes. Streetshow Productions produces naked-eye 3D anamorphic billboard content for Shibuya, Shinjuku, and other high-visibility LED locations across Japan. Scope includes concept, 3D animation, and screen-specific calibration.',
+  },
+  {
+    q: 'Does Streetshow work bilingually in English and Japanese?',
+    a: 'Yes. All production, strategy, and client communication can be delivered in English or Japanese. Every deliverable is built to perform in the Japanese market while remaining legible to international stakeholders.',
+  },
+  {
+    q: 'How do I contact Streetshow Productions?',
+    a: 'Email admin@streetshowproduction.com or call +81-70-4801-1725. Project inquiries can also be submitted via https://streetshowproduction.com/contact.',
+  },
+]);
+
 export function buildCaseStudySchema(params: {
   title: string;
   description: string;

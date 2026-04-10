@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Creative Strategy & Execution for Luxury Hospitality in Japan',
   description:
     'Strategy-led creative, localization, and premium execution for luxury hotels, resorts, and destination properties in Japan.',
+  alternates: { canonical: '/hospitality' },
 };
 
 export default async function HospitalityPage() {

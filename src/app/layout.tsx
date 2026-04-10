@@ -12,8 +12,6 @@ import {
   websiteSchema,
 } from '@/components/json-ld';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {

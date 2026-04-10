@@ -1,14 +1,29 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { featuredWork, process, services, whoWeWorkWith } from '@/lib/home-content';
 import { pick, ui } from '@/lib/i18n';
 import { homePage, site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
 import { ClientStrip } from '@/components/client-strip';
+import { JsonLd, homeFaqSchema, buildBreadcrumbSchema } from '@/components/json-ld';
+
+export const metadata: Metadata = {
+  title: 'Japan Market Entry & Premium Creative Production | Streetshow Productions',
+  description:
+    'Strategy-first creative production studio in Fukuoka and Tokyo. Japan market entry, localization, luxury hospitality creative, video, CGI, and 3D anamorphic billboards for premium brands.',
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default async function Home() {
   const locale = await getLocale();
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', url: site.url },
+  ]);
   return (
     <main className="bg-[#0A0A0A] text-white">
+      <JsonLd data={[homeFaqSchema, breadcrumbSchema]} />
       <section className="relative overflow-hidden border-b border-[#D4AF37]/10">
         <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(212,175,55,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.4)_1px,transparent_1px)] [background-size:80px_80px]" />
         <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">

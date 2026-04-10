@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
 import { projectCatalog } from '@/lib/catalog';
 import { pick, ui } from '@/lib/i18n';
+import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
 import { WorkFilter } from '@/components/work-filter';
+import { JsonLd, buildItemListSchema, buildBreadcrumbSchema } from '@/components/json-ld';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Selected Work',
   description:
     'Selected hospitality, Japan-market entry, localization, and premium creative case studies by Streetshow Productions.',
+  alternates: { canonical: '/work' },
 };
 
 // Map catalog categories to filter categories
@@ -42,8 +45,22 @@ export default async function WorkPage() {
     };
   });
 
+  const workItemList = buildItemListSchema({
+    name: 'Selected Work — Streetshow Productions',
+    items: projectCatalog.map((p) => ({
+      name: pick(p.title, locale),
+      url: `${site.url}/work/${p.slug}`,
+      description: pick(p.proofLine, locale),
+    })),
+  });
+  const workBreadcrumb = buildBreadcrumbSchema([
+    { name: 'Home', url: site.url },
+    { name: 'Work', url: `${site.url}/work` },
+  ]);
+
   return (
     <main className="bg-[#0A0A0A] text-white">
+      <JsonLd data={[workItemList, workBreadcrumb]} />
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-4xl">

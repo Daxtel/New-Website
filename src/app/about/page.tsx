@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'About Streetshow Productions',
   description:
     'About Streetshow Productions, a premium Japan market entry, localization, and execution partner for high-end brands.',
+  alternates: { canonical: '/about' },
 };
 
 export default async function AboutPage() {
