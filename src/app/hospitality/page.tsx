@@ -16,7 +16,7 @@ export default async function HospitalityPage() {
 
   return (
     <main className="bg-[#0A0A0A] text-white">
-      <section className="border-b border-[#D4AF37]/10 px-6 py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
+      <section className="border-b border-[#D4AF37]/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-5xl">
           <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
             {pick(shell.title, locale)}

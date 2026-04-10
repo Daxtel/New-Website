@@ -11,31 +11,31 @@ export default async function Home() {
     <main className="bg-[#0A0A0A] text-white">
       <section className="relative overflow-hidden border-b border-[#D4AF37]/10">
         <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(212,175,55,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.4)_1px,transparent_1px)] [background-size:80px_80px]" />
-        <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">
+        <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">
           <div className="max-w-5xl">
-            <p className="text-sm uppercase tracking-[0.2em] text-[#D4AF37]/70">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70 sm:text-sm">
               {pick(homePage.eyebrow, locale)}
             </p>
-            <h1 className="mt-6 text-[clamp(2.75rem,7vw,6rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37]">
+            <h1 className="mt-5 text-[clamp(2.25rem,7vw,6rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37] sm:mt-6">
               {pick(homePage.headline, locale)}
             </h1>
-            <p className="mt-8 max-w-3xl text-base leading-relaxed text-[#D4AF37]/80 md:text-lg lg:text-xl">
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#D4AF37]/80 sm:mt-8 md:text-lg lg:text-xl">
               {pick(homePage.subheadline, locale)}
             </p>
-            <p className="mt-5 max-w-4xl text-sm leading-relaxed text-white/55 md:text-base">
+            <p className="mt-4 max-w-4xl text-sm leading-relaxed text-white/55 sm:mt-5 md:text-base">
               {pick(homePage.trustLine, locale)}
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]"
               >
                 {pick(site.primaryCta, locale)}
               </Link>
               <Link
                 href="/work"
-                className="inline-flex items-center justify-center rounded-full border-2 border-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full border-2 border-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]"
               >
                 {pick(ui.cta.viewSelectedWork, locale)}
               </Link>
@@ -46,7 +46,7 @@ export default async function Home() {
 
       <ClientStrip locale={locale} />
 
-      <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
+      <section className="px-5 py-14 sm:px-6 sm:py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37]">
@@ -64,11 +64,11 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
-        <div className="mx-auto max-w-6xl">
+      <section className="px-5 py-16 sm:px-6 md:px-10 md:py-24 lg:px-16 lg:py-28">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
-              <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
+              <h2 className="text-[clamp(2rem,6vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
                 {pick(featuredWork.title, locale)}
               </h2>
               <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">{pick(featuredWork.subtitle, locale)}</p>
@@ -78,12 +78,12 @@ export default async function Home() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {featuredWork.items.map((item) => (
               <Link
                 key={pick(item.title, 'en')}
                 href={`/work/${item.slug}`}
-                className="group block overflow-hidden bg-[#141414] transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02]"
+                className="group flex h-full flex-col overflow-hidden bg-[#141414] transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
                   <video
@@ -97,11 +97,11 @@ export default async function Home() {
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 </div>
-                <div className="p-6">
-                  <p className="text-xs uppercase tracking-[0.15em] text-white/45">{pick(item.proofLine, locale)}</p>
-                  <h3 className="mt-3 text-xl font-semibold text-[#D4AF37]">{pick(item.title, locale)}</h3>
+                <div className="flex flex-1 flex-col p-5 md:p-6">
+                  <p className="text-[11px] uppercase tracking-[0.15em] text-white/45 md:text-xs">{pick(item.proofLine, locale)}</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-tight text-[#D4AF37] md:text-xl">{pick(item.title, locale)}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/65">{pick(item.description, locale)}</p>
-                  <div className="mt-5 text-xs font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75 transition-colors group-hover:text-[#D4AF37]">{pick(ui.cta.viewCaseStudy, locale)} →</div>
+                  <div className="mt-auto pt-5 text-[11px] font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75 transition-colors group-hover:text-[#D4AF37] md:text-xs">{pick(ui.cta.viewCaseStudy, locale)} →</div>
                 </div>
               </Link>
             ))}
@@ -109,7 +109,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-[#141414] px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
+      <section className="bg-[#141414] px-5 py-14 sm:px-6 sm:py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
@@ -128,7 +128,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
+      <section className="px-5 py-14 sm:px-6 sm:py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
@@ -148,7 +148,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-6 py-20 md:px-10 md:py-24 lg:px-16 lg:py-28">
+      <section className="relative overflow-hidden px-5 py-16 sm:px-6 sm:py-20 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="absolute left-0 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D4AF37]/5 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-80 w-80 translate-x-1/2 translate-y-1/2 rounded-full bg-[#D4AF37]/5 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
@@ -170,16 +170,16 @@ export default async function Home() {
               ja: '初回の打ち合わせでは、目標、市場背景、スコープを確認します。真剣なご相談には速やかに対応します。',
             }, locale)}
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]"
             >
               {pick(site.primaryCta, locale)}
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-[#D4AF37]/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D4AF37]/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]"
             >
               {pick(site.secondaryCta, locale)}
             </Link>

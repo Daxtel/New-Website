@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className="bg-[#0A0A0A] text-white">
       <JsonLd data={[articleSchema, breadcrumbSchema]} />
-      <article className="px-6 py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
+      <article className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-4xl">
           <Link href="/blog" className="mb-10 inline-flex items-center text-sm text-white/55 transition-colors hover:text-[#D4AF37]">
             {locale === 'ja' ? '← ブログに戻る' : '← Back to Blog'}

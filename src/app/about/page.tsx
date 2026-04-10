@@ -15,7 +15,7 @@ export default async function AboutPage() {
 
   return (
     <main className="bg-[#0A0A0A] text-white">
-      <section className="px-6 py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
+      <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
             <div className="max-w-4xl">

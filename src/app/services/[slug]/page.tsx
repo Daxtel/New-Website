@@ -77,7 +77,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   return (
     <main className="bg-[#0A0A0A] text-white">
       <JsonLd data={schemas} />
-      <section className="px-6 py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
+      <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <Link href="/services" className="mb-10 inline-flex items-center text-sm text-white/55 transition-colors hover:text-[#D4AF37]">
             {pick(ui.sections.allServices, locale)}
