@@ -51,52 +51,84 @@ function buildPlainText(body: ContactPayload): string {
   return lines.filter(Boolean).join('\n');
 }
 
+// Primary inbox (Resend's onboarding sender can only deliver to this verified owner address on the free tier).
+// Set CONTACT_TO_EMAIL in Vercel env to override. If you add a custom sending domain in Resend later,
+// you can set CONTACT_FROM_EMAIL to a branded from-address.
+const DEFAULT_TO = 'streetshow21@gmail.com';
+const DEFAULT_FROM = 'Streetshow Website <onboarding@resend.dev>';
+
 export async function POST(req: Request) {
+  let body: ContactPayload;
   try {
-    const body = (await req.json()) as ContactPayload;
-
-    if (!body.name || !body.email || !body.message) {
-      return NextResponse.json(
-        { error: 'name, email, and message are required' },
-        { status: 400 },
-      );
-    }
-
-    const resendApiKey = process.env.RESEND_API_KEY;
-
-    if (resendApiKey) {
-      // Send via Resend API
-      const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${resendApiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: 'Streetshow Website <onboarding@resend.dev>',
-          to: ['admin@streetshowproduction.com'],
-          reply_to: body.email,
-          subject: `New Inquiry: ${body.name}${body.company ? ` / ${body.company}` : ''}`,
-          html: buildEmailHtml(body),
-          text: buildPlainText(body),
-        }),
-      });
-
-      if (!res.ok) {
-        const err = await res.text();
-        console.error('Resend error:', err);
-        return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
-      }
-    } else {
-      // Fallback: log to console (visible in Vercel function logs)
-      console.log('=== NEW CONTACT FORM SUBMISSION ===');
-      console.log(JSON.stringify({ receivedAt: new Date().toISOString(), ...body }, null, 2));
-      console.log('=== END SUBMISSION ===');
-      console.log('Set RESEND_API_KEY env var to enable email delivery.');
-    }
-
-    return NextResponse.json({ ok: true });
+    body = (await req.json()) as ContactPayload;
   } catch {
     return NextResponse.json({ error: 'invalid request' }, { status: 400 });
   }
+
+  if (!body.name || !body.email || !body.message) {
+    return NextResponse.json(
+      { error: 'Name, email, and message are required.' },
+      { status: 400 },
+    );
+  }
+
+  // Always log to Vercel function logs so submissions are never fully lost,
+  // even if email delivery fails.
+  console.log('[contact] submission', JSON.stringify({ receivedAt: new Date().toISOString(), ...body }));
+
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const toEmail = process.env.CONTACT_TO_EMAIL || DEFAULT_TO;
+  const fromEmail = process.env.CONTACT_FROM_EMAIL || DEFAULT_FROM;
+
+  if (!resendApiKey) {
+    // No API key set — the submission is in the logs but no email was sent.
+    // Return success so the user still sees confirmation, but tell them how to follow up directly.
+    console.warn('[contact] RESEND_API_KEY not set — submission logged but no email delivered.');
+    return NextResponse.json({
+      ok: true,
+      delivered: false,
+      note: 'Submission received. Email delivery not configured.',
+    });
+  }
+
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [toEmail],
+        reply_to: body.email,
+        subject: `New Inquiry: ${body.name}${body.company ? ` / ${body.company}` : ''}`,
+        html: buildEmailHtml(body),
+        text: buildPlainText(body),
+      }),
+    });
+
+    if (!res.ok) {
+      const err = await res.text();
+      console.error('[contact] Resend error', res.status, err);
+      return NextResponse.json(
+        {
+          error:
+            'We could not deliver your message automatically. Please email admin@streetshowproduction.com directly — we will respond promptly.',
+        },
+        { status: 502 },
+      );
+    }
+  } catch (err) {
+    console.error('[contact] Resend fetch failed', err);
+    return NextResponse.json(
+      {
+        error:
+          'We could not deliver your message automatically. Please email admin@streetshowproduction.com directly — we will respond promptly.',
+      },
+      { status: 502 },
+    );
+  }
+
+  return NextResponse.json({ ok: true, delivered: true });
 }

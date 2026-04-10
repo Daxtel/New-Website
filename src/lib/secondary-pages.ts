@@ -122,6 +122,8 @@ export const contactPage = {
     'Initial calls are used to assess fit, market context, and the level of support required.',
   contact: {
     email: 'admin@streetshowproduction.com',
+    phone: '+81 70-4801-1725',
+    phoneHref: '+817048011725',
     location: 'Fukuoka & Tokyo, Japan',
   },
   fields: [

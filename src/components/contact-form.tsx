@@ -84,15 +84,35 @@ export function ContactForm({ locale = 'en' }: Props) {
         />
       </div>
 
-      {message ? <p className={`text-sm ${status === 'success' ? 'text-[#D4AF37]' : 'text-red-300'}`}>{message}</p> : null}
+      {message ? (
+        <div className={`text-sm ${status === 'success' ? 'text-[#D4AF37]' : 'text-red-300'}`}>
+          <p>{message}</p>
+          {status === 'error' ? (
+            <p className="mt-2 text-white/65">
+              {locale === 'en' ? 'You can also email us directly at ' : '直接メールでもご連絡いただけます：'}
+              <a href={`mailto:admin@streetshowproduction.com?subject=${encodeURIComponent('Project Inquiry')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\n${formData.message}`)}`} className="text-[#D4AF37] underline">
+                admin@streetshowproduction.com
+              </a>
+            </p>
+          ) : null}
+        </div>
+      ) : null}
 
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] disabled:opacity-60"
-      >
-        {status === 'loading' ? (locale === 'en' ? 'Sending...' : '送信中...') : pick({ en: 'Send Inquiry', ja: '問い合わせを送る' }, locale)}
-      </button>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] disabled:opacity-60"
+        >
+          {status === 'loading' ? (locale === 'en' ? 'Sending...' : '送信中...') : pick({ en: 'Send Inquiry', ja: '問い合わせを送る' }, locale)}
+        </button>
+        <a
+          href="mailto:admin@streetshowproduction.com?subject=Project%20Inquiry"
+          className="text-sm text-white/55 underline-offset-4 hover:text-[#D4AF37] hover:underline"
+        >
+          {locale === 'en' ? 'Or email us directly' : 'または直接メールで'}
+        </a>
+      </div>
     </form>
   );
 }

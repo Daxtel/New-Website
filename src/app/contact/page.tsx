@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { pick } from '@/lib/i18n';
 import { contactPage } from '@/lib/secondary-pages';
@@ -45,8 +44,16 @@ export default async function ContactPage() {
                 <div className="mt-8 space-y-6">
                   <div>
                     <p className="text-sm uppercase tracking-[0.15em] text-white/45">{pick(contactPageBilingual.emailLabel, locale)}</p>
-                    <a href={`mailto:${contactPage.contact.email}`} className="mt-2 block text-base font-medium text-[#D4AF37] md:text-lg">
+                    <a href={`mailto:${contactPage.contact.email}`} className="mt-2 block break-all text-base font-medium text-[#D4AF37] md:text-lg">
                       {contactPage.contact.email}
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.15em] text-white/45">
+                      {pick({ en: 'Phone', ja: '電話' }, locale)}
+                    </p>
+                    <a href={`tel:${contactPage.contact.phoneHref}`} className="mt-2 block text-base font-medium text-[#D4AF37] md:text-lg">
+                      {contactPage.contact.phone}
                     </a>
                   </div>
                   <div>
@@ -59,9 +66,12 @@ export default async function ContactPage() {
                   <p className="mb-4 text-base leading-relaxed text-white/65">
                     {pick(contactPageBilingual.directLabel, locale)}
                   </p>
-                  <Link href="/contact" className="inline-flex items-center justify-center rounded-full text-sm font-medium text-[#D4AF37] transition-opacity hover:opacity-80">
-                    {pick({ en: "LET'S TALK", ja: '相談する' }, locale)}
-                  </Link>
+                  <a
+                    href={`tel:${contactPage.contact.phoneHref}`}
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#D4AF37] px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] transition-opacity hover:opacity-90"
+                  >
+                    {pick({ en: `Call ${contactPage.contact.phone}`, ja: `電話する ${contactPage.contact.phone}` }, locale)}
+                  </a>
                 </div>
               </div>
             </div>
