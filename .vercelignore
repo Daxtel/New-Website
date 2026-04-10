@@ -1,0 +1,15 @@
+# Source media and working files — not part of the deployed site
+Website  Contents  /
+.claude/
+.DS_Store
+*.tif
+*.tiff
+*.psd
+*.ai
+
+# Local docs
+MIGRATION.md
+PREVIEW_DEPLOYMENT_SETUP.md
+READY_FOR_NEW_REPO.md
+DEPLOYMENT.md
+CLAUDE.md

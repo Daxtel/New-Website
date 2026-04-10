@@ -3,7 +3,7 @@ export const japanMarketEntryPage = {
   subtitle:
     'We help luxury hospitality, premium real estate, and international brands adapt, localize, and launch in Japan with strategic precision and culturally aligned execution.',
   support: 'For brands that cannot afford to get Japan wrong.',
-  primaryCta: 'Book a Strategic Discovery Call',
+  primaryCta: "LET'S TALK",
   secondaryCta: 'View Selected Work',
   sections: {
     whyJapan: {
@@ -92,7 +92,7 @@ export const hospitalityPage = {
     'Streetshow Productions supports luxury hotels, resorts, and destination properties with strategy-led creative designed to strengthen visibility, booking intent, and premium brand perception.',
   support:
     'For hospitality brands where presentation, local relevance, and guest trust materially affect performance.',
-  primaryCta: 'Book a Strategic Call',
+  primaryCta: "LET'S TALK",
   secondaryCta: 'View Selected Work',
   sections: {
     why: {

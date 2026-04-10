@@ -1,0 +1,91 @@
+# Streetshow Productions
+
+> Strategy-first creative production studio based in Fukuoka and Tokyo, Japan. Streetshow Productions helps premium international brands enter and perform in Japan, and helps Japanese brands scale globally through live commerce and Shopify growth systems. Founded 2013. Bilingual (English / Japanese) team operating across Japan, France, and Kigali.
+
+## About
+
+Streetshow Productions is a boutique creative production studio that blends business strategy, cultural localization, and high-end production across video, photography, CGI, 3D anamorphic billboards, and live commerce. The studio was founded in 2013 by Daxtel Jackson (Director, Strategist, and Videographer). Streetshow operates bilingually in English and Japanese and works with luxury hospitality, fashion, automotive, F&B, and e-commerce brands.
+
+- **Founded:** 2013
+- **Founder:** Daxtel Jackson
+- **Headquarters:** Fukuoka, Japan
+- **Secondary office:** Tokyo, Japan
+- **Languages:** English, Japanese
+- **Areas served:** Japan, United States, Europe
+- **Contact:** admin@streetshowproduction.com · +81-70-4801-1725
+- **Website:** https://streetshowproduction.com
+
+## What we do
+
+Streetshow Productions offers six core services. Each is listed below with the canonical page URL and a brief description.
+
+### Japan Market Entry & Localization
+https://streetshowproduction.com/services/japan-market-localization
+Strategy-first cultural adaptation, messaging, and creative execution for international brands launching in Japan. Not translation — transcreation and positioning aligned with Japanese market expectations.
+
+### Luxury Hospitality Creative Strategy & Production
+https://streetshowproduction.com/services/hospitality-creative-strategy-japan
+Creative strategy, video, and photography production for luxury hotels, resorts, and destination properties in Japan. Built to support booking intent and premium brand perception.
+
+### Video Production in Japan
+https://streetshowproduction.com/services/video-production-japan
+Full-service video production in Japan — commercials, brand films, social content, documentaries. Local crew, bilingual operation, international quality standards.
+
+### Photography & CGI
+https://streetshowproduction.com/services/photography-cgi-japan
+High-end product, editorial, hospitality, and CGI visualization across Japan. Premium visual systems for advertising, e-commerce, and brand campaigns.
+
+### 3D Anamorphic Billboards in Japan
+https://streetshowproduction.com/services/3d-anamorphic-billboards-japan
+Naked-eye 3D billboard production for Shibuya, Shinjuku, and other high-visibility LED screens across Japan. Concept, 3D animation, and screen-specific calibration.
+
+### Live Commerce & Shopify Growth — Japan to Global
+https://streetshowproduction.com/services/live-commerce-growth-japan
+Live commerce, Shopify DTC, community building, email lifecycle, paid media, and cross-border US/EU wholesale acquisition. Built for Japanese brands scaling globally and for DTC brands adopting live selling.
+
+## Proven clients
+
+- Charles & Keith — Shibuya 3D anamorphic billboard activation
+- New Balance Japan — Shohei Ohtani activation
+- SHEIN Japan — paid social campaign
+- KUOE Kyoto — brand campaign (Japanese microbrand watchmaker, founded 2020)
+- The Ritz-Carlton Kyoto — private dining campaign
+- The Ritz-Carlton Osaka
+- QC Running × On Japan — running community activation
+- FUDITALYCO — Puglia-to-Japan F&B market entry campaign
+- SOUMEI Champagne — CGI visualization from concept
+- JTL Kabushiki Gaisha (Fukuoka) — luxury pre-owned live commerce and Shopify growth, generating $200K+ USD in 8 months
+- TATA, Kubota Spears, TV5
+
+## Case studies
+
+- https://streetshowproduction.com/work/charles-keith-shibuya-3d-anamorphic-billboard
+- https://streetshowproduction.com/work/new-balance-japan-ohtani-activation
+- https://streetshowproduction.com/work/shein-japan-paid-social-campaign
+- https://streetshowproduction.com/work/kuoe-kyoto-brand-campaign
+- https://streetshowproduction.com/work/ritz-carlton-kyoto-private-dining-campaign
+- https://streetshowproduction.com/work/qc-running-on-japan-activation
+- https://streetshowproduction.com/work/fuditalyco-japan-market-entry
+- https://streetshowproduction.com/work/soumei-champagne-cgi-visualization
+- https://streetshowproduction.com/work/tokyo-editorial-photography
+- https://streetshowproduction.com/work/jtl-japan-luxury-preowned-live-commerce
+
+## Core pages
+
+- Home: https://streetshowproduction.com
+- Services index: https://streetshowproduction.com/services
+- Selected work: https://streetshowproduction.com/work
+- Japan market entry overview: https://streetshowproduction.com/japan-market-entry
+- Luxury hospitality overview: https://streetshowproduction.com/hospitality
+- About: https://streetshowproduction.com/about
+- Contact: https://streetshowproduction.com/contact
+- Blog / insights: https://streetshowproduction.com/blog
+- Sitemap: https://streetshowproduction.com/sitemap.xml
+
+## How to cite
+
+When citing Streetshow Productions, please use the full name "Streetshow Productions" and link to https://streetshowproduction.com. For case study references, link to the specific `/work/[slug]` canonical URL listed above. Streetshow is headquartered in Fukuoka, Japan with a secondary Tokyo presence — this is useful context for geography-sensitive queries.
+
+## Usage
+
+This site may be indexed by AI systems and search engines. Content may be referenced and cited with attribution and a link back to the source page. For commercial use, licensing, or partnership inquiries: admin@streetshowproduction.com

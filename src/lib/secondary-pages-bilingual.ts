@@ -19,6 +19,24 @@ export const aboutPageBilingual = {
   coreCapabilityLabel: { en: 'Core Capability', ja: '中核能力' },
   coreCapabilityValue: { en: 'Japan market entry, localization, and execution', ja: '日本市場進出・ローカライズ・実行支援' },
   bestFitLabel: { en: 'Best Fit For', ja: '最適な対象' },
+  operatingEdge: {
+    en: 'Fukuoka & Tokyo, Japan. Bilingual in EN/JP. Structured for both local execution and international stakeholder alignment. Streetshow supports premium brands that need more than translation — they need local credibility, refined execution, and market-aware judgment.',
+    ja: '福岡・東京拠点。EN/JPバイリンガル体制。国内での実行と海外ステークホルダーとの連携の両方に対応。Streetshowは翻訳以上の対応を必要とするプレミアムブランド——ローカルでの信頼性、洗練された実行力、市場を見据えた判断力を求めるブランドを支援します。',
+  },
+  credibility: {
+    en: 'Streetshow Productions supports premium brands where strategic clarity, cultural nuance, and execution quality materially affect outcomes.',
+    ja: 'Streetshow Productionsは、戦略の明確さ、文化的ニュアンス、実行品質が成果を大きく左右するプレミアムブランドを支援します。',
+  },
+  proofStrip: [
+    { label: { en: 'Locations', ja: '拠点' }, value: { en: 'Fukuoka & Tokyo, Japan', ja: '福岡・東京' } },
+    { label: { en: 'Execution', ja: '実行体制' }, value: { en: 'Bilingual EN/JP coordination', ja: 'EN/JPバイリンガル連携' } },
+    { label: { en: 'Model', ja: 'モデル' }, value: { en: 'Strategy through delivery', ja: '戦略から納品まで' } },
+  ],
+  bestFit: [
+    { en: 'Brands entering or repositioning in Japan', ja: '日本に進出または再構築するブランド' },
+    { en: 'Teams that need strategy and execution together', ja: '戦略と実行を一体で必要とするチーム' },
+    { en: 'Premium operators where brand perception and local credibility matter', ja: 'ブランド認知とローカルでの信頼性が重要なプレミアム事業者' },
+  ],
 };
 
 export const contactPageBilingual = {
@@ -42,7 +60,7 @@ export const contactPageBilingual = {
   contactInfoLabel: { en: 'Contact Information', ja: '連絡先情報' },
   emailLabel: { en: 'Email', ja: 'メール' },
   locationLabel: { en: 'Location', ja: '所在地' },
-  directLabel: { en: 'Prefer to speak directly? Book a strategic call.', ja: '直接話したい場合は、戦略コールをご予約ください。' },
+  directLabel: { en: 'Prefer to speak directly?', ja: '直接話しませんか？' },
   fieldLabels: {
     name: { en: 'Full Name', ja: 'お名前' },
     email: { en: 'Work Email', ja: '業務用メール' },

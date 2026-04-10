@@ -10,8 +10,8 @@ export const site = {
     ja: '福岡・東京・日本',
   },
   primaryCta: {
-    en: 'Book a Strategic Call',
-    ja: '戦略コールを予約する',
+    en: "LET'S TALK",
+    ja: '相談する',
   },
   secondaryCta: {
     en: 'Send Inquiry',

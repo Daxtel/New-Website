@@ -20,6 +20,15 @@
 .DS_Store
 *.pem
 
+# source media + working files (not part of the deployed site)
+Website  Contents  /
+.claude/
+
+# raw image formats (keep only optimized versions in public/)
+*.tif
+*.tiff
+*.psd
+
 # logs
 npm-debug.log*
 yarn-debug.log*

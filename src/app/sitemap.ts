@@ -1,35 +1,38 @@
 import type { MetadataRoute } from 'next';
+import { projectCatalog, serviceCatalog } from '@/lib/catalog';
+import { blogPosts } from '@/lib/blog';
 
 const baseUrl = 'https://streetshowproduction.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
+  const staticRoutes = [
     '',
     '/about',
     '/contact',
     '/hospitality',
     '/japan-market-entry',
     '/services',
-    '/services/japan-market-localization',
-    '/services/hospitality-creative-strategy-japan',
-    '/services/video-production-japan',
-    '/services/photography-cgi-japan',
-    '/services/3d-anamorphic-billboards-japan',
     '/work',
-    '/work/shibuya-3d-anamorphic-billboard',
-    '/work/tokyo-luxury-brand-video-campaign',
-    '/work/japan-market-localization-campaign',
-    '/work/tokyo-editorial-photography',
-    '/work/japan-electronics-cgi-visualization',
-    '/work/japan-luxury-resort-video-campaign',
+    '/blog',
   ];
+
+  const serviceRoutes = serviceCatalog.map((service) => `/services/${service.slug}`);
+  const projectRoutes = projectCatalog.map((project) => `/work/${project.slug}`);
+  const blogRoutes = blogPosts.map((post) => `/blog/${post.slug}`);
+
+  const allRoutes = [...staticRoutes, ...serviceRoutes, ...projectRoutes, ...blogRoutes];
 
   const now = new Date();
 
-  return routes.map((route) => ({
+  return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: now,
     changeFrequency: route === '' ? 'weekly' : 'monthly',
-    priority: route === '' ? 1 : 0.7,
+    priority:
+      route === ''
+        ? 1
+        : route.startsWith('/work/') || route.startsWith('/services/') || route.startsWith('/blog/')
+        ? 0.8
+        : 0.7,
   }));
 }

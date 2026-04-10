@@ -4,6 +4,7 @@ import { ContactForm } from '@/components/contact-form';
 import { pick } from '@/lib/i18n';
 import { contactPage } from '@/lib/secondary-pages';
 import { contactPageBilingual } from '@/lib/secondary-pages-bilingual';
+import { getLocale } from '@/lib/locale';
 
 export const metadata: Metadata = {
   title: 'Discuss Your Project',
@@ -11,21 +12,21 @@ export const metadata: Metadata = {
     'Contact Streetshow Productions about Japan market entry, hospitality repositioning, premium campaign execution, and localization-led brand work.',
 };
 
-export default function ContactPage() {
-  const locale = 'en';
+export default async function ContactPage() {
+  const locale = await getLocale();
 
   return (
-    <main className="bg-[#1a1c1b] text-white">
+    <main className="bg-[#0A0A0A] text-white">
       <section className="px-6 py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
-            <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-black uppercase leading-[0.85] tracking-tight text-lime-300">
+            <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
               {pick(contactPageBilingual.title, locale)}
             </h1>
             <p className="mt-6 text-base leading-relaxed text-white/65 md:text-lg lg:text-xl">
               {pick(contactPageBilingual.subtitle, locale)}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-lime-300/80 md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-[#D4AF37]/80 md:text-base">
               {pick(contactPageBilingual.qualification, locale)}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-white/55 md:text-base">
@@ -39,27 +40,27 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="bg-[#302f2c] p-8 md:p-10">
-                <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-lime-300">{pick(contactPageBilingual.contactInfoLabel, locale)}</h2>
+              <div className="bg-[#141414] p-8 md:p-10">
+                <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(contactPageBilingual.contactInfoLabel, locale)}</h2>
                 <div className="mt-8 space-y-6">
                   <div>
                     <p className="text-sm uppercase tracking-[0.15em] text-white/45">{pick(contactPageBilingual.emailLabel, locale)}</p>
-                    <a href={`mailto:${contactPage.contact.email}`} className="mt-2 block text-base font-medium text-lime-300 md:text-lg">
+                    <a href={`mailto:${contactPage.contact.email}`} className="mt-2 block text-base font-medium text-[#D4AF37] md:text-lg">
                       {contactPage.contact.email}
                     </a>
                   </div>
                   <div>
                     <p className="text-sm uppercase tracking-[0.15em] text-white/45">{pick(contactPageBilingual.locationLabel, locale)}</p>
-                    <p className="mt-2 text-base font-medium text-lime-300 md:text-lg">{contactPage.contact.location}</p>
+                    <p className="mt-2 text-base font-medium text-[#D4AF37] md:text-lg">{contactPage.contact.location}</p>
                   </div>
                 </div>
 
-                <div className="mt-10 border-t border-lime-300/10 pt-8">
+                <div className="mt-10 border-t border-[#D4AF37]/10 pt-8">
                   <p className="mb-4 text-base leading-relaxed text-white/65">
                     {pick(contactPageBilingual.directLabel, locale)}
                   </p>
-                  <Link href="/contact" className="inline-flex items-center justify-center rounded-full text-sm font-medium text-lime-300 transition-opacity hover:opacity-80">
-                    {pick({ en: 'Book a Strategic Call', ja: '戦略コールを予約する' }, locale)}
+                  <Link href="/contact" className="inline-flex items-center justify-center rounded-full text-sm font-medium text-[#D4AF37] transition-opacity hover:opacity-80">
+                    {pick({ en: "LET'S TALK", ja: '相談する' }, locale)}
                   </Link>
                 </div>
               </div>

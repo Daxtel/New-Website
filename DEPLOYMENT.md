@@ -11,9 +11,13 @@ Decide the following:
 - final bilingual rollout approach
 
 ## Environment variables
-No required environment variables are needed for the current local-only contact handler.
+The contact form uses **Resend** for email delivery. Set the following in Vercel (Settings → Environment Variables) and in `.env.local` for local dev:
 
-If you later connect email, CRM, or webhooks, add them to `.env.local` and your deployment provider.
+| Variable | Required | Description |
+|---|---|---|
+| `RESEND_API_KEY` | Recommended | Resend API key for contact form email delivery. Without it, submissions log to Vercel function logs instead. |
+
+See `.env.example` for the template.
 
 ## Vercel setup
 1. Import the GitHub repo into Vercel
@@ -35,12 +39,10 @@ If the final production domain differs, update:
 ## Contact form
 Current behavior:
 - POSTs to `/api/contact`
-- writes to `.submissions/contact.jsonl`
+- With `RESEND_API_KEY` set: sends formatted HTML email to `admin@streetshowproduction.com`
+- Without the key: logs submissions to Vercel function logs (console fallback)
 
-Recommended production replacement:
-- webhook to CRM
-- Resend/email pipeline
-- Airtable / Notion / HubSpot / custom backend
+To customize the recipient, update `src/app/api/contact/route.ts`.
 
 ## Post-deploy checklist
 - verify all routes render

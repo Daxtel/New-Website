@@ -22,8 +22,9 @@ export const ui = {
     viewSelectedWork: { en: 'View Selected Work', ja: '制作実績を見る' },
     viewAllWork: { en: 'View All Work', ja: 'すべての実績を見る' },
     viewCaseStudy: { en: 'View Case Study', ja: 'ケーススタディを見る' },
-    bookStrategicCall: { en: 'Book a Strategic Call', ja: '戦略コールを予約する' },
+    bookStrategicCall: { en: "LET'S TALK", ja: '相談する' },
     sendInquiry: { en: 'Send Inquiry', ja: '問い合わせを送る' },
+    letsTalk: { en: "LET'S TALK", ja: '相談する' },
   },
   sections: {
     navigation: { en: 'Navigation', ja: 'ナビゲーション' },
@@ -44,5 +45,15 @@ export const ui = {
     year: { en: 'Year', ja: '年' },
     category: { en: 'Category', ja: 'カテゴリー' },
     filterByFocus: { en: 'Filter by focus', ja: '領域で絞り込む' },
+    services: { en: 'Services', ja: 'サービス' },
+    selectedWork: { en: 'Selected Work', ja: '制作実績' },
+    interestedSimilar: { en: 'Interested in a similar project?', ja: '類似プロジェクトに興味がありますか？' },
+  },
+  caseStudyLabels: {
+    context: { en: 'Context', ja: '背景' },
+    challenge: { en: 'Challenge', ja: '課題' },
+    strategicResponse: { en: 'Strategic Response', ja: '戦略的対応' },
+    execution: { en: 'Execution', ja: '実行' },
+    outcome: { en: 'Outcome', ja: '成果' },
   },
 } as const;
