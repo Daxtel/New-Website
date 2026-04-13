@@ -179,7 +179,7 @@ async function sendMetaConversionEvent(lead: LeadPayload, clientIp: string) {
 }
 
 const DEFAULT_TO = 'jackson@streetshowproduction.com';
-const DEFAULT_FROM = 'Streetshow Website <onboarding@resend.dev>';
+const DEFAULT_FROM = 'Streetshow Productions <noreply@streetshowproduction.com>';
 
 export async function POST(req: Request) {
   let body: LeadPayload;
