@@ -50,6 +50,16 @@ function fbq(...args: unknown[]) {
   }
 }
 
+function getCookie(name: string): string | undefined {
+  if (typeof document === 'undefined') return undefined;
+  const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
+  return match ? match[2] : undefined;
+}
+
+function generateEventId(): string {
+  return `lead_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
+}
+
 export function RestaurantQuiz({ locale = 'ja' }: { locale?: 'en' | 'ja' }) {
   const [step, setStep] = useState<Step>('type');
   const [data, setData] = useState<QuizData>({
@@ -95,11 +105,21 @@ export function RestaurantQuiz({ locale = 'ja' }: { locale?: 'en' | 'ja' }) {
     setStatus('loading');
     setErrorMsg('');
 
+    // Generate shared event_id for Pixel ↔ CAPI deduplication
+    const eventId = generateEventId();
+
     try {
       const res = await fetch('/api/restaurant-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          eventId,
+          fbp: getCookie('_fbp'),
+          fbc: getCookie('_fbc'),
+          userAgent: navigator.userAgent,
+          sourceUrl: window.location.href,
+        }),
       });
 
       if (!res.ok) {
@@ -107,13 +127,13 @@ export function RestaurantQuiz({ locale = 'ja' }: { locale?: 'en' | 'ja' }) {
         throw new Error(err.error || 'Submission failed');
       }
 
-      // Fire Meta Pixel Lead event
+      // Fire Meta Pixel Lead event with same event_id for deduplication
       fbq('track', 'Lead', {
         content_name: 'restaurant-content-package',
         content_category: data.restaurantType,
         value: 1,
         currency: 'JPY',
-      });
+      }, { eventID: eventId });
 
       setStatus('success');
       setStep('done');

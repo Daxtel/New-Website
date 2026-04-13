@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { createHash } from 'crypto';
 
 type LeadPayload = {
   restaurantType?: string;
@@ -10,7 +11,17 @@ type LeadPayload = {
   instagram?: string;
   email?: string;
   phone?: string;
+  eventId?: string; // For Pixel ↔ CAPI deduplication
+  fbp?: string; // _fbp cookie from Meta Pixel
+  fbc?: string; // _fbc cookie from Meta click-id
+  userAgent?: string;
+  sourceUrl?: string;
 };
+
+/* ----------  Hashing for Meta Advanced Matching  ---------- */
+function sha256(value: string): string {
+  return createHash('sha256').update(value.trim().toLowerCase()).digest('hex');
+}
 
 const CHALLENGE_LABELS: Record<string, string> = {
   'no-time': 'No time to create content',
@@ -87,6 +98,86 @@ function buildPlainText(lead: LeadPayload): string {
     .join('\n');
 }
 
+/* ----------  Meta Conversions API  ---------- */
+async function sendMetaConversionEvent(lead: LeadPayload, clientIp: string) {
+  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const accessToken = process.env.META_CONVERSIONS_API_TOKEN;
+
+  if (!pixelId || !accessToken) {
+    console.log('[restaurant-lead] CAPI skipped — META_CONVERSIONS_API_TOKEN or PIXEL_ID not set');
+    return;
+  }
+
+  const eventTime = Math.floor(Date.now() / 1000);
+
+  const userData: Record<string, unknown> = {};
+  if (lead.email) userData.em = [sha256(lead.email)];
+  if (lead.phone) {
+    // Normalize JP phone: remove dashes/spaces, ensure +81 prefix
+    const normalized = lead.phone.replace(/[\s-]/g, '').replace(/^0/, '+81');
+    userData.ph = [sha256(normalized)];
+  }
+  if (lead.name) {
+    const parts = lead.name.trim().split(/\s+/);
+    if (parts.length >= 2) {
+      userData.fn = [sha256(parts[0])];
+      userData.ln = [sha256(parts.slice(1).join(' '))];
+    } else {
+      userData.fn = [sha256(parts[0])];
+    }
+  }
+  userData.ct = [sha256(AREA_LABELS[lead.area || ''] || 'fukuoka')];
+  userData.country = [sha256('jp')];
+  userData.client_ip_address = clientIp;
+  if (lead.userAgent) userData.client_user_agent = lead.userAgent;
+  if (lead.fbp) userData.fbp = lead.fbp;
+  if (lead.fbc) userData.fbc = lead.fbc;
+
+  const eventData = {
+    data: [
+      {
+        event_name: 'Lead',
+        event_time: eventTime,
+        event_id: lead.eventId || `lead_${eventTime}`,
+        event_source_url: lead.sourceUrl || 'https://www.streetshowproduction.com/restaurant',
+        action_source: 'website',
+        user_data: userData,
+        custom_data: {
+          content_name: 'restaurant-content-package',
+          content_category: lead.restaurantType,
+          restaurant_name: lead.restaurantName,
+          challenge: lead.challenge,
+          area: AREA_LABELS[lead.area || ''] || lead.area,
+          value: 1,
+          currency: 'JPY',
+        },
+      },
+    ],
+    // Test event code — remove after verifying in Events Manager
+    // test_event_code: 'TEST12345',
+  };
+
+  try {
+    const res = await fetch(
+      `https://graph.facebook.com/v21.0/${pixelId}/events?access_token=${accessToken}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(eventData),
+      },
+    );
+
+    if (!res.ok) {
+      const err = await res.text();
+      console.error('[restaurant-lead] CAPI error', res.status, err);
+    } else {
+      console.log('[restaurant-lead] CAPI Lead event sent successfully');
+    }
+  } catch (err) {
+    console.error('[restaurant-lead] CAPI fetch failed', err);
+  }
+}
+
 const DEFAULT_TO = 'jackson@streetshowproduction.com';
 const DEFAULT_FROM = 'Streetshow Website <onboarding@resend.dev>';
 
@@ -105,10 +196,21 @@ export async function POST(req: Request) {
     );
   }
 
+  // Capture client IP for CAPI advanced matching
+  const clientIp =
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    req.headers.get('x-real-ip') ||
+    '0.0.0.0';
+
   // Always log to Vercel function logs
   console.log(
     '[restaurant-lead]',
     JSON.stringify({ receivedAt: new Date().toISOString(), ...body }),
+  );
+
+  // --- Meta Conversions API (non-blocking) ---
+  sendMetaConversionEvent(body, clientIp).catch((err) =>
+    console.error('[restaurant-lead] CAPI unexpected error', err),
   );
 
   // --- Google Sheets webhook (optional) ---
