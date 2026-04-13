@@ -6,7 +6,7 @@ import { getLocale } from '@/lib/locale';
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '';
 
 export const metadata: Metadata = {
-  title: 'Restaurant Content Package — Free Concept in 48 Hours',
+  title: 'Restaurant Content Package | Free Concept in 48 Hours',
   description:
     '1日の撮影で20本のコンテンツ。6週間分のSNS投稿を一度に。福岡のレストラン向け無料コンテンツ提案。',
   alternates: { canonical: '/restaurant' },
@@ -59,8 +59,8 @@ export default async function RestaurantLandingPage() {
               </span>
               <span className="text-xs text-white/55">
                 {locale === 'en'
-                  ? 'Italian restaurant — 45% more reservations in 6 weeks'
-                  : 'イタリアンレストラン — 6週間で予約45%増'}
+                  ? 'Italian restaurant: 45% more reservations in 6 weeks'
+                  : 'イタリアンレストラン：6週間で予約45%増'}
               </span>
             </div>
 
@@ -131,7 +131,7 @@ export default async function RestaurantLandingPage() {
                 </h3>
                 <p className="mt-2 text-sm text-white/55">
                   {locale === 'en'
-                    ? 'We capture what guests never see — the prep, the details, the story behind the food.'
+                    ? 'We capture what guests never see. The prep, the details, the story behind the food.'
                     : 'お客様が見ることのない裏側を撮影。仕込み、こだわり、料理の背景にあるストーリー。'}
                 </p>
               </div>
@@ -157,7 +157,7 @@ export default async function RestaurantLandingPage() {
                 </h3>
                 <p className="mt-2 text-sm text-white/55">
                   {locale === 'en'
-                    ? 'The atmosphere — what it actually feels like to walk in. The finishing touch.'
+                    ? 'The atmosphere. What it actually feels like to walk in. The finishing touch.'
                     : '雰囲気の撮影。実際にお店に入った時の空気感を映像に。'}
                 </p>
               </div>
@@ -170,8 +170,8 @@ export default async function RestaurantLandingPage() {
           <div className="mx-auto max-w-xl text-center">
             <p className="text-sm font-medium uppercase tracking-[0.15em] text-[#D4AF37]/70">
               {locale === 'en'
-                ? 'We take 5 restaurants per month — limited availability'
-                : '月5店舗限定 — お早めにお問い合わせください'}
+                ? 'We take 5 restaurants per month. Limited availability.'
+                : '月5店舗限定。お早めにお問い合わせください'}
             </p>
           </div>
         </section>
@@ -180,7 +180,7 @@ export default async function RestaurantLandingPage() {
         <footer className="border-t border-white/5 px-5 py-6 sm:px-6 md:px-10">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs text-white/30">
-              Streetshow Productions — Fukuoka & Tokyo, Japan
+              Streetshow Productions | Fukuoka & Tokyo, Japan
             </p>
           </div>
         </footer>

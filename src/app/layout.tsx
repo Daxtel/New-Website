@@ -3,8 +3,7 @@ import './globals.css';
 import { pick } from '@/lib/i18n';
 import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
-import { SiteHeader } from '@/components/site-header';
-import { SiteFooter } from '@/components/site-footer';
+import { LayoutShell } from '@/components/layout-shell';
 import {
   JsonLd,
   organizationSchema,
@@ -80,6 +79,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
+
   return (
     <html lang={locale} translate="no">
       <head>
@@ -92,9 +92,9 @@ export default async function RootLayout({
         <JsonLd data={[organizationSchema, localBusinessSchema, websiteSchema]} />
       </head>
       <body className="antialiased">
-        <SiteHeader locale={locale} />
-        {children}
-        <SiteFooter locale={locale} />
+        <LayoutShell locale={locale}>
+          {children}
+        </LayoutShell>
       </body>
     </html>
   );
