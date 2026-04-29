@@ -224,6 +224,7 @@ export const blogPosts: BlogPost[] = [
       'hospitality-creative-strategy-japan',
     ],
   },
+
 ];
 
 export function getBlogPost(slug: string) {
