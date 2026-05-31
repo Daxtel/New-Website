@@ -7,6 +7,8 @@ import { JsonLd, buildBreadcrumbSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 import { pick } from '@/lib/i18n';
 import { getLocale } from '@/lib/locale';
+import { ReadingProgress } from '@/components/motion/ReadingProgress';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -97,6 +99,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <main className="bg-[#0A0A0A] text-white">
+      <ReadingProgress />
       <JsonLd data={[articleSchema, breadcrumbSchema]} />
       <article className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-4xl">
@@ -136,7 +139,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <div className="mt-12 space-y-12">
             {post.sections.map((section, idx) => (
-              <section key={idx}>
+              <ScrollReveal key={idx} delay={idx * 0.05}>
+              <section>
                 {section.heading && (
                   <h2 className="mb-6 text-2xl font-bold uppercase tracking-tight text-[#D4AF37] md:text-3xl">
                     {pick(section.heading, locale)}
@@ -150,6 +154,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   ))}
                 </div>
               </section>
+              </ScrollReveal>
             ))}
           </div>
 

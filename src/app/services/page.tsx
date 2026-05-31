@@ -6,6 +6,8 @@ import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
 import { aboutPageBilingual } from '@/lib/secondary-pages-bilingual';
 import { JsonLd, buildItemListSchema, buildBreadcrumbSchema } from '@/components/json-ld';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { AnimatedServiceRow } from '@/components/motion/AnimatedServiceRow';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -48,24 +50,20 @@ export default async function ServicesPage() {
           </div>
 
           <div className="mt-12 space-y-px">
-            {serviceCatalog.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="block bg-[#141414] p-8 transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02] md:p-10 lg:p-12">
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-                  <div className="flex items-center gap-5">
-                    <span className="text-4xl font-black text-[#D4AF37]/20 md:text-5xl">{service.number}</span>
-                    <div>
-                      <h2 className="text-2xl font-bold text-[#D4AF37] md:text-3xl">{pick(service.title, locale)}</h2>
-                      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/65 md:text-base lg:text-lg">
-                        {pick(service.description, locale)}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+            {serviceCatalog.map((service, i) => (
+              <AnimatedServiceRow
+                key={service.slug}
+                slug={service.slug}
+                number={service.number}
+                title={pick(service.title, locale)}
+                description={pick(service.description, locale)}
+                index={i}
+              />
             ))}
           </div>
 
-          <div className="mt-12 bg-[#D4AF37] p-8 md:p-10 lg:p-12">
+          <ScrollReveal className="mt-12">
+          <div className="bg-[#D4AF37] p-8 md:p-10 lg:p-12">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 className="text-2xl font-bold text-[#0A0A0A] md:text-3xl">{pick(ui.sections.discussProject, locale)}</h2>
@@ -78,6 +76,7 @@ export default async function ServicesPage() {
               </Link>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </section>
     </main>

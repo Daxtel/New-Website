@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { pick } from '@/lib/i18n';
 import { aboutPageBilingual } from '@/lib/secondary-pages-bilingual';
 import { getLocale } from '@/lib/locale';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { CounterStat } from '@/components/motion/CounterStat';
 
 export const metadata: Metadata = {
   title: 'About Streetshow Productions',
@@ -18,6 +20,7 @@ export default async function AboutPage() {
     <main className="bg-[#0A0A0A] text-white">
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
+          <ScrollReveal>
           <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
             <div className="max-w-4xl">
               <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
@@ -37,13 +40,17 @@ export default async function AboutPage() {
               </p>
             </div>
           </div>
+          </ScrollReveal>
 
+          {/* Proof strip with animated counters */}
           <div className="mt-16 grid gap-px bg-[#D4AF37]/10 md:grid-cols-3">
-            {aboutPageBilingual.proofStrip.map((item) => (
-              <div key={item.label.en} className="bg-[#0A0A0A] p-8 md:p-10 lg:p-12">
-                <p className="text-xs uppercase tracking-[0.15em] text-white/45">{pick(item.label, locale)}</p>
-                <p className="mt-3 text-xl font-semibold text-[#D4AF37] md:text-2xl lg:text-3xl">{pick(item.value, locale)}</p>
-              </div>
+            {aboutPageBilingual.proofStrip.map((item, i) => (
+              <CounterStat
+                key={item.label.en}
+                label={pick(item.label, locale)}
+                value={pick(item.value, locale)}
+                delay={i * 0.15}
+              />
             ))}
           </div>
 

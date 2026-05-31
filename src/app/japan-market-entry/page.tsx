@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { pick } from '@/lib/i18n';
 import { japanMarketEntryPageBilingual } from '@/lib/strategic-pages-bilingual';
 import { getLocale } from '@/lib/locale';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Japan Market Entry for Premium Brands',
@@ -19,39 +20,49 @@ export default async function JapanMarketEntry() {
     <main className="bg-[#0A0A0A] text-white">
       <section className="border-b border-[#D4AF37]/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl text-center">
-          <h1 className="mx-auto max-w-5xl text-[clamp(2.5rem,7vw,5rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37]">
-            {pick(shell.title, locale)}
-          </h1>
-          <p className="mx-auto mt-6 max-w-4xl text-lg leading-relaxed text-white/85 md:text-xl lg:text-2xl">
-            {pick(shell.subtitle, locale)}
-          </p>
-          <p className="mx-auto mt-5 max-w-3xl text-sm uppercase tracking-[0.15em] text-white/55 md:text-base">
-            {pick(shell.support, locale)}
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]">
-              {pick(shell.primaryCta, locale)}
-            </Link>
-            <Link href="/work" className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white">
-              {pick(shell.secondaryCta, locale)}
-            </Link>
-          </div>
+          <ScrollReveal>
+            <h1 className="mx-auto max-w-5xl text-[clamp(2.5rem,7vw,5rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37]">
+              {pick(shell.title, locale)}
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.12}>
+            <p className="mx-auto mt-6 max-w-4xl text-lg leading-relaxed text-white/85 md:text-xl lg:text-2xl">
+              {pick(shell.subtitle, locale)}
+            </p>
+            <p className="mx-auto mt-5 max-w-3xl text-sm uppercase tracking-[0.15em] text-white/55 md:text-base">
+              {pick(shell.support, locale)}
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.24}>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] cursor-none transition-all duration-300 hover:[box-shadow:0_0_20px_4px_rgba(212,175,55,0.35)]">
+                {pick(shell.primaryCta, locale)}
+              </Link>
+              <Link href="/work" className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white cursor-none transition-colors hover:border-[#D4AF37]/50 hover:text-[#D4AF37]">
+                {pick(shell.secondaryCta, locale)}
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
-            {pick(shell.sections.whyJapan.title, locale)}
-          </h2>
-          <p className="mt-8 max-w-4xl text-lg leading-relaxed text-white/65 md:text-xl">
-            {pick(shell.sections.whyJapan.intro, locale)}
-          </p>
+          <ScrollReveal>
+            <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
+              {pick(shell.sections.whyJapan.title, locale)}
+            </h2>
+            <p className="mt-8 max-w-4xl text-lg leading-relaxed text-white/65 md:text-xl">
+              {pick(shell.sections.whyJapan.intro, locale)}
+            </p>
+          </ScrollReveal>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {shell.sections.whyJapan.points.map((point) => (
-              <div key={point.en} className="border border-[#D4AF37]/10 bg-[#141414] p-6">
-                <p className="text-base leading-relaxed text-white/70 md:text-lg">{pick(point, locale)}</p>
-              </div>
+            {shell.sections.whyJapan.points.map((point, i) => (
+              <ScrollReveal key={point.en} delay={i * 0.07}>
+                <div className="border border-[#D4AF37]/10 bg-[#141414] p-6 transition-colors hover:border-[#D4AF37]/25">
+                  <p className="text-base leading-relaxed text-white/70 md:text-lg">{pick(point, locale)}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
