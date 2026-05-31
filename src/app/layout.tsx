@@ -4,6 +4,7 @@ import { pick } from '@/lib/i18n';
 import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
 import { LayoutShell } from '@/components/layout-shell';
+import { GlobalProviders } from '@/components/motion/GlobalProviders';
 import {
   JsonLd,
   organizationSchema,
@@ -92,9 +93,11 @@ export default async function RootLayout({
         <JsonLd data={[organizationSchema, localBusinessSchema, websiteSchema]} />
       </head>
       <body className="antialiased">
-        <LayoutShell locale={locale}>
-          {children}
-        </LayoutShell>
+        <GlobalProviders>
+          <LayoutShell locale={locale}>
+            {children}
+          </LayoutShell>
+        </GlobalProviders>
       </body>
     </html>
   );

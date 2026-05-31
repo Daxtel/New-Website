@@ -2,6 +2,7 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { useRef } from 'react';
+import { useMagnetic } from '@/hooks/useMagnetic';
 
 // Typed bezier tuple so TypeScript is happy with Framer Motion's Easing type
 const EASE_IN: [number, number, number, number] = [0.4, 0, 0.2, 1];
@@ -177,7 +178,7 @@ export function AnimatedHero({
   );
 }
 
-// ── Animated CTA button (fill from left) ──────────────────────────────────────
+// ── Magnetic CTA button (fill from left + magnetic pull) ─────────────────────
 function CTAButton({
   href,
   children,
@@ -187,25 +188,31 @@ function CTAButton({
   children: React.ReactNode;
   primary?: boolean;
 }) {
+  const { x, y, handlers } = useMagnetic({ strength: 12 });
+
   return (
-    <Link href={href} className="relative group overflow-hidden inline-flex min-h-[52px] items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] transition-colors duration-300"
-      style={
-        primary
-          ? { background: '#D4AF37', color: '#0A0A0A' }
-          : { border: '2px solid #D4AF37', color: '#D4AF37' }
-      }
-    >
-      {/* Fill-from-left overlay (secondary only) */}
-      {!primary && (
-        <span className="absolute inset-0 rounded-full bg-[#D4AF37] scale-x-0 origin-left transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-x-100" />
-      )}
-      {/* Gold pulse glow (primary only) */}
-      {primary && (
-        <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 [box-shadow:0_0_20px_4px_rgba(212,175,55,0.4)]" />
-      )}
-      <span className={`relative z-10 transition-colors duration-300 ${!primary ? 'group-hover:text-[#0A0A0A]' : ''}`}>
-        {children}
-      </span>
-    </Link>
+    <motion.div style={{ x, y }} {...handlers} className="inline-block">
+      <Link
+        href={href}
+        className="relative group overflow-hidden inline-flex min-h-[52px] items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] transition-colors duration-300 cursor-none"
+        style={
+          primary
+            ? { background: '#D4AF37', color: '#0A0A0A' }
+            : { border: '2px solid #D4AF37', color: '#D4AF37' }
+        }
+      >
+        {/* Fill-from-left overlay (secondary only) */}
+        {!primary && (
+          <span className="absolute inset-0 rounded-full bg-[#D4AF37] scale-x-0 origin-left transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-x-100" />
+        )}
+        {/* Gold glow (primary only) */}
+        {primary && (
+          <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 [box-shadow:0_0_24px_6px_rgba(212,175,55,0.4)]" />
+        )}
+        <span className={`relative z-10 transition-colors duration-300 ${!primary ? 'group-hover:text-[#0A0A0A]' : ''}`}>
+          {children}
+        </span>
+      </Link>
+    </motion.div>
   );
 }
