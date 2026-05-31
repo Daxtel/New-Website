@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
+import { PageTransition } from '@/components/motion/PageTransition';
 import type { Locale } from '@/lib/i18n';
 
 /** Routes that render without site header/footer (ad landing pages, funnels) */
@@ -21,7 +22,7 @@ export function LayoutShell({
   return (
     <>
       {!isStandalone && <SiteHeader locale={locale} />}
-      {children}
+      <PageTransition>{children}</PageTransition>
       {!isStandalone && <SiteFooter locale={locale} />}
     </>
   );

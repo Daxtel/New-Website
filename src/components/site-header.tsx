@@ -19,9 +19,11 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/60 transition-colors hover:text-[#D4AF37]"
+              className="group relative text-sm font-medium text-white/60 transition-colors hover:text-[#D4AF37]"
             >
               {pick(link.label, locale)}
+              {/* Underline slides in from left on hover */}
+              <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[#D4AF37] transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-x-100" />
             </Link>
           ))}
         </nav>
