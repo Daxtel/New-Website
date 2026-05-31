@@ -7,10 +7,10 @@ import { getLocale } from '@/lib/locale';
 import { ClientStrip } from '@/components/client-strip';
 import { JsonLd, homeFaqSchema, buildBreadcrumbSchema } from '@/components/json-ld';
 import { AnimatedHero } from '@/components/motion/AnimatedHero';
-import { AnimatedWorkCard } from '@/components/motion/AnimatedWorkCard';
 import { AnimatedServiceCard } from '@/components/motion/AnimatedServiceCard';
 import { AnimatedProcessStep } from '@/components/motion/AnimatedProcessStep';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { HorizontalWorkScroll } from '@/components/motion/HorizontalWorkScroll';
 
 export const metadata: Metadata = {
   title: 'Japan Market Entry & Premium Creative Production | Streetshow Productions',
@@ -94,19 +94,17 @@ export default async function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredWork.items.map((item, i) => (
-              <AnimatedWorkCard
-                key={pick(item.title, 'en')}
-                slug={item.slug}
-                videoSrc={item.videoSrc}
-                title={pick(item.title, locale)}
-                proofLine={pick(item.proofLine, locale)}
-                description={pick(item.description, locale)}
-                ctaLabel={pick(ui.cta.viewCaseStudy, locale)}
-                index={i}
-              />
-            ))}
+          <div className="mt-10">
+            <HorizontalWorkScroll
+              items={featuredWork.items.map((item) => ({
+                slug: item.slug,
+                videoSrc: item.videoSrc,
+                title: pick(item.title, locale),
+                proofLine: pick(item.proofLine, locale),
+                description: pick(item.description, locale),
+              }))}
+              ctaLabel={pick(ui.cta.viewCaseStudy, locale)}
+            />
           </div>
         </div>
       </section>

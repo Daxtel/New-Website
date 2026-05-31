@@ -2,7 +2,14 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { useRef } from 'react';
+import dynamic from 'next/dynamic';
 import { useMagnetic } from '@/hooks/useMagnetic';
+
+// Loaded client-side only — Three.js / WebGL
+const ParticleFieldScene = dynamic(
+  () => import('./ParticleFieldScene').then((m) => m.ParticleFieldScene),
+  { ssr: false, loading: () => null }
+);
 
 // Typed bezier tuple so TypeScript is happy with Framer Motion's Easing type
 const EASE_IN: [number, number, number, number] = [0.4, 0, 0.2, 1];
@@ -103,10 +110,15 @@ export function AnimatedHero({
       ref={sectionRef}
       className="relative overflow-hidden border-b border-[#D4AF37]/10"
     >
-      {/* Parallax grid background */}
+      {/* WebGL particle field — fills hero, fades at 70% opacity so text stays readable */}
+      <div className="absolute inset-0 opacity-70 pointer-events-none">
+        <ParticleFieldScene />
+      </div>
+
+      {/* Subtle grid — keeps depth on top of particles */}
       <motion.div
         style={{ y: bgY }}
-        className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(212,175,55,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.4)_1px,transparent_1px)] [background-size:80px_80px]"
+        className="absolute inset-0 opacity-[0.025] pointer-events-none [background-image:linear-gradient(rgba(212,175,55,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.4)_1px,transparent_1px)] [background-size:80px_80px]"
       />
 
       <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">
