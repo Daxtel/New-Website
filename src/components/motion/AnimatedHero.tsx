@@ -3,9 +3,8 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import Link from 'next/link';
 import { useRef } from 'react';
 
-// Typed bezier tuples so TypeScript is happy with Framer Motion's Easing type
+// Typed bezier tuple so TypeScript is happy with Framer Motion's Easing type
 const EASE_IN: [number, number, number, number] = [0.4, 0, 0.2, 1];
-const EASE_OUT: [number, number, number, number] = [0, 0, 0.2, 1];
 
 interface AnimatedHeroProps {
   eyebrow: string;
