@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { navLinks } from '@/lib/home-content';
 import { pick } from '@/lib/i18n';
@@ -18,20 +18,18 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const prev = lastY.current;
-    // Hide on scroll down (past 80px), reveal on scroll up
-    if (latest > 80 && latest > prev + 4) {
+    const nowAtTop = latest < 20;
+    // Reveal immediately when back at top — no secondary effect needed
+    if (nowAtTop) {
+      setHidden(false);
+    } else if (latest > 80 && latest > prev + 4) {
       setHidden(true);
     } else if (latest < prev - 4) {
       setHidden(false);
     }
-    setAtTop(latest < 20);
+    setAtTop(nowAtTop);
     lastY.current = latest;
   });
-
-  // Always reveal when back at top
-  useEffect(() => {
-    if (atTop) setHidden(false);
-  }, [atTop]);
 
   return (
     <motion.header

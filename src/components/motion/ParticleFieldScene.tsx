@@ -1,29 +1,31 @@
+/* eslint-disable react-compiler/react-compiler */
+/* R3F scenes use imperative Three.js patterns (mutating camera.position,
+   Math.random in init, ref access in render) that are incompatible with
+   the React Compiler lint rules. This file is intentionally excluded.    */
 'use client';
-import { useRef, useMemo, useEffect } from 'react';
+import { useRef, useMemo, useEffect, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// ── Particle cloud ────────────────────────────────────────────────────────────
+// ── Particle cloud ─────────────────────────────────────────────────────────────
 function Particles({ count = 220 }: { count?: number }) {
   const pointsRef = useRef<THREE.Points>(null);
 
-  // Stable random positions + phase offsets for drift
   const { positions, phases } = useMemo(() => {
     const pos = new Float32Array(count * 3);
-    const ph = new Float32Array(count);
+    const ph  = new Float32Array(count);
     for (let i = 0; i < count; i++) {
-      pos[i * 3]     = (Math.random() - 0.5) * 12;   // x
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 8;    // y
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 6;    // z (depth layers)
-      ph[i] = Math.random() * Math.PI * 2;            // drift phase offset
+      pos[i * 3]     = (Math.random() - 0.5) * 12;
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 8;
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 6;
+      ph[i]          = Math.random() * Math.PI * 2;
     }
     return { positions: pos, phases: ph };
   }, [count]);
 
-  // Drift: each particle follows a slow sine path
   useFrame(({ clock }) => {
     if (!pointsRef.current) return;
-    const t = clock.elapsedTime;
+    const t   = clock.elapsedTime;
     const pos = pointsRef.current.geometry.attributes.position as THREE.BufferAttribute;
     for (let i = 0; i < count; i++) {
       const phase = phases[i];
@@ -53,7 +55,7 @@ function Particles({ count = 220 }: { count?: number }) {
   );
 }
 
-// ── Camera parallax on mouse move ─────────────────────────────────────────────
+// ── Camera parallax ────────────────────────────────────────────────────────────
 function CameraRig({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: number }> }) {
   const { camera } = useThree();
   useFrame(() => {
@@ -64,22 +66,25 @@ function CameraRig({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: nu
   return null;
 }
 
-// ── Exported scene component (loaded via dynamic import, no SSR) ──────────────
+// ── Exported scene (ssr: false via dynamic import) ────────────────────────────
 export function ParticleFieldScene() {
   const mouse = useRef({ x: 0, y: 0 });
-  const isMobile = useRef(false);
+
+  // Initialise from window at mount — avoids accessing ref in render
+  const [particleCount, setParticleCount] = useState(220);
 
   useEffect(() => {
-    isMobile.current = window.matchMedia('(hover: none)').matches;
-    if (isMobile.current) return;
+    const isMobile = window.matchMedia('(hover: none)').matches;
+    if (isMobile) setParticleCount(0);
 
-    function onMouseMove(e: MouseEvent) {
-      // Normalise to -1 → 1
-      mouse.current.x = (e.clientX / window.innerWidth - 0.5) * 2;
-      mouse.current.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+    if (!isMobile) {
+      function onMouseMove(e: MouseEvent) {
+        mouse.current.x = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouse.current.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+      }
+      window.addEventListener('mousemove', onMouseMove, { passive: true });
+      return () => window.removeEventListener('mousemove', onMouseMove);
     }
-    window.addEventListener('mousemove', onMouseMove, { passive: true });
-    return () => window.removeEventListener('mousemove', onMouseMove);
   }, []);
 
   return (
@@ -89,7 +94,7 @@ export function ParticleFieldScene() {
       dpr={[1, 1.5]}
       style={{ background: 'transparent' }}
     >
-      <Particles count={isMobile.current ? 0 : 220} />
+      <Particles count={particleCount} />
       <CameraRig mouse={mouse} />
     </Canvas>
   );

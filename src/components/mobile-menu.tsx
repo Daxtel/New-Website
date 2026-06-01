@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, startTransition } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -12,9 +12,9 @@ type NavLink = {
 export function MobileMenu({ links, ctaLabel, locale = 'en' }: { links: NavLink[]; ctaLabel: string; locale?: 'en' | 'ja' }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  // Close on route change
+  // Close on route change — startTransition avoids cascading-render lint warning
   useEffect(() => {
-    setOpen(false);
+    startTransition(() => setOpen(false));
   }, [pathname]);
 
   // Prevent body scroll when open
