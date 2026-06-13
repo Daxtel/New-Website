@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import type { Metadata } from 'next';
 import './globals.css';
 import { pick } from '@/lib/i18n';
@@ -6,7 +7,6 @@ import { getLocale } from '@/lib/locale';
 import { LayoutShell } from '@/components/layout-shell';
 import { GlobalProviders } from '@/components/motion/GlobalProviders';
 import {
-import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
   JsonLd,
   organizationSchema,
   localBusinessSchema,
