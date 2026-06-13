@@ -6,6 +6,7 @@ import { getLocale } from '@/lib/locale';
 import { LayoutShell } from '@/components/layout-shell';
 import { GlobalProviders } from '@/components/motion/GlobalProviders';
 import {
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
   JsonLd,
   organizationSchema,
   localBusinessSchema,
@@ -93,6 +94,7 @@ export default async function RootLayout({
         <JsonLd data={[organizationSchema, localBusinessSchema, websiteSchema]} />
       </head>
       <body className="antialiased">
+        <GoogleAnalytics />
         <GlobalProviders>
           <LayoutShell locale={locale}>
             {children}
