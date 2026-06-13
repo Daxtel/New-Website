@@ -51,7 +51,7 @@ export function AnimatedWorkCard({
       href={`/work/${slug}`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: EASE_IN }}
       animate={
         shouldReduceMotion
@@ -66,7 +66,7 @@ export function AnimatedWorkCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
       style={{ transformStyle: 'preserve-3d', perspective: 800 }}
-      className="group flex h-full flex-col overflow-hidden bg-[#141414] cursor-none"
+      className="group flex h-full flex-col overflow-hidden bg-[#141414] cursor-pointer"
       data-cursor-play=""
     >
       {/* Glow border overlay */}

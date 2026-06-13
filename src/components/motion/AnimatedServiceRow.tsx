@@ -28,7 +28,7 @@ export function AnimatedServiceRow({ slug, number, title, description, index }: 
     >
       <Link
         href={`/services/${slug}`}
-        className="group block bg-[#141414] p-8 transition-colors duration-300 hover:bg-[#D4AF37]/5 cursor-none md:p-10 lg:p-12"
+        className="group block bg-[#141414] p-8 transition-colors duration-300 hover:bg-[#D4AF37]/5 cursor-pointer md:p-10 lg:p-12"
       >
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex items-center gap-5">

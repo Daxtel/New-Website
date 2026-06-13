@@ -84,7 +84,7 @@ export function ProjectDetailClient({
       >
         <Link
           href="/work"
-          className="mb-10 inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-[#D4AF37] cursor-none"
+          className="mb-10 inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-[#D4AF37] cursor-pointer"
         >
           <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">←</span>
           {backLabel}
@@ -241,7 +241,7 @@ export function ProjectDetailClient({
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
-                      className="block border border-[#D4AF37]/10 bg-[#141414] p-4 transition-all hover:border-[#D4AF37]/30 cursor-none"
+                      className="block border border-[#D4AF37]/10 bg-[#141414] p-4 transition-all hover:border-[#D4AF37]/30 cursor-pointer"
                     >
                       <span className="text-sm text-[#D4AF37]/85">{service.title}</span>
                     </Link>
@@ -263,7 +263,7 @@ export function ProjectDetailClient({
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37] cursor-none"
+              className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37] cursor-pointer"
             >
               {ctaButtonLabel}
             </Link>
@@ -276,7 +276,7 @@ export function ProjectDetailClient({
         <ScrollReveal className="mt-8">
           <Link
             href={`/work/${nextProject.slug}`}
-            className="group relative block overflow-hidden bg-[#141414] cursor-none"
+            className="group relative block overflow-hidden bg-[#141414] cursor-pointer"
             data-cursor-play=""
           >
             <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

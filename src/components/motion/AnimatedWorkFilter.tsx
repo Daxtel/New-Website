@@ -80,7 +80,7 @@ function WorkCard({
       onMouseMove={onMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => { setTilt({ rx: 0, ry: 0 }); setHovered(false); }}
-      className="group relative block overflow-hidden bg-[#141414] cursor-none"
+      className="group relative block overflow-hidden bg-[#141414] cursor-pointer"
       data-cursor-play=""
     >
       {/* Glow border */}
@@ -141,7 +141,7 @@ function FilterPill({
   return (
     <button
       onClick={onClick}
-      className="relative cursor-none overflow-hidden rounded-full border px-5 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-200"
+      className="relative cursor-pointer overflow-hidden rounded-full border px-5 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-200"
       style={{
         borderColor: isActive ? 'rgba(212,175,55,0.8)' : 'rgba(212,175,55,0.15)',
         color: isActive ? '#D4AF37' : 'rgba(255,255,255,0.6)',

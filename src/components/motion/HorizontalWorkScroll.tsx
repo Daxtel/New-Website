@@ -1,6 +1,7 @@
 'use client';
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect, useCallback, startTransition } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import Link from 'next/link';
 import { AnimatedWorkCard } from './AnimatedWorkCard';
 
 interface WorkItem {
@@ -23,6 +24,14 @@ export function HorizontalWorkScroll({ items, ctaLabel }: HorizontalWorkScrollPr
   const trackRef    = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [maxDrag, setMaxDrag] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => startTransition(() => setIsMobile(window.innerWidth < 768));
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const rawX = useMotionValue(0);
   const x    = useSpring(rawX, { stiffness: 80, damping: 20, mass: 0.8 });
@@ -73,6 +82,42 @@ export function HorizontalWorkScroll({ items, ctaLabel }: HorizontalWorkScrollPr
     container.addEventListener('wheel', onWheel, { passive: false });
     return () => container.removeEventListener('wheel', onWheel);
   }, [rawX, maxDrag, clamp]);
+
+  // Mobile: vertical stack of full-width cards
+  if (isMobile) {
+    return (
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {items.map((item) => (
+          <Link
+            key={item.slug}
+            href={`/work/${item.slug}`}
+            className="group flex flex-col overflow-hidden bg-[#141414] border border-[#D4AF37]/10"
+          >
+            <div className="relative aspect-video overflow-hidden bg-[#1A1A1A]">
+              <video
+                src={item.videoSrc}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            </div>
+            <div className="flex flex-1 flex-col p-5">
+              <p className="text-[11px] uppercase tracking-[0.15em] text-white/45">{item.proofLine}</p>
+              <h3 className="mt-2 text-lg font-semibold leading-tight text-[#D4AF37]">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/65">{item.description}</p>
+              <div className="mt-auto pt-4 text-[11px] font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75">
+                {ctaLabel} →
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="relative">

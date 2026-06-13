@@ -95,7 +95,7 @@ export default async function WorkPage() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] transition-all duration-300 hover:[box-shadow:0_0_24px_6px_rgba(212,175,55,0.35)] cursor-none"
+                className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] transition-all duration-300 hover:[box-shadow:0_0_24px_6px_rgba(212,175,55,0.35)] cursor-pointer"
               >
                 {pick({ en: "LET'S TALK", ja: '相談する' }, locale)}
               </Link>

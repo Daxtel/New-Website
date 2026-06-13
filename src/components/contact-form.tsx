@@ -105,7 +105,7 @@ function SubmitButton({ status, locale }: { status: 'idle' | 'loading' | 'succes
     <button
       type="submit"
       disabled={status === 'loading' || status === 'success'}
-      className="relative inline-flex min-h-[52px] min-w-[180px] cursor-none items-center justify-center overflow-hidden rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] transition-all duration-300 disabled:opacity-80 hover:[box-shadow:0_0_20px_4px_rgba(212,175,55,0.35)]"
+      className="relative inline-flex min-h-[52px] min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] transition-all duration-300 disabled:opacity-80 hover:[box-shadow:0_0_20px_4px_rgba(212,175,55,0.35)]"
     >
       <AnimatePresence mode="wait">
         {status === 'idle' && (
@@ -228,7 +228,7 @@ export function ContactForm({ locale = 'en' }: Props) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
         <SubmitButton status={status} locale={locale} />
         <a href="mailto:admin@streetshowproduction.com?subject=Project%20Inquiry"
-          className="cursor-none text-sm text-white/55 underline-offset-4 hover:text-[#D4AF37] hover:underline">
+          className="cursor-pointer text-sm text-white/55 underline-offset-4 hover:text-[#D4AF37] hover:underline">
           {locale === 'en' ? 'Or email us directly' : 'または直接メールで'}
         </a>
       </div>

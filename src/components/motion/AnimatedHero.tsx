@@ -1,7 +1,7 @@
 'use client';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useRef, useState, useEffect, startTransition } from 'react';
 import dynamic from 'next/dynamic';
 import { useMagnetic } from '@/hooks/useMagnetic';
 
@@ -64,6 +64,12 @@ export function AnimatedHero({
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
 
+  // Detect touch/mobile device — skip Framer Motion on mobile for reliability
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    startTransition(() => setIsMobile(window.matchMedia('(hover: none)').matches));
+  }, []);
+
   // Parallax: background moves at 0.4x scroll speed
   const { scrollY } = useScroll();
   const bgY = useTransform(scrollY, [0, 600], [0, shouldReduceMotion ? 0 : -120]);
@@ -72,14 +78,16 @@ export function AnimatedHero({
   // Estimate headline word count to calculate total stagger time for sub-element delays
   const headlineDuration = 0.1 + words.length * 0.08 + 0.55; // delayChildren + stagger + word anim
 
-  if (shouldReduceMotion) {
+  // Static branch: mobile devices + reduced-motion users
+  // Content is always fully visible — no opacity 0 initial state that could get stuck
+  if (shouldReduceMotion || isMobile) {
     return (
       <section
         ref={sectionRef}
-        className="relative overflow-hidden border-b border-[#D4AF37]/10"
+        className="relative overflow-hidden border-b border-[#D4AF37]/10 min-h-[85svh] flex items-center"
       >
         <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(212,175,55,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.4)_1px,transparent_1px)] [background-size:80px_80px]" />
-        <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">
+        <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">
           <div className="max-w-5xl">
             <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70 sm:text-sm">{eyebrow}</p>
             <h1 className="mt-5 text-[clamp(2.25rem,7vw,6rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37] sm:mt-6">
@@ -108,7 +116,7 @@ export function AnimatedHero({
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden border-b border-[#D4AF37]/10"
+      className="relative overflow-hidden border-b border-[#D4AF37]/10 min-h-[85svh] flex items-center"
     >
       {/* WebGL particle field — fills hero, fades at 70% opacity so text stays readable */}
       <div className="absolute inset-0 opacity-70 pointer-events-none">
@@ -121,7 +129,7 @@ export function AnimatedHero({
         className="absolute inset-0 opacity-[0.025] pointer-events-none [background-image:linear-gradient(rgba(212,175,55,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.4)_1px,transparent_1px)] [background-size:80px_80px]"
       />
 
-      <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">
+      <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">
         <div className="max-w-5xl">
           {/* Eyebrow */}
           <motion.p
@@ -206,7 +214,7 @@ function CTAButton({
     <motion.div style={{ x, y }} {...handlers} className="inline-block">
       <Link
         href={href}
-        className="relative group overflow-hidden inline-flex min-h-[52px] items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] transition-colors duration-300 cursor-none"
+        className="relative group overflow-hidden inline-flex min-h-[52px] items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] transition-colors duration-300 cursor-pointer"
         style={
           primary
             ? { background: '#D4AF37', color: '#0A0A0A' }
