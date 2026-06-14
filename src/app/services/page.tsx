@@ -5,9 +5,28 @@ import { pick, ui } from '@/lib/i18n';
 import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
 import { aboutPageBilingual } from '@/lib/secondary-pages-bilingual';
-import { JsonLd, buildItemListSchema, buildBreadcrumbSchema } from '@/components/json-ld';
+import { JsonLd, buildItemListSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { AnimatedServiceRow } from '@/components/motion/AnimatedServiceRow';
+
+const servicesFaqs = [
+  {
+    q: 'How much does video production cost in Japan?',
+    a: 'Video production in Japan costs between ¥300,000 and ¥2,000,000 per day depending on crew size, equipment, location permits, and deliverables. A typical 3-day brand shoot in Fukuoka runs ¥1.2M to ¥1.8M all-in.',
+  },
+  {
+    q: 'Can I hire an English-speaking video crew in Fukuoka?',
+    a: 'Yes. Streetshow Productions operates an English, French, and Japanese-speaking production crew based in Fukuoka with regular shoots in Tokyo, Osaka, and across Japan.',
+  },
+  {
+    q: 'What is the difference between translation and localization?',
+    a: 'Translation converts words from one language to another. Localization adapts the entire message, including tone, cultural references, visual style, and platform format, to resonate with the target audience. In Japan, this difference determines whether content converts or gets ignored.',
+  },
+  {
+    q: 'Do I need a Japanese agency or can a foreign agency handle Japan marketing?',
+    a: 'You need a partner who understands both worlds. A purely Japanese agency may not understand your global brand standards. A purely foreign agency will miss the cultural register that Japanese consumers respond to. Streetshow bridges both.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Video Production in Fukuoka & Tokyo | Streetshow Productions',
@@ -31,10 +50,11 @@ export default async function ServicesPage() {
     { name: 'Home', url: site.url },
     { name: 'Services', url: `${site.url}/services` },
   ]);
+  const servicesFaqSchema = buildFaqSchema(servicesFaqs);
 
   return (
     <main className="bg-[#0A0A0A] text-white">
-      <JsonLd data={[servicesItemList, servicesBreadcrumb]} />
+      <JsonLd data={[servicesItemList, servicesBreadcrumb, servicesFaqSchema]} />
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
@@ -62,7 +82,29 @@ export default async function ServicesPage() {
             ))}
           </div>
 
-          <ScrollReveal className="mt-12">
+          {/* FAQ Section */}
+          <ScrollReveal className="mt-20">
+            <h2 className="text-[clamp(2rem,5vw,3rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37]">
+              {locale === 'ja' ? 'よくある質問' : 'Frequently Asked Questions'}
+            </h2>
+          </ScrollReveal>
+          <div className="mt-8 space-y-4">
+            {servicesFaqs.map((item, i) => (
+              <ScrollReveal key={item.q} delay={i * 0.06}>
+                <details className="group border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30">
+                  <summary className="cursor-pointer list-none">
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="text-base font-semibold text-[#D4AF37] md:text-lg">{item.q}</h3>
+                      <span className="mt-1 shrink-0 text-[#D4AF37] transition-transform group-open:rotate-45">+</span>
+                    </div>
+                  </summary>
+                  <p className="mt-4 text-base leading-relaxed text-white/70 md:text-lg">{item.a}</p>
+                </details>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal className="mt-16">
           <div className="bg-[#D4AF37] p-8 md:p-10 lg:p-12">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
