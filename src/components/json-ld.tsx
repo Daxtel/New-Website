@@ -87,9 +87,11 @@ export const organizationSchema = {
 
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
+  '@type': 'LocalBusiness',
   '@id': `${site.url}/#localbusiness`,
   name: 'Streetshow Productions',
+  description:
+    'Market Perception Intelligence Studio. Video production, 3D anamorphic billboards, and Japan market localization for foreign brands entering Japan.',
   image: `${site.url}/og-image.jpg`,
   url: site.url,
   telephone: '+81-70-4801-1725',
@@ -98,19 +100,24 @@ export const localBusinessSchema = {
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Fukuoka',
-    addressRegion: 'Fukuoka',
     addressCountry: 'JP',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 33.5904,
-    longitude: 130.4017,
+    latitude: '33.5904',
+    longitude: '130.4017',
   },
-  areaServed: [
-    { '@type': 'Country', name: 'Japan' },
-    { '@type': 'Country', name: 'United States' },
-    { '@type': 'Place', name: 'Europe' },
+  areaServed: ['Fukuoka', 'Tokyo', 'Osaka', 'Japan'],
+  sameAs: [
+    'https://www.instagram.com/jackson.streetshow',
+    'https://www.linkedin.com/company/streetshow-productions',
   ],
+  founder: {
+    '@type': 'Person',
+    name: 'Daxtel Jackson',
+    jobTitle: 'Director & Strategist',
+  },
+  knowsLanguage: ['en', 'fr', 'ja'],
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
