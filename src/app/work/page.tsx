@@ -11,7 +11,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Our Work | Video Production & 3D Billboards | Streetshow Productions',
   description:
-    'Portfolio of brand video, 3D anamorphic billboards, and Japan market localization. Clients: New Balance, SHEIN Japan, Ritz-Carlton Osaka, Kubota Spears.',
+    'Portfolio of brand video, 3D anamorphic billboards, and Japan market localization. Clients: New Balance, SHEIN Japan, Ritz-Carlton Kyoto, Charles & Keith.',
   alternates: { canonical: '/work' },
 };
 
