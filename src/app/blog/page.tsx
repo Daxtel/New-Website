@@ -6,9 +6,9 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { AnimatedBlogCard } from '@/components/motion/AnimatedBlogCard';
 
 export const metadata: Metadata = {
-  title: 'Insights & Blog',
+  title: 'Blog | Japan Market Entry & Creative Strategy | Streetshow Productions',
   description:
-    'Insights on Japan market entry, localization, luxury hospitality creative, live commerce, and premium brand execution from Streetshow Productions.',
+    'Insights on Japan market entry, hospitality marketing, 3D billboard advertising, and localization strategy from Streetshow Productions in Fukuoka.',
   alternates: { canonical: '/blog' },
   openGraph: {
     title: 'Insights & Blog | Streetshow Productions',

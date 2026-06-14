@@ -10,9 +10,9 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { AnimatedServiceRow } from '@/components/motion/AnimatedServiceRow';
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Video Production in Fukuoka & Tokyo | Streetshow Productions',
   description:
-    'Services for Japan market entry, localization, hospitality creative strategy, video production, photography, CGI, and 3D billboard execution.',
+    'English-speaking video production crew in Fukuoka and Tokyo. Brand commercials, product videos, hospitality content. From ¥300,000/day.',
   alternates: { canonical: '/services' },
 };
 

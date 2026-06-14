@@ -13,9 +13,9 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { HorizontalWorkScroll } from '@/components/motion/HorizontalWorkScroll';
 
 export const metadata: Metadata = {
-  title: 'Japan Market Entry & Premium Creative Production | Streetshow Productions',
+  title: 'Video Production & 3D Billboards in Japan | Streetshow Productions',
   description:
-    'Strategy-first creative production studio in Fukuoka and Tokyo. Japan market entry, localization, luxury hospitality creative, video, CGI, and 3D anamorphic billboards for premium brands.',
+    'Strategy-first creative production in Fukuoka and Tokyo. 3D anamorphic billboards, brand video, Japan market localization. Clients include New Balance, SHEIN Japan, Ritz-Carlton.',
   alternates: {
     canonical: '/',
   },

@@ -508,12 +508,12 @@ export const serviceCatalog: CatalogService[] = [
       ja: '3Dアナモルフィックビルボード',
     },
     metaTitle: {
-      en: '3D Anamorphic Billboard Production Japan | Streetshow',
-      ja: '3Dアナモルフィックビルボード制作 日本 | Streetshow',
+      en: '3D Anamorphic Billboards in Japan | Shibuya, Shinjuku | Streetshow',
+      ja: '3Dアナモルフィックビルボード 日本 | 渋谷・新宿 | Streetshow',
     },
     metaDescription: {
-      en: 'Naked-eye 3D anamorphic billboard production in Shibuya, Shinjuku, and across Japan. Concept, 3D animation, and screen-specific execution for launch campaigns.',
-      ja: '渋谷・新宿をはじめ日本全国での裸眼3Dアナモルフィックビルボード制作。ローンチキャンペーンに向けたコンセプト、3Dアニメーション、画面特化の実行。',
+      en: 'Full-service 3D anamorphic billboard production in Tokyo. From concept to Shibuya screen. Pricing starts at $50K/month. See our portfolio.',
+      ja: '東京の3Dアナモルフィックビルボード制作をワンストップで。コンセプトから渋谷スクリーンまで。月額5万ドルから。ポートフォリオをご覧ください。',
     },
     headline: {
       en: 'Naked-Eye 3D That Stops Traffic',

@@ -9,9 +9,9 @@ import { JsonLd, buildItemListSchema, buildBreadcrumbSchema } from '@/components
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Selected Work',
+  title: 'Our Work | Video Production & 3D Billboards | Streetshow Productions',
   description:
-    'Selected hospitality, Japan-market entry, localization, and premium creative case studies by Streetshow Productions.',
+    'Portfolio of brand video, 3D anamorphic billboards, and Japan market localization. Clients: New Balance, SHEIN Japan, Ritz-Carlton Osaka, Kubota Spears.',
   alternates: { canonical: '/work' },
 };
 
