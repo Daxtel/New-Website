@@ -578,38 +578,38 @@ export const serviceCatalog: CatalogService[] = [
     faq: {
       en: [
         {
-          q: 'Which screens can Streetshow produce 3D anamorphic content for?',
-          a: 'Shibuya, Shinjuku, Harajuku, Osaka, and other major urban LED screens across Japan. Each screen has its own geometry, viewing angle, and calibration requirements, and we produce content specifically for the target screen.',
+          q: 'How much does a 3D billboard cost in Tokyo?',
+          a: '3D anamorphic billboard advertising in Japan costs between $50,000 and $500,000 per month depending on the screen location, time slot, and content production. The most popular locations are Shibuya Cross-Vision, Shinjuku Alta Vision, and Dotonbori in Osaka.',
         },
         {
-          q: 'How long does 3D anamorphic billboard production take?',
-          a: 'A typical production window runs four to eight weeks depending on complexity. This covers concept, 3D modeling, animation, anamorphic calibration, and final screen-specific delivery.',
+          q: 'How long does it take to produce 3D billboard content?',
+          a: 'Production of 3D anamorphic content typically takes 4 to 8 weeks from concept to final delivery. This includes creative development, 3D modeling, animation, and screen-specific calibration.',
         },
         {
-          q: 'Do you coordinate media placement as well as production?',
-          a: 'Yes. We coordinate screen booking, runtime scheduling, and campaign timing alongside creative production so launches hit in the right window with the right placement.',
+          q: 'What are the best 3D billboard locations in Japan?',
+          a: 'The top three locations are Shibuya Cross-Vision (highest foot traffic), Shinjuku Alta Vision (major transit hub), and Dotonbori in Osaka (tourism district). Each has different audience profiles and pricing tiers.',
         },
         {
-          q: 'Can you deliver social cutdowns from a 3D anamorphic campaign?',
-          a: 'Yes. Every 3D billboard project includes vertical social cutdowns engineered for reuse on Instagram, TikTok, and paid social so the OOH moment extends into earned and paid reach.',
+          q: 'Can I book the Shibuya crossing billboard?',
+          a: 'Yes. Shibuya Cross-Vision is available for booking through authorized media buyers. Streetshow Productions handles the full process from creative concept to screen placement. Minimum booking is typically one month.',
         },
       ],
       ja: [
         {
-          q: '3Dアナモルフィックコンテンツはどのスクリーンに対応できますか？',
-          a: '渋谷、新宿、原宿、大阪など日本全国の主要都市LEDスクリーンに対応しています。各スクリーンは独自の形状、視野角、キャリブレーション要件を持つため、対象スクリーンに合わせて専用に制作します。',
+          q: '東京の3Dビルボードはどのくらいの費用がかかりますか？',
+          a: '日本での3Dアナモルフィックビルボード広告は、スクリーンの場所、時間帯、コンテンツ制作によって月額5万〜50万ドルの費用がかかります。最も人気のある場所は渋谷クロスビジョン、新宿アルタビジョン、大阪道頓堀です。',
         },
         {
-          q: '3Dアナモルフィックビルボード制作にはどのくらいの期間がかかりますか？',
-          a: '通常、複雑さに応じて4～8週間の制作期間が必要です。コンセプト、3Dモデリング、アニメーション、アナモルフィックキャリブレーション、最終納品までを含みます。',
+          q: '3Dビルボードコンテンツの制作にはどのくらいの期間がかかりますか？',
+          a: '3Dアナモルフィックコンテンツの制作は、コンセプトから最終納品まで通常4〜8週間かかります。クリエイティブ開発、3Dモデリング、アニメーション、スクリーン固有のキャリブレーションが含まれます。',
         },
         {
-          q: 'メディアバイイングも制作と一緒に対応してくれますか？',
-          a: 'はい。スクリーン予約、放映スケジュール、キャンペーンタイミングをクリエイティブ制作と並行して調整し、適切な時期に適切な出稿でローンチできるようにします。',
+          q: '日本で最高の3Dビルボード場所はどこですか？',
+          a: 'トップ3は渋谷クロスビジョン（最高の人流）、新宿アルタビジョン（主要交通ハブ）、大阪道頓堀（観光地区）です。それぞれ異なるオーディエンスプロファイルと価格帯があります。',
         },
         {
-          q: '3Dアナモルフィックキャンペーンからソーシャル向けカットダウンを作れますか？',
-          a: 'はい。すべての3Dビルボード案件で、Instagram、TikTok、ペイドソーシャル向けに再利用できる縦型カットダウンを制作し、OOHモーメントを獲得メディアとペイドメディアへ拡張します。',
+          q: '渋谷交差点のビルボードを予約できますか？',
+          a: 'はい。渋谷クロスビジョンは認定メディアバイヤーを通じて予約可能です。Streetshow Productionsはクリエイティブコンセプトからスクリーン掲載まで全プロセスを担当します。最低予約期間は通常1ヶ月です。',
         },
       ],
     },
