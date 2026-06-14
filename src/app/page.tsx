@@ -225,6 +225,14 @@ export default async function Home() {
 
           <ScrollReveal delay={0.4}>
             <div className="mt-10 text-sm text-white/50">{pick(site.location, locale)}</div>
+            <div className="mt-6">
+              <Link
+                href="/blog"
+                className="text-sm font-medium uppercase tracking-[0.15em] text-[#D4AF37]/60 underline-offset-4 transition-colors hover:text-[#D4AF37] hover:underline"
+              >
+                {pick({ en: 'Read our insights on Japan market entry', ja: '日本市場参入インサイトを読む' }, locale)}
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

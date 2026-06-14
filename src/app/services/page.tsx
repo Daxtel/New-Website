@@ -104,6 +104,15 @@ export default async function ServicesPage() {
             ))}
           </div>
 
+          <ScrollReveal className="mt-10">
+            <p className="text-sm text-white/45">
+              {locale === 'ja' ? '戦略的インサイト: ' : 'Strategy reading: '}
+              <Link href="/blog" className="text-[#D4AF37]/70 underline-offset-4 transition-colors hover:text-[#D4AF37] hover:underline">
+                {locale === 'ja' ? '日本市場参入ガイドとインサイト' : 'Japan market entry guides and insights'}
+              </Link>
+            </p>
+          </ScrollReveal>
+
           <ScrollReveal className="mt-16">
           <div className="bg-[#D4AF37] p-8 md:p-10 lg:p-12">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
