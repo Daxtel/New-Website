@@ -3,17 +3,27 @@ import { projectCatalog } from '@/lib/catalog';
 import { pick, ui } from '@/lib/i18n';
 import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates } from '@/lib/alternates';
 import { AnimatedWorkFilter } from '@/components/motion/AnimatedWorkFilter';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { JsonLd, buildItemListSchema, buildBreadcrumbSchema } from '@/components/json-ld';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Our Work | Video Production & 3D Billboards | Streetshow Productions',
-  description:
-    'Portfolio of brand video, 3D anamorphic billboards, and Japan market localization. Clients: New Balance, SHEIN Japan, Ritz-Carlton Kyoto, Charles & Keith.',
-  alternates: { canonical: '/work' },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isJa = locale === 'ja';
+  return {
+    title: {
+      absolute: isJa
+        ? '実績 | 映像制作・3Dビルボード | Streetshow Productions'
+        : 'Our Work | Video Production & 3D Billboards | Streetshow Productions',
+    },
+    description: isJa
+      ? 'ブランド映像、3Dアナモルフィックビルボード、日本市場ローカライズのポートフォリオ。クライアント：ニューバランス、SHEIN Japan、ザ・リッツ・カールトン京都、Charles & Keith。'
+      : 'Portfolio of brand video, 3D anamorphic billboards, and Japan market localization. Clients: New Balance, SHEIN Japan, Ritz-Carlton Kyoto, Charles & Keith.',
+    alternates: buildAlternates('/work', locale),
+  };
+}
 
 const CATEGORY_MAP: Record<string, 'HOSPITALITY' | 'LOCALIZATION' | 'JAPAN MARKET ENTRY' | 'PRODUCTION / CGI / 3D' | 'GROWTH / E-COMMERCE'> = {
   'Hospitality':       'HOSPITALITY',

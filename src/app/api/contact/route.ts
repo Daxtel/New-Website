@@ -4,22 +4,70 @@ type ContactPayload = {
   name?: string;
   email?: string;
   company?: string;
+  website?: string;
+  projectType?: string;
+  budget?: string;
+  timeline?: string;
+  location?: string;
   message?: string;
 };
+
+// Per-field maximum lengths. Anything longer is truncated during normalization.
+const MAX_LEN: Record<keyof ContactPayload, number> = {
+  name: 200,
+  email: 254,
+  company: 200,
+  website: 300,
+  projectType: 120,
+  budget: 60,
+  timeline: 120,
+  location: 200,
+  message: 5000,
+};
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Escape HTML so user input cannot inject markup into the notification email.
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// Trim and clamp every string field to its max length; drop non-string values.
+function normalize(body: ContactPayload): ContactPayload {
+  const out: ContactPayload = {};
+  (Object.keys(MAX_LEN) as (keyof ContactPayload)[]).forEach((key) => {
+    const raw = body[key];
+    if (typeof raw === 'string') {
+      const trimmed = raw.trim().slice(0, MAX_LEN[key]);
+      if (trimmed) out[key] = trimmed;
+    }
+  });
+  return out;
+}
 
 function buildEmailHtml(body: ContactPayload): string {
   const fields = [
     { label: 'Name', value: body.name },
     { label: 'Email', value: body.email },
     { label: 'Company', value: body.company },
-    { label: 'Message', value: body.message },
+    { label: 'Website', value: body.website },
+    { label: 'Project Type', value: body.projectType },
+    { label: 'Budget Range', value: body.budget },
+    { label: 'Timeline', value: body.timeline },
+    { label: 'Location', value: body.location },
+    { label: 'Goal in Japan', value: body.message },
   ];
 
   const rows = fields
     .filter((f) => f.value)
     .map(
       (f) =>
-        `<tr><td style="padding:8px 12px;font-weight:600;vertical-align:top;color:#D4AF37;white-space:nowrap">${f.label}</td><td style="padding:8px 12px;color:#F5F5F5">${f.value}</td></tr>`,
+        `<tr><td style="padding:8px 12px;font-weight:600;vertical-align:top;color:#D4AF37;white-space:nowrap">${f.label}</td><td style="padding:8px 12px;color:#F5F5F5">${escapeHtml(f.value as string)}</td></tr>`,
     )
     .join('');
 
@@ -44,7 +92,12 @@ function buildPlainText(body: ContactPayload): string {
     body.name ? `Name: ${body.name}` : '',
     body.email ? `Email: ${body.email}` : '',
     body.company ? `Company: ${body.company}` : '',
-    body.message ? `\nMessage:\n${body.message}` : '',
+    body.website ? `Website: ${body.website}` : '',
+    body.projectType ? `Project Type: ${body.projectType}` : '',
+    body.budget ? `Budget Range: ${body.budget}` : '',
+    body.timeline ? `Timeline: ${body.timeline}` : '',
+    body.location ? `Location: ${body.location}` : '',
+    body.message ? `\nGoal in Japan:\n${body.message}` : '',
     ``,
     `Received: ${new Date().toISOString()}`,
   ];
@@ -55,16 +108,31 @@ const DEFAULT_TO = 'jackson@streetshowproduction.com';
 const DEFAULT_FROM = 'Streetshow Productions <noreply@streetshowproduction.com>';
 
 export async function POST(req: Request) {
-  let body: ContactPayload;
+  // Reject oversized payloads before parsing.
+  const contentLength = Number(req.headers.get('content-length') || 0);
+  if (contentLength > 20_000) {
+    return NextResponse.json({ error: 'Payload too large.' }, { status: 413 });
+  }
+
+  let raw: ContactPayload;
   try {
-    body = (await req.json()) as ContactPayload;
+    raw = (await req.json()) as ContactPayload;
   } catch {
     return NextResponse.json({ error: 'invalid request' }, { status: 400 });
   }
 
+  const body = normalize(raw);
+
   if (!body.name || !body.email || !body.message) {
     return NextResponse.json(
       { error: 'Name, email, and message are required.' },
+      { status: 400 },
+    );
+  }
+
+  if (!EMAIL_RE.test(body.email)) {
+    return NextResponse.json(
+      { error: 'Please enter a valid email address.' },
       { status: 400 },
     );
   }

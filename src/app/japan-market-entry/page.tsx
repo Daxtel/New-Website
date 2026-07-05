@@ -3,14 +3,18 @@ import Link from 'next/link';
 import { pick } from '@/lib/i18n';
 import { japanMarketEntryPageBilingual } from '@/lib/strategic-pages-bilingual';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
   title: 'Japan Market Entry for Premium Brands',
   description:
     'Strategic Japan market entry, localization, and premium execution support for hospitality, real estate, and international brands.',
-  alternates: { canonical: '/japan-market-entry' },
-};
+    alternates: buildAlternates('/japan-market-entry', locale),
+  };
+}
 
 export default async function JapanMarketEntry() {
   const locale = await getLocale();
@@ -35,10 +39,10 @@ export default async function JapanMarketEntry() {
           </ScrollReveal>
           <ScrollReveal delay={0.24}>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] cursor-pointer transition-all duration-300 hover:[box-shadow:0_0_20px_4px_rgba(212,175,55,0.35)]">
+              <Link href={localizeHref('/contact', locale)} className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] cursor-pointer transition-all duration-300 hover:[box-shadow:0_0_20px_4px_rgba(212,175,55,0.35)]">
                 {pick(shell.primaryCta, locale)}
               </Link>
-              <Link href="/work" className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white cursor-pointer transition-colors hover:border-[#D4AF37]/50 hover:text-[#D4AF37]">
+              <Link href={localizeHref('/work', locale)} className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white cursor-pointer transition-colors hover:border-[#D4AF37]/50 hover:text-[#D4AF37]">
                 {pick(shell.secondaryCta, locale)}
               </Link>
             </div>
@@ -135,10 +139,10 @@ export default async function JapanMarketEntry() {
               {pick(shell.sections.cta.reassurance, locale)}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
+              <Link href={localizeHref('/contact', locale)} className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
                 {pick(shell.primaryCta, locale)}
               </Link>
-              <Link href="/work" className="inline-flex items-center justify-center rounded-full border border-[#0A0A0A]/30 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]">
+              <Link href={localizeHref('/work', locale)} className="inline-flex items-center justify-center rounded-full border border-[#0A0A0A]/30 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]">
                 {pick(shell.secondaryCta, locale)}
               </Link>
             </div>

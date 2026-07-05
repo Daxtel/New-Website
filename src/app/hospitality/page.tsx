@@ -3,13 +3,17 @@ import Link from 'next/link';
 import { pick } from '@/lib/i18n';
 import { hospitalityPageBilingual } from '@/lib/strategic-pages-bilingual';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates, localizeHref } from '@/lib/alternates';
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
   title: 'Creative Strategy & Execution for Luxury Hospitality in Japan',
   description:
     'Strategy-led creative, localization, and premium execution for luxury hotels, resorts, and destination properties in Japan.',
-  alternates: { canonical: '/hospitality' },
-};
+    alternates: buildAlternates('/hospitality', locale),
+  };
+}
 
 export default async function HospitalityPage() {
   const locale = await getLocale();
@@ -29,10 +33,10 @@ export default async function HospitalityPage() {
             {pick(shell.support, locale)}
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]">
+            <Link href={localizeHref('/contact', locale)} className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]">
               {pick(shell.primaryCta, locale)}
             </Link>
-            <Link href="/work" className="inline-flex items-center justify-center rounded-full border border-[#D4AF37]/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
+            <Link href={localizeHref('/work', locale)} className="inline-flex items-center justify-center rounded-full border border-[#D4AF37]/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
               {pick(shell.secondaryCta, locale)}
             </Link>
           </div>
@@ -98,7 +102,7 @@ export default async function HospitalityPage() {
               {pick(shell.sections.cta.body, locale)}
             </p>
             <div className="mt-8">
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
+              <Link href={localizeHref('/contact', locale)} className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
                 {pick(shell.primaryCta, locale)}
               </Link>
             </div>

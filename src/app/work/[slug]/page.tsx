@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import { pick, ui } from '@/lib/i18n';
 import { getCatalogProject, getCatalogService, projectCatalog } from '@/lib/catalog';
 import { getLocale } from '@/lib/locale';
-import { JsonLd, buildCaseStudySchema, buildBreadcrumbSchema } from '@/components/json-ld';
+import { buildAlternates } from '@/lib/alternates';
+import { JsonLd, buildCaseStudySchema, buildBreadcrumbSchema, buildVideoObjectSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 import { ProjectDetailClient } from '@/components/motion/ProjectDetailClient';
 
@@ -32,10 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: [{ url: ogImage, width: 1200, height: 630, alt: pick(project.media.alt, locale) }],
     },
     twitter: { card: 'summary_large_image', title, description, images: [ogImage] },
-    alternates: {
-      canonical: `/work/${slug}`,
-      languages: { en: `/work/${slug}`, ja: `/work/${slug}`, 'x-default': `/work/${slug}` },
-    },
+    alternates: buildAlternates(`/work/${slug}`, locale),
   };
 }
 
@@ -78,9 +76,24 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     { name: title,           url: projectUrl },
   ]);
 
+  const videoSchema = heroVideo
+    ? buildVideoObjectSchema({
+        name: title,
+        description: pick(project.intro, locale),
+        contentUrl: heroVideo.startsWith('http') ? heroVideo : `${site.url}${heroVideo}`,
+        thumbnailUrl: `${site.url}${project.media.image || '/og-image.jpg'}`,
+        uploadDate: `${project.year}-01-01`,
+        url: projectUrl,
+      })
+    : null;
+
+  const schemas = videoSchema
+    ? [caseStudySchema, breadcrumbSchema, videoSchema]
+    : [caseStudySchema, breadcrumbSchema];
+
   return (
     <main className="bg-[#0A0A0A] text-white">
-      <JsonLd data={[caseStudySchema, breadcrumbSchema]} />
+      <JsonLd data={schemas} />
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <ProjectDetailClient
           backLabel={pick(ui.sections.backToWork, locale)}

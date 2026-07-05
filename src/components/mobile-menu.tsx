@@ -9,7 +9,7 @@ type NavLink = {
   label: { en: string; ja: string };
 };
 
-export function MobileMenu({ links, ctaLabel, locale = 'en' }: { links: NavLink[]; ctaLabel: string; locale?: 'en' | 'ja' }) {
+export function MobileMenu({ links, ctaLabel, locale = 'en', contactHref = '/contact' }: { links: NavLink[]; ctaLabel: string; locale?: 'en' | 'ja'; contactHref?: string }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   // Close on route change — startTransition avoids cascading-render lint warning
@@ -88,7 +88,7 @@ export function MobileMenu({ links, ctaLabel, locale = 'en' }: { links: NavLink[
 
         <div className="mt-8 border-t border-[#D4AF37]/12 pt-8">
           <Link
-            href="/contact"
+            href={contactHref}
             className="flex items-center justify-center rounded-full bg-[#D4AF37] px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]"
           >
             {ctaLabel}

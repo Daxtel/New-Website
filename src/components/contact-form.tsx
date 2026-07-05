@@ -5,18 +5,37 @@ import { pick } from '@/lib/i18n';
 import { contactPageBilingual } from '@/lib/secondary-pages-bilingual';
 
 type Props = { locale?: 'en' | 'ja' };
-type FormDataState = { name: string; email: string; company: string; message: string };
+type FormDataState = {
+  name: string;
+  email: string;
+  company: string;
+  website: string;
+  projectType: string;
+  budget: string;
+  timeline: string;
+  location: string;
+  message: string;
+};
+
+const EMPTY_FORM: FormDataState = {
+  name: '', email: '', company: '', website: '',
+  projectType: '', budget: '', timeline: '', location: '', message: '',
+};
 
 const EASE: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
 const fieldDefs: Array<{
-  key: keyof Omit<FormDataState, 'message'>;
+  key: 'name' | 'email' | 'company' | 'website' | 'timeline' | 'location';
   label: { en: string; ja: string };
   type?: string;
+  full?: boolean;
 }> = [
-  { key: 'name',    label: contactPageBilingual.fieldLabels.name },
-  { key: 'email',   label: contactPageBilingual.fieldLabels.email, type: 'email' },
-  { key: 'company', label: contactPageBilingual.fieldLabels.company },
+  { key: 'name',     label: contactPageBilingual.fieldLabels.name },
+  { key: 'email',    label: contactPageBilingual.fieldLabels.email, type: 'email' },
+  { key: 'company',  label: contactPageBilingual.fieldLabels.company },
+  { key: 'website',  label: contactPageBilingual.fieldLabels.website, type: 'url' },
+  { key: 'timeline', label: contactPageBilingual.fieldLabels.timeline },
+  { key: 'location', label: contactPageBilingual.fieldLabels.location },
 ];
 
 // ── Floating-label input ──────────────────────────────────────────────────────
@@ -57,6 +76,58 @@ function FloatField({
         onBlur={() => setFocused(false)}
         className="w-full bg-transparent px-4 pb-3 pt-6 text-white outline-none"
       />
+    </div>
+  );
+}
+
+// ── Floating-label select ─────────────────────────────────────────────────────
+function FloatSelect({
+  id, label, value, options, placeholder, onChange,
+}: {
+  id: string; label: string; value: string; placeholder: string;
+  options: string[]; onChange: (v: string) => void;
+}) {
+  const [focused, setFocused] = useState(false);
+  const lifted = focused || value.length > 0;
+
+  return (
+    <div className="relative border border-[#D4AF37]/15 bg-[#141414] transition-colors duration-300 focus-within:border-[#D4AF37]/50">
+      <motion.div
+        className="absolute bottom-0 left-0 h-px bg-[#D4AF37]"
+        animate={{ scaleX: focused ? 1 : 0 }}
+        style={{ width: '100%', originX: 0 }}
+        transition={{ duration: 0.35, ease: EASE }}
+      />
+      <motion.label
+        htmlFor={id}
+        className="pointer-events-none absolute left-4 z-10 font-medium uppercase tracking-[0.12em] text-[#D4AF37]/60 select-none"
+        animate={lifted
+          ? { top: '6px', fontSize: '9px', opacity: 0.7 }
+          : { top: '50%', fontSize: '12px', opacity: 1 }}
+        style={lifted ? {} : { translateY: '-50%' }}
+        transition={{ duration: 0.2, ease: EASE }}
+      >
+        {label}
+      </motion.label>
+      <select
+        id={id} value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        className="w-full cursor-pointer appearance-none bg-transparent px-4 pb-3 pt-6 text-white outline-none [&>option]:bg-[#141414] [&>option]:text-white"
+      >
+        <option value="" disabled hidden>{placeholder}</option>
+        {options.map((opt) => (
+          <option key={opt} value={opt}>{opt}</option>
+        ))}
+      </select>
+      {/* Chevron */}
+      <svg
+        className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#D4AF37]/60"
+        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+      >
+        <path fillRule="evenodd" clipRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
+      </svg>
     </div>
   );
 }
@@ -152,7 +223,7 @@ function SubmitButton({ status, locale }: { status: 'idle' | 'loading' | 'succes
 
 // ── Main exported form ────────────────────────────────────────────────────────
 export function ContactForm({ locale = 'en' }: Props) {
-  const [formData, setFormData] = useState<FormDataState>({ name: '', email: '', company: '', message: '' });
+  const [formData, setFormData] = useState<FormDataState>({ ...EMPTY_FORM });
   const [status, setStatus]     = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -174,7 +245,7 @@ export function ContactForm({ locale = 'en' }: Props) {
       const data = await res.json();
       if (!res.ok) { setStatus('error'); setErrorMsg(data.error || 'Submission failed'); return; }
       setStatus('success');
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ ...EMPTY_FORM });
     } catch {
       setStatus('error');
       setErrorMsg(locale === 'en' ? 'Network error — please try again.' : 'ネットワークエラー。再度お試しください。');
@@ -185,7 +256,7 @@ export function ContactForm({ locale = 'en' }: Props) {
     <form onSubmit={onSubmit} className="space-y-5 md:space-y-6">
       <div className="grid gap-5 md:grid-cols-2 md:gap-6">
         {fieldDefs.map(({ key, label, type }) => (
-          <div key={key} className={key === 'company' ? 'md:col-span-2' : ''}>
+          <div key={key}>
             <FloatField
               id={key} label={pick(label, locale)} value={formData[key]}
               type={type} required={key === 'name' || key === 'email'}
@@ -193,6 +264,22 @@ export function ContactForm({ locale = 'en' }: Props) {
             />
           </div>
         ))}
+        <FloatSelect
+          id="projectType"
+          label={pick(contactPageBilingual.fieldLabels.projectType, locale)}
+          value={formData.projectType}
+          placeholder={pick(contactPageBilingual.selectPlaceholder, locale)}
+          options={contactPageBilingual.projectTypeOptions.map((o) => pick(o, locale))}
+          onChange={(v) => update('projectType', v)}
+        />
+        <FloatSelect
+          id="budget"
+          label={pick(contactPageBilingual.fieldLabels.budget, locale)}
+          value={formData.budget}
+          placeholder={pick(contactPageBilingual.selectPlaceholder, locale)}
+          options={contactPageBilingual.budgetOptions.map((o) => pick(o, locale))}
+          onChange={(v) => update('budget', v)}
+        />
       </div>
 
       <FloatTextarea

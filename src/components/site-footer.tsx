@@ -3,14 +3,21 @@ import { navLinks } from '@/lib/home-content';
 import { pick, ui } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 import { site } from '@/lib/site';
+import { locationPages, industryPages } from '@/lib/landing-pages';
+import { localizeHref } from '@/lib/alternates';
+
+const exploreLinks = [
+  ...locationPages.map((p) => ({ href: `/locations/${p.slug}`, label: p.navLabel })),
+  ...industryPages.map((p) => ({ href: `/industries/${p.slug}`, label: p.navLabel })),
+];
 
 export function SiteFooter({ locale = 'en' }: { locale?: Locale }) {
   return (
     <footer className="border-t border-[#D4AF37]/10 bg-[#0A0A0A]">
       <div className="mx-auto max-w-6xl px-6 py-14 md:px-10 lg:px-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link href="/" className="text-xl font-bold tracking-tight text-[#D4AF37] md:text-2xl">
+            <Link href={localizeHref('/', locale)} className="text-xl font-bold tracking-tight text-[#D4AF37] md:text-2xl">
               STREETSHOW PRODUCTIONS
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65 md:text-base">
@@ -23,7 +30,20 @@ export function SiteFooter({ locale = 'en' }: { locale?: Locale }) {
             <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70">{pick(ui.sections.navigation, locale)}</p>
             <div className="mt-4 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-white/65 transition-colors hover:text-[#D4AF37] md:text-base">
+                <Link key={link.href} href={localizeHref(link.href, locale)} className="text-sm text-white/65 transition-colors hover:text-[#D4AF37] md:text-base">
+                  {pick(link.label, locale)}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70">
+              {locale === 'ja' ? '拠点・業界' : 'Locations & Industries'}
+            </p>
+            <div className="mt-4 flex flex-col gap-3">
+              {exploreLinks.map((link) => (
+                <Link key={link.href} href={localizeHref(link.href, locale)} className="text-sm text-white/65 transition-colors hover:text-[#D4AF37] md:text-base">
                   {pick(link.label, locale)}
                 </Link>
               ))}
@@ -37,8 +57,8 @@ export function SiteFooter({ locale = 'en' }: { locale?: Locale }) {
               <a href="mailto:admin@streetshowproduction.com" className="break-all transition-colors hover:text-[#D4AF37]">
                 admin@streetshowproduction.com
               </a>
-              <a href="tel:+817048011725" className="transition-colors hover:text-[#D4AF37]">
-                +81 70-4801-1725
+              <a href="tel:+817048021725" className="transition-colors hover:text-[#D4AF37]">
+                +81 70-4802-1725
               </a>
             </div>
           </div>

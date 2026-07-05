@@ -10,10 +10,13 @@ type JsonLdProps = {
 };
 
 export function JsonLd({ data }: JsonLdProps) {
+  // Escape `<` so a `</script>` sequence in any schema value cannot break out
+  // of the script tag (defense-in-depth against JSON-LD XSS).
+  const json = JSON.stringify(data).replace(/</g, '\\u003c');
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: json }}
     />
   );
 }
@@ -74,11 +77,11 @@ export const organizationSchema = {
     'https://www.instagram.com/streetshowproductions',
     'https://www.linkedin.com/company/streetshow-productions',
   ],
-  telephone: '+81-70-4801-1725',
+  telephone: '+81-70-4802-1725',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    telephone: '+81-70-4801-1725',
+    telephone: '+81-70-4802-1725',
     email: 'admin@streetshowproduction.com',
     availableLanguage: ['English', 'Japanese'],
     areaServed: ['JP', 'US', 'EU'],
@@ -94,7 +97,7 @@ export const localBusinessSchema = {
     'Market Perception Intelligence Studio. Video production, 3D anamorphic billboards, and Japan market localization for foreign brands entering Japan.',
   image: `${site.url}/og-image.jpg`,
   url: site.url,
-  telephone: '+81-70-4801-1725',
+  telephone: '+81-70-4802-1725',
   email: 'admin@streetshowproduction.com',
   priceRange: '¥¥¥',
   address: {
@@ -245,7 +248,7 @@ export const homeFaqSchema = buildFaqSchema([
   },
   {
     q: 'How do I contact Streetshow Productions?',
-    a: 'Email admin@streetshowproduction.com or call +81-70-4801-1725. Project inquiries can also be submitted via https://streetshowproduction.com/contact.',
+    a: 'Email admin@streetshowproduction.com or call +81-70-4802-1725. Project inquiries can also be submitted via https://streetshowproduction.com/contact.',
   },
 ]);
 
@@ -274,5 +277,27 @@ export function buildCaseStudySchema(params: {
     about: params.category,
     keywords: [params.client, params.category, 'Japan', 'case study'],
     mainEntityOfPage: params.url,
+  };
+}
+
+export function buildVideoObjectSchema(params: {
+  name: string;
+  description: string;
+  contentUrl: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${params.url}#video`,
+    name: params.name,
+    description: params.description,
+    contentUrl: params.contentUrl,
+    thumbnailUrl: params.thumbnailUrl,
+    uploadDate: params.uploadDate,
+    publisher: { '@id': `${site.url}/#organization` },
+    inLanguage: 'en',
   };
 }

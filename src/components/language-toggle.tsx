@@ -1,16 +1,27 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import type { Locale } from '@/lib/i18n';
 
+function toEnglish(path: string): string {
+  if (path === '/ja') return '/';
+  if (path.startsWith('/ja/')) return path.slice('/ja'.length);
+  return path;
+}
+
+function toJapanese(path: string): string {
+  if (path === '/ja' || path.startsWith('/ja/')) return path;
+  return path === '/' ? '/ja' : `/ja${path}`;
+}
+
 export function LanguageToggle({ locale }: { locale: Locale }) {
+  const pathname = usePathname() || '/';
+
   function switchLocale(newLocale: Locale) {
     if (newLocale === locale) return;
-    // Set the cookie
-    document.cookie = `streetshow-locale=${newLocale};path=/;max-age=${60 * 60 * 24 * 365};samesite=lax`;
-    // Hard navigate with cache-bust param to defeat browser and CDN cache
-    const url = new URL(window.location.href);
-    url.searchParams.set('l', newLocale);
-    window.location.href = url.toString();
+    const target = newLocale === 'ja' ? toJapanese(pathname) : toEnglish(pathname);
+    // Hard navigation so <html lang> and every server component re-render for the new locale.
+    window.location.href = target;
   }
 
   return (

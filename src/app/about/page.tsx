@@ -3,15 +3,19 @@ import Link from 'next/link';
 import { pick } from '@/lib/i18n';
 import { aboutPageBilingual } from '@/lib/secondary-pages-bilingual';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates } from '@/lib/alternates';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { CounterStat } from '@/components/motion/CounterStat';
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
   title: 'About Streetshow Productions',
   description:
     'About Streetshow Productions, a premium Japan market entry, localization, and execution partner for high-end brands.',
-  alternates: { canonical: '/about' },
-};
+    alternates: buildAlternates('/about', locale),
+  };
+}
 
 export default async function AboutPage() {
   const locale = await getLocale();

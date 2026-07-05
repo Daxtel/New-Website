@@ -4,6 +4,7 @@ import { featuredWork, process, services, whoWeWorkWith } from '@/lib/home-conte
 import { pick, ui } from '@/lib/i18n';
 import { homePage, site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { ClientStrip } from '@/components/client-strip';
 import { JsonLd, homeFaqSchema, buildBreadcrumbSchema } from '@/components/json-ld';
 import { AnimatedHero } from '@/components/motion/AnimatedHero';
@@ -12,14 +13,21 @@ import { AnimatedProcessStep } from '@/components/motion/AnimatedProcessStep';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { HorizontalWorkScroll } from '@/components/motion/HorizontalWorkScroll';
 
-export const metadata: Metadata = {
-  title: 'Video Production & 3D Billboards in Japan | Streetshow Productions',
-  description:
-    'Strategy-first creative production in Fukuoka and Tokyo. 3D anamorphic billboards, brand video, Japan market localization. Clients include New Balance, SHEIN Japan, Ritz-Carlton.',
-  alternates: {
-    canonical: '/',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isJa = locale === 'ja';
+  return {
+    title: {
+      absolute: isJa
+        ? '日本の映像制作・3Dビルボード | Streetshow Productions'
+        : 'Video Production & 3D Billboards in Japan | Streetshow Productions',
+    },
+    description: isJa
+      ? '福岡・東京を拠点とする戦略先行のクリエイティブ制作スタジオ。3Dアナモルフィックビルボード、ブランド映像、日本市場ローカライズ。ニューバランス、SHEIN Japan、リッツ・カールトンとの実績。'
+      : 'Strategy-first creative production in Fukuoka and Tokyo. 3D anamorphic billboards, brand video, Japan market localization. Clients include New Balance, SHEIN Japan, Ritz-Carlton.',
+    alternates: buildAlternates('/', locale),
+  };
+}
 
 export default async function Home() {
   const locale = await getLocale();
@@ -37,7 +45,7 @@ export default async function Home() {
         headline={pick(homePage.headline, locale)}
         subheadline={pick(homePage.subheadline, locale)}
         trustLine={pick(homePage.trustLine, locale)}
-        primaryCtaLabel={pick(site.primaryCta, locale)}
+        primaryCtaLabel={pick(homePage.heroCta, locale)}
         secondaryCtaLabel={pick(ui.cta.viewSelectedWork, locale)}
       />
 
@@ -86,7 +94,7 @@ export default async function Home() {
                 </p>
               </div>
               <Link
-                href="/work"
+                href={localizeHref('/work', locale)}
                 className="text-sm font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75 transition-colors hover:text-[#D4AF37]"
               >
                 {pick(ui.cta.viewAllWork, locale)}
@@ -104,6 +112,7 @@ export default async function Home() {
                 description: pick(item.description, locale),
               }))}
               ctaLabel={pick(ui.cta.viewCaseStudy, locale)}
+              dragLabel={pick({ en: 'Drag to explore', ja: 'ドラッグして探索' }, locale)}
             />
           </div>
         </div>

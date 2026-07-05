@@ -15,19 +15,20 @@ interface WorkItem {
 interface HorizontalWorkScrollProps {
   items: WorkItem[];
   ctaLabel: string;
+  dragLabel?: string;
 }
 
 const CARD_WIDTH = 380;   // px
 const CARD_GAP   = 20;    // px
 
-export function HorizontalWorkScroll({ items, ctaLabel }: HorizontalWorkScrollProps) {
+export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to explore' }: HorizontalWorkScrollProps) {
   const trackRef    = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [maxDrag, setMaxDrag] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const check = () => startTransition(() => setIsMobile(window.innerWidth < 768));
+    const check = () => startTransition(() => setIsMobile(window.innerWidth < 1024));
     check();
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
@@ -83,10 +84,10 @@ export function HorizontalWorkScroll({ items, ctaLabel }: HorizontalWorkScrollPr
     return () => container.removeEventListener('wheel', onWheel);
   }, [rawX, maxDrag, clamp]);
 
-  // Mobile: vertical stack of full-width cards
+  // Mobile + tablet: vertical card grid (phones and iPad portrait)
   if (isMobile) {
     return (
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
         {items.map((item) => (
           <Link
             key={item.slug}
@@ -169,13 +170,13 @@ export function HorizontalWorkScroll({ items, ctaLabel }: HorizontalWorkScrollPr
       </div>
 
       {/* Drag hint — fades out after first interaction */}
-      <DragHint x={rawX} />
+      <DragHint x={rawX} label={dragLabel} />
     </div>
   );
 }
 
 // ── Drag hint ─────────────────────────────────────────────────────────────────
-function DragHint({ x }: { x: ReturnType<typeof useMotionValue<number>> }) {
+function DragHint({ x, label }: { x: ReturnType<typeof useMotionValue<number>>; label: string }) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -192,7 +193,7 @@ function DragHint({ x }: { x: ReturnType<typeof useMotionValue<number>> }) {
       className="pointer-events-none mt-4 flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-white/30"
     >
       <span className="inline-block">←</span>
-      <span>Drag to explore</span>
+      <span>{label}</span>
       <span className="inline-block">→</span>
     </motion.div>
   );

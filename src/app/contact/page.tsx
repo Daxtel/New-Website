@@ -4,13 +4,17 @@ import { pick } from '@/lib/i18n';
 import { contactPage } from '@/lib/secondary-pages';
 import { contactPageBilingual } from '@/lib/secondary-pages-bilingual';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates } from '@/lib/alternates';
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
   title: 'Discuss Your Project',
   description:
     'Contact Streetshow Productions about Japan market entry, hospitality repositioning, premium campaign execution, and localization-led brand work.',
-  alternates: { canonical: '/contact' },
-};
+    alternates: buildAlternates('/contact', locale),
+  };
+}
 
 export default async function ContactPage() {
   const locale = await getLocale();

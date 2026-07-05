@@ -2,23 +2,32 @@ import type { Metadata } from 'next';
 import { blogPosts } from '@/lib/blog';
 import { pick } from '@/lib/i18n';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates } from '@/lib/alternates';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { AnimatedBlogCard } from '@/components/motion/AnimatedBlogCard';
 
-export const metadata: Metadata = {
-  title: 'Blog | Japan Market Entry & Creative Strategy | Streetshow Productions',
-  description:
-    'Insights on Japan market entry, hospitality marketing, 3D billboard advertising, and localization strategy from Streetshow Productions in Fukuoka.',
-  alternates: { canonical: '/blog' },
-  openGraph: {
-    title: 'Insights & Blog | Streetshow Productions',
-    description:
-      'Insights on Japan market entry, localization, luxury hospitality creative, and premium brand execution.',
-    type: 'website',
-    url: '/blog',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Streetshow Productions Blog' }],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isJa = locale === 'ja';
+  const title = isJa
+    ? 'ブログ | 日本市場参入・クリエイティブ戦略 | Streetshow Productions'
+    : 'Blog | Japan Market Entry & Creative Strategy | Streetshow Productions';
+  const description = isJa
+    ? '日本市場参入、ホスピタリティマーケティング、3Dビルボード広告、ローカライズ戦略に関するインサイト。Streetshow Productions（福岡）より。'
+    : 'Insights on Japan market entry, hospitality marketing, 3D billboard advertising, and localization strategy from Streetshow Productions in Fukuoka.';
+  return {
+    title: { absolute: title },
+    description,
+    alternates: buildAlternates('/blog', locale),
+    openGraph: {
+      title: isJa ? 'インサイト・ブログ | Streetshow Productions' : 'Insights & Blog | Streetshow Productions',
+      description,
+      type: 'website',
+      url: '/blog',
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Streetshow Productions Blog' }],
+    },
+  };
+}
 
 export default async function BlogIndexPage() {
   const locale = await getLocale();

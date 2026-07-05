@@ -23,6 +23,37 @@ function sha256(value: string): string {
   return createHash('sha256').update(value.trim().toLowerCase()).digest('hex');
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Escape HTML so lead input cannot inject markup into the notification email.
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// String fields that get trimmed and length-capped before use.
+const LEAD_MAX_LEN: Record<string, number> = {
+  restaurantType: 120, challenge: 120, seats: 40, area: 60,
+  name: 200, restaurantName: 200, instagram: 120, email: 254,
+  phone: 40, eventId: 120, fbp: 200, fbc: 200, userAgent: 512, sourceUrl: 500,
+};
+
+function normalizeLead(body: LeadPayload): LeadPayload {
+  const out: LeadPayload = {};
+  (Object.keys(LEAD_MAX_LEN) as (keyof LeadPayload)[]).forEach((key) => {
+    const raw = body[key];
+    if (typeof raw === 'string') {
+      const trimmed = raw.trim().slice(0, LEAD_MAX_LEN[key]);
+      if (trimmed) out[key] = trimmed;
+    }
+  });
+  return out;
+}
+
 const CHALLENGE_LABELS: Record<string, string> = {
   'no-time': 'No time to create content',
   'no-ideas': "Doesn't know what to post",
@@ -52,7 +83,7 @@ function buildEmailHtml(lead: LeadPayload): string {
     .filter((r) => r.value)
     .map(
       (r) =>
-        `<tr><td style="padding:10px 14px;font-weight:600;vertical-align:top;color:#D4AF37;white-space:nowrap;border-bottom:1px solid rgba(212,175,55,0.08)">${r.label}</td><td style="padding:10px 14px;color:#F5F5F5;border-bottom:1px solid rgba(212,175,55,0.08)">${r.value}</td></tr>`,
+        `<tr><td style="padding:10px 14px;font-weight:600;vertical-align:top;color:#D4AF37;white-space:nowrap;border-bottom:1px solid rgba(212,175,55,0.08)">${r.label}</td><td style="padding:10px 14px;color:#F5F5F5;border-bottom:1px solid rgba(212,175,55,0.08)">${escapeHtml(String(r.value))}</td></tr>`,
     )
     .join('');
 
@@ -67,7 +98,7 @@ function buildEmailHtml(lead: LeadPayload): string {
         </table>
         <div style="margin-top:20px;padding:16px;background:#141414;border:1px solid rgba(212,175,55,0.12);border-radius:4px">
           <p style="color:#D4AF37;font-size:13px;font-weight:600;margin:0 0 8px">ACTION REQUIRED</p>
-          <p style="color:#F5F5F5;opacity:0.7;font-size:13px;margin:0">Send custom content concept within 48 hours to ${lead.email}</p>
+          <p style="color:#F5F5F5;opacity:0.7;font-size:13px;margin:0">Send custom content concept within 48 hours to ${escapeHtml(lead.email || '')}</p>
         </div>
         <p style="color:#F5F5F5;opacity:0.3;font-size:11px;margin-top:20px">Received at ${new Date().toISOString()}</p>
       </div>
@@ -182,16 +213,30 @@ const DEFAULT_TO = 'jackson@streetshowproduction.com';
 const DEFAULT_FROM = 'Streetshow Productions <noreply@streetshowproduction.com>';
 
 export async function POST(req: Request) {
-  let body: LeadPayload;
+  const contentLength = Number(req.headers.get('content-length') || 0);
+  if (contentLength > 20_000) {
+    return NextResponse.json({ error: 'Payload too large.' }, { status: 413 });
+  }
+
+  let raw: LeadPayload;
   try {
-    body = (await req.json()) as LeadPayload;
+    raw = (await req.json()) as LeadPayload;
   } catch {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   }
 
+  const body = normalizeLead(raw);
+
   if (!body.name || !body.email || !body.restaurantName) {
     return NextResponse.json(
       { error: 'Name, email, and restaurant name are required.' },
+      { status: 400 },
+    );
+  }
+
+  if (!EMAIL_RE.test(body.email)) {
+    return NextResponse.json(
+      { error: 'Please enter a valid email address.' },
       { status: 400 },
     );
   }

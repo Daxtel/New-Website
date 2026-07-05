@@ -5,6 +5,7 @@ import { pick, ui } from '@/lib/i18n';
 import { getCatalogService, projectCatalog, serviceCatalog } from '@/lib/catalog';
 import { CampaignWork } from '@/components/campaign-work';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates } from '@/lib/alternates';
 import { JsonLd, buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 
@@ -39,10 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description,
       images: ['/og-image.jpg'],
     },
-    alternates: {
-      canonical: url,
-      languages: { en: url, ja: url, 'x-default': url },
-    },
+    alternates: buildAlternates(url, locale),
   };
 }
 

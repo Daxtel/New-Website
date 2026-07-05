@@ -7,6 +7,7 @@ import { JsonLd, buildBreadcrumbSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 import { pick } from '@/lib/i18n';
 import { getLocale } from '@/lib/locale';
+import { buildAlternates } from '@/lib/alternates';
 import { ReadingProgress } from '@/components/motion/ReadingProgress';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
@@ -52,10 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: metaDescription,
       images: [post.heroImage || '/og-image.jpg'],
     },
-    alternates: {
-      canonical: url,
-      languages: { en: url, ja: url, 'x-default': url },
-    },
+    alternates: buildAlternates(url, locale),
   };
 }
 
