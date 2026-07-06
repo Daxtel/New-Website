@@ -25,7 +25,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const metaDescription = pick(post.metaDescription, locale);
   const title = pick(post.title, locale);
   return {
-    title: metaTitle,
+    // Absolute so the global "%s | Streetshow Productions" template isn't
+    // appended (meta titles already include the brand suffix).
+    title: { absolute: metaTitle },
     description: metaDescription,
     keywords: post.tags,
     openGraph: {
