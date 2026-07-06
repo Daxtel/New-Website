@@ -8,10 +8,16 @@ import { buildAlternates } from '@/lib/alternates';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
+  const isJa = locale === 'ja';
   return {
-  title: 'Discuss Your Project',
-  description:
-    'Contact Streetshow Productions about Japan market entry, hospitality repositioning, premium campaign execution, and localization-led brand work.',
+    title: {
+      absolute: isJa
+        ? 'お問い合わせ | 日本市場参入のご相談 | 東京・福岡 | Streetshow Productions'
+        : 'Contact Streetshow | Discuss Your Japan Launch | Tokyo & Fukuoka',
+    },
+    description: isJa
+      ? '日本市場参入、ホスピタリティの再構築、プレミアムキャンペーン制作、ローカライズ主導のブランド案件についてStreetshow Productionsにご相談ください。24時間以内にご返信します。'
+      : 'Contact Streetshow Productions about Japan market entry, hospitality repositioning, premium campaign execution, and localization-led brand work. We respond within 24 hours.',
     alternates: buildAlternates('/contact', locale),
   };
 }

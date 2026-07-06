@@ -8,10 +8,16 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
+  const isJa = locale === 'ja';
   return {
-  title: 'Japan Market Entry for Premium Brands',
-  description:
-    'Strategic Japan market entry, localization, and premium execution support for hospitality, real estate, and international brands.',
+    title: {
+      absolute: isJa
+        ? '海外ブランドの日本市場参入クリエイティブパートナー | Streetshow Productions'
+        : 'Japan Market Entry Creative Partner for Premium Brands | Streetshow Productions',
+    },
+    description: isJa
+      ? '日本市場に参入する海外プレミアムブランドを、戦略、ローカライズ、映像制作、キャンペーン実行で包括的に支援。ホスピタリティ、不動産、国際ブランド向け。福岡・東京。'
+      : 'Strategic Japan market entry, localization, and premium execution support for hospitality, real estate, and international brands. Based in Fukuoka and Tokyo.',
     alternates: buildAlternates('/japan-market-entry', locale),
   };
 }

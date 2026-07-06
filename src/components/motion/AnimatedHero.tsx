@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRef, useState, useEffect, startTransition } from 'react';
 import dynamic from 'next/dynamic';
 import { useMagnetic } from '@/hooks/useMagnetic';
+import { localizeHref } from '@/lib/alternates';
 
 // Loaded client-side only — Three.js / WebGL
 const ParticleFieldScene = dynamic(
@@ -21,6 +22,7 @@ interface AnimatedHeroProps {
   trustLine: string;
   primaryCtaLabel: string;
   secondaryCtaLabel: string;
+  locale?: 'en' | 'ja';
 }
 
 // Stagger container variant
@@ -60,6 +62,7 @@ export function AnimatedHero({
   trustLine,
   primaryCtaLabel,
   secondaryCtaLabel,
+  locale = 'en',
 }: AnimatedHeroProps) {
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
@@ -100,10 +103,10 @@ export function AnimatedHero({
               {trustLine}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-              <Link href="/contact" className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]">
+              <Link href={localizeHref('/contact', locale)} className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]">
                 {primaryCtaLabel}
               </Link>
-              <Link href="/work" className="inline-flex min-h-[52px] items-center justify-center rounded-full border-2 border-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
+              <Link href={localizeHref('/work', locale)} className="inline-flex min-h-[52px] items-center justify-center rounded-full border-2 border-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
                 {secondaryCtaLabel}
               </Link>
             </div>
@@ -185,10 +188,10 @@ export function AnimatedHero({
             animate="show"
             className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4"
           >
-            <CTAButton href="/contact" primary>
+            <CTAButton href={localizeHref('/contact', locale)} primary>
               {primaryCtaLabel}
             </CTAButton>
-            <CTAButton href="/work">
+            <CTAButton href={localizeHref('/work', locale)}>
               {secondaryCtaLabel}
             </CTAButton>
           </motion.div>

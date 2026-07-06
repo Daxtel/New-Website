@@ -3,7 +3,7 @@ import { projectCatalog } from '@/lib/catalog';
 import { pick, ui } from '@/lib/i18n';
 import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
-import { buildAlternates } from '@/lib/alternates';
+import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { AnimatedWorkFilter } from '@/components/motion/AnimatedWorkFilter';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { JsonLd, buildItemListSchema, buildBreadcrumbSchema } from '@/components/json-ld';
@@ -104,7 +104,7 @@ export default async function WorkPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/contact"
+                href={localizeHref('/contact', locale)}
                 className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] transition-all duration-300 hover:[box-shadow:0_0_24px_6px_rgba(212,175,55,0.35)] cursor-pointer"
               >
                 {pick({ en: "LET'S TALK", ja: '相談する' }, locale)}

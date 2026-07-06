@@ -4,7 +4,7 @@ import { serviceCatalog } from '@/lib/catalog';
 import { pick, ui } from '@/lib/i18n';
 import { site } from '@/lib/site';
 import { getLocale } from '@/lib/locale';
-import { buildAlternates } from '@/lib/alternates';
+import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { aboutPageBilingual } from '@/lib/secondary-pages-bilingual';
 import { JsonLd, buildItemListSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
@@ -108,6 +108,7 @@ export default async function ServicesPage() {
                 title={pick(service.title, locale)}
                 description={pick(service.description, locale)}
                 index={i}
+                locale={locale}
               />
             ))}
           </div>
@@ -137,7 +138,7 @@ export default async function ServicesPage() {
           <ScrollReveal className="mt-10">
             <p className="text-sm text-white/45">
               {locale === 'ja' ? '戦略的インサイト: ' : 'Strategy reading: '}
-              <Link href="/blog" className="text-[#D4AF37]/70 underline-offset-4 transition-colors hover:text-[#D4AF37] hover:underline">
+              <Link href={localizeHref('/blog', locale)} className="text-[#D4AF37]/70 underline-offset-4 transition-colors hover:text-[#D4AF37] hover:underline">
                 {locale === 'ja' ? '日本市場参入ガイドとインサイト' : 'Japan market entry guides and insights'}
               </Link>
             </p>
@@ -152,7 +153,7 @@ export default async function ServicesPage() {
                   {pick(aboutPageBilingual.credibility, locale)}
                 </p>
               </div>
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
+              <Link href={localizeHref('/contact', locale)} className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
                 {pick(ui.cta.letsTalk, locale)}
               </Link>
             </div>

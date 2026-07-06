@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { checkRateLimit, clientIpFrom, isHoneypotTripped } from '@/lib/rate-limit';
 
 type ContactPayload = {
   name?: string;
@@ -10,10 +11,12 @@ type ContactPayload = {
   timeline?: string;
   location?: string;
   message?: string;
+  company_url?: string; // honeypot — must stay empty
 };
 
 // Per-field maximum lengths. Anything longer is truncated during normalization.
-const MAX_LEN: Record<keyof ContactPayload, number> = {
+// Honeypot (company_url) is intentionally excluded — it's checked, never emailed.
+const MAX_LEN: Partial<Record<keyof ContactPayload, number>> = {
   name: 200,
   email: 254,
   company: 200,
@@ -119,6 +122,20 @@ export async function POST(req: Request) {
     raw = (await req.json()) as ContactPayload;
   } catch {
     return NextResponse.json({ error: 'invalid request' }, { status: 400 });
+  }
+
+  // Honeypot: bots fill the hidden field. Pretend success so they don't retry.
+  if (isHoneypotTripped(raw.company_url)) {
+    return NextResponse.json({ ok: true, delivered: false });
+  }
+
+  // Rate limit by IP (no-op unless Upstash is configured).
+  const { limited } = await checkRateLimit(clientIpFrom(req.headers));
+  if (limited) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again in a few minutes.' },
+      { status: 429 },
+    );
   }
 
   const body = normalize(raw);

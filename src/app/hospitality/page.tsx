@@ -7,10 +7,16 @@ import { buildAlternates, localizeHref } from '@/lib/alternates';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
+  const isJa = locale === 'ja';
   return {
-  title: 'Creative Strategy & Execution for Luxury Hospitality in Japan',
-  description:
-    'Strategy-led creative, localization, and premium execution for luxury hotels, resorts, and destination properties in Japan.',
+    title: {
+      absolute: isJa
+        ? '日本のラグジュアリーホスピタリティ向けクリエイティブ戦略・実行支援 | Streetshow Productions'
+        : 'Creative Strategy & Execution for Luxury Hospitality in Japan | Streetshow Productions',
+    },
+    description: isJa
+      ? '日本のラグジュアリーホテル、リゾート、デスティネーション施設向けの戦略主導クリエイティブ、ローカライズ、プレミアム制作。予約意向とブランド価値を高めます。'
+      : 'Strategy-led creative, localization, and premium execution for luxury hotels, resorts, and destination properties in Japan. Content built to lift booking intent.',
     alternates: buildAlternates('/hospitality', locale),
   };
 }

@@ -47,6 +47,7 @@ export default async function Home() {
         trustLine={pick(homePage.trustLine, locale)}
         primaryCtaLabel={pick(homePage.heroCta, locale)}
         secondaryCtaLabel={pick(ui.cta.viewSelectedWork, locale)}
+        locale={locale}
       />
 
       {/* ── Client Strip ─────────────────────────────────────────── */}
@@ -113,6 +114,7 @@ export default async function Home() {
               }))}
               ctaLabel={pick(ui.cta.viewCaseStudy, locale)}
               dragLabel={pick({ en: 'Drag to explore', ja: 'ドラッグして探索' }, locale)}
+              locale={locale}
             />
           </div>
         </div>
@@ -215,13 +217,13 @@ export default async function Home() {
           <ScrollReveal delay={0.3}>
             <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
               <Link
-                href="/contact"
+                href={localizeHref('/contact', locale)}
                 className="group relative overflow-hidden inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] transition-all duration-300 hover:[box-shadow:0_0_24px_6px_rgba(212,175,55,0.35)]"
               >
                 {pick(site.primaryCta, locale)}
               </Link>
               <Link
-                href="/contact"
+                href={localizeHref('/contact', locale)}
                 className="group relative overflow-hidden inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D4AF37]/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37] transition-all duration-300 hover:border-[#D4AF37] hover:[box-shadow:0_0_16px_2px_rgba(212,175,55,0.2)]"
               >
                 <span className="absolute inset-0 rounded-full bg-[#D4AF37] scale-x-0 origin-left transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-x-100" />
@@ -236,7 +238,7 @@ export default async function Home() {
             <div className="mt-10 text-sm text-white/50">{pick(site.location, locale)}</div>
             <div className="mt-6">
               <Link
-                href="/blog"
+                href={localizeHref('/blog', locale)}
                 className="text-sm font-medium uppercase tracking-[0.15em] text-[#D4AF37]/60 underline-offset-4 transition-colors hover:text-[#D4AF37] hover:underline"
               >
                 {pick({ en: 'Read our insights on Japan market entry', ja: '日本市場参入インサイトを読む' }, locale)}

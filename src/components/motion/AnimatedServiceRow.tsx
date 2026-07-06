@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
+import { localizeHref } from '@/lib/alternates';
 
 const EASE: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
@@ -10,9 +11,10 @@ interface ServiceRowProps {
   title:       string;
   description: string;
   index:       number;
+  locale:      'en' | 'ja';
 }
 
-export function AnimatedServiceRow({ slug, number, title, description, index }: ServiceRowProps) {
+export function AnimatedServiceRow({ slug, number, title, description, index, locale }: ServiceRowProps) {
   const shouldReduce = useReducedMotion();
 
   return (
@@ -27,7 +29,7 @@ export function AnimatedServiceRow({ slug, number, title, description, index }: 
       }}
     >
       <Link
-        href={`/services/${slug}`}
+        href={localizeHref(`/services/${slug}`, locale)}
         className="group block bg-[#141414] p-8 transition-colors duration-300 hover:bg-[#D4AF37]/5 cursor-pointer md:p-10 lg:p-12"
       >
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">

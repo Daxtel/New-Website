@@ -67,6 +67,7 @@ export default async function BlogIndexPage() {
                 excerpt={pick(post.excerpt, locale)}
                 readLabel={locale === 'ja' ? '記事を読む' : 'Read Article'}
                 index={i}
+                locale={locale}
               />
             ))}
           </div>

@@ -226,6 +226,7 @@ export function ContactForm({ locale = 'en' }: Props) {
   const [formData, setFormData] = useState<FormDataState>({ ...EMPTY_FORM });
   const [status, setStatus]     = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [honeypot, setHoneypot] = useState(''); // hidden anti-bot field
 
   function update(key: keyof FormDataState, value: string) {
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -240,7 +241,7 @@ export function ContactForm({ locale = 'en' }: Props) {
       const res  = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, company_url: honeypot }),
       });
       const data = await res.json();
       if (!res.ok) { setStatus('error'); setErrorMsg(data.error || 'Submission failed'); return; }
@@ -254,6 +255,19 @@ export function ContactForm({ locale = 'en' }: Props) {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5 md:space-y-6">
+      {/* Honeypot — hidden from real users; bots that fill it are rejected server-side. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="company_url">Company URL (leave blank)</label>
+        <input
+          id="company_url"
+          name="company_url"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
       <div className="grid gap-5 md:grid-cols-2 md:gap-6">
         {fieldDefs.map(({ key, label, type }) => (
           <div key={key}>

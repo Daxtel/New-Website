@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createHash } from 'crypto';
+import { checkRateLimit, clientIpFrom, isHoneypotTripped } from '@/lib/rate-limit';
 
 type LeadPayload = {
   restaurantType?: string;
@@ -16,6 +17,7 @@ type LeadPayload = {
   fbc?: string; // _fbc cookie from Meta click-id
   userAgent?: string;
   sourceUrl?: string;
+  company_url?: string; // honeypot — must stay empty
 };
 
 /* ----------  Hashing for Meta Advanced Matching  ---------- */
@@ -223,6 +225,20 @@ export async function POST(req: Request) {
     raw = (await req.json()) as LeadPayload;
   } catch {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+  }
+
+  // Honeypot: bots fill the hidden field. Pretend success so they don't retry.
+  if (isHoneypotTripped(raw.company_url)) {
+    return NextResponse.json({ ok: true, delivered: false });
+  }
+
+  // Rate limit by IP (no-op unless Upstash is configured).
+  const { limited } = await checkRateLimit(clientIpFrom(req.headers));
+  if (limited) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again in a few minutes.' },
+      { status: 429 },
+    );
   }
 
   const body = normalizeLead(raw);

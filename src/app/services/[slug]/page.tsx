@@ -5,7 +5,7 @@ import { pick, ui } from '@/lib/i18n';
 import { getCatalogService, projectCatalog, serviceCatalog } from '@/lib/catalog';
 import { CampaignWork } from '@/components/campaign-work';
 import { getLocale } from '@/lib/locale';
-import { buildAlternates } from '@/lib/alternates';
+import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { JsonLd, buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 
@@ -77,7 +77,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <JsonLd data={schemas} />
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
-          <Link href="/services" className="mb-10 inline-flex items-center text-sm text-white/55 transition-colors hover:text-[#D4AF37]">
+          <Link href={localizeHref('/services', locale)} className="mb-10 inline-flex items-center text-sm text-white/55 transition-colors hover:text-[#D4AF37]">
             {pick(ui.sections.allServices, locale)}
           </Link>
 
@@ -143,13 +143,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <div className="mt-16">
               <div className="mb-8 flex items-center justify-between">
                 <h3 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.relatedProjects, locale)}</h3>
-                <Link href="/work" className="text-sm text-white/55 hover:text-[#D4AF37]">{pick(ui.cta.viewAllWork, locale)}</Link>
+                <Link href={localizeHref('/work', locale)} className="text-sm text-white/55 hover:text-[#D4AF37]">{pick(ui.cta.viewAllWork, locale)}</Link>
               </div>
               <div className="grid gap-6 md:grid-cols-2">
                 {relatedProjects.map((project) => {
                   const projectVideo = (project.media as { video?: string }).video;
                   return (
-                    <Link key={project.slug} href={`/work/${project.slug}`} className="group block overflow-hidden bg-[#141414] transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02]">
+                    <Link key={project.slug} href={localizeHref(`/work/${project.slug}`, locale)} className="group block overflow-hidden bg-[#141414] transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02]">
                       <div className="relative aspect-[16/10] overflow-hidden bg-[#1A1A1A]">
                         {projectVideo ? (
                           <video
@@ -209,7 +209,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <h3 className="mb-8 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.relatedServices, locale)}</h3>
               <div className="grid gap-6 md:grid-cols-2">
                 {relatedServices.map((item) => (
-                  <Link key={item.slug} href={`/services/${item.slug}`} className="border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]">
+                  <Link key={item.slug} href={localizeHref(`/services/${item.slug}`, locale)} className="border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]">
                     <h4 className="text-xl font-semibold text-[#D4AF37]">{pick(item.title, locale)}</h4>
                     <p className="mt-2 text-sm leading-relaxed text-white/65">{pick(item.intro, locale)}</p>
                   </Link>
@@ -229,7 +229,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   ja: 'Streetshow Productionsとプロジェクトの戦略的・クリエイティブ・ローカル市場要件についてご相談ください。',
                 }, locale)}
               </p>
-              <Link href="/contact" className="mt-8 inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
+              <Link href={localizeHref('/contact', locale)} className="mt-8 inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]">
                 {pick(ui.cta.letsTalk, locale)}
               </Link>
             </div>

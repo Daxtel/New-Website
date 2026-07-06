@@ -1,6 +1,7 @@
 'use client';
 import { useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { localizeHref } from '@/lib/alternates';
 
 const EASE_IN: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
@@ -12,6 +13,7 @@ interface WorkCardProps {
   description: string;
   ctaLabel: string;
   index: number;
+  locale?: 'en' | 'ja';
 }
 
 export function AnimatedWorkCard({
@@ -22,6 +24,7 @@ export function AnimatedWorkCard({
   description,
   ctaLabel,
   index,
+  locale = 'en',
 }: WorkCardProps) {
   const cardRef = useRef<HTMLAnchorElement>(null);
   const shouldReduceMotion = useReducedMotion();
@@ -48,7 +51,7 @@ export function AnimatedWorkCard({
   return (
     <motion.a
       ref={cardRef}
-      href={`/work/${slug}`}
+      href={localizeHref(`/work/${slug}`, locale)}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}

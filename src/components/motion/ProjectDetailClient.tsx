@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ScrollReveal } from './ScrollReveal';
 import { VideoScrubHero } from './VideoScrubHero';
+import { localizeHref } from '@/lib/alternates';
 
 const EASE: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
@@ -48,6 +49,7 @@ interface ProjectDetailClientProps {
   ctaBody: string;
   ctaButtonLabel: string;
   nextProject?: { slug: string; title: string; videoSrc?: string; imageSrc?: string } | null;
+  locale: 'en' | 'ja';
 }
 
 export function ProjectDetailClient({
@@ -73,6 +75,7 @@ export function ProjectDetailClient({
   ctaBody,
   ctaButtonLabel,
   nextProject,
+  locale,
 }: ProjectDetailClientProps) {
   return (
     <div className="mx-auto max-w-6xl">
@@ -83,7 +86,7 @@ export function ProjectDetailClient({
         transition={{ duration: 0.5, ease: EASE }}
       >
         <Link
-          href="/work"
+          href={localizeHref('/work', locale)}
           className="mb-10 inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-[#D4AF37] cursor-pointer"
         >
           <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">←</span>
@@ -240,7 +243,7 @@ export function ProjectDetailClient({
                   {relatedServices.map((service) => (
                     <Link
                       key={service.slug}
-                      href={`/services/${service.slug}`}
+                      href={localizeHref(`/services/${service.slug}`, locale)}
                       className="block border border-[#D4AF37]/10 bg-[#141414] p-4 transition-all hover:border-[#D4AF37]/30 cursor-pointer"
                     >
                       <span className="text-sm text-[#D4AF37]/85">{service.title}</span>
@@ -262,7 +265,7 @@ export function ProjectDetailClient({
               <p className="mt-2 max-w-2xl text-base leading-relaxed text-[#0A0A0A]/75 md:text-lg">{ctaBody}</p>
             </div>
             <Link
-              href="/contact"
+              href={localizeHref('/contact', locale)}
               className="inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37] cursor-pointer"
             >
               {ctaButtonLabel}
@@ -275,7 +278,7 @@ export function ProjectDetailClient({
       {nextProject && (
         <ScrollReveal className="mt-8">
           <Link
-            href={`/work/${nextProject.slug}`}
+            href={localizeHref(`/work/${nextProject.slug}`, locale)}
             className="group relative block overflow-hidden bg-[#141414] cursor-pointer"
             data-cursor-play=""
           >

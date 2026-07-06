@@ -137,6 +137,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           }, locale)}
           ctaButtonLabel={pick(ui.cta.letsTalk, locale)}
           nextProject={nextProject}
+          locale={locale}
         />
       </section>
     </main>

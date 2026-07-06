@@ -3,6 +3,7 @@ import { useRef, useState, useEffect, useCallback, startTransition } from 'react
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { AnimatedWorkCard } from './AnimatedWorkCard';
+import { localizeHref } from '@/lib/alternates';
 
 interface WorkItem {
   slug: string;
@@ -16,12 +17,13 @@ interface HorizontalWorkScrollProps {
   items: WorkItem[];
   ctaLabel: string;
   dragLabel?: string;
+  locale?: 'en' | 'ja';
 }
 
 const CARD_WIDTH = 380;   // px
 const CARD_GAP   = 20;    // px
 
-export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to explore' }: HorizontalWorkScrollProps) {
+export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to explore', locale = 'en' }: HorizontalWorkScrollProps) {
   const trackRef    = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [maxDrag, setMaxDrag] = useState(0);
@@ -91,7 +93,7 @@ export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to exp
         {items.map((item) => (
           <Link
             key={item.slug}
-            href={`/work/${item.slug}`}
+            href={localizeHref(`/work/${item.slug}`, locale)}
             className="group flex flex-col overflow-hidden bg-[#141414] border border-[#D4AF37]/10"
           >
             <div className="relative aspect-video overflow-hidden bg-[#1A1A1A]">
@@ -154,6 +156,7 @@ export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to exp
                 proofLine={item.proofLine}
                 description={item.description}
                 ctaLabel={ctaLabel}
+                locale={locale}
                 index={i}
               />
             </div>

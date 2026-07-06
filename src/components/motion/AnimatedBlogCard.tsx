@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { localizeHref } from '@/lib/alternates';
 
 const EASE: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
@@ -14,10 +15,11 @@ interface BlogCardProps {
   excerpt:     string;
   readLabel:   string;
   index:       number;
+  locale?:     'en' | 'ja';
 }
 
 export function AnimatedBlogCard({
-  slug, category, date, readingTime, title, excerpt, readLabel, index,
+  slug, category, date, readingTime, title, excerpt, readLabel, index, locale = 'en',
 }: BlogCardProps) {
   const cardRef    = useRef<HTMLAnchorElement>(null);
   const shouldReduce = useReducedMotion();
@@ -36,7 +38,7 @@ export function AnimatedBlogCard({
   return (
     <motion.a
       ref={cardRef}
-      href={`/blog/${slug}`}
+      href={localizeHref(`/blog/${slug}`, locale)}
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}

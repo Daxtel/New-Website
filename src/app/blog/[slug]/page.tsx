@@ -7,7 +7,7 @@ import { JsonLd, buildBreadcrumbSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 import { pick } from '@/lib/i18n';
 import { getLocale } from '@/lib/locale';
-import { buildAlternates } from '@/lib/alternates';
+import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { ReadingProgress } from '@/components/motion/ReadingProgress';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
@@ -101,7 +101,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <JsonLd data={[articleSchema, breadcrumbSchema]} />
       <article className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-4xl">
-          <Link href="/blog" className="mb-10 inline-flex items-center text-sm text-white/55 transition-colors hover:text-[#D4AF37]">
+          <Link href={localizeHref('/blog', locale)} className="mb-10 inline-flex items-center text-sm text-white/55 transition-colors hover:text-[#D4AF37]">
             {locale === 'ja' ? '← ブログに戻る' : '← Back to Blog'}
           </Link>
 
@@ -165,7 +165,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {relatedServices.map((svc) => (
                   <Link
                     key={svc!.slug}
-                    href={`/services/${svc!.slug}`}
+                    href={localizeHref(`/services/${svc!.slug}`, locale)}
                     className="block border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]"
                   >
                     <h3 className="text-lg font-semibold text-[#D4AF37]">{pick(svc!.title, locale)}</h3>
@@ -182,7 +182,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {pick(post.cta.body, locale)}
             </p>
             <Link
-              href={post.cta.linkHref}
+              href={localizeHref(post.cta.linkHref, locale)}
               className="mt-8 inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37]"
             >
               {pick(post.cta.linkLabel, locale).toUpperCase()}

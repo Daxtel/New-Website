@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { localizeHref } from '@/lib/alternates';
 
 type FilterCategory =
   | 'ALL'
@@ -38,9 +39,11 @@ const EASE: [number, number, number, number] = [0.4, 0, 0.2, 1];
 function WorkCard({
   item,
   index,
+  locale,
 }: {
   item: ProjectCard;
   index: number;
+  locale: 'en' | 'ja';
 }) {
   const shouldReduceMotion = useReducedMotion();
   const cardRef = useRef<HTMLAnchorElement>(null);
@@ -60,7 +63,7 @@ function WorkCard({
   return (
     <motion.a
       ref={cardRef}
-      href={`/work/${item.slug}`}
+      href={localizeHref(`/work/${item.slug}`, locale)}
       layout
       initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
@@ -202,7 +205,7 @@ export function AnimatedWorkFilter({
       >
         <AnimatePresence mode="popLayout">
           {filtered.map((item, i) => (
-            <WorkCard key={item.slug} item={item} index={i} />
+            <WorkCard key={item.slug} item={item} index={i} locale={locale} />
           ))}
           {filtered.length === 0 && (
             <motion.p
