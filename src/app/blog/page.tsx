@@ -32,6 +32,12 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function BlogIndexPage() {
   const locale = await getLocale();
 
+  // Show only posts for this language track: /blog shows English + bilingual,
+  // /ja/blog shows Japanese + bilingual. (lang undefined = bilingual.)
+  const visiblePosts = blogPosts.filter((p) =>
+    locale === 'ja' ? p.lang !== 'en' : p.lang !== 'ja',
+  );
+
   return (
     <main className="bg-[#0A0A0A] text-white">
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
@@ -53,7 +59,7 @@ export default async function BlogIndexPage() {
           </ScrollReveal>
 
           <div className="mt-16 space-y-8">
-            {blogPosts.map((post, i) => (
+            {visiblePosts.map((post, i) => (
               <AnimatedBlogCard
                 key={post.slug}
                 slug={post.slug}

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { blogPosts, getBlogPost } from '@/lib/blog';
 import { getCatalogService } from '@/lib/catalog';
-import { JsonLd, buildBreadcrumbSchema } from '@/components/json-ld';
+import { JsonLd, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 import { pick } from '@/lib/i18n';
 import { getLocale } from '@/lib/locale';
@@ -53,7 +53,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: metaDescription,
       images: [post.heroImage || '/og-image.jpg'],
     },
-    alternates: buildAlternates(url, locale),
+    // Single-language posts (en-only or ja-only) self-canonical to their own
+    // language URL with no hreflang pair, and noindex the opposite-language
+    // render. Bilingual posts get the full hreflang pair.
+    alternates:
+      post.lang === 'en'
+        ? { canonical: url }
+        : post.lang === 'ja'
+        ? { canonical: `/ja${url}` }
+        : buildAlternates(url, locale),
+    ...((post.lang === 'en' && locale === 'ja') || (post.lang === 'ja' && locale === 'en')
+      ? { robots: { index: false, follow: true } }
+      : {}),
   };
 }
 
@@ -95,10 +106,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .map((s) => getCatalogService(s))
     .filter(Boolean);
 
+  const faqSchema = post.faqs?.length
+    ? buildFaqSchema(post.faqs.map((f) => ({ q: pick(f.q, locale), a: pick(f.a, locale) })))
+    : null;
+  const schemas = faqSchema
+    ? [articleSchema, breadcrumbSchema, faqSchema]
+    : [articleSchema, breadcrumbSchema];
+
   return (
     <main className="bg-[#0A0A0A] text-white">
       <ReadingProgress />
-      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <JsonLd data={schemas} />
       <article className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-4xl">
           <Link href={localizeHref('/blog', locale)} className="mb-10 inline-flex items-center text-sm text-white/55 transition-colors hover:text-[#D4AF37]">
@@ -171,6 +189,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <h3 className="text-lg font-semibold text-[#D4AF37]">{pick(svc!.title, locale)}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/65">{pick(svc!.intro, locale)}</p>
                   </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {post.faqs && post.faqs.length > 0 && (
+            <div className="mt-16 border-t border-[#D4AF37]/10 pt-12">
+              <h2 className="mb-8 text-2xl font-bold uppercase tracking-tight text-[#D4AF37] md:text-3xl">
+                {locale === 'ja' ? 'よくある質問' : 'Frequently Asked Questions'}
+              </h2>
+              <div className="space-y-6 md:space-y-8">
+                {post.faqs.map((faq, i) => (
+                  <div key={i} className="border-b border-[#D4AF37]/10 pb-6 md:pb-8">
+                    <h3 className="text-lg font-semibold text-[#D4AF37] md:text-xl">{pick(faq.q, locale)}</h3>
+                    <p className="mt-3 text-base leading-relaxed text-white/70 md:text-lg">{pick(faq.a, locale)}</p>
+                  </div>
                 ))}
               </div>
             </div>

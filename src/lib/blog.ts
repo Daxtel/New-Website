@@ -26,7 +26,26 @@ export type BlogPost = {
     linkHref: string;
   };
   relatedServices: string[];
+  faqs?: { q: Localized; a: Localized }[];
+  /**
+   * Language track for this post:
+   *  - 'en'  → English-only post. Indexed at /blog/{slug}; the /ja render is
+   *            noindexed and canonicals to the English URL. Shown only on /blog.
+   *  - 'ja'  → Japanese-only post. Indexed at /ja/blog/{slug}; the /blog render
+   *            is noindexed and canonicals to the Japanese URL. Shown only on /ja/blog.
+   *  - undefined → bilingual (real en + ja copy, indexed in both, hreflang-paired).
+   * The English and Japanese tracks are independent content sets targeting
+   * different ICP and search intent, so they are NOT hreflang-paired.
+   */
+  lang?: 'en' | 'ja';
 };
+
+// Single-language helpers: fill both Localized slots with the same string so a
+// single-language post renders regardless of URL locale (the opposite-language
+// render is noindexed via the `lang` field). en-only posts use the English text;
+// ja-only posts use the Japanese text.
+const bi = (s: string): Localized => ({ en: s, ja: s });
+const biArr = (a: string[]): Localized<string[]> => ({ en: a, ja: a });
 
 export const blogPosts: BlogPost[] = [
   {
@@ -414,6 +433,1059 @@ export const blogPosts: BlogPost[] = [
       'japan-market-localization',
       'video-production-japan',
     ],
+  },
+
+  // ── Blog: Video Production Cost in Japan (English-only interim) ──
+  {
+    slug: 'video-production-cost-japan',
+    lang: 'en',
+    title: bi('How Much Does Video Production Cost in Japan?'),
+    metaTitle: bi('How Much Does Video Production Cost in Japan? | Streetshow Productions'),
+    metaDescription: bi('A practical guide to video production costs in Japan, including crew, location, editing, bilingual support, and what overseas brands should budget before filming.'),
+    excerpt: bi('Video production in Japan ranges from a few hundred thousand yen for a lean shoot to several million for a full commercial campaign. The real cost driver is not gear. It is execution: brand understanding, Japanese locations, bilingual coordination, and delivery.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('7 min read'),
+    category: bi('Video Production'),
+    tags: ['video production cost Japan', 'video production Japan', 'English-speaking video crew Japan', 'Tokyo video production', 'Fukuoka video production', 'brand film Japan'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Video production in Japan can cost anywhere from a simple small shoot budget to a full commercial campaign investment. The real answer depends on what you are producing, how many shoot days are needed, how large the crew is, whether you need bilingual coordination, and how much post-production is involved.',
+          'For international brands, the cost is not just about cameras and editing. The real cost is execution. Can the team understand your brand? Can they manage Japanese locations? Can they communicate in English and Japanese? Can they deliver assets that work across Japan, social, paid media, and internal approval?',
+          'That is where many overseas teams underestimate Japan.',
+        ]),
+      },
+      {
+        heading: bi('Quick Answer'),
+        paragraphs: biArr([
+          'A simple one-day shoot in Japan may start from a few hundred thousand yen, depending on crew and deliverables. A professional brand film, campaign shoot, hospitality video, or commercial production can move into the ¥1,000,000 to ¥5,000,000+ range depending on scope.',
+          'For larger commercial campaigns, multi-location shoots, casting, art direction, paid media assets, CGI, 3D visuals, or bilingual production management, the budget can go higher.',
+          'The important question is not how cheap can we film. The better question is: what level of production is needed to protect the brand and make the campaign work in Japan?',
+        ]),
+      },
+      {
+        heading: bi('What Affects Video Production Cost in Japan?'),
+        paragraphs: biArr([
+          'The biggest cost drivers are:',
+          'Shoot days. A half-day interview shoot is very different from a two-day commercial campaign.',
+          'Crew size. A solo operator costs less. A proper production team with director, cinematographer, sound, lighting, producer, assistant, and editor costs more.',
+          'Location. Filming in Tokyo, Fukuoka, Kyoto, Osaka, or hotel and private venues can change the budget.',
+          'Creative direction. If you already have a locked brief, costs are lower. If the team needs to develop the concept, story, shot list, and visual direction, that adds strategy time.',
+          'Post-production. Editing, color grading, sound design, motion graphics, subtitles, translations, resizing, and social cutdowns all affect final cost.',
+          'Language and coordination. For overseas brands, bilingual communication is not a bonus. It is production insurance.',
+          'Deliverables. One hero film is very different from one hero film plus six short-form edits, 20 social clips, photography, thumbnails, ad variations, and Japanese subtitles.',
+        ]),
+      },
+      {
+        heading: bi('Common Video Production Budget Ranges in Japan'),
+        paragraphs: biArr([
+          'These are practical planning ranges, not fixed quotes.',
+          'Small shoot or interview content. Best for founder interviews, internal content, basic social videos, simple testimonials, and lean documentary-style shoots. Estimated range: ¥200,000 to ¥700,000+. This may include a small crew, basic lighting, audio, one location, and light editing.',
+          'Brand film or campaign content. Best for hotels, premium brands, restaurants, product launches, and companies that need stronger visuals. Estimated range: ¥800,000 to ¥3,000,000+. This may include creative direction, production planning, crew, lighting, sound, filming, editing, color, sound design, and multiple social formats.',
+          'Commercial campaign production. Best for international brands, agencies, launch campaigns, paid ads, hospitality campaigns, and high-quality brand storytelling. Estimated range: ¥3,000,000 to ¥10,000,000+. This may include concept development, location coordination, casting, production design, full crew, multi-day shoots, post-production, motion graphics, subtitles, and multiple campaign assets.',
+          'Premium activation or special production. Best for 3D billboard campaigns, CGI, luxury hospitality campaigns, launch films, and complex visual production. Estimated range: ¥5,000,000+. This depends heavily on the technical scope, creative development, 3D and CGI needs, media specs, and final delivery requirements.',
+        ]),
+      },
+      {
+        heading: bi('Cost Difference Between Fukuoka and Tokyo'),
+        paragraphs: biArr([
+          'Tokyo gives you scale. You have more agencies, talent, studios, and production vendors. But Tokyo can also become expensive quickly.',
+          'Fukuoka can be more agile. It can be easier to move, easier to access certain locations, and more efficient for hospitality, restaurant, lifestyle, and regional Japan stories.',
+          'That does not mean Fukuoka is cheap Tokyo. That is the wrong way to think. Fukuoka is useful when the production needs speed, access, lifestyle texture, or a less overused visual environment. Tokyo is useful when the campaign needs big-city scale, major brand visibility, or direct access to national media and agency teams.',
+          'Streetshow Productions operates from Fukuoka and supports production across Tokyo and Japan, which gives international brands flexibility without being locked into one city.',
+        ]),
+      },
+      {
+        heading: bi('Why Overseas Brands Underestimate Japan Production Costs'),
+        paragraphs: biArr([
+          'Foreign teams often make four mistakes.',
+          'First, they assume Japan can be handled like any other market. It cannot.',
+          'Second, they underestimate communication. If the creative brief is in English but the location, crew, vendors, or client stakeholders operate in Japanese, someone has to bridge that gap properly.',
+          'Third, they forget localization. A video that works in Los Angeles, London, Paris, or Singapore may not feel right in Japan.',
+          'Fourth, they ask for just filming when what they really need is production strategy.',
+          'The camera is not the hard part. The hard part is making sure the concept, location, people, language, visuals, and final assets all work for the Japanese market.',
+        ]),
+      },
+      {
+        heading: bi('What Should Be Included in a Professional Quote?'),
+        paragraphs: biArr([
+          'A serious quote should make the scope clear. It should include: project goal, creative direction, pre-production, number of shoot days, crew, equipment, location needs, travel, editing, color grading, sound design, subtitles or translation, deliverables, revision rounds, timeline, usage rights, and payment terms.',
+          'If a quote is too vague, you are not comparing price. You are comparing risk.',
+        ]),
+      },
+      {
+        heading: bi('When You Need a Bilingual Production Partner'),
+        paragraphs: biArr([
+          'You need a bilingual production partner when your brand team is overseas, your agency is outside Japan, the client approval process is in English, the shoot happens in Japan, the location or vendors communicate in Japanese, you need Japanese subtitles or localization, you need local cultural feedback, or you need assets that work for Japanese audiences.',
+          'Bilingual support is not just translation. It protects the production from slow decisions, wrong assumptions, awkward messaging, and expensive fixes.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow Productions Supports Video Production in Japan'),
+        paragraphs: biArr([
+          'Streetshow Productions supports premium brands, agencies, hospitality teams, and international companies that need video production in Japan.',
+          'We help with strategy, creative direction, local production, bilingual coordination, filming, editing, short-form assets, hospitality campaigns, brand films, and Japan market localization.',
+          'If you are planning a shoot in Fukuoka, Tokyo, Kyoto, Osaka, or elsewhere in Japan, Streetshow can help you turn the brief into a production plan that actually works on the ground.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('How much does a one-day video shoot cost in Japan?'), a: bi('A one-day professional shoot can range from a lean small-crew budget to a larger production budget depending on crew, equipment, location, and deliverables.') },
+      { q: bi('Is video production more expensive in Tokyo than Fukuoka?'), a: bi('Tokyo can be more expensive because of demand, logistics, studio costs, and crew rates. Fukuoka can be more agile depending on the project.') },
+      { q: bi('Do overseas brands need a bilingual video crew in Japan?'), a: bi('Yes, if the project involves English-speaking stakeholders and Japanese locations, vendors, talent, or audiences. Bilingual coordination reduces risk.') },
+      { q: bi('Can Streetshow Productions handle both filming and editing?'), a: bi('Yes. Streetshow supports creative direction, production, filming, editing, subtitles, localization, and social campaign assets.') },
+      { q: bi('What should I prepare before requesting a quote?'), a: bi('Prepare your goal, location, timeline, reference videos, deliverables, target audience, language needs, and budget range.') },
+    ],
+    cta: {
+      heading: bi('Discuss Your Japan Production'),
+      body: bi('Planning a brand film, campaign shoot, hotel video, interview, or social content production in Japan? Streetshow Productions provides bilingual video production in Japan for international brands, agencies, hospitality companies, and premium campaigns.'),
+      linkLabel: bi('Book a Japan Production Call'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['video-production-japan'],
+  },
+
+  // ── Blog: Hire an English-Speaking Video Crew in Japan (English-only interim) ──
+  {
+    slug: 'hire-english-speaking-video-crew-japan',
+    lang: 'en',
+    title: bi('How to Hire an English-Speaking Video Crew in Japan'),
+    metaTitle: bi('How to Hire an English-Speaking Video Crew in Japan | Streetshow Productions'),
+    metaDescription: bi('Learn how overseas brands and agencies can hire an English-speaking video crew in Japan for campaigns, interviews, brand films, and local production support.'),
+    excerpt: bi('Hiring a video crew in Japan is easy. Hiring the right English-speaking crew is a different problem. For overseas teams, the real risk is not gear. It is communication, planning, local context, and execution.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('6 min read'),
+    category: bi('Video Production'),
+    tags: ['English-speaking video crew Japan', 'hire video crew Japan', 'bilingual production Japan', 'video production Japan', 'Tokyo video crew', 'Fukuoka video crew'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Hiring a video crew in Japan is easy. Hiring the right English-speaking video crew in Japan is a different problem.',
+          'If you are an overseas brand, agency, producer, founder, hotel group, or campaign team, you do not just need someone with a camera. You need a local production partner who can understand the creative brief, communicate clearly, manage Japanese logistics, and protect the quality of the final output.',
+          'This is where many international productions go wrong. They hire based on equipment. Then they discover the real problem is communication, planning, local context, and execution.',
+        ]),
+      },
+      {
+        heading: bi('Quick Answer'),
+        paragraphs: biArr([
+          'To hire an English-speaking video crew in Japan, look for a team that can handle both production and communication. The team should understand English briefs, Japanese locations, local production culture, brand expectations, and final delivery for international use.',
+          'A strong Japan-based production partner should be able to help with creative direction, production planning, crew and gear, location coordination, Japanese communication, filming, editing, subtitles, localization, and social and campaign deliverables.',
+          'For international brands, the safest choice is not just an English-speaking camera operator. It is a bilingual creative production team.',
+        ]),
+      },
+      {
+        heading: bi('Who Needs an English-Speaking Video Crew in Japan?'),
+        paragraphs: biArr([
+          'You may need an English-speaking crew if you are an overseas brand filming in Japan, a foreign agency producing a campaign for a client, a hotel or hospitality brand working with international stakeholders, a founder or company making brand content in Japan, a production company that needs local Japan support, a sports, fashion, lifestyle, or luxury brand launching in Japan, or a media team filming interviews, events, or documentary content.',
+          'The more people involved, the more important communication becomes. Small language mistakes can become production problems. A misunderstood location rule, unclear schedule, wrong subtitle tone, or weak local direction can damage the whole project.',
+        ]),
+      },
+      {
+        heading: bi('Crew, Fixer, or Creative Production Partner?'),
+        paragraphs: biArr([
+          'These are not the same thing.',
+          'A crew films the project. They provide camera, sound, lighting, and production support.',
+          'A fixer helps with local access. They may help with permits, translation, logistics, locations, and local coordination.',
+          'A creative production partner helps shape the result. They understand the business goal, the audience, the story, the visuals, the local market, and the final deliverables.',
+          'Most international brands do not only need a crew. They need a creative production partner who can protect the brief from idea to delivery.',
+        ]),
+      },
+      {
+        heading: bi('What a Local Production Partner Should Handle'),
+        paragraphs: biArr([
+          'A serious English-speaking production partner in Japan should be able to support pre-production planning, creative direction, shot lists, location research, schedule planning, crew sourcing, camera, lighting, and sound, Japanese communication, talent or interview coordination, on-set direction, editing, color grading, sound design, subtitles, and delivery in multiple formats.',
+          'If the team can only film, that may be fine for a simple shoot. But for a brand campaign, launch video, hospitality film, or premium asset, just filming is usually not enough.',
+        ]),
+      },
+      {
+        heading: bi('Common Mistakes Overseas Teams Make'),
+        paragraphs: biArr([
+          'They assume English communication is enough. English helps, but Japan production still requires local understanding. Your team needs someone who can move between English-speaking brand expectations and Japanese production realities.',
+          'They hire based only on camera gear. A good camera does not solve a weak concept, poor lighting, unclear story, bad audio, or wrong direction.',
+          'They underestimate location rules. Japan can be strict about shooting permissions, public spaces, hotel properties, commercial buildings, and street filming.',
+          'They do not localize the creative. A global campaign idea may need changes in tone, pacing, casting, captions, visuals, or proof points before it feels right in Japan.',
+          'They forget deliverables. A hero film alone is rarely enough. Most campaigns need vertical edits, subtitle versions, thumbnails, ad cuts, website assets, and social clips.',
+        ]),
+      },
+      {
+        heading: bi('Questions to Ask Before Hiring a Crew'),
+        paragraphs: biArr([
+          'Ask these before you commit: Have you worked with overseas brands before? Can you communicate in English and Japanese? Can you help with creative direction, or only filming? Can you manage locations and Japanese vendors? Can you provide editing and subtitles? Do you understand social formats and paid ads? Can you show relevant work in Japan? Can you support shoots in Fukuoka, Tokyo, Kyoto, Osaka, or other cities? How do you handle revisions and delivery?',
+          'If the answers are vague, be careful.',
+        ]),
+      },
+      {
+        heading: bi('What to Prepare Before Contacting a Japan-Based Crew'),
+        paragraphs: biArr([
+          'Prepare your project goal, brand background, reference videos, target audience, shoot location, preferred shoot dates, deliverables, budget range, language needs, approval process, and usage plans.',
+          'The clearer your brief, the faster a good production partner can quote properly.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow Productions Supports Overseas Brands in Japan'),
+        paragraphs: biArr([
+          'Streetshow Productions is a Japan-based creative strategy and production studio operating from Fukuoka and Tokyo.',
+          'We support international brands, agencies, hotels, restaurants, and campaign teams that need bilingual video production in Japan.',
+          'Our work goes beyond filming. We help with Japan market context, creative direction, production planning, local execution, filming, editing, social cutdowns, and localization.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('Can I hire a video crew in Japan if my team is overseas?'), a: bi('Yes. A bilingual production partner can help translate your brief into a local production plan and manage the shoot in Japan.') },
+      { q: bi('Do I need a fixer or a production company?'), a: bi('For simple logistics, a fixer may be enough. For brand films, campaigns, hospitality videos, and launch content, a production company is usually safer.') },
+      { q: bi('Can Streetshow work with foreign agencies?'), a: bi('Yes. Streetshow can support overseas agencies that need Japan-based creative direction, crew, filming, editing, and local coordination.') },
+      { q: bi('Can you film in both Tokyo and Fukuoka?'), a: bi('Yes. Streetshow is based in Fukuoka and supports production across Tokyo and Japan.') },
+      { q: bi('Can you provide Japanese subtitles?'), a: bi('Yes. Streetshow can support subtitles, translation, localization, and bilingual campaign deliverables.') },
+    ],
+    cta: {
+      heading: bi('Request Production Support in Japan'),
+      body: bi('Need an English-speaking video crew in Japan? Streetshow Productions helps overseas brands, agencies, and premium companies produce campaign-ready video content across Japan.'),
+      linkLabel: bi('Request Production Support'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['video-production-japan'],
+  },
+
+  // ── Blog: Translation vs Localization (English-only interim) ──
+  {
+    slug: 'japan-market-entry-translation-vs-localization',
+    lang: 'en',
+    title: bi('Japan Market Entry: Translation vs Localization'),
+    metaTitle: bi('Japan Market Entry: Translation vs Localization | Streetshow Productions'),
+    metaDescription: bi('Translation changes words. Localization adapts meaning, visuals, tone, platform behavior, and buying context. Learn what foreign brands need before entering Japan.'),
+    excerpt: bi('Most foreign brands entering Japan translate the campaign and assume they localized it. That is language conversion, not localization. This is the difference that decides whether a campaign belongs in the Japanese market.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('6 min read'),
+    category: bi('Japan Market Entry'),
+    tags: ['Japan localization', 'translation vs localization', 'Japan market entry', 'creative localization Japan', 'foreign brand Japan', 'Japanese market strategy'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Most foreign brands entering Japan make the same mistake. They translate the campaign and assume they localized it. That is not localization. That is language conversion.',
+          'Japan does not punish foreign brands because they are foreign. Japan punishes weak preparation, lazy assumptions, and campaigns that feel imported without understanding the market.',
+          'If your brand is entering Japan, translation is only the first layer. Localization is the work that makes the campaign feel relevant, credible, and natural to the audience without destroying the brand.',
+        ]),
+      },
+      {
+        heading: bi('Quick Answer'),
+        paragraphs: biArr([
+          'Translation changes words. Localization changes meaning, tone, visuals, proof, timing, platform behavior, and cultural context.',
+          'A translated campaign may be understandable in Japanese. A localized campaign feels like it belongs in the Japanese market. That difference matters.',
+        ]),
+      },
+      {
+        heading: bi('Translation Changes Words. Localization Changes Meaning.'),
+        paragraphs: biArr([
+          'Translation asks: how do we say this in Japanese?',
+          'Localization asks: Will this make sense to Japanese buyers? Will this tone feel natural? Will the visuals create trust? Will the claim feel believable? Will the offer match the market? Will the campaign work on Japanese platforms? Will the brand still feel premium after adaptation?',
+          'That is a much deeper problem. A literal translation can be technically correct and still fail commercially.',
+        ]),
+      },
+      {
+        heading: bi('Why Japan Requires More Than Translation'),
+        paragraphs: biArr([
+          'Japan is a high-context market. Trust, tone, timing, design, proof, hierarchy, and social signals matter.',
+          'A campaign that feels confident in the US can feel too aggressive in Japan. A phrase that sounds emotional in English can sound vague in Japanese. A luxury visual that works in Europe can feel cold or disconnected in Japan. A direct call-to-action that performs in Western markets can feel too pushy without the right trust layer.',
+          'This does not mean Japanese audiences are impossible. It means the market rewards brands that respect context.',
+        ]),
+      },
+      {
+        heading: bi('What Foreign Brands Usually Get Wrong'),
+        paragraphs: biArr([
+          'They keep the global message unchanged. The global campaign may be strong, but Japan may need a different entry point.',
+          'They translate the copy but not the offer. The words change, but the buying reason stays foreign.',
+          'They ignore visual localization. Casting, styling, location, pacing, typography, color, and composition all affect how the campaign feels.',
+          'They use the wrong proof. Japanese buyers often need different trust signals. Heritage, quality, detail, reputation, safety, service, and social proof can matter more than hype.',
+          'They treat Japan like another Asian market. Japan is not a copy-paste market. What works in Singapore, Korea, China, or Thailand may not work in Japan.',
+        ]),
+      },
+      {
+        heading: bi('What Actually Needs to Be Localized?'),
+        paragraphs: biArr([
+          'A proper Japan localization process may include brand positioning, campaign message, tagline, offer, landing page, video script, visual direction, casting, photography style, ad copy, subtitles, website copy, social captions, influencer and UGC direction, sales material, email follow-up, Google and Meta ads, and LINE or Japanese platform strategy.',
+          'Localization touches every part of the buyer journey.',
+        ]),
+      },
+      {
+        heading: bi('Visual Localization Matters'),
+        paragraphs: biArr([
+          'This is where many brands fail. They translate the text but keep the visuals exactly the same. That is dangerous.',
+          'Visuals carry meaning. In Japan, small details can change perception. The wrong location, wrong gesture, wrong pacing, wrong facial expression, wrong typography, or wrong styling can make a premium brand feel off.',
+          'A campaign does not need to become Japanese in a fake way. It needs to feel aware. That is the difference.',
+        ]),
+      },
+      {
+        heading: bi('Platform Localization Matters Too'),
+        paragraphs: biArr([
+          'A campaign built for Instagram may not automatically work on Japanese Google search, LINE, TikTok, YouTube Shorts, or hotel and restaurant discovery behavior.',
+          'The same asset may need multiple versions: website hero video, Instagram Reel, TikTok cut, YouTube Short, paid ad version, Japanese subtitle version, English subtitle version, landing page embed, sales deck version, and Google Business Profile content.',
+          'Localization is not one file. It is a system.',
+        ]),
+      },
+      {
+        heading: bi('The Streetshow Approach'),
+        paragraphs: biArr([
+          'Streetshow Productions helps premium international brands enter, localize, and launch in Japan through strategy-led creative execution.',
+          'We do not treat localization as translation. We look at the campaign, the audience, the visual direction, the buyer psychology, the platform, and the final execution.',
+          'For brands entering Japan, this means we can support Japan market entry strategy, creative localization, campaign adaptation, video production, photography and CGI, hospitality content, 3D billboard production, and bilingual EN/JP execution.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('Is translation enough for entering Japan?'), a: bi('Usually, no. Translation helps people understand the words. Localization helps the campaign fit the market.') },
+      { q: bi('What is creative localization?'), a: bi('Creative localization adapts the message, visuals, tone, format, and campaign execution for a specific market.') },
+      { q: bi('Should a global brand change its identity for Japan?'), a: bi('No. Good localization protects the brand while adapting how it communicates.') },
+      { q: bi('What content should be localized first?'), a: bi('Start with the campaign message, landing page, video script, ads, captions, subtitles, and sales material.') },
+      { q: bi('Can Streetshow localize and produce the campaign?'), a: bi('Yes. Streetshow can support both strategy and production, including creative direction, video production, photography, CGI, and bilingual deliverables.') },
+    ],
+    cta: {
+      heading: bi('Discuss Your Japan Localization Strategy'),
+      body: bi('If your brand is entering Japan, do not stop at translation. Streetshow Productions helps international brands adapt campaigns for the Japanese market through localization, creative direction, and production.'),
+      linkLabel: bi('Discuss Your Japan Campaign'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
+  // ── Blog: Why Foreign Brand Campaigns Fail in Japan (English-only interim) ──
+  {
+    slug: 'why-foreign-brand-campaigns-fail-in-japan',
+    lang: 'en',
+    title: bi('Why Foreign Brand Campaigns Fail in Japan'),
+    metaTitle: bi('Why Foreign Brand Campaigns Fail in Japan | Streetshow Productions'),
+    metaDescription: bi('Foreign brand campaigns often fail in Japan because they translate instead of localizing, ignore trust-building, and launch with global creative that does not fit the market.'),
+    excerpt: bi('Foreign brands do not fail in Japan because Japan is impossible. They fail because they enter with weak assumptions: translation instead of localization, imported creative, and underestimated trust. Japan is rarely the problem. The strategy usually is.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('7 min read'),
+    category: bi('Japan Market Entry'),
+    tags: ['foreign brand Japan', 'Japan market entry', 'Japan localization', 'why brands fail in Japan', 'Japanese consumer trust', 'Japan launch strategy'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Foreign brands do not fail in Japan because Japan is impossible. They fail because they enter with weak assumptions.',
+          'They translate instead of localizing. They reuse global creative without pressure-testing it. They underestimate trust. They treat Japan like a smaller version of another market. Then they blame the audience when the campaign does not move.',
+          'Japan is not the problem. The strategy is usually the problem.',
+        ]),
+      },
+      {
+        heading: bi('Quick Answer'),
+        paragraphs: biArr([
+          'Foreign brand campaigns fail in Japan when they do not adapt the message, proof, visuals, platform strategy, and buyer journey for the Japanese market.',
+          'The most common mistakes are direct translation, weak localization, imported visuals, overconfident claims, poor trust-building, wrong platform assumptions, no local creative feedback, and no follow-up system after attention.',
+          'The fix is not to make the brand less global. The fix is to make the brand locally intelligent.',
+        ]),
+      },
+      {
+        heading: bi('Mistake 1: They Translate Instead of Localizing'),
+        paragraphs: biArr([
+          'Translation is not the same as localization. A campaign can be grammatically correct in Japanese and still feel wrong.',
+          'The tone may be too aggressive. The claim may feel exaggerated. The offer may lack context. The visuals may not support trust. The CTA may ask for too much too soon.',
+          'Japan market entry requires more than language. It requires cultural, creative, and commercial adaptation.',
+        ]),
+      },
+      {
+        heading: bi('Mistake 2: They Assume Global Creative Will Work'),
+        paragraphs: biArr([
+          'Global campaigns are built for scale. Japan often requires specificity. That does not mean you throw away the global brand. It means you adapt the entry point.',
+          'A campaign that leads with bold self-expression may need more proof in Japan. A campaign that leads with disruption may need more credibility. A campaign that leads with speed may need more reassurance. A luxury campaign that feels powerful overseas may need more subtlety, detail, and atmosphere in Japan.',
+          'The brand can stay the same. The expression may need to change.',
+        ]),
+      },
+      {
+        heading: bi('Mistake 3: They Underestimate Trust'),
+        paragraphs: biArr([
+          'Japanese buyers often need more trust before action. Trust can come from brand history, quality signals, local proof, testimonials, media coverage, craft detail, clear information, strong visuals, professional Japanese copy, consistent presence, and good customer experience.',
+          'Attention without trust is weak. A campaign may get views and still fail if people do not believe enough to act.',
+        ]),
+      },
+      {
+        heading: bi('Mistake 4: They Use the Wrong Platforms and Formats'),
+        paragraphs: biArr([
+          'A foreign team may prepare one hero film and assume the job is done. That is not enough.',
+          'A Japan launch may need website video, a Japanese landing page, Instagram Reels, TikTok edits, YouTube Shorts, Google Business Profile assets, LINE assets, paid ad variations, short testimonial clips, email follow-up content, and sales deck assets.',
+          'The creative has to move through the buyer journey. One beautiful video is not a system.',
+        ]),
+      },
+      {
+        heading: bi('Mistake 5: They Ignore Japanese Buying Psychology'),
+        paragraphs: biArr([
+          'In many markets, bold claims can work. In Japan, unsupported claims can feel empty. People may look for detail, proof, reputation, safety, consistency, and social validation before making a decision.',
+          'This is especially true for premium products, hospitality, real estate, health, education, finance, and B2B services.',
+          'The campaign needs to answer the quiet questions: Can I trust this? Is this respected? Does this feel high quality? Is this risky? Do people like me buy this? Is the brand serious about Japan? If the campaign does not answer these questions, performance suffers.',
+        ]),
+      },
+      {
+        heading: bi('Mistake 6: They Launch Without Local Creative Feedback'),
+        paragraphs: biArr([
+          'This is the expensive mistake. The brand spends heavily on production, ads, assets, and launch activity. Then someone local finally says: this does not feel right for Japan.',
+          'That feedback should happen before production, not after. Local creative feedback can protect the campaign from wrong tone, weak copy, awkward visuals, poor casting, bad pacing, or unclear positioning.',
+        ]),
+      },
+      {
+        heading: bi('Mistake 7: They Measure Attention But Not Intent'),
+        paragraphs: biArr([
+          'Views are not enough. Likes are not enough. A campaign should create movement toward a business goal.',
+          'For hospitality, that may mean booking intent. For restaurants, that may mean Google Maps discovery, reservations, and trust. For premium brands, that may mean awareness, store visits, email capture, retargeting, or product demand. For international brands entering Japan, that may mean qualified conversations and market learning.',
+          'Attention is only useful when it leads somewhere.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow Productions Helps Brands Avoid These Mistakes'),
+        paragraphs: biArr([
+          'Streetshow Productions helps premium international brands enter, localize, and launch in Japan through strategy-led creative execution.',
+          'We help brands think through Japan-specific positioning, creative localization, video production, campaign assets, hospitality content, 3D billboard campaigns, bilingual EN/JP communication, launch execution, and social and paid media deliverables.',
+          'We are not just here to make content. We help brands avoid expensive creative mistakes before they reach the market.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('Why is Japan difficult for foreign brands?'), a: bi('Japan is not impossible, but it is context-sensitive. Brands need strong localization, trust-building, and local execution.') },
+      { q: bi('Is a Japanese translation enough for launch?'), a: bi('No. Translation is only one layer. The campaign message, visuals, platform strategy, and proof may also need adaptation.') },
+      { q: bi('Should foreign brands use Japanese agencies?'), a: bi('Sometimes. The best partner depends on the project. International brands often benefit from a bilingual partner who understands both global brand standards and Japanese market context.') },
+      { q: bi('What is the biggest mistake foreign brands make?'), a: bi('They assume the global campaign can simply be translated and launched.') },
+      { q: bi('Can Streetshow support a Japan launch from strategy to production?'), a: bi('Yes. Streetshow can help with Japan market entry strategy, localization, creative direction, production, and campaign assets.') },
+    ],
+    cta: {
+      heading: bi('Plan Your Japan Market Entry'),
+      body: bi('Before launching in Japan, pressure-test the campaign. Streetshow Productions helps international brands adapt strategy, messaging, visuals, and production for the Japanese market.'),
+      linkLabel: bi('Discuss Your Japan Launch'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
+  // ── Blog: Best 3D Billboard Locations in Tokyo (English-only interim) ──
+  {
+    slug: 'best-3d-billboard-locations-tokyo-brand-launches',
+    lang: 'en',
+    title: bi('Best 3D Billboard Locations in Tokyo for Brand Launches'),
+    metaTitle: bi('Best 3D Billboard Locations in Tokyo for Brand Launches | Streetshow Productions'),
+    metaDescription: bi('Explore the best Tokyo areas for 3D billboard campaigns, including Shibuya, Shinjuku, Ginza, Harajuku, and Omotesando.'),
+    excerpt: bi('Tokyo is one of the strongest cities in the world for high-visibility brand activations. But the location decides everything. A 3D billboard in the wrong place is expensive decoration. In the right place, it turns a launch into a public event.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('7 min read'),
+    category: bi('3D Billboards'),
+    tags: ['3D billboard Tokyo', '3D anamorphic billboard Japan', 'Shibuya 3D billboard', 'Tokyo brand launch', 'outdoor advertising Japan', 'billboard locations Tokyo'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Tokyo is one of the strongest cities in the world for high-visibility brand activations.',
+          'The density is extreme. The screens are iconic. The foot traffic is massive. The visual culture is built for spectacle. If a 3D billboard campaign works in Tokyo, it can become more than an ad. It can become a moment people film, share, and remember.',
+          'But the location matters. A 3D billboard in the wrong place is expensive decoration. A 3D billboard in the right place can turn a launch into a public event.',
+        ]),
+      },
+      {
+        heading: bi('Quick Answer'),
+        paragraphs: biArr([
+          'The best Tokyo areas for 3D billboard brand launches are Shibuya for youth culture, fashion, music, and social sharing; Shinjuku for nightlife, entertainment, volume, and spectacle; Harajuku for youth culture, street fashion, and lifestyle brands; Omotesando for premium lifestyle, beauty, fashion, and design-led brands; and Ginza for luxury, heritage, watches, jewelry, beauty, and high-end retail.',
+          'The best location depends on the audience, the product, the campaign goal, and how the 3D creative will be viewed in real space.',
+        ]),
+      },
+      {
+        heading: bi('Why Tokyo Works for 3D Billboard Campaigns'),
+        paragraphs: biArr([
+          'Tokyo is not just a media market. It is a visual environment. People expect screens. They expect movement. They expect characters, products, fashion, animation, entertainment, and brand worlds to appear in public space.',
+          'That makes Tokyo powerful for 3D billboard campaigns. But it also raises the standard.',
+          'A basic 3D animation is not enough. The concept has to be strong. The viewing angle has to work. The brand moment has to be instantly understandable. The content has to be designed for people who may only look for a few seconds before recording it on their phone.',
+        ]),
+      },
+      {
+        heading: bi('Shibuya: Maximum Visibility and Social Sharing'),
+        paragraphs: biArr([
+          'Shibuya is one of the strongest areas for youth culture, fashion, music, tech, lifestyle, and international brand launches.',
+          'It works especially well for fashion launches, footwear campaigns, music and entertainment, beauty brands, street culture, product reveals, social-first activations, and international brand awareness.',
+          'Shibuya is not subtle. That is the point. If the goal is attention, public energy, and shareability, Shibuya is a serious option. But the creative has to be simple enough to understand fast. People are moving. The campaign cannot require explanation.',
+        ]),
+      },
+      {
+        heading: bi('Shinjuku: Entertainment, Nightlife, and Volume'),
+        paragraphs: biArr([
+          'Shinjuku is powerful for scale, nighttime visibility, and entertainment energy.',
+          'It works well for entertainment brands, beverage campaigns, gaming, music, nightlife, sports, film and streaming launches, and high-impact public spectacle.',
+          'Shinjuku has a stronger city energy feel. It can make a campaign feel bigger, louder, and more dramatic. For 3D billboard production, this means the creative can lean into motion, reveal, character, product emergence, and cinematic impact.',
+        ]),
+      },
+      {
+        heading: bi('Harajuku: Youth Culture and Street Fashion'),
+        paragraphs: biArr([
+          'Harajuku works when the brand wants culture, style, and youth identity.',
+          'It is useful for fashion, streetwear, beauty, creators, youth lifestyle, pop-up launches, collaboration campaigns, and character-led campaigns.',
+          'A 3D billboard concept for Harajuku should not feel corporate. It should feel like something people want to photograph because it belongs to culture, not just advertising.',
+        ]),
+      },
+      {
+        heading: bi('Omotesando: Premium Lifestyle and Design'),
+        paragraphs: biArr([
+          'Omotesando gives a more polished brand environment.',
+          'It works well for luxury lifestyle, beauty, skincare, fashion, design-led products, premium retail, hospitality, and artful brand campaigns.',
+          'The creative here should feel refined. Less chaos. More taste. This is where a brand can use 3D not just for shock, but for elegance, product detail, atmosphere, and premium perception.',
+        ]),
+      },
+      {
+        heading: bi('Ginza: Luxury and High-End Retail'),
+        paragraphs: biArr([
+          'Ginza is for brands that need prestige.',
+          'It works well for luxury fashion, jewelry, watches, beauty, premium automotive, high-end retail, heritage brands, and luxury hospitality.',
+          'A Ginza 3D billboard should not scream unless the brand can justify it. The strongest approach is usually precise, elegant, and visually expensive. Product detail matters. Lighting matters. Motion matters. Restraint matters.',
+        ]),
+      },
+      {
+        heading: bi('What Makes a 3D Billboard Location Work?'),
+        paragraphs: biArr([
+          'A strong location is not just about traffic. It needs a clear viewing angle, enough dwell time, good visibility, a relevant audience, social sharing potential, brand fit, strong screen specs, a good surrounding environment, clean sight lines, and a concept that fits the physical space.',
+          'The best 3D billboard campaigns are designed for a specific screen and viewing position. You do not create generic 3D content and hope it works everywhere. That is amateur thinking.',
+        ]),
+      },
+      {
+        heading: bi('What Brands Should Prepare Before Production'),
+        paragraphs: biArr([
+          'Before producing a 3D billboard campaign, prepare the campaign goal, target audience, preferred city or location, product or asset files, brand guidelines, launch date, media placement details, screen specs, resolution, loop duration, viewing angle, reference campaigns, budget range, and approval process.',
+          'The earlier the creative production team understands the screen, the better the final illusion can be.',
+        ]),
+      },
+      {
+        heading: bi('Common Mistakes in 3D Billboard Campaigns'),
+        paragraphs: biArr([
+          'Making the concept too complicated. People need to understand the moment instantly.',
+          'Ignoring the viewing angle. The 3D effect depends on perspective. If the angle is wrong, the illusion dies.',
+          'Designing for a flat screen. 3D anamorphic content must be built for the physical display, not just the animation software.',
+          'Forgetting phone capture. Many people will experience the campaign through social media. The animation should look strong both in person and through a phone camera.',
+          'Treating 3D as a gimmick. A 3D billboard should still serve the brand. The effect is not the strategy.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow Productions Supports 3D Billboard Campaigns in Japan'),
+        paragraphs: biArr([
+          'Streetshow Productions creates 3D anamorphic billboard content for brand launches, luxury activations, and high-visibility campaigns in Tokyo and across Japan.',
+          'We support concept development, creative direction, 3D and CGI production, anamorphic planning, screen-specific content, campaign visuals, launch assets, social cutdowns, and technical delivery coordination.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('What is the best location for a 3D billboard in Tokyo?'), a: bi('It depends on the brand. Shibuya is strong for visibility and youth culture. Ginza is stronger for luxury. Shinjuku is strong for entertainment and nighttime impact.') },
+      { q: bi('Is Shibuya better than Shinjuku for a 3D billboard?'), a: bi('Shibuya is usually stronger for social sharing, fashion, lifestyle, and youth culture. Shinjuku is stronger for nightlife, entertainment, scale, and spectacle.') },
+      { q: bi('Do 3D billboards need special screen specs?'), a: bi('Yes. Resolution, viewing angle, screen shape, loop duration, and playback specs all affect the final result.') },
+      { q: bi('Can Streetshow create the 3D content and campaign assets?'), a: bi('Yes. Streetshow can support concept, 3D and CGI production, billboard content, launch visuals, and social media cutdowns.') },
+      { q: bi('Is a 3D billboard good for luxury brands?'), a: bi('Yes, but the concept must match the brand. Luxury 3D billboard content should feel premium, not gimmicky.') },
+    ],
+    cta: {
+      heading: bi('Discuss a 3D Billboard Campaign'),
+      body: bi('Planning a 3D billboard campaign in Tokyo or Japan? Streetshow Productions helps brands develop 3D anamorphic billboard concepts, content, and launch assets built for visibility, social sharing, and brand impact.'),
+      linkLabel: bi('Discuss Your 3D Billboard Campaign'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['3d-anamorphic-billboards-japan', 'video-production-japan'],
+  },
+
+  // ══ Japanese-only posts (separate ICP / search intent — not translations) ══
+
+  // ── 海外ブランドが日本市場で失敗する理由 ──
+  {
+    slug: 'kaigai-brand-nihon-shijo-shippai-riyu',
+    lang: 'ja',
+    title: bi('海外ブランドが日本市場で失敗する理由'),
+    metaTitle: bi('海外ブランドが日本市場で失敗する理由 | Streetshow Productions'),
+    metaDescription: bi('海外ブランドが日本市場で成果を出せない理由を、翻訳、ローカライズ、信頼形成、クリエイティブ戦略の視点から解説します。'),
+    excerpt: bi('海外ブランドが日本市場で失敗するのは、市場が特殊だからではなく、日本向けの準備が足りないからです。翻訳、信頼形成、クリエイティブ、プラットフォーム、導線という5つの視点から、その理由を解説します。'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('約6分'),
+    category: bi('日本市場進出'),
+    tags: ['海外ブランド 日本進出', '日本市場 失敗', 'ローカライズ', 'クリエイティブ戦略', '日本市場参入'],
+    sections: [
+      {
+        paragraphs: biArr([
+          '海外ブランドが日本市場で失敗する理由は、日本市場が特殊すぎるからではありません。多くの場合、原因はもっとシンプルです。日本向けに本気で準備していないからです。',
+          'グローバルで使っている広告をそのまま翻訳する。海外で成功したビジュアルをそのまま使う。日本の消費者が何を信頼し、どこで比較し、どう行動するのかを理解しないままローンチする。それで成果が出ないのは当然です。',
+          '日本市場は難しい市場です。ただし、不可能な市場ではありません。正しくローカライズし、信頼を作り、ブランドの魅力を日本の文脈で伝えれば、海外ブランドにも大きなチャンスがあります。',
+        ]),
+      },
+      {
+        heading: bi('まず結論'),
+        paragraphs: biArr([
+          '海外ブランドが日本市場で失敗する主な理由は、次の5つです。',
+          '翻訳だけで日本向け対応を終わらせている。',
+          '日本の消費者が求める信頼材料を用意していない。',
+          'グローバルのクリエイティブをそのまま使っている。',
+          '日本のプラットフォームや購買行動を理解していない。',
+          'ローンチ後の導線やフォロー設計が弱い。',
+          'つまり、商品が悪いのではなく、伝え方と見せ方が日本市場に合っていないケースが多いのです。',
+        ]),
+      },
+      {
+        heading: bi('失敗理由1：翻訳だけで終わっている'),
+        paragraphs: biArr([
+          '一番多い失敗がこれです。英語のコピーを日本語に訳す。商品説明を翻訳する。広告文を日本語にする。もちろん翻訳は必要です。でも、それだけでは足りません。',
+          '日本市場で必要なのは、単なる翻訳ではなくローカライズです。翻訳は言葉を変える作業です。ローカライズは、意味、印象、温度感、信頼材料、ビジュアル、導線まで調整する作業です。',
+          '日本語として正しくても、日本人の消費者にとって自然に感じられなければ意味がありません。',
+        ]),
+      },
+      {
+        heading: bi('失敗理由2：信頼を作る前に売ろうとしている'),
+        paragraphs: biArr([
+          '日本の消費者は、初めて見るブランドに対して慎重です。特に高価格帯の商品、ホテル、レストラン、不動産、ファッション、ライフスタイル系ブランドでは、信頼形成が重要になります。',
+          '購入前に見られるポイントは多いです。ブランドの実績、日本語サイトの自然さ、写真や動画の品質、口コミ、導入事例、メディア掲載、店舗や場所の雰囲気、SNSの更新状況、問い合わせ時の対応。',
+          '海外では強いコピーやインパクトのある広告だけで動くことがあります。でも日本では、それだけでは弱い。「このブランドは信頼できるのか」「日本向けにちゃんと対応しているのか」「品質は本当に良いのか」。この不安を解消しないまま広告を出しても、成果にはつながりにくいです。',
+        ]),
+      },
+      {
+        heading: bi('失敗理由3：海外のビジュアルをそのまま使っている'),
+        paragraphs: biArr([
+          'クリエイティブの失敗も多いです。海外で成功した動画や写真をそのまま日本で使う。海外のモデル、表情、構図、コピー、演出をそのまま展開する。これが必ず悪いわけではありません。',
+          'ただし、日本市場では見え方が変わります。海外では高級感に見えるものが、日本では少し強すぎることがあります。海外では自然に見える表現が、日本では押しつけがましく感じられることがあります。海外では魅力的なコピーが、日本では抽象的で伝わりにくいことがあります。',
+          '日本向けのクリエイティブでは、ブランドの世界観を壊さずに、日本の消費者が受け取りやすい形へ調整する必要があります。',
+        ]),
+      },
+      {
+        heading: bi('失敗理由4：日本のプラットフォーム理解が弱い'),
+        paragraphs: biArr([
+          '広告やコンテンツは、どこで見られるかによって設計が変わります。Instagramで見る動画、TikTokで見る短尺動画、YouTubeで見るブランド映像、Google検索で見るサービスページ、Googleマップで見る店舗写真、LINEで届く案内、Webサイトで見る導入事例。同じ素材を全部に流用しても、成果は出にくいです。',
+          '日本で成果を出すには、プラットフォームごとに役割を分ける必要があります。認知を作るコンテンツ、信頼を作るコンテンツ、比較検討を助けるコンテンツ、問い合わせにつなげるコンテンツ、来店や予約につなげるコンテンツ。',
+          '1本の動画だけで全てを解決しようとするのは危険です。',
+        ]),
+      },
+      {
+        heading: bi('失敗理由5：ローンチ後の導線が弱い'),
+        paragraphs: biArr([
+          '海外ブランドは、ローンチの瞬間に集中しすぎることがあります。発表する。広告を出す。SNSに投稿する。イベントを行う。ここまでは良いです。問題はその後です。',
+          '興味を持った人はどこに行くのか。日本語の情報はあるのか。予約や問い合わせはしやすいのか。再接触できる仕組みはあるのか。広告を見た後の導線は設計されているのか。',
+          '注目を集めても、次の行動につながらなければ売上にはなりません。日本市場では、認知、信頼、比較、行動までの流れを丁寧に作ることが重要です。',
+        ]),
+      },
+      {
+        heading: bi('Streetshow Productionsの考え方'),
+        paragraphs: biArr([
+          'Streetshow Productionsは、海外ブランドの日本市場参入を支援するクリエイティブパートナーです。私たちは、単に動画を作るだけではありません。',
+          'ブランドの魅力を日本市場でどう伝えるべきか。どの表現が自然に受け取られるか。どのビジュアルが信頼につながるか。どの導線が問い合わせや予約につながるか。この部分から設計します。',
+          '日本市場向けのローカライズ、映像制作、キャンペーン制作、ホテル・レストラン向けコンテンツ、3Dビジョン制作まで、ブランドの目的に合わせて支援します。',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('海外ブランドが日本で失敗する一番の理由は何ですか？'), a: bi('一番多いのは、翻訳だけで日本市場に対応したつもりになってしまうことです。言葉だけでなく、見せ方、信頼材料、導線まで調整する必要があります。') },
+      { q: bi('日本向けにブランドイメージを変える必要がありますか？'), a: bi('ブランドそのものを変える必要はありません。ただし、伝え方や表現は日本市場に合わせて調整する必要があります。') },
+      { q: bi('日本市場向けのローカライズはどこから始めるべきですか？'), a: bi('まずはWebサイト、広告コピー、動画、写真、SNS、問い合わせ導線から見直すべきです。消費者が最初に触れる部分から整えることが重要です。') },
+    ],
+    cta: {
+      heading: bi('日本向けの発信を見直したい方へ'),
+      body: bi('海外ブランドの日本市場参入には、翻訳以上の準備が必要です。Streetshow Productionsは、日本市場に合わせたクリエイティブ戦略、ローカライズ、映像制作、キャンペーン制作を支援しています。'),
+      linkLabel: bi('日本向けキャンペーンについて相談する'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
+  // ── 海外ブランドの日本進出に必要なローカライズとは ──
+  {
+    slug: 'kaigai-brand-nihon-localization',
+    lang: 'ja',
+    title: bi('海外ブランドの日本進出に必要なローカライズとは'),
+    metaTitle: bi('海外ブランドの日本進出に必要なローカライズとは | Streetshow Productions'),
+    metaDescription: bi('海外ブランドが日本市場に進出する際に必要なローカライズについて、翻訳との違い、ビジュアル調整、広告設計、信頼形成の観点から解説します。'),
+    excerpt: bi('海外ブランドが日本市場に入るとき、最初に考えるべきは翻訳ではなく、日本の消費者にどう伝わるかです。翻訳とローカライズの違いと、調整すべきポイントを解説します。'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('約6分'),
+    category: bi('ローカライズ'),
+    tags: ['日本市場 ローカライズ', '海外ブランド 日本進出', '翻訳 ローカライズ 違い', 'クリエイティブ制作', '日本市場参入'],
+    sections: [
+      {
+        paragraphs: biArr([
+          '海外ブランドが日本市場に入るとき、最初に考えるべきことは日本語に翻訳することではありません。本当に考えるべきことは、日本の消費者にどう伝わるか。ここです。',
+          '英語のコピーを日本語にするだけでは、日本市場向けの準備としては不十分です。ブランドの魅力、商品の価値、世界観、信頼材料、購入までの導線を、日本の文脈に合わせて整える必要があります。それがローカライズです。',
+        ]),
+      },
+      {
+        heading: bi('まず結論'),
+        paragraphs: biArr([
+          'ローカライズとは、海外ブランドのメッセージやクリエイティブを、日本市場で自然に伝わる形に調整することです。対象になるのは、言葉だけではありません。',
+          'コピー、ビジュアル、動画、写真、広告、Webサイト、SNS、ランディングページ、ブランドストーリー、商品説明、CTA、問い合わせ導線、購入導線。すべてがローカライズの対象です。',
+        ]),
+      },
+      {
+        heading: bi('翻訳とローカライズの違い'),
+        paragraphs: biArr([
+          '翻訳は、言葉を別の言語に置き換える作業です。ローカライズは、伝わり方を市場に合わせる作業です。',
+          'たとえば、英語の広告コピーを日本語にしたとします。文法的には正しい。でも、日本人の消費者にとって少し強すぎる、抽象的すぎる、信頼しにくい、行動しにくい。この場合、翻訳はできています。でも、ローカライズはできていません。',
+          '日本市場で必要なのは、単に意味が分かる文章ではなく、自然に納得できる表現です。',
+        ]),
+      },
+      {
+        heading: bi('なぜ日本市場ではローカライズが重要なのか'),
+        paragraphs: biArr([
+          '日本では、細かい印象がブランド評価に影響します。日本語の不自然さ、写真の雰囲気、サイトの情報量、価格の見せ方、口コミの有無、ブランドの説明不足、問い合わせのしやすさ、広告の温度感。こうした要素が少しずつ信頼に影響します。',
+          '海外では新しい、大胆、革新的という見せ方が強く働くことがあります。日本では、それに加えて安心できる、品質が高い、信頼できる、丁寧に作られていると感じてもらうことが大切です。',
+        ]),
+      },
+      {
+        heading: bi('ローカライズすべきポイント：メッセージ'),
+        paragraphs: biArr([
+          '海外で使っているキャッチコピーが、日本でもそのまま機能するとは限りません。日本向けには、商品の魅力をより具体的に伝える必要があります。',
+          '何が良いのか。なぜ信頼できるのか。どんな人に向いているのか。日本の生活や価値観にどう合うのか。この部分を明確にする必要があります。',
+        ]),
+      },
+      {
+        heading: bi('ローカライズすべきポイント：ビジュアル'),
+        paragraphs: biArr([
+          '写真や動画もローカライズが必要です。モデル、場所、色、構図、表情、テンポ、字幕、ナレーション。すべてが印象を作ります。',
+          '日本市場では、過度に強い演出よりも、質感、空気感、丁寧さ、信頼感が重要になることがあります。特にラグジュアリー、ホテル、レストラン、ファッション、ライフスタイル領域では、ビジュアルの細部がブランド価値に直結します。',
+        ]),
+      },
+      {
+        heading: bi('ローカライズすべきポイント：Webサイト'),
+        paragraphs: biArr([
+          '日本語サイトがあるだけでは足りません。読みやすいか。情報は十分か。問い合わせしやすいか。実績は分かりやすいか。日本向けの説明になっているか。不自然な直訳になっていないか。',
+          '日本語ページが雑だと、ブランド全体の信頼を落とします。',
+        ]),
+      },
+      {
+        heading: bi('ローカライズすべきポイント：SNSと広告'),
+        paragraphs: biArr([
+          'SNSでは、英語圏と日本では反応しやすい表現が違います。短尺動画のテンポ、字幕の入れ方、フックの作り方、投稿文の温度感、コメントへの対応、広告の訴求。',
+          '日本向けには、押し売り感を減らしながら、興味と信頼を作る設計が必要です。',
+        ]),
+      },
+      {
+        heading: bi('ローカライズすべきポイント：購入・問い合わせ導線'),
+        paragraphs: biArr([
+          'ローカライズで見落とされがちなのが、導線です。広告を見た人がどこに行くのか。サイトで何を見るのか。問い合わせ前に何を確認するのか。不安を解消する情報はあるのか。',
+          'この設計が弱いと、良い広告を作っても成果が伸びません。',
+        ]),
+      },
+      {
+        heading: bi('良いローカライズとは何か'),
+        paragraphs: biArr([
+          '良いローカライズは、ブランドを日本風に変えることではありません。ブランドの本質を守りながら、日本市場で自然に伝わる形へ整えることです。',
+          '海外ブランドらしさは残す。でも、日本の消費者が理解しやすく、信頼しやすく、行動しやすい表現にする。これが理想です。',
+        ]),
+      },
+      {
+        heading: bi('Streetshow Productionsのローカライズ支援'),
+        paragraphs: biArr([
+          'Streetshow Productionsは、海外ブランドの日本市場参入に必要なローカライズとクリエイティブ制作を支援しています。私たちは、翻訳だけではなく、ブランドの見せ方、映像、写真、広告、Webサイト、SNS、キャンペーン導線まで考えます。',
+          '支援できる内容は、日本市場向けクリエイティブ戦略、コピーとメッセージの調整、映像制作、写真撮影、SNS用短尺動画、広告クリエイティブ、ホテル・レストラン向けコンテンツ、3Dビジョン・3D屋外広告制作、日本語・英語の両方に対応した制作進行です。',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('翻訳だけでは不十分ですか？'), a: bi('多くの場合、不十分です。日本語として正しくても、日本の消費者に自然に伝わらないことがあります。') },
+      { q: bi('ローカライズでは何を変更しますか？'), a: bi('コピー、ビジュアル、広告、Webサイト、SNS、動画、導線などを日本市場に合わせて調整します。') },
+      { q: bi('ブランドイメージが崩れる心配はありませんか？'), a: bi('良いローカライズは、ブランドを変えることではありません。ブランドの魅力を守りながら、日本市場で伝わりやすくすることです。') },
+    ],
+    cta: {
+      heading: bi('日本市場向けローカライズを相談する'),
+      body: bi('海外ブランドの日本進出には、翻訳だけでは足りません。Streetshow Productionsは、日本市場に合わせたローカライズ、映像制作、広告クリエイティブ、キャンペーン制作を支援しています。'),
+      linkLabel: bi('ローカライズについて相談する'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
+  // ── ホテルの予約につながる動画制作とは ──
+  {
+    slug: 'hotel-yoyaku-ni-tsunagaru-douga-seisaku',
+    lang: 'ja',
+    title: bi('ホテルの予約につながる動画制作とは'),
+    metaTitle: bi('ホテルの予約につながる動画制作とは | Streetshow Productions'),
+    metaDescription: bi('ホテルや旅館、レストランが予約につながる動画を作るために必要な考え方を、ブランド認知、信頼形成、導線設計の視点から解説します。'),
+    excerpt: bi('ホテルの動画は、美しいだけでは予約につながりません。滞在体験、ターゲット設計、食事の魅力、信頼感、そして視聴後の導線まで設計することが重要です。'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('約6分'),
+    category: bi('ホスピタリティ'),
+    tags: ['ホテル 動画制作', 'ホテル 予約', 'ホスピタリティ 映像', 'インバウンド 集客', 'レストラン 動画'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'ホテルの動画は、美しいだけでは足りません。もちろん、客室、レストラン、ラウンジ、景色、料理、空間を美しく見せることは重要です。でも、それだけでは予約にはつながりません。',
+          '予約につながる動画には、役割があります。このホテルに泊まりたい。このレストランに行ってみたい。この体験を誰かと共有したい。ここなら安心して選べそうだ。そう思わせる設計が必要です。',
+        ]),
+      },
+      {
+        heading: bi('まず結論'),
+        paragraphs: biArr([
+          'ホテルの予約につながる動画には、次の5つが必要です。',
+          '空間の魅力が伝わること。',
+          '宿泊・食事・体験の具体的なイメージが湧くこと。',
+          'ターゲット客に合った世界観であること。',
+          'Webサイト、SNS、Googleマップ、広告で使いやすいこと。',
+          '視聴後の導線が設計されていること。',
+          '美しい動画を作るだけなら、多くの制作会社ができます。重要なのは、動画をどう予約や問い合わせにつなげるかです。',
+        ]),
+      },
+      {
+        heading: bi('美しい動画と予約につながる動画は違う'),
+        paragraphs: biArr([
+          'ホテル動画でよくある失敗は、雰囲気だけで終わることです。きれいな客室。ゆっくり動くカメラ。おしゃれな音楽。美しい料理。夜景。笑顔のスタッフ。これらは悪くありません。',
+          'ただし、見た人がなぜこのホテルを選ぶべきかまで理解できなければ、予約にはつながりません。予約につながる動画には、魅力だけでなく理由が必要です。',
+        ]),
+      },
+      {
+        heading: bi('伝えるべきこと：どんな滞在体験ができるのか'),
+        paragraphs: biArr([
+          '宿泊者は、部屋そのものではなく体験を買っています。朝起きたときの景色。チェックインした瞬間の安心感。夕食の時間。バーで過ごす夜。記念日を祝う空気。家族やパートナーと過ごす時間。',
+          '動画では、この滞在のイメージを見せる必要があります。',
+        ]),
+      },
+      {
+        heading: bi('伝えるべきこと：誰に向いているホテルなのか'),
+        paragraphs: biArr([
+          'すべての人に向けた動画は弱くなります。カップル向けなのか。ファミリー向けなのか。海外富裕層向けなのか。ビジネス客向けなのか。記念日利用なのか。インバウンド旅行者向けなのか。ターゲットによって、見せ方は変わります。',
+        ]),
+      },
+      {
+        heading: bi('伝えるべきこと：食事やレストランの魅力'),
+        paragraphs: biArr([
+          'ホテルの予約理由は、客室だけではありません。レストラン、バー、朝食、アフタヌーンティー、プライベートダイニング、季節限定メニュー。これらは強い予約動機になります。',
+          '特にインバウンド客や記念日利用では、食事体験の見せ方が重要です。',
+        ]),
+      },
+      {
+        heading: bi('伝えるべきこと：信頼感'),
+        paragraphs: biArr([
+          'ホテル選びでは、安心感が重要です。清潔感、スタッフの対応、空間の質、レビュー、アクセス、予約のしやすさ、サービスの丁寧さ。動画でも、こうした信頼につながる要素を見せるべきです。',
+        ]),
+      },
+      {
+        heading: bi('どこで使う動画なのかを先に決める'),
+        paragraphs: biArr([
+          '動画制作でよくある失敗は、使い道を決めずに撮影することです。ホテル動画は、使う場所によって必要な尺や構成が変わります。Webサイト用のブランド動画、Instagram Reels、TikTok、YouTube Shorts、広告用動画、Googleビジネスプロフィール用動画、レストラン紹介動画、ウェディング・イベント紹介動画、採用向け動画。',
+          '最初から用途を決めて撮影すれば、1回の撮影で複数の素材を作ることができます。',
+        ]),
+      },
+      {
+        heading: bi('インバウンド向けには何が必要か'),
+        paragraphs: biArr([
+          '海外からの旅行者は、ホテルを選ぶ前に多くの情報を見ます。Google検索、Googleマップ、Instagram、YouTube、予約サイト、口コミ、ホテル公式サイト。',
+          'そのため、動画も英語字幕、日本語字幕、短尺版、縦型版、写真素材と組み合わせて使える形にする必要があります。ただ映像を作るだけでなく、検索、SNS、予約導線まで見て設計することが重要です。',
+        ]),
+      },
+      {
+        heading: bi('ホテル動画でよくある失敗'),
+        paragraphs: biArr([
+          '雰囲気だけで終わる。ターゲットが曖昧。客室しか見せていない。レストランや体験を活用していない。SNS用の短尺素材がない。Googleマップで使える素材がない。字幕がない。予約ページへの導線が弱い。季節ごとの打ち出しがない。',
+          'これでは、せっかく制作費をかけても資産になりにくいです。',
+        ]),
+      },
+      {
+        heading: bi('Streetshow Productionsのホテル向け制作'),
+        paragraphs: biArr([
+          'Streetshow Productionsは、ホテル、レストラン、観光施設、ラグジュアリー施設向けに、予約や問い合わせにつながるクリエイティブ制作を支援しています。私たちは、単なる映像制作ではなく、誰に何を伝え、どこで見せ、どう行動につなげるかまで考えます。',
+          '支援できる内容は、ホテルブランド動画、レストラン紹介動画、客室・施設紹介、SNS用短尺動画、インバウンド向け動画、Googleマップ用写真・動画、ウェディング・イベント訴求、プライベートダイニング訴求、広告用クリエイティブです。',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('ホテル動画は何本作るべきですか？'), a: bi('1本の長い動画だけではなく、Webサイト用、SNS用、広告用、Googleマップ用など複数の形式で作るのが理想です。') },
+      { q: bi('インバウンド向けには英語字幕が必要ですか？'), a: bi('必要になるケースが多いです。特に海外旅行者向けには、英語字幕や英語版コピーがあると理解されやすくなります。') },
+      { q: bi('レストランだけの動画制作もできますか？'), a: bi('はい。ホテル内レストラン、バー、プライベートダイニング、季節限定メニューなどの動画制作にも対応できます。') },
+    ],
+    cta: {
+      heading: bi('ホテル動画制作を相談する'),
+      body: bi('ホテルの動画は、美しいだけでは足りません。予約、問い合わせ、来店、インバウンド集客につながる設計が必要です。Streetshow Productionsは、ホテルやレストラン向けの映像制作、写真撮影、SNS用素材、広告クリエイティブを支援しています。'),
+      linkLabel: bi('ホテル向け制作について相談する'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['hospitality-creative-strategy-japan', 'video-production-japan'],
+  },
+
+  // ── 3D屋外広告・3Dビジョン制作で失敗しないために ──
+  {
+    slug: '3d-okugai-kokoku-vision-seisaku-shippai-shinai',
+    lang: 'ja',
+    title: bi('3D屋外広告・3Dビジョン制作で失敗しないために'),
+    metaTitle: bi('3D屋外広告・3Dビジョン制作で失敗しないために | Streetshow Productions'),
+    metaDescription: bi('3D屋外広告や3Dビジョン制作で失敗しないために、企画、視点設計、画面仕様、ブランド表現、SNS拡散まで押さえるべきポイントを解説します。'),
+    excerpt: bi('3D屋外広告は、うまく作れば強いインパクトを生みます。ただし3Dだから必ず話題になるわけではありません。ブランド、場所、視点、画面仕様、SNSでの見え方まで考えた設計が必要です。'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('約6分'),
+    category: bi('3D・屋外広告'),
+    tags: ['3D屋外広告', '3Dビジョン 制作', 'アナモルフィック', 'ブランドローンチ', 'CGI 制作'],
+    sections: [
+      {
+        paragraphs: biArr([
+          '3D屋外広告は、うまく作れば強いインパクトを生みます。通行人が立ち止まり、スマートフォンで撮影し、SNSで拡散する。ブランドのローンチやキャンペーンにとって、非常に強い武器になります。',
+          'ただし、3Dだから必ず話題になるわけではありません。失敗する3D広告も多いです。理由はシンプルです。3D表現そのものが目的になってしまうからです。本当に必要なのは、ブランド、場所、視点、画面仕様、SNSでの見え方まで考えた設計です。',
+        ]),
+      },
+      {
+        heading: bi('まず結論'),
+        paragraphs: biArr([
+          '3D屋外広告で失敗しないためには、次の5つを押さえる必要があります。',
+          '何を伝える広告なのかを明確にする。',
+          '画面の仕様と視点を先に確認する。',
+          '通行人が数秒で理解できる演出にする。',
+          'ブランドの世界観と3D表現を一致させる。',
+          '現地での見え方とSNSでの見え方を両方考える。',
+          '3D表現は強力です。でも、戦略が弱ければただの派手な映像で終わります。',
+        ]),
+      },
+      {
+        heading: bi('失敗1：3D表現だけを優先してしまう'),
+        paragraphs: biArr([
+          '3Dビジョン制作で一番危険なのは、とにかく飛び出せば良いという考え方です。商品が飛び出す。キャラクターが動く。箱が開く。液体が流れる。建物から何かが出てくる。これ自体は悪くありません。でも、ブランドの印象と合っていなければ意味がありません。',
+          'ラグジュアリーブランドなら、派手さよりも質感や余白が重要になることがあります。若年層向けのブランドなら、撮影したくなる驚きやテンポが必要です。飲料やエンタメ系なら、動きやスケール感が強く機能することがあります。3D演出は、ブランドの目的に合わせるべきです。',
+        ]),
+      },
+      {
+        heading: bi('失敗2：視点設計を軽く見ている'),
+        paragraphs: biArr([
+          '3D屋外広告は、見る位置によって効果が大きく変わります。アナモルフィック表現は、特定の視点から見たときに立体的に見える設計です。つまり、どこから見られるのかを理解せずに作ると、3D効果が弱くなります。',
+          '必要なのは、次の情報です。画面サイズ、解像度、画面の角度、視認距離、通行人の動線、メインの視点位置、ループ時間、周辺環境、昼と夜の見え方。この情報なしで制作を進めるのは危険です。',
+        ]),
+      },
+      {
+        heading: bi('失敗3：情報量が多すぎる'),
+        paragraphs: biArr([
+          '屋外広告は、長く見てもらえるとは限りません。多くの人は歩きながら見ます。数秒だけ見ます。スマートフォンで一瞬撮影します。そのため、伝える内容はシンプルである必要があります。',
+          '商品、ブランド名、驚きの瞬間、印象に残る動き、最後のブランド表示。この流れが分かりやすいほど、記憶に残りやすくなります。説明が多すぎる3D広告は、弱いです。',
+        ]),
+      },
+      {
+        heading: bi('失敗4：SNSでの見え方を考えていない'),
+        paragraphs: biArr([
+          '3D屋外広告は、現地で見る人だけのものではありません。多くの場合、SNSで見られる人数の方が大きくなります。そのため、スマートフォンで撮影されたときにどう見えるかも重要です。',
+          '縦動画で映えるか。最初の1秒で伝わるか。撮影したくなる瞬間があるか。ブランド名が自然に映るか。ループのどこを撮っても分かりやすいか。この設計が弱いと、現地では面白くてもSNSでは伸びません。',
+        ]),
+      },
+      {
+        heading: bi('失敗5：技術仕様を後回しにする'),
+        paragraphs: biArr([
+          '3Dビジョン制作では、技術仕様が非常に重要です。制作前に確認すべき項目は、画面解像度、アスペクト比、ファイル形式、再生秒数、ループ仕様、音の有無、明るさ、セーフゾーン、納品形式、テスト再生の有無、LEDプロセッサーや再生環境です。',
+          'これらを後から確認すると、修正コストが増えます。最初に確認すべきです。',
+        ]),
+      },
+      {
+        heading: bi('良い3D屋外広告とは'),
+        paragraphs: biArr([
+          '良い3D広告は、ただ立体的に見える広告ではありません。ブランドの印象が残る広告です。',
+          '商品を覚えている。ブランド名を覚えている。見た人が誰かに話したくなる。SNSで共有したくなる。キャンペーン全体の価値が上がる。ここまで設計されている広告が、強い3D広告です。',
+        ]),
+      },
+      {
+        heading: bi('Streetshow Productionsの3Dビジョン制作'),
+        paragraphs: biArr([
+          'Streetshow Productionsは、東京・日本国内向けの3D屋外広告、3Dビジョン、アナモルフィック広告、CGIコンテンツ制作を支援しています。',
+          '支援できる内容は、コンセプト開発、クリエイティブディレクション、3D/CGI制作、アナモルフィック設計、画面仕様に合わせた映像制作、SNS用カットダウン、ブランドローンチ用映像、納品データ作成、テスト再生用素材です。',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('3D屋外広告はどんなブランドに向いていますか？'), a: bi('ブランドローンチ、商品発表、ファッション、ビューティー、飲料、エンタメ、ラグジュアリー、観光プロモーションなどに向いています。') },
+      { q: bi('3Dビジョン制作には何が必要ですか？'), a: bi('画面サイズ、解像度、視点位置、再生時間、ファイル形式、ブランド素材、キャンペーン目的などが必要です。') },
+      { q: bi('SNS用の動画も作れますか？'), a: bi('はい。3Dビジョン用の本編だけでなく、SNS用の縦型動画や告知素材の制作も可能です。') },
+    ],
+    cta: {
+      heading: bi('3D屋外広告を相談する'),
+      body: bi('3D広告は、派手に作れば成功するものではありません。ブランド、場所、視点、技術仕様、SNS拡散まで設計して初めて効果が出ます。Streetshow Productionsは、日本国内の3D屋外広告、3Dビジョン、CGIコンテンツ制作を支援しています。'),
+      linkLabel: bi('3D広告制作について相談する'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['3d-anamorphic-billboards-japan', 'photography-cgi-japan'],
+  },
+
+  // ── 福岡で映像制作会社を選ぶポイント ──
+  {
+    slug: 'fukuoka-eizouseisaku-kaisha-erabikata',
+    lang: 'ja',
+    title: bi('福岡で映像制作会社を選ぶポイント'),
+    metaTitle: bi('福岡で映像制作会社を選ぶポイント | Streetshow Productions'),
+    metaDescription: bi('福岡で映像制作会社を選ぶ際に確認すべきポイントを、企画力、撮影体制、編集、SNS活用、ホテル・店舗向け制作の視点から解説します。'),
+    excerpt: bi('福岡で映像制作会社を探すとき、価格だけで選ぶのは危険です。企画力、撮影後の使い道、業種に合った実績、言語対応、そして成果につなげる視点まで確認すべきポイントを解説します。'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-07-06',
+    readingTime: bi('約6分'),
+    category: bi('映像制作'),
+    tags: ['福岡 映像制作', '映像制作会社 選び方', '福岡 動画制作', 'SNS動画', 'ホテル レストラン 撮影'],
+    sections: [
+      {
+        paragraphs: biArr([
+          '福岡で映像制作会社を探すとき、価格だけで選ぶのは危険です。安く撮れる会社はあります。きれいに撮れる会社もあります。機材を持っている会社もあります。でも、本当に大切なのはそこだけではありません。',
+          '映像を作る目的は何か。誰に届けるのか。どこで使うのか。見た人にどう行動してほしいのか。この部分まで考えられる制作会社を選ぶべきです。',
+        ]),
+      },
+      {
+        heading: bi('まず結論'),
+        paragraphs: biArr([
+          '福岡で映像制作会社を選ぶときは、次の5つを確認してください。',
+          '企画から相談できるか。',
+          '撮影だけでなく編集・SNS展開まで考えられるか。',
+          '実績が自社の業種に近いか。',
+          '日本語・英語など必要な言語に対応できるか。',
+          '映像を売上、予約、問い合わせにつなげる視点があるか。',
+          '映像制作は、ただ動画を納品する仕事ではありません。事業の目的に合わせて、使えるコンテンツを作る仕事です。',
+        ]),
+      },
+      {
+        heading: bi('価格だけで選ぶと失敗しやすい'),
+        paragraphs: biArr([
+          '制作費はもちろん大切です。ただし、安さだけで選ぶと失敗しやすいです。よくある失敗は次のようなものです。',
+          '撮影はしたが使い道がない。SNS用の短尺動画がない。字幕がない。Webサイトに合わない。広告に使えない。ターゲットに刺さらない。ブランドの印象と合っていない。結局、追加制作が必要になる。',
+          '最初に安く見えても、成果につながらなければ高くつきます。',
+        ]),
+      },
+      {
+        heading: bi('企画力があるかを見る'),
+        paragraphs: biArr([
+          '良い制作会社は、いきなり撮影の話だけをしません。まず目的を聞きます。なぜ映像を作るのか。誰に見せたいのか。どこで使うのか。何を伝えたいのか。問い合わせ、予約、採用、認知のどれが目的なのか。',
+          'この質問がない会社は、きれいな映像は作れても、成果につながる映像を作れない可能性があります。',
+        ]),
+      },
+      {
+        heading: bi('撮影後の使い道まで考えられるか'),
+        paragraphs: biArr([
+          '今の映像制作では、1本の動画だけでは足りないことが多いです。同じ撮影素材から、複数の形式を作る必要があります。Webサイト用動画、Instagram Reels、TikTok、YouTube Shorts、広告用動画、Googleビジネスプロフィール用動画、採用動画、営業資料用動画、写真素材、サムネイル。',
+          '最初から使い道を考えて撮影すれば、1日の撮影でも多くのコンテンツを作れます。逆に、使い道を考えずに撮ると、後から素材不足になります。',
+        ]),
+      },
+      {
+        heading: bi('業種に合った実績があるか'),
+        paragraphs: biArr([
+          '映像制作会社にも得意分野があります。企業VPが得意な会社、採用動画が得意な会社、イベント撮影が得意な会社、SNS動画が得意な会社、ホテル・レストラン撮影が得意な会社、ブランドキャンペーンが得意な会社。福岡で依頼する場合も、自社の業種に近い実績があるかを確認するべきです。',
+          'ホテルなら、空間や体験の見せ方。レストランなら、料理と来店導線。ブランドなら、世界観と信頼感。海外向けなら、英語対応やローカライズ。目的に合っていない制作会社を選ぶと、仕上がりがズレます。',
+        ]),
+      },
+      {
+        heading: bi('福岡で映像制作をする強み'),
+        paragraphs: biArr([
+          '福岡には、東京とは違う強みがあります。移動しやすい。撮影しやすいロケーションが多い。都市と自然の距離が近い。ホテル、飲食店、観光、ライフスタイル系の撮影と相性が良い。東京よりも柔軟に動きやすいケースがある。',
+          '特に、ホテル、レストラン、観光、ライフスタイル、地方発ブランドの映像制作では、福岡は強い拠点になります。ただし、福岡だけで完結する必要はありません。必要に応じて、東京、大阪、京都、その他地域と組み合わせて制作することも可能です。',
+        ]),
+      },
+      {
+        heading: bi('英語対応が必要なケース'),
+        paragraphs: biArr([
+          '福岡でも、英語対応が必要な案件は増えています。海外ブランドの日本進出、インバウンド向けホテル動画、外国人観光客向けレストランPR、海外本社とのやり取り、英語字幕、日本語と英語の両方で使う広告、海外向けSNS。',
+          'このような場合、英語と日本語の両方を理解できる制作パートナーが必要です。単なる翻訳ではなく、文化や表現の違いを理解した制作が重要になります。',
+        ]),
+      },
+      {
+        heading: bi('Streetshow Productionsの福岡映像制作'),
+        paragraphs: biArr([
+          'Streetshow Productionsは、福岡を拠点に、東京や日本全国の映像制作・クリエイティブ制作を支援しています。私たちは、ただ撮影するだけではなく、企画、撮影、編集、SNS展開、ローカライズ、ホテル・レストラン向けコンテンツ、ブランドキャンペーンまで対応します。',
+          '支援できる内容は、ブランド動画、ホテル動画、レストラン動画、SNS用短尺動画、広告クリエイティブ、写真撮影、インバウンド向けコンテンツ、英語・日本語対応の制作進行、日本市場向けローカライズです。',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('福岡で映像制作を依頼する場合、費用はどのくらいですか？'), a: bi('内容によって変わります。撮影日数、スタッフ数、編集内容、納品本数、写真撮影の有無、字幕対応などで費用は変動します。') },
+      { q: bi('SNS用の短尺動画も作れますか？'), a: bi('はい。Instagram Reels、TikTok、YouTube Shorts、広告用の縦型動画などにも対応できます。') },
+      { q: bi('英語対応は可能ですか？'), a: bi('はい。海外ブランド、日本企業の海外向け発信、インバウンド向けコンテンツなど、日本語・英語の両方が必要な案件に対応できます。') },
+      { q: bi('ホテルやレストランの撮影もできますか？'), a: bi('はい。ホテル、レストラン、バー、観光施設、ライフスタイル系ブランドの撮影に対応できます。') },
+    ],
+    cta: {
+      heading: bi('福岡で映像制作を相談する'),
+      body: bi('福岡で映像制作会社を選ぶなら、きれいに撮れるかだけで判断しないでください。その映像が、認知、信頼、予約、問い合わせ、売上につながるか。そこまで考えられるパートナーを選ぶべきです。Streetshow Productionsは、福岡を拠点に、日本市場向けの映像制作、写真撮影、SNSコンテンツ、ローカライズ、ブランドキャンペーン制作を支援しています。'),
+      linkLabel: bi('福岡での映像制作について相談する'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['video-production-japan', 'hospitality-creative-strategy-japan'],
   },
 
 ];

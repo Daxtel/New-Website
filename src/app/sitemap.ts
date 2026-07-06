@@ -6,7 +6,10 @@ import { locationPages, industryPages } from '@/lib/landing-pages';
 const baseUrl = 'https://streetshowproduction.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = [
+  const now = new Date();
+
+  // Bilingual routes: EN url + en/ja/x-default hreflang alternates.
+  const bilingualRoutes = [
     '',
     '/about',
     '/contact',
@@ -15,46 +18,64 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services',
     '/work',
     '/blog',
+    ...serviceCatalog.map((s) => `/services/${s.slug}`),
+    ...projectCatalog.map((p) => `/work/${p.slug}`),
+    ...locationPages.map((p) => `/locations/${p.slug}`),
+    ...industryPages.map((p) => `/industries/${p.slug}`),
   ];
 
-  const serviceRoutes = serviceCatalog.map((service) => `/services/${service.slug}`);
-  const projectRoutes = projectCatalog.map((project) => `/work/${project.slug}`);
-  const blogRoutes = blogPosts.map((post) => `/blog/${post.slug}`);
-  const locationRoutes = locationPages.map((page) => `/locations/${page.slug}`);
-  const industryRoutes = industryPages.map((page) => `/industries/${page.slug}`);
+  const priorityFor = (route: string) =>
+    route === ''
+      ? 1
+      : route.startsWith('/work/') || route.startsWith('/services/') || route.startsWith('/blog/')
+      ? 0.8
+      : 0.7;
 
-  const allRoutes = [
-    ...staticRoutes,
-    ...serviceRoutes,
-    ...projectRoutes,
-    ...blogRoutes,
-    ...locationRoutes,
-    ...industryRoutes,
-  ];
-
-  const now = new Date();
-
-  return allRoutes.map((route) => {
+  const bilingualEntries: MetadataRoute.Sitemap = bilingualRoutes.map((route) => {
     const enUrl = `${baseUrl}${route}`;
-    const jaUrl = `${baseUrl}/ja${route}`; // route '' -> /ja, '/services' -> /ja/services
+    const jaUrl = `${baseUrl}/ja${route}`;
     return {
       url: enUrl,
       lastModified: now,
       changeFrequency: (route === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
-      priority:
-        route === ''
-          ? 1
-          : route.startsWith('/work/') || route.startsWith('/services/') || route.startsWith('/blog/')
-          ? 0.8
-          : 0.7,
-      // hreflang alternates so Google indexes the Japanese version separately.
-      alternates: {
-        languages: {
-          en: enUrl,
-          ja: jaUrl,
-          'x-default': enUrl,
-        },
-      },
+      priority: priorityFor(route),
+      alternates: { languages: { en: enUrl, ja: jaUrl, 'x-default': enUrl } },
     };
   });
+
+  // Blog posts: each post is listed under its own language track only.
+  //  - bilingual (lang undefined): EN url, en+ja hreflang
+  //  - en-only: EN url, no ja alternate
+  //  - ja-only: JA url (/ja/blog/...), no en alternate
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => {
+    const enUrl = `${baseUrl}/blog/${post.slug}`;
+    const jaUrl = `${baseUrl}/ja/blog/${post.slug}`;
+    if (post.lang === 'ja') {
+      return {
+        url: jaUrl,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+        alternates: { languages: { ja: jaUrl, 'x-default': jaUrl } },
+      };
+    }
+    if (post.lang === 'en') {
+      return {
+        url: enUrl,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+        alternates: { languages: { en: enUrl, 'x-default': enUrl } },
+      };
+    }
+    return {
+      url: enUrl,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+      alternates: { languages: { en: enUrl, ja: jaUrl, 'x-default': enUrl } },
+    };
+  });
+
+  return [...bilingualEntries, ...blogEntries];
 }
