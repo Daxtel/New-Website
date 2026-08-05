@@ -10,6 +10,7 @@ import { getLocale } from '@/lib/locale';
 import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { ReadingProgress } from '@/components/motion/ReadingProgress';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { LeadMagnet } from '@/components/lead-magnet';
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -211,6 +212,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
             </div>
           )}
+
+          <div className="mt-16">
+            <LeadMagnet locale={locale} source={`blog:${post.slug}`} variant="inline" />
+          </div>
 
           <div className="mt-16 bg-[#D4AF37] p-10 md:p-14">
             <h2 className="text-2xl font-bold text-[#0A0A0A] md:text-3xl">{pick(post.cta.heading, locale)}</h2>

@@ -12,6 +12,7 @@ import { AnimatedServiceCard } from '@/components/motion/AnimatedServiceCard';
 import { AnimatedProcessStep } from '@/components/motion/AnimatedProcessStep';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { HorizontalWorkScroll } from '@/components/motion/HorizontalWorkScroll';
+import { LeadMagnet } from '@/components/lead-magnet';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -172,6 +173,15 @@ export default async function Home() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Lead Magnet ──────────────────────────────────────────── */}
+      <section className="px-5 py-12 sm:px-6 md:px-10 md:py-16 lg:px-16">
+        <div className="mx-auto max-w-6xl">
+          <ScrollReveal>
+            <LeadMagnet locale={locale} source="home" variant="band" />
+          </ScrollReveal>
         </div>
       </section>
 
