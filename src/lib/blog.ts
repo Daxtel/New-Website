@@ -1488,6 +1488,475 @@ export const blogPosts: BlogPost[] = [
     relatedServices: ['video-production-japan', 'hospitality-creative-strategy-japan'],
   },
 
+  // ══ Topic-gap posts (English track) ══
+
+  // ── SEO & AI Search Visibility in Japan ──
+  {
+    slug: 'seo-ai-search-visibility-japan',
+    lang: 'en',
+    title: bi('SEO and AI Search Visibility in Japan: A 2026 Playbook'),
+    metaTitle: bi('SEO & AI Search Visibility in Japan (2026) | Streetshow Productions'),
+    metaDescription: bi('How foreign brands get found in Japan in 2026 — Japanese Google, Yahoo Japan, and AI answer engines like ChatGPT and Perplexity. Structure, content, and citation strategy.'),
+    excerpt: bi('Getting found in Japan in 2026 means ranking on Japanese Google and Yahoo Japan, and getting cited by AI answer engines. Foreign brands lose both when they treat Japan like a translated version of their home market.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-08-06',
+    readingTime: bi('7 min read'),
+    category: bi('Japan Market Entry'),
+    tags: ['Japan SEO', 'AI search Japan', 'Yahoo Japan SEO', 'answer engine optimization', 'Japanese search', 'GEO Japan'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Being visible in Japan in 2026 is two problems, not one. You need to rank in Japanese search — Google Japan and Yahoo Japan — and you need to be cited by AI answer engines like ChatGPT search, Perplexity, and Gemini when a buyer asks a question in Japanese or English.',
+          'Foreign brands usually lose both at once, for the same reason: they treat Japan as a translated copy of their home site instead of a market with its own search behavior, language, and trust signals.',
+        ]),
+      },
+      {
+        heading: bi('Japanese search is not just Google'),
+        paragraphs: biArr([
+          'Google leads in Japan, but Yahoo Japan still holds meaningful share and runs on Google\'s index with its own front door and ad ecosystem. Practically, ranking well on Google Japan carries you on Yahoo Japan too, so the work is one job, not two.',
+          'What changes is the query. Japanese users search in Japanese, often with different phrasing, more specific intent, and heavy use of maps and reviews for local and hospitality decisions. Keyword research done only in English misses how the market actually searches.',
+        ]),
+      },
+      {
+        heading: bi('Why AI answer engines now matter as much as ranking'),
+        paragraphs: biArr([
+          'A growing share of buyers ask an AI instead of scrolling a results page. ChatGPT search reads the Bing index. Perplexity and Claude crawl the live web. Gemini pulls from Google. If your site is not crawlable, structured, and quotable, you are invisible in the answer even when you rank on the classic results page.',
+          'Answer engines favor pages that give direct, specific, extractable answers: exact price ranges, named locations, clear lists, and a question-and-answer structure. Vague brochure copy does not get cited.',
+        ]),
+      },
+      {
+        heading: bi('The technical foundation'),
+        paragraphs: biArr([
+          'Before content, the site has to be readable by every crawler. That means a clean sitemap, a robots file that explicitly allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended, and more), an llms.txt that summarizes who you are, structured data (Organization, LocalBusiness, FAQ, Article), and instant indexing via IndexNow so new pages reach Bing and Yahoo the day they publish.',
+          'For a bilingual site, each language needs its own indexable URL with correct hreflang, so Google can index the Japanese and English versions separately instead of collapsing them.',
+        ]),
+      },
+      {
+        heading: bi('Content that ranks and gets cited'),
+        paragraphs: biArr([
+          'Write for the question, not the keyword. Each page should answer one clear question a buyer would type or ask an AI, open with a direct answer, and back it with specifics.',
+          'Use exact numbers and named places. "Video production in Japan costs 200,000 to 5,000,000 yen depending on scope" is quotable. "We offer competitive pricing" is not.',
+          'Add a real FAQ section with FAQPage schema. This is the single highest-leverage format for AI citation because it maps directly to how people ask questions.',
+          'Localize, do not translate. A Japanese page that reads as a literal translation ranks and converts worse than one written for Japanese search intent and tone.',
+        ]),
+      },
+      {
+        heading: bi('Local and map visibility'),
+        paragraphs: biArr([
+          'For anything location-based — hospitality, restaurants, studios, services in a city — Google Business Profile and the map pack matter more than the classic web results. A complete, bilingual, actively-posted profile with reviews often beats a national competitor for local intent searches.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow approaches Japan visibility'),
+        paragraphs: biArr([
+          'Streetshow Productions builds Japan visibility as a system: bilingual site structure, localized content written for Japanese search intent, structured data and AI-crawler access, and creative assets that earn the mentions and engagement search engines reward. We treat SEO, localization, and content production as one workflow, not separate vendors.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('Is Google or Yahoo more important for SEO in Japan?'), a: bi('Google leads, and Yahoo Japan runs on Google\'s index, so ranking well on Google Japan generally carries you on Yahoo Japan too. The bigger difference is searching in Japanese, not which engine.') },
+      { q: bi('How do I get my site cited by ChatGPT or Perplexity?'), a: bi('Be crawlable (allow AI bots), structured (schema, FAQ), and quotable (exact numbers, named places, direct answers). ChatGPT search reads the Bing index, so being indexed in Bing matters. Third-party mentions also drive citations.') },
+      { q: bi('Is translating my English site enough to rank in Japan?'), a: bi('No. Literal translation misses Japanese search phrasing, tone, and trust signals. Content should be localized for Japanese intent, and each language needs its own indexable URL with hreflang.') },
+      { q: bi('What is the fastest technical win for Japan visibility?'), a: bi('A clean sitemap plus IndexNow for instant Bing and Yahoo indexing, an AI-crawler-friendly robots file, and FAQ schema on key pages. These make you discoverable and quotable quickly.') },
+    ],
+    cta: {
+      heading: bi('Get found in Japan — search and AI'),
+      body: bi('Streetshow Productions builds bilingual visibility for foreign brands in Japan: localized content, technical SEO, AI-crawler access, and creative that earns engagement. Let\'s look at where you\'re losing search and answer-engine visibility.'),
+      linkLabel: bi('Discuss Your Japan Visibility'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
+  // ── Japanese Consumer Psychology & Trends 2026 ──
+  {
+    slug: 'japanese-consumer-psychology-trends-2026',
+    lang: 'en',
+    title: bi('Japanese Consumer Psychology and Trends for 2026'),
+    metaTitle: bi('Japanese Consumer Psychology & Trends 2026 | Streetshow Productions'),
+    metaDescription: bi('How Japanese consumers decide in 2026 — trust signals, high-context communication, quality cues, and the trends shaping premium and inbound buying. For foreign brands entering Japan.'),
+    excerpt: bi('Japanese consumers decide differently: trust before action, quality in the details, and skepticism toward hype. Foreign brands that understand the psychology adapt their message. The ones that do not blame the market.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-08-06',
+    readingTime: bi('7 min read'),
+    category: bi('Japan Market Entry'),
+    tags: ['Japanese consumer psychology', 'Japan consumer trends 2026', 'buying behavior Japan', 'premium market Japan', 'inbound Japan'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Most foreign brands that struggle in Japan do not have a product problem. They have a psychology problem. Japanese consumers make decisions on a different set of cues than Western markets reward, and campaigns built for one rarely move the other.',
+          'This is a practical look at how Japanese consumers decide in 2026, and what it means for how a foreign brand should present itself.',
+        ]),
+      },
+      {
+        heading: bi('Trust comes before action'),
+        paragraphs: biArr([
+          'In many markets a strong claim and a good offer are enough to prompt a first purchase. In Japan, trust usually has to come first. Buyers look for proof the brand is credible, established, and serious about Japan before they act.',
+          'That trust is built from signals: brand history, quality of the Japanese-language site, review presence, media coverage, craft in the details, consistent presence, and responsive service. Attention without trust converts poorly.',
+        ]),
+      },
+      {
+        heading: bi('High-context communication'),
+        paragraphs: biArr([
+          'Japan is a high-context culture. Meaning lives in tone, restraint, and what is implied as much as what is stated. A message that feels confident and direct in the US can read as aggressive or pushy in Japan. A call-to-action that performs in the West can feel like too much, too soon.',
+          'This does not mean being vague. It means calibrating tone, pacing, and directness to what feels natural and respectful to a Japanese audience.',
+        ]),
+      },
+      {
+        heading: bi('Quality is judged in the details'),
+        paragraphs: biArr([
+          'Japanese consumers read quality through detail: finish, packaging, typography, photography, service touches, and consistency. Small imperfections that pass elsewhere — an awkward translation, a low-resolution image, an unstaffed inquiry form — quietly lower perceived quality and trust.',
+          'For premium brands this is an advantage. A market that notices craft rewards brands that deliver it.',
+        ]),
+      },
+      {
+        heading: bi('What is shaping 2026'),
+        paragraphs: biArr([
+          'Record inbound tourism is pulling premium and hospitality demand upward, and inbound buyers discover through Google Maps, Instagram, and search before they arrive.',
+          'Domestic buyers are value-conscious but still pay for quality and experience where trust is established.',
+          'Discovery is fragmenting across Google, Yahoo, LINE, YouTube, Instagram, and AI answer engines, so a single channel or a single hero asset is no longer enough.',
+          'Authenticity and local relevance carry more weight; audiences quickly detect a campaign that was imported without adaptation.',
+        ]),
+      },
+      {
+        heading: bi('What this means for foreign brands'),
+        paragraphs: biArr([
+          'Lead with trust, not hype. Show proof, quality, and seriousness about Japan before the ask.',
+          'Adapt tone and visuals, not just words. Casting, pacing, restraint, and typography all shape perception.',
+          'Invest in the details that signal quality, especially on Japanese-language pages and first touchpoints.',
+          'Build for a fragmented, high-trust buyer journey rather than a single viral moment.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow applies this'),
+        paragraphs: biArr([
+          'Streetshow Productions starts from Japanese buyer psychology and works backward to the creative: positioning, message, visuals, and platform, adapted so a premium brand reads as credible and native without losing its identity. We combine that strategy with production so the thinking actually reaches the market.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('Why do Japanese consumers need more trust before buying?'), a: bi('Japan is a high-trust, high-context market where buyers look for proof of credibility, quality, and commitment to Japan before acting, especially for premium and considered purchases. Hype without trust signals converts poorly.') },
+      { q: bi('Do I need to change my brand for the Japanese market?'), a: bi('You keep the brand. You adapt how it communicates — tone, pacing, visuals, proof, and platform — so it reads as natural and credible to Japanese audiences.') },
+      { q: bi('How does inbound tourism affect consumer behavior in 2026?'), a: bi('Record inbound demand lifts premium and hospitality buying, and inbound consumers discover brands through Google Maps, Instagram, and search before arriving, which raises the value of bilingual, well-structured visual content.') },
+      { q: bi('What signals quality to Japanese consumers?'), a: bi('Detail and consistency: finish, packaging, typography, photography, natural Japanese copy, responsive service, and a polished first touchpoint. Small imperfections lower perceived quality quickly.') },
+    ],
+    cta: {
+      heading: bi('Reach Japanese buyers the way they actually decide'),
+      body: bi('Streetshow Productions builds strategy and creative around Japanese consumer psychology — trust, tone, and quality cues — so premium foreign brands connect instead of getting ignored. Let\'s pressure-test how your brand reads in Japan.'),
+      linkLabel: bi('Discuss Your Japan Strategy'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'hospitality-creative-strategy-japan'],
+  },
+
+  // ── Japan Market Entry Timeline & Roadmap ──
+  {
+    slug: 'japan-market-entry-timeline-roadmap',
+    lang: 'en',
+    title: bi('Japan Market Entry Timeline: A Realistic Roadmap'),
+    metaTitle: bi('Japan Market Entry Timeline & Roadmap | Streetshow Productions'),
+    metaDescription: bi('A realistic phase-by-phase timeline for entering the Japanese market — from research and localization to launch and scale. What foreign brands should expect at each stage.'),
+    excerpt: bi('Entering Japan is a phased effort, not a launch date. A realistic roadmap runs from market research and positioning through localization, production, launch, and iteration — with trust built at every stage.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-08-06',
+    readingTime: bi('6 min read'),
+    category: bi('Japan Market Entry'),
+    tags: ['Japan market entry timeline', 'Japan launch roadmap', 'market entry phases', 'entering Japan', 'Japan go to market'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Foreign brands often ask how long it takes to enter Japan. The honest answer is that entry is a sequence of phases, not a single launch date, and rushing any phase usually shows up later as weak performance.',
+          'This is a realistic roadmap for a premium or international brand entering Japan through creative, localization, and campaign execution — the path Streetshow supports — rather than the legal and corporate setup track.',
+        ]),
+      },
+      {
+        heading: bi('Phase 1 — Market and audience research'),
+        paragraphs: biArr([
+          'Before any creative, understand the market: who the Japanese buyer is, how they search and decide, what competitors are doing, and where the real opportunity sits. This phase defines the entry point and prevents expensive assumptions later. Typically a few weeks depending on category depth.',
+        ]),
+      },
+      {
+        heading: bi('Phase 2 — Positioning and localization strategy'),
+        paragraphs: biArr([
+          'Decide how the brand should be positioned for Japan and how the message, tone, and proof adapt without breaking the global identity. This is localization strategy, not translation, and it drives everything downstream. Usually two to four weeks.',
+        ]),
+      },
+      {
+        heading: bi('Phase 3 — Creative and production'),
+        paragraphs: biArr([
+          'Produce the assets the launch needs: brand film, campaign content, photography, localized landing pages, social cutdowns, and any market-specific formats. Production timelines depend on scope — a brand video runs a few weeks; a full multi-asset campaign runs longer. Plan deliverables to the buyer journey, not to a single hero piece.',
+        ]),
+      },
+      {
+        heading: bi('Phase 4 — Launch and distribution'),
+        paragraphs: biArr([
+          'Take the brand to market across the right Japanese channels — search, social, paid, LINE, maps, and PR — with a coherent message and a working conversion path in Japanese. A launch is the start of demand, not the finish line, so the follow-up system has to be in place before you spend on attention.',
+        ]),
+      },
+      {
+        heading: bi('Phase 5 — Iterate and scale'),
+        paragraphs: biArr([
+          'Measure against real business goals, not just views, and refine message, creative, and channels based on how the Japanese market actually responds. Trust and presence compound, so consistency over the months after launch matters more than the launch spike itself.',
+        ]),
+      },
+      {
+        heading: bi('What makes timelines slip'),
+        paragraphs: biArr([
+          'Treating translation as localization and reworking it later. Fragmenting the work across disconnected vendors so no one owns the journey. Skipping research and discovering the positioning is wrong after production. Launching without a Japanese-language conversion and follow-up path. Each of these adds weeks and cost.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow runs the roadmap'),
+        paragraphs: biArr([
+          'Streetshow Productions runs market entry as one connected workflow — research, positioning, localization, production, and launch support under one roof — so the brand\'s journey through the Japanese market stays coherent from strategy to execution.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('How long does it take to enter the Japanese market?'), a: bi('It is a phased effort, not a single date. Research, positioning, and localization typically take several weeks; production depends on scope; and launch is followed by months of iteration. A creative-led entry commonly spans a few months to first launch, then ongoing.') },
+      { q: bi('What is the first step to entering Japan?'), a: bi('Market and audience research — understanding how the Japanese buyer searches and decides, and what competitors do — before any creative. It defines the entry point and prevents costly rework.') },
+      { q: bi('Why do Japan launches slip or underperform?'), a: bi('Common causes are treating translation as localization, fragmenting work across disconnected vendors, skipping research, and launching without a Japanese-language conversion and follow-up path.') },
+      { q: bi('Do I need everything before launching?'), a: bi('You need positioning, localized assets, and a working Japanese conversion path before spending on attention. Launch starts demand; the follow-up system must exist first or the spend leaks.') },
+    ],
+    cta: {
+      heading: bi('Plan your Japan entry roadmap'),
+      body: bi('Streetshow Productions runs Japan market entry as one workflow — research, positioning, localization, production, and launch. Let\'s map a realistic roadmap for your brand.'),
+      linkLabel: bi('Discuss Your Japan Launch'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
+  // ── Brand Positioning & Adaptation for Japan ──
+  {
+    slug: 'brand-positioning-adaptation-japan',
+    lang: 'en',
+    title: bi('Brand Positioning and Adaptation Strategy for Japan'),
+    metaTitle: bi('Brand Positioning & Adaptation for Japan | Streetshow Productions'),
+    metaDescription: bi('How to adapt brand positioning, messaging, and value propositions for the Japanese market without losing your global identity. A practical guide for foreign brands.'),
+    excerpt: bi('Your global positioning is built for scale. Japan often rewards specificity. Adapting the entry point, proof, and tone — without discarding the brand — is what separates a launch that lands from one that falls flat.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-08-06',
+    readingTime: bi('6 min read'),
+    category: bi('Japan Market Entry'),
+    tags: ['brand positioning Japan', 'brand adaptation Japan', 'value proposition Japan', 'Japan messaging strategy', 'Japan market entry'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'A global brand arrives in Japan with a positioning that works across many markets. That is exactly why it often underperforms here. Global positioning is built for scale and consistency; Japan tends to reward specificity, proof, and a message tuned to how local buyers actually decide.',
+          'The goal is not to become a different brand. It is to adapt the entry point — the first thing a Japanese buyer hears and sees — so the brand reads as credible and relevant without losing its identity.',
+        ]),
+      },
+      {
+        heading: bi('Keep the brand, adapt the expression'),
+        paragraphs: biArr([
+          'Positioning has two layers: the core identity, and how it is expressed to a given audience. In Japan you protect the first and adjust the second. The values, the promise, and the visual identity stay. The framing, the proof, the tone, and the emphasis change.',
+          'A brand that leads with bold self-expression may need more proof in Japan. One that leads with disruption may need more credibility. One that leads with speed may need more reassurance. The message is re-pointed, not replaced.',
+        ]),
+      },
+      {
+        heading: bi('Find the Japanese entry point'),
+        paragraphs: biArr([
+          'The angle that opened your home market is not always the angle that opens Japan. Ask what specific problem, desire, or context makes your product relevant to a Japanese buyer, and lead with that. A narrower, more specific entry point usually outperforms a broad global tagline translated word for word.',
+        ]),
+      },
+      {
+        heading: bi('Adapt the proof, not just the words'),
+        paragraphs: biArr([
+          'Japanese buyers often weigh different trust signals: heritage, craft, quality detail, reputation, safety, service, and social proof frequently matter more than hype or novelty. Positioning has to be backed by the proof this market believes, presented the way this market reads it.',
+          'That means the value proposition may keep its meaning but change its evidence — different testimonials, different comparisons, different emphasis.',
+        ]),
+      },
+      {
+        heading: bi('Positioning shows up in visuals too'),
+        paragraphs: biArr([
+          'Positioning is not only copy. Casting, styling, location, pacing, typography, and composition all signal who the brand is for and how premium it is. A message that says premium while the visuals feel generic will not hold. Visual adaptation is part of positioning, not a separate step.',
+        ]),
+      },
+      {
+        heading: bi('Common positioning mistakes in Japan'),
+        paragraphs: biArr([
+          'Translating the global tagline literally and assuming it carries. Keeping the same entry point that worked at home. Changing the words but not the offer or the proof. Treating Japan like a neighboring Asian market. Each leaves the brand feeling imported rather than relevant.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow adapts positioning'),
+        paragraphs: biArr([
+          'Streetshow Productions works from the Japanese buyer backward: we define the entry point, adapt the message and proof, and translate that positioning into creative and production that reads as native and premium. The brand stays intact; the way it lands changes.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('Should I change my brand for Japan?'), a: bi('No. You keep the core identity and adapt the expression — entry point, tone, proof, and emphasis — so the brand reads as credible and relevant to Japanese buyers.') },
+      { q: bi('What is a brand entry point for Japan?'), a: bi('It is the specific problem, desire, or context that makes your product relevant to a Japanese buyer. It is often narrower and more specific than the global tagline, and leading with it outperforms a literal translation.') },
+      { q: bi('Why does global creative underperform in Japan?'), a: bi('Global creative is built for scale and often keeps the same entry point, tone, and proof. Japan rewards specificity, adapted proof, and calibrated tone, so unadapted global work reads as imported.') },
+      { q: bi('Is positioning just copy, or visuals too?'), a: bi('Both. Casting, styling, location, pacing, and typography all signal who the brand is for and how premium it is. Visual adaptation is part of positioning.') },
+    ],
+    cta: {
+      heading: bi('Position your brand to win in Japan'),
+      body: bi('Streetshow Productions adapts positioning, message, and creative for the Japanese market while protecting your global identity. Let\'s find the entry point that lands your brand in Japan.'),
+      linkLabel: bi('Discuss Your Japan Positioning'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
+  // ── Should You Enter Japan — Viability Assessment ──
+  {
+    slug: 'should-you-enter-japan-market-viability',
+    lang: 'en',
+    title: bi('Should You Enter Japan? A Market Viability Framework'),
+    metaTitle: bi('Should You Enter Japan? Market Viability Framework | Streetshow Productions'),
+    metaDescription: bi('A decision framework to help foreign brands assess whether entering Japan is strategically and financially viable — demand, fit, competition, cost, and commitment.'),
+    excerpt: bi('Japan is a large, high-trust, premium market — and an expensive place to enter half-heartedly. Before committing, run your brand through a viability framework: real demand, product fit, competition, cost, and commitment.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-08-06',
+    readingTime: bi('6 min read'),
+    category: bi('Japan Market Entry'),
+    tags: ['should you enter Japan', 'Japan market viability', 'Japan market entry decision', 'is Japan worth it', 'Japan go to market'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Japan is one of the largest premium consumer markets in the world, with record inbound demand and buyers who pay for quality. It is also an expensive and unforgiving place to enter without commitment. Both things are true, which is why the first question is not how to enter Japan, but whether you should.',
+          'This is a practical framework to assess viability before you spend on a launch.',
+        ]),
+      },
+      {
+        heading: bi('1. Is there real demand for your category?'),
+        paragraphs: biArr([
+          'Look past the size of the market to the demand for your specific category and price point. Is there existing search volume, competitor presence, and buyer behavior that shows Japanese consumers want what you sell? Strong demand you can serve beats a large market you cannot reach.',
+        ]),
+      },
+      {
+        heading: bi('2. Does your product actually fit Japan?'),
+        paragraphs: biArr([
+          'Fit is about more than translation. Does the product suit Japanese usage, expectations, sizing, quality standards, and cultural context? Products that need heavy adaptation to fit can still succeed, but the adaptation cost belongs in the decision, not as a surprise later.',
+        ]),
+      },
+      {
+        heading: bi('3. Who are you competing with, and how?'),
+        paragraphs: biArr([
+          'Map the local and international competitors already serving Japan. Are they strong and entrenched, or is there a gap in positioning, quality, or experience you can own? Entering against well-established players without a clear angle is the most common way brands burn budget.',
+        ]),
+      },
+      {
+        heading: bi('4. Can you afford to enter properly?'),
+        paragraphs: biArr([
+          'Japan punishes half-measures. Budget for localization, quality creative, a proper Japanese-language presence, and sustained presence after launch — not just a one-time campaign. If the budget only covers a translated site and a single burst of ads, the market usually will not respond. Be honest about the full cost before committing.',
+        ]),
+      },
+      {
+        heading: bi('5. Are you committed for the long term?'),
+        paragraphs: biArr([
+          'Trust and presence in Japan compound over time. Brands that treat Japan as a test and pull back at the first slow quarter rarely give the market long enough to build trust. If the organization is not prepared to commit for the medium term, that is a signal in itself.',
+        ]),
+      },
+      {
+        heading: bi('Reading the result'),
+        paragraphs: biArr([
+          'Strong demand, real fit, a clear competitive angle, adequate budget, and genuine commitment point to a viable entry. Weakness in demand or fit is a reason to reconsider or reshape the product. Weakness only in budget or commitment is a reason to wait until you can enter properly, not to enter cheaply.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow helps you decide and enter'),
+        paragraphs: biArr([
+          'Streetshow Productions helps foreign brands assess fit and opportunity in Japan, then execute the entry — positioning, localization, creative, and launch — when the answer is yes. We would rather help a brand enter well than watch it enter half-heartedly and blame the market.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('How do I know if my brand should enter Japan?'), a: bi('Assess five things: real demand for your category, genuine product fit, a clear competitive angle, budget to enter properly, and long-term commitment. Strength across these points to a viable entry.') },
+      { q: bi('Is Japan too expensive for smaller brands?'), a: bi('Japan rewards commitment over size, but it punishes half-measures. Smaller brands can succeed with a focused, well-localized entry in the right niche; they struggle when the budget only covers translation and a single ad burst.') },
+      { q: bi('What is the most common reason brands fail the viability test?'), a: bi('Entering against entrenched competitors without a clear positioning angle, or committing a budget that only covers a translated site and a one-time campaign rather than sustained presence.') },
+      { q: bi('Should I enter cheaply to test Japan?'), a: bi('A weak, under-resourced entry usually produces a weak result and a false negative. If budget is the only gap, it is often better to wait and enter properly than to enter cheaply.') },
+    ],
+    cta: {
+      heading: bi('Decide whether Japan is right for you'),
+      body: bi('Streetshow Productions helps foreign brands assess viability and, when it makes sense, execute a proper Japan entry. Let\'s pressure-test whether Japan is the right move for your brand.'),
+      linkLabel: bi('Discuss Your Japan Entry'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
+  // ── Japan Market Entry Cost Breakdown ──
+  {
+    slug: 'japan-market-entry-cost-breakdown',
+    lang: 'en',
+    title: bi('Japan Market Entry Cost: A Full Breakdown'),
+    metaTitle: bi('Japan Market Entry Cost Breakdown | Streetshow Productions'),
+    metaDescription: bi('What it actually costs to enter Japan — research, localization, creative and production, launch and media, and ongoing presence. A planning breakdown for foreign brands.'),
+    excerpt: bi('Entering Japan costs more than a shoot and an ad budget. A realistic plan accounts for research, localization, creative production, launch and media, and the ongoing presence that builds trust. Here is how the cost breaks down.'),
+    author: 'Daxtel Jackson',
+    datePublished: '2026-08-06',
+    readingTime: bi('6 min read'),
+    category: bi('Japan Market Entry'),
+    tags: ['Japan market entry cost', 'cost to enter Japan', 'Japan launch budget', 'localization cost Japan', 'Japan marketing budget'],
+    sections: [
+      {
+        paragraphs: biArr([
+          'Foreign brands often budget for Japan the way they budget for a campaign at home: a shoot and some ad spend. Then the real costs appear — localization, a proper Japanese presence, and the sustained activity that builds trust — and the plan runs short.',
+          'This is a planning breakdown of what a creative-led Japan market entry actually costs, so the budget matches the market. These are planning ranges, not fixed quotes; every brand and category differs.',
+        ]),
+      },
+      {
+        heading: bi('1. Research and strategy'),
+        paragraphs: biArr([
+          'Market and audience research, competitive analysis, positioning, and localization strategy. This is the cheapest phase and the one that prevents the most expensive mistakes. Skipping it usually costs more later in reworked creative and mis-aimed spend.',
+        ]),
+      },
+      {
+        heading: bi('2. Localization'),
+        paragraphs: biArr([
+          'Not translation — localization of messaging, website, landing pages, campaign copy, and assets for Japanese intent and tone, reviewed by native speakers. Cost scales with the number of assets and the depth of adaptation. Under-investing here quietly lowers everything downstream.',
+        ]),
+      },
+      {
+        heading: bi('3. Creative and production'),
+        paragraphs: biArr([
+          'The assets the launch needs: brand film, campaign content, photography, CGI, and market-specific formats. Video production in Japan commonly runs from a few hundred thousand yen for a lean shoot to several million for a full commercial campaign, depending on crew, location, and deliverables. Plan assets to the buyer journey, not a single hero piece.',
+        ]),
+      },
+      {
+        heading: bi('4. Launch and media'),
+        paragraphs: biArr([
+          'Paid media across the right Japanese channels — search, social, YouTube, LINE — plus PR and any activation. Media is an ongoing cost, not a one-time line, and it works only when the creative and conversion path are already in place.',
+        ]),
+      },
+      {
+        heading: bi('5. Ongoing presence'),
+        paragraphs: biArr([
+          'Trust in Japan compounds, which means the budget cannot stop at launch. Content cadence, community and review management, Google Business Profile and local visibility, and iteration all continue after launch. This is the line brands most often forget, and its absence is why launches fade.',
+        ]),
+      },
+      {
+        heading: bi('Where budgets go wrong'),
+        paragraphs: biArr([
+          'Treating translation as localization and paying to redo it. Front-loading a single hero video with no supporting assets. Buying media before the conversion path exists. Budgeting for a launch spike with nothing for the months after. Each turns a manageable cost into a wasted one.',
+        ]),
+      },
+      {
+        heading: bi('How Streetshow scopes Japan entry'),
+        paragraphs: biArr([
+          'Streetshow Productions scopes Japan entry to the outcome, not a fixed package — research, localization, production, launch, and ongoing presence — so the budget matches what the market actually requires. We would rather right-size the plan than watch a brand under-fund the parts that decide the result.',
+        ]),
+      },
+    ],
+    faqs: [
+      { q: bi('How much does it cost to enter the Japanese market?'), a: bi('It depends on category and ambition, but a realistic plan covers research, localization, creative production, launch media, and ongoing presence. Budgeting only for a shoot and an ad burst almost always falls short of what Japan requires.') },
+      { q: bi('What is the most underestimated cost of entering Japan?'), a: bi('Ongoing presence after launch. Trust in Japan compounds, so content cadence, local visibility, and iteration continue past launch. Brands that budget only for a launch spike see it fade.') },
+      { q: bi('How much does video production cost in Japan?'), a: bi('Commonly from a few hundred thousand yen for a lean shoot to several million for a full commercial campaign, depending on crew, location, and deliverables. It is one line in a larger entry budget.') },
+      { q: bi('Can I enter Japan on a small budget?'), a: bi('Yes, if it is focused: a specific niche, tight localization, and sustained presence in a narrow channel beat a thin, broad entry. The failure mode is spreading a small budget across a full launch and running out before trust builds.') },
+    ],
+    cta: {
+      heading: bi('Budget your Japan entry properly'),
+      body: bi('Streetshow Productions scopes Japan market entry to the outcome — research, localization, production, launch, and presence. Let\'s build a realistic budget for your brand\'s entry.'),
+      linkLabel: bi('Discuss Your Japan Budget'),
+      linkHref: '/contact',
+    },
+    relatedServices: ['japan-market-localization', 'video-production-japan'],
+  },
+
 ];
 
 export function getBlogPost(slug: string) {
