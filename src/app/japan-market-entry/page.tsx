@@ -4,6 +4,7 @@ import { pick } from '@/lib/i18n';
 import { japanMarketEntryPageBilingual } from '@/lib/strategic-pages-bilingual';
 import { getLocale } from '@/lib/locale';
 import { buildAlternates, localizeHref } from '@/lib/alternates';
+import { blogPosts } from '@/lib/blog';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,6 +26,12 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function JapanMarketEntry() {
   const locale = await getLocale();
   const shell = japanMarketEntryPageBilingual;
+
+  // Guides visible for this language track, newest first.
+  const guides = blogPosts
+    .filter((p) => (locale === 'ja' ? p.lang !== 'en' : p.lang !== 'ja'))
+    .sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1))
+    .slice(0, 6);
 
   return (
     <main className="bg-[#0A0A0A] text-white">
@@ -117,6 +124,29 @@ export default async function JapanMarketEntry() {
           </div>
         </div>
       </section>
+
+      {guides.length > 0 && (
+        <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">
+              {locale === 'ja' ? '日本市場参入ガイド' : 'Japan Market Entry Guides'}
+            </h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {guides.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={localizeHref(`/blog/${post.slug}`, locale)}
+                  className="block border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30"
+                >
+                  <p className="text-xs uppercase tracking-[0.12em] text-white/45">{pick(post.category, locale)}</p>
+                  <h3 className="mt-2 text-base font-semibold leading-snug text-[#D4AF37]">{pick(post.title, locale)}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/60 line-clamp-3">{pick(post.excerpt, locale)}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-[#141414] px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
