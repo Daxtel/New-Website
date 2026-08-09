@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { pick, ui } from '@/lib/i18n';
 import { getCatalogService, projectCatalog, serviceCatalog } from '@/lib/catalog';
 import { CampaignWork } from '@/components/campaign-work';
+import { SmartVideo } from '@/components/motion/SmartVideo';
 import { getLocale } from '@/lib/locale';
 import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { JsonLd, buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
@@ -152,13 +153,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                     <Link key={project.slug} href={localizeHref(`/work/${project.slug}`, locale)} className="group block overflow-hidden bg-[#141414] transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02]">
                       <div className="relative aspect-[16/10] overflow-hidden bg-[#1A1A1A]">
                         {projectVideo ? (
-                          <video
+                          <SmartVideo
                             src={projectVideo}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="metadata"
+                            alt={pick(project.title, locale)}
                             className="absolute inset-0 h-full w-full object-cover"
                           />
                         ) : (

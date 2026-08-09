@@ -1,4 +1,5 @@
 'use client';
+import { SmartVideo } from './motion/SmartVideo';
 
 type CardVariant = 'widescreen' | 'phone' | 'phone-landscape';
 
@@ -81,13 +82,8 @@ function VideoPlayer({
         className="absolute inset-0 overflow-hidden"
         style={{ containerType: 'size' }}
       >
-        <video
+        <SmartVideo
           src={src}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
           className="absolute left-1/2 top-1/2 object-cover"
           style={{
             width: '100cqh',
@@ -98,17 +94,7 @@ function VideoPlayer({
       </div>
     );
   }
-  return (
-    <video
-      src={src}
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      className={className}
-    />
-  );
+  return <SmartVideo src={src} className={className} />;
 }
 
 function WidescreenCard({ card }: { card: CampaignCard }) {

@@ -19,11 +19,13 @@ export function SmartVideo({
   poster,
   className = '',
   alt = '',
+  style,
 }: {
   src: string;
   poster?: string;
   className?: string;
   alt?: string;
+  style?: React.CSSProperties;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [lite, setLite] = useState(true); // default to the light path until we know
@@ -53,7 +55,7 @@ export function SmartVideo({
 
   if (lite) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={p} alt={alt} loading="lazy" decoding="async" className={className} />;
+    return <img src={p} alt={alt} loading="lazy" decoding="async" className={className} style={style} />;
   }
 
   return (
@@ -66,6 +68,7 @@ export function SmartVideo({
       playsInline
       preload="metadata"
       className={className}
+      style={style}
     />
   );
 }

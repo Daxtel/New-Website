@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import { useScroll, useMotionValueEvent, useReducedMotion } from 'framer-motion';
 
 interface VideoScrubHeroProps {
@@ -7,6 +7,10 @@ interface VideoScrubHeroProps {
   title: string;
   /** px height the section occupies for scroll mapping — default 600 */
   scrollHeight?: number;
+}
+
+function posterFor(src: string): string {
+  return src.replace('/videos/', '/videos/posters/').replace(/\.mp4$/, '.jpg');
 }
 
 /**
@@ -21,6 +25,9 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   const videoRef   = useRef<HTMLVideoElement>(null);
   const durationRef = useRef<number>(0);
   const isMobileRef = useRef(false);
+  // Poster-first by default so the (large) mp4 is never fetched before we know
+  // the device; desktop flips to the scrub video after mount.
+  const [lite, setLite] = useState(true);
   const shouldReduceMotion = useReducedMotion();
 
   // Track scroll progress of the section
@@ -37,7 +44,10 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   }, []);
 
   useEffect(() => {
-    isMobileRef.current = window.matchMedia('(hover: none)').matches;
+    const m = window.matchMedia('(hover: none)').matches;
+    isMobileRef.current = m;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLite(m);
   }, []);
 
   // Map scroll progress → video currentTime
@@ -80,17 +90,27 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
       ref={sectionRef}
       className="relative aspect-[16/8] overflow-hidden bg-[#1A1A1A]"
     >
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video
-        ref={videoRef}
-        src={src}
-        muted
-        playsInline
-        preload="auto"
-        onLoadedMetadata={onMetadata}
-        className="absolute inset-0 h-full w-full object-cover"
-        aria-label={title}
-      />
+      {lite ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={posterFor(src)}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          src={src}
+          muted
+          playsInline
+          preload="auto"
+          onLoadedMetadata={onMetadata}
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-label={title}
+        />
+      )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
       <div className="absolute bottom-0 left-0 p-8">
         <span className="text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">{title}</span>

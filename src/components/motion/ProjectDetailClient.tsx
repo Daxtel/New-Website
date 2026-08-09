@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ScrollReveal } from './ScrollReveal';
 import { VideoScrubHero } from './VideoScrubHero';
 import { localizeHref } from '@/lib/alternates';
+import { SmartVideo } from './SmartVideo';
 
 const EASE: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
@@ -287,9 +288,9 @@ export function ProjectDetailClient({
             </div>
             <div className="relative aspect-[16/6] overflow-hidden">
               {nextProject.videoSrc ? (
-                <video
+                <SmartVideo
                   src={nextProject.videoSrc}
-                  autoPlay loop muted playsInline preload="metadata"
+                  alt={nextProject.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               ) : nextProject.imageSrc ? (
