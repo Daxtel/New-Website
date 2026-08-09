@@ -25,7 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = pick(service.metaDescription, locale);
   const url = `/services/${slug}`;
   return {
-    title,
+    // Absolute — metaTitle already includes the brand; avoid double suffix.
+    title: { absolute: title },
     description,
     openGraph: {
       title,
