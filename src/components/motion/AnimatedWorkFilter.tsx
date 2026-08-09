@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { localizeHref } from '@/lib/alternates';
+import { SmartVideo } from './SmartVideo';
 
 type FilterCategory =
   | 'ALL'
@@ -100,9 +101,9 @@ function WorkCard({
       {/* Media */}
       <div className="relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
         {item.videoSrc ? (
-          <video
+          <SmartVideo
             src={item.videoSrc}
-            autoPlay loop muted playsInline preload="metadata"
+            alt={item.title}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
           />
         ) : item.imageSrc ? (

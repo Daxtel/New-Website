@@ -3,6 +3,7 @@ import { useRef, useState, useEffect, useCallback, startTransition } from 'react
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { AnimatedWorkCard } from './AnimatedWorkCard';
+import { SmartVideo } from './SmartVideo';
 import { localizeHref } from '@/lib/alternates';
 
 interface WorkItem {
@@ -97,13 +98,9 @@ export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to exp
             className="group flex flex-col overflow-hidden bg-[#141414] border border-[#D4AF37]/10"
           >
             <div className="relative aspect-video overflow-hidden bg-[#1A1A1A]">
-              <video
+              <SmartVideo
                 src={item.videoSrc}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
+                alt={item.title}
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />

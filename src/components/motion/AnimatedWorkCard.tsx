@@ -2,6 +2,7 @@
 import { useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { localizeHref } from '@/lib/alternates';
+import { SmartVideo } from './SmartVideo';
 
 const EASE_IN: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
@@ -85,13 +86,9 @@ export function AnimatedWorkCard({
       />
 
       <div className="relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
-        <video
+        <SmartVideo
           src={videoSrc}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
+          alt={title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
