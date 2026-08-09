@@ -96,11 +96,11 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="border border-[#D4AF37]/10 bg-[#141414] p-8">
+            <div className="border border-white/8 bg-white/[0.02] p-6">
               <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">{pick(service.whyTitle, locale)}</h2>
               <p className="mt-4 text-base leading-relaxed text-body-text md:text-lg">{pick(service.whyBody, locale)}</p>
             </div>
-            <div className="border border-[#D4AF37]/10 bg-[#141414] p-8">
+            <div className="border border-white/8 bg-white/[0.02] p-6">
               <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">{pick(service.mistakesTitle, locale)}</h2>
               <div className="mt-4 space-y-3">
                 {pick(service.mistakes, locale).map((item) => (
@@ -118,7 +118,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <h3 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.whatWeDeliver, locale)}</h3>
               <div className="grid gap-4 md:grid-cols-2">
                 {pick(service.features, locale).map((feature) => (
-                  <div key={feature} className="border border-[#D4AF37]/10 bg-[#141414] p-5 text-[#D4AF37]/85">
+                  <div key={feature} className="border border-white/8 bg-white/[0.02] p-5 text-[#D4AF37]/85">
                     {feature}
                   </div>
                 ))}
@@ -126,7 +126,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             </div>
             <div>
               <h3 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.idealFor, locale)}</h3>
-              <div className="border border-[#D4AF37]/10 bg-[#141414] p-6">
+              <div className="border border-white/8 bg-white/[0.02] p-6">
                 <div className="space-y-3 text-body-text">
                   {pick(service.idealFor, locale).map((item) => (
                     <div key={item} className="flex items-start gap-3">
@@ -188,7 +188,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               </h2>
               <div className="space-y-4">
                 {svcFaqs.map((item) => (
-                  <details key={item.q} className="group border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30">
+                  <details key={item.q} className="group border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30">
                     <summary className="cursor-pointer list-none">
                       <div className="flex items-start justify-between gap-4">
                         <h3 className="text-base font-semibold text-[#D4AF37] md:text-lg">{item.q}</h3>
@@ -207,7 +207,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <h3 className="mb-8 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.relatedServices, locale)}</h3>
               <div className="grid gap-6 md:grid-cols-2">
                 {relatedServices.map((item) => (
-                  <Link key={item.slug} href={localizeHref(`/services/${item.slug}`, locale)} className="border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]">
+                  <Link key={item.slug} href={localizeHref(`/services/${item.slug}`, locale)} className="border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]">
                     <h4 className="text-xl font-semibold text-[#D4AF37]">{pick(item.title, locale)}</h4>
                     <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(item.intro, locale)}</p>
                   </Link>

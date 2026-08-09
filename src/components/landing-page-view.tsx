@@ -90,7 +90,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
                 {section.points.map((point) => (
                   <div
                     key={point.en}
-                    className="border border-[#D4AF37]/10 bg-[#0A0A0A] p-6"
+                    className="border border-white/8 bg-white/[0.02] p-6"
                   >
                     <p className="text-base leading-relaxed text-body-text md:text-lg">
                       {pick(point, locale)}
@@ -115,7 +115,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
                 <Link
                   key={svc!.slug}
                   href={localizeHref(`/services/${svc!.slug}`, locale)}
-                  className="block border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30"
+                  className="block border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30"
                 >
                   <h3 className="text-lg font-semibold text-heading">{pick(svc!.title, locale)}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(svc!.intro, locale)}</p>
@@ -138,7 +138,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
                 <Link
                   key={proj!.slug}
                   href={localizeHref(`/work/${proj!.slug}`, locale)}
-                  className="block border border-[#D4AF37]/10 bg-[#0A0A0A] p-6 transition-all hover:border-[#D4AF37]/30"
+                  className="block border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30"
                 >
                   <h3 className="text-lg font-semibold text-heading">{pick(proj!.title, locale)}</h3>
                   <p className="mt-2 text-sm uppercase tracking-[0.12em] text-white/45">

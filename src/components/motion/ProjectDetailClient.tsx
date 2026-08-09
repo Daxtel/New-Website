@@ -147,7 +147,7 @@ export function ProjectDetailClient({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.06, ease: EASE }}
-                    className="border border-[#D4AF37]/10 bg-[#141414] p-5 text-[#D4AF37]/85 transition-colors hover:border-[#D4AF37]/25"
+                    className="border border-white/8 bg-white/[0.02] p-5 text-[#D4AF37]/85 transition-colors hover:border-[#D4AF37]/25"
                   >
                     {item}
                   </motion.div>
@@ -221,7 +221,7 @@ export function ProjectDetailClient({
         <div className="space-y-8">
           <div className="lg:sticky lg:top-24">
             <ScrollReveal direction="left">
-              <div className="border border-[#D4AF37]/10 bg-[#141414] p-6">
+              <div className="border border-white/8 bg-white/[0.02] p-6">
                 <div className="space-y-6">
                   {[
                     { label: meta.clientLabel,   value: meta.client   },

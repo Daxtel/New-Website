@@ -187,7 +187,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <Link
                     key={svc!.slug}
                     href={localizeHref(`/services/${svc!.slug}`, locale)}
-                    className="block border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]"
+                    className="block border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]"
                   >
                     <h3 className="text-lg font-semibold text-heading">{pick(svc!.title, locale)}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(svc!.intro, locale)}</p>

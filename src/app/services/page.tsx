@@ -122,7 +122,7 @@ export default async function ServicesPage() {
           <div className="mt-8 space-y-4">
             {localeFaqs.map((item, i) => (
               <ScrollReveal key={item.q} delay={i * 0.06}>
-                <details className="group border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30">
+                <details className="group border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30">
                   <summary className="cursor-pointer list-none">
                     <div className="flex items-start justify-between gap-4">
                       <h3 className="text-base font-semibold text-[#D4AF37] md:text-lg">{item.q}</h3>
