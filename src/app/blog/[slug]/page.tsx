@@ -140,11 +140,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <span>{pick(post.readingTime, locale)}</span>
           </div>
 
-          <h1 className="mt-6 text-[clamp(2.25rem,5vw,3.75rem)] font-black uppercase leading-[0.95] tracking-tight text-[#D4AF37]">
+          <h1 className="mt-6 text-[clamp(1.7rem,3.2vw,2.6rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
             {title}
           </h1>
 
-          <p className="mt-6 text-lg leading-relaxed text-white/80 md:text-xl">{pick(post.excerpt, locale)}</p>
+          <p className="mt-6 text-lg leading-relaxed text-body-text md:text-xl">{pick(post.excerpt, locale)}</p>
 
           <div className="mt-8 flex items-center gap-3 border-t border-b border-[#D4AF37]/10 py-4 text-sm text-white/55">
             <span>{locale === 'ja' ? '執筆' : 'By'} {post.author}</span>
@@ -167,7 +167,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 )}
                 <div className="space-y-5">
                   {pick(section.paragraphs, locale).map((p, pIdx) => (
-                    <p key={pIdx} className="text-base leading-relaxed text-white/75 md:text-lg">
+                    <p key={pIdx} className="text-base leading-relaxed text-body-text md:text-lg">
                       {p}
                     </p>
                   ))}
@@ -189,8 +189,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     href={localizeHref(`/services/${svc!.slug}`, locale)}
                     className="block border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]"
                   >
-                    <h3 className="text-lg font-semibold text-[#D4AF37]">{pick(svc!.title, locale)}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/65">{pick(svc!.intro, locale)}</p>
+                    <h3 className="text-lg font-semibold text-heading">{pick(svc!.title, locale)}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(svc!.intro, locale)}</p>
                   </Link>
                 ))}
               </div>
@@ -205,8 +205,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <div className="space-y-6 md:space-y-8">
                 {post.faqs.map((faq, i) => (
                   <div key={i} className="border-b border-[#D4AF37]/10 pb-6 md:pb-8">
-                    <h3 className="text-lg font-semibold text-[#D4AF37] md:text-xl">{pick(faq.q, locale)}</h3>
-                    <p className="mt-3 text-base leading-relaxed text-white/70 md:text-lg">{pick(faq.a, locale)}</p>
+                    <h3 className="text-lg font-semibold text-heading md:text-xl">{pick(faq.q, locale)}</h3>
+                    <p className="mt-3 text-base leading-relaxed text-body-text md:text-lg">{pick(faq.a, locale)}</p>
                   </div>
                 ))}
               </div>

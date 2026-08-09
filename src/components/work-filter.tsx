@@ -51,7 +51,7 @@ export function WorkFilter({
               className={`cursor-pointer rounded-full border px-5 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-all ${
                 active === filter.key
                   ? 'border-[#C9A84C] bg-[#C9A84C]/10 text-[#C9A84C]'
-                  : 'border-[#D4AF37]/15 text-white/60 hover:border-[#D4AF37]/40 hover:text-white/80'
+                  : 'border-[#D4AF37]/15 text-white/60 hover:border-[#D4AF37]/40 hover:text-body-text'
               }`}
             >
               {locale === 'ja' ? filter.label.ja : filter.label.en}
@@ -93,7 +93,7 @@ export function WorkFilter({
             <div className="p-8">
               <p className="text-xs uppercase tracking-[0.15em] text-white/45">{item.proofLine}</p>
               <h2 className="mt-3 text-2xl font-semibold text-[#D4AF37]">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-white/65 md:text-base">{item.description}</p>
+              <p className="mt-3 text-sm leading-relaxed text-body-text md:text-base">{item.description}</p>
               <div className="mt-5 text-xs font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75 transition-colors group-hover:text-[#D4AF37]">
                 {item.caseStudyLabel} →
               </div>

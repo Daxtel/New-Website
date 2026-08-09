@@ -20,18 +20,17 @@ export function AnimatedServiceCard({ title, description, index }: ServiceCardPr
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.55, delay: index * 0.1, ease: EASE_IN }}
       whileHover={
-        shouldReduceMotion
-          ? {}
-          : {
-              y: -8,
-              boxShadow: '0 20px 40px -8px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,55,0.2)',
-              transition: { duration: 0.25, ease: EASE_OUT },
-            }
+        shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.25, ease: EASE_OUT } }
       }
-      className="bg-[#0A0A0A] p-8 cursor-default"
+      className="group border-t border-white/10 pt-6 cursor-default"
     >
-      <h3 className="text-xl font-semibold text-[#D4AF37]">{title}</h3>
-      <p className="mt-4 text-sm leading-relaxed text-white/65 md:text-base">{description}</p>
+      <span className="font-mono text-[11px] text-muted-text tabular-nums">
+        {String(index + 1).padStart(2, '0')}
+      </span>
+      <h3 className="mt-3 text-lg font-semibold tracking-tight text-heading transition-colors group-hover:text-accent">
+        {title}
+      </h3>
+      <p className="mt-3 text-[15px] leading-relaxed text-body-text">{description}</p>
     </motion.div>
   );
 }

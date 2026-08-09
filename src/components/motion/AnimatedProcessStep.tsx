@@ -16,9 +16,9 @@ export function AnimatedProcessStep({ number, title, description, index }: Proce
   if (shouldReduceMotion) {
     return (
       <div className="relative">
-        <div className="mb-4 text-6xl font-black leading-none text-[#D4AF37]/15">{number}</div>
-        <h3 className="text-xl font-semibold text-[#D4AF37]">{title}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-white/65">{description}</p>
+        <div className="mb-4 font-mono text-4xl font-medium leading-none text-accent/25">{number}</div>
+        <h3 className="text-lg font-semibold tracking-tight text-heading">{title}</h3>
+        <p className="mt-3 text-[15px] leading-relaxed text-body-text">{description}</p>
       </div>
     );
   }
@@ -33,7 +33,7 @@ export function AnimatedProcessStep({ number, title, description, index }: Proce
     >
       {/* Step number counts up on reveal */}
       <motion.div
-        className="mb-4 text-6xl font-black leading-none text-[#D4AF37]/15"
+        className="mb-4 font-mono text-4xl font-medium leading-none text-accent/25"
         initial={{ opacity: 0, scale: 0.6 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -41,8 +41,8 @@ export function AnimatedProcessStep({ number, title, description, index }: Proce
       >
         {number}
       </motion.div>
-      <h3 className="text-xl font-semibold text-[#D4AF37]">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-white/65">{description}</p>
+      <h3 className="text-lg font-semibold tracking-tight text-heading">{title}</h3>
+      <p className="mt-3 text-[15px] leading-relaxed text-body-text">{description}</p>
     </motion.div>
   );
 }

@@ -82,7 +82,7 @@ export function LeadMagnet({ locale = 'en', source = 'site', variant = 'band' }:
       ? 'bg-[#D4AF37] text-[#0A0A0A]'
       : 'border border-[#D4AF37]/20 bg-[#141414] text-white';
   const titleColor = variant === 'band' ? 'text-[#0A0A0A]' : 'text-[#D4AF37]';
-  const bodyColor = variant === 'band' ? 'text-[#0A0A0A]/75' : 'text-white/70';
+  const bodyColor = variant === 'band' ? 'text-[#0A0A0A]/75' : 'text-body-text';
 
   return (
     <div className={`${wrap} p-8 md:p-10 lg:p-12`}>

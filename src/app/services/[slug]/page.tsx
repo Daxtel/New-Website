@@ -85,26 +85,26 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
             <div>
-              <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
+              <h1 className="text-[clamp(1.8rem,3.5vw,2.75rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {serviceTitle}
               </h1>
             </div>
             <div className="flex flex-col justify-end">
               <h2 className="text-2xl font-semibold text-[#D4AF37]/90 md:text-3xl">{pick(service.headline, locale)}</h2>
-              <p className="mt-4 text-lg leading-relaxed text-white/65">{pick(service.intro, locale)}</p>
+              <p className="mt-4 text-lg leading-relaxed text-body-text">{pick(service.intro, locale)}</p>
             </div>
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-12">
             <div className="border border-[#D4AF37]/10 bg-[#141414] p-8">
               <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">{pick(service.whyTitle, locale)}</h2>
-              <p className="mt-4 text-base leading-relaxed text-white/65 md:text-lg">{pick(service.whyBody, locale)}</p>
+              <p className="mt-4 text-base leading-relaxed text-body-text md:text-lg">{pick(service.whyBody, locale)}</p>
             </div>
             <div className="border border-[#D4AF37]/10 bg-[#141414] p-8">
               <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">{pick(service.mistakesTitle, locale)}</h2>
               <div className="mt-4 space-y-3">
                 {pick(service.mistakes, locale).map((item) => (
-                  <div key={item} className="flex items-start gap-3 text-white/65">
+                  <div key={item} className="flex items-start gap-3 text-body-text">
                     <span className="mt-1 text-[#D4AF37]">•</span>
                     <span>{item}</span>
                   </div>
@@ -127,7 +127,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <div>
               <h3 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.idealFor, locale)}</h3>
               <div className="border border-[#D4AF37]/10 bg-[#141414] p-6">
-                <div className="space-y-3 text-white/65">
+                <div className="space-y-3 text-body-text">
                   {pick(service.idealFor, locale).map((item) => (
                     <div key={item} className="flex items-start gap-3">
                       <span className="mt-1 text-[#D4AF37]">•</span>
@@ -172,7 +172,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                       <div className="p-8">
                         <p className="text-xs uppercase tracking-[0.15em] text-white/45">{project.category}</p>
                         <h4 className="mt-3 text-2xl font-semibold text-[#D4AF37]">{pick(project.title, locale)}</h4>
-                        <p className="mt-3 text-sm leading-relaxed text-white/65">{pick(project.intro, locale)}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-body-text">{pick(project.intro, locale)}</p>
                       </div>
                     </Link>
                   );
@@ -195,7 +195,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                         <span className="mt-1 text-[#D4AF37] transition-transform group-open:rotate-45">+</span>
                       </div>
                     </summary>
-                    <p className="mt-4 text-base leading-relaxed text-white/70 md:text-lg">{item.a}</p>
+                    <p className="mt-4 text-base leading-relaxed text-body-text md:text-lg">{item.a}</p>
                   </details>
                 ))}
               </div>
@@ -209,7 +209,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 {relatedServices.map((item) => (
                   <Link key={item.slug} href={localizeHref(`/services/${item.slug}`, locale)} className="border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]">
                     <h4 className="text-xl font-semibold text-[#D4AF37]">{pick(item.title, locale)}</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-white/65">{pick(item.intro, locale)}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(item.intro, locale)}</p>
                   </Link>
                 ))}
               </div>

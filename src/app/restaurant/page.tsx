@@ -64,13 +64,13 @@ export default async function RestaurantLandingPage() {
               </span>
             </div>
 
-            <h1 className="text-[clamp(1.75rem,6vw,3.5rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37]">
+            <h1 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {locale === 'en'
                 ? '1 Day of Shooting. 6 Weeks of Content. Zero Posting Stress.'
                 : '1日の撮影。6週間分のコンテンツ。投稿のストレスゼロ。'}
             </h1>
 
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/65 md:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-body-text md:text-lg">
               {locale === 'en'
                 ? "Locals and tourists are choosing where to eat based on what they see on Instagram. If you're not showing up the right way, someone else takes that booking."
                 : '地元の人も観光客も、Instagramで見た情報で食べるお店を選んでいます。正しい見せ方をしていなければ、その予約は他の店に流れます。'}

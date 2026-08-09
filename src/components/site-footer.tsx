@@ -20,7 +20,7 @@ export function SiteFooter({ locale = 'en' }: { locale?: Locale }) {
             <Link href={localizeHref('/', locale)} className="text-xl font-bold tracking-tight text-[#D4AF37] md:text-2xl">
               STREETSHOW PRODUCTIONS
             </Link>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65 md:text-base">
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-body-text md:text-base">
               {pick(site.description, locale)}
             </p>
             <p className="mt-3 text-sm text-white/55 md:text-base">{pick(site.location, locale)}</p>
@@ -30,7 +30,7 @@ export function SiteFooter({ locale = 'en' }: { locale?: Locale }) {
             <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70">{pick(ui.sections.navigation, locale)}</p>
             <div className="mt-4 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <Link key={link.href} href={localizeHref(link.href, locale)} className="text-sm text-white/65 transition-colors hover:text-[#D4AF37] md:text-base">
+                <Link key={link.href} href={localizeHref(link.href, locale)} className="text-sm text-body-text transition-colors hover:text-[#D4AF37] md:text-base">
                   {pick(link.label, locale)}
                 </Link>
               ))}
@@ -43,7 +43,7 @@ export function SiteFooter({ locale = 'en' }: { locale?: Locale }) {
             </p>
             <div className="mt-4 flex flex-col gap-3">
               {exploreLinks.map((link) => (
-                <Link key={link.href} href={localizeHref(link.href, locale)} className="text-sm text-white/65 transition-colors hover:text-[#D4AF37] md:text-base">
+                <Link key={link.href} href={localizeHref(link.href, locale)} className="text-sm text-body-text transition-colors hover:text-[#D4AF37] md:text-base">
                   {pick(link.label, locale)}
                 </Link>
               ))}
@@ -52,7 +52,7 @@ export function SiteFooter({ locale = 'en' }: { locale?: Locale }) {
 
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70">{pick(ui.sections.contact, locale)}</p>
-            <div className="mt-4 flex flex-col gap-3 text-sm text-white/65 md:text-base">
+            <div className="mt-4 flex flex-col gap-3 text-sm text-body-text md:text-base">
               <span>{pick(site.location, locale)}</span>
               <a href="mailto:admin@streetshowproduction.com" className="break-all transition-colors hover:text-[#D4AF37]">
                 admin@streetshowproduction.com

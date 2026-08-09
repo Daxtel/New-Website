@@ -92,14 +92,14 @@ export function AnimatedHero({
         <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(212,175,55,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.4)_1px,transparent_1px)] [background-size:80px_80px]" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-32 lg:px-16 lg:pb-28 lg:pt-36">
           <div className="max-w-5xl">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70 sm:text-sm">{eyebrow}</p>
-            <h1 className="mt-5 text-[clamp(2.25rem,7vw,6rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37] sm:mt-6">
+            <p className="eyebrow sm:text-xs">{eyebrow}</p>
+            <h1 className="mt-5 text-[clamp(1.8rem,3.8vw,2.9rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading sm:mt-6">
               {headline}
             </h1>
-            <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#D4AF37]/80 sm:mt-8 md:text-lg lg:text-xl">
+            <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-body-text sm:mt-7">
               {subheadline}
             </p>
-            <p className="mt-4 max-w-4xl text-sm leading-relaxed text-white/55 sm:mt-5 md:text-base">
+            <p className="mt-4 max-w-4xl font-mono text-[11px] uppercase tracking-[0.14em] leading-relaxed text-muted-text sm:mt-5">
               {trustLine}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
@@ -139,7 +139,7 @@ export function AnimatedHero({
             variants={fadeUp(0)}
             initial="hidden"
             animate="show"
-            className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]/70 sm:text-sm"
+            className="eyebrow sm:text-xs"
           >
             {eyebrow}
           </motion.p>
@@ -149,7 +149,7 @@ export function AnimatedHero({
             variants={container}
             initial="hidden"
             animate="show"
-            className="mt-5 flex flex-wrap gap-x-[0.25em] text-[clamp(2.25rem,7vw,6rem)] font-black uppercase leading-[0.9] tracking-tight text-[#D4AF37] sm:mt-6"
+            className="mt-5 flex flex-wrap gap-x-[0.25em] text-[clamp(1.8rem,3.8vw,2.9rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading sm:mt-6"
             aria-label={headline}
           >
             {words.map((word, i) => (
@@ -166,7 +166,7 @@ export function AnimatedHero({
             variants={fadeUp(headlineDuration)}
             initial="hidden"
             animate="show"
-            className="mt-6 max-w-3xl text-base leading-relaxed text-[#D4AF37]/80 sm:mt-8 md:text-lg lg:text-xl"
+            className="mt-6 max-w-3xl text-[15px] leading-relaxed text-body-text sm:mt-7"
           >
             {subheadline}
           </motion.p>
@@ -176,7 +176,7 @@ export function AnimatedHero({
             variants={fadeUp(headlineDuration + 0.15)}
             initial="hidden"
             animate="show"
-            className="mt-4 max-w-4xl text-sm leading-relaxed text-white/55 sm:mt-5 md:text-base"
+            className="mt-4 max-w-4xl font-mono text-[11px] uppercase tracking-[0.14em] leading-relaxed text-muted-text sm:mt-5"
           >
             {trustLine}
           </motion.p>

@@ -123,7 +123,7 @@ function WorkCard({
       <div className="p-8">
         <p className="text-xs uppercase tracking-[0.15em] text-white/45">{item.proofLine}</p>
         <h2 className="mt-3 text-2xl font-semibold text-[#D4AF37]">{item.title}</h2>
-        <p className="mt-3 text-sm leading-relaxed text-white/65 md:text-base">{item.description}</p>
+        <p className="mt-3 text-sm leading-relaxed text-body-text md:text-base">{item.description}</p>
         <div className="mt-5 text-xs font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75 transition-colors group-hover:text-[#D4AF37]">
           {item.caseStudyLabel} →
         </div>

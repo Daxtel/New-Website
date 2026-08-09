@@ -81,7 +81,7 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
                   <Link
                     key={page.slug}
                     href={localizeHref(`/industries/${page.slug}`, locale)}
-                    className="block border-b border-[#D4AF37]/8 px-5 py-3.5 text-sm text-white/70 transition-colors last:border-b-0 hover:bg-[#D4AF37]/10 hover:text-[#D4AF37]"
+                    className="block border-b border-[#D4AF37]/8 px-5 py-3.5 text-sm text-body-text transition-colors last:border-b-0 hover:bg-[#D4AF37]/10 hover:text-[#D4AF37]"
                   >
                     {pick(page.navLabel, locale)}
                   </Link>

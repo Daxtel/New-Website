@@ -78,7 +78,7 @@ export function MobileMenu({ links, ctaLabel, locale = 'en', contactHref = '/con
               className={`rounded-lg px-4 py-3 text-base font-medium transition-colors ${
                 pathname === link.href
                   ? 'bg-[#D4AF37]/10 text-[#D4AF37]'
-                  : 'text-white/70 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37]'
+                  : 'text-body-text hover:bg-[#D4AF37]/5 hover:text-[#D4AF37]'
               }`}
             >
               {locale === 'ja' ? link.label.ja : link.label.en}

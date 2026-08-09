@@ -178,7 +178,7 @@ export function RestaurantQuiz({ locale = 'ja' }: { locale?: 'en' | 'ja' }) {
                 className={`border px-5 py-4 text-left text-base transition-all ${
                   data.restaurantType === t.value
                     ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]'
-                    : 'border-white/10 bg-[#141414] text-white/75 hover:border-[#D4AF37]/40 hover:text-white'
+                    : 'border-white/10 bg-[#141414] text-body-text hover:border-[#D4AF37]/40 hover:text-white'
                 }`}
               >
                 {en ? t.label : t.ja}
@@ -205,7 +205,7 @@ export function RestaurantQuiz({ locale = 'ja' }: { locale?: 'en' | 'ja' }) {
                 className={`border px-5 py-4 text-left text-base transition-all ${
                   data.challenge === c.value
                     ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]'
-                    : 'border-white/10 bg-[#141414] text-white/75 hover:border-[#D4AF37]/40 hover:text-white'
+                    : 'border-white/10 bg-[#141414] text-body-text hover:border-[#D4AF37]/40 hover:text-white'
                 }`}
               >
                 {en ? c.label : c.ja}
@@ -241,7 +241,7 @@ export function RestaurantQuiz({ locale = 'ja' }: { locale?: 'en' | 'ja' }) {
                     className={`border px-4 py-3 text-sm transition-all ${
                       data.area === a.value
                         ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]'
-                        : 'border-white/10 bg-[#141414] text-white/75 hover:border-[#D4AF37]/40'
+                        : 'border-white/10 bg-[#141414] text-body-text hover:border-[#D4AF37]/40'
                     }`}
                   >
                     {en ? a.label : a.ja}
@@ -388,7 +388,7 @@ export function RestaurantQuiz({ locale = 'ja' }: { locale?: 'en' | 'ja' }) {
           <h2 className="text-2xl font-bold text-[#D4AF37] md:text-3xl">
             {en ? "You're in!" : 'ありがとうございます！'}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-white/65">
+          <p className="mt-4 text-base leading-relaxed text-body-text">
             {en
               ? "We'll review your restaurant and send a custom content concept within 48 hours. Check your inbox."
               : 'お店の情報を確認し、48時間以内にカスタムコンテンツ提案をお届けします。メールをご確認ください。'}

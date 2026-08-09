@@ -101,7 +101,7 @@ export function ProjectDetailClient({
           <p className="text-xs uppercase tracking-[0.15em] text-white/45">{proofLine}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.12}>
-          <h1 className="mt-4 text-[clamp(2.5rem,5vw,4rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
+          <h1 className="mt-4 text-[clamp(1.8rem,3.5vw,2.75rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
             {title}
           </h1>
         </ScrollReveal>
@@ -187,7 +187,7 @@ export function ProjectDetailClient({
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.07, ease: EASE }}
-                    className="flex items-start gap-3 text-white/65"
+                    className="flex items-start gap-3 text-body-text"
                   >
                     <span className="mt-1 text-[#D4AF37]">•</span>
                     <span>{item}</span>
@@ -209,7 +209,7 @@ export function ProjectDetailClient({
                     <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37] md:text-base">
                       {entry.label}
                     </h3>
-                    <p className="text-base leading-relaxed text-white/65 md:text-lg">{entry.value}</p>
+                    <p className="text-base leading-relaxed text-body-text md:text-lg">{entry.value}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -308,7 +308,7 @@ export function ProjectDetailClient({
             <div className="flex items-center justify-between p-6">
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/40">Next Project</p>
-                <p className="mt-1 text-lg font-semibold text-[#D4AF37]">{nextProject.title}</p>
+                <p className="mt-1 text-lg font-semibold text-heading">{nextProject.title}</p>
               </div>
               <span className="text-[#D4AF37]/60 transition-transform duration-300 group-hover:translate-x-2">→</span>
             </div>

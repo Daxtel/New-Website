@@ -44,10 +44,10 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="border-b border-[#D4AF37]/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
+          <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
             {h1}
           </h1>
-          <p className="mt-6 max-w-4xl text-lg leading-relaxed text-white/80 md:text-xl lg:text-2xl">
+          <p className="mt-6 max-w-4xl text-lg leading-relaxed text-body-text md:text-xl lg:text-2xl">
             {pick(page.intro, locale)}
           </p>
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-[#D4AF37]/70 md:text-base">
@@ -77,11 +77,11 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
           className={`px-6 py-16 md:px-10 md:py-24 ${idx % 2 === 1 ? 'bg-[#141414]' : ''}`}
         >
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-[clamp(1.75rem,4.5vw,3rem)] font-black uppercase leading-[0.95] tracking-tight text-[#D4AF37]">
+            <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {pick(section.heading, locale)}
             </h2>
             {section.body && (
-              <p className="mt-6 max-w-4xl text-base leading-relaxed text-white/70 md:text-lg">
+              <p className="mt-6 max-w-4xl text-base leading-relaxed text-body-text md:text-lg">
                 {pick(section.body, locale)}
               </p>
             )}
@@ -92,7 +92,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
                     key={point.en}
                     className="border border-[#D4AF37]/10 bg-[#0A0A0A] p-6"
                   >
-                    <p className="text-base leading-relaxed text-white/75 md:text-lg">
+                    <p className="text-base leading-relaxed text-body-text md:text-lg">
                       {pick(point, locale)}
                     </p>
                   </div>
@@ -117,8 +117,8 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
                   href={localizeHref(`/services/${svc!.slug}`, locale)}
                   className="block border border-[#D4AF37]/10 bg-[#141414] p-6 transition-all hover:border-[#D4AF37]/30"
                 >
-                  <h3 className="text-lg font-semibold text-[#D4AF37]">{pick(svc!.title, locale)}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/65">{pick(svc!.intro, locale)}</p>
+                  <h3 className="text-lg font-semibold text-heading">{pick(svc!.title, locale)}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(svc!.intro, locale)}</p>
                 </Link>
               ))}
             </div>
@@ -140,7 +140,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
                   href={localizeHref(`/work/${proj!.slug}`, locale)}
                   className="block border border-[#D4AF37]/10 bg-[#0A0A0A] p-6 transition-all hover:border-[#D4AF37]/30"
                 >
-                  <h3 className="text-lg font-semibold text-[#D4AF37]">{pick(proj!.title, locale)}</h3>
+                  <h3 className="text-lg font-semibold text-heading">{pick(proj!.title, locale)}</h3>
                   <p className="mt-2 text-sm uppercase tracking-[0.12em] text-white/45">
                     {proj!.category}
                   </p>
@@ -154,14 +154,14 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
       {/* ── FAQ ─────────────────────────────────────────────────── */}
       <section className="border-t border-[#D4AF37]/10 px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-[clamp(1.75rem,4.5vw,3rem)] font-black uppercase leading-[0.95] tracking-tight text-[#D4AF37]">
+          <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
             {locale === 'ja' ? 'よくある質問' : 'Frequently Asked Questions'}
           </h2>
           <div className="mt-10 space-y-6 md:space-y-8">
             {page.faqs.map((faq, idx) => (
               <div key={idx} className="border-b border-[#D4AF37]/10 pb-6 md:pb-8">
-                <h3 className="text-lg font-semibold text-[#D4AF37] md:text-xl">{pick(faq.q, locale)}</h3>
-                <p className="mt-3 text-base leading-relaxed text-white/70 md:text-lg">{pick(faq.a, locale)}</p>
+                <h3 className="text-lg font-semibold text-heading md:text-xl">{pick(faq.q, locale)}</h3>
+                <p className="mt-3 text-base leading-relaxed text-body-text md:text-lg">{pick(faq.a, locale)}</p>
               </div>
             ))}
           </div>

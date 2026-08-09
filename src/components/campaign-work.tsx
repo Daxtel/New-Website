@@ -136,7 +136,7 @@ function PhoneCard({ card }: { card: CampaignCard }) {
           {/* Bottom: title, subtitle, tag */}
           <div className="relative z-10 mt-auto flex flex-col items-center gap-1 px-3 pb-4 md:px-5 md:pb-6 w-full">
             <h4 className="text-[13px] md:text-base font-bold text-[#C9A84C] text-center leading-tight drop-shadow-lg">{card.title}</h4>
-            <p className="text-[11px] md:text-sm text-white/80 text-center drop-shadow">{card.subtitle}</p>
+            <p className="text-[11px] md:text-sm text-body-text text-center drop-shadow">{card.subtitle}</p>
             <p className="mt-1 text-[9px] md:text-[10px] uppercase tracking-[0.1em] text-white/60 text-center">{card.tag}</p>
           </div>
         </div>
@@ -172,7 +172,7 @@ function PhoneLandscapeCard({ card }: { card: CampaignCard }) {
           {/* Bottom: title, subtitle, tag */}
           <div className="relative z-10 mt-auto flex flex-col items-center gap-1 w-full px-6 pb-3 md:px-10 md:pb-4">
             <h4 className="text-[13px] md:text-base font-bold text-[#C9A84C] text-center leading-tight drop-shadow-lg">{card.title}</h4>
-            <p className="text-[11px] md:text-sm text-white/80 text-center drop-shadow">{card.subtitle}</p>
+            <p className="text-[11px] md:text-sm text-body-text text-center drop-shadow">{card.subtitle}</p>
             <p className="mt-1 text-[9px] md:text-[10px] uppercase tracking-[0.1em] text-white/60 text-center">{card.tag}</p>
           </div>
         </div>

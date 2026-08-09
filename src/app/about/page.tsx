@@ -33,13 +33,13 @@ export default async function AboutPage() {
           <ScrollReveal>
           <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
             <div className="max-w-4xl">
-              <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
+              <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {pick(aboutPageBilingual.title, locale)}
               </h1>
               <p className="mt-8 text-lg leading-relaxed text-[#D4AF37]/80 md:text-xl lg:text-2xl">
                 {pick(aboutPageBilingual.intro, locale)}
               </p>
-              <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/65 md:text-lg">
+              <p className="mt-6 max-w-3xl text-base leading-relaxed text-body-text md:text-lg">
                 {pick(aboutPageBilingual.mission, locale)}
               </p>
             </div>
@@ -67,7 +67,7 @@ export default async function AboutPage() {
           <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="border border-[#D4AF37]/10 bg-[#141414] p-5 md:p-6">
               <h2 className="text-2xl font-black uppercase tracking-tight text-[#D4AF37] md:text-3xl">{pick(aboutPageBilingual.operatingEdgeLabel, locale)}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-white/65 md:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-body-text md:text-base">
                 {pick(aboutPageBilingual.operatingEdge, locale)}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-white/55">
@@ -90,7 +90,7 @@ export default async function AboutPage() {
             <h2 className="text-2xl font-bold text-[#D4AF37] md:text-3xl">{pick(aboutPageBilingual.bestFitLabel, locale)}</h2>
             <div className="mt-6 space-y-3">
               {aboutPageBilingual.bestFit.map((item) => (
-                <div key={item.en} className="flex items-start gap-3 text-white/65">
+                <div key={item.en} className="flex items-start gap-3 text-body-text">
                   <span className="mt-1 text-lime-300">•</span>
                   <span className="text-base md:text-lg">{pick(item, locale)}</span>
                 </div>
@@ -100,7 +100,7 @@ export default async function AboutPage() {
 
           <div className="mt-16 border-t border-[#D4AF37]/10 pt-12 text-center">
             <h2 className="text-2xl font-bold text-[#D4AF37] md:text-3xl">{pick({ en: 'Discuss Your Project', ja: 'プロジェクトについて相談する' }, locale)}</h2>
-            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-white/65 md:text-lg">
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-body-text md:text-lg">
               {pick(aboutPageBilingual.credibility, locale)}
             </p>
             <Link href={localizeHref('/contact', locale)} className="mt-8 inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A]">

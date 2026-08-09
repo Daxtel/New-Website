@@ -30,25 +30,22 @@ export function AnimatedServiceRow({ slug, number, title, description, index, lo
     >
       <Link
         href={localizeHref(`/services/${slug}`, locale)}
-        className="group block bg-[#141414] p-8 transition-colors duration-300 hover:bg-[#D4AF37]/5 cursor-pointer md:p-10 lg:p-12"
+        className="group block border-t border-white/10 py-7 transition-colors duration-300 hover:border-[#D4AF37]/40 cursor-pointer"
       >
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-          <div className="flex items-center gap-5">
-            {/* Number pulses gold on hover */}
-            <motion.span
-              className="text-4xl font-black text-[#D4AF37]/20 tabular-nums transition-colors duration-300 group-hover:text-[#D4AF37]/40 md:text-5xl"
-            >
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex items-start gap-5">
+            <span className="mt-1 font-mono text-[13px] text-muted-text tabular-nums">
               {number}
-            </motion.span>
+            </span>
             <div>
-              <h2 className="text-2xl font-bold text-[#D4AF37] md:text-3xl">{title}</h2>
-              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/65 md:text-base lg:text-lg">
+              <h2 className="text-lg font-semibold tracking-tight text-heading transition-colors group-hover:text-accent md:text-xl">{title}</h2>
+              <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-body-text">
                 {description}
               </p>
             </div>
           </div>
           {/* Arrow slides right on hover */}
-          <span className="hidden shrink-0 text-xl text-[#D4AF37]/40 transition-all duration-300 group-hover:translate-x-2 group-hover:text-[#D4AF37] lg:block">
+          <span className="hidden shrink-0 text-lg text-muted-text transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent lg:block">
             →
           </span>
         </div>

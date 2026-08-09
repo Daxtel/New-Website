@@ -67,7 +67,7 @@ export function AnimatedBlogCard({
       </h2>
 
       {/* Excerpt */}
-      <p className="mt-4 text-base leading-relaxed text-white/65 md:text-lg">{excerpt}</p>
+      <p className="mt-4 text-base leading-relaxed text-body-text md:text-lg">{excerpt}</p>
 
       {/* CTA arrow */}
       <div className="mt-6 flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-[#D4AF37]">

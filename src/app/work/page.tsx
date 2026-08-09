@@ -76,10 +76,10 @@ export default async function WorkPage() {
 
           <ScrollReveal>
             <div className="max-w-4xl">
-              <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-black uppercase leading-[0.85] tracking-tight text-[#D4AF37]">
+              <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {pick(ui.sections.selectedWork, locale)}
               </h1>
-              <p className="mt-6 text-base leading-relaxed text-white/65 md:text-lg lg:text-xl">
+              <p className="mt-6 text-base leading-relaxed text-body-text md:text-lg lg:text-xl">
                 {locale === 'ja'
                   ? 'ラグジュアリーホスピタリティ、日本市場向けキャンペーン、ローカライズ、プレミアムクリエイティブ実行における厳選された制作実績。'
                   : 'Selected projects that reflect our focus on luxury hospitality, Japan-market campaigns, localization, and premium creative execution in high-stakes brand environments.'}
@@ -97,7 +97,7 @@ export default async function WorkPage() {
             <h2 className="text-2xl font-bold text-[#D4AF37] md:text-3xl">
               {pick(ui.sections.discussSimilarProject, locale)}
             </h2>
-            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-white/65 md:text-lg">
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-body-text md:text-lg">
               {locale === 'ja'
                 ? 'Streetshow Productionsは、ローカル適合性と品質が成果に直結する、プレミアムキャンペーン、日本市場ローンチ、ハイステークスなブランド実行を支援します。'
                 : 'Streetshow Productions supports premium campaigns, Japan-market launches, and high-stakes brand execution where local relevance and quality materially affect outcomes.'}

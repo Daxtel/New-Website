@@ -108,7 +108,7 @@ export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to exp
             <div className="flex flex-1 flex-col p-5">
               <p className="text-[11px] uppercase tracking-[0.15em] text-white/45">{item.proofLine}</p>
               <h3 className="mt-2 text-lg font-semibold leading-tight text-[#D4AF37]">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/65">{item.description}</p>
+              <p className="mt-2 text-sm leading-relaxed text-body-text">{item.description}</p>
               <div className="mt-auto pt-4 text-[11px] font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75">
                 {ctaLabel} →
               </div>
