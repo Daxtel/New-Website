@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!page) return { title: 'Industry' };
   const path = `/industries/${page.slug}`;
   return {
-    title: pick(page.metaTitle, locale),
+    title: { absolute: pick(page.metaTitle, locale) },
     description: pick(page.metaDescription, locale),
     keywords: page.targetKeywords,
     alternates: buildAlternates(path, locale),

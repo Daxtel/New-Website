@@ -38,7 +38,7 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Streetshow Productions — Insights</title>
+    <title>Streetshow Productions, Insights</title>
     <link>${SITE}/blog</link>
     <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml" />
     <description>Japan market entry, video production, hospitality creative, and 3D billboard insights from Streetshow Productions.</description>

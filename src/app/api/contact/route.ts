@@ -196,7 +196,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           error:
-            'We could not deliver your message automatically. Please email admin@streetshowproduction.com directly — we will respond promptly.',
+            'We could not deliver your message automatically. Please email admin@streetshowproduction.com directly. We will respond promptly.',
         },
         { status: 502 },
       );
@@ -206,7 +206,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         error:
-          'We could not deliver your message automatically. Please email admin@streetshowproduction.com directly — we will respond promptly.',
+          'We could not deliver your message automatically. Please email admin@streetshowproduction.com directly. We will respond promptly.',
       },
       { status: 502 },
     );
