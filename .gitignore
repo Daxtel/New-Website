@@ -9,6 +9,9 @@
 /build
 /coverage
 
+# rendered-geometry crawler output (scripts/qa-crawl.mjs)
+/.qa-crawl/
+
 # local data
 /.submissions/
 

@@ -51,6 +51,30 @@ jobs:
       - name: Build (agents review the built site, not just source)
         run: npm run build
 
+      # Rendered-geometry crawl runs BEFORE the agents: it is deterministic and
+      # catches pixel collisions / clipped text / horizontal overflow that no
+      # agent and no lint rule can see. Deliberately NOT in the deploy workflows
+      # (it is slow); on-demand via `npm run qa:crawl`.
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Rendered-geometry crawl (qa:crawl)
+        run: |
+          PORT=3100 npm run start > /tmp/qa-start.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:3100/ >/dev/null && break
+            sleep 1
+          done
+          QA_CRAWL_URL=http://localhost:3100 npm run qa:crawl
+
+      - name: Upload crawl artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-crawl
+          path: .qa-crawl/
+          if-no-files-found: ignore
+
       - name: Guard — API key present
         id: guard
         run: |

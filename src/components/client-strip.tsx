@@ -36,8 +36,8 @@ export function ClientStrip({ locale = 'en' }: { locale?: 'en' | 'ja' }) {
         </p>
       </div>
 
-      {/* Desktop: static row */}
-      <div className="hidden h-[60px] items-center md:flex">
+      {/* Desktop: static row (lg+ only — at 768 the 7 names overflow and clip) */}
+      <div className="hidden h-[60px] items-center lg:flex">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 md:px-10 lg:px-16 w-full">
           {clients.map((name, i) => (
             <span key={name} className="flex items-center">
@@ -48,8 +48,8 @@ export function ClientStrip({ locale = 'en' }: { locale?: 'en' | 'ja' }) {
         </div>
       </div>
 
-      {/* Mobile: marquee */}
-      <div className="relative h-[48px] overflow-hidden md:hidden">
+      {/* Mobile + tablet: marquee (fits any width) */}
+      <div className="relative h-[48px] overflow-hidden lg:hidden">
         <div className="marquee-track flex items-center h-full">
           {/* Two copies for seamless loop */}
           {[0, 1].map((copy) => (

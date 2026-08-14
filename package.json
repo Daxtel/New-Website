@@ -11,6 +11,7 @@
     "indexnow": "node scripts/indexnow.mjs",
     "postbuild": "node scripts/indexnow.mjs || true",
     "qa": "node scripts/qa-guards.mjs",
+    "qa:crawl": "node scripts/qa-crawl.mjs",
     "verify": "npm run lint && npm run qa && npm run build"
   },
   "dependencies": {
@@ -31,6 +32,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.0",
+    "jpeg-js": "^0.4.4",
+    "playwright": "^1.62.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vercel": "^50.43.0"

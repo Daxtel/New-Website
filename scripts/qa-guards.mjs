@@ -13,6 +13,7 @@
  */
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
+import jpeg from 'jpeg-js';
 
 const errors = [];
 const warnings = [];
@@ -183,6 +184,37 @@ const JP = /[\u3000-\u303F\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uFF00-\uFFEF]/
     const t = read(f);
     if (/title:\s*[`'"][^`'"]*\|\s*Streetshow Productions/.test(t) && !/absolute/.test(t)) {
       warn('double-brand-suffix', `${f} appends "| Streetshow Productions" to a title without marking it absolute — the layout template may add it again`);
+    }
+  }
+}
+
+// ── 11. Posters: no black / near-black frame ────────────────────────────────────
+// On mobile the poster IS the work card until the user taps. kuoe-kyoto.jpg once
+// shipped as a 5KB pure-black frame (extracted from the video's black opening),
+// so the card read as an empty box. Average luminance below 5 (on 0-255) means a
+// black poster; regenerate it from a frame several seconds into the video.
+{
+  const dir = 'public/videos/posters';
+  if (existsSync(dir)) {
+    for (const name of readdirSync(dir)) {
+      if (!/\.jpe?g$/i.test(name)) continue;
+      const p = join(dir, name);
+      try {
+        const { data, width, height } = jpeg.decode(readFileSync(p), { useTArray: true });
+        // Sample every ~8th pixel; luma = 0.299R + 0.587G + 0.114B.
+        let sum = 0, n = 0;
+        for (let i = 0; i < width * height; i += 8) {
+          const o = i * 4;
+          sum += 0.299 * data[o] + 0.587 * data[o + 1] + 0.114 * data[o + 2];
+          n++;
+        }
+        const luma = n ? sum / n : 0;
+        if (luma < 5) {
+          err('poster-black', `${p} average luminance ${luma.toFixed(2)}/255 — a black/near-black poster. Regenerate from a frame several seconds into the video.`);
+        }
+      } catch (e) {
+        err('poster-decode', `${p} could not be decoded (${e.message}) — a poster must be a valid JPEG.`);
+      }
     }
   }
 }

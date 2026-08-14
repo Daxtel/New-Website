@@ -54,15 +54,6 @@ const cards: CampaignCard[] = [
     tag: '9:16 · PAID SOCIAL · ACTIVATION',
     videoSrc: '/videos/qc-running-on-japan.mp4',
   },
-  {
-    variant: 'phone-landscape',
-    label: 'KUOE KYOTO',
-    title: 'Kuoe Kyoto Campaign',
-    subtitle: 'Hospitality Campaign',
-    tag: '16:9 · HOSPITALITY · CAMPAIGN',
-    videoSrc: '/videos/kuoe-kyoto.mp4',
-    rotate: -90,
-  },
 ];
 
 function VideoPlayer({
@@ -147,10 +138,11 @@ function PhoneCard({ card }: { card: CampaignCard }) {
 
 function PhoneLandscapeCard({ card }: { card: CampaignCard }) {
   return (
-    <div className="flex flex-col items-center">
-      {/* iPhone frame - landscape (rotated 90°) */}
+    <div className="flex w-full flex-col items-center">
+      {/* iPhone frame - landscape (rotated 90°). Responsive width so it never
+          overflows narrow phones; aspect-ratio drives height instead of a fixed px. */}
       <div
-        className="group relative flex h-[220px] md:h-[280px] w-[440px] md:w-[516px] max-w-full flex-row items-center rounded-[36px] bg-[#2A2A2A] p-[10px] md:p-[12px]"
+        className="group relative flex aspect-[440/220] w-full max-w-[440px] md:max-w-[516px] flex-row items-center rounded-[36px] bg-[#2A2A2A] p-[10px] md:p-[12px]"
         style={{ boxShadow: '0 24px 60px rgba(0,0,0,0.5)' }}
       >
         {/* Dynamic Island - on the left side when phone is landscape */}
@@ -213,10 +205,9 @@ export function CampaignWork() {
         {renderCard(cards[3], 'c3')}
       </div>
 
-      {/* Row 3: QC Running (portrait phone) + Kuoe Kyoto (landscape phone) */}
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2" style={{ gap: '32px' }}>
+      {/* Row 3: QC Running (portrait phone), centered */}
+      <div className="mt-8 flex justify-center">
         {renderCard(cards[4], 'c4')}
-        {renderCard(cards[5], 'c5')}
       </div>
     </div>
   );
