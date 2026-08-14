@@ -1,12 +1,11 @@
 'use client';
 import { useRef, useEffect, useCallback, useState } from 'react';
-import { useScroll, useMotionValueEvent, useReducedMotion } from 'framer-motion';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
+import { DeviceFrame } from './DeviceFrame';
 
 interface VideoScrubHeroProps {
   src: string;
   title: string;
-  /** px height the section occupies for scroll mapping — default 600 */
-  scrollHeight?: number;
 }
 
 function posterFor(src: string): string {
@@ -18,138 +17,192 @@ function mobileSrcFor(src: string): string {
   return src.replace('/videos/', '/videos/mobile/');
 }
 
+/** Sources shot vertically (9:16). They belong in a phone frame, not cropped into
+ *  a 16:9 hero. Kept in sync with the poster orientations by the qa-guards
+ *  `poster-orientation` check. */
+const PORTRAIT_SRCS = new Set([
+  '/videos/jtl-live-commerce.mp4',
+  '/videos/qc-running-on-japan.mp4',
+  '/videos/ritz-carlton-kyoto.mp4',
+  '/videos/shein-japan.mp4',
+]);
+const isPortraitSrc = (src: string) => PORTRAIT_SRCS.has(src);
+
 /**
- * VideoScrubHero
+ * VideoScrubHero — the hero video on every /work/[slug] detail page.
  *
- * Full-width video that plays normally on load then scrubs (seeks) as the user
- * scrolls past the section.
+ * The hard rule: this video must be PLAYABLE on every device, and must never
+ * depend on autoplay succeeding. iOS Safari refuses inline autoplay in Low Power
+ * Mode and with Reduce Motion on; when it refuses, the old version showed a
+ * poster with no way to start it — indistinguishable from a dead image.
  *
- * Desktop: full-quality file, scrubbed by scroll position.
- * Mobile:  mobile-weight transcode, muted inline autoplay loop (no scrubbing —
- *          scroll-driven seeking is unreliable on touch and burns battery).
- * Reduced motion: poster image only.
+ * Touch devices: always get a visible play control over the poster. We still
+ * ATTEMPT muted inline autoplay, but the control is hidden only once the
+ * `playing` event actually fires — never because play() resolved. If autoplay is
+ * refused, or nothing is playing, the control stays and a tap starts it (with
+ * native controls, so the user can pause/scrub).
+ *
+ * Desktop landscape: unchanged — the full-quality file scrubs (seeks) on scroll.
+ * Desktop portrait: muted inline autoplay loop inside the phone frame.
+ * Reduce Motion (any device): no autoplay, but a play control is always present.
  */
 export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRef   = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const durationRef = useRef<number>(0);
-  const isMobileRef = useRef(false);
-  // Poster-first until the device is known, so no client starts downloading the
-  // wrong-weight file during first paint. Then BOTH paths mount a real video:
-  // desktop scrubs the full-quality file on scroll, mobile autoplays the
-  // mobile-weight transcode inline. This hero is the primary content of the page —
-  // it must never be a still image on a phone.
-  const [lite, setLite] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
-  const shouldReduceMotion = useReducedMotion();
 
-  // Track scroll progress of the section
+  const portrait = isPortraitSrc(src);
+
+  // null = capability not yet known (SSR + first paint) → poster only, no download
+  // of the wrong-weight file.
+  const [isTouch, setIsTouch] = useState<boolean | null>(null);
+  const [reduced, setReduced] = useState(false);
+  const [playing, setPlaying] = useState(false); // confirmed via the `playing` event
+  const [activated, setActivated] = useState(false); // user tapped → enable controls
+  const [failed, setFailed] = useState(false); // mobile transcode 404 → fall back to master
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
   });
 
-  // Store video duration once metadata loads
   const onMetadata = useCallback(() => {
-    if (videoRef.current) {
-      durationRef.current = videoRef.current.duration;
-    }
+    if (videoRef.current) durationRef.current = videoRef.current.duration;
   }, []);
 
   useEffect(() => {
-    const m = window.matchMedia('(hover: none)').matches;
-    isMobileRef.current = m;
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsMobile(m);
-    // Leave the poster-only path ONLY for reduced-motion users.
-     
-    setLite(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    setIsTouch(window.matchMedia('(hover: none)').matches);
+    setReduced(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   }, []);
 
-  // Map scroll progress → video currentTime
+  // Desktop LANDSCAPE only: scrub the full file by scroll position.
+  const desktopScrub = isTouch === false && !reduced && !portrait;
+
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+    if (!desktopScrub) return;
     const video = videoRef.current;
     if (!video || !durationRef.current) return;
-    if (isMobileRef.current || shouldReduceMotion) return;
-
-    // First 60% of scroll = full video duration; last 40% = hold last frame
-    const clampedProgress = Math.min(progress / 0.6, 1);
-    const targetTime = clampedProgress * durationRef.current;
-
-    // Only seek if significantly different (avoid thrashing)
-    if (Math.abs(video.currentTime - targetTime) > 0.04) {
-      video.currentTime = targetTime;
-    }
+    const clamped = Math.min(progress / 0.6, 1); // first 60% of scroll = full duration
+    const target = clamped * durationRef.current;
+    if (Math.abs(video.currentTime - target) > 0.04) video.currentTime = target;
   });
 
-  // On desktop: pause + load for scrubbing; on mobile: autoPlay loop
+  // Playback intent per surface. Never trust the play() promise — the `playing`
+  // event (onPlaying) is what flips `playing` and hides the control.
   useEffect(() => {
+    if (isTouch === null) return;
     const video = videoRef.current;
     if (!video) return;
-    const touch = window.matchMedia('(hover: none)').matches;
 
-    if (touch || shouldReduceMotion) {
-      video.autoplay = true;
-      video.loop     = true;
-      video.play().catch(() => {});
-    } else {
-      video.autoplay = false;
-      video.loop     = false;
-      video.preload  = 'auto';
-      // Start playing briefly so browser allows seeking
+    if (desktopScrub) {
+      // Play briefly so the browser permits seeking, then hold on frame 0.
       video.play().then(() => video.pause()).catch(() => {});
+      return;
     }
-  }, [shouldReduceMotion]);
+    // Touch (either orientation) or desktop portrait: attempt muted autoplay,
+    // unless Reduce Motion is on (then wait for a tap).
+    if (!reduced) video.play().catch(() => {});
+  }, [isTouch, reduced, desktopScrub]);
+
+  const activate = useCallback(() => {
+    setActivated(true);
+    requestAnimationFrame(() => videoRef.current?.play().catch(() => {}));
+  }, []);
+
+  const poster = posterFor(src);
+  const showControl = (isTouch === true || reduced) && !playing;
+
+  // ── Media: poster-only until capability known, or on desktop-reduced (respect
+  // the OS setting), otherwise a real, reachable <video>. ──────────────────────
+  let media: React.ReactNode;
+  if (isTouch === null) {
+    // eslint-disable-next-line @next/next/no-img-element
+    media = <img src={poster} alt={title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />;
+  } else {
+    const videoSrc = isTouch ? (failed ? src : mobileSrcFor(src)) : src;
+    const autoPlay = !reduced && (isTouch === true || portrait); // desktop landscape uses scrub, not autoplay
+    media = (
+      <video
+        ref={videoRef}
+        src={videoSrc}
+        poster={poster}
+        muted
+        playsInline
+        loop={isTouch === true || portrait}
+        autoPlay={autoPlay}
+        controls={activated}
+        preload={reduced ? 'none' : isTouch ? 'metadata' : 'auto'}
+        onLoadedMetadata={onMetadata}
+        onPlaying={() => setPlaying(true)}
+        onError={() => setFailed(true)}
+        className="absolute inset-0 h-full w-full object-cover"
+        aria-label={title}
+      />
+    );
+  }
+
+  const inner = (
+    <>
+      {media}
+
+      {/* Play control — same treatment as SmartVideo, so the site is consistent.
+          Visible until playback is CONFIRMED (or on Reduce Motion, until tapped). */}
+      {showControl && (
+        <button
+          type="button"
+          onClick={activate}
+          aria-label={`Play video: ${title}`}
+          className="group/play absolute inset-0 z-20 flex cursor-pointer items-center justify-center border-0 bg-transparent p-0 transition-opacity duration-300"
+        >
+          <span
+            aria-hidden="true"
+            className="flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-black/45 backdrop-blur-sm transition-transform duration-300 group-hover/play:scale-105"
+          >
+            <svg viewBox="0 0 24 24" className="ml-[3px] h-6 w-6 fill-[#D4AF37]" role="presentation">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </button>
+      )}
+
+      {/* Landscape keeps its overlaid title + scrub bar. Portrait keeps NO text
+          inside the screen (the h1 above the hero already names the project). */}
+      {!portrait && (
+        <>
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+          <div className="pointer-events-none absolute bottom-0 left-0 p-8">
+            <span className="text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">{title}</span>
+          </div>
+          {desktopScrub && (
+            <div className="absolute bottom-0 left-0 h-[2px] w-full bg-[#D4AF37]/10">
+              <div
+                className="h-full origin-left bg-[#D4AF37]/70"
+                ref={(el) => {
+                  if (!el) return;
+                  return scrollYProgress.on('change', (v) => {
+                    el.style.transform = `scaleX(${Math.min(v / 0.6, 1)})`;
+                  });
+                }}
+              />
+            </div>
+          )}
+        </>
+      )}
+    </>
+  );
+
+  if (portrait) {
+    return (
+      <div ref={sectionRef}>
+        <DeviceFrame>{inner}</DeviceFrame>
+      </div>
+    );
+  }
 
   return (
-    <div
-      ref={sectionRef}
-      className="relative aspect-[16/8] overflow-hidden bg-[#1A1A1A]"
-    >
-      {lite ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={posterFor(src)}
-          alt={title}
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-      ) : (
-        <video
-          ref={videoRef}
-          src={isMobile ? mobileSrcFor(src) : src}
-          poster={posterFor(src)}
-          muted
-          loop={isMobile}
-          playsInline
-          autoPlay={isMobile}
-          preload={isMobile ? 'metadata' : 'auto'}
-          onLoadedMetadata={onMetadata}
-          className="absolute inset-0 h-full w-full object-cover"
-          aria-label={title}
-        />
-      )}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-      <div className="absolute bottom-0 left-0 p-8">
-        <span className="text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">{title}</span>
-      </div>
-
-      {/* Scroll progress bar along bottom edge */}
-      <div className="absolute bottom-0 left-0 h-[2px] w-full bg-[#D4AF37]/10">
-        <div
-          className="h-full bg-[#D4AF37]/70 origin-left transition-transform duration-75"
-          style={{ transform: 'scaleX(var(--progress, 0))' }}
-          ref={(el) => {
-            if (!el) return;
-            const unsub = scrollYProgress.on('change', (v) => {
-              el.style.setProperty('--progress', String(Math.min(v / 0.6, 1)));
-              el.style.transform = `scaleX(${Math.min(v / 0.6, 1)})`;
-            });
-            return unsub;
-          }}
-        />
-      </div>
+    <div ref={sectionRef} className="relative aspect-[16/8] overflow-hidden bg-[#1A1A1A]">
+      {inner}
     </div>
   );
 }

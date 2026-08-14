@@ -1,7 +1,8 @@
 'use client';
 import { SmartVideo } from './motion/SmartVideo';
+import { DeviceFrame } from './motion/DeviceFrame';
 
-type CardVariant = 'widescreen' | 'phone' | 'phone-landscape';
+type CardVariant = 'widescreen' | 'phone';
 
 type CampaignCard = {
   variant: CardVariant;
@@ -10,7 +11,6 @@ type CampaignCard = {
   subtitle: string;
   tag: string;
   videoSrc: string;
-  rotate?: -90 | 90;
 };
 
 const cards: CampaignCard[] = [
@@ -56,35 +56,7 @@ const cards: CampaignCard[] = [
   },
 ];
 
-function VideoPlayer({
-  src,
-  className,
-  rotate,
-}: {
-  src: string;
-  className?: string;
-  rotate?: -90 | 90;
-}) {
-  if (rotate) {
-    // Container query trick: video width = container height, video height = container width,
-    // then rotated -90/90 so it perfectly fills the parent after rotation.
-    return (
-      <div
-        className="absolute inset-0 overflow-hidden"
-        style={{ containerType: 'size' }}
-      >
-        <SmartVideo
-          src={src}
-          className="absolute left-1/2 top-1/2 object-cover"
-          style={{
-            width: '100cqh',
-            height: '100cqw',
-            transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
-          }}
-        />
-      </div>
-    );
-  }
+function VideoPlayer({ src, className }: { src: string; className?: string }) {
   return <SmartVideo src={src} className={className} />;
 }
 
@@ -106,82 +78,25 @@ function WidescreenCard({ card }: { card: CampaignCard }) {
 
 function PhoneCard({ card }: { card: CampaignCard }) {
   return (
-    <div className="flex flex-col items-center">
-      {/* iPhone frame - portrait */}
-      <div
-        className="group relative flex w-[220px] md:w-[280px] flex-col items-center rounded-[36px] bg-[#2A2A2A] p-[10px] md:p-[12px]"
-        style={{ boxShadow: '0 24px 60px rgba(0,0,0,0.5)' }}
-      >
-        {/* Dynamic Island */}
-        <div className="absolute left-1/2 top-[14px] md:top-[16px] z-20 h-[14px] md:h-[16px] w-[60px] md:w-[72px] -translate-x-1/2 rounded-full bg-[#0A0A0A]" />
-        {/* Screen with video + overlay content */}
-        <div className="relative flex h-[440px] md:h-[516px] w-full flex-col items-center overflow-hidden rounded-[12px] bg-[#111111]">
-          {/* Background video fills screen */}
-          <VideoPlayer src={card.videoSrc} className="absolute inset-0 h-full w-full object-cover" />
-          {/* Dark overlay for text legibility */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70" />
-          {/* Top: label */}
-          <div className="relative z-10 px-3 pt-10 md:px-5 md:pt-14 w-full flex flex-col items-center">
-            <p className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C] text-center leading-tight">{card.label}</p>
-          </div>
-          {/* Bottom: title, subtitle, tag */}
-          <div className="relative z-10 mt-auto flex flex-col items-center gap-1 px-3 pb-4 md:px-5 md:pb-6 w-full">
-            <h4 className="text-[13px] md:text-base font-bold text-[#C9A84C] text-center leading-tight drop-shadow-lg">{card.title}</h4>
-            <p className="text-[11px] md:text-sm text-body-text text-center drop-shadow">{card.subtitle}</p>
-            <p className="mt-1 text-[9px] md:text-[10px] uppercase tracking-[0.1em] text-white/60 text-center">{card.tag}</p>
-          </div>
-        </div>
+    <DeviceFrame island className="group max-w-[240px] md:max-w-[280px]">
+      <VideoPlayer src={card.videoSrc} className="absolute inset-0 h-full w-full object-cover" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70" />
+      {/* Top: label */}
+      <div className="absolute left-0 top-0 z-10 flex w-full flex-col items-center px-3 pt-10 md:px-5 md:pt-14">
+        <p className="text-center text-[10px] font-semibold uppercase leading-tight tracking-[0.15em] text-[#C9A84C] md:text-[11px]">{card.label}</p>
       </div>
-    </div>
-  );
-}
-
-function PhoneLandscapeCard({ card }: { card: CampaignCard }) {
-  return (
-    <div className="flex w-full flex-col items-center">
-      {/* iPhone frame - landscape (rotated 90°). Responsive width so it never
-          overflows narrow phones; aspect-ratio drives height instead of a fixed px. */}
-      <div
-        className="group relative flex aspect-[440/220] w-full max-w-[440px] md:max-w-[516px] flex-row items-center rounded-[36px] bg-[#2A2A2A] p-[10px] md:p-[12px]"
-        style={{ boxShadow: '0 24px 60px rgba(0,0,0,0.5)' }}
-      >
-        {/* Dynamic Island - on the left side when phone is landscape */}
-        <div className="absolute left-[14px] md:left-[16px] top-1/2 z-20 h-[60px] md:h-[72px] w-[14px] md:w-[16px] -translate-y-1/2 rounded-full bg-[#0A0A0A]" />
-        {/* Screen with video + overlay content */}
-        <div className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[12px] bg-[#111111]">
-          {/* Background video fills screen (with optional rotation) */}
-          <VideoPlayer
-            src={card.videoSrc}
-            className="absolute inset-0 h-full w-full object-cover"
-            rotate={card.rotate}
-          />
-          {/* Dark overlay for text legibility */}
-          <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/60 via-transparent to-black/70" />
-          {/* Top: label */}
-          <div className="relative z-10 w-full px-6 pt-3 md:px-10 md:pt-4 flex flex-col items-center">
-            <p className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.15em] text-[#C9A84C] text-center leading-tight">{card.label}</p>
-          </div>
-          {/* Bottom: title, subtitle, tag */}
-          <div className="relative z-10 mt-auto flex flex-col items-center gap-1 w-full px-6 pb-3 md:px-10 md:pb-4">
-            <h4 className="text-[13px] md:text-base font-bold text-[#C9A84C] text-center leading-tight drop-shadow-lg">{card.title}</h4>
-            <p className="text-[11px] md:text-sm text-body-text text-center drop-shadow">{card.subtitle}</p>
-            <p className="mt-1 text-[9px] md:text-[10px] uppercase tracking-[0.1em] text-white/60 text-center">{card.tag}</p>
-          </div>
-        </div>
+      {/* Bottom: title, subtitle, tag */}
+      <div className="absolute bottom-0 left-0 z-10 flex w-full flex-col items-center gap-1 px-3 pb-4 md:px-5 md:pb-6">
+        <h4 className="text-center text-[13px] font-bold leading-tight text-[#C9A84C] drop-shadow-lg md:text-base">{card.title}</h4>
+        <p className="text-center text-[11px] text-body-text drop-shadow md:text-sm">{card.subtitle}</p>
+        <p className="mt-1 text-center text-[9px] uppercase tracking-[0.1em] text-white/60 md:text-[10px]">{card.tag}</p>
       </div>
-    </div>
+    </DeviceFrame>
   );
 }
 
 function renderCard(card: CampaignCard, key: string) {
   if (card.variant === 'widescreen') return <WidescreenCard key={key} card={card} />;
-  if (card.variant === 'phone-landscape') {
-    return (
-      <div key={key} className="flex items-center justify-center">
-        <PhoneLandscapeCard card={card} />
-      </div>
-    );
-  }
   return (
     <div key={key} className="flex items-center justify-center">
       <PhoneCard card={card} />

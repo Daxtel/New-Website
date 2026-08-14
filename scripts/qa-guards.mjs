@@ -219,6 +219,33 @@ const JP = /[\u3000-\u303F\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uFF00-\uFFEF]/
   }
 }
 
+// ── 12. Poster orientation matches the hero source ──────────────────────────────
+// A portrait (9:16) hero video shown against a landscape poster crops wrong — the
+// "vertical video in a horizontal format" bug. VideoScrubHero declares which
+// sources are portrait; each must have a portrait poster.
+{
+  const hero = existsSync('src/components/motion/VideoScrubHero.tsx')
+    ? readFileSync('src/components/motion/VideoScrubHero.tsx', 'utf8') : '';
+  const block = hero.match(/PORTRAIT_SRCS\s*=\s*new Set\(\[([^\]]*)\]/s)?.[1] ?? '';
+  const portraitBases = new Set([...block.matchAll(/\/videos\/([a-z0-9-]+)\.mp4/g)].map((m) => m[1]));
+  const dir = 'public/videos/posters';
+  if (existsSync(dir)) {
+    for (const name of readdirSync(dir)) {
+      if (!/\.jpe?g$/i.test(name)) continue;
+      const base = name.replace(/\.jpe?g$/i, '');
+      if (!portraitBases.has(base)) continue;
+      try {
+        const { width, height } = jpeg.decode(readFileSync(join(dir, name)), { useTArray: true });
+        if (height <= width) {
+          err('poster-orientation', `${name} is landscape but ${base} is a portrait hero source — the hero would crop it. Regenerate a portrait poster.`);
+        }
+      } catch {
+        /* the poster-black check already reports undecodable posters */
+      }
+    }
+  }
+}
+
 // ── Report ──────────────────────────────────────────────────────────────────────
 const line = '─'.repeat(72);
 console.log(`\n${line}\nqa-guards — deterministic pre-merge checks\n${line}`);
