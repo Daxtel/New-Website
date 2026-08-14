@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { toRecipients } from '@/lib/recipients';
 import { checkRateLimit, clientIpFrom, isHoneypotTripped } from '@/lib/rate-limit';
 
 type SubscribePayload = {
@@ -15,7 +16,6 @@ const GUIDE = {
   ja: '/downloads/japan-production-cost-guide-ja.pdf',
 };
 
-const DEFAULT_TO = 'jackson@streetshowproduction.com';
 const DEFAULT_FROM = 'Streetshow Productions <noreply@streetshowproduction.com>';
 const SITE = 'https://streetshowproduction.com';
 
@@ -62,7 +62,7 @@ export async function POST(req: Request) {
   console.log('[subscribe]', JSON.stringify({ receivedAt: new Date().toISOString(), email, locale, source }));
 
   const resendApiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL || DEFAULT_TO;
+  const toEmails = toRecipients();
   const fromEmail = process.env.CONTACT_FROM_EMAIL || DEFAULT_FROM;
 
   // Download works regardless of email delivery — hand the link back immediately.
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
     headers: { Authorization: `Bearer ${resendApiKey}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
       from: fromEmail,
-      to: [toEmail],
+      to: toEmails,
       reply_to: email,
       subject: `New lead magnet subscriber: ${email}`,
       text: `New guide download subscriber\n\nEmail: ${email}\nLanguage: ${locale}\nSource: ${source}\nGuide: ${guideUrl}\n\nReceived: ${new Date().toISOString()}`,

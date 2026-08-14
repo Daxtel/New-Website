@@ -56,13 +56,27 @@ npm run build
 npm run start
 ```
 
-## Contact form
-The contact form currently posts to `/api/contact`.
+## Contact form & lead email
 
-Current behavior:
-- submissions are stored locally in `.submissions/contact.jsonl`
+Three API routes send lead-notification email via Resend: `/api/contact`,
+`/api/restaurant-lead`, `/api/subscribe`. Each submission is also logged to the
+Vercel function logs so a lead is never fully lost, even if email delivery fails.
 
-This is a temporary capture layer until production delivery is connected.
+### Environment variables
+
+| Variable | Purpose | Notes |
+|----------|---------|-------|
+| `RESEND_API_KEY` | Auth for Resend email delivery. | If unset, submissions are logged but no email is sent (the form still returns success). |
+| `CONTACT_TO_EMAIL` | Who receives lead notifications. | **Comma-separated list supported** (e.g. `admin@streetshowproduction.com, owner@streetshowproduction.com`) so the shared inbox and the owner can both be notified. Whitespace is trimmed, empty entries dropped. |
+| `CONTACT_FROM_EMAIL` | The `From:` address on notification email. | **Must be on a Resend-verified sending domain** or delivery fails silently. Defaults to `Streetshow Productions <noreply@streetshowproduction.com>`. |
+
+**Important:** if `CONTACT_TO_EMAIL` is unset or empty, leads fall back to
+`admin@streetshowproduction.com` (the monitored shared inbox) — never a personal
+address. Leaving it unset silently routes every lead to that fallback, so set it
+explicitly in Vercel for Production, Preview, and Development.
+
+`reply_to` on each notification is the submitter's own address, so replying from
+the inbox reaches the lead, not the form.
 
 ## Deployment
 Recommended deployment target:

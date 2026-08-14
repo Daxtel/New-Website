@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { toRecipients } from '@/lib/recipients';
 import { createHash } from 'crypto';
 import { checkRateLimit, clientIpFrom, isHoneypotTripped } from '@/lib/rate-limit';
 
@@ -211,7 +212,6 @@ async function sendMetaConversionEvent(lead: LeadPayload, clientIp: string) {
   }
 }
 
-const DEFAULT_TO = 'jackson@streetshowproduction.com';
 const DEFAULT_FROM = 'Streetshow Productions <noreply@streetshowproduction.com>';
 
 export async function POST(req: Request) {
@@ -302,7 +302,7 @@ export async function POST(req: Request) {
 
   // --- Email notification via Resend ---
   const resendApiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL || DEFAULT_TO;
+  const toEmails = toRecipients();
   const fromEmail = process.env.CONTACT_FROM_EMAIL || DEFAULT_FROM;
 
   if (!resendApiKey) {
@@ -319,7 +319,7 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         from: fromEmail,
-        to: [toEmail],
+        to: toEmails,
         reply_to: body.email,
         subject: `🍽️ New Restaurant Lead: ${body.restaurantName} (${AREA_LABELS[body.area || ''] || body.area})`,
         html: buildEmailHtml(body),
