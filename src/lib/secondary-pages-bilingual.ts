@@ -1,7 +1,7 @@
 export const aboutPageBilingual = {
   title: { en: 'About Streetshow Productions', ja: 'Streetshow Productionsについて' },
   intro: {
-    en: 'Streetshow Productions is a Japan-entry, localization, and creative execution partner for premium brands operating in high-stakes market environments.',
+    en: 'Streetshow Productions is a Japan-entry, localization, and creative execution partner for premium brands, for teams that cannot afford a weak launch.',
     ja: 'Streetshow Productionsは、高難度な市場環境で事業を展開するプレミアムブランドのための、日本市場進出・ローカライズ・クリエイティブ実行パートナーです。',
   },
   mission: {
@@ -24,7 +24,7 @@ export const aboutPageBilingual = {
     ja: '福岡・東京拠点。EN/JPバイリンガル体制。国内での実行と海外ステークホルダーとの連携の両方に対応。Streetshowは翻訳以上の対応を必要とするプレミアムブランド、ローカルでの信頼性、洗練された実行力、市場を見据えた判断力を求めるブランドを支援します。',
   },
   credibility: {
-    en: 'Streetshow Productions supports premium brands where strategic clarity, cultural nuance, and execution quality materially affect outcomes.',
+    en: 'Streetshow Productions supports premium brands where strategic clarity, cultural nuance, and execution quality decide whether a launch works.',
     ja: 'Streetshow Productionsは、戦略の明確さ、文化的ニュアンス、実行品質が成果を大きく左右するプレミアムブランドを支援します。',
   },
   proofStrip: [
@@ -42,7 +42,7 @@ export const aboutPageBilingual = {
 export const contactPageBilingual = {
   title: { en: 'Discuss Your Project', ja: 'プロジェクトについて相談する' },
   subtitle: {
-    en: 'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality materially affect outcomes.',
+    en: 'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality decide whether a launch works.',
     ja: 'Streetshow Productionsは、戦略の明確さ、文化的なニュアンス、実行品質が成果を大きく左右する案件において、選ばれたブランドや事業者を支援します。',
   },
   qualification: {

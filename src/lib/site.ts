@@ -2,8 +2,8 @@ export const site = {
   name: 'Streetshow Productions',
   url: 'https://streetshowproduction.com',
   description: {
-    en: 'Japan market entry, localization, and premium creative execution for high-end brands operating in Japan.',
-    ja: 'ハイエンドブランド向けに、日本市場進出、ローカライズ、プレミアムなクリエイティブ実行を支援します。',
+    en: 'Japan market entry, localization, and video production for premium international brands. Bilingual studio in Fukuoka and Tokyo. Clients include New Balance, SHEIN Japan, and Ritz-Carlton.',
+    ja: '海外プレミアムブランド向けの日本市場参入、ローカライズ、映像制作。福岡・東京のバイリンガルスタジオ。New Balance、SHEIN Japan、リッツ・カールトンなどの実績。',
   },
   location: {
     en: 'Fukuoka & Tokyo, Japan',
@@ -21,20 +21,20 @@ export const site = {
 
 export const homePage = {
   eyebrow: {
-    en: 'Japan Market Entry · Localization · Premium Execution',
-    ja: '日本市場進出・ローカライズ・プレミアム実行',
+    en: 'Japan Market Entry · Video Production · Localization',
+    ja: '日本市場参入・映像制作・ローカライズ',
   },
   headline: {
     en: 'Japan Market Entry Creative Partner for Premium Brands',
     ja: '海外プレミアムブランドの日本市場参入を支援するクリエイティブパートナー',
   },
   subheadline: {
-    en: 'Streetshow Productions helps international brands enter, localize, and launch in Japan through strategy, bilingual creative execution, video production, hospitality campaigns, and 3D anamorphic billboard production.',
-    ja: '日本市場に参入する海外ブランドを、戦略、バイリンガルなクリエイティブ実行、映像制作、ホスピタリティキャンペーン、3Dアナモルフィックビルボード制作で支援します。',
+    en: 'We help international brands enter Japan and perform there. Strategy, localization, video production, hospitality campaigns, and 3D billboards, built for how Japanese audiences actually buy. Bilingual team in Fukuoka and Tokyo.',
+    ja: '海外ブランドが日本に参入し、成果を出すまでを支援します。戦略、ローカライズ、映像制作、ホスピタリティキャンペーン、3Dビルボードを、日本の消費者の購買行動に合わせて設計。福岡・東京のバイリンガルチーム。',
   },
   trustLine: {
-    en: 'Fukuoka & Tokyo, Japan · Bilingual EN/JP execution · Selected work across hospitality, fashion, and international brand launches in Japan',
-    ja: '福岡・東京拠点 · EN/JPバイリンガル実行体制 · ホスピタリティ、ファッション、海外ブランドの日本展開実績',
+    en: 'Fukuoka & Tokyo · Bilingual EN/JP · New Balance · SHEIN Japan · Ritz-Carlton',
+    ja: '福岡・東京 · EN/JPバイリンガル · New Balance · SHEIN Japan · リッツ・カールトン',
   },
   heroCta: {
     en: 'Discuss Your Japan Launch',

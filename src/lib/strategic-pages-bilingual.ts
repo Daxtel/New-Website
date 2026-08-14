@@ -87,8 +87,8 @@ export const japanMarketEntryPageBilingual = {
     fit: {
       title: { en: 'Best Fit For', ja: '最適な対象' },
       intro: {
-        en: 'Streetshow Productions is most valuable where brand perception, local credibility, and execution quality materially influence results.',
-        ja: 'Streetshow Productionsは、ブランド認知、ローカルでの信頼性、実行品質が成果に大きく影響する場面で最も価値を発揮します。',
+        en: 'Streetshow Productions is most valuable where brand perception, local credibility, and execution quality decide the outcome.',
+        ja: 'Streetshow Productionsは、ブランド認知、ローカルでの信頼性、実行品質が成果を左右する場面で最も価値を発揮します。',
       },
       points: [
         { en: 'Luxury and boutique hotels entering or repositioning in Japan', ja: '日本に進出または再構築するラグジュアリー・ブティックホテル' },
@@ -119,7 +119,7 @@ export const hospitalityPageBilingual = {
     ja: 'Streetshow Productionsは、ラグジュアリーホテル、リゾート、デスティネーション施設に対し、認知、予約意向、プレミアムブランド価値を高める戦略主導のクリエイティブ支援を提供します。',
   },
   support: {
-    en: 'For hospitality brands where presentation, local relevance, and guest trust materially affect performance.',
+    en: 'For hospitality brands where presentation, local relevance, and guest trust decide whether guests book.',
     ja: '見せ方、ローカル適合性、ゲストからの信頼が成果に直結するホスピタリティブランドのために。',
   },
   primaryCta: { en: "LET'S TALK", ja: '相談する' },
@@ -163,7 +163,7 @@ export const hospitalityPageBilingual = {
       title: { en: 'Planning a hospitality launch, repositioning, or campaign in Japan?', ja: '日本でのホスピタリティローンチ、再構築、またはキャンペーンを計画中ですか？' },
       body: {
         en: 'We support selected hospitality brands where execution quality, guest perception, and local resonance materially influence outcomes.',
-        ja: '実行品質、ゲスト認知、ローカルでの共鳴が成果に大きく影響する、厳選されたホスピタリティブランドを支援します。',
+        ja: '実行品質、ゲスト認知、ローカルでの共鳴が成果を左右する、厳選されたホスピタリティブランドを支援します。',
       },
     },
   },
