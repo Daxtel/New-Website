@@ -12,7 +12,7 @@ type NavLink = {
 export function MobileMenu({ links, ctaLabel, locale = 'en', contactHref = '/contact' }: { links: NavLink[]; ctaLabel: string; locale?: 'en' | 'ja'; contactHref?: string }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  // Close on route change, startTransition avoids cascading-render lint warning
+  // Close on route change — startTransition avoids cascading-render lint warning
   useEffect(() => {
     startTransition(() => setOpen(false));
   }, [pathname]);

@@ -32,7 +32,7 @@ export function AnimatedBlogCard({
     const r = el.getBoundingClientRect();
     const dx = (e.clientX - r.left - r.width / 2) / (r.width / 2);
     const dy = (e.clientY - r.top - r.height / 2) / (r.height / 2);
-    setTilt({ rx: -dy * 3, ry: dx * 3 }); // subtle, text card, not image
+    setTilt({ rx: -dy * 3, ry: dx * 3 }); // subtle — text card, not image
   }
 
   return (

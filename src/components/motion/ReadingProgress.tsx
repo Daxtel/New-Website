@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 /**
  * Thin gold reading-progress bar fixed to the top of the viewport.
  * Tracks how far the user has scrolled through the article.
- * Mounts as a client overlay, add once per blog post page.
+ * Mounts as a client overlay — add once per blog post page.
  */
 export function ReadingProgress() {
   const raw    = useMotionValue(0);

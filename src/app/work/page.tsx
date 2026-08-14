@@ -56,7 +56,7 @@ export default async function WorkPage() {
   });
 
   const workItemList = buildItemListSchema({
-    name: 'Selected Work, Streetshow Productions',
+    name: 'Selected Work: Streetshow Productions',
     items: projectCatalog.map((p) => ({
       name: pick(p.title, locale),
       url: `${site.url}/work/${p.slug}`,

@@ -5,7 +5,7 @@ import { useScroll, useMotionValueEvent, useReducedMotion } from 'framer-motion'
 interface VideoScrubHeroProps {
   src: string;
   title: string;
-  /** px height the section occupies for scroll mapping, default 600 */
+  /** px height the section occupies for scroll mapping — default 600 */
   scrollHeight?: number;
 }
 

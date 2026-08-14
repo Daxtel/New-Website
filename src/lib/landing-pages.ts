@@ -40,7 +40,7 @@ export const locationPages: LandingPage[] = [
       ja: '福岡の映像制作会社｜英語対応クルー｜Streetshow Productions',
     },
     metaDescription: {
-      en: 'Fukuoka-based video production for premium and international brands. English-speaking crew, brand films, hospitality and restaurant content. Production across Kyushu and Japan.',
+      en: 'Fukuoka-based video production for premium and international brands. English-speaking crew, brand films, and hospitality and restaurant content.',
       ja: '福岡拠点の映像制作。プレミアム・海外ブランド向け。英語対応クルー、ブランドフィルム、ホスピタリティ・レストランコンテンツ。九州・日本全国で対応。',
     },
     h1: {
@@ -140,7 +140,7 @@ export const locationPages: LandingPage[] = [
       ja: '東京の映像制作会社｜海外ブランド向け｜Streetshow Productions',
     },
     metaDescription: {
-      en: 'Tokyo video production and local crew for international brands and overseas agencies. Brand films, paid social, 3D billboards, and campaign launches with bilingual coordination.',
+      en: 'Tokyo video production and local crew for international brands and overseas agencies. Brand films, paid social, 3D billboards, and bilingual campaign launches.',
       ja: '海外ブランド・海外エージェンシー向けの東京映像制作とローカルクルー。ブランドフィルム、有料ソーシャル、3Dビルボード、キャンペーンローンチをバイリンガル対応で。',
     },
     h1: {
@@ -239,7 +239,7 @@ export const locationPages: LandingPage[] = [
       ja: '日本の英語対応映像クルー｜全国制作対応｜Streetshow Productions',
     },
     metaDescription: {
-      en: 'English-speaking video crew and local production support in Japan for overseas brands and agencies. Crew, gear, locations, and bilingual coordination across Fukuoka, Tokyo, Osaka, and Kyoto.',
+      en: 'English-speaking video crew and production support in Japan for overseas brands and agencies. Crew, gear, locations, and bilingual coordination nationwide.',
       ja: '海外ブランド・エージェンシー向けの日本の英語対応映像クルーとローカル制作支援。福岡、東京、大阪、京都でクルー、機材、ロケーション、バイリンガルコーディネートを提供。',
     },
     h1: {
@@ -343,7 +343,7 @@ export const industryPages: LandingPage[] = [
       ja: '日本のラグジュアリーホテル向けクリエイティブ戦略・映像制作｜Streetshow',
     },
     metaDescription: {
-      en: 'Creative strategy and video production for luxury hotels, resorts, and destination properties in Japan. Content built to lift booking intent, not just look beautiful.',
+      en: 'Creative strategy and video production for luxury hotels, resorts, and destinations in Japan. Content built to lift booking intent, not just look beautiful.',
       ja: '日本のラグジュアリーホテル、リゾート、デスティネーション施設向けのクリエイティブ戦略と映像制作。美しいだけでなく、予約意向を高めるコンテンツ。',
     },
     h1: {
@@ -369,7 +369,7 @@ export const industryPages: LandingPage[] = [
       {
         heading: { en: 'For Hotels, Resorts, Restaurants, and Destination Properties', ja: 'ホテル、リゾート、レストラン、デスティネーション施設のために' },
         body: {
-          en: 'Premium properties often have world-class spaces and weak digital demand. The gap is rarely the product. It is how the property is presented, localized, and surfaced to the guest who is deciding where to book.',
+          en: 'Premium properties often have exceptional spaces and weak digital demand. The gap is rarely the product. It is how the property is presented, localized, and surfaced to the guest who is deciding where to book.',
           ja: 'プレミアム施設は、世界水準の空間を持ちながら、デジタル需要が弱いことがよくあります。その差は、多くの場合、商品ではありません。施設がどう見せられ、ローカライズされ、予約先を選ぶゲストにどう届くかです。',
         },
       },
@@ -442,7 +442,7 @@ export const industryPages: LandingPage[] = [
       ja: '海外ブランドの日本参入クリエイティブパートナー｜Streetshow',
     },
     metaDescription: {
-      en: 'Japan launch support for global brands. Strategy, localization, production, and campaign execution so your brand resonates with Japanese buyers, not just gets translated.',
+      en: 'Japan launch support for global brands. Strategy, localization, production, and campaigns so your brand resonates with Japanese buyers, not just translated.',
       ja: 'グローバルブランドの日本ローンチ支援。戦略、ローカライズ、制作、キャンペーン実行で、翻訳にとどまらず日本の買い手に響くブランドへ。',
     },
     h1: {
@@ -540,7 +540,7 @@ export const industryPages: LandingPage[] = [
       ja: '日本のレストラン映像制作・集客戦略｜Streetshow',
     },
     metaDescription: {
-      en: 'Content and visibility strategy that helps restaurants in Japan get found, trusted, and booked. Google Maps, Instagram, and short-form video for domestic and inbound diners.',
+      en: 'Visibility strategy that helps restaurants in Japan get found, trusted, and booked. Google Maps, Instagram, and short-form video for local and inbound diners.',
       ja: '日本のレストランが見つかり、信頼され、予約されるためのコンテンツ・集客戦略。国内・インバウンドの食客に向けたGoogleマップ、Instagram、短尺動画。',
     },
     h1: {

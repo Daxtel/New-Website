@@ -5,13 +5,13 @@ import { useEffect, useRef } from 'react';
  * Cinematic film grain overlay using SVG feTurbulence noise.
  * Animates the base frequency every ~100ms so the grain "moves"
  * like real film stock. Fixed position, pointer-events-none.
- * Opacity: 4%, barely visible but adds tactile depth on dark BGs.
+ * Opacity: 4% — barely visible but adds tactile depth on dark BGs.
  */
 export function FilmGrain() {
   const filterRef = useRef<SVGFETurbulenceElement>(null);
 
   useEffect(() => {
-    // Respect prefers-reduced-motion, don't animate grain
+    // Respect prefers-reduced-motion — don't animate grain
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 

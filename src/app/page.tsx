@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: isJa
       ? '福岡・東京を拠点とする戦略先行のクリエイティブ制作スタジオ。3Dアナモルフィックビルボード、ブランド映像、日本市場ローカライズ。ニューバランス、SHEIN Japan、リッツ・カールトンとの実績。'
-      : 'Strategy-first creative production in Fukuoka and Tokyo. 3D anamorphic billboards, brand video, Japan market localization. Clients include New Balance, SHEIN Japan, Ritz-Carlton.',
+      : 'Strategy-first studio in Fukuoka and Tokyo. 3D anamorphic billboards, brand video, and Japan localization for New Balance, SHEIN Japan, Ritz-Carlton.',
     alternates: buildAlternates('/', locale),
   };
 }

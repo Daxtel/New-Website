@@ -73,7 +73,7 @@ export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to exp
       // Only intercept when scrolled far enough into the section
       const rect = container!.getBoundingClientRect();
       if (rect.top > window.innerHeight * 0.5) return; // not yet in view
-      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // horizontal trackpad, let it pass
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // horizontal trackpad — let it pass
 
       const atStart = rawX.get() >= 0;
       const atEnd   = rawX.get() <= -maxDrag;
@@ -169,7 +169,7 @@ export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to exp
         />
       </div>
 
-      {/* Drag hint, fades out after first interaction */}
+      {/* Drag hint — fades out after first interaction */}
       <DragHint x={rawX} label={dragLabel} />
     </div>
   );

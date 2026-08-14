@@ -4,7 +4,7 @@
  * CONTACT_TO_EMAIL supports a comma-separated list so the shared inbox and the
  * owner can both be notified, e.g. "admin@streetshowproduction.com, owner@...".
  * Whitespace is trimmed and empty entries dropped. If the variable is unset or
- * empty, leads fall back to the monitored admin inbox, never a personal address.
+ * empty, leads fall back to the monitored admin inbox — never a personal address.
  */
 const FALLBACK_TO = 'admin@streetshowproduction.com';
 

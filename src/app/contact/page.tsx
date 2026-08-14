@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: isJa
       ? '日本市場参入、ホスピタリティの再構築、プレミアムキャンペーン制作、ローカライズ主導のブランド案件についてStreetshow Productionsにご相談ください。24時間以内にご返信します。'
-      : 'Contact Streetshow Productions about Japan market entry, hospitality repositioning, premium campaign execution, and localization-led brand work. We respond within 24 hours.',
+      : 'Contact Streetshow Productions about Japan market entry, hospitality repositioning, premium campaigns, and localization-led brand work. Reply within 24 hours.',
     alternates: buildAlternates('/contact', locale),
   };
 }

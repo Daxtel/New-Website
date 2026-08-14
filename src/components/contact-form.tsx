@@ -88,7 +88,10 @@ function FloatSelect({
   options: string[]; onChange: (v: string) => void;
 }) {
   const [focused, setFocused] = useState(false);
-  const lifted = focused || value.length > 0;
+  // A <select> always paints its current option (here the "Select one" placeholder),
+  // so unlike FloatField there is never an empty box for a centred label to sit in.
+  // Keep the label permanently in the lifted position to avoid colliding with it.
+  const lifted = true;
 
   return (
     <div className="relative border border-[#D4AF37]/15 bg-[#141414] transition-colors duration-300 focus-within:border-[#D4AF37]/50">
@@ -100,7 +103,7 @@ function FloatSelect({
       />
       <motion.label
         htmlFor={id}
-        className="pointer-events-none absolute left-4 z-10 font-medium uppercase tracking-[0.12em] text-[#D4AF37]/60 select-none"
+        className="pointer-events-none absolute left-4 font-medium uppercase tracking-[0.12em] text-[#D4AF37]/60 select-none"
         animate={lifted
           ? { top: '6px', fontSize: '9px', opacity: 0.7 }
           : { top: '50%', fontSize: '12px', opacity: 1 }}
@@ -249,13 +252,13 @@ export function ContactForm({ locale = 'en' }: Props) {
       setFormData({ ...EMPTY_FORM });
     } catch {
       setStatus('error');
-      setErrorMsg(locale === 'en' ? 'Network error, please try again.' : 'ネットワークエラー。再度お試しください。');
+      setErrorMsg(locale === 'en' ? 'Network error — please try again.' : 'ネットワークエラー。再度お試しください。');
     }
   }
 
   return (
     <form onSubmit={onSubmit} className="space-y-5 md:space-y-6">
-      {/* Honeypot, hidden from real users; bots that fill it are rejected server-side. */}
+      {/* Honeypot — hidden from real users; bots that fill it are rejected server-side. */}
       <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="company_url">Company URL (leave blank)</label>
         <input
@@ -321,7 +324,7 @@ export function ContactForm({ locale = 'en' }: Props) {
             initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
             className="text-sm text-[#D4AF37]"
           >
-            {locale === 'en' ? "Inquiry submitted, we'll be in touch shortly." : 'お問い合わせを受け付けました。近日中にご連絡します。'}
+            {locale === 'en' ? "Inquiry submitted — we'll be in touch shortly." : 'お問い合わせを受け付けました。近日中にご連絡します。'}
           </motion.p>
         )}
       </AnimatePresence>

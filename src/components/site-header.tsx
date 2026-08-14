@@ -21,7 +21,7 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const prev = lastY.current;
     const nowAtTop = latest < 20;
-    // Reveal immediately when back at top, no secondary effect needed
+    // Reveal immediately when back at top — no secondary effect needed
     if (nowAtTop) {
       setHidden(false);
     } else if (latest > 80 && latest > prev + 4) {
@@ -74,7 +74,7 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
                 <path fillRule="evenodd" clipRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
               </svg>
             </button>
-            {/* Panel, appears on hover; padding-top bridges the gap to keep hover alive */}
+            {/* Panel — appears on hover; padding-top bridges the gap to keep hover alive */}
             <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className="overflow-hidden rounded-lg border border-[#D4AF37]/15 bg-[#0A0A0A]/98 shadow-[0_10px_40px_rgba(0,0,0,0.6)] backdrop-blur-md">
                 {industryPages.map((page) => (

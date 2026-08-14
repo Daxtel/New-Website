@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import { useMagnetic } from '@/hooks/useMagnetic';
 import { localizeHref } from '@/lib/alternates';
 
-// Loaded client-side only, Three.js / WebGL
+// Loaded client-side only — Three.js / WebGL
 const ParticleFieldScene = dynamic(
   () => import('./ParticleFieldScene').then((m) => m.ParticleFieldScene),
   { ssr: false, loading: () => null }
@@ -67,7 +67,7 @@ export function AnimatedHero({
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Detect touch/mobile device, skip Framer Motion on mobile for reliability
+  // Detect touch/mobile device — skip Framer Motion on mobile for reliability
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     startTransition(() => setIsMobile(window.matchMedia('(hover: none)').matches));
@@ -82,7 +82,7 @@ export function AnimatedHero({
   const headlineDuration = 0.1 + words.length * 0.08 + 0.55; // delayChildren + stagger + word anim
 
   // Static branch: mobile devices + reduced-motion users
-  // Content is always fully visible, no opacity 0 initial state that could get stuck
+  // Content is always fully visible — no opacity 0 initial state that could get stuck
   if (shouldReduceMotion || isMobile) {
     return (
       <section
@@ -121,12 +121,12 @@ export function AnimatedHero({
       ref={sectionRef}
       className="relative overflow-hidden border-b border-[#D4AF37]/10 min-h-[85svh] flex items-center"
     >
-      {/* WebGL particle field, fills hero, fades at 70% opacity so text stays readable */}
+      {/* WebGL particle field — fills hero, fades at 70% opacity so text stays readable */}
       <div className="absolute inset-0 opacity-70 pointer-events-none">
         <ParticleFieldScene />
       </div>
 
-      {/* Subtle grid, keeps depth on top of particles */}
+      {/* Subtle grid — keeps depth on top of particles */}
       <motion.div
         style={{ y: bgY }}
         className="absolute inset-0 opacity-[0.025] pointer-events-none [background-image:linear-gradient(rgba(212,175,55,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.4)_1px,transparent_1px)] [background-size:80px_80px]"
@@ -144,7 +144,7 @@ export function AnimatedHero({
             {eyebrow}
           </motion.p>
 
-          {/* Headline, word by word */}
+          {/* Headline — word by word */}
           <motion.h1
             variants={container}
             initial="hidden"

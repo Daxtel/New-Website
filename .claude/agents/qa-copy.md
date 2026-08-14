@@ -24,8 +24,12 @@ Getting a client's city wrong shipped to production once already (fixed in commi
 - Other delivered clients: New Balance Japan, SHEIN Japan, TATA, Kubota Spears,
   QC Running, TV5, JTL E-Commerce, KUOE Kyoto, Fuditalyco, SOUMEI Champagne,
   Charles & Keith.
-- The JTL figure is "$800K revenue in 8 months". Do not let it drift to a different
-  number or timeframe in different places. Cross-check every instance.
+- JTL has two DIFFERENT, both-true figures that measure different things — never
+  conflate them: the site cites **"over $200,000 USD in Shopify revenue in eight
+  months"** (scoped to Shopify), while total revenue across all channels is ~$800K.
+  Do NOT "correct" the $200K Shopify figure to $800K — that would publish "$800,000
+  in Shopify revenue", which is false. Flag any instance that drops the "Shopify"
+  scope or conflates the two; the owner approves the exact wording.
 - Company founded 2013. Based Fukuoka and Tokyo. Team across Japan, France, Kigali.
 
 ## Brand voice (from CLAUDE.md)

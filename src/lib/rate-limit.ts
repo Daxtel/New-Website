@@ -3,16 +3,16 @@
  *
  * Two layers, both fail-open (never block a legitimate user if the store is down):
  *
- *  1. Honeypot, a hidden field ("company_url") that real users never fill.
+ *  1. Honeypot — a hidden field ("company_url") that real users never fill.
  *     Bots that auto-fill every input trip it. Zero infra.
  *
- *  2. Distributed limiter (optional), sliding window keyed by IP, backed by
+ *  2. Distributed limiter (optional) — sliding window keyed by IP, backed by
  *     Upstash Redis. Dormant until UPSTASH_REDIS_REST_URL + _TOKEN are set, so
  *     there is no dependency to provision before deploy. When configured, it
  *     caps each IP to MAX_REQUESTS per WINDOW_SECONDS.
  *
  * For hard, edge-level limits without code, configure Vercel Firewall rate
- * limiting rules in the dashboard instead, that runs before the function.
+ * limiting rules in the dashboard instead — that runs before the function.
  */
 
 const WINDOW_SECONDS = 60 * 10; // 10 minutes
