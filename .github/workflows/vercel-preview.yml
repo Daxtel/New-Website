@@ -26,6 +26,11 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      # Deterministic regression guards. Every check encodes a defect that has
+      # already shipped to production once. See scripts/qa-guards.mjs.
+      - name: QA guards
+        run: npm run qa
+
       - name: Build
         run: npm run build
 

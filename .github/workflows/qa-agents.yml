@@ -1,0 +1,93 @@
+name: QA Agents
+
+# Layer 2 of the release gate.
+#
+# Layer 1 (`npm run qa` in the deploy workflows) catches regressions that can be
+# expressed as a rule. It is free and runs on every push.
+#
+# This layer handles what a rule cannot judge: whether the site LOOKS right,
+# whether the Japanese READS naturally to a native speaker, whether the motion
+# FEELS smooth. Four specialists review in parallel, then a release gate
+# consolidates them into one verdict. Agent definitions live in .claude/agents/.
+#
+# REQUIRES the repository secret ANTHROPIC_API_KEY. Without it this workflow is
+# skipped, and only Layer 1 protects the merge.
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# A new push supersedes an in-flight review of the same PR.
+concurrency:
+  group: qa-agents-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    # Skipped rather than failed when the key is absent, so external
+    # contributions do not show a red check they cannot fix.
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (agents review the built site, not just source)
+        run: npm run build
+
+      - name: Guard — API key present
+        id: guard
+        run: |
+          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
+            echo "ANTHROPIC_API_KEY is not set — skipping agent review."
+            echo "Layer 1 (npm run qa) still gates this merge."
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run QA agents
+        if: steps.guard.outputs.enabled == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review this pull request against the Streetshow Productions QA standard.
+
+            Run these four agents. They are independent — run them concurrently,
+            in a single message with multiple tool calls:
+              - qa-visual        (layout and design system, at 390 / 768 / 1440px)
+              - qa-copy          (brand voice, client facts, SEO metadata)
+              - qa-i18n          (EN/JA correctness and translation quality)
+              - qa-motion-perf   (animation, scroll, video playback, load budgets)
+
+            Their definitions are in .claude/agents/. Follow each one exactly.
+
+            Every agent MUST report findings at mobile AND desktop. A report that
+            covers only desktop is invalid — send it back and have it redone.
+            Desktop-only verification is precisely what let the mobile video defect
+            reach clients.
+
+            Then run qa-release-gate with all four reports and post its verdict as a
+            PR comment. Open the comment with the verdict line so it is visible
+            without expanding.
+
+            If the verdict is BLOCKED, exit non-zero so the check fails. The owner
+            has explicitly chosen a hard gate: any blocker stops the merge. Do not
+            soften it, do not offer a workaround, do not merge anyway.
