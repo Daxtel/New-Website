@@ -45,7 +45,7 @@ export const workPage = {
   filterLabel: 'Filter by focus',
   ctaTitle: 'Discuss a Similar Project',
   ctaBody:
-    'Streetshow Productions supports premium campaigns, Japan-market launches, and high-stakes brand execution where local relevance and quality materially affect outcomes.',
+    'Streetshow Productions supports premium campaigns, Japan-market launches, and high-stakes brand execution where local relevance and quality decide whether a launch earns trust in-market.',
   items: [
     {
       title: '3D Anamorphic Billboard in Shibuya',
@@ -102,7 +102,7 @@ export const aboutPage = {
   operatingEdge:
     'Fukuoka & Tokyo, Japan. Bilingual in EN/JP. Structured for both local execution and international stakeholder alignment. Streetshow supports premium brands that need more than translation, they need local credibility, refined execution, and market-aware judgment.',
   credibility:
-    'Streetshow Productions supports premium brands where strategic clarity, cultural nuance, and execution quality materially affect outcomes.',
+    'Streetshow Productions supports premium brands where strategic clarity, cultural nuance, and execution quality decide whether the market responds.',
   bestFit: [
     'Brands entering or repositioning in Japan',
     'Teams that need strategy and execution together',
@@ -113,7 +113,7 @@ export const aboutPage = {
 export const contactPage = {
   title: 'Discuss Your Project',
   subtitle:
-    'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality materially affect outcomes.',
+    'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality separate a launch that earns attention from one that gets overlooked.',
   qualification:
     'Best suited for Japan market entry, hospitality repositioning, premium campaign execution, and localization-led brand work.',
   reassurance:

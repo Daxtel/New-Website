@@ -100,7 +100,7 @@ export default async function WorkPage() {
             <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-body-text md:text-lg">
               {locale === 'ja'
                 ? 'Streetshow Productionsは、ローカル適合性と品質が成果に直結する、プレミアムキャンペーン、日本市場ローンチ、ハイステークスなブランド実行を支援します。'
-                : 'Streetshow Productions supports premium campaigns, Japan-market launches, and high-stakes brand execution where local relevance and quality materially affect outcomes.'}
+                : 'Streetshow Productions supports premium campaigns, Japan-market launches, and high-stakes brand execution where local relevance and quality decide whether the work travels or falls flat.'}
             </p>
             <div className="mt-8">
               <Link

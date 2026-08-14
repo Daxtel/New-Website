@@ -428,7 +428,7 @@ export const industryPages: LandingPage[] = [
     cta: {
       title: { en: 'Planning a hotel launch, repositioning, or campaign?', ja: 'ホテルのローンチ、再構築、キャンペーンを計画中ですか？' },
       body: {
-        en: 'We work with selected hospitality brands where guest perception and booking intent materially affect results. Tell us about your property.',
+        en: 'We work with selected hospitality brands where guest perception and booking intent decide whether rooms get booked. Tell us about your property.',
         ja: 'ゲスト認知と予約意向が成果に大きく影響する、厳選されたホスピタリティブランドと仕事をしています。御社の施設についてお聞かせください。',
       },
     },

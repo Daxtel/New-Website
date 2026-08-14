@@ -23,13 +23,16 @@ The tablet width matters more than it looks. Site code branches on the CSS media
 `(hover: none)`, which is true for iPads. Anything gated behind that query changes
 behaviour at tablet width even though the screen is large. Always check it.
 
-## Design system (established commit a52609b, refined 3db0cdf)
-- Headings: `Sora`, warm white `#F3F1EC`. NOT gold.
-- Body: `Inter` / `Noto Sans JP`, warm neutral `#C9C6BE`.
+## Design system (established commit a52609b, refined 3db0cdf; heading-colour rule set by owner 2026-08)
+- Headings: `Sora`. Warm white `#F3F1EC` OR gold `#D4AF37` are BOTH on-brand — the
+  owner has explicitly chosen to keep gold section headings. Do NOT report a gold
+  heading as a violation.
+- Body: `Inter` / `Noto Sans JP`, warm neutral `#C9C6BE`. Gold on a long-form body
+  paragraph is still off-system; a short gold accent/intro line is acceptable.
 - Eyebrows / kickers / labels: `IBM Plex Mono`, uppercase, `letter-spacing: 0.2em`,
   class `.eyebrow`. Gold `#D4AF37` is permitted here.
-- Gold `#D4AF37` is an ACCENT ONLY — eyebrows, CTAs, links, hover states.
-  Gold on a heading or body paragraph is a violation. Report it.
+- Gold `#D4AF37` is used for eyebrows, CTAs, links, hover states, AND headings.
+  The off-token second gold `#C9A84C` should still collapse to `#D4AF37` — report that.
 - Cards/boxes: hairline `border-white/8`, faint `bg-white/[0.02]`, padding `p-6`.
   Heavy gold borders or `p-8` are pre-refactor leftovers. Report them.
 - Headline scale is capped and unified. A one-off `clamp()` above the shared

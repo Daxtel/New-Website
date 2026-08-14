@@ -210,7 +210,7 @@ export default async function Home() {
             <p className="mx-auto mt-6 max-w-3xl text-[15px] leading-relaxed text-body-text lg:text-xl">
               {pick(
                 {
-                  en: 'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality materially affect outcomes. If that describes your situation, we should discuss fit.',
+                  en: 'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality decide whether a launch lands or stalls. If that describes your situation, we should discuss fit.',
                   ja: 'Streetshow Productionsは、戦略の明確さ、文化的ニュアンス、実行品質が成果を大きく左右する場面で、厳選されたブランドや事業者を支援します。ご状況に当てはまる場合は、適合性についてご相談ください。',
                 },
                 locale,

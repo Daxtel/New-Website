@@ -133,7 +133,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           ]}
           ctaHeading={pick(ui.sections.interestedSimilar, locale)}
           ctaBody={pick({
-            en: 'Streetshow Productions supports premium campaigns, Japan-market launches, and high-stakes brand execution where local relevance and quality materially affect outcomes.',
+            en: 'Streetshow Productions supports premium campaigns, Japan-market launches, and high-stakes brand execution where local relevance and quality determine whether a campaign converts.',
             ja: 'Streetshow Productionsは、ローカルでの適合性と品質が成果を左右するプレミアムキャンペーン、日本市場向けローンチ、高水準のブランド実行を支援します。',
           }, locale)}
           ctaButtonLabel={pick(ui.cta.letsTalk, locale)}

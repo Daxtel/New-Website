@@ -715,7 +715,7 @@ export const serviceCatalog: CatalogService[] = [
         },
         {
           q: 'What results can clients expect from a full live commerce growth system?',
-          a: 'Results vary by category and inventory depth. As a reference point, our JTL engagement generated more than 200,000 USD in Shopify revenue in eight months through combined live commerce, community, email, and paid acquisition.',
+          a: 'Results vary by category and inventory depth. As a reference point, our JTL engagement generated more than 200,000 USD in Shopify revenue in eight months, part of roughly 800,000 USD in total revenue across channels, through combined live commerce, community, email, and paid acquisition.',
         },
         {
           q: 'Does Streetshow train the internal client team?',
@@ -733,7 +733,7 @@ export const serviceCatalog: CatalogService[] = [
         },
         {
           q: 'フルライブコマースグロースシステムでどのような成果が期待できますか？',
-          a: 'カテゴリーや在庫規模により異なりますが、参考事例としてJTL案件では、ライブコマース、コミュニティ、メール、有料獲得を組み合わせた結果、8ヶ月で20万米ドル以上のShopify売上を生み出しました。',
+          a: 'カテゴリーや在庫規模により異なりますが、参考事例としてJTL案件では、ライブコマース、コミュニティ、メール、有料獲得を組み合わせた結果、8ヶ月で20万米ドル以上のShopify売上（全チャネル合計では約80万米ドル）を生み出しました。',
         },
         {
           q: 'クライアント社内チームへのトレーニングも含まれますか？',
@@ -1408,8 +1408,8 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'JTL：日本ラグジュアリー中古品ライブコマース＆Shopifyグロース',
     },
     proofLine: {
-      en: 'Live Commerce · Shopify DTC · US & EU Wholesale · $200K+ in 8 Months',
-      ja: 'ライブコマース・Shopify DTC・米欧ホールセール・8ヶ月で20万米ドル超',
+      en: 'Live Commerce · Shopify DTC · US & EU Wholesale · $800K+ in 8 Months',
+      ja: 'ライブコマース・Shopify DTC・米欧ホールセール・8ヶ月で80万米ドル超',
     },
     client: 'JTL Kabushiki Gaisha',
     year: '2024',
@@ -1423,8 +1423,8 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'Streetshowが福岡のラグジュアリー中古品ブランドJTLを、8ヶ月で20万米ドル超のShopify売上にスケールした事例。ライブコマース、WhatsAppコミュニティ、メール、Meta・Google広告、米欧ホールセール獲得を組み合わせました。',
     },
     intro: {
-      en: 'JTL Kabushiki Gaisha is a Fukuoka-based luxury pre-owned brand selling authenticated Gucci, Chanel, Dior, and Louis Vuitton inventory. Streetshow built their end-to-end growth system, live commerce, community, Shopify, email, paid media, and cross-border wholesale, generating over $200,000 USD in Shopify revenue in eight months.',
-      ja: 'JTL株式会社は、正規品認定されたGucci、Chanel、Dior、Louis Vuittonの在庫を取り扱う福岡拠点のラグジュアリー中古品ブランドです。Streetshowはライブコマース、コミュニティ、Shopify、メール、ペイドメディア、越境ホールセールを含むエンドツーエンドのグロースシステムを構築し、8ヶ月で20万米ドル超のShopify売上を生み出しました。',
+      en: 'JTL Kabushiki Gaisha is a Fukuoka-based luxury pre-owned brand selling authenticated Gucci, Chanel, Dior, and Louis Vuitton inventory. Streetshow built their end-to-end growth system, live commerce, community, Shopify, email, paid media, and cross-border wholesale, generating over $200,000 USD in Shopify revenue in eight months, part of roughly $800,000 USD in total revenue across all channels.',
+      ja: 'JTL株式会社は、正規品認定されたGucci、Chanel、Dior、Louis Vuittonの在庫を取り扱う福岡拠点のラグジュアリー中古品ブランドです。Streetshowはライブコマース、コミュニティ、Shopify、メール、ペイドメディア、越境ホールセールを含むエンドツーエンドのグロースシステムを構築し、8ヶ月で20万米ドル超のShopify売上（全チャネル合計では約80万米ドル）を生み出しました。',
     },
     description: {
       en: 'Japan luxury pre-owned case study. Streetshow built JTL’s full live commerce and Shopify growth system in eight months, reaching both Japanese buyers and US and EU wholesale resellers.',
@@ -1514,8 +1514,8 @@ export const projectCatalog: CatalogProject[] = [
         ja: '有料側では、Meta広告とGoogle広告を2トラックで並行運用しました。トラック1はシーズンプロモーションと需要ピークに合わせた商品別キャンペーンでエンドコンシューマーをターゲットにし、トラック2は米国および欧州のホールセールバイヤー・リセラーをターゲットにし、在庫をまとめて購入するB2Bクライアントを獲得しました。併せて、引き継ぎ後に社内で運用が独立して回るよう、JTL社内チームへコンテンツ制作とShopify運用のトレーニングを実施しました。',
       },
       outcome: {
-        en: 'Over eight months JTL generated more than $200,000 USD in Shopify revenue through the combined system, live commerce, WhatsApp community, email lifecycle, Meta and Google paid campaigns, and wholesale acquisition from US and European resellers. The system handed back to JTL is fully operational and team-owned.',
-        ja: '8ヶ月の間に、JTLはライブコマース、WhatsAppコミュニティ、メールライフサイクル、Meta・Google有料キャンペーン、米欧リセラーからのホールセール獲得を組み合わせたシステムを通じて、20万米ドル超のShopify売上を生み出しました。JTLに引き渡されたシステムは完全に運用可能で、社内チームが所有しています。',
+        en: 'Over eight months JTL generated more than $200,000 USD in Shopify revenue, part of roughly $800,000 USD in total revenue across all channels, through the combined system, live commerce, WhatsApp community, email lifecycle, Meta and Google paid campaigns, and wholesale acquisition from US and European resellers. The system handed back to JTL is fully operational and team-owned.',
+        ja: '8ヶ月の間に、JTLはライブコマース、WhatsAppコミュニティ、メールライフサイクル、Meta・Google有料キャンペーン、米欧リセラーからのホールセール獲得を組み合わせたシステムを通じて、20万米ドル超のShopify売上（全チャネル合計では約80万米ドル）を生み出しました。JTLに引き渡されたシステムは完全に運用可能で、社内チームが所有しています。',
       },
     },
     relatedServices: ['live-commerce-growth-japan', 'japan-market-localization', 'video-production-japan'],

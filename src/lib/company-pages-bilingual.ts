@@ -25,7 +25,7 @@ export const aboutPageBilingual = {
 export const contactPageBilingual = {
   title: { en: 'Discuss Your Project', ja: 'プロジェクトについて相談する' },
   subtitle: {
-    en: 'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality materially affect outcomes.',
+    en: 'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality are the difference between a launch that converts and one that gets ignored.',
     ja: 'Streetshow Productionsは、戦略の明確さ、文化的な適合、実行品質が成果に大きく影響するブランドや事業者を支援します。',
   },
   qualification: {
