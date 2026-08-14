@@ -13,13 +13,16 @@ import {
   websiteSchema,
 } from '@/components/json-ld';
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isJa = locale === 'ja';
+  return {
   metadataBase: new URL(site.url),
   title: {
     default: `${site.name} | Japan Market Entry & Premium Creative Execution`,
     template: `%s | ${site.name}`,
   },
-  description: pick(site.description, 'en'),
+  description: pick(site.description, locale),
   keywords: [
     'Japan market entry',
     'Japan localization',
@@ -29,11 +32,11 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: site.name,
-    description: pick(site.description, 'en'),
-    url: site.url,
+    description: pick(site.description, locale),
+    url: isJa ? `${site.url}/ja` : site.url,
     siteName: site.name,
-    locale: 'en_JP',
-    alternateLocale: 'ja_JP',
+    locale: isJa ? 'ja_JP' : 'en_JP',
+    alternateLocale: isJa ? 'en_JP' : 'ja_JP',
     type: 'website',
     images: [
       {
@@ -47,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: site.name,
-    description: pick(site.description, 'en'),
+    description: pick(site.description, locale),
     images: ['/og-image.jpg'],
   },
   alternates: {
@@ -73,7 +76,8 @@ export const metadata: Metadata = {
   creator: 'Streetshow Productions',
   publisher: 'Streetshow Productions',
   category: 'Creative Production',
-};
+  };
+}
 
 export default async function RootLayout({
   children,
