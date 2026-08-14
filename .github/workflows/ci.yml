@@ -1,0 +1,46 @@
+name: CI
+
+# Lint, deterministic QA guards, and a production build. That is the whole check.
+# Deploys are handled by Vercel's native Git integration (previews for branches/PRs,
+# production for main) — NOT by this workflow. The old vercel-preview.yml /
+# vercel-production.yml ran `npx vercel` steps that needed VERCEL_TOKEN / _ORG_ID /
+# _PROJECT_ID secrets which were never set, so they failed on every push while the
+# native integration quietly shipped the site. Adding the tokens would mean two
+# deploy systems racing, so those steps are gone.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+
+# A newer push supersedes an in-flight run of the same ref.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      # Deterministic regression guards. Every check encodes a defect that has
+      # already shipped to production once. See scripts/qa-guards.mjs.
+      - name: QA guards
+        run: npm run qa
+
+      - name: Build
+        run: npm run build
