@@ -133,7 +133,7 @@ export function ProjectDetailClient({
       {/* ── Body: main content + sticky sidebar ── */}
       <div className="mt-12 grid gap-12 lg:grid-cols-3">
 
-        {/* Main content — 2/3 */}
+        {/* Main content, 2/3 */}
         <div className="lg:col-span-2 space-y-12">
 
           <ScrollReveal>
@@ -217,7 +217,7 @@ export function ProjectDetailClient({
           </div>
         </div>
 
-        {/* ── Sticky sidebar — 1/3 ── */}
+        {/* ── Sticky sidebar, 1/3 ── */}
         <div className="space-y-8">
           <div className="lg:sticky lg:top-24">
             <ScrollReveal direction="left">

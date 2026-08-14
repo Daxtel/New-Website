@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = pick(project.metaDescription, locale);
   const ogImage     = project.media.image || '/og-image.jpg';
   return {
-    // Absolute — metaTitle already includes the brand; avoid double suffix.
+    // Absolute, metaTitle already includes the brand; avoid double suffix.
     title: { absolute: title },
     description,
     openGraph: {

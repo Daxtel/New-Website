@@ -68,7 +68,7 @@ export default async function ServicesPage() {
   const locale = await getLocale();
 
   const servicesItemList = buildItemListSchema({
-    name: 'Services — Streetshow Productions',
+    name: 'Services, Streetshow Productions',
     items: serviceCatalog.map((s) => ({
       name: pick(s.title, locale),
       url: `${site.url}/services/${s.slug}`,

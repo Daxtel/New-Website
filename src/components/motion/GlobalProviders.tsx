@@ -10,7 +10,7 @@ import { FilmGrain } from './FilmGrain';
  *  2. Custom gold cursor (desktop only)
  *  3. Film grain overlay
  *
- * Mount once in layout.tsx — outside any conditional rendering.
+ * Mount once in layout.tsx, outside any conditional rendering.
  */
 export function GlobalProviders({ children }: { children: React.ReactNode }) {
   return (

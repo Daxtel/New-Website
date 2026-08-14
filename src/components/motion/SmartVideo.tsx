@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 /**
- * SmartVideo — video that is always WATCHABLE, on every device.
+ * SmartVideo, video that is always WATCHABLE, on every device.
  *
  * History: this component previously rendered a poster <img> on touch devices and
  * never mounted a <video> at all, so phone and iPad users had no way to play the
@@ -10,7 +10,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
  * removing the product. This version fixes the cause instead:
  *
  *  - Touch devices are served a mobile-weight transcode from /videos/mobile/
- *    (720p max, no audio track, faststart) — typically 70-85% smaller.
+ *    (720p max, no audio track, faststart), typically 70-85% smaller.
  *  - Touch devices show the poster plus a visible play control. Nothing is
  *    downloaded until the user taps, so a grid of cards still costs ~0 bytes of
  *    video, but every video is reachable.

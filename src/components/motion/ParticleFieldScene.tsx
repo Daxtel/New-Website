@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/purity, react-hooks/immutability */
-/* R3F scenes use imperative Three.js patterns — mutating camera.position inside
-   useFrame, seeding geometry with Math.random — that the React Compiler lint rules
+/* R3F scenes use imperative Three.js patterns, mutating camera.position inside
+   useFrame, seeding geometry with Math.random, that the React Compiler lint rules
    flag by design. Both are correct and idiomatic for @react-three/fiber.
    NOTE: the previous directive named `react-compiler/react-compiler`, a rule that no
    longer exists in this toolchain. It silenced nothing and itself errored, which is

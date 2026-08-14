@@ -3,7 +3,7 @@ export default function RestaurantLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Standalone layout — no site header/footer/navigation
+  // Standalone layout, no site header/footer/navigation
   // Landing pages convert better without navigation distractions
   return <>{children}</>;
 }

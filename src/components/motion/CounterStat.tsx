@@ -26,7 +26,7 @@ export function CounterStat({ label, value, delay = 0 }: CounterStatProps) {
 
     // Extract numeric part + surrounding text
     const match = value.match(/^([^0-9]*)(\d[\d,.]*)(.*)$/);
-    if (!match) return; // no number found — just display as-is
+    if (!match) return; // no number found, just display as-is
 
     const [, prefix, numStr, suffix] = match;
     const target = parseFloat(numStr.replace(/,/g, ''));

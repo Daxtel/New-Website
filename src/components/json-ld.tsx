@@ -215,7 +215,7 @@ export function buildItemListSchema(params: {
   };
 }
 
-// Homepage FAQ — tuned for AI citation (ChatGPT, Perplexity, Claude, Gemini)
+// Homepage FAQ, tuned for AI citation (ChatGPT, Perplexity, Claude, Gemini)
 // and Google rich snippets. Every answer is a direct, self-contained sentence.
 export const homeFaqSchema = buildFaqSchema([
   {

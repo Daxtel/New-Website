@@ -21,7 +21,7 @@ export function CustomCursor() {
   const [state, setState] = useState<CursorState>('default');
   const cursorRef = useRef<HTMLDivElement>(null);
 
-  // Raw mouse position (dot — snappy)
+  // Raw mouse position (dot, snappy)
   const dotX = useMotionValue(-100);
   const dotY = useMotionValue(-100);
 
@@ -96,7 +96,7 @@ export function CustomCursor() {
       className="pointer-events-none fixed inset-0 z-[9999] select-none"
       style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.3s' }}
     >
-      {/* Dot — snaps exactly to cursor */}
+      {/* Dot, snaps exactly to cursor */}
       <motion.div
         style={{
           x: dotX,
@@ -113,7 +113,7 @@ export function CustomCursor() {
         className="absolute rounded-full bg-[#D4AF37]"
       />
 
-      {/* Ring — spring lags behind */}
+      {/* Ring, spring lags behind */}
       <motion.div
         style={{
           x: ringX,

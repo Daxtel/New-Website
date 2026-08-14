@@ -249,13 +249,13 @@ export function ContactForm({ locale = 'en' }: Props) {
       setFormData({ ...EMPTY_FORM });
     } catch {
       setStatus('error');
-      setErrorMsg(locale === 'en' ? 'Network error — please try again.' : 'ネットワークエラー。再度お試しください。');
+      setErrorMsg(locale === 'en' ? 'Network error, please try again.' : 'ネットワークエラー。再度お試しください。');
     }
   }
 
   return (
     <form onSubmit={onSubmit} className="space-y-5 md:space-y-6">
-      {/* Honeypot — hidden from real users; bots that fill it are rejected server-side. */}
+      {/* Honeypot, hidden from real users; bots that fill it are rejected server-side. */}
       <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="company_url">Company URL (leave blank)</label>
         <input
@@ -321,7 +321,7 @@ export function ContactForm({ locale = 'en' }: Props) {
             initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
             className="text-sm text-[#D4AF37]"
           >
-            {locale === 'en' ? "Inquiry submitted — we'll be in touch shortly." : 'お問い合わせを受け付けました。近日中にご連絡します。'}
+            {locale === 'en' ? "Inquiry submitted, we'll be in touch shortly." : 'お問い合わせを受け付けました。近日中にご連絡します。'}
           </motion.p>
         )}
       </AnimatePresence>

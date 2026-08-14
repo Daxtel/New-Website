@@ -12,13 +12,13 @@ type Props = {
 const COPY = {
   en: {
     eyebrow: 'Free Guide',
-    title: 'Japan Video Production & Market Entry — Cost & Planning Guide',
+    title: 'Japan Video Production & Market Entry, Cost & Planning Guide',
     body: 'Budget ranges, cost drivers, Fukuoka vs Tokyo, and a pre-quote checklist for brands filming or launching in Japan.',
     placeholder: 'Work email',
     cta: 'Send me the guide',
     sending: 'Sending…',
     successTitle: 'Guide ready.',
-    successBody: 'Check your inbox — or download it now:',
+    successBody: 'Check your inbox, or download it now:',
     download: 'Download the Guide',
     invalid: 'Please enter a valid email address.',
     error: 'Something went wrong. Try again.',
@@ -26,7 +26,7 @@ const COPY = {
   },
   ja: {
     eyebrow: '無料ガイド',
-    title: '日本での映像制作・市場参入 — 費用と計画ガイド',
+    title: '日本での映像制作・市場参入, 費用と計画ガイド',
     body: '費用レンジ、コストドライバー、福岡と東京の違い、見積前チェックリスト。日本で撮影・ローンチするブランド向け。',
     placeholder: '業務用メール',
     cta: 'ガイドを受け取る',
