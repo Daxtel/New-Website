@@ -49,7 +49,7 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}

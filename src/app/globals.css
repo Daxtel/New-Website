@@ -37,6 +37,10 @@ html {
      on desktop; native smooth scroll fights it and causes stutter + dead anchors. */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Clip (not hidden) so the off-canvas mobile drawer can't create a horizontal
+     scrollbar. clip does NOT establish a scroll container, so it leaves the sticky
+     header and Lenis vertical scroll untouched. */
+  overflow-x: clip;
 }
 
 body {

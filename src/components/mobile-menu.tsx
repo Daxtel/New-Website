@@ -34,7 +34,7 @@ export function MobileMenu({ links, ctaLabel, locale = 'en', contactHref = '/con
       {/* Hamburger button */}
       <button
         onClick={() => setOpen(!open)}
-        className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden"
+        className="relative z-50 flex h-11 w-11 items-center justify-center lg:hidden"
         aria-label={open ? 'Close menu' : 'Open menu'}
       >
         <div className="flex flex-col gap-[5px]">
@@ -59,14 +59,14 @@ export function MobileMenu({ links, ctaLabel, locale = 'en', contactHref = '/con
       {/* Overlay */}
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* Slide-out menu */}
       <nav
-        className={`fixed right-0 top-0 z-40 flex h-full w-[280px] flex-col bg-[#0A0A0A] px-8 pt-24 shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed right-0 top-0 z-40 flex h-full w-[280px] flex-col bg-[#0A0A0A] px-8 pt-24 shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
