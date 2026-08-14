@@ -33,7 +33,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* NO scroll-behavior here. Lenis (see motion/LenisProvider) drives smooth scroll
+     on desktop; native smooth scroll fights it and causes stutter + dead anchors. */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -68,8 +69,13 @@ img, video {
   height: auto;
 }
 
-video {
+/* Media that fills a fixed-ratio container opts in explicitly. A blanket
+   `video { height: 100% }` used to override the rule above, so a card rendered
+   at a different height on mobile (poster <img>) than desktop (<video>). */
+.media-fill {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 /* Respect reduced motion preference */
@@ -95,9 +101,17 @@ a {
   color: #F5F5F5;
 }
 
-/* Smooth transitions for interactive elements */
+/* Smooth transitions for interactive elements.
+   Explicit property list on purpose: `transition: all` also animates layout
+   properties, which smears on hover and costs frames. */
 button, a, input, textarea {
-  transition: all 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 /* Premium scrollbar */

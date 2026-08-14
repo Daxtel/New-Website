@@ -1,7 +1,10 @@
-/* eslint-disable react-compiler/react-compiler */
-/* R3F scenes use imperative Three.js patterns (mutating camera.position,
-   Math.random in init, ref access in render) that are incompatible with
-   the React Compiler lint rules. This file is intentionally excluded.    */
+/* eslint-disable react-hooks/purity, react-hooks/immutability */
+/* R3F scenes use imperative Three.js patterns — mutating camera.position inside
+   useFrame, seeding geometry with Math.random — that the React Compiler lint rules
+   flag by design. Both are correct and idiomatic for @react-three/fiber.
+   NOTE: the previous directive named `react-compiler/react-compiler`, a rule that no
+   longer exists in this toolchain. It silenced nothing and itself errored, which is
+   how 7 lint errors sat in this file unnoticed. Keep these rule names in sync. */
 'use client';
 import { useRef, useMemo, useEffect, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
@@ -70,22 +73,26 @@ function CameraRig({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: nu
 export function ParticleFieldScene() {
   const mouse = useRef({ x: 0, y: 0 });
 
-  // Initialise from window at mount — avoids accessing ref in render
-  const [particleCount, setParticleCount] = useState(220);
+  // This component is imported with ssr: false, so window is available in the lazy
+  // initialiser. Deciding here rather than in an effect avoids a second render pass.
+  const [isTouch] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches,
+  );
 
   useEffect(() => {
-    const isMobile = window.matchMedia('(hover: none)').matches;
-    if (isMobile) setParticleCount(0);
-
-    if (!isMobile) {
-      function onMouseMove(e: MouseEvent) {
-        mouse.current.x = (e.clientX / window.innerWidth - 0.5) * 2;
-        mouse.current.y = -(e.clientY / window.innerHeight - 0.5) * 2;
-      }
-      window.addEventListener('mousemove', onMouseMove, { passive: true });
-      return () => window.removeEventListener('mousemove', onMouseMove);
+    if (isTouch) return;
+    function onMouseMove(e: MouseEvent) {
+      mouse.current.x = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouse.current.y = -(e.clientY / window.innerHeight - 0.5) * 2;
     }
-  }, []);
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    return () => window.removeEventListener('mousemove', onMouseMove);
+  }, [isTouch]);
+
+  // Previously this rendered a <Canvas> with count={0} on touch devices: an empty
+  // scene that still allocated a WebGL context, compiled shaders and ran a render
+  // loop for nothing. Skip the canvas entirely instead.
+  if (isTouch) return null;
 
   return (
     <Canvas
@@ -94,7 +101,7 @@ export function ParticleFieldScene() {
       dpr={[1, 1.5]}
       style={{ background: 'transparent' }}
     >
-      <Particles count={particleCount} />
+      <Particles count={220} />
       <CameraRig mouse={mouse} />
     </Canvas>
   );

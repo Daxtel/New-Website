@@ -22,7 +22,12 @@
 
 # source media + working files (not part of the deployed site)
 Website  Contents  /
-.claude/
+
+# Claude config: ignore the installed-skills cache (hundreds of vendored JS files),
+# but DO track the QA agent definitions — they are project source and CI depends on them.
+.claude/*
+!.claude/agents/
+!.claude/launch.json
 
 # raw image formats (keep only optimized versions in public/)
 *.tif

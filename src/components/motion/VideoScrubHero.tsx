@@ -13,21 +13,34 @@ function posterFor(src: string): string {
   return src.replace('/videos/', '/videos/posters/').replace(/\.mp4$/, '.jpg');
 }
 
+/** Mobile-weight transcode: 720p max, no audio, faststart. ~70-85% smaller. */
+function mobileSrcFor(src: string): string {
+  return src.replace('/videos/', '/videos/mobile/');
+}
+
 /**
  * VideoScrubHero
  *
- * Full-width video that plays normally on load then scrubs (seeks) as
- * the user scrolls past the section. On mobile / reduced-motion it
- * falls back to a standard autoPlay loop.
+ * Full-width video that plays normally on load then scrubs (seeks) as the user
+ * scrolls past the section.
+ *
+ * Desktop: full-quality file, scrubbed by scroll position.
+ * Mobile:  mobile-weight transcode, muted inline autoplay loop (no scrubbing —
+ *          scroll-driven seeking is unreliable on touch and burns battery).
+ * Reduced motion: poster image only.
  */
 export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const videoRef   = useRef<HTMLVideoElement>(null);
   const durationRef = useRef<number>(0);
   const isMobileRef = useRef(false);
-  // Poster-first by default so the (large) mp4 is never fetched before we know
-  // the device; desktop flips to the scrub video after mount.
+  // Poster-first until the device is known, so no client starts downloading the
+  // wrong-weight file during first paint. Then BOTH paths mount a real video:
+  // desktop scrubs the full-quality file on scroll, mobile autoplays the
+  // mobile-weight transcode inline. This hero is the primary content of the page —
+  // it must never be a still image on a phone.
   const [lite, setLite] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   // Track scroll progress of the section
@@ -47,7 +60,10 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
     const m = window.matchMedia('(hover: none)').matches;
     isMobileRef.current = m;
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLite(m);
+    setIsMobile(m);
+    // Leave the poster-only path ONLY for reduced-motion users.
+     
+    setLite(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   }, []);
 
   // Map scroll progress → video currentTime
@@ -70,9 +86,9 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const isMobile = window.matchMedia('(hover: none)').matches;
+    const touch = window.matchMedia('(hover: none)').matches;
 
-    if (isMobile || shouldReduceMotion) {
+    if (touch || shouldReduceMotion) {
       video.autoplay = true;
       video.loop     = true;
       video.play().catch(() => {});
@@ -102,10 +118,13 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
       ) : (
         <video
           ref={videoRef}
-          src={src}
+          src={isMobile ? mobileSrcFor(src) : src}
+          poster={posterFor(src)}
           muted
+          loop={isMobile}
           playsInline
-          preload="auto"
+          autoPlay={isMobile}
+          preload={isMobile ? 'metadata' : 'auto'}
           onLoadedMetadata={onMetadata}
           className="absolute inset-0 h-full w-full object-cover"
           aria-label={title}
