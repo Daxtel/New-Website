@@ -43,9 +43,18 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
       }}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10 lg:px-16">
-        {/* Logo */}
-        <Link href={localizeHref('/', locale)} className="text-lg font-bold tracking-tight text-[#D4AF37] transition-opacity hover:opacity-75 md:text-xl">
-          STREETSHOW
+        {/* Logo: film-strip mark + wordmark. Mark only below sm so the lockup
+            never crowds the nav on small screens. Height capped at 32–36px. */}
+        <Link
+          href={localizeHref('/', locale)}
+          aria-label={`${site.name} home`}
+          className="flex items-center gap-2.5 transition-opacity hover:opacity-75"
+        >
+          {/* Inline height: globals' unlayered `img{height:auto}` outranks a Tailwind
+              h-8 utility, so the class alone leaves the mark at full size. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-mark-gold.png" alt="" width={234} height={235} style={{ height: 34, width: 'auto' }} />
+          <span className="hidden text-lg font-bold tracking-tight text-[#D4AF37] sm:inline md:text-xl">STREETSHOW</span>
         </Link>
 
         {/* Desktop nav */}

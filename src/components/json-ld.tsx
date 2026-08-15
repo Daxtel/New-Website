@@ -30,7 +30,7 @@ export const organizationSchema = {
   name: 'Streetshow Productions',
   alternateName: ['Streetshow', 'Streetshow Production', 'ストリートショープロダクション'],
   url: site.url,
-  logo: `${site.url}/og-image.jpg`,
+  logo: `${site.url}/icon-512.png`,
   image: `${site.url}/og-image.jpg`,
   description:
     'Strategy-first creative production studio in Japan. Specialists in Japan market entry, localization, luxury hospitality creative, video production, photography, CGI, 3D anamorphic billboards, and live commerce growth systems.',

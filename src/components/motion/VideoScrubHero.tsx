@@ -105,9 +105,11 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
       video.play().then(() => video.pause()).catch(() => {});
       return;
     }
-    // Touch (either orientation) or desktop portrait: attempt muted autoplay,
-    // unless Reduce Motion is on (then wait for a tap).
-    if (!reduced) video.play().catch(() => {});
+    // Desktop portrait autoplays muted inline. TOUCH never autoplays: the poster
+    // shows with a play control and NOTHING downloads until the user taps (the
+    // hero has a real control now, so there is no reason to spend a phone's data
+    // on a video it may never watch).
+    if (!reduced && isTouch === false) video.play().catch(() => {});
   }, [isTouch, reduced, desktopScrub]);
 
   const activate = useCallback(() => {
@@ -126,7 +128,8 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
     media = <img src={poster} alt={title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />;
   } else {
     const videoSrc = isTouch ? (failed ? src : mobileSrcFor(src)) : src;
-    const autoPlay = !reduced && (isTouch === true || portrait); // desktop landscape uses scrub, not autoplay
+    // Autoplay only on desktop portrait. Desktop landscape scrubs; touch waits for a tap.
+    const autoPlay = !reduced && isTouch === false && portrait;
     media = (
       <video
         ref={videoRef}
@@ -137,7 +140,7 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
         loop={(isTouch === true || portrait) && startOffset === 0}
         autoPlay={autoPlay}
         controls={activated}
-        preload={reduced ? 'none' : isTouch ? 'metadata' : 'auto'}
+        preload={isTouch === false && !reduced ? 'auto' : 'none'}
         onLoadedMetadata={onMetadata}
         onPlaying={() => setPlaying(true)}
         onEnded={startOffset > 0 ? () => { const v = videoRef.current; if (v) { v.currentTime = startOffset; v.play().catch(() => {}); } } : undefined}

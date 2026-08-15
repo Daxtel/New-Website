@@ -155,7 +155,7 @@ export function SmartVideo({
         playsInline
         controls={activated}
         autoPlay={shouldAutoplay}
-        preload={shouldAutoplay ? 'metadata' : 'auto'}
+        preload="none"
         onLoadedMetadata={onMeta}
         onEnded={offset > 0 ? onEndedLoop : undefined}
         onError={onError}
