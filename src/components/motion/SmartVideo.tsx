@@ -1,5 +1,6 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { startOffsetFor } from './videoOffsets';
 
 /**
  * SmartVideo — video that is always WATCHABLE, on every device.
@@ -93,6 +94,18 @@ export function SmartVideo({
   // showing a broken player.
   const onError = useCallback(() => setFailed(true), []);
 
+  // Some clips (e.g. KUOE) open on an intro card; start a few seconds in and loop
+  // back to the offset, not to zero, so the intro is never shown.
+  const offset = startOffsetFor(src);
+  const onMeta = useCallback(() => {
+    const v = ref.current;
+    if (v && offset > 0 && v.currentTime < offset) v.currentTime = offset;
+  }, [offset]);
+  const onEndedLoop = useCallback(() => {
+    const v = ref.current;
+    if (v) { v.currentTime = offset; v.play().catch(() => {}); }
+  }, [offset]);
+
   // --- Poster-only, pre-detection ---------------------------------------------
   if (isTouch === null) {
     // eslint-disable-next-line @next/next/no-img-element
@@ -138,11 +151,13 @@ export function SmartVideo({
         src={touchSrc}
         poster={p}
         muted
-        loop
+        loop={offset === 0}
         playsInline
         controls={activated}
         autoPlay={shouldAutoplay}
         preload={shouldAutoplay ? 'metadata' : 'auto'}
+        onLoadedMetadata={onMeta}
+        onEnded={offset > 0 ? onEndedLoop : undefined}
         onError={onError}
         className={className}
         style={style}
@@ -163,9 +178,11 @@ export function SmartVideo({
       src={src}
       poster={p}
       muted
-      loop
+      loop={offset === 0}
       playsInline
       preload="metadata"
+      onLoadedMetadata={onMeta}
+      onEnded={offset > 0 ? onEndedLoop : undefined}
       className={className}
       style={style}
       aria-label={alt || undefined}

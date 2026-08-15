@@ -2,6 +2,7 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import { DeviceFrame } from './DeviceFrame';
+import { startOffsetFor } from './videoOffsets';
 
 interface VideoScrubHeroProps {
   src: string;
@@ -52,6 +53,7 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   const durationRef = useRef<number>(0);
 
   const portrait = isPortraitSrc(src);
+  const startOffset = startOffsetFor(src);
 
   // null = capability not yet known (SSR + first paint) → poster only, no download
   // of the wrong-weight file.
@@ -67,8 +69,11 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   });
 
   const onMetadata = useCallback(() => {
-    if (videoRef.current) durationRef.current = videoRef.current.duration;
-  }, []);
+    const v = videoRef.current;
+    if (!v) return;
+    durationRef.current = v.duration;
+    if (startOffset > 0 && v.currentTime < startOffset) v.currentTime = startOffset;
+  }, [startOffset]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -84,7 +89,7 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
     const video = videoRef.current;
     if (!video || !durationRef.current) return;
     const clamped = Math.min(progress / 0.6, 1); // first 60% of scroll = full duration
-    const target = clamped * durationRef.current;
+    const target = startOffset + clamped * (durationRef.current - startOffset);
     if (Math.abs(video.currentTime - target) > 0.04) video.currentTime = target;
   });
 
@@ -129,12 +134,13 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
         poster={poster}
         muted
         playsInline
-        loop={isTouch === true || portrait}
+        loop={(isTouch === true || portrait) && startOffset === 0}
         autoPlay={autoPlay}
         controls={activated}
         preload={reduced ? 'none' : isTouch ? 'metadata' : 'auto'}
         onLoadedMetadata={onMetadata}
         onPlaying={() => setPlaying(true)}
+        onEnded={startOffset > 0 ? () => { const v = videoRef.current; if (v) { v.currentTime = startOffset; v.play().catch(() => {}); } } : undefined}
         onError={() => setFailed(true)}
         className="absolute inset-0 h-full w-full object-cover"
         aria-label={title}
