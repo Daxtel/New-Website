@@ -18,6 +18,20 @@ export async function generateMetadata(): Promise<Metadata> {
   const isJa = locale === 'ja';
   return {
   metadataBase: new URL(site.url),
+  // Explicit icons at STABLE public URLs (no build hash) so Google's home-page
+  // favicon crawl always resolves. Mark-only on solid #0A0A0A; sizes are
+  // multiples of 48 per Google's favicon requirements.
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-48.png', type: 'image/png', sizes: '48x48' },
+      { url: '/icon-96.png', type: 'image/png', sizes: '96x96' },
+      { url: '/icon-144.png', type: 'image/png', sizes: '144x144' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
+  },
   title: {
     default: `${site.name} | Japan Market Entry & Premium Creative Execution`,
     template: `%s | ${site.name}`,
