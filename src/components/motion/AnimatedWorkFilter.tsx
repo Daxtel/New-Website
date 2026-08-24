@@ -84,12 +84,12 @@ function WorkCard({
       onMouseMove={onMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => { setTilt({ rx: 0, ry: 0 }); setHovered(false); }}
-      className="group relative block overflow-hidden bg-[#141414] cursor-pointer"
+      className="group relative block overflow-hidden rounded-2xl bg-[#141414] shadow-[0_20px_50px_-16px_rgba(0,0,0,0.55)] cursor-pointer"
       data-cursor-play=""
     >
       {/* Glow border */}
       <motion.div
-        className="pointer-events-none absolute inset-0 z-10"
+        className="pointer-events-none absolute inset-0 z-10 rounded-2xl"
         animate={{
           boxShadow: hovered && !shouldReduceMotion
             ? 'inset 0 0 0 1px rgba(212,175,55,0.55), 0 0 28px rgba(212,175,55,0.12)'

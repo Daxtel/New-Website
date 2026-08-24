@@ -115,7 +115,7 @@ export function ProjectDetailClient({
         {heroVideoSrc ? (
           <VideoScrubHero src={heroVideoSrc} title={title} />
         ) : heroImageSrc ? (
-          <div className="relative aspect-[16/8] overflow-hidden bg-[#1A1A1A]">
+          <div className="relative aspect-[16/8] overflow-hidden rounded-2xl bg-[#1A1A1A]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={heroImageSrc}
@@ -139,7 +139,7 @@ export function ProjectDetailClient({
           <ScrollReveal>
             <div>
               <h2 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{servicesProvidedLabel}</h2>
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="flex flex-wrap gap-3">
                 {servicesProvided.map((item, i) => (
                   <motion.div
                     key={item}
@@ -147,7 +147,7 @@ export function ProjectDetailClient({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.06, ease: EASE }}
-                    className="border border-white/8 bg-white/[0.02] p-5 text-[#D4AF37]/85 transition-colors hover:border-[#D4AF37]/25"
+                    className="rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-5 py-3 text-[#D4AF37]/85"
                   >
                     {item}
                   </motion.div>
@@ -167,7 +167,7 @@ export function ProjectDetailClient({
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.05, ease: EASE }}
-                    className="border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-4 py-2 text-sm text-[#D4AF37]/85"
+                    className="rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-4 py-2 text-sm text-[#D4AF37]/85"
                   >
                     {item}
                   </motion.span>
@@ -221,7 +221,7 @@ export function ProjectDetailClient({
         <div className="space-y-8">
           <div className="lg:sticky lg:top-24">
             <ScrollReveal direction="left">
-              <div className="border border-white/8 bg-white/[0.02] p-6">
+              <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)]">
                 <div className="space-y-6">
                   {[
                     { label: meta.clientLabel,   value: meta.client   },
@@ -245,7 +245,7 @@ export function ProjectDetailClient({
                     <Link
                       key={service.slug}
                       href={localizeHref(`/services/${service.slug}`, locale)}
-                      className="block border border-[#D4AF37]/10 bg-[#141414] p-4 transition-all hover:border-[#D4AF37]/30 cursor-pointer"
+                      className="block rounded-xl border border-white/[0.06] bg-[#141414] p-4 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.5)] transition-all hover:border-[#D4AF37]/25 cursor-pointer"
                     >
                       <span className="text-sm text-[#D4AF37]/85">{service.title}</span>
                     </Link>
@@ -259,7 +259,7 @@ export function ProjectDetailClient({
 
       {/* ── CTA bar ── */}
       <ScrollReveal className="mt-16">
-        <div className="bg-[#D4AF37] p-10 md:p-14">
+        <div className="rounded-2xl bg-[#D4AF37] p-10 md:p-14">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-2xl font-bold text-[#0A0A0A] md:text-3xl">{ctaHeading}</h2>
@@ -280,7 +280,7 @@ export function ProjectDetailClient({
         <ScrollReveal className="mt-8">
           <Link
             href={localizeHref(`/work/${nextProject.slug}`, locale)}
-            className="group relative block overflow-hidden bg-[#141414] cursor-pointer"
+            className="group relative block overflow-hidden rounded-2xl bg-[#141414] shadow-[0_20px_50px_-16px_rgba(0,0,0,0.55)] cursor-pointer"
             data-cursor-play=""
           >
             <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

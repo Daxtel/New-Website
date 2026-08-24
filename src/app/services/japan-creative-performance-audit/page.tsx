@@ -144,7 +144,7 @@ export default async function JapanCreativePerformanceAuditPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-8">
             {p.moments.columns.map((col, i) => (
               <ScrollReveal key={i} delay={i * 0.08}>
-                <div className="h-full border border-white/8 bg-white/[0.02] p-8">
+                <div className="h-full border-l-2 border-[#D4AF37]/25 pl-6">
                   <h3 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(col.title, locale)}</h3>
                   <p className="mt-4 text-base leading-relaxed text-body-text">{pick(col.body, locale)}</p>
                 </div>
@@ -220,7 +220,7 @@ export default async function JapanCreativePerformanceAuditPage() {
       <section className={sectionCls}>
         <div className="mx-auto max-w-4xl">
           <ScrollReveal>
-            <div className="border border-[#D4AF37]/25 bg-white/[0.02] p-8 md:p-12">
+            <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/[0.03] p-8 shadow-[0_24px_60px_-16px_rgba(0,0,0,0.5)] md:p-12">
               <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-text">{pick(p.scope.heading, locale)}</h2>
               <p className="mt-4 text-[clamp(1.8rem,4vw,2.75rem)] font-extrabold leading-none tracking-tight text-[#D4AF37]">
                 {pick(p.scope.price, locale)}
@@ -304,7 +304,7 @@ export default async function JapanCreativePerformanceAuditPage() {
               </ul>
             </ScrollReveal>
             <ScrollReveal direction="left">
-              <div className="flex h-full flex-col justify-center border border-[#D4AF37]/25 bg-white/[0.02] p-8 md:p-10">
+              <div className="flex h-full flex-col justify-center rounded-2xl border border-[#D4AF37]/20 bg-white/[0.03] p-8 shadow-[0_24px_60px_-16px_rgba(0,0,0,0.5)] md:p-10">
                 <p className="text-[clamp(1.5rem,3vw,2.1rem)] font-extrabold leading-none tracking-tight text-[#D4AF37]">
                   {pick(p.implementation.creditAmount, locale)}
                 </p>
@@ -329,7 +329,7 @@ export default async function JapanCreativePerformanceAuditPage() {
                 const projectVideo = (project.media as { video?: string }).video;
                 return (
                   <ScrollReveal key={project.slug} delay={i * 0.08}>
-                    <a href={localizeHref(`/work/${project.slug}`, locale)} className="group block overflow-hidden bg-[#141414] transition-colors hover:bg-[#D4AF37]/5">
+                    <a href={localizeHref(`/work/${project.slug}`, locale)} className="group block overflow-hidden rounded-2xl bg-[#141414] shadow-[0_20px_50px_-16px_rgba(0,0,0,0.55)] transition-colors hover:bg-[#D4AF37]/5">
                       <div className="relative aspect-[16/10] overflow-hidden bg-[#1A1A1A]">
                         {projectVideo ? (
                           <SmartVideo src={projectVideo} alt={pick(project.title, locale)} className="absolute inset-0 h-full w-full object-cover" />
@@ -360,12 +360,12 @@ export default async function JapanCreativePerformanceAuditPage() {
               {locale === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
             </h2>
           </ScrollReveal>
-          <div className="space-y-4">
+          <div className="divide-y divide-white/8">
             {p.faqs.map((item) => (
-              <details key={item.q.en} className="group border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30">
+              <details key={item.q.en} className="group py-6 first:pt-0 last:pb-0">
                 <summary className="cursor-pointer list-none">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-base font-semibold text-[#D4AF37] md:text-lg">{pick(item.q, locale)}</h3>
+                    <h3 className="text-base font-semibold text-[#D4AF37] transition-colors group-hover:text-[#D4AF37]/80 md:text-lg">{pick(item.q, locale)}</h3>
                     <span className="mt-1 text-[#D4AF37] transition-transform group-open:rotate-45">+</span>
                   </div>
                 </summary>
@@ -378,7 +378,7 @@ export default async function JapanCreativePerformanceAuditPage() {
 
       {/* ── Final CTA ── */}
       <section className="px-5 py-20 sm:px-6 md:px-10 md:py-28 lg:px-16">
-        <div className="mx-auto max-w-5xl bg-[#D4AF37] p-10 md:p-16">
+        <div className="mx-auto max-w-5xl rounded-2xl bg-[#D4AF37] p-10 md:p-16">
           <h2 className="max-w-3xl text-[clamp(1.6rem,3.4vw,2.6rem)] font-black uppercase leading-[0.95] tracking-tight text-[#0A0A0A]">
             {pick(p.finalCta.heading, locale)}
           </h2>

@@ -102,11 +102,11 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
               </p>
             )}
             {section.points && (
-              <div className="mt-8 grid gap-4 md:grid-cols-2">
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
                 {section.points.map((point) => (
                   <div
                     key={point.en}
-                    className="border border-white/8 bg-white/[0.02] p-6"
+                    className="border-l-2 border-[#D4AF37]/25 pl-5"
                   >
                     <p className="text-base leading-relaxed text-body-text md:text-lg">
                       {pick(point, locale)}
@@ -131,7 +131,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
                 <Link
                   key={svc!.slug}
                   href={localizeHref(`/services/${svc!.slug}`, locale)}
-                  className="block border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30"
+                  className="block rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)] transition-all hover:border-[#D4AF37]/25"
                 >
                   <h3 className="text-lg font-semibold text-heading">{pick(svc!.title, locale)}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(svc!.intro, locale)}</p>
@@ -154,7 +154,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
                 <Link
                   key={proj!.slug}
                   href={localizeHref(`/work/${proj!.slug}`, locale)}
-                  className="block border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30"
+                  className="block rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)] transition-all hover:border-[#D4AF37]/25"
                 >
                   <h3 className="text-lg font-semibold text-heading">{pick(proj!.title, locale)}</h3>
                   <p className="mt-2 text-sm uppercase tracking-[0.12em] text-white/45">
@@ -187,7 +187,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
       {/* ── CTA ─────────────────────────────────────────────────── */}
       <section className="px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-6xl">
-          <div className="bg-[#D4AF37] p-8 md:p-12 lg:p-14">
+          <div className="rounded-2xl bg-[#D4AF37] p-8 md:p-12 lg:p-14">
             <h2 className="text-2xl font-black uppercase tracking-tight text-[#0A0A0A] md:text-3xl lg:text-4xl">
               {pick(page.cta.title, locale)}
             </h2>

@@ -10,7 +10,7 @@ import type { Locale } from '@/lib/i18n';
 export function AuditScorecard({ locale }: { locale: Locale }) {
   const sc = auditPage.scorecard;
   return (
-    <div className="border border-white/10 bg-white/[0.02] p-6 md:p-8">
+    <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 shadow-[0_24px_60px_-16px_rgba(0,0,0,0.5)] md:p-8">
       <div className="flex items-center justify-between gap-4">
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#D4AF37]">
           {pick(sc.title, locale)}
@@ -44,7 +44,7 @@ export function AuditScorecard({ locale }: { locale: Locale }) {
         {sc.tags.map((tag) => (
           <span
             key={tag.en}
-            className="border border-[#D4AF37]/25 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-[#D4AF37]/85"
+            className="rounded-full border border-[#D4AF37]/25 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-[#D4AF37]/85"
           >
             {pick(tag, locale)}
           </span>

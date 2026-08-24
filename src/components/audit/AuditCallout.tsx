@@ -22,10 +22,12 @@ export function AuditCallout({
   const href = localizeHref(`/services/${auditPage.slug}`, locale);
   // `integrated` reads as part of the surrounding section (hairline card); `accent`
   // is a distinct gold-tinted cross-sell for the JME / localization / services pages.
-  const box = tone === 'integrated' ? 'border-white/8 bg-white/[0.02]' : 'border-[#D4AF37]/20 bg-[#D4AF37]/[0.03]';
+  const box = tone === 'integrated'
+    ? 'border-white/[0.08] bg-white/[0.03] shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)]'
+    : 'border-[#D4AF37]/20 bg-[#D4AF37]/[0.03] shadow-[0_20px_50px_-16px_rgba(212,175,55,0.1)]';
 
   return (
-    <div className={`border p-8 md:p-10 ${box}`}>
+    <div className={`rounded-2xl border p-8 md:p-10 ${box}`}>
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <h3 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">

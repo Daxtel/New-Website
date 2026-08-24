@@ -59,7 +59,7 @@ export default async function HospitalityPage() {
               {pick(shell.sections.why.body, locale)}
             </p>
           </div>
-          <div className="border border-white/8 bg-white/[0.02] p-6">
+          <div className="border-l-2 border-[#D4AF37]/25 pl-6">
             <h3 className="text-xl font-semibold text-heading md:text-2xl">{pick(shell.sections.drivers.title, locale)}</h3>
             <div className="mt-6 space-y-4">
               {shell.sections.drivers.points.map((point) => (
@@ -79,7 +79,7 @@ export default async function HospitalityPage() {
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {shell.sections.support.points.map((point) => (
-              <div key={point.en} className="border border-white/8 bg-white/[0.02] p-6">
+              <div key={point.en} className="border-l-2 border-[#D4AF37]/25 pl-6">
                 <p className="text-lg leading-relaxed text-[#D4AF37] md:text-xl">{pick(point, locale)}</p>
               </div>
             ))}
@@ -94,13 +94,13 @@ export default async function HospitalityPage() {
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2 max-w-5xl">
             {shell.sections.fit.points.map((point) => (
-              <div key={point.en} className="border border-white/8 bg-white/[0.02] p-6">
+              <div key={point.en} className="border-l-2 border-[#D4AF37]/25 pl-6">
                 <p className="text-base leading-relaxed text-body-text md:text-lg">{pick(point, locale)}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 bg-[#D4AF37] p-8 md:p-10 lg:p-12">
+          <div className="mt-12 rounded-2xl bg-[#D4AF37] p-8 md:p-10 lg:p-12">
             <h3 className="text-2xl font-black uppercase tracking-tight text-[#0A0A0A] md:text-3xl lg:text-4xl">
               {pick(shell.sections.cta.title, locale)}
             </h3>

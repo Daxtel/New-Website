@@ -125,13 +125,13 @@ export default async function ServicesPage() {
               {locale === 'ja' ? 'よくある質問' : 'Frequently Asked Questions'}
             </h2>
           </ScrollReveal>
-          <div className="mt-8 space-y-4">
+          <div className="mt-8 divide-y divide-white/8">
             {localeFaqs.map((item, i) => (
               <ScrollReveal key={item.q} delay={i * 0.06}>
-                <details className="group border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30">
+                <details className="group py-6 first:pt-0 last:pb-0">
                   <summary className="cursor-pointer list-none">
                     <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-base font-semibold text-[#D4AF37] md:text-lg">{item.q}</h3>
+                      <h3 className="text-base font-semibold text-[#D4AF37] transition-colors group-hover:text-[#D4AF37]/80 md:text-lg">{item.q}</h3>
                       <span className="mt-1 shrink-0 text-[#D4AF37] transition-transform group-open:rotate-45">+</span>
                     </div>
                   </summary>
@@ -151,7 +151,7 @@ export default async function ServicesPage() {
           </ScrollReveal>
 
           <ScrollReveal className="mt-16">
-          <div className="bg-[#D4AF37] p-8 md:p-10 lg:p-12">
+          <div className="rounded-2xl bg-[#D4AF37] p-8 md:p-10 lg:p-12">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 className="text-2xl font-bold text-[#0A0A0A] md:text-3xl">{pick(ui.sections.discussProject, locale)}</h2>

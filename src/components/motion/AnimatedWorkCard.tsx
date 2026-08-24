@@ -70,12 +70,12 @@ export function AnimatedWorkCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
       style={{ transformStyle: 'preserve-3d', perspective: 800 }}
-      className="group flex h-full flex-col overflow-hidden bg-[#141414] cursor-pointer"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-[#141414] shadow-[0_20px_50px_-16px_rgba(0,0,0,0.55)] cursor-pointer"
       data-cursor-play=""
     >
       {/* Glow border overlay */}
       <motion.div
-        className="pointer-events-none absolute inset-0 z-10 rounded-sm"
+        className="pointer-events-none absolute inset-0 z-10 rounded-2xl"
         animate={{
           boxShadow: hovered && !shouldReduceMotion
             ? 'inset 0 0 0 1px rgba(212,175,55,0.6), 0 0 30px 0 rgba(212,175,55,0.15)'

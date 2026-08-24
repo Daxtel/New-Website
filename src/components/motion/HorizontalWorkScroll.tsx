@@ -95,7 +95,7 @@ export function HorizontalWorkScroll({ items, ctaLabel, dragLabel = 'Drag to exp
           <Link
             key={item.slug}
             href={localizeHref(`/work/${item.slug}`, locale)}
-            className="group flex flex-col overflow-hidden bg-[#141414] border border-[#D4AF37]/10"
+            className="group flex flex-col overflow-hidden rounded-2xl bg-[#141414] border border-white/[0.06] shadow-[0_20px_50px_-16px_rgba(0,0,0,0.55)]"
           >
             <div className="relative aspect-video overflow-hidden bg-[#1A1A1A]">
               <SmartVideo

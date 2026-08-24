@@ -43,7 +43,7 @@ export default async function AboutPage() {
                 {pick(aboutPageBilingual.mission, locale)}
               </p>
             </div>
-            <div className="self-start border border-white/8 bg-white/[0.02] p-5 md:p-6">
+            <div className="self-start border-l-2 border-[#D4AF37]/25 pl-6">
               <p className="text-xs uppercase tracking-[0.2em] text-white/45">{pick(aboutPageBilingual.positioningLabel, locale)}</p>
               <p className="mt-3 text-base leading-relaxed text-[#D4AF37] md:text-lg">
                 {pick(aboutPageBilingual.positioning, locale)}
@@ -65,7 +65,7 @@ export default async function AboutPage() {
           </div>
 
           <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-16">
-            <div className="border border-white/8 bg-white/[0.02] p-5 md:p-6">
+            <div className="border-l-2 border-[#D4AF37]/25 pl-6">
               <h2 className="text-2xl font-black uppercase tracking-tight text-[#D4AF37] md:text-3xl">{pick(aboutPageBilingual.operatingEdgeLabel, locale)}</h2>
               <p className="mt-4 text-sm leading-relaxed text-body-text md:text-base">
                 {pick(aboutPageBilingual.operatingEdge, locale)}

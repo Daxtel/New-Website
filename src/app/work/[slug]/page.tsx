@@ -143,7 +143,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         />
 
         {slug === 'jtl-japan-luxury-preowned-live-commerce' && (
-          <div className="mx-auto mt-16 max-w-6xl border border-white/8 bg-white/[0.02] p-6">
+          <div className="mx-auto mt-16 max-w-6xl border-l-2 border-[#D4AF37]/25 pl-6">
             <p className="text-base leading-relaxed text-body-text">
               {pick(
                 {

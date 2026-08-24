@@ -217,7 +217,7 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   }
 
   return (
-    <div ref={sectionRef} className="relative aspect-[16/8] overflow-hidden bg-[#1A1A1A]">
+    <div ref={sectionRef} className="relative aspect-[16/8] overflow-hidden rounded-2xl bg-[#1A1A1A]">
       {inner}
     </div>
   );

@@ -111,11 +111,11 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="border border-white/8 bg-white/[0.02] p-6">
+            <div className="border-l-2 border-[#D4AF37]/25 pl-6">
               <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">{pick(service.whyTitle, locale)}</h2>
               <p className="mt-4 text-base leading-relaxed text-body-text md:text-lg">{pick(service.whyBody, locale)}</p>
             </div>
-            <div className="border border-white/8 bg-white/[0.02] p-6">
+            <div className="border-l-2 border-[#D4AF37]/25 pl-6">
               <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">{pick(service.mistakesTitle, locale)}</h2>
               <div className="mt-4 space-y-3">
                 {pick(service.mistakes, locale).map((item) => (
@@ -131,17 +131,17 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <div className="mt-16 grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <h3 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.whatWeDeliver, locale)}</h3>
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="flex flex-wrap gap-3">
                 {pick(service.features, locale).map((feature) => (
-                  <div key={feature} className="border border-white/8 bg-white/[0.02] p-5 text-[#D4AF37]/85">
+                  <span key={feature} className="rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-4 py-2 text-sm text-[#D4AF37]/85">
                     {feature}
-                  </div>
+                  </span>
                 ))}
               </div>
             </div>
             <div>
               <h3 className="mb-6 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.idealFor, locale)}</h3>
-              <div className="border border-white/8 bg-white/[0.02] p-6">
+              <div className="border-l-2 border-[#D4AF37]/25 pl-6">
                 <div className="space-y-3 text-body-text">
                   {pick(service.idealFor, locale).map((item) => (
                     <div key={item} className="flex items-start gap-3">
@@ -163,7 +163,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           )}
 
           {fukuokaContextualLink[slug] && (
-            <div className="mt-16 border border-white/8 bg-white/[0.02] p-6">
+            <div className="mt-16 border-l-2 border-[#D4AF37]/25 pl-6">
               <p className="text-base leading-relaxed text-body-text">
                 {pick(fukuokaContextualLink[slug].lead, locale)}{' '}
                 <Link
@@ -187,7 +187,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 {relatedProjects.map((project) => {
                   const projectVideo = (project.media as { video?: string }).video;
                   return (
-                    <Link key={project.slug} href={localizeHref(`/work/${project.slug}`, locale)} className="group block overflow-hidden bg-[#141414] transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02]">
+                    <Link key={project.slug} href={localizeHref(`/work/${project.slug}`, locale)} className="group block overflow-hidden rounded-2xl bg-[#141414] shadow-[0_20px_50px_-16px_rgba(0,0,0,0.55)] transition-all hover:bg-[#D4AF37]/5 hover:scale-[1.02]">
                       <div className="relative aspect-[16/10] overflow-hidden bg-[#1A1A1A]">
                         {projectVideo ? (
                           <SmartVideo
@@ -222,12 +222,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <h2 className="mb-8 text-2xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-3xl">
                 {locale === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
               </h2>
-              <div className="space-y-4">
+              <div className="divide-y divide-white/8">
                 {svcFaqs.map((item) => (
-                  <details key={item.q} className="group border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30">
+                  <details key={item.q} className="group py-6 first:pt-0 last:pb-0">
                     <summary className="cursor-pointer list-none">
                       <div className="flex items-start justify-between gap-4">
-                        <h3 className="text-base font-semibold text-[#D4AF37] md:text-lg">{item.q}</h3>
+                        <h3 className="text-base font-semibold text-[#D4AF37] transition-colors group-hover:text-[#D4AF37]/80 md:text-lg">{item.q}</h3>
                         <span className="mt-1 text-[#D4AF37] transition-transform group-open:rotate-45">+</span>
                       </div>
                     </summary>
@@ -243,7 +243,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <h3 className="mb-8 text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37]">{pick(ui.sections.relatedServices, locale)}</h3>
               <div className="grid gap-6 md:grid-cols-2">
                 {relatedServices.map((item) => (
-                  <Link key={item.slug} href={localizeHref(`/services/${item.slug}`, locale)} className="border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]">
+                  <Link key={item.slug} href={localizeHref(`/services/${item.slug}`, locale)} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)] transition-all hover:border-[#D4AF37]/25 hover:scale-[1.02]">
                     <h4 className="text-xl font-semibold text-[#D4AF37]">{pick(item.title, locale)}</h4>
                     <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(item.intro, locale)}</p>
                   </Link>
@@ -252,7 +252,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             </div>
           )}
 
-          <div className="mt-16 bg-[#D4AF37] p-10 md:p-14">
+          <div className="mt-16 rounded-2xl bg-[#D4AF37] p-10 md:p-14">
             <div className="max-w-3xl">
               <h2 className="text-3xl font-black uppercase tracking-tight text-[#0A0A0A] md:text-4xl">
                 {pick(ui.sections.discussProject, locale)}

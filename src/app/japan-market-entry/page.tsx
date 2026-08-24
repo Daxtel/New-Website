@@ -77,7 +77,7 @@ export default async function JapanMarketEntry() {
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {shell.sections.whyJapan.points.map((point, i) => (
               <ScrollReveal key={point.en} delay={i * 0.07}>
-                <div className="border border-white/8 bg-white/[0.02] p-6 transition-colors hover:border-[#D4AF37]/25">
+                <div className="border-l-2 border-[#D4AF37]/25 pl-6">
                   <p className="text-base leading-relaxed text-body-text md:text-lg">{pick(point, locale)}</p>
                 </div>
               </ScrollReveal>
@@ -96,7 +96,7 @@ export default async function JapanMarketEntry() {
           </p>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {shell.sections.mistakes.points.map((point) => (
-              <div key={point.en} className="border border-white/8 bg-white/[0.02] p-6">
+              <div key={point.en} className="border-l-2 border-[#D4AF37]/25 pl-6">
                 <p className="text-base leading-relaxed text-body-text md:text-lg">{pick(point, locale)}</p>
               </div>
             ))}
@@ -126,7 +126,7 @@ export default async function JapanMarketEntry() {
           </p>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {shell.sections.support.points.map((point) => (
-              <div key={point.title.en} className="border border-white/8 bg-white/[0.02] p-6">
+              <div key={point.title.en} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)]">
                 <h3 className="text-xl font-semibold text-heading md:text-2xl">{pick(point.title, locale)}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-body-text md:text-base">{pick(point.description, locale)}</p>
               </div>
@@ -146,7 +146,7 @@ export default async function JapanMarketEntry() {
                 <Link
                   key={post.slug}
                   href={localizeHref(`/blog/${post.slug}`, locale)}
-                  className="block border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30"
+                  className="block rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)] transition-all hover:border-[#D4AF37]/25"
                 >
                   <p className="text-xs uppercase tracking-[0.12em] text-white/45">{pick(post.category, locale)}</p>
                   <h3 className="mt-2 text-base font-semibold leading-snug text-[#D4AF37]">{pick(post.title, locale)}</h3>
@@ -168,13 +168,13 @@ export default async function JapanMarketEntry() {
           </p>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {shell.sections.fit.points.map((point) => (
-              <div key={point.en} className="border border-white/8 bg-white/[0.02] p-6">
+              <div key={point.en} className="border-l-2 border-[#D4AF37]/25 pl-6">
                 <p className="text-base leading-relaxed text-body-text md:text-lg">{pick(point, locale)}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 bg-[#D4AF37] p-8 md:p-10 lg:p-12">
+          <div className="mt-12 rounded-2xl bg-[#D4AF37] p-8 md:p-10 lg:p-12">
             <h3 className="text-2xl font-black uppercase tracking-tight text-[#0A0A0A] md:text-3xl lg:text-4xl">
               {pick(shell.sections.cta.title, locale)}
             </h3>

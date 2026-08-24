@@ -187,7 +187,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <Link
                     key={svc!.slug}
                     href={localizeHref(`/services/${svc!.slug}`, locale)}
-                    className="block border border-white/8 bg-white/[0.02] p-6 transition-all hover:border-[#D4AF37]/30 hover:scale-[1.02]"
+                    className="block rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)] transition-all hover:border-[#D4AF37]/25 hover:scale-[1.02]"
                   >
                     <h3 className="text-lg font-semibold text-heading">{pick(svc!.title, locale)}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-body-text">{pick(svc!.intro, locale)}</p>
@@ -217,7 +217,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <LeadMagnet locale={locale} source={`blog:${post.slug}`} variant="inline" />
           </div>
 
-          <div className="mt-16 bg-[#D4AF37] p-10 md:p-14">
+          <div className="mt-16 rounded-2xl bg-[#D4AF37] p-10 md:p-14">
             <h2 className="text-2xl font-bold text-[#0A0A0A] md:text-3xl">{pick(post.cta.heading, locale)}</h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#0A0A0A]/75 md:text-lg">
               {pick(post.cta.body, locale)}

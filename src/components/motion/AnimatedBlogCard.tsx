@@ -50,7 +50,7 @@ export function AnimatedBlogCard({
       }
       onMouseMove={onMouseMove}
       onMouseLeave={() => setTilt({ rx: 0, ry: 0 })}
-      className="group block border border-white/8 bg-white/[0.02] p-6 transition-colors duration-300 hover:border-[#D4AF37]/30 hover:bg-[#D4AF37]/5 cursor-pointer md:p-12"
+      className="group block rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.5)] transition-colors duration-300 hover:border-[#D4AF37]/25 hover:bg-[#D4AF37]/5 cursor-pointer md:p-12"
     >
       {/* Meta row */}
       <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.15em] text-white/45">
