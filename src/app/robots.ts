@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { site } from '@/lib/site';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -46,7 +47,7 @@ export default function robots(): MetadataRoute.Robots {
       // Common Crawl (training corpus many models pull from)
       { userAgent: 'CCBot', allow: '/' },
     ],
-    sitemap: 'https://streetshowproduction.com/sitemap.xml',
-    host: 'https://streetshowproduction.com',
+    sitemap: `${site.url}/sitemap.xml`,
+    host: site.url,
   };
 }

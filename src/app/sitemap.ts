@@ -2,8 +2,9 @@ import type { MetadataRoute } from 'next';
 import { projectCatalog, serviceCatalog } from '@/lib/catalog';
 import { blogPosts } from '@/lib/blog';
 import { locationPages, industryPages } from '@/lib/landing-pages';
+import { site } from '@/lib/site';
 
-const baseUrl = 'https://streetshowproduction.com';
+const baseUrl = site.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

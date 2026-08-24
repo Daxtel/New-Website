@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { toRecipients } from '@/lib/recipients';
 import { checkRateLimit, clientIpFrom, isHoneypotTripped } from '@/lib/rate-limit';
+import { site } from '@/lib/site';
 
 type SubscribePayload = {
   email?: string;
@@ -17,7 +18,7 @@ const GUIDE = {
 };
 
 const DEFAULT_FROM = 'Streetshow Productions <noreply@streetshowproduction.com>';
-const SITE = 'https://streetshowproduction.com';
+const SITE = site.url;
 
 function esc(v: string): string {
   return v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

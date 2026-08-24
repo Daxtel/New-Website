@@ -1,6 +1,6 @@
 export const site = {
   name: 'Streetshow Productions',
-  url: 'https://streetshowproduction.com',
+  url: 'https://www.streetshowproduction.com',
   description: {
     en: 'Japan market entry, localization, and video production for premium international brands. Bilingual studio in Fukuoka and Tokyo. Clients include New Balance, SHEIN Japan, and Ritz-Carlton.',
     ja: '海外プレミアムブランド向けの日本市場参入、ローカライズ、映像制作。福岡・東京のバイリンガルスタジオ。New Balance、SHEIN Japan、リッツ・カールトンなどの実績。',

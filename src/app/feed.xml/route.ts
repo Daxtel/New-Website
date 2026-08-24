@@ -1,7 +1,8 @@
 import { blogPosts } from '@/lib/blog';
 import { pick } from '@/lib/i18n';
+import { site } from '@/lib/site';
 
-const SITE = 'https://streetshowproduction.com';
+const SITE = site.url;
 
 function esc(s: string): string {
   return s

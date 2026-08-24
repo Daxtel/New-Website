@@ -262,7 +262,7 @@ export const homeFaqSchema = buildFaqSchema([
   },
   {
     q: 'How do I contact Streetshow Productions?',
-    a: 'Email admin@streetshowproduction.com or call +81-70-4802-1725. Project inquiries can also be submitted via https://streetshowproduction.com/contact.',
+    a: 'Email admin@streetshowproduction.com or call +81-70-4802-1725. Project inquiries can also be submitted via https://www.streetshowproduction.com/contact.',
   },
 ]);
 
