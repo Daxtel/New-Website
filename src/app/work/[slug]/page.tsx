@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { pick, ui } from '@/lib/i18n';
 import { getCatalogProject, getCatalogService, projectCatalog } from '@/lib/catalog';
 import { getLocale } from '@/lib/locale';
-import { buildAlternates } from '@/lib/alternates';
+import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { JsonLd, buildCaseStudySchema, buildBreadcrumbSchema, buildVideoObjectSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 import { ProjectDetailClient } from '@/components/motion/ProjectDetailClient';
@@ -140,6 +141,27 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           nextProject={nextProject}
           locale={locale}
         />
+
+        {slug === 'jtl-japan-luxury-preowned-live-commerce' && (
+          <div className="mx-auto mt-16 max-w-6xl border border-white/8 bg-white/[0.02] p-6">
+            <p className="text-base leading-relaxed text-body-text">
+              {pick(
+                {
+                  en: 'JTL is one of several Fukuoka-based brands we work with. See our',
+                  ja: 'JTLは、当社が福岡で手がけるブランドの一社です。詳しくは',
+                },
+                locale,
+              )}{' '}
+              <Link
+                href={localizeHref('/locations/video-production-fukuoka', locale)}
+                className="text-[#D4AF37] underline underline-offset-4 hover:text-[#D4AF37]/80"
+              >
+                {pick({ en: 'Fukuoka production team', ja: '福岡の制作チームページ' }, locale)}
+              </Link>
+              {locale === 'ja' ? 'をご覧ください。' : '.'}
+            </p>
+          </div>
+        )}
       </section>
     </main>
   );

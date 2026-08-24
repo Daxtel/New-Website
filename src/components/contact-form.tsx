@@ -330,7 +330,16 @@ export function ContactForm({ locale = 'en' }: Props) {
       />
 
       <FloatTextarea
-        id="message" label={pick(contactPageBilingual.fieldLabels.details, locale)}
+        id="message"
+        label={pick(
+          auditInquiry
+            ? {
+                en: 'What are you launching or running, and what should the audit find?',
+                ja: '現在の展開状況と、監査で明らかにしたい内容を教えてください',
+              }
+            : contactPageBilingual.fieldLabels.details,
+          locale,
+        )}
         value={formData.message} required onChange={(v) => update('message', v)}
       />
 

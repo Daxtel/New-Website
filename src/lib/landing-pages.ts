@@ -36,16 +36,16 @@ export const locationPages: LandingPage[] = [
     kind: 'location',
     navLabel: { en: 'Video Production in Fukuoka', ja: '福岡の映像制作' },
     metaTitle: {
-      en: 'Video Production Company in Fukuoka | English-Speaking Crew | Streetshow',
-      ja: '福岡の映像制作会社｜英語対応クルー｜Streetshow Productions',
+      en: 'Fukuoka Video Production Company | Streetshow Productions',
+      ja: '福岡の映像制作会社 | Streetshow Productions',
     },
     metaDescription: {
-      en: 'Video production company in Fukuoka for brand films, hospitality, and restaurant content. English-speaking crew serving local and international clients.',
-      ja: '福岡拠点の映像制作会社。ブランドフィルム、CM、ホスピタリティ・レストランコンテンツを制作。英語対応クルーで国内外のクライアントに対応。九州・日本全国で対応。',
+      en: 'Video production in Fukuoka and Kyushu for brands, corporate, hospitality and international projects. English-speaking crew, filming, production and post.',
+      ja: '福岡・九州での映像制作。企業、ホスピタリティ、海外案件のブランドフィルムやCMに対応。英語対応クルーで撮影からポストプロダクションまで一貫して支援します。',
     },
     h1: {
-      en: 'Video Production Company in Fukuoka for Premium Brands',
-      ja: '福岡のプレミアムブランド向け映像制作会社',
+      en: 'Video Production Company in Fukuoka, Japan',
+      ja: '福岡の映像制作会社',
     },
     intro: {
       en: 'Shoot in Fukuoka with a crew that briefs, films, and reviews in your language. Streetshow Productions is a Fukuoka-based creative studio for premium and international brands, producing brand films, hospitality content, and campaigns on location across Fukuoka, Kyushu, and the rest of Japan.',

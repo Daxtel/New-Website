@@ -5,6 +5,7 @@ import {
   JsonLd,
   buildBreadcrumbSchema,
   buildFaqSchema,
+  buildServiceSchema,
 } from '@/components/json-ld';
 import { site } from '@/lib/site';
 import { pick } from '@/lib/i18n';
@@ -30,6 +31,21 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
     { name: h1, url: pageUrl },
   ]);
 
+  // GSC evidence-backed addition — Fukuoka only, not extended to other location
+  // pages yet. See page.tsx for the schema audit that found FAQ + Breadcrumb
+  // but no Service schema on this page.
+  const schemas: Record<string, unknown>[] = [faqSchema, breadcrumbSchema];
+  if (page.slug === 'video-production-fukuoka') {
+    schemas.push(
+      buildServiceSchema({
+        name: h1,
+        description: pick(page.intro, locale),
+        url: pageUrl,
+        slug: page.slug,
+      }),
+    );
+  }
+
   const relatedServices = page.relatedServices
     .map((s) => getCatalogService(s))
     .filter(Boolean);
@@ -39,7 +55,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
 
   return (
     <main className="bg-[#0A0A0A] text-white">
-      <JsonLd data={[faqSchema, breadcrumbSchema]} />
+      <JsonLd data={schemas} />
 
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="border-b border-[#D4AF37]/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">

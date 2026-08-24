@@ -22,8 +22,13 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ inquiry?: string }>;
+}) {
   const locale = await getLocale();
+  const isAuditInquiry = (await searchParams).inquiry === 'japan-creative-performance-audit';
 
   return (
     <main className="bg-[#0A0A0A] text-white">
@@ -31,10 +36,20 @@ export default async function ContactPage() {
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
-              {pick(contactPageBilingual.title, locale)}
+              {isAuditInquiry
+                ? pick({ en: 'Request Your Japan Creative Performance Audit', ja: '日本向けクリエイティブ・パフォーマンス監査のリクエスト' }, locale)
+                : pick(contactPageBilingual.title, locale)}
             </h1>
             <p className="mt-6 text-base leading-relaxed text-body-text md:text-lg lg:text-xl">
-              {pick(contactPageBilingual.subtitle, locale)}
+              {isAuditInquiry
+                ? pick(
+                    {
+                      en: 'A structured 7-business-day audit of your Japan creative, messaging, localization, and landing page performance. Starting from ¥350,000 + tax.',
+                      ja: '日本向けのクリエイティブ、メッセージ、ローカライズ、ランディングページのパフォーマンスを7営業日で監査します。¥350,000＋税から。',
+                    },
+                    locale,
+                  )
+                : pick(contactPageBilingual.subtitle, locale)}
             </p>
             <p className="mt-4 text-sm leading-relaxed text-[#D4AF37]/80 md:text-base">
               {pick(contactPageBilingual.qualification, locale)}

@@ -258,7 +258,16 @@ export default async function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <div className="mt-10 text-sm text-white/50">{pick(site.location, locale)}</div>
+            <div className="mt-10 text-sm text-white/50">
+              {pick(site.location, locale)}
+              {' · '}
+              <Link
+                href={localizeHref('/locations/video-production-fukuoka', locale)}
+                className="underline-offset-4 hover:text-[#D4AF37] hover:underline"
+              >
+                {pick({ en: 'production support in Fukuoka', ja: '福岡での制作支援' }, locale)}
+              </Link>
+            </div>
             <div className="mt-6">
               <Link
                 href={localizeHref('/blog', locale)}
