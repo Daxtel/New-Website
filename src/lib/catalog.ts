@@ -62,24 +62,24 @@ export const serviceCatalog: CatalogService[] = [
       ja: '海外ブランドのための日本市場進出・ローカライズ。戦略主導の文化的適応、メッセージング、クリエイティブ実行を福岡・東京のスタジオから提供します。',
     },
     headline: {
-      en: 'Adapt Global Creative for Japan',
-      ja: 'グローバルクリエイティブを日本市場へ最適化',
+      en: 'Enter Japan Like You Belong There',
+      ja: 'よそ者に見えない、日本市場進出を',
     },
     description: {
       en: 'We help international brands adapt positioning, messaging, and execution for Japan so launches feel considered, credible, and locally relevant.',
       ja: '海外ブランドのポジショニング、メッセージング、実行を日本市場向けに再構築し、現地で信頼され、文化的に共鳴するローンチを実現します。',
     },
     intro: {
-      en: 'We do not just translate, we adapt. Streetshow helps premium brands reshape messaging, visuals, and execution for Japanese audiences while protecting core brand equity.',
-      ja: '単なる翻訳ではなく、適応です。Streetshowは、ブランドのコアエクイティを守りながら、メッセージング・ビジュアル・実行を日本のオーディエンスに合わせて再構築します。',
+      en: 'Translation moves words. It does not move Japanese buyers. Streetshow reshapes your positioning, messaging, and visuals for Japan while protecting the brand equity you spent years building.',
+      ja: '翻訳は言葉を動かすだけで、日本の顧客の心は動かしません。Streetshowは、長年かけて築いたブランドエクイティを守りながら、ポジショニング、メッセージング、ビジュアルを日本市場向けに再構築します。',
     },
     whyTitle: {
       en: 'Why This Matters in Japan',
       ja: '日本市場で重要な理由',
     },
     whyBody: {
-      en: 'Market entry in Japan fails when translation is mistaken for adaptation. Premium brands need positioning, messaging, and execution aligned with Japanese expectations from the start.',
-      ja: '日本市場進出の失敗の多くは、翻訳を適応と取り違えることから生まれます。プレミアムブランドには、最初から日本の期待値に沿ったポジショニング・メッセージング・実行が求められます。',
+      en: 'Most Japan launches stall because translation gets mistaken for adaptation. Align positioning, messaging, and execution to Japanese expectations from day one, and the market opens faster and at a higher price point.',
+      ja: '日本進出の多くは、翻訳を適応と取り違えた時点でつまずきます。ポジショニング、メッセージング、実行を初日から日本の期待値に合わせれば、市場はより速く、より高い価格帯で開きます。',
     },
     mistakesTitle: {
       en: 'Where Brands Usually Get It Wrong',
@@ -87,14 +87,14 @@ export const serviceCatalog: CatalogService[] = [
     },
     mistakes: {
       en: [
-        'Treating Japan like a standard regional rollout',
-        'Using translation without cultural adaptation',
-        'Separating strategy, localization, and production across disconnected vendors',
+        'Treating Japan as one more regional rollout instead of its own market',
+        'Shipping translated copy and calling it localization',
+        'Splitting strategy, localization, and production across vendors who never talk',
       ],
       ja: [
-        '日本市場を他地域と同じ標準的ロールアウトとして扱う',
-        '文化的適応を伴わない翻訳だけで済ませる',
-        '戦略・ローカライズ・制作を分断したベンダーに分けて進める',
+        '日本を、独立した市場ではなく数ある地域展開の一つとして扱う',
+        '翻訳したコピーをローカライズと呼んでしまう',
+        '戦略・ローカライズ・制作を、連携しないベンダーに分散させる',
       ],
     },
     features: {
@@ -125,37 +125,37 @@ export const serviceCatalog: CatalogService[] = [
       en: [
         {
           q: 'How long does Japan market entry typically take?',
-          a: 'A structured Japan market entry usually runs from three to nine months depending on category, licensing, and distribution model. Streetshow recommends sequencing positioning, localization, and a first campaign window inside the first ninety days, then scaling from there.',
+          a: 'Plan for three to nine months, depending on category, licensing, and distribution model. We sequence positioning, localization, and a first campaign window inside the first ninety days, then scale from what the market tells us.',
         },
         {
           q: 'Is translation enough to localize a global brand for Japan?',
-          a: 'No. Translation converts words. Localization adapts positioning, messaging, visual tone, pricing logic, and channel mix for Japanese expectations. Premium brands that rely on translation alone consistently underperform in Japan.',
+          a: 'No. Translation converts words. Localization adapts positioning, messaging, visual tone, pricing logic, and channel mix to Japanese expectations. Premium brands that rely on translation alone underperform in Japan, and it shows in the numbers.',
         },
         {
           q: 'Which industries does Streetshow specialize in for Japan market entry?',
-          a: 'Luxury hospitality, fashion, automotive, food and beverage, and premium e-commerce. We also support international real estate and lifestyle brands entering the Japanese market.',
+          a: 'Luxury hospitality, fashion, automotive, food and beverage, and premium e-commerce. We also support international real estate and lifestyle brands entering Japan.',
         },
         {
           q: 'Can Streetshow handle bilingual campaigns in English and Japanese?',
-          a: 'Yes. All Streetshow engagements are executed bilingually. Creative, copy, and client communication can run in English, Japanese, or both depending on the campaign audience.',
+          a: 'Yes. Every engagement runs bilingually. Creative, copy, and client communication work in English, Japanese, or both, decided by who the campaign needs to reach.',
         },
       ],
       ja: [
         {
           q: '日本市場進出には通常どのくらいの期間が必要ですか？',
-          a: '構造化された日本市場進出は、カテゴリー、ライセンス、流通モデルに応じて通常3～9ヶ月で進行します。Streetshowでは、最初の90日間にポジショニング、ローカライズ、初回キャンペーンを組み込み、その後段階的に拡大することをご提案しています。',
+          a: 'カテゴリー、ライセンス、流通モデルにより、目安は3〜9ヶ月です。ポジショニング、ローカライズ、初回キャンペーンの枠を最初の90日間に組み込み、そこから市場の反応を見て拡大します。',
         },
         {
           q: 'グローバルブランドを日本向けにローカライズするには翻訳で十分ですか？',
-          a: 'いいえ。翻訳は言葉を変換するだけです。ローカライズとは、日本の期待値に合わせてポジショニング、メッセージング、ビジュアルトーン、価格戦略、チャネルミックスを適応させることです。翻訳だけに頼るプレミアムブランドは、日本市場で一貫して期待値を下回ります。',
+          a: 'いいえ。翻訳は言葉を変換するだけです。ローカライズは、ポジショニング、メッセージング、ビジュアルトーン、価格ロジック、チャネルミックスを日本の期待値に合わせて適応させます。翻訳だけに頼るプレミアムブランドは日本市場で数字が伸びず、それは結果に表れます。',
         },
         {
           q: 'Streetshowが得意とする日本市場進出の業界は？',
-          a: 'ラグジュアリーホスピタリティ、ファッション、自動車、食品・飲料、プレミアムEコマースです。日本進出を図る海外の不動産・ライフスタイルブランドの支援実績もあります。',
+          a: 'ラグジュアリーホスピタリティ、ファッション、自動車、食品・飲料、プレミアムEコマースです。日本進出を図る海外の不動産・ライフスタイルブランドの支援も行っています。',
         },
         {
           q: '英語と日本語のバイリンガルキャンペーンに対応できますか？',
-          a: 'はい。Streetshowのすべてのプロジェクトはバイリンガル体制で進行します。クリエイティブ、コピー、クライアントとのコミュニケーションは、キャンペーンの対象に応じて英語、日本語、またはその両方で対応可能です。',
+          a: 'はい。すべてのプロジェクトはバイリンガルで進行します。クリエイティブ、コピー、クライアントとのやり取りは、キャンペーンが誰に届くべきかに応じて、英語、日本語、またはその両方で対応します。',
         },
       ],
     },
@@ -176,24 +176,24 @@ export const serviceCatalog: CatalogService[] = [
       ja: '日本におけるラグジュアリーホテル・ホスピタリティのクリエイティブ戦略。ホテル、リゾート、デスティネーションプロパティ向けのプレミアム映像、写真、キャンペーン制作。',
     },
     headline: {
-      en: 'Creative Strategy & Content for Hotels and Hospitality Brands in Japan',
-      ja: '日本のホテル・ホスピタリティブランドのための戦略とコンテンツ',
+      en: 'Content That Fills Rooms, Not Just Feeds',
+      ja: 'フィードではなく客室を満たすコンテンツを',
     },
     description: {
       en: 'We support luxury hotels, resorts, and destination properties with strategy-led creative designed to strengthen visibility, booking intent, and premium brand perception.',
       ja: 'ラグジュアリーホテル、リゾート、デスティネーションプロパティを対象に、露出、予約意向、プレミアムなブランド認知を高める戦略主導のクリエイティブを提供します。',
     },
     intro: {
-      en: 'We help hotels, resorts, and hospitality brands in Japan increase bookings and long-term revenue through strategy-first creative.',
-      ja: '戦略を起点としたクリエイティブで、日本のホテル、リゾート、ホスピタリティブランドの予約と長期的な収益成長を支援します。',
+      en: 'For hotels, resorts, and destination properties in Japan, we build strategy-first creative that moves booking intent and long-term revenue, not just impressions.',
+      ja: '日本のホテル、リゾート、デスティネーションプロパティのために、単なる露出ではなく予約意向と長期収益を動かす、戦略起点のクリエイティブを構築します。',
     },
     whyTitle: {
       en: 'Why This Matters in Japan',
       ja: '日本市場で重要な理由',
     },
     whyBody: {
-      en: 'In luxury hospitality, visual and messaging quality directly influence trust, desirability, and booking intent. In Japan, premium perception is shaped by restraint, consistency, and local relevance.',
-      ja: 'ラグジュアリーホスピタリティでは、ビジュアルとメッセージの品質が信頼、憧れ、予約意向に直接影響します。特に日本では、抑制、一貫性、ローカルな文脈が「プレミアム」の認知を形作ります。',
+      en: 'In luxury hospitality, the quality of your visuals and messaging decides trust, desire, and whether a guest books. In Japan, premium perception is built on restraint, consistency, and local relevance, and guests notice when any one is missing.',
+      ja: 'ラグジュアリーホスピタリティでは、ビジュアルとメッセージの品質が、信頼、憧れ、そして予約するかどうかを決めます。日本では、抑制、一貫性、ローカルな文脈がプレミアム認知を形作り、そのどれが欠けても宿泊客は気づきます。',
     },
     mistakesTitle: {
       en: 'Where Brands Usually Get It Wrong',
@@ -201,14 +201,14 @@ export const serviceCatalog: CatalogService[] = [
     },
     mistakes: {
       en: [
-        'Treating hospitality content as decoration rather than revenue support',
-        'Using generic luxury cues that do not resonate locally',
-        'Failing to align campaign assets with guest expectations and booking behavior',
+        'Treating content as decoration instead of a booking driver',
+        'Leaning on generic luxury cues that read as hollow in Japan',
+        'Building assets that ignore how guests actually research and book',
       ],
       ja: [
-        'ホスピタリティコンテンツを収益支援ではなく装飾として扱う',
-        '日本の文脈で響かない一般的なラグジュアリー表現を用いる',
-        'キャンペーン素材を宿泊客の期待と予約行動に合わせきれていない',
+        'コンテンツを予約を生む要素ではなく装飾として扱う',
+        '日本では中身の薄さが露呈する、ありきたりなラグジュアリー表現に頼る',
+        '宿泊客が実際にどう調べ、どう予約するかを無視して素材を作る',
       ],
     },
     features: {
@@ -237,37 +237,37 @@ export const serviceCatalog: CatalogService[] = [
       en: [
         {
           q: 'What kinds of hotels does Streetshow work with in Japan?',
-          a: 'Luxury international chains, boutique properties, resort destinations, and repositioning projects. We have supported brands including The Ritz-Carlton Kyoto and The Ritz-Carlton Osaka.',
+          a: 'From luxury international chains to boutique properties, resort destinations, and repositioning projects. We have supported brands including The Ritz-Carlton Kyoto and The Ritz-Carlton Osaka.',
         },
         {
           q: 'Can Streetshow produce seasonal campaigns for peak travel periods?',
-          a: 'Yes. We plan hospitality campaigns around Japanese peak windows, cherry blossom, Golden Week, summer hanabi, autumn koyo, and New Year, and align creative delivery to booking lead times.',
+          a: 'Yes. We plan campaigns around Japan’s peak windows, cherry blossom, Golden Week, summer hanabi, autumn koyo, and New Year, and deliver creative in time for real booking lead times.',
         },
         {
           q: 'Does hospitality work include both photography and video?',
-          a: 'Yes. Most hospitality engagements combine cinematography, stills photography, and campaign strategy so the visual system is coherent across web, paid media, and direct booking channels.',
+          a: 'Yes. Most engagements combine cinematography, stills, and campaign strategy so one coherent visual system carries across web, paid media, and direct booking channels.',
         },
         {
           q: 'How do you approach luxury brand voice for Japanese audiences?',
-          a: 'Japanese luxury perception is shaped by restraint, attention to detail, and cultural specificity. We adapt messaging and visual tone so properties feel credible and desirable to Japanese guests as well as international travelers.',
+          a: 'Japanese luxury perception rewards restraint, attention to detail, and cultural specificity. We tune messaging and visual tone so the property feels credible and desirable to Japanese guests and international travelers alike.',
         },
       ],
       ja: [
         {
           q: '日本ではどのようなホテルと協業していますか？',
-          a: 'ラグジュアリーな国際チェーン、ブティックホテル、リゾート、リポジショニング案件まで幅広く対応しています。ザ・リッツ・カールトン京都、ザ・リッツ・カールトン大阪などのブランドを支援してきました。',
+          a: 'ラグジュアリーな国際チェーンから、ブティックホテル、リゾート、リポジショニング案件まで対応します。ザ・リッツ・カールトン京都、ザ・リッツ・カールトン大阪などのブランドを支援してきました。',
         },
         {
           q: 'ハイシーズン向けの季節キャンペーンは制作できますか？',
-          a: 'はい。桜、ゴールデンウィーク、夏の花火、紅葉、年末年始などの日本のピーク時期を軸にホスピタリティキャンペーンを設計し、予約リードタイムに合わせたクリエイティブ納品を行います。',
+          a: 'はい。桜、ゴールデンウィーク、夏の花火、紅葉、年末年始といった日本のピーク時期を軸にキャンペーンを設計し、実際の予約リードタイムに間に合うようクリエイティブを納品します。',
         },
         {
           q: 'ホスピタリティ案件では写真と映像の両方を扱いますか？',
-          a: 'はい。多くのホスピタリティ案件で、シネマトグラフィ、スチール撮影、キャンペーン戦略を組み合わせ、ウェブ、ペイドメディア、直販チャネル全体で一貫したビジュアルシステムを構築します。',
+          a: 'はい。多くの案件で、シネマトグラフィ、スチール撮影、キャンペーン戦略を組み合わせ、ウェブ、ペイドメディア、直販チャネル全体を貫く一つの一貫したビジュアルシステムを構築します。',
         },
         {
           q: '日本のオーディエンスに向けたラグジュアリーブランドボイスはどう作りますか？',
-          a: '日本のラグジュアリー認知は、抑制、細部へのこだわり、文化的な具体性によって形作られます。国内の宿泊客と海外の旅行者の双方にとって信頼と憧れを感じられるよう、メッセージとビジュアルトーンを調整します。',
+          a: '日本のラグジュアリー認知は、抑制、細部へのこだわり、文化的な具体性を評価します。国内の宿泊客と海外の旅行者の双方にとって信頼と憧れを感じられるよう、メッセージとビジュアルトーンを調整します。',
         },
       ],
     },
@@ -288,24 +288,24 @@ export const serviceCatalog: CatalogService[] = [
       ja: '日本でのフルサービス映像制作。CM、ブランドフィルム、ソーシャルコンテンツをグローバルブランド向けに提供。現地クルー、バイリンガル体制、プレミアム品質。',
     },
     headline: {
-      en: 'Commercials & Brand Films Made in Japan',
-      ja: '日本で制作するCMとブランドフィルム',
+      en: 'Commercials and Brand Films, Made in Japan Without Compromise',
+      ja: '妥協なく、日本で作るCMとブランドフィルム',
     },
     description: {
       en: 'High-level production for premium campaigns, launches, and brand storytelling managed locally in Japan with the quality control international teams expect.',
       ja: 'プレミアムキャンペーン、ローンチ、ブランドストーリーテリングのためのハイレベルな制作を、国際チームが求める品質管理のもと日本国内でディレクションします。',
     },
     intro: {
-      en: 'Full-service video production for brands targeting the Japanese market, from concept through delivery across commercials, brand films, social content, and campaign videos.',
-      ja: '日本市場を狙うブランド向けのフルサービス映像制作。CM、ブランドフィルム、ソーシャルコンテンツ、キャンペーン動画までコンセプトから納品まで一貫して対応します。',
+      en: 'From concept to final delivery, we produce commercials, brand films, social content, and campaign video for brands targeting Japan, run locally and held to international standards.',
+      ja: 'コンセプトから最終納品まで、日本市場を狙うブランド向けにCM、ブランドフィルム、ソーシャルコンテンツ、キャンペーン動画を制作。現地で運用し、国際基準で仕上げます。',
     },
     whyTitle: {
       en: 'Why This Matters in Japan',
       ja: '日本市場で重要な理由',
     },
     whyBody: {
-      en: 'Premium campaigns in Japan require local control without compromising global brand standards. Production quality, local coordination, and cultural fit all influence the final result.',
-      ja: '日本でのプレミアムキャンペーンは、グローバルブランド基準を妥協せず、現地でのコントロールが求められます。制作品質、現地調整、文化的適合のすべてが最終成果に影響します。',
+      en: 'Premium campaigns in Japan need local control without loosening global brand standards. Production quality, on-the-ground coordination, and cultural fit each show up in the final cut.',
+      ja: '日本でのプレミアムキャンペーンには、グローバルブランド基準を緩めることなく、現地でのコントロールが求められます。制作品質、現地での調整、文化的適合は、いずれも最終的な仕上がりに表れます。',
     },
     mistakesTitle: {
       en: 'Where Brands Usually Get It Wrong',
@@ -313,14 +313,14 @@ export const serviceCatalog: CatalogService[] = [
     },
     mistakes: {
       en: [
-        'Optimizing for speed instead of brand sensitivity',
-        'Running production without enough local context',
-        'Treating Japan as execution-only instead of a strategic market',
+        'Chasing speed at the expense of brand sensitivity',
+        'Running a shoot without enough local context to get it right',
+        'Treating Japan as an execution stop instead of a strategic market',
       ],
       ja: [
-        'ブランド感度よりもスピードを優先してしまう',
-        '現地の文脈が不足したまま制作を進行する',
-        '日本を実行市場としてだけ扱い、戦略市場として位置づけない',
+        'ブランド感度を犠牲にしてスピードを追う',
+        '正しく仕上げるだけの現地の文脈が不足したまま撮影を進める',
+        '日本を実行の一拠点として扱い、戦略市場として位置づけない',
       ],
     },
     features: {
@@ -351,37 +351,37 @@ export const serviceCatalog: CatalogService[] = [
       en: [
         {
           q: 'Does Streetshow handle video production across all of Japan?',
-          a: 'Yes. Streetshow produces across Tokyo, Fukuoka, Kyoto, Osaka, and other regions of Japan. Fukuoka and Tokyo are our primary operating bases.',
+          a: 'Yes. We produce across Tokyo, Fukuoka, Kyoto, Osaka, and other regions of Japan. Fukuoka and Tokyo are our primary bases.',
         },
         {
           q: 'Can an international client manage a Japan shoot remotely?',
-          a: 'Yes. We run bilingual production with international standards so global clients can approve edits, color, and delivery remotely. Pre-production alignment typically removes the need for on-site travel.',
+          a: 'Yes. We run bilingual production to international standards, so you can approve edits, color, and delivery remotely. Tight pre-production alignment usually removes the need to fly in.',
         },
         {
           q: 'What formats do you deliver?',
-          a: 'TV commercials, digital advertising cutdowns, brand films, product videos, vertical social edits, OOH loops, and long-form brand documentaries. Every project is delivered in multi-format specifications from the start.',
+          a: 'TV commercials, digital cutdowns, brand films, product videos, vertical social edits, OOH loops, and long-form brand documentaries. We plan every project for multi-format delivery from the start.',
         },
         {
           q: 'Do you handle talent and location coordination in Japan?',
-          a: 'Yes. Casting, talent coordination, location scouting, permits, and crew are handled in-house. Clients receive one point of contact across the full production.',
+          a: 'Yes. Casting, talent coordination, location scouting, permits, and crew are handled in-house. You get one point of contact across the entire production.',
         },
       ],
       ja: [
         {
           q: '日本全国で映像制作に対応していますか？',
-          a: 'はい。東京、福岡、京都、大阪をはじめ日本全国で制作を行っています。福岡と東京が主要拠点です。',
+          a: 'はい。東京、福岡、京都、大阪をはじめ日本各地で制作しています。福岡と東京が主要拠点です。',
         },
         {
           q: '海外クライアントが日本での撮影をリモートで管理することは可能ですか？',
-          a: 'はい。国際基準のバイリンガル制作体制を整えており、編集・カラー・納品の確認をリモートで行えます。事前のプリプロ調整を徹底することで、現地出張なしでも品質を担保できます。',
+          a: 'はい。国際基準のバイリンガル制作体制のもと、編集・カラー・納品の確認をリモートで行えます。事前のプリプロ調整を徹底すれば、通常は現地出張の必要がありません。',
         },
         {
           q: 'どのような納品フォーマットに対応していますか？',
-          a: 'テレビCM、デジタル広告カットダウン、ブランドフィルム、商品動画、縦型ソーシャル編集、OOHループ、長尺ブランドドキュメンタリーなど。すべてのプロジェクトで複数フォーマットを想定して設計します。',
+          a: 'テレビCM、デジタルカットダウン、ブランドフィルム、商品動画、縦型ソーシャル編集、OOHループ、長尺ブランドドキュメンタリーなど。すべてのプロジェクトを、当初から複数フォーマット納品を前提に設計します。',
         },
         {
           q: 'キャスティングやロケ調整も対応してもらえますか？',
-          a: 'はい。キャスティング、タレント調整、ロケハン、許可取得、クルー手配まで社内で一貫対応します。クライアントはプロジェクト全体を通じて単一の窓口とやり取りできます。',
+          a: 'はい。キャスティング、タレント調整、ロケハン、許可取得、クルー手配まで社内で一貫対応します。制作全体を通じて、窓口は一つです。',
         },
       ],
     },
@@ -402,24 +402,24 @@ export const serviceCatalog: CatalogService[] = [
       ja: '日本全国でのハイエンド写真・CGI制作。商品、エディトリアル、ホスピタリティ、3Dビジュアライゼーションをプレミアム広告・ブランドキャンペーン向けに提供します。',
     },
     headline: {
-      en: 'High-End Photography & CGI Across Japan',
-      ja: '日本全国のハイエンド写真＆CGI',
+      en: 'Images That Earn the Premium Price',
+      ja: 'プレミアム価格を裏づけるイメージを',
     },
     description: {
       en: 'Premium visual production for hospitality, lifestyle, real estate, and consumer brands that need launch-ready visual systems and long-term brand consistency.',
       ja: 'ホスピタリティ、ライフスタイル、不動産、コンシューマーブランドのためのプレミアムビジュアル制作。ローンチ対応のビジュアルシステムと長期的なブランド一貫性を提供します。',
     },
     intro: {
-      en: 'From product photography to editorial shoots and CGI visuals, we deliver premium visual content for advertising, hospitality, lifestyle, and brand campaigns.',
-      ja: '商品撮影からエディトリアル、CGIビジュアルまで、広告、ホスピタリティ、ライフスタイル、ブランドキャンペーン向けのプレミアムビジュアルコンテンツを制作します。',
+      en: 'From product and editorial photography to full CGI, we produce premium visual content for advertising, hospitality, lifestyle, and brand campaigns, built to hold up everywhere the brand appears.',
+      ja: '商品・エディトリアル撮影からフルCGIまで、広告、ホスピタリティ、ライフスタイル、ブランドキャンペーン向けのプレミアムビジュアルコンテンツを、ブランドが露出するあらゆる場所で通用するように制作します。',
     },
     whyTitle: {
       en: 'Why This Matters in Japan',
       ja: '日本市場で重要な理由',
     },
     whyBody: {
-      en: 'Premium visual systems shape how a brand is priced and perceived. In Japan, image quality and refinement often influence trust before any message is read.',
-      ja: 'プレミアムなビジュアルシステムは、ブランドの価格感と認知を左右します。日本では、メッセージを読む前に画像の品質と洗練度が信頼を決定づけることが少なくありません。',
+      en: 'Your visual system shapes how the brand is priced and perceived. In Japan, image quality and refinement often earn trust before a single word is read.',
+      ja: 'ビジュアルシステムは、ブランドの価格感と認知を左右します。日本では、一文字も読まれる前に、画像の品質と洗練度が信頼を勝ち取ることが少なくありません。',
     },
     mistakesTitle: {
       en: 'Where Brands Usually Get It Wrong',
@@ -427,14 +427,14 @@ export const serviceCatalog: CatalogService[] = [
     },
     mistakes: {
       en: [
-        'Using inconsistent visuals across channels',
-        'Producing images that feel generic instead of premium',
-        'Underestimating how visual quality affects credibility',
+        'Letting visuals drift out of sync across channels',
+        'Producing images that read as generic when the brand is premium',
+        'Underestimating how much visual quality drives credibility and price',
       ],
       ja: [
-        'チャネル間でビジュアルに一貫性がない',
-        'プレミアムに感じられない一般的なイメージを制作してしまう',
-        'ビジュアル品質が信頼性に与える影響を過小評価している',
+        'チャネルごとにビジュアルがばらつき、ずれていく',
+        'プレミアムなブランドなのに、ありきたりに見えるイメージを作ってしまう',
+        'ビジュアル品質が信頼性と価格をどれほど左右するかを過小評価している',
       ],
     },
     features: {
@@ -465,37 +465,37 @@ export const serviceCatalog: CatalogService[] = [
       en: [
         {
           q: 'Does Streetshow produce CGI visuals from scratch?',
-          a: 'Yes. We produce full CGI visualization from concept through final render, including product visualization, packaging, and environment builds. Our SOUMEI Champagne project is an example of a complete CGI campaign built from scratch.',
+          a: 'Yes. We build full CGI from concept to final render, including product visualization, packaging, and environment builds. Our SOUMEI Champagne project is a complete CGI campaign built from scratch.',
         },
         {
           q: 'What photography formats do you shoot?',
-          a: 'Editorial, product, lifestyle, hospitality, and campaign photography. Deliverables include print-ready files, web-optimized exports, and retouched masters.',
+          a: 'Editorial, product, lifestyle, hospitality, and campaign photography. You receive print-ready files, web-optimized exports, and retouched masters.',
         },
         {
           q: 'Can Streetshow combine live photography and CGI in one campaign?',
-          a: 'Yes. Most premium campaigns combine live capture with CGI elements, and we plan the pipeline so lighting, perspective, and color match seamlessly across both.',
+          a: 'Yes. Most premium campaigns combine live capture with CGI, and we plan the pipeline so lighting, perspective, and color match cleanly across both.',
         },
         {
           q: 'Do you handle art direction and styling in-house?',
-          a: 'Yes. Art direction, styling coordination, location scouting, and post-production retouching are delivered end-to-end from a single team.',
+          a: 'Yes. Art direction, styling, location scouting, and retouching come from one team, end to end.',
         },
       ],
       ja: [
         {
           q: 'CGIビジュアルをゼロから制作できますか？',
-          a: 'はい。コンセプトから最終レンダリングまで、商品ビジュアライゼーション、パッケージ、環境構築を含むフルCGIビジュアライゼーションを制作します。SOUMEI Champagne案件は、ゼロから構築した完全CGIキャンペーンの一例です。',
+          a: 'はい。コンセプトから最終レンダリングまで、商品ビジュアライゼーション、パッケージ、環境構築を含むフルCGIを制作します。SOUMEI Champagne案件は、ゼロから構築した完全CGIキャンペーンです。',
         },
         {
           q: 'どのような写真ジャンルに対応していますか？',
-          a: 'エディトリアル、商品、ライフスタイル、ホスピタリティ、キャンペーン撮影に対応しています。納品物には印刷用データ、ウェブ最適化書き出し、レタッチ済みマスターが含まれます。',
+          a: 'エディトリアル、商品、ライフスタイル、ホスピタリティ、キャンペーン撮影に対応します。印刷用データ、ウェブ最適化書き出し、レタッチ済みマスターをお渡しします。',
         },
         {
           q: '実写とCGIを1つのキャンペーンで組み合わせられますか？',
-          a: 'はい。多くのプレミアムキャンペーンで実写とCGI要素を組み合わせており、ライティング、パース、カラーが両者でシームレスに一致するようパイプラインを設計します。',
+          a: 'はい。多くのプレミアムキャンペーンで実写とCGIを組み合わせており、ライティング、パース、カラーが両者できれいに一致するようパイプラインを設計します。',
         },
         {
           q: 'アートディレクションとスタイリングも社内対応ですか？',
-          a: 'はい。アートディレクション、スタイリング調整、ロケハン、ポストプロダクションのレタッチまで、単一チームでエンドツーエンドに対応します。',
+          a: 'はい。アートディレクション、スタイリング、ロケハン、レタッチまで、一つのチームがエンドツーエンドで担います。',
         },
       ],
     },
@@ -524,16 +524,16 @@ export const serviceCatalog: CatalogService[] = [
       ja: '日本の主要都市でのローンチ、アクティベーション、注目を狙うキャンペーンに向けた、視認性の高い3Dビルボード制作。',
     },
     intro: {
-      en: 'We create immersive 3D billboard content for premium LED screens across Japan, built to maximize visibility and launch impact.',
-      ja: '日本全国のプレミアムLEDスクリーン向けに、視認性とローンチインパクトを最大化する没入型3Dビルボードコンテンツを制作します。',
+      en: 'We produce naked-eye 3D billboard content for premium LED screens across Japan, engineered to stop foot traffic and turn a launch into a moment people film and share.',
+      ja: '日本全国のプレミアムLEDスクリーン向けに、裸眼3Dビルボードコンテンツを制作します。人の足を止め、ローンチを人々が撮影しシェアする瞬間に変えるよう設計します。',
     },
     whyTitle: {
       en: 'Why This Matters in Japan',
       ja: '日本市場で重要な理由',
     },
     whyBody: {
-      en: 'High-visibility formats only create value when they align with launch timing, location context, and brand positioning. In Japan, spectacle without strategic fit can weaken premium perception.',
-      ja: '高視認性フォーマットは、ローンチのタイミング、場所の文脈、ブランドポジショニングと揃って初めて価値を生み出します。日本では、戦略との整合性を欠いたスペクタクルはむしろプレミアム認知を損ないかねません。',
+      en: 'A high-visibility format only pays off when it lines up with launch timing, location, and brand positioning. In Japan, spectacle without strategic fit can cheapen premium perception instead of building it.',
+      ja: '高視認性フォーマットは、ローンチのタイミング、場所、ブランドポジショニングと揃って初めて成果につながります。日本では、戦略との整合性を欠いたスペクタクルは、プレミアム認知を高めるどころか安っぽく見せかねません。',
     },
     mistakesTitle: {
       en: 'Where Brands Usually Get It Wrong',
@@ -541,14 +541,14 @@ export const serviceCatalog: CatalogService[] = [
     },
     mistakes: {
       en: [
-        'Using 3D billboards as a gimmick without launch strategy',
-        'Designing for novelty instead of brand alignment',
-        'Ignoring how OOH execution affects long-term perception',
+        'Running a 3D billboard as a stunt with no launch strategy behind it',
+        'Designing for novelty instead of brand fit',
+        'Forgetting that one OOH moment shapes long-term brand perception',
       ],
       ja: [
-        'ローンチ戦略のないまま3Dビルボードを仕掛けとして扱う',
-        'ブランド整合性ではなく目新しさで設計してしまう',
-        'OOH実行が長期的なブランド認知に与える影響を軽視する',
+        'ローンチ戦略のないまま、3Dビルボードを単なる仕掛けとして流す',
+        'ブランドとの適合ではなく目新しさで設計してしまう',
+        '一度のOOHの瞬間が長期的なブランド認知を形作ることを忘れている',
       ],
     },
     features: {
@@ -579,37 +579,37 @@ export const serviceCatalog: CatalogService[] = [
       en: [
         {
           q: 'How much does a 3D billboard cost in Tokyo?',
-          a: '3D anamorphic billboard advertising in Japan costs between $50,000 and $500,000 per month depending on the screen location, time slot, and content production. The most popular locations are Shibuya Cross-Vision, Shinjuku Alta Vision, and Dotonbori in Osaka.',
+          a: 'Expect between $50,000 and $500,000 per month, depending on screen location, time slot, and content production. The most sought-after locations are Shibuya Cross-Vision, Shinjuku Alta Vision, and Dotonbori in Osaka.',
         },
         {
           q: 'How long does it take to produce 3D billboard content?',
-          a: 'Production of 3D anamorphic content typically takes 4 to 8 weeks from concept to final delivery. This includes creative development, 3D modeling, animation, and screen-specific calibration.',
+          a: 'Production runs 4 to 8 weeks from concept to final delivery, covering creative development, 3D modeling, animation, and screen-specific calibration.',
         },
         {
           q: 'What are the best 3D billboard locations in Japan?',
-          a: 'The top three locations are Shibuya Cross-Vision (highest foot traffic), Shinjuku Alta Vision (major transit hub), and Dotonbori in Osaka (tourism district). Each has different audience profiles and pricing tiers.',
+          a: 'The top three are Shibuya Cross-Vision (highest foot traffic), Shinjuku Alta Vision (major transit hub), and Dotonbori in Osaka (tourism district). Each carries a different audience profile and pricing tier, and we match the screen to the goal.',
         },
         {
           q: 'Can I book the Shibuya crossing billboard?',
-          a: 'Yes. Shibuya Cross-Vision is available for booking through authorized media buyers. Streetshow Productions handles the full process from creative concept to screen placement. Minimum booking is typically one month.',
+          a: 'Yes. Shibuya Cross-Vision is bookable through authorized media buyers, and we handle the full process from creative concept to screen placement. Minimum booking is typically one month.',
         },
       ],
       ja: [
         {
           q: '東京の3Dビルボードはどのくらいの費用がかかりますか？',
-          a: '日本での3Dアナモルフィックビルボード広告は、スクリーンの場所、時間帯、コンテンツ制作によって月額5万〜50万ドルの費用がかかります。最も人気のある場所は渋谷クロスビジョン、新宿アルタビジョン、大阪道頓堀です。',
+          a: 'スクリーンの場所、時間帯、コンテンツ制作により、月額5万〜50万ドルが目安です。最も人気の高い場所は渋谷クロスビジョン、新宿アルタビジョン、大阪道頓堀です。',
         },
         {
           q: '3Dビルボードコンテンツの制作にはどのくらいの期間がかかりますか？',
-          a: '3Dアナモルフィックコンテンツの制作は、コンセプトから最終納品まで通常4〜8週間かかります。クリエイティブ開発、3Dモデリング、アニメーション、スクリーン固有のキャリブレーションが含まれます。',
+          a: '制作はコンセプトから最終納品まで4〜8週間。クリエイティブ開発、3Dモデリング、アニメーション、スクリーン固有のキャリブレーションを含みます。',
         },
         {
           q: '日本で最高の3Dビルボード場所はどこですか？',
-          a: 'トップ3は渋谷クロスビジョン（最高の人流）、新宿アルタビジョン（主要交通ハブ）、大阪道頓堀（観光地区）です。それぞれ異なるオーディエンスプロファイルと価格帯があります。',
+          a: 'トップ3は渋谷クロスビジョン（最高の人流）、新宿アルタビジョン（主要交通ハブ）、大阪道頓堀（観光地区）です。それぞれ異なるオーディエンス層と価格帯を持ち、目的に合わせてスクリーンを選定します。',
         },
         {
           q: '渋谷交差点のビルボードを予約できますか？',
-          a: 'はい。渋谷クロスビジョンは認定メディアバイヤーを通じて予約可能です。Streetshow Productionsはクリエイティブコンセプトからスクリーン掲載まで全プロセスを担当します。最低予約期間は通常1ヶ月です。',
+          a: 'はい。渋谷クロスビジョンは認定メディアバイヤーを通じて予約可能で、クリエイティブコンセプトからスクリーン掲載まで全プロセスを当社が担当します。最低予約期間は通常1ヶ月です。',
         },
       ],
     },
@@ -630,24 +630,24 @@ export const serviceCatalog: CatalogService[] = [
       ja: 'グローバル展開を目指す日本ブランドのためのライブコマース、Shopify DTC、越境グロースシステム。ライブセリング、コミュニティ、メール、Meta・Google広告、米欧ホールセール。',
     },
     headline: {
-      en: 'Live Commerce, Shopify DTC & Cross-Border Growth Systems',
-      ja: 'ライブコマース、Shopify DTC、越境グロースシステム',
+      en: 'Turn Live Audiences Into Global Revenue',
+      ja: 'ライブの視聴者を、世界の売上に変える',
     },
     description: {
       en: 'We build full-funnel live commerce and Shopify growth systems for Japanese brands selling domestically and cross-border into the US, EU, and Asia, combining live selling, community, email, paid media, and wholesale acquisition.',
       ja: '国内販売と米・欧・アジアへの越境販売を行う日本ブランドのために、ライブセリング、コミュニティ、メール、ペイドメディア、ホールセール獲得を組み合わせたフルファネルのライブコマース＆Shopifyグロースシステムを構築します。',
     },
     intro: {
-      en: 'Live commerce is how modern DTC brands turn audience into revenue in real time. Streetshow builds the full growth system, live selling on Facebook and Instagram, WhatsApp community, Shopify storefront, email lifecycle, Meta and Google Ads, and cross-border wholesale acquisition, operated from Japan, engineered for global buyers.',
-      ja: 'ライブコマースは、現代のDTCブランドがオーディエンスをリアルタイムで売上に変える手法です。StreetshowはFacebook・Instagramでのライブセリング、WhatsAppコミュニティ、Shopifyストアフロント、メールライフサイクル、Meta・Google広告、越境ホールセール獲得までを含むフルグロースシステムを、日本から運用し、グローバルバイヤーに向けて設計します。',
+      en: 'Live commerce turns an audience into revenue in real time. Streetshow builds the whole system behind it: live selling on Facebook and Instagram, a WhatsApp community, a Shopify storefront, email lifecycle, Meta and Google Ads, and cross-border wholesale acquisition. Operated from Japan, engineered for global buyers.',
+      ja: 'ライブコマースは、オーディエンスをリアルタイムで売上に変えます。Streetshowはその背後にあるシステム全体を構築します。Facebook・Instagramでのライブセリング、WhatsAppコミュニティ、Shopifyストアフロント、メールライフサイクル、Meta・Google広告、越境ホールセール獲得まで。日本から運用し、グローバルバイヤーに向けて設計します。',
     },
     whyTitle: {
       en: 'Why This Matters for Japanese Brands',
       ja: '日本ブランドにとって重要な理由',
     },
     whyBody: {
-      en: 'Japanese brands with strong inventory and product credibility often lack the digital sales system to reach international buyers. Live commerce, community, and cross-border paid media are the fastest path from local brand to global revenue, but only when the full stack is built to work together.',
-      ja: '優れた在庫と商品信頼性を持つ日本ブランドの多くは、海外バイヤーに届くためのデジタル販売システムを欠いています。ライブコマース、コミュニティ、越境ペイドメディアは、国内ブランドからグローバル売上への最短経路ですが、フルスタックを一体として構築して初めて機能します。',
+      en: 'Plenty of Japanese brands have the inventory and the product credibility, but no digital sales system to reach buyers abroad. Live commerce, community, and cross-border paid media are the fastest route from local brand to global revenue, but only when the full stack is built to work as one.',
+      ja: '在庫も商品への信頼もある日本ブランドは数多くありますが、海外のバイヤーに届くデジタル販売システムを持っていません。ライブコマース、コミュニティ、越境ペイドメディアは、国内ブランドからグローバル売上への最短ルートです。ただし、フルスタックを一体として構築して初めて機能します。',
     },
     mistakesTitle: {
       en: 'Where Brands Usually Get It Wrong',
@@ -655,16 +655,16 @@ export const serviceCatalog: CatalogService[] = [
     },
     mistakes: {
       en: [
-        'Running Facebook Lives without a community funnel to retain buyers',
-        'Launching Shopify without email lifecycle or paid acquisition to feed it',
-        'Targeting only domestic buyers and ignoring higher-margin US and EU wholesale',
-        'Outsourcing without training the internal team to operate the system long term',
+        'Running Facebook Lives with no community funnel to keep buyers',
+        'Launching Shopify with no email lifecycle or paid acquisition to feed it',
+        'Selling only to domestic buyers while higher-margin US and EU wholesale sits untouched',
+        'Outsourcing everything and never training the team to run it long term',
       ],
       ja: [
-        '購入者を囲い込むコミュニティファネルなしでFacebookライブを回している',
-        'メールライフサイクルや有料獲得を伴わずにShopifyをローンチしてしまう',
-        '国内顧客のみをターゲットにし、利益率の高い米欧ホールセールを無視している',
-        '社内チームへのトレーニングを行わず外注任せで長期運用体制を築けない',
+        '購入者をつなぎ止めるコミュニティファネルなしでFacebookライブを回している',
+        'メールライフサイクルも有料獲得もないままShopifyをローンチしてしまう',
+        '国内顧客だけを狙い、利益率の高い米欧ホールセールを手つかずのまま放置している',
+        'すべてを外注し、社内チームに長期運用を任せるトレーニングを一切しない',
       ],
     },
     features: {
@@ -707,29 +707,29 @@ export const serviceCatalog: CatalogService[] = [
       en: [
         {
           q: 'What is live commerce and why does it work for Japanese brands?',
-          a: 'Live commerce is real-time selling on platforms like Facebook Live, Instagram Live, and TikTok Live. It works for Japanese brands because it turns product credibility and host trust into immediate conversion, and it scales globally when paired with community, email, and paid acquisition.',
+          a: 'Live commerce is real-time selling on platforms like Facebook Live, Instagram Live, and TikTok Live. It works for Japanese brands because it converts product credibility and host trust into immediate sales, and it scales globally once you pair it with community, email, and paid acquisition.',
         },
         {
           q: 'Can Streetshow help a Japanese brand sell to the United States and Europe?',
-          a: 'Yes. This is a core part of the Live Commerce & Shopify Growth service. We run Meta and Google Ads specifically targeting US and EU consumers and wholesale buyers, alongside cross-border logistics and Shopify storefront optimization.',
+          a: 'Yes. It is a core part of this service. We run Meta and Google Ads aimed at US and EU consumers and wholesale buyers, alongside cross-border logistics and Shopify storefront optimization.',
         },
         {
           q: 'What results can clients expect from a full live commerce growth system?',
-          a: 'Results vary by category and inventory depth. As a reference point, our JTL engagement generated more than 200,000 USD in Shopify revenue in eight months, part of roughly 800,000 USD in total revenue across channels, through combined live commerce, community, email, and paid acquisition.',
+          a: 'Results vary by category and inventory depth. For reference, our JTL engagement generated more than 200,000 USD in Shopify revenue in eight months, part of roughly 800,000 USD in total revenue across channels, through combined live commerce, community, email, and paid acquisition.',
         },
         {
           q: 'Does Streetshow train the internal client team?',
-          a: 'Yes. Every Live Commerce & Shopify Growth engagement includes team training on content creation, live session hosting, and Shopify management so the client operates the system independently after handover.',
+          a: 'Yes. Every engagement includes team training on content creation, live session hosting, and Shopify management, so you run the system independently after handover.',
         },
       ],
       ja: [
         {
           q: 'ライブコマースとは何で、なぜ日本ブランドに有効なのですか？',
-          a: 'ライブコマースとは、Facebookライブ、Instagramライブ、TikTokライブなどでのリアルタイム販売です。商品信頼性とホストの信頼を即時コンバージョンに変換できるため日本ブランドに有効であり、コミュニティ、メール、有料獲得と組み合わせることでグローバルに拡張可能です。',
+          a: 'ライブコマースとは、Facebookライブ、Instagramライブ、TikTokライブなどでのリアルタイム販売です。商品への信頼とホストへの信頼を即時の売上に変えられるため日本ブランドに有効で、コミュニティ、メール、有料獲得と組み合わせればグローバルに拡張できます。',
         },
         {
           q: '日本ブランドの米国・欧州への販売もサポートしてもらえますか？',
-          a: 'はい。ライブコマース＆Shopifyグロースサービスの中核です。米欧の消費者およびホールセールバイヤーをターゲットとしたMeta・Google広告を運用し、越境物流とShopifyストアフロント最適化も併せて実施します。',
+          a: 'はい。本サービスの中核です。米欧の消費者およびホールセールバイヤーに向けたMeta・Google広告を運用し、越境物流とShopifyストアフロント最適化も併せて実施します。',
         },
         {
           q: 'フルライブコマースグロースシステムでどのような成果が期待できますか？',
@@ -737,7 +737,7 @@ export const serviceCatalog: CatalogService[] = [
         },
         {
           q: 'クライアント社内チームへのトレーニングも含まれますか？',
-          a: 'はい。ライブコマース＆Shopifyグロース案件には、コンテンツ制作、ライブセッションのホスティング、Shopify運用のトレーニングが常に含まれ、引き継ぎ後はクライアント自身でシステムを運用できます。',
+          a: 'はい。すべての案件に、コンテンツ制作、ライブセッションのホスティング、Shopify運用のトレーニングが含まれ、引き継ぎ後はご自身でシステムを運用できます。',
         },
       ],
     },
@@ -767,8 +767,8 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'Charles & Keithの渋谷キャンペーン、東京での裸眼3Dアナモルフィックビルボード制作。Streetshowが日本ローンチのためのコンセプト、3Dアニメーション、スクリーン特化の実行を担当。',
     },
     intro: {
-      en: 'A naked-eye 3D anamorphic billboard activation for Charles & Keith in Shibuya, built to dominate one of Tokyo’s most competitive OOH environments and drive social amplification during the campaign window.',
-      ja: '渋谷におけるCharles & Keithの裸眼3Dアナモルフィックビルボードアクティベーション。東京で最も競争の激しいOOH環境を制し、キャンペーン期間中のソーシャル拡散を生み出すために設計されました。',
+      en: 'A naked-eye 3D anamorphic billboard activation for Charles & Keith in Shibuya, built to own one of Tokyo’s most competitive OOH environments and drive social amplification through the campaign window.',
+      ja: '渋谷におけるCharles & Keithの裸眼3Dアナモルフィックビルボードアクティベーション。東京で最も競争の激しいOOH環境を制し、キャンペーン期間を通じてソーシャル拡散を生み出すために設計されました。',
     },
     description: {
       en: 'A Shibuya 3D billboard execution for Charles & Keith, built for visibility, social shareability, and premium launch impact in Tokyo.',
@@ -840,8 +840,8 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'Streetshow Productionsが制作したニューバランスジャパン×大谷翔平のペイドメディアアクティベーション。日本市場向けに構築されたプレミアムスポーツマーケティングキャンペーン。',
     },
     intro: {
-      en: 'A paid media activation for New Balance Japan built around a Shohei Ohtani brand moment, produced for Japan-first audience relevance and premium sports marketing performance.',
-      ja: '大谷翔平のブランドモーメントを軸にしたニューバランスジャパン向けペイドメディアアクティベーション。日本のオーディエンスを第一に据え、プレミアムなスポーツマーケティングパフォーマンスを目指して制作されました。',
+      en: 'A paid media activation for New Balance Japan built around a Shohei Ohtani brand moment, produced for Japan-first audience relevance and premium sports-marketing performance.',
+      ja: '大谷翔平のブランドモーメントを軸にしたニューバランスジャパン向けペイドメディアアクティベーション。日本のオーディエンスを第一に据え、プレミアムなスポーツマーケティングの成果を狙って制作しました。',
     },
     description: {
       en: 'A paid media activation for New Balance Japan, built around a Shohei Ohtani brand moment with Japan-first cultural context and performance-led execution.',
@@ -913,8 +913,8 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'StreetshowによるSHEIN Japanのペイドソーシャルキャンペーン。日本のファッション市場向けに、日本起点のクリエイティブローカライズとプラットフォームネイティブな実行、文化的に整合したコンテンツを提供。',
     },
     intro: {
-      en: 'A paid social activation for SHEIN Japan, creative localization, platform-native production, and Japan-first storytelling designed to outperform translated global assets in the local market.',
-      ja: 'SHEIN Japanのためのペイドソーシャルアクティベーション。翻訳されたグローバルアセットを国内市場で上回ることを目指し、クリエイティブローカライズ、プラットフォームネイティブ制作、日本起点のストーリーテリングで設計しました。',
+      en: 'A paid social activation for SHEIN Japan: creative localization, platform-native production, and Japan-first storytelling built to outperform translated global assets in the local market.',
+      ja: 'SHEIN Japanのためのペイドソーシャルアクティベーション。クリエイティブローカライズ、プラットフォームネイティブ制作、日本起点のストーリーテリングで、翻訳されたグローバルアセットを国内市場で上回るよう構築しました。',
     },
     description: {
       en: 'A paid social activation for SHEIN Japan with Japan-first creative localization and platform-native execution designed for the local fashion audience.',
@@ -986,7 +986,7 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'Streetshow ProductionsによるKUOE 京都のブランドフィルムキャンペーン。2020年に内村健司氏が京都で創業した日本マイクロブランド時計メーカー向けのプレミアム映像制作。',
     },
     intro: {
-      en: 'A brand film campaign for KUOE Kyoto, the Japanese microbrand watchmaker founded in Kyoto in 2020 by Kenji Uchimura, produced to communicate classic design heritage, hand-assembled craftsmanship, and the refined mid-20th-century aesthetic at the core of the brand.',
+      en: 'A brand film campaign for KUOE Kyoto, the Japanese microbrand watchmaker founded in Kyoto in 2020 by Kenji Uchimura, produced to carry its classic design heritage, hand-assembled craftsmanship, and the refined mid-20th-century aesthetic at the core of the brand.',
       ja: '2020年に内村健司氏が京都で創業した日本のマイクロブランド時計メーカー、KUOE 京都のブランドフィルムキャンペーン。クラシックデザインの系譜、手組みによるクラフツマンシップ、そしてブランドの核にある20世紀半ばの洗練された美学を伝えるために制作しました。',
     },
     description: {
@@ -1059,7 +1059,7 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'Streetshow Productionsが制作したザ・リッツ・カールトン京都のプライベートダイニングキャンペーン。ホテルマーケティング、予約転換、プレミアムなブランド認知に向けたラグジュアリーホスピタリティ映像。',
     },
     intro: {
-      en: 'A hospitality campaign for The Ritz-Carlton, Kyoto, built around a private dining moment, produced to support premium brand perception, booking intent, and on-brand execution for one of Japan’s most recognized luxury hotel names.',
+      en: 'A hospitality campaign for The Ritz-Carlton, Kyoto, built around a private dining moment to support premium brand perception, booking intent, and on-brand execution for one of Japan’s most recognized luxury hotel names.',
       ja: 'ザ・リッツ・カールトン京都のためのホスピタリティキャンペーン。プライベートダイニングのひとときを軸に、日本で最も認知されたラグジュアリーホテルの一つに対するプレミアムなブランド認知、予約意向、ブランド整合の実行を支えるために制作されました。',
     },
     description: {
@@ -1132,8 +1132,8 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'StreetshowによるQC Running × On Japanのペイドソーシャルアクティベーション。日本のランニングコミュニティのエンゲージメントと成果重視のペイドソーシャルに向けて構築されたスポーツウェアキャンペーンクリエイティブ。',
     },
     intro: {
-      en: 'A paid social activation for QC Running and On Japan, built around the local Tokyo running community with vertical-first creative engineered for sportswear brand engagement and paid media performance.',
-      ja: 'QC RunningとOn Japanのためのペイドソーシャルアクティベーション。東京のローカルランニングコミュニティを軸に、スポーツウェアブランドのエンゲージメントとペイドメディアのパフォーマンスを狙う縦型ファーストのクリエイティブで構築しました。',
+      en: 'A paid social activation for QC Running and On Japan, built around the Tokyo running community with vertical-first creative engineered for sportswear engagement and paid media performance.',
+      ja: 'QC RunningとOn Japanのためのペイドソーシャルアクティベーション。東京のランニングコミュニティを軸に、スポーツウェアのエンゲージメントとペイドメディアの成果を狙う縦型ファーストのクリエイティブで構築しました。',
     },
     description: {
       en: 'A paid social activation for QC Running x On Japan, built around the Tokyo running community with vertical-first creative for sportswear engagement.',
@@ -1205,7 +1205,7 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'Streetshowが制作したFUDITALYCOの日本市場進出キャンペーン。プーリアの伝統を受け継ぐブランドが、パスタソース、オリーブオイル、ワイン、パスタをフランカヴィッラ家三世代にわたる系譜とともに日本の食卓へ。',
     },
     intro: {
-      en: 'A Japan market entry campaign for FUDITALYCO, the Puglia-rooted family food brand founded by Matteo Francavilla, built to bring three generations of Italian heritage recipes, pasta sauce, olive oil, wine, and pasta directly to Japanese tables.',
+      en: 'A Japan market entry campaign for FUDITALYCO, the Puglia-rooted family food brand founded by Matteo Francavilla, built to bring three generations of Italian heritage recipes, pasta sauce, olive oil, wine, and pasta, straight to Japanese tables.',
       ja: 'マッテオ・フランカヴィッラによって創業されたプーリア発のファミリーフードブランド、FUDITALYCOの日本市場進出キャンペーン。三世代にわたるイタリアの家族のレシピ——パスタソース、オリーブオイル、ワイン、パスタ——を直接日本の食卓へ届けるために構築しました。',
     },
     description: {
@@ -1278,8 +1278,8 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'Streetshow ProductionsによるSOUMEI シャンパーニュのCGI商品ビジュアライゼーション。プレミアムシャンパーニュブランド向けのフルボトルデザイン、フォトリアル3Dレンダリング、ブランドアニメーション。',
     },
     intro: {
-      en: 'Full CGI product visualization for SOUMEI Champagne, bottle design, photoreal 3D rendering, and brand animation produced from scratch to support premium product storytelling and launch marketing.',
-      ja: 'SOUMEI シャンパーニュのためのフルCGI商品ビジュアライゼーション。ボトルデザイン、フォトリアル3Dレンダリング、ブランドアニメーションをゼロから制作し、プレミアムな商品ストーリーテリングとローンチマーケティングを支えます。',
+      en: 'Full CGI product visualization for SOUMEI Champagne: bottle design, photoreal 3D rendering, and brand animation, produced from scratch to drive premium product storytelling and launch marketing.',
+      ja: 'SOUMEI シャンパーニュのためのフルCGI商品ビジュアライゼーション。ボトルデザイン、フォトリアル3Dレンダリング、ブランドアニメーションをゼロから制作し、プレミアムな商品ストーリーテリングとローンチマーケティングを牽引します。',
     },
     description: {
       en: 'Full CGI product visualization for SOUMEI Champagne, bottle design, 3D rendering, and brand animation produced from scratch for premium launch marketing.',
@@ -1351,8 +1351,8 @@ export const projectCatalog: CatalogProject[] = [
       ja: 'Streetshowによる東京でのエディトリアル写真制作。日本全国の雑誌、ブランドキャンペーン、出版物対応のビジュアルストーリーテリング向けプレミアムファッション＆ライフスタイル撮影。',
     },
     intro: {
-      en: 'A premium editorial photography series shot in Tokyo, styled production, art direction, and finishing built for magazine-grade fashion and lifestyle storytelling in Japan.',
-      ja: '東京で撮影したプレミアムエディトリアル写真シリーズ。日本における雑誌水準のファッション＆ライフスタイルストーリーテリングのためにスタイリングされた制作、アートディレクション、フィニッシングを提供します。',
+      en: 'A premium editorial photography series shot in Tokyo: styled production, art direction, and finishing built for magazine-grade fashion and lifestyle storytelling in Japan.',
+      ja: '東京で撮影したプレミアムエディトリアル写真シリーズ。日本における雑誌水準のファッション＆ライフスタイルストーリーテリングのために、スタイリングを施した制作、アートディレクション、フィニッシングを提供します。',
     },
     description: {
       en: 'A premium editorial photography series shot in Tokyo, built for magazine-grade fashion and lifestyle visual storytelling in Japan.',

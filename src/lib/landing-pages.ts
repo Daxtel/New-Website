@@ -48,12 +48,12 @@ export const locationPages: LandingPage[] = [
       ja: '福岡のプレミアムブランド向け映像制作会社',
     },
     intro: {
-      en: 'Streetshow Productions is a Fukuoka-based creative production studio serving premium and international brands. We produce brand films, hospitality content, and campaign work with an English and Japanese-speaking crew, on location across Fukuoka, Kyushu, and the rest of Japan.',
-      ja: 'Streetshow Productionsは、プレミアム・海外ブランドを支援する福岡拠点のクリエイティブ制作スタジオです。英語・日本語対応クルーで、福岡、九州、日本全国のロケーションにて、ブランドフィルム、ホスピタリティコンテンツ、キャンペーン制作を行います。',
+      en: 'Shoot in Fukuoka with a crew that briefs, films, and reviews in your language. Streetshow Productions is a Fukuoka-based creative studio for premium and international brands, producing brand films, hospitality content, and campaigns on location across Fukuoka, Kyushu, and the rest of Japan.',
+      ja: '福岡で、御社の言語でブリーフ・撮影・確認ができるクルーと制作を。Streetshow Productionsは、プレミアム・海外ブランドのための福岡拠点のクリエイティブスタジオです。福岡、九州、日本全国のロケーションで、ブランドフィルム、ホスピタリティコンテンツ、キャンペーンを制作します。',
     },
     trustLine: {
-      en: 'Fukuoka headquarters · Bilingual EN/JP crew · Hospitality, restaurant, and international brand production',
-      ja: '福岡本拠地 · EN/JPバイリンガルクルー · ホスピタリティ、レストラン、海外ブランド制作',
+      en: 'Fukuoka-based · Bilingual EN/JP crew · Hospitality, restaurant, and international brand production',
+      ja: '福岡拠点 · EN/JPバイリンガルクルー · ホスピタリティ、レストラン、海外ブランド制作',
     },
     targetKeywords: [
       'video production Fukuoka',
@@ -67,8 +67,8 @@ export const locationPages: LandingPage[] = [
       {
         heading: { en: 'Fukuoka-Based Creative Production for Brands in Japan', ja: '日本のブランド向け 福岡拠点のクリエイティブ制作' },
         body: {
-          en: 'Fukuoka is our home base. That means faster scheduling, real local knowledge, and lower production overhead than running a shoot out of Tokyo. For brands operating in Kyushu, or international teams who want a capable local partner, we handle the full production from concept to delivery.',
-          ja: '福岡は私たちの拠点です。東京から撮影を動かすよりも、スケジュール調整が速く、地元の知見が本物で、制作コストも抑えられます。九州で事業を展開するブランドや、頼れるローカルパートナーを求める海外チームのために、企画から納品まで一貫して対応します。',
+          en: 'Fukuoka is our home base, which means faster scheduling, real local knowledge, and lower overhead than running a shoot out of Tokyo. For brands operating in Kyushu, or international teams who want a capable local partner, we run the full production from concept to delivery.',
+          ja: '福岡は私たちの拠点です。だからこそ、東京から撮影を動かすよりもスケジュール調整が速く、地元の知見が確かで、制作コストも抑えられます。九州で事業を展開するブランドや、頼れるローカルパートナーを求める海外チームのために、企画から納品まで一貫して制作します。',
         },
       },
       {
@@ -84,8 +84,8 @@ export const locationPages: LandingPage[] = [
       {
         heading: { en: 'Why Fukuoka Is a Strong Production Base', ja: '福岡が優れた制作拠点である理由' },
         body: {
-          en: 'Fukuoka combines coastline, city, mountains, and traditional Japanese settings within a short drive. Location permits are more accessible than in central Tokyo, and the city is a major gateway for inbound tourism from Korea, China, and the wider region. That makes it an efficient base for both domestic campaigns and inbound-focused hospitality work.',
-          ja: '福岡は、海岸、都市、山、伝統的な日本の風景が、短時間の移動圏内にそろっています。ロケーション許可も都心の東京より取得しやすく、韓国、中国、周辺地域からのインバウンド観光の主要な玄関口でもあります。国内キャンペーンにも、インバウンド向けのホスピタリティ制作にも効率的な拠点です。',
+          en: 'Fukuoka puts coastline, city, mountains, and traditional Japanese settings within a short drive. Location permits are more accessible than in central Tokyo, and the city is a major gateway for inbound visitors from Korea, China, and the wider region. That makes it an efficient base for domestic campaigns and inbound-focused hospitality work alike.',
+          ja: '福岡は、海岸、都市、山、伝統的な日本の風景が短時間の移動圏内にそろっています。ロケーション許可も都心の東京より取得しやすく、韓国、中国、周辺地域からのインバウンドの主要な玄関口でもあります。国内キャンペーンにも、インバウンド向けのホスピタリティ制作にも効率的な拠点です。',
         },
       },
       {
@@ -102,15 +102,15 @@ export const locationPages: LandingPage[] = [
       {
         q: { en: 'How much does video production cost in Fukuoka?', ja: '福岡の映像制作の費用はいくらですか？' },
         a: {
-          en: 'Video production in Fukuoka typically runs from ¥300,000 to ¥2,000,000 per day depending on crew size, equipment, and deliverables. A typical multi-day brand shoot in Fukuoka is more cost-efficient than the equivalent production in central Tokyo.',
-          ja: '福岡の映像制作は、クルー規模、機材、納品物により1日¥300,000〜¥2,000,000が目安です。数日間のブランド撮影は、都心の東京での同等制作よりコスト効率に優れます。',
+          en: 'Video production in Fukuoka typically runs from ¥300,000 to ¥2,000,000 per day depending on crew size, equipment, and deliverables. A multi-day brand shoot in Fukuoka costs less than the same production run out of central Tokyo.',
+          ja: '福岡の映像制作は、クルー規模、機材、納品物により1日¥300,000〜¥2,000,000が目安です。数日間のブランド撮影は、都心の東京で同等の制作を行うよりも費用を抑えられます。',
         },
       },
       {
         q: { en: 'Can I hire an English-speaking video crew in Fukuoka?', ja: '福岡で英語対応の映像クルーを雇えますか？' },
         a: {
-          en: 'Yes. Streetshow Productions is headquartered in Fukuoka and operates an English, Japanese, and French-speaking crew, so overseas brands and agencies can brief, shoot, and review in their own language.',
-          ja: 'はい。Streetshow Productionsは福岡に本拠を置き、英語・日本語・フランス語対応のクルーを運営しています。海外ブランドやエージェンシーは、自国語でブリーフ、撮影、確認が可能です。',
+          en: 'Yes. Streetshow Productions is based in Fukuoka and runs an English, Japanese, and French-speaking crew, so overseas brands and agencies can brief, shoot, and review in their own language.',
+          ja: 'はい。Streetshow Productionsは福岡を拠点に、英語・日本語・フランス語対応のクルーを運営しています。海外ブランドやエージェンシーは、自国語でブリーフ、撮影、確認ができます。',
         },
       },
       {
@@ -126,8 +126,8 @@ export const locationPages: LandingPage[] = [
     cta: {
       title: { en: 'Planning a shoot in Fukuoka or Kyushu?', ja: '福岡・九州での撮影を計画中ですか？' },
       body: {
-        en: 'Tell us about your brand, timeline, and goal. We will scope the right crew, locations, and production plan for Fukuoka.',
-        ja: 'ブランド、スケジュール、目標をお聞かせください。福岡に最適なクルー、ロケーション、制作プランをご提案します。',
+        en: 'Tell us your brand, timeline, and goal. We will scope the crew, locations, and production plan that fit Fukuoka.',
+        ja: 'ブランド、スケジュール、目標をお聞かせください。福岡に合うクルー、ロケーション、制作プランをご提案します。',
       },
     },
   },
@@ -148,8 +148,8 @@ export const locationPages: LandingPage[] = [
       ja: '東京の海外ブランド向け映像制作会社',
     },
     intro: {
-      en: 'Streetshow Productions provides Tokyo production support for international brands, overseas agencies, and campaign teams. We supply local crew, bilingual coordination, and premium execution for brand films, paid social, 3D billboard content, and launch campaigns.',
-      ja: 'Streetshow Productionsは、海外ブランド、海外エージェンシー、キャンペーンチームに東京での制作支援を提供します。ブランドフィルム、有料ソーシャル、3Dビルボードコンテンツ、ローンチキャンペーンのために、ローカルクルー、バイリンガルコーディネート、プレミアム制作を提供します。',
+      en: 'Film in Tokyo without managing a foreign city. Streetshow Productions gives international brands, overseas agencies, and campaign teams local crew, bilingual coordination, and premium execution for brand films, paid social, 3D billboard content, and launch campaigns.',
+      ja: '異国の都市の段取りに追われることなく、東京で撮影を。Streetshow Productionsは、海外ブランド、海外エージェンシー、キャンペーンチームに、ローカルクルー、バイリンガルコーディネート、プレミアムな制作を提供します。ブランドフィルム、有料ソーシャル、3Dビルボードコンテンツ、ローンチキャンペーンに対応します。',
     },
     trustLine: {
       en: 'Tokyo production support · English-speaking crew · Brand films, paid social, and 3D billboard launches',
@@ -167,14 +167,14 @@ export const locationPages: LandingPage[] = [
       {
         heading: { en: 'Tokyo Production Support for Campaigns and Brand Launches', ja: 'キャンペーン・ブランドローンチのための東京制作支援' },
         body: {
-          en: 'When an international brand or agency needs to film in Tokyo, the hard part is rarely the idea. It is local crew, permits, casting, language, and premium execution under a tight schedule. We handle all of it, so your team can direct the work without managing the logistics of a foreign city.',
-          ja: '海外ブランドやエージェンシーが東京で撮影する際、難しいのはアイデアではありません。ローカルクルー、許可、キャスティング、言語、そしてタイトなスケジュールでのプレミアムな実行です。それらをすべて引き受け、御社チームは異国の都市の段取りに追われることなく、制作に集中できます。',
+          en: 'When an international brand or agency films in Tokyo, the hard part is rarely the idea. It is local crew, permits, casting, language, and premium execution on a tight schedule. We handle all of it, so your team can direct the work instead of managing the logistics of a foreign city.',
+          ja: '海外ブランドやエージェンシーが東京で撮影する際、難しいのはアイデアではありません。ローカルクルー、許可、キャスティング、言語、そしてタイトなスケジュールでのプレミアムな実行です。それらをすべて引き受けるので、御社チームは異国の都市の段取りではなく、制作そのものに集中できます。',
         },
       },
       {
         heading: { en: 'English-Speaking Production Crew in Tokyo', ja: '東京の英語対応制作クルー' },
         body: {
-          en: 'Our crew works in English, Japanese, and French. That removes the friction that usually slows down foreign productions in Japan: mistranslated briefs, unclear approvals, and slow on-set communication.',
+          en: 'Our crew works in English, Japanese, and French. That removes the friction that usually slows foreign productions in Japan: mistranslated briefs, unclear approvals, and slow communication on set.',
           ja: '当クルーは英語、日本語、フランス語で対応します。これにより、日本での海外制作を遅らせがちな摩擦、つまりブリーフの誤訳、不明確な承認、現場での遅いコミュニケーションを取り除きます。',
         },
       },
@@ -208,7 +208,7 @@ export const locationPages: LandingPage[] = [
       {
         q: { en: 'How much does video production cost in Tokyo?', ja: '東京の映像制作の費用はいくらですか？' },
         a: {
-          en: 'Video production in Tokyo generally runs from ¥500,000 to ¥2,000,000+ per day depending on crew, equipment, talent, and location permits. We scope each project to the deliverables rather than quoting a fixed package.',
+          en: 'Video production in Tokyo generally runs from ¥500,000 to ¥2,000,000+ per day depending on crew, equipment, talent, and location permits. We scope each project to its deliverables rather than quoting a fixed package.',
           ja: '東京の映像制作は、クルー、機材、タレント、ロケーション許可により、通常1日¥500,000〜¥2,000,000以上です。固定パッケージではなく、納品物に応じて各プロジェクトを設計します。',
         },
       },
@@ -247,8 +247,8 @@ export const locationPages: LandingPage[] = [
       ja: '日本の英語対応映像クルー',
     },
     intro: {
-      en: 'Streetshow Productions provides an English-speaking video crew and full local production support for overseas brands, agencies, and production teams shooting in Japan. We supply crew, gear, locations, and bilingual coordination across Fukuoka, Tokyo, Osaka, Kyoto, and beyond.',
-      ja: 'Streetshow Productionsは、日本で撮影する海外ブランド、エージェンシー、制作チームに、英語対応の映像クルーと完全なローカル制作支援を提供します。福岡、東京、大阪、京都、その他各地で、クルー、機材、ロケーション、バイリンガルコーディネートを提供します。',
+      en: 'You bring the concept and the brand. We bring the crew that speaks your language, knows the locations, and delivers to a global standard. Streetshow Productions gives overseas brands, agencies, and production teams full local support in Japan: crew, gear, locations, and bilingual coordination across Fukuoka, Tokyo, Osaka, Kyoto, and beyond.',
+      ja: 'コンセプトとブランドは御社が。御社の言語を話し、ロケーションを知り、グローバル基準で納品するクルーは私たちが。Streetshow Productionsは、日本で撮影する海外ブランド、エージェンシー、制作チームに、クルー、機材、ロケーション、バイリンガルコーディネートを、福岡、東京、大阪、京都、その他各地で提供します。',
     },
     trustLine: {
       en: 'Nationwide coverage · EN/JP/FR crew · Fixer, gear, locations, and post-production',
@@ -266,8 +266,8 @@ export const locationPages: LandingPage[] = [
       {
         heading: { en: 'Local Japan Production Support for Overseas Teams', ja: '海外チームのための日本ローカル制作支援' },
         body: {
-          en: 'You have the concept and the brand. What you need in Japan is a crew that speaks your language, knows the locations, handles the permits, and delivers to a global standard. That is exactly what we provide, as a full production partner or as local support for your traveling team.',
-          ja: 'コンセプトとブランドは御社にあります。日本で必要なのは、御社の言語を話し、ロケーションを知り、許可を処理し、グローバル基準で納品するクルーです。まさにそれを、フルの制作パートナーとして、あるいは出張チームへのローカル支援として提供します。',
+          en: 'You have the concept and the brand. What you need in Japan is a crew that speaks your language, knows the locations, handles the permits, and delivers to a global standard. That is what we provide, as a full production partner or as local support for your traveling team.',
+          ja: 'コンセプトとブランドは御社にあります。日本で必要なのは、御社の言語を話し、ロケーションを知り、許可を処理し、グローバル基準で納品するクルーです。それを、フルの制作パートナーとして、あるいは出張チームへのローカル支援として提供します。',
         },
       },
       {
@@ -292,8 +292,8 @@ export const locationPages: LandingPage[] = [
       {
         heading: { en: 'Production Support Across Fukuoka, Tokyo, Osaka, Kyoto, and Beyond', ja: '福岡、東京、大阪、京都、その他各地での制作支援' },
         body: {
-          en: 'Our base is Fukuoka, with regular production in Tokyo, Osaka, and Kyoto. For nationwide shoots, we bring a consistent crew and standard wherever the story takes you.',
-          ja: '拠点は福岡で、東京、大阪、京都で定期的に制作しています。全国撮影では、物語がどこへ向かおうと、一貫したクルーと品質でお応えします。',
+          en: 'Our base is Fukuoka, with regular production in Tokyo, Osaka, and Kyoto. For nationwide shoots, we bring the same crew and the same standard wherever the story takes you.',
+          ja: '拠点は福岡で、東京、大阪、京都で定期的に制作しています。全国撮影では、物語がどこへ向かおうと、同じクルーと同じ品質でお応えします。',
         },
       },
     ],
@@ -351,8 +351,8 @@ export const industryPages: LandingPage[] = [
       ja: '日本のラグジュアリーホテル向けクリエイティブ戦略・映像制作',
     },
     intro: {
-      en: 'Streetshow Productions helps luxury hotels, resorts, restaurants, and destination properties in Japan turn beautiful spaces into booking demand. We combine creative strategy with premium production so content does more than look good. It drives reservations and protects brand perception.',
-      ja: 'Streetshow Productionsは、日本のラグジュアリーホテル、リゾート、レストラン、デスティネーション施設が、美しい空間を予約需要に変えるお手伝いをします。クリエイティブ戦略とプレミアム制作を組み合わせ、コンテンツが見栄えするだけでなく、予約を生み、ブランド認知を守ります。',
+      en: 'Streetshow Productions helps luxury hotels, resorts, restaurants, and destination properties in Japan turn beautiful spaces into booked rooms. We pair creative strategy with premium production, so content does more than look good: it drives reservations and protects how the brand is perceived.',
+      ja: 'Streetshow Productionsは、日本のラグジュアリーホテル、リゾート、レストラン、デスティネーション施設が、美しい空間を予約に変えるお手伝いをします。クリエイティブ戦略とプレミアム制作を組み合わせ、コンテンツが見栄えするだけでなく、予約を生み、ブランドの見え方を守ります。',
     },
     trustLine: {
       en: 'Luxury hospitality focus · Booking-intent content · Ritz-Carlton and premium property experience',
@@ -369,14 +369,14 @@ export const industryPages: LandingPage[] = [
       {
         heading: { en: 'For Hotels, Resorts, Restaurants, and Destination Properties', ja: 'ホテル、リゾート、レストラン、デスティネーション施設のために' },
         body: {
-          en: 'Premium properties often have exceptional spaces and weak digital demand. The gap is rarely the product. It is how the property is presented, localized, and surfaced to the guest who is deciding where to book.',
-          ja: 'プレミアム施設は、世界水準の空間を持ちながら、デジタル需要が弱いことがよくあります。その差は、多くの場合、商品ではありません。施設がどう見せられ、ローカライズされ、予約先を選ぶゲストにどう届くかです。',
+          en: 'Premium properties often have exceptional spaces and weak digital demand. The gap is rarely the product. It is how the property is presented, localized, and surfaced to the guest deciding where to book.',
+          ja: 'プレミアム施設は、優れた空間を持ちながら、デジタル需要が弱いことがよくあります。その差は、多くの場合、商品ではありません。施設がどう見せられ、ローカライズされ、予約先を選ぶゲストにどう届くかです。',
         },
       },
       {
         heading: { en: 'The Problem With Beautiful Content That Does Not Drive Bookings', ja: '予約につながらない美しいコンテンツの問題' },
         body: {
-          en: 'A beautiful film that no one books from is a cost, not an asset. We start from the guest decision and work backward, so every piece of content has a job: build trust, show the experience, and move the viewer toward a reservation.',
+          en: 'A beautiful film no one books from is a cost, not an asset. We start from the guest\'s decision and work backward, so every piece of content has a job: build trust, show the experience, and move the viewer toward a reservation.',
           ja: '誰も予約しない美しい映像は、資産ではなくコストです。私たちはゲストの意思決定から逆算し、すべてのコンテンツに役割を持たせます。信頼を築き、体験を見せ、視聴者を予約へと動かすことです。',
         },
       },
@@ -404,8 +404,8 @@ export const industryPages: LandingPage[] = [
       {
         q: { en: 'How can video production increase hotel bookings in Japan?', ja: '映像制作は日本のホテル予約をどう増やしますか？' },
         a: {
-          en: 'Strategic video content increases hotel bookings by showing the guest experience, property atmosphere, and unique selling points in formats optimized for Google, Instagram, and direct booking pages. Properties with professional, well-placed content see materially higher engagement on booking platforms.',
-          ja: '戦略的な映像コンテンツは、ゲスト体験、施設の雰囲気、独自の強みを、Google、Instagram、直接予約ページ向けに最適化した形式で示すことで、ホテル予約を増やします。プロが制作し適切に配置されたコンテンツを持つ施設は、予約プラットフォームでのエンゲージメントが明確に高まります。',
+          en: 'Strategic video shows the guest experience, the property atmosphere, and the unique selling points in formats built for Google, Instagram, and direct booking pages. Well-placed, professional content gives the guest the confidence to book instead of scrolling past.',
+          ja: '戦略的な映像は、ゲスト体験、施設の雰囲気、独自の強みを、Google、Instagram、直接予約ページ向けの形式で示します。適切に配置されたプロの制作物は、ゲストが読み飛ばさずに予約する後押しになります。',
         },
       },
       {
@@ -428,8 +428,8 @@ export const industryPages: LandingPage[] = [
     cta: {
       title: { en: 'Planning a hotel launch, repositioning, or campaign?', ja: 'ホテルのローンチ、再構築、キャンペーンを計画中ですか？' },
       body: {
-        en: 'We work with selected hospitality brands where guest perception and booking intent decide whether rooms get booked. Tell us about your property.',
-        ja: 'ゲスト認知と予約意向が成果に大きく影響する、厳選されたホスピタリティブランドと仕事をしています。御社の施設についてお聞かせください。',
+        en: 'We work with selected hospitality brands where guest perception and booking intent decide whether rooms get filled. Tell us about your property.',
+        ja: 'ゲスト認知と予約意向が客室の稼働を左右する、厳選されたホスピタリティブランドと仕事をしています。御社の施設についてお聞かせください。',
       },
     },
   },
@@ -450,7 +450,7 @@ export const industryPages: LandingPage[] = [
       ja: '海外ブランドの日本市場参入クリエイティブパートナー',
     },
     intro: {
-      en: 'Streetshow Productions helps global brands enter Japan with strategy, localization, production, and campaign execution under one roof. We adapt your brand for Japanese buyers so it resonates, rather than simply translating words and hoping they land.',
+      en: 'Streetshow Productions helps global brands enter Japan with strategy, localization, production, and campaign execution under one roof. We adapt your brand for Japanese buyers so it resonates, instead of translating the words and hoping they land.',
       ja: 'Streetshow Productionsは、グローバルブランドの日本参入を、戦略、ローカライズ、制作、キャンペーン実行のワンストップで支援します。言葉を訳して届くことを願うのではなく、日本の買い手に響くようブランドを適応させます。',
     },
     trustLine: {
@@ -468,15 +468,15 @@ export const industryPages: LandingPage[] = [
       {
         heading: { en: 'Japan Launch Support for Global Brands', ja: 'グローバルブランドの日本ローンチ支援' },
         body: {
-          en: 'Entering Japan is not a translation project. It is a market with its own buying culture, trust signals, visual codes, and platform behavior. We give international brands a single partner for strategy, creative, and production so the launch is coherent from the first touchpoint.',
+          en: 'Entering Japan is not a translation project. It is a market with its own buying culture, trust signals, visual codes, and platform behavior. We give international brands one partner for strategy, creative, and production, so the launch holds together from the first touchpoint.',
           ja: '日本参入は翻訳プロジェクトではありません。独自の購買文化、信頼シグナル、ビジュアルコード、プラットフォーム行動を持つ市場です。私たちは海外ブランドに、戦略、クリエイティブ、制作を一つのパートナーで提供し、最初のタッチポイントから一貫したローンチを実現します。',
         },
       },
       {
         heading: { en: 'Why Global Campaigns Often Fail in Japan', ja: 'グローバルキャンペーンが日本で失敗しがちな理由' },
         body: {
-          en: 'Foreign campaigns fail in Japan when brands only translate words and ignore emotional context, visual codes, platform behavior, trust signals, and buying culture. Japanese consumers detect inauthenticity quickly and disengage without explanation.',
-          ja: '海外キャンペーンが日本で失敗するのは、言葉だけを訳し、感情的文脈、ビジュアルコード、プラットフォーム行動、信頼シグナル、購買文化を無視するときです。日本の消費者は不自然さを素早く見抜き、説明なく離れていきます。',
+          en: 'Global campaigns stall in Japan when they translate the words but keep the emotional context, visual codes, platform behavior, and trust signals of another market. Japanese audiences read that mismatch quickly, and quietly move on.',
+          ja: 'グローバルキャンペーンが日本でつまずくのは、言葉を訳しても、感情的文脈、ビジュアルコード、プラットフォーム行動、信頼シグナルが別の市場のままだからです。日本の視聴者はそのズレを素早く感じ取り、静かに離れていきます。',
         },
       },
       {
@@ -502,8 +502,8 @@ export const industryPages: LandingPage[] = [
       {
         q: { en: 'Do I need a Japanese agency, or can a foreign agency handle Japan?', ja: '日本のエージェンシーが必要ですか、海外でも対応可能ですか？' },
         a: {
-          en: 'You need a partner who understands both worlds. A purely Japanese agency may not understand your global brand standards. A purely foreign agency will miss the cultural register Japanese consumers respond to. Streetshow bridges both.',
-          ja: '両方の世界を理解するパートナーが必要です。純粋な日本のエージェンシーはグローバルブランド基準を理解できないことがあり、純粋な海外エージェンシーは日本の消費者が反応する文化的トーンを見逃します。Streetshowは両者を橋渡しします。',
+          en: 'You need a partner who understands both worlds. A purely Japanese agency may not hold to your global brand standards. A purely foreign agency will miss the cultural register Japanese consumers respond to. Streetshow bridges both.',
+          ja: '両方の世界を理解するパートナーが必要です。純粋な日本のエージェンシーはグローバルブランド基準を守りきれないことがあり、純粋な海外エージェンシーは日本の消費者が反応する文化的トーンを見逃します。Streetshowは両者を橋渡しします。',
         },
       },
       {
@@ -526,7 +526,7 @@ export const industryPages: LandingPage[] = [
     cta: {
       title: { en: 'Bringing your brand to Japan?', ja: 'ブランドを日本へ展開しますか？' },
       body: {
-        en: 'Tell us about your brand, category, and timeline. We will outline a Japan entry approach built around your buyer.',
+        en: 'Tell us your brand, category, and timeline. We will outline a Japan entry approach built around your buyer.',
         ja: 'ブランド、カテゴリー、スケジュールをお聞かせください。買い手を軸にした日本参入アプローチを提案します。',
       },
     },
@@ -548,7 +548,7 @@ export const industryPages: LandingPage[] = [
       ja: '日本のレストラン映像制作・集客戦略',
     },
     intro: {
-      en: 'Streetshow Productions helps restaurants and F&B brands in Japan get found, trusted, and booked. We build content and a visibility system for Google Maps, Instagram, and short-form video that reaches both domestic and inbound diners.',
+      en: 'Streetshow Productions helps restaurants and F&B brands in Japan get found, trusted, and booked. We build the content and the visibility system for Google Maps, Instagram, and short-form video that reaches domestic and inbound diners alike.',
       ja: 'Streetshow Productionsは、日本のレストラン・飲食ブランドが見つかり、信頼され、予約されるお手伝いをします。国内・インバウンド双方の食客に届く、Googleマップ、Instagram、短尺動画向けのコンテンツと集客システムを構築します。',
     },
     trustLine: {
@@ -566,8 +566,8 @@ export const industryPages: LandingPage[] = [
       {
         heading: { en: 'Content That Helps Restaurants Get Found, Trusted, and Booked', ja: 'レストランが見つかり、信頼され、予約されるコンテンツ' },
         body: {
-          en: 'For most restaurants in Japan, the paying inbound customer opens Google Maps before Tabelog. If the profile is thin, the photos are old, and there is no English, the restaurant is effectively invisible regardless of food quality. We fix the discovery layer, not just the highlight reel.',
-          ja: '日本の多くのレストランにとって、支払うインバウンド客は食べログより先にGoogleマップを開きます。プロフィールが薄く、写真が古く、英語がなければ、料理の質に関わらず、その店は事実上見えていません。私たちはハイライト映像だけでなく、発見される仕組みそのものを整えます。',
+          en: 'For most restaurants in Japan, the paying inbound customer opens Google Maps before Tabelog. If the profile is thin, the photos are old, and there is no English, the restaurant is effectively invisible no matter how good the food is. We fix the discovery layer, not just the highlight reel.',
+          ja: '日本の多くのレストランにとって、支払うインバウンド客は食べログより先にGoogleマップを開きます。プロフィールが薄く、写真が古く、英語がなければ、どれほど料理が良くても、その店は事実上見えていません。私たちはハイライト映像だけでなく、発見される仕組みそのものを整えます。',
         },
       },
       {
@@ -591,7 +591,7 @@ export const industryPages: LandingPage[] = [
       {
         heading: { en: 'Google Maps, Instagram, Short-Form Video, and Review Visibility', ja: 'Googleマップ、Instagram、短尺動画、レビュー可視性' },
         body: {
-          en: 'We treat visibility as a system: a properly built bilingual Google Business Profile, a steady cadence of posts, short-form video that travels, and a review response protocol. Done consistently, venues move from invisible to ranking within about 90 days.',
+          en: 'We treat visibility as a system: a properly built bilingual Google Business Profile, a steady cadence of posts, short-form video that travels, and a review response protocol. Run consistently, venues move from invisible to ranking within about 90 days.',
           ja: '私たちは可視性をシステムとして扱います。適切に構築されたバイリンガルのGoogleビジネスプロフィール、安定した投稿頻度、拡散する短尺動画、そしてレビュー対応の仕組みです。一貫して実行すれば、店舗はおよそ90日で「見えない」状態から上位表示へと移ります。',
         },
       },
@@ -600,8 +600,8 @@ export const industryPages: LandingPage[] = [
       {
         q: { en: 'Why do foreign diners skip Tabelog and use Google Maps?', ja: 'なぜ海外の食客は食べログを飛ばしてGoogleマップを使うのですか？' },
         a: {
-          en: 'Foreign diners bypass Tabelog because the interface assumes local knowledge, the 3.5-star scoring norm confuses non-Japanese users, and discovery is search-first. Inbound diners drop a pin on a map and ask what is close, which is exactly where Google Maps wins.',
-          ja: '海外の食客が食べログを避けるのは、インターフェースが地元の知識を前提とし、3.5点基準が非日本語ユーザーを混乱させ、発見が検索前提だからです。インバウンド客は地図にピンを落として近くの店を探します。まさにGoogleマップが強い場面です。',
+          en: 'Foreign diners bypass Tabelog because the interface assumes local knowledge, the 3.5-star scoring norm reads differently to non-Japanese users, and discovery is search-first. Inbound diners drop a pin on a map and ask what is close, which is exactly where Google Maps wins.',
+          ja: '海外の食客が食べログを避けるのは、インターフェースが地元の知識を前提とし、3.5点基準が非日本語ユーザーには意味が伝わりにくく、発見が検索前提だからです。インバウンド客は地図にピンを落として近くの店を探します。まさにGoogleマップが強い場面です。',
         },
       },
       {

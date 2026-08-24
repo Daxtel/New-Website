@@ -1,12 +1,12 @@
 export const aboutPageBilingual = {
   title: { en: 'About Streetshow Productions', ja: 'Streetshow Productionsについて' },
   intro: {
-    en: 'Streetshow Productions is a Japan-entry, localization, and creative execution partner for premium brands, for teams that cannot afford a weak launch.',
-    ja: 'Streetshow Productionsは、高難度な市場環境で事業を展開するプレミアムブランドのための、日本市場進出・ローカライズ・クリエイティブ実行パートナーです。',
+    en: 'Streetshow Productions is the Japan-entry, localization, and creative execution partner for premium brands. For teams that cannot afford a weak launch.',
+    ja: 'Streetshow Productionsは、プレミアムブランドのための日本市場進出・ローカライズ・クリエイティブ実行パートナーです。弱いローンチが許されないチームのために。',
   },
   mission: {
-    en: 'We help international companies adapt, position, and execute for Japan with the cultural precision, production discipline, and brand sensitivity the market demands.',
-    ja: '国際ブランドが日本市場で必要とされる文化的精度、制作規律、ブランド感度を備えて適応・ポジショニング・実行できるよう支援します。',
+    en: 'We help international companies adapt, position, and execute for Japan with the cultural precision, production discipline, and brand sensitivity this market demands.',
+    ja: '国際企業が、この市場が求める文化的精度、制作規律、ブランド感度をもって、日本向けに適応・ポジショニング・実行できるよう支援します。',
   },
   positioningLabel: { en: 'Positioning', ja: 'ポジショニング' },
   positioning: {
@@ -20,12 +20,12 @@ export const aboutPageBilingual = {
   coreCapabilityValue: { en: 'Japan market entry, localization, and execution', ja: '日本市場進出・ローカライズ・実行支援' },
   bestFitLabel: { en: 'Best Fit For', ja: '最適な対象' },
   operatingEdge: {
-    en: 'Fukuoka & Tokyo, Japan. Bilingual in EN/JP. Structured for both local execution and international stakeholder alignment. Streetshow supports premium brands that need more than translation, they need local credibility, refined execution, and market-aware judgment.',
-    ja: '福岡・東京拠点。EN/JPバイリンガル体制。国内での実行と海外ステークホルダーとの連携の両方に対応。Streetshowは翻訳以上の対応を必要とするプレミアムブランド、ローカルでの信頼性、洗練された実行力、市場を見据えた判断力を求めるブランドを支援します。',
+    en: 'Based in Fukuoka and Tokyo. Bilingual EN/JP. Built for local execution and international stakeholder alignment at once. We work with premium brands that need more than translation: local credibility, refined execution, and market-aware judgment.',
+    ja: '福岡・東京を拠点に、EN/JPバイリンガルで対応。国内での実行と海外ステークホルダーとの連携を、同時に成立させる体制です。翻訳以上のもの、つまりローカルでの信頼性、洗練された実行力、市場を見据えた判断力を必要とするプレミアムブランドと取り組みます。',
   },
   credibility: {
-    en: 'Streetshow Productions supports premium brands where strategic clarity, cultural nuance, and execution quality decide whether a launch works.',
-    ja: 'Streetshow Productionsは、戦略の明確さ、文化的ニュアンス、実行品質が成果を大きく左右するプレミアムブランドを支援します。',
+    en: 'We back premium brands where strategic clarity, cultural nuance, and execution quality decide whether a launch works.',
+    ja: '戦略の明確さ、文化的なニュアンス、実行品質がローンチの成否を決める、そんなプレミアムブランドを支えます。',
   },
   proofStrip: [
     { label: { en: 'Locations', ja: '拠点' }, value: { en: 'Fukuoka & Tokyo, Japan', ja: '福岡・東京' } },
@@ -42,8 +42,8 @@ export const aboutPageBilingual = {
 export const contactPageBilingual = {
   title: { en: 'Discuss Your Project', ja: 'プロジェクトについて相談する' },
   subtitle: {
-    en: 'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality decide whether a launch works.',
-    ja: 'Streetshow Productionsは、戦略の明確さ、文化的なニュアンス、実行品質が成果を大きく左右する案件において、選ばれたブランドや事業者を支援します。',
+    en: 'We work with a select set of brands and operators where strategic clarity, cultural nuance, and execution quality decide whether a launch works.',
+    ja: '戦略の明確さ、文化的なニュアンス、実行品質がローンチの成否を決める案件で、厳選したブランドや事業者と取り組みます。',
   },
   qualification: {
     en: 'Best suited for Japan market entry, hospitality repositioning, premium campaign execution, and localization-led brand work.',
@@ -54,8 +54,8 @@ export const contactPageBilingual = {
     ja: '各お問い合わせを丁寧に確認し、真剣なご相談には速やかに対応します。',
   },
   processNote: {
-    en: 'Initial calls are used to assess fit, market context, and the level of support required.',
-    ja: '初回の打ち合わせでは、適合性、市場背景、必要な支援レベルを確認します。',
+    en: 'A first call is where we assess fit, market context, and the level of support you need.',
+    ja: '初回の打ち合わせで、適合性、市場背景、必要な支援レベルを確認します。',
   },
   contactInfoLabel: { en: 'Contact Information', ja: '連絡先情報' },
   emailLabel: { en: 'Email', ja: 'メール' },
@@ -72,9 +72,21 @@ export const contactPageBilingual = {
     location: { en: 'Location', ja: '所在地' },
     scope: { en: 'Japan Scope', ja: '日本市場での範囲' },
     details: { en: 'What are you trying to achieve in Japan?', ja: '日本市場で実現したいことは何ですか？' },
+    hearAbout: { en: 'How did you hear about us?', ja: '当社をどこで知りましたか？' },
   },
   selectPlaceholder: { en: 'Select one', ja: '選択してください' },
+  hearAboutOptions: [
+    { en: 'Google search', ja: 'Google検索' },
+    { en: 'ChatGPT / AI assistant (Perplexity, Claude, Gemini)', ja: 'ChatGPT・AIアシスタント（Perplexity、Claude、Gemini）' },
+    { en: 'LinkedIn', ja: 'LinkedIn' },
+    { en: 'Referral / word of mouth', ja: '紹介・口コミ' },
+    { en: 'Industry event or trade fair', ja: '業界イベント・展示会' },
+    { en: 'Found a Streetshow article or guide', ja: 'Streetshowの記事・ガイドから' },
+    { en: 'Instagram / social media', ja: 'Instagram・SNS' },
+    { en: 'Other', ja: 'その他' },
+  ],
   projectTypeOptions: [
+    { en: 'Japan Creative Performance Audit', ja: '日本向けクリエイティブ・パフォーマンス監査' },
     { en: 'Japan Market Entry & Localization', ja: '日本市場参入・ローカライズ' },
     { en: 'Video Production', ja: '映像制作' },
     { en: 'Hospitality Creative Strategy', ja: 'ホスピタリティ・クリエイティブ戦略' },

@@ -1,12 +1,12 @@
 export const aboutPageBilingual = {
   title: { en: 'About Streetshow Productions', ja: 'Streetshow Productionsについて' },
   intro: {
-    en: 'Streetshow Productions is a Japan-entry, localization, and creative execution partner for premium brands operating in high-stakes market environments.',
-    ja: 'Streetshow Productionsは、高い重要度の市場環境で展開するプレミアムブランドのための、日本市場進出・ローカライズ・クリエイティブ実行パートナーです。',
+    en: 'Streetshow Productions is the Japan-entry, localization, and creative execution partner for premium brands that cannot afford a weak launch.',
+    ja: 'Streetshow Productionsは、弱いローンチが許されないプレミアムブランドのための、日本市場進出・ローカライズ・クリエイティブ実行パートナーです。',
   },
   mission: {
-    en: 'We help international companies adapt, position, and execute for Japan with the cultural precision, production discipline, and brand sensitivity the market demands.',
-    ja: '私たちは、国際企業が日本市場で求められる文化的精度、制作規律、ブランド感度をもって適応・ポジショニング・実行できるよう支援します。',
+    en: 'We help international companies adapt, position, and execute for Japan with the cultural precision, production discipline, and brand sensitivity this market demands.',
+    ja: '国際企業が、この市場が求める文化的精度、制作規律、ブランド感度をもって、日本向けに適応・ポジショニング・実行できるよう支援します。',
   },
   positioningLabel: { en: 'Positioning', ja: 'ポジショニング' },
   positioning: {

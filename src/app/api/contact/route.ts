@@ -11,6 +11,7 @@ type ContactPayload = {
   budget?: string;
   timeline?: string;
   location?: string;
+  hearAbout?: string;
   message?: string;
   company_url?: string; // honeypot — must stay empty
 };
@@ -26,6 +27,7 @@ const MAX_LEN: Partial<Record<keyof ContactPayload, number>> = {
   budget: 60,
   timeline: 120,
   location: 200,
+  hearAbout: 120,
   message: 5000,
 };
 
@@ -64,6 +66,7 @@ function buildEmailHtml(body: ContactPayload): string {
     { label: 'Budget Range', value: body.budget },
     { label: 'Timeline', value: body.timeline },
     { label: 'Location', value: body.location },
+    { label: 'Heard about us', value: body.hearAbout },
     { label: 'Goal in Japan', value: body.message },
   ];
 
@@ -101,6 +104,7 @@ function buildPlainText(body: ContactPayload): string {
     body.budget ? `Budget Range: ${body.budget}` : '',
     body.timeline ? `Timeline: ${body.timeline}` : '',
     body.location ? `Location: ${body.location}` : '',
+    body.hearAbout ? `Heard about us: ${body.hearAbout}` : '',
     body.message ? `\nGoal in Japan:\n${body.message}` : '',
     ``,
     `Received: ${new Date().toISOString()}`,

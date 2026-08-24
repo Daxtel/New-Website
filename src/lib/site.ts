@@ -25,20 +25,20 @@ export const homePage = {
     ja: '日本市場参入・映像制作・ローカライズ',
   },
   headline: {
-    en: 'Japan Market Entry Creative Partner for Premium Brands',
-    ja: '海外プレミアムブランドの日本市場参入を支援するクリエイティブパートナー',
+    en: 'Japan Market Entry for Premium Brands, Handled by a Local Creative Partner',
+    ja: '海外プレミアムブランドの日本市場参入を、現地のクリエイティブパートナーが担う',
   },
   subheadline: {
-    en: 'We help international brands enter Japan and perform there. Strategy, localization, video production, hospitality campaigns, and 3D billboards, built for how Japanese audiences actually buy. Bilingual team in Fukuoka and Tokyo.',
-    ja: '海外ブランドが日本に参入し、成果を出すまでを支援します。戦略、ローカライズ、映像制作、ホスピタリティキャンペーン、3Dビルボードを、日本の消費者の購買行動に合わせて設計。福岡・東京のバイリンガルチーム。',
+    en: 'Enter Japan and perform there. We handle strategy, localization, video production, hospitality campaigns, and 3D billboards, built around how Japanese audiences actually buy. Bilingual team in Fukuoka and Tokyo.',
+    ja: '日本に参入し、そこで成果を出す。戦略、ローカライズ、映像制作、ホスピタリティキャンペーン、3Dビルボードまで、日本の消費者の実際の購買行動に合わせて設計します。福岡・東京のバイリンガルチーム。',
   },
   trustLine: {
     en: 'Fukuoka & Tokyo · Bilingual EN/JP · New Balance · SHEIN Japan · Ritz-Carlton',
     ja: '福岡・東京 · EN/JPバイリンガル · New Balance · SHEIN Japan · リッツ・カールトン',
   },
   heroCta: {
-    en: 'Discuss Your Japan Launch',
-    ja: '日本市場参入のご相談',
+    en: 'Plan Your Japan Launch',
+    ja: '日本市場参入を計画する',
   },
   sections: [
     'Hero',

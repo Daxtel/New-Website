@@ -10,8 +10,8 @@ export const navLinks = [
 export const whoWeWorkWith = {
   title: { en: 'Who We Work With', ja: '対象クライアント' },
   intro: {
-    en: 'We work with premium brands and operators entering, repositioning, or scaling in Japan, where brand perception, cultural nuance, and execution quality decide whether a launch works.',
-    ja: 'Streetshow Productionsは、日本市場への進出・再構築・拡大を図るプレミアムブランドや事業者を支援します。特にブランド認知、文化的ニュアンス、実行品質が成果に直結する案件を得意としています。',
+    en: 'In Japan, brand perception, cultural nuance, and execution quality decide whether a launch works. We partner with premium brands and operators entering, repositioning, or scaling here.',
+    ja: '日本では、ブランド認知、文化的ニュアンス、実行品質が、ローンチの成否を左右します。Streetshow Productionsは、日本市場に進出・再構築・拡大するプレミアムブランドや事業者のパートナーとなります。',
   },
   items: [
     { en: 'Luxury and boutique hotels', ja: 'ラグジュアリー＆ブティックホテル' },
@@ -25,8 +25,8 @@ export const whoWeWorkWith = {
 export const featuredWork = {
   title: { en: 'Selected Work', ja: '制作実績' },
   subtitle: {
-    en: 'Premium production and Japan-market campaigns for brands where local relevance and quality decide the outcome.',
-    ja: 'プレミアム制作、日本市場向けキャンペーン、文化的に最適化された実行力を示す、厳選された制作実績。',
+    en: 'Campaigns and premium production for brands where local relevance and quality decide the outcome in Japan.',
+    ja: '日本での成果が、地域適合性と品質で決まるブランドのための、キャンペーンとプレミアム制作。',
   },
   items: [
     {
@@ -75,29 +75,29 @@ export const featuredWork = {
 export const services = {
   title: { en: 'What We Do', ja: '事業内容' },
   subtitle: {
-    en: 'Strategy, localization, video production, and campaign execution for premium brands entering or operating in Japan.',
-    ja: '日本市場への進出・運営を目指すプレミアムブランドを、戦略、ローカライズ、ハイレベルなクリエイティブ実行で支援します。',
+    en: 'Strategy, localization, video production, and campaign execution that make premium brands work in Japan.',
+    ja: 'プレミアムブランドを日本で機能させる、戦略、ローカライズ、映像制作、キャンペーン実行。',
   },
   items: [
     {
       title: { en: 'Japan Market Entry & Localization', ja: '日本市場進出・ローカライズ' },
       description: {
-        en: 'We help international brands adapt positioning, messaging, and execution for Japan so launches feel considered, credible, and locally relevant.',
-        ja: '海外ブランドが日本で信頼感と地域適合性を感じるローンチを実現するため、ポジショニング、メッセージ、実行を最適化します。',
+        en: 'Launch in Japan as a local brand, not a translated one. We adapt positioning, messaging, and execution so the work reads as considered, credible, and relevant here.',
+        ja: '翻訳されたブランドではなく、現地のブランドとして日本でローンチする。ポジショニング、メッセージ、実行を最適化し、考え抜かれた、信頼できる、現地に響く形に仕上げます。',
       },
     },
     {
       title: { en: 'Hospitality Creative Strategy & Production', ja: 'ホスピタリティ向けクリエイティブ戦略・制作' },
       description: {
-        en: 'We support hotels, resorts, and destination properties with strategy-led creative designed to improve visibility, booking intent, and long-term brand value.',
-        ja: 'ホテル、リゾート、デスティネーション施設に対し、認知・予約意向・長期ブランド価値を高める戦略主導のクリエイティブを提供します。',
+        en: 'More visibility, more booking intent, and brand value that lasts past the season. Strategy-led creative for hotels, resorts, and destination properties.',
+        ja: 'より高い認知、より強い予約意向、そしてシーズンを越えて続くブランド価値。ホテル、リゾート、デスティネーション施設のための戦略主導のクリエイティブ。',
       },
     },
     {
       title: { en: 'Video Production in Japan', ja: '日本での映像制作' },
       description: {
-        en: 'High-level production for campaigns, launches, and brand storytelling, managed locally in Japan with the quality control international teams expect.',
-        ja: 'キャンペーン、ローンチ、ブランドストーリーテリング向けの日本国内でのハイレベル制作。国際チームが期待する品質管理体制を備えています。',
+        en: 'Production managed on the ground in Japan, at the quality international teams expect. Campaigns, launches, and brand storytelling, without the distance.',
+        ja: '国際チームが期待する品質で、日本国内で管理する制作。キャンペーン、ローンチ、ブランドストーリーテリングを、距離の問題なく。',
       },
     },
   ],
@@ -106,40 +106,40 @@ export const services = {
 export const process = {
   title: { en: 'How We Work', ja: '進め方' },
   intro: {
-    en: 'Our process is designed to reduce ambiguity, align stakeholders, and deliver work that performs in the Japanese market.',
-    ja: '私たちのプロセスは、曖昧さを減らし、ステークホルダーを整合させ、日本市場で成果を出す仕事を納品するために設計されています。',
+    en: 'A process built to remove ambiguity, keep stakeholders aligned, and deliver work that performs in Japan.',
+    ja: '曖昧さを取り除き、ステークホルダーの足並みを揃え、日本で成果を出す仕事を届けるためのプロセスです。',
   },
   steps: [
     {
       number: '01',
       title: { en: 'Discovery & Market Context', ja: 'ディスカバリーと市場理解' },
       description: {
-        en: 'We assess objectives, audience, brand position, and the realities of the Japanese market relevant to the launch or campaign.',
-        ja: '目的、ターゲット、ブランドポジション、ローンチやキャンペーンに関連する日本市場の現実を評価します。',
+        en: 'We map your objectives, audience, and brand position against the realities of the Japanese market.',
+        ja: '目的、ターゲット、ブランドポジションを、日本市場の現実と照らし合わせて整理します。',
       },
     },
     {
       number: '02',
       title: { en: 'Strategic Alignment', ja: '戦略の整合' },
       description: {
-        en: 'We shape localization, creative, and execution plans around business goals, cultural fit, and channel context.',
-        ja: 'ビジネス目標、文化的適合性、チャネル文脈に基づき、ローカライズ、クリエイティブ、実行計画を策定します。',
+        en: 'We build localization, creative, and execution plans around your business goals, cultural fit, and the channels you sell on.',
+        ja: 'ビジネス目標、文化的適合性、そして販売チャネルに基づき、ローカライズ、クリエイティブ、実行の計画を組み立てます。',
       },
     },
     {
       number: '03',
       title: { en: 'Production & Delivery', ja: '制作と納品' },
       description: {
-        en: 'We manage development, production, and execution with attention to quality, consistency, and premium brand sensitivity.',
-        ja: '品質、一貫性、プレミアムブランドへの配慮をもって、開発、制作、実行を管理します。',
+        en: 'We manage development, production, and execution, protecting quality and consistency at every step.',
+        ja: '開発、制作、実行を管理し、あらゆる工程で品質と一貫性を守ります。',
       },
     },
     {
       number: '04',
       title: { en: 'Launch Support', ja: 'ローンチ支援' },
       description: {
-        en: 'Where relevant, we support rollout and refinement so the work lands appropriately across audience, channel, and market context.',
-        ja: '必要に応じて、ターゲット、チャネル、市場文脈に適切にフィットするよう、展開と改善を支援します。',
+        en: 'We support rollout and refinement so the work lands across every audience, channel, and market.',
+        ja: '展開と改善を支援し、あらゆるターゲット、チャネル、市場で成果につながるようにします。',
       },
     },
   ],

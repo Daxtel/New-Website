@@ -1,8 +1,9 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { pick } from '@/lib/i18n';
 import { contactPageBilingual } from '@/lib/secondary-pages-bilingual';
+import { track } from '@/lib/analytics';
 
 type Props = { locale?: 'en' | 'ja' };
 type FormDataState = {
@@ -14,12 +15,13 @@ type FormDataState = {
   budget: string;
   timeline: string;
   location: string;
+  hearAbout: string;
   message: string;
 };
 
 const EMPTY_FORM: FormDataState = {
   name: '', email: '', company: '', website: '',
-  projectType: '', budget: '', timeline: '', location: '', message: '',
+  projectType: '', budget: '', timeline: '', location: '', hearAbout: '', message: '',
 };
 
 const EASE: [number, number, number, number] = [0.4, 0, 0.2, 1];
@@ -230,6 +232,22 @@ export function ContactForm({ locale = 'en' }: Props) {
   const [status, setStatus]     = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [honeypot, setHoneypot] = useState(''); // hidden anti-bot field
+  const [auditInquiry, setAuditInquiry] = useState(false);
+
+  // Prefill from ?inquiry=… (e.g. the Japan Creative Performance Audit CTAs). Reads
+  // the URL directly to avoid a useSearchParams Suspense boundary. Preselects the
+  // matching project type; the message stays the user's to write.
+  useEffect(() => {
+    const inquiry = new URLSearchParams(window.location.search).get('inquiry');
+    if (inquiry === 'japan-creative-performance-audit') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setAuditInquiry(true);
+      setFormData((prev) => ({
+        ...prev,
+        projectType: pick(contactPageBilingual.projectTypeOptions[0], locale),
+      }));
+    }
+  }, [locale]);
 
   function update(key: keyof FormDataState, value: string) {
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -249,6 +267,7 @@ export function ContactForm({ locale = 'en' }: Props) {
       const data = await res.json();
       if (!res.ok) { setStatus('error'); setErrorMsg(data.error || 'Submission failed'); return; }
       setStatus('success');
+      if (auditInquiry) track('japan_audit_form_submit');
       setFormData({ ...EMPTY_FORM });
     } catch {
       setStatus('error');
@@ -298,6 +317,15 @@ export function ContactForm({ locale = 'en' }: Props) {
           onChange={(v) => update('budget', v)}
         />
       </div>
+
+      <FloatSelect
+        id="hearAbout"
+        label={pick(contactPageBilingual.fieldLabels.hearAbout, locale)}
+        value={formData.hearAbout}
+        placeholder={pick(contactPageBilingual.selectPlaceholder, locale)}
+        options={contactPageBilingual.hearAboutOptions.map((o) => pick(o, locale))}
+        onChange={(v) => update('hearAbout', v)}
+      />
 
       <FloatTextarea
         id="message" label={pick(contactPageBilingual.fieldLabels.details, locale)}
