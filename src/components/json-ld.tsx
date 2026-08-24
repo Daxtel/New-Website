@@ -162,6 +162,7 @@ export function buildServiceSchema(params: {
   description: string;
   url: string;
   slug: string;
+  offer?: { price: string; priceCurrency: string };
 }) {
   return {
     '@context': 'https://schema.org',
@@ -178,6 +179,19 @@ export function buildServiceSchema(params: {
       { '@type': 'Place', name: 'Europe' },
     ],
     availableLanguage: ['English', 'Japanese'],
+    ...(params.offer && {
+      offers: {
+        '@type': 'Offer',
+        price: params.offer.price,
+        priceCurrency: params.offer.priceCurrency,
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: params.offer.price,
+          priceCurrency: params.offer.priceCurrency,
+          valueAddedTaxIncluded: false,
+        },
+      },
+    }),
   };
 }
 

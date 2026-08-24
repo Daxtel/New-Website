@@ -5,6 +5,7 @@ import { pick, ui } from '@/lib/i18n';
 import { getCatalogService, projectCatalog, serviceCatalog } from '@/lib/catalog';
 import { CampaignWork } from '@/components/campaign-work';
 import { SmartVideo } from '@/components/motion/SmartVideo';
+import { AuditCallout } from '@/components/audit/AuditCallout';
 import { getLocale } from '@/lib/locale';
 import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { JsonLd, buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
@@ -140,6 +141,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </div>
 
           {slug === 'video-production-japan' && <CampaignWork />}
+
+          {slug === 'japan-market-localization' && (
+            <div className="mt-16">
+              <AuditCallout variant="localization" locale={locale} />
+            </div>
+          )}
 
           {relatedProjects.length > 0 && (
             <div className="mt-16">

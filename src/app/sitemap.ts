@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/hospitality',
     '/japan-market-entry',
     '/services',
+    '/services/japan-creative-performance-audit', // bespoke route, not in serviceCatalog
     '/work',
     '/blog',
     ...serviceCatalog.map((s) => `/services/${s.slug}`),

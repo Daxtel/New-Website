@@ -13,6 +13,7 @@ import { AnimatedProcessStep } from '@/components/motion/AnimatedProcessStep';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { HorizontalWorkScroll } from '@/components/motion/HorizontalWorkScroll';
 import { LeadMagnet } from '@/components/lead-magnet';
+import { AuditCallout } from '@/components/audit/AuditCallout';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -148,6 +149,15 @@ export default async function Home() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Japan Creative Performance Audit callout ───────────────── */}
+      <section className="px-5 pb-4 sm:px-6 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-6xl">
+          <ScrollReveal>
+            <AuditCallout variant="home" tone="integrated" locale={locale} />
+          </ScrollReveal>
         </div>
       </section>
 

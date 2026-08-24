@@ -6,6 +6,7 @@ import { getLocale } from '@/lib/locale';
 import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { blogPosts } from '@/lib/blog';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { AuditCallout } from '@/components/audit/AuditCallout';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -103,6 +104,15 @@ export default async function JapanMarketEntry() {
           <p className="mt-8 max-w-4xl text-base leading-relaxed text-body-text md:text-lg">
             {pick(shell.sections.mistakes.closing, locale)}
           </p>
+        </div>
+      </section>
+
+      {/* ── Lower-friction entry: Japan Creative Performance Audit ── */}
+      <section className="px-6 pt-16 md:px-10 md:pt-24 lg:px-16">
+        <div className="mx-auto max-w-6xl">
+          <ScrollReveal>
+            <AuditCallout variant="jme" locale={locale} />
+          </ScrollReveal>
         </div>
       </section>
 

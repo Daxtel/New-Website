@@ -9,6 +9,7 @@ import { aboutPageBilingual } from '@/lib/secondary-pages-bilingual';
 import { JsonLd, buildItemListSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { AnimatedServiceRow } from '@/components/motion/AnimatedServiceRow';
+import { AuditCallout } from '@/components/audit/AuditCallout';
 
 const servicesFaqsEn = [
   {
@@ -112,6 +113,11 @@ export default async function ServicesPage() {
               />
             ))}
           </div>
+
+          {/* Featured diagnostic entry service */}
+          <ScrollReveal className="mt-10">
+            <AuditCallout variant="home" locale={locale} />
+          </ScrollReveal>
 
           {/* FAQ Section */}
           <ScrollReveal className="mt-20">
