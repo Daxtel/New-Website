@@ -32,20 +32,18 @@ const isPortraitSrc = (src: string) => PORTRAIT_SRCS.has(src);
 /**
  * VideoScrubHero — the hero video on every /work/[slug] detail page.
  *
- * The hard rule: this video must be PLAYABLE on every device, and must never
- * depend on autoplay succeeding. iOS Safari refuses inline autoplay in Low Power
- * Mode and with Reduce Motion on; when it refuses, the old version showed a
- * poster with no way to start it — indistinguishable from a dead image.
+ * The hard rule: this video must be PLAYABLE, with sound, on every device.
+ * Before activation the video is always muted (ambient preview only — scroll
+ * scrub on desktop landscape, autoplay loop on desktop portrait, static poster
+ * on touch). That ambient state is never mistaken for "playable": a visible
+ * play control is present on every device until the visitor activates it.
  *
- * Touch devices: always get a visible play control over the poster. We still
- * ATTEMPT muted inline autoplay, but the control is hidden only once the
- * `playing` event actually fires — never because play() resolved. If autoplay is
- * refused, or nothing is playing, the control stays and a tap starts it (with
- * native controls, so the user can pause/scrub).
- *
- * Desktop landscape: unchanged — the full-quality file scrubs (seeks) on scroll.
- * Desktop portrait: muted inline autoplay loop inside the phone frame.
- * Reduce Motion (any device): no autoplay, but a play control is always present.
+ * Activating (click/tap) unmutes, hands the video native `controls` (so the
+ * visitor can pause, seek, and go fullscreen normally), and — on desktop
+ * landscape — stops the scroll-scrub so real playback isn't fought by scroll
+ * position. Nothing here depends on autoplay succeeding: iOS Safari refuses
+ * inline autoplay in Low Power Mode and with Reduce Motion on, and the control
+ * stays available regardless of whether the ambient autoplay attempt worked.
  */
 export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -59,8 +57,7 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   // of the wrong-weight file.
   const [isTouch, setIsTouch] = useState<boolean | null>(null);
   const [reduced, setReduced] = useState(false);
-  const [playing, setPlaying] = useState(false); // confirmed via the `playing` event
-  const [activated, setActivated] = useState(false); // user tapped → enable controls
+  const [activated, setActivated] = useState(false); // user pressed play → unmute + native controls
   const [failed, setFailed] = useState(false); // mobile transcode 404 → fall back to master
 
   const { scrollYProgress } = useScroll({
@@ -85,7 +82,9 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
   const desktopScrub = isTouch === false && !reduced && !portrait;
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
-    if (!desktopScrub) return;
+    // Stop scrubbing once the visitor has pressed play — real playback owns
+    // currentTime from here, not scroll position.
+    if (!desktopScrub || activated) return;
     const video = videoRef.current;
     if (!video || !durationRef.current) return;
     const clamped = Math.min(progress / 0.6, 1); // first 60% of scroll = full duration
@@ -93,8 +92,10 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
     if (Math.abs(video.currentTime - target) > 0.04) video.currentTime = target;
   });
 
-  // Playback intent per surface. Never trust the play() promise — the `playing`
-  // event (onPlaying) is what flips `playing` and hides the control.
+  // Ambient playback intent per surface — muted preview only. Never trust the
+  // play() promise to mean anything is watchable; the play control (below)
+  // is what actually lets the visitor watch, regardless of whether this
+  // autoplay attempt succeeds or is refused (Low Power Mode, Reduce Motion).
   useEffect(() => {
     if (isTouch === null) return;
     const video = videoRef.current;
@@ -114,11 +115,18 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
 
   const activate = useCallback(() => {
     setActivated(true);
-    requestAnimationFrame(() => videoRef.current?.play().catch(() => {}));
+    requestAnimationFrame(() => {
+      const v = videoRef.current;
+      if (!v) return;
+      v.muted = false;
+      v.play().catch(() => {});
+    });
   }, []);
 
   const poster = posterFor(src);
-  const showControl = (isTouch === true || reduced) && !playing;
+  // Visible on every device until the visitor presses play — the ambient
+  // muted state (scrub or autoplay loop) is never mistaken for real playback.
+  const showControl = isTouch !== null && !activated;
 
   // ── Media: poster-only until capability known, or on desktop-reduced (respect
   // the OS setting), otherwise a real, reachable <video>. ──────────────────────
@@ -142,7 +150,6 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
         controls={activated}
         preload={isTouch === false && !reduced ? 'auto' : 'none'}
         onLoadedMetadata={onMetadata}
-        onPlaying={() => setPlaying(true)}
         onEnded={startOffset > 0 ? () => { const v = videoRef.current; if (v) { v.currentTime = startOffset; v.play().catch(() => {}); } } : undefined}
         onError={() => setFailed(true)}
         className="absolute inset-0 h-full w-full object-cover"
@@ -156,7 +163,7 @@ export function VideoScrubHero({ src, title }: VideoScrubHeroProps) {
       {media}
 
       {/* Play control — same treatment as SmartVideo, so the site is consistent.
-          Visible until playback is CONFIRMED (or on Reduce Motion, until tapped). */}
+          Visible on every device until the visitor activates real playback. */}
       {showControl && (
         <button
           type="button"
