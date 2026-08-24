@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { pick, ui } from '@/lib/i18n';
+import { pick, ui, type Localized } from '@/lib/i18n';
 import { getCatalogService, projectCatalog, serviceCatalog } from '@/lib/catalog';
 import { CampaignWork } from '@/components/campaign-work';
 import { SmartVideo } from '@/components/motion/SmartVideo';
@@ -10,6 +10,20 @@ import { getLocale } from '@/lib/locale';
 import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { JsonLd, buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
+
+// Contextual internal links to the Fukuoka location page from its two closest
+// related services (see relatedServices on the Fukuoka entry in landing-pages.ts).
+// The footer link was previously the only path to that page.
+const fukuokaContextualLink: Record<string, { lead: Localized; anchor: Localized }> = {
+  'video-production-japan': {
+    lead: { en: 'Shooting in Kyushu? See our dedicated page for', ja: '九州での撮影をご検討ですか？詳しくは' },
+    anchor: { en: 'video production in Fukuoka', ja: '福岡の映像制作ページ' },
+  },
+  'hospitality-creative-strategy-japan': {
+    lead: { en: 'Property based in Kyushu? See our dedicated page for', ja: '九州エリアの施設ですか？詳しくは' },
+    anchor: { en: 'hotel and restaurant video production in Fukuoka', ja: '福岡のホテル・レストラン向け映像制作ページ' },
+  },
+};
 
 export const dynamicParams = true;
 
@@ -145,6 +159,21 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           {slug === 'japan-market-localization' && (
             <div className="mt-16">
               <AuditCallout variant="localization" locale={locale} />
+            </div>
+          )}
+
+          {fukuokaContextualLink[slug] && (
+            <div className="mt-16 border border-white/8 bg-white/[0.02] p-6">
+              <p className="text-base leading-relaxed text-body-text">
+                {pick(fukuokaContextualLink[slug].lead, locale)}{' '}
+                <Link
+                  href={localizeHref('/locations/video-production-fukuoka', locale)}
+                  className="text-[#D4AF37] underline underline-offset-4 hover:text-[#D4AF37]/80"
+                >
+                  {pick(fukuokaContextualLink[slug].anchor, locale)}
+                </Link>
+                {locale === 'ja' ? 'をご覧ください。' : '.'}
+              </p>
             </div>
           )}
 

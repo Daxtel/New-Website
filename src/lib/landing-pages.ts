@@ -40,8 +40,8 @@ export const locationPages: LandingPage[] = [
       ja: '福岡の映像制作会社｜英語対応クルー｜Streetshow Productions',
     },
     metaDescription: {
-      en: 'Fukuoka-based video production for premium and international brands. English-speaking crew, brand films, and hospitality and restaurant content.',
-      ja: '福岡拠点の映像制作。プレミアム・海外ブランド向け。英語対応クルー、ブランドフィルム、ホスピタリティ・レストランコンテンツ。九州・日本全国で対応。',
+      en: 'Video production company in Fukuoka for brand films, hospitality, and restaurant content. English-speaking crew serving local and international clients.',
+      ja: '福岡拠点の映像制作会社。ブランドフィルム、CM、ホスピタリティ・レストランコンテンツを制作。英語対応クルーで国内外のクライアントに対応。九州・日本全国で対応。',
     },
     h1: {
       en: 'Video Production Company in Fukuoka for Premium Brands',

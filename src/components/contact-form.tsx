@@ -308,14 +308,16 @@ export function ContactForm({ locale = 'en' }: Props) {
           options={contactPageBilingual.projectTypeOptions.map((o) => pick(o, locale))}
           onChange={(v) => update('projectType', v)}
         />
-        <FloatSelect
-          id="budget"
-          label={pick(contactPageBilingual.fieldLabels.budget, locale)}
-          value={formData.budget}
-          placeholder={pick(contactPageBilingual.selectPlaceholder, locale)}
-          options={contactPageBilingual.budgetOptions.map((o) => pick(o, locale))}
-          onChange={(v) => update('budget', v)}
-        />
+        {!auditInquiry && (
+          <FloatSelect
+            id="budget"
+            label={pick(contactPageBilingual.fieldLabels.budget, locale)}
+            value={formData.budget}
+            placeholder={pick(contactPageBilingual.selectPlaceholder, locale)}
+            options={contactPageBilingual.budgetOptions.map((o) => pick(o, locale))}
+            onChange={(v) => update('budget', v)}
+          />
+        )}
       </div>
 
       <FloatSelect
