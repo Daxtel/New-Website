@@ -220,29 +220,37 @@ export default async function JapanCreativePerformanceAuditPage() {
       <section className={sectionCls}>
         <div className="mx-auto max-w-4xl">
           <ScrollReveal>
-            <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/[0.03] p-8 shadow-[0_24px_60px_-16px_rgba(0,0,0,0.5)] md:p-12">
-              <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-text">{pick(p.scope.heading, locale)}</h2>
-              <p className="mt-4 text-[clamp(1.8rem,4vw,2.75rem)] font-extrabold leading-none tracking-tight text-[#D4AF37]">
-                {pick(p.scope.price, locale)}
-              </p>
-              <p className="mt-2 text-base text-heading">{pick(p.scope.duration, locale)}</p>
-              <ul className="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-                {p.scope.includes.map((item) => (
-                  <li key={item.en} className="flex items-start gap-3 text-[15px] text-body-text">
-                    <span className="mt-1 text-[#D4AF37]">•</span>
-                    <span>{pick(item, locale)}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-8 text-sm text-muted-text">{pick(p.scope.note, locale)}</p>
-              <AuditCtaLink
-                href={contactHref(locale)}
-                event="japan_audit_cta_click"
-                source="scope"
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#0A0A0A] transition-colors hover:bg-[#D4AF37]/90"
-              >
-                {pick(p.scope.cta, locale)}
-              </AuditCtaLink>
+            <div className="overflow-hidden rounded-3xl bg-white shadow-[0_32px_80px_-20px_rgba(0,0,0,0.6)]">
+              <div className="p-8 md:p-14">
+                <h2 className="text-2xl font-bold text-[#0A0A0A] md:text-3xl">{pick(p.scope.heading, locale)}</h2>
+                <p className="mt-3 text-base font-semibold text-[#B8860B] md:text-lg">
+                  {pick(p.scope.price, locale)} · {pick(p.scope.duration, locale)}
+                </p>
+
+                <AuditCtaLink
+                  href={contactHref(locale)}
+                  event="japan_audit_cta_click"
+                  source="scope"
+                  className="mt-8 inline-flex items-center justify-center rounded-full bg-[#0A0A0A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#D4AF37] transition-opacity hover:opacity-90"
+                >
+                  {pick(p.scope.cta, locale)}
+                </AuditCtaLink>
+
+                <div className="mt-10 border-t border-black/10 pt-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#999]">
+                    {locale === 'ja' ? '対象範囲' : "What's included"}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.scope.includes.map((item) => (
+                      <span key={item.en} className="rounded-full border border-black/10 px-3 py-1.5 text-xs font-medium text-[#333]">
+                        {pick(item, locale)}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <p className="mt-8 text-sm text-[#888]">{pick(p.scope.note, locale)}</p>
+              </div>
             </div>
           </ScrollReveal>
         </div>
@@ -282,36 +290,6 @@ export default async function JapanCreativePerformanceAuditPage() {
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-body-text">{pick(p.value.body, locale)}</p>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ── Implementation pathway ── */}
-      <section className={`bg-[#141414] ${sectionCls}`}>
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <ScrollReveal>
-              <h2 className="text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
-                {pick(p.implementation.heading, locale)}
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-body-text">{pick(p.implementation.body, locale)}</p>
-              <ul className="mt-6 space-y-2">
-                {p.implementation.items.map((item) => (
-                  <li key={item.en} className="flex items-start gap-3 text-[15px] text-body-text">
-                    <span className="mt-1 text-[#D4AF37]">•</span>
-                    <span>{pick(item, locale)}</span>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-            <ScrollReveal direction="left">
-              <div className="flex h-full flex-col justify-center rounded-2xl border border-[#D4AF37]/20 bg-white/[0.03] p-8 shadow-[0_24px_60px_-16px_rgba(0,0,0,0.5)] md:p-10">
-                <p className="text-[clamp(1.5rem,3vw,2.1rem)] font-extrabold leading-none tracking-tight text-[#D4AF37]">
-                  {pick(p.implementation.creditAmount, locale)}
-                </p>
-                <p className="mt-4 text-[15px] leading-relaxed text-body-text">{pick(p.implementation.creditBody, locale)}</p>
-              </div>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 
