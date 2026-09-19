@@ -6,11 +6,43 @@ import { getCatalogService } from '@/lib/catalog';
 import { JsonLd, buildBreadcrumbSchema, buildFaqSchema } from '@/components/json-ld';
 import { site } from '@/lib/site';
 import { pick } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
 import { getLocale } from '@/lib/locale';
 import { buildAlternates, localizeHref } from '@/lib/alternates';
 import { ReadingProgress } from '@/components/motion/ReadingProgress';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { LeadMagnet } from '@/components/lead-magnet';
+
+/**
+ * Body copy is plain text apart from one opt-in token: [anchor](/internal/path).
+ * Parsed into a <Link> here rather than injected as HTML, so a post can carry a
+ * contextual internal link inside a sentence with no XSS surface. Paragraphs
+ * without the token render exactly as before.
+ */
+const INTERNAL_LINK = /\[([^\]]+)\]\((\/[^)\s]*)\)/g;
+
+function renderParagraph(text: string, locale: Locale) {
+  const parts: React.ReactNode[] = [];
+  let cursor = 0;
+  for (const match of text.matchAll(INTERNAL_LINK)) {
+    const [token, label, href] = match;
+    const at = match.index ?? 0;
+    if (at > cursor) parts.push(text.slice(cursor, at));
+    parts.push(
+      <Link
+        key={`${href}-${at}`}
+        href={localizeHref(href, locale)}
+        className="text-[#D4AF37] underline underline-offset-4 transition-colors hover:text-[#D4AF37]/80"
+      >
+        {label}
+      </Link>,
+    );
+    cursor = at + token.length;
+  }
+  if (!parts.length) return text;
+  if (cursor < text.length) parts.push(text.slice(cursor));
+  return parts;
+}
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -168,7 +200,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <div className="space-y-5">
                   {pick(section.paragraphs, locale).map((p, pIdx) => (
                     <p key={pIdx} className="text-base leading-relaxed text-body-text md:text-lg">
-                      {p}
+                      {renderParagraph(p, locale)}
                     </p>
                   ))}
                 </div>

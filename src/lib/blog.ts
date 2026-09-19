@@ -55,11 +55,11 @@ export const blogPosts: BlogPost[] = [
       ja: '2026年の日本市場進出：プレミアムブランドが知っておくべきこと',
     },
     metaTitle: {
-      en: 'Japan Market Entry 2026: Premium Brand Guide | Streetshow',
+      en: 'Japan Market Entry Strategy: The 2026 Guide for Premium Brands',
       ja: '2026年 日本市場進出：プレミアムブランドガイド | Streetshow',
     },
     metaDescription: {
-      en: 'A 2026 guide to Japan market entry for premium brands. Inbound tourism, consumer behavior, localization pitfalls, and the operating model that actually works.',
+      en: 'A step-by-step Japan market entry strategy for premium brands: regulatory groundwork, positioning, distribution, and creative that works in market.',
       ja: 'プレミアムブランド向け、2026年の日本市場進出ガイド。インバウンド需要、消費者行動、ローカライズの落とし穴、そして実際に機能するオペレーティングモデル。',
     },
     excerpt: {
@@ -141,24 +141,78 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: {
-          en: 'The operating model we use at Streetshow',
-          ja: 'Streetshowが用いるオペレーティングモデル',
+          en: 'The regulatory groundwork most brands underestimate',
+          ja: '多くのブランドが軽く見る、規制まわりの下ごしらえ',
         },
         paragraphs: {
           en: [
-            'The model that works is the opposite of fragmentation. Strategy, localization, and production are treated as one connected operation from the first meeting.',
-            'We start with business goals, not deliverables. Before any creative conversation, we ask what the brand needs Japan to do for it, first-year revenue, category credibility, Asia signal, or all three. That answer shapes everything downstream.',
-            'Then we handle positioning and messaging adaptation in Japanese from the inside. This is not a translation pass, it is a rebuild of how the brand talks about itself to a Japanese audience, with original copy in Japanese and a reconciled English equivalent.',
-            'Production happens locally in Japan with bilingual crew and international quality standards, which keeps cultural context tight and protects brand equity through every frame. And because strategy, localization, and production are running as one operation, the feedback loops that normally break between vendors stay intact.',
-            'The result, consistently, is a launch that feels native in Japan and on-brand globally, instead of one or the other.',
+            'Nothing here is difficult. It is simply slower than the timeline in your launch deck, and almost every delay we see traces back to a step that looked administrative and turned out to be sequential.',
+            'Four questions decide your calendar.',
+            'Who is the importer of record? Someone with a legal presence in Japan has to take responsibility for the goods entering the country. If you are not establishing an entity, that is your distributor, a trading company, or an import agent. This decision is not paperwork. It determines who controls your pricing, your channel relationships, and how easily you can change partners in year three. Brands routinely sign this away in month one to move faster, then spend years trying to get it back.',
+            'What category does your product fall into? Cosmetics, food and beverage, supplements, medical devices and electrical goods each sit under a different approval regime, with different documentation and different lead times. A general merchandise item can clear in weeks. A product touching skin or entering the body can take the better part of a year. Find out which you are before you commit to a launch date, not after.',
+            'What has to appear on the packaging? Japanese labelling requirements are specific and enforced. Ingredients, origin, importer details, handling and category-specific warnings all have prescribed treatment. This is the item most often discovered late, because it sits between marketing and compliance and neither team owns it. Relabelling a shipment that has already landed is expensive, and it delays your launch by the length of the reprint.',
+            "How is consumption tax handled, and are your invoices compliant? Japan's qualified invoice system affects how your B2B partners account for the tax they pay you. Get the registration and the invoice format wrong and your wholesale customers absorb a cost they did not expect, which is a bad way to begin a relationship with a Japanese buyer.",
+            'Two points to hold onto. First, these steps are sequential, not parallel: category classification drives documentation, documentation drives labelling, labelling drives your print deadline, and the print deadline drives your launch date. Second, none of this is creative work, and none of it is optional. Scope it in month one with a specialist, and treat the timeline it produces as the real one.',
+            'This section is strategic guidance, not legal or customs advice. Requirements change and vary by product category. Confirm your obligations with a qualified specialist before committing to a launch date.',
           ],
-          ja: [
-            '機能するモデルは分断の反対です。戦略、ローカライズ、制作を最初の打ち合わせから一つのつながったオペレーションとして扱います。',
-            '私たちは成果物ではなく、事業目標から始めます。いかなるクリエイティブの議論よりも先に、ブランドが日本に何を求めるのか（初年度売上、カテゴリ内での信頼構築、アジア向けのシグナル、またはその全て）を確認します。その答えが下流の全てを形作ります。',
-            'そのうえで、ポジショニングとメッセージングの日本語への適応を内側から行います。これは翻訳作業ではなく、ブランドが日本のオーディエンスに対して自らをどう語るかの再構築であり、日本語でのオリジナルコピーと、それに整合する英語版を同時に作り上げます。',
-            '制作はバイリンガルクルーと国際基準の品質で日本国内で行われ、文化的コンテクストを緊密に保ち、全てのフレームでブランドエクイティを守ります。戦略、ローカライズ、制作が一つのオペレーションとして動くため、通常はベンダー間で途切れるフィードバックループが一貫して保たれます。',
-            '結果として、日本でネイティブに感じられながら、グローバルにもオンブランドなローンチが、一貫して実現します。',
+          ja: [],
+        },
+      },
+      {
+        heading: {
+          en: 'Positioning: what has to change, and what must not',
+          ja: 'ポジショニング：変えるべきもの、変えてはいけないもの',
+        },
+        paragraphs: {
+          en: [
+            'The instinct most brands arrive with is that Japan needs a softer, more polite version of their global positioning. That instinct produces work that is pleasant, forgettable, and indistinguishable from the three other [foreign brands launching](/japan-market-entry) that quarter.',
+            'The useful question is narrower. Your global positioning contains a promise and a set of proofs. The promise usually travels. The proofs almost never do.',
+            'A performance brand selling on "worn by the best athletes in the world" is making a promise about credibility. In its home market, the proof is a roster of names the audience grew up watching. In Japan, that roster may mean very little, while a single domestic athlete carries more weight than the entire international list. The promise is unchanged. The proof has to be rebuilt from local material.',
+            'A [hospitality brand](/hospitality) selling on "effortless luxury" faces a harder version of the same problem. In Japan, service excellence is not a differentiator you can claim. It is the baseline the market already delivers, at a standard most international operators underestimate. Arriving with a promise the local competition has met for decades reads as naive. The position has to move to something the market does not already have.',
+            'Three things to work out before anyone writes a line of copy.',
+            'What is the reference set? Japanese buyers will not compare you to your global competitors. They will compare you to whatever occupies your shelf, your price band, or your category in their market. Know who that actually is. It is frequently a domestic brand your category team has never heard of.',
+            'What is your credibility source? Foreign origin can be an asset or a liability depending on category. In some, provenance sells. In others, the market wants evidence that you have done the work to belong here. Decide which you are, and build proof accordingly.',
+            'What are you willing to not say? Claims that work as confident in English can read as overreaching in Japanese. The brands that land well usually say less and demonstrate more. This is the hardest adjustment for founders, and it is the one that most reliably separates launches that build trust from launches that spend a year apologising for their first campaign.',
+            'What must not change is the thing that makes you worth choosing. Adapting a brand until it resembles the local market is not localization, it is erasure, and it removes the only reason a Japanese buyer would pick you over an incumbent who understands them better.',
           ],
+          ja: [],
+        },
+      },
+      {
+        heading: {
+          en: 'Distribution: how your product actually reaches a Japanese buyer',
+          ja: '流通：商品が実際に日本の買い手へ届くまで',
+        },
+        paragraphs: {
+          en: [
+            'Distribution decisions outlive campaigns. A channel choice made in month two constrains your pricing, your margin and your brand control for years, and unwinding it is considerably harder than making it.',
+            'Four routes, with the real trade-off in each.',
+            '[Direct-to-consumer](/work/jtl-japan-luxury-preowned-live-commerce). You keep the margin, the customer relationship and full control of how the brand is presented. You also take on Japanese-language customer service, domestic payment methods, delivery expectations that are stricter than most markets, and returns handling. DTC in Japan is not a cheap entry route. It is a commitment to operating in the market properly, and it rewards brands willing to make it.',
+            "Marketplace. Rakuten and Amazon Japan put you in front of volume immediately. The cost is that you are competing on a page designed to make comparison easy, where the visual conventions and the density of information are unlike anything in Western e-commerce. A storefront that looks clean and premium by international standards frequently underperforms against a domestic competitor's denser, busier page, because the density is what Japanese shoppers read as thorough.",
+            'Wholesale and retail. Placement in the right store is a credibility signal that money cannot easily buy, and it reaches a customer who will never find you online. It is also slow. Japanese buyers evaluate over long cycles, expect consistency, and are assessing whether you will still be here in three years. Treat a first meeting as the opening of a relationship, not a pitch.',
+            'Distributor. The fastest route to being in market, and the one that costs you the most optionality. A good distributor brings relationships you cannot build in a year. A bad one becomes a wall between you and your own customers, and the exclusivity clause you signed in month one is what keeps it there. If you go this way, negotiate the exit before you negotiate the terms.',
+            "Most premium brands end up with a combination, and the sequencing matters more than the mix. The pattern that works: establish DTC first so you own the brand presentation and learn what Japanese customers actually buy, then use that evidence in wholesale conversations. Walking into a retail buyer's office with domestic sales data is a categorically different conversation from walking in with a lookbook.",
+          ],
+          ja: [],
+        },
+      },
+      {
+        heading: {
+          en: 'Creative adaptation is not translation',
+          ja: 'クリエイティブの適応は、翻訳ではない',
+        },
+        paragraphs: {
+          en: [
+            'Translated creative fails in a way that is difficult to see from outside the market, because nothing about it is technically wrong. The words are accurate. The tone is off, and tone is what the audience is actually reading.',
+            'Where it breaks:',
+            'Register. Japanese encodes the relationship between speaker and audience in the grammar itself. A brand voice that is warm and direct in English has to choose a level of formality in Japanese, and that choice signals who you think your customer is. Get it wrong in either direction and you sound either presumptuous or distant. There is no neutral option.',
+            'Pacing. Japanese advertising typically establishes context before it makes a claim. A lot of Western creative does the reverse, opening on the claim and supporting it afterwards. Run that structure unchanged and the opening frame reads as aggressive rather than confident.',
+            'Density. Japanese audiences accept, and often expect, more information on screen and on page than Western audiences tolerate. Creative stripped to a single image and three words can read as thin rather than elegant.',
+            'Format. Vertical is not an afterthought in Japan, it is frequently the primary format, and creative shot for landscape and cropped down is visibly compromised. Plan [the vertical edit](/services/video-production-japan) at the shoot, not in the edit suite.',
+            'Casting and setting. Audiences notice immediately whether a location was [actually shot in Japan](/work/new-balance-japan-ohtani-activation) or approximated somewhere cheaper. So does the trade press. If the campaign claims a connection to the market, the footage has to earn it.',
+            'The practical consequence is that adaptation belongs at the brief, not at the end. A campaign conceived globally and localised afterwards inherits every structural decision that does not fit. A campaign briefed with both markets in view produces assets that work in both without either feeling like the compromise.',
+          ],
+          ja: [],
         },
       },
       {
@@ -180,6 +234,28 @@ export const blogPosts: BlogPost[] = [
             'フェーズ2は制作とクリエイティブシステムの構築です。日本市場向けのブランドのビジュアル・映像アイデンティティを制作します。キャンペーン撮影、映像コンテンツ、必要に応じた3D・CGIビジュアライゼーション、ソーシャル向けカットダウンまで。単一のキャンペーンではなく、ビジュアルシステムの構築として捉えます。素材はローンチ期間全体、そしてその後も機能し続ける必要があるからです。',
             'フェーズ3はローンチアクティベーションと最適化です。メディア戦略、必要に応じた高視認性プレースメント（渋谷や新宿の3Dアナモルフィック広告は、今も日本で最もレバレッジの効くローンチフォーマットの一つです）、日本のオーディエンスが実際に使うプラットフォームでのペイドメディア、そして初週からのパフォーマンスデータに基づく継続的な最適化をカバーします。',
             '重要な規律は、3つのフェーズすべてを一つのエンゲージメントとしてスコープすることです。ベンダー間でこれを分割することが、プレミアムな日本ローンチが予算とブランドエクイティを漏らす最も一般的な理由です。',
+          ],
+        },
+      },
+      {
+        heading: {
+          en: 'The operating model we use at Streetshow',
+          ja: 'Streetshowが用いるオペレーティングモデル',
+        },
+        paragraphs: {
+          en: [
+            'The model that works is the opposite of fragmentation. Strategy, localization, and production are treated as one connected operation from the first meeting.',
+            'We start with business goals, not deliverables. Before any creative conversation, we ask what the brand needs Japan to do for it, first-year revenue, category credibility, Asia signal, or all three. That answer shapes everything downstream.',
+            'Then we handle positioning and messaging adaptation in Japanese from the inside. This is not a translation pass, it is a rebuild of how the brand talks about itself to a Japanese audience, with original copy in Japanese and a reconciled English equivalent.',
+            'Production happens locally in Japan with bilingual crew and international quality standards, which keeps cultural context tight and protects brand equity through every frame. And because strategy, localization, and production are running as one operation, the feedback loops that normally break between vendors stay intact.',
+            'The result, consistently, is a launch that feels native in Japan and on-brand globally, instead of one or the other.',
+          ],
+          ja: [
+            '機能するモデルは分断の反対です。戦略、ローカライズ、制作を最初の打ち合わせから一つのつながったオペレーションとして扱います。',
+            '私たちは成果物ではなく、事業目標から始めます。いかなるクリエイティブの議論よりも先に、ブランドが日本に何を求めるのか（初年度売上、カテゴリ内での信頼構築、アジア向けのシグナル、またはその全て）を確認します。その答えが下流の全てを形作ります。',
+            'そのうえで、ポジショニングとメッセージングの日本語への適応を内側から行います。これは翻訳作業ではなく、ブランドが日本のオーディエンスに対して自らをどう語るかの再構築であり、日本語でのオリジナルコピーと、それに整合する英語版を同時に作り上げます。',
+            '制作はバイリンガルクルーと国際基準の品質で日本国内で行われ、文化的コンテクストを緊密に保ち、全てのフレームでブランドエクイティを守ります。戦略、ローカライズ、制作が一つのオペレーションとして動くため、通常はベンダー間で途切れるフィードバックループが一貫して保たれます。',
+            '結果として、日本でネイティブに感じられながら、グローバルにもオンブランドなローンチが、一貫して実現します。',
           ],
         },
       },
