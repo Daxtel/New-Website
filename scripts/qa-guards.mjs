@@ -246,6 +246,25 @@ const JP = /[\u3000-\u303F\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uFF00-\uFFEF]/
   }
 }
 
+// ── 13. Copy: how Japanese copy addresses the reader ────────────────────────────
+// Blog copy does not address the reader directly; the reader's own company is
+// 自社. The Japan market entry pillar drifted into 御社 and then mixed the two in
+// one sentence, which made every 自社 ambiguous (it read as the distributor's
+// customers rather than the reader's). Hard-fail in blog.ts.
+// landing-pages.ts addresses the reader as 御社 deliberately across the location
+// and industry pages, so those are surfaced as warnings rather than blocked.
+// Widen this to an error everywhere once that copy is aligned.
+{
+  for (const f of libFiles) {
+    for (const { line, value } of stringValues(read(f))) {
+      if (!value.includes('御社')) continue;
+      const msg = `${f}:${line} ja copy addresses the reader as 御社; house convention is 自社 or no pronoun: "${value.slice(0, 50)}"`;
+      if (f.endsWith('blog.ts')) err('ja-address', msg);
+      else warn('ja-address', msg);
+    }
+  }
+}
+
 // ── Report ──────────────────────────────────────────────────────────────────────
 const line = '─'.repeat(72);
 console.log(`\n${line}\nqa-guards — deterministic pre-merge checks\n${line}`);
