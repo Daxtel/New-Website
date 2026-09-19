@@ -157,21 +157,42 @@ const JP = /[\u3000-\u303F\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uFF00-\uFFEF]/
     en += [...t.matchAll(/(?:^|[\s{,])en:\s*['"`]/g)].length;
     ja += [...t.matchAll(/(?:^|[\s{,])ja:\s*['"`]/g)].length;
 
-    t.split('\n').forEach((line, i) => {
-      const m = line.match(/\bja:\s*'([^']*)'/);
-      if (!m) return;
-      const v = m[1];
-      if (v.trim() === '') { err('i18n-empty', `${f}:${i + 1} has an empty ja value`); return; }
+    const checkJa = (line, v) => {
+      if (v.trim() === '') { err('i18n-empty', `${f}:${line} has an empty ja value`); return; }
       if (JP.test(v)) return;
       // No Japanese at all. Distinguish English prose from legitimately-Latin
       // values: prices, brand names, URLs, single labels.
       const words = v.match(/[A-Za-z]{2,}/g) ?? [];
       if (words.length >= 4) {
-        err('i18n-untranslated', `${f}:${i + 1} ja value looks like untranslated English: "${v.slice(0, 60)}"`);
+        err('i18n-untranslated', `${f}:${line} ja value looks like untranslated English: "${v.slice(0, 60)}"`);
       } else if (words.length > 0 && v.length > 24) {
-        warn('i18n-latin', `${f}:${i + 1} ja value has no Japanese characters: "${v.slice(0, 60)}"`);
+        warn('i18n-latin', `${f}:${line} ja value has no Japanese characters: "${v.slice(0, 60)}"`);
       }
-      if (v.includes('�')) err('i18n-encoding', `${f}:${i + 1} ja value contains a replacement character (mojibake)`);
+      if (v.includes('�')) err('i18n-encoding', `${f}:${line} ja value contains a replacement character (mojibake)`);
+    };
+
+    // Covers `ja: '…'` scalars AND the elements of `ja: [ … ]` arrays. The arrays
+    // are the biggest copy surface on the site (every blog paragraph) and were
+    // unchecked until this guard was widened, so English prose could sit on an
+    // indexed /ja page without tripping anything.
+    const QUOTED = /(['"`])((?:\\.|(?!\1)[^\\])*)\1/g;
+    let depth = 0; // bracket depth while inside a ja: [ … ]
+    stripComments(t).split('\n').forEach((line, i) => {
+      const opens = /\bja:\s*\[/.test(line);
+      if (depth > 0) {
+        for (const m of line.matchAll(QUOTED)) checkJa(i + 1, m[2]);
+      } else if (opens) {
+        // `ja: ['a', 'b'],` on one line: only the values after the bracket.
+        const tail = line.slice(line.search(/\bja:\s*\[/));
+        for (const m of tail.matchAll(QUOTED)) checkJa(i + 1, m[2]);
+      } else {
+        const scalar = line.match(/\bja:\s*(['"`])((?:\\.|(?!\1)[^\\])*)\1/);
+        if (scalar) checkJa(i + 1, scalar[2]);
+      }
+      if (opens || depth > 0) {
+        depth += (line.match(/\[/g)?.length ?? 0) - (line.match(/\]/g)?.length ?? 0);
+        if (depth < 0) depth = 0;
+      }
     });
   }
   const drift = Math.abs(en - ja);
