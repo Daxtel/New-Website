@@ -37,6 +37,18 @@ client in site copy or proposals.
 - Bilingual: English and Japanese.
 - Confident, specific, results-focused. Never generic.
 
+## Japanese copy conventions
+Japanese address register follows the copy's **function**, not the page type.
+- **Analytical and editorial copy** (blog articles, guides) drops the second
+  person. Japanese allows this; the existing blog already does it.
+- **Direct sales copy** (CTAs, service and location pages, landing pages) may
+  address the reader as 御社 where the English is built on a you/we contrast.
+- **Never mix 御社 and 自社 for the same referent inside one piece.** That
+  inconsistency is the actual defect, not the choice of either word.
+
+The qa-guard is scoped to match: hard error in `blog.ts`, warning in
+`landing-pages.ts`. Leave it that way.
+
 ## The website (this repo)
 
 **This repo `New-Website` is the live production site** at streetshowproduction.com.
