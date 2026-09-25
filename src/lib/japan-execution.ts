@@ -70,11 +70,11 @@ export const japanExecution = {
     },
     still: {
       src: '/images/japan-execution/hero.webp',
-      alt: 'Streetshow production crew on a Japanese venue floor during load-in',
+      alt: 'Full arena in Japan mid-show, stage LED and lighting rig running to a standing crowd',
       caption: '',
       width: 1920,
       height: 1080,
-      ready: false,
+      ready: true,
     } as ImageSlot,
   },
 
@@ -122,7 +122,7 @@ export const japanExecution = {
         body: "Ongoing since 2025 and now in a second contract. We run the in-stadium LED advertising for the club's international audience, producing and operating screen content in English, French and Spanish across all home games.",
         image: {
           src: '/images/japan-execution/paypay-dome-hawks.webp',
-          alt: 'In-stadium LED advertising running at PayPay Dome Fukuoka during a Fukuoka SoftBank Hawks home game',
+          alt: 'In-stadium LED advertising boards at PayPay Dome Fukuoka carrying multilingual screen content during a home game',
           caption: '',
           width: 1600,
           height: 1000,
@@ -135,7 +135,7 @@ export const japanExecution = {
         body: "Production delivered directly for the auction house, inside one of Kyushu's most demanding luxury venues.",
         image: {
           src: '/images/japan-execution/kusama-auction-jtl.webp',
-          alt: 'Auction production setup for JTL Auctions at a luxury hotel venue in Fukuoka',
+          alt: 'Auction floor production for JTL Auctions staged inside a luxury hotel ballroom in Fukuoka',
           caption: '',
           width: 1600,
           height: 1000,
@@ -148,11 +148,11 @@ export const japanExecution = {
         body: "LED content produced in-house, running across six screen surfaces on the main stage. Brand integration for international partners including SHEIN, Casamigos and G's Up.",
         image: {
           src: '/images/japan-execution/kansai-collection-kyocera-dome.webp',
-          alt: 'LED content running across main stage screen surfaces at Kansai Collection, Kyocera Dome Osaka',
+          alt: 'Kansai Collection finale at Kyocera Dome Osaka, runway lit under six LED surfaces carrying the show artwork',
           caption: '',
           width: 1600,
           height: 1000,
-          ready: false,
+          ready: true,
         },
       },
       {
@@ -161,7 +161,7 @@ export const japanExecution = {
         body: "Brand integration and screen content for SHEIN. Our on-site team reported directly to SHEIN's APAC lead in English while running Japanese vendors in Japanese. Five crew days on site.",
         image: {
           src: '/images/japan-execution/tgc-kitakyushu-shein.webp',
-          alt: 'SHEIN brand integration and screen content at TGC Kitakyushu, West Japan General Exhibition Center',
+          alt: 'Runway and screen content at TGC Kitakyushu inside the West Japan General Exhibition Center, brand integration running for SHEIN',
           caption: '',
           width: 1600,
           height: 1000,
@@ -174,7 +174,7 @@ export const japanExecution = {
         body: "Four foreign brand booths managed end to end. Live streaming content on the venue's LED screens, booth and Japanese payment coordination, five crew days on site.",
         image: {
           src: '/images/japan-execution/asia-fashion-fair-osaka.webp',
-          alt: 'Foreign brand booths and venue LED screens at Asia Fashion Fair Osaka, Mydome Osaka',
+          alt: 'Foreign brand booths on the Asia Fashion Fair floor at Mydome Osaka, with live streaming feeding the venue LED screens',
           caption: '',
           width: 1600,
           height: 1000,
