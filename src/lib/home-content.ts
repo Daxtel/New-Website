@@ -1,7 +1,11 @@
 export const navLinks = [
-  { href: '/japan-market-entry', label: { en: 'Japan Market Entry', ja: '日本市場進出' } },
+  // Nav label only. The route, page title and metadata still say Japan Market
+  // Entry; this is shortened purely to buy horizontal room between 1024 and
+  // 1280px now that Japan Execution is a seventh item.
+  { href: '/japan-market-entry', label: { en: 'Market Entry', ja: '日本市場進出' } },
   { href: '/work', label: { en: 'Work', ja: '実績' } },
   { href: '/services', label: { en: 'Services', ja: 'サービス' } },
+  { href: '/japan-execution', label: { en: 'Japan Execution', ja: 'Japan Execution' } },
   { href: '/blog', label: { en: 'Insights', ja: 'インサイト' } },
   { href: '/about', label: { en: 'About', ja: '会社情報' } },
   { href: '/contact', label: { en: 'Contact', ja: 'お問い合わせ' } },

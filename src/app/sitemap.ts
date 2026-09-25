@@ -45,6 +45,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
+  // English-only routes: EN url, no ja alternate. The /ja render canonicals to
+  // the EN URL and is noindexed, so listing a ja alternate here would contradict
+  // the page's own head.
+  const enOnlyEntries: MetadataRoute.Sitemap = ['/japan-execution'].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+    alternates: { languages: { en: `${baseUrl}${route}`, 'x-default': `${baseUrl}${route}` } },
+  }));
+
   // Blog posts: each post is listed under its own language track only.
   //  - bilingual (lang undefined): EN url, en+ja hreflang
   //  - en-only: EN url, no ja alternate
@@ -79,5 +90,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...bilingualEntries, ...blogEntries];
+  return [...bilingualEntries, ...enOnlyEntries, ...blogEntries];
 }

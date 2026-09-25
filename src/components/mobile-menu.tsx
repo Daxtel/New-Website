@@ -34,7 +34,7 @@ export function MobileMenu({ links, ctaLabel, locale = 'en', contactHref = '/con
       {/* Hamburger button */}
       <button
         onClick={() => setOpen(!open)}
-        className="relative z-50 flex h-11 w-11 items-center justify-center lg:hidden"
+        className="relative z-50 flex h-11 w-11 items-center justify-center xl:hidden"
         aria-label={open ? 'Close menu' : 'Open menu'}
       >
         <div className="flex flex-col gap-[5px]">

@@ -42,7 +42,7 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
         boxShadow: atTop ? 'none' : '0 1px 30px rgba(0,0,0,0.5)',
       }}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10 lg:px-16">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-5 md:px-10 lg:px-16 xl:max-w-7xl">
         {/* Logo: film-strip mark + wordmark. Mark only below sm so the lockup
             never crowds the nav on small screens. Height capped at 32–36px. */}
         <Link
@@ -58,12 +58,14 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 lg:flex">
+        {/* gap tightens below xl so the seventh item (Japan Execution) does not
+            wrap the row into the logo between 1024 and 1280px. */}
+        <nav className="hidden items-center gap-5 xl:flex xl:gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={localizeHref(link.href, locale)}
-              className="group relative text-sm font-medium text-white/60 transition-colors hover:text-[#D4AF37]"
+              className="group relative whitespace-nowrap text-sm font-medium text-white/60 transition-colors hover:text-[#D4AF37]"
             >
               {pick(link.label, locale)}
               {/* Underline slides in from left */}
@@ -75,7 +77,7 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
           <div className="group relative">
             <button
               type="button"
-              className="flex items-center gap-1 text-sm font-medium text-white/60 transition-colors group-hover:text-[#D4AF37]"
+              className="flex items-center gap-1 whitespace-nowrap text-sm font-medium text-white/60 transition-colors group-hover:text-[#D4AF37]"
               aria-haspopup="true"
             >
               {locale === 'ja' ? '業界' : 'Industries'}
