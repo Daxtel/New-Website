@@ -3,7 +3,11 @@
 // Usage: node scripts/indexnow.mjs
 // Reads the LIVE sitemap so it always submits the current URL set.
 
-const HOST = 'streetshowproduction.com';
+// Must match the host of the URLs in the sitemap. Canonicals moved to www, so
+// this has to be www too: IndexNow accepts a mismatched request with 200 OK and
+// then silently discards every URL as not belonging to the declared host. The
+// apex also 308s the key file, which fails verification on its own.
+const HOST = 'www.streetshowproduction.com';
 const KEY = '12c6b4c33ec9b9e6e3c66ca16363de88';
 const SITEMAP = `https://${HOST}/sitemap.xml`;
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
