@@ -129,7 +129,7 @@ export const japanExecution = {
   },
 
   work: {
-    h2: 'Domes, arenas, exhibition halls. Same job.',
+    h2: 'Domes, halls, trade floors, and a tower in Shibuya.',
     entries: [
       {
         title: 'Fukuoka SoftBank Hawks',
@@ -145,7 +145,7 @@ export const japanExecution = {
         },
       },
       {
-        title: 'Red Bull Kumite',
+        title: 'Red Bull Kumite 2019',
         venue: 'Fighting game invitational, exhibition hall floor',
         body: 'Competition stage, screen content and a full lighting rig built into a hall with no fixed production infrastructure. Everything trucked in, hung, run and struck.',
         image: {
@@ -204,12 +204,25 @@ export const japanExecution = {
         venue: 'Mydome Osaka',
         body: "Four foreign brand booths managed end to end. Live streaming content on the venue's LED screens, booth and Japanese payment coordination, five crew days on site.",
         image: {
-          src: '/images/japan-execution/asia-fashion-fair-osaka.webp',
-          alt: 'Foreign brand booths on the Asia Fashion Fair floor at Mydome Osaka, with live streaming feeding the venue LED screens',
+          src: '/images/japan-execution/asia-fashion-fair-osaka.jpg',
+          alt: 'Trade fair floor at Mydome Osaka, rows of exhibitor booths with garment rails and buyers walking the aisles',
           caption: '',
-          width: 1600,
-          height: 1000,
-          ready: false,
+          width: 700,
+          height: 426,
+          ready: true,
+        },
+      },
+      {
+        title: 'The Weeknd, Asia Tour Japan',
+        venue: 'Shibuya 109, Tokyo',
+        body: 'Campaign running on the 109 tower board ahead of the Makuhari Messe date. One of the most contested outdoor positions in Tokyo, and a very public place to get the details wrong.',
+        image: {
+          src: '/images/japan-execution/shibuya-109-the-weeknd.webp',
+          alt: 'The Weeknd Asia Tour campaign on the tower board at Shibuya 109, shot from the crossing on a clear day',
+          caption: '',
+          width: 1091,
+          height: 1442,
+          ready: true,
         },
       },
     ] as CaseEntry[],

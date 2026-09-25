@@ -192,7 +192,12 @@ export default function JapanExecutionPage() {
                   {/* Alternating sides on desktop. On mobile the image always
                       comes first, which order-1/order-2 keeps true. */}
                   <div className={i % 2 === 1 ? 'md:order-2' : ''}>
-                    <ReservedImage slot={entry.image} />
+                    {/* Portrait assets get a width cap so a tall frame does not
+                        stretch the row far past its text column. */}
+                    <ReservedImage
+                      slot={entry.image}
+                      className={entry.image.height > entry.image.width ? 'mx-auto max-w-sm' : ''}
+                    />
                   </div>
                   <div className={i % 2 === 1 ? 'md:order-1' : ''}>
                     <h3 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">
