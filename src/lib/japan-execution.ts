@@ -33,11 +33,12 @@ export type CaseEntry = {
 export const japanExecution = {
   path: '/japan-execution',
 
-  meta: {
-    title: 'Japan Event Production and Execution Partner | Streetshow Productions',
-    description:
-      'Japan-side production, fabrication, bilingual coordination and technical execution for international agencies and brands. Delivered at Kyocera Dome Osaka, TGC Kitakyushu and Asia Fashion Fair Osaka.',
-  },
+  // metaTitle / metaDescription at the top level, matching blog.ts, catalog.ts
+  // and landing-pages.ts. The route renders metaTitle absolute, so the layout
+  // template cannot append a second brand suffix.
+  metaTitle: 'Japan Event Production and Execution Partner | Streetshow Productions',
+  metaDescription:
+    'Japan-side production, fabrication, bilingual coordination and technical execution for international agencies and brands. Delivered at Kyocera Dome Osaka, TGC Kitakyushu and Asia Fashion Fair Osaka.',
 
   hero: {
     h1: 'Your show, delivered in Japan the way you designed it.',
@@ -46,8 +47,8 @@ export const japanExecution = {
     proof: [
       'PayPay Dome Fukuoka',
       'Kyocera Dome Osaka',
-      'The Ritz-Carlton Fukuoka',
       'West Japan General Exhibition Center',
+      'Mydome Osaka',
     ],
     cta: 'Talk to us about your Japan brief',
     /** Anchor target for the hero CTA. */
@@ -111,10 +112,24 @@ export const japanExecution = {
     ],
     closing:
       'Most agencies will not tell you where their line sits. We would rather you knew on day one than found out on show day.',
+    /**
+     * Illustrates the fabrication side of the in-house column. This is a design
+     * render, not a photograph of a delivered stand, and the caption says so.
+     * It is deliberately here rather than in the work section: presenting a
+     * render as finished work is exactly the claim we do not want to make.
+     */
+    image: {
+      src: '/images/japan-execution/fabrication-stand-render.webp',
+      alt: 'Design render of a circular exhibition stand with curved counters, integrated lighting and a suspended ring fascia',
+      caption: 'Design render. Fabrication and stand build scope.',
+      width: 1600,
+      height: 1000,
+      ready: true,
+    } as ImageSlot,
   },
 
   work: {
-    h2: 'Six venues. One job.',
+    h2: 'Domes, arenas, exhibition halls. Same job.',
     entries: [
       {
         title: 'Fukuoka SoftBank Hawks',
@@ -122,24 +137,24 @@ export const japanExecution = {
         body: "Ongoing since 2025 and now in a second contract. We run the in-stadium LED advertising for the club's international audience, producing and operating screen content in English, French and Spanish across all home games.",
         image: {
           src: '/images/japan-execution/paypay-dome-hawks.webp',
-          alt: 'In-stadium LED advertising boards at PayPay Dome Fukuoka carrying multilingual screen content during a home game',
+          alt: 'Ribbon LED boards and the main screen running at PayPay Dome Fukuoka, seen from the stand across the infield',
           caption: '',
-          width: 1600,
-          height: 1000,
-          ready: false,
+          width: 1200,
+          height: 400,
+          ready: true,
         },
       },
       {
-        title: 'Kusama Yayoi auction',
-        venue: 'The Ritz-Carlton Fukuoka, for JTL Auctions',
-        body: "Production delivered directly for the auction house, inside one of Kyushu's most demanding luxury venues.",
+        title: 'Red Bull Kumite',
+        venue: 'Fighting game invitational, exhibition hall floor',
+        body: 'Competition stage, screen content and a full lighting rig built into a hall with no fixed production infrastructure. Everything trucked in, hung, run and struck.',
         image: {
-          src: '/images/japan-execution/kusama-auction-jtl.webp',
-          alt: 'Auction floor production for JTL Auctions staged inside a luxury hotel ballroom in Fukuoka',
+          src: '/images/japan-execution/red-bull-kumite.webp',
+          alt: 'Competition stage under a temporary lighting rig at Red Bull Kumite, twin screens above the players and the floor audience seated in front',
           caption: '',
           width: 1600,
           height: 1000,
-          ready: false,
+          ready: true,
         },
       },
       {
@@ -152,6 +167,19 @@ export const japanExecution = {
           caption: '',
           width: 1600,
           height: 1000,
+          ready: true,
+        },
+      },
+      {
+        title: 'Arena load-in',
+        venue: 'Multi-day builds, Japan-wide',
+        body: 'Stage, LED, rigging and floor seating going in on the venue clock. Load-in, show days and wrap with our production manager on the floor and the vendor conversations happening in Japanese.',
+        image: {
+          src: '/images/japan-execution/arena-load-in.webp',
+          alt: 'Arena floor during load-in, crew and road cases around a screen going up with the first rows of floor seating set out',
+          caption: '',
+          width: 1536,
+          height: 1024,
           ready: true,
         },
       },

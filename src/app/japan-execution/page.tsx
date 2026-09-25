@@ -19,7 +19,8 @@ const sectionCls = 'px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py
  */
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
-  const { title, description } = p.meta;
+  const title = p.metaTitle;
+  const description = p.metaDescription;
   return {
     // metaTitle already carries the brand, so mark it absolute and stop the
     // layout template appending a second suffix.
@@ -164,6 +165,9 @@ export default function JapanExecutionPage() {
               </ScrollReveal>
             ))}
           </div>
+          <ScrollReveal className="mt-12">
+            <ReservedImage slot={p.scope.image} className="mx-auto max-w-3xl" />
+          </ScrollReveal>
           <ScrollReveal>
             <p className="mt-12 max-w-4xl text-base leading-relaxed text-[#D4AF37]/80 md:text-lg">
               {p.scope.closing}
