@@ -189,11 +189,14 @@ export const japanExecution = {
         body: "Brand integration and screen content for SHEIN. Our on-site team reported directly to SHEIN's APAC lead in English while running Japanese vendors in Japanese. Five crew days on site.",
         image: {
           src: '/images/japan-execution/tgc-kitakyushu-shein.webp',
-          alt: 'Runway and screen content at TGC Kitakyushu inside the West Japan General Exhibition Center, brand integration running for SHEIN',
-          caption: '',
-          width: 1600,
-          height: 1000,
-          ready: false,
+          alt: 'Tokyo Girls Collection finale under falling confetti, centre screen and flanking screens carrying the show artwork above the stage',
+          // The supplied file carries a burned-in third party copyright notice,
+          // so it is credited here. This is the one image on the page with a
+          // caption; the rest stay blank by request.
+          caption: '\u00a9 \u30de\u30a4\u30ca\u30d3 TOKYO GIRLS COLLECTION 2025 SPRING/SUMMER',
+          width: 2000,
+          height: 1333,
+          ready: true,
         },
       },
       {
