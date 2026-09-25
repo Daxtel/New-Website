@@ -776,7 +776,7 @@ export const projectCatalog: CatalogProject[] = [
     },
     media: {
       video: '/videos/shibuya-billboard-anamorphic.mp4',
-      image: '/videos/shibuya-billboard-anamorphic.mp4',
+      image: '/videos/posters/shibuya-billboard-anamorphic.jpg',
       alt: {
         en: 'Charles & Keith 3D anamorphic billboard campaign running on Shibuya LED screen in Tokyo',
         ja: '東京・渋谷のLEDスクリーンで展開されたCharles & Keithの3Dアナモルフィックビルボードキャンペーン',
@@ -849,7 +849,7 @@ export const projectCatalog: CatalogProject[] = [
     },
     media: {
       video: '/videos/new-balance-ohtani.mp4',
-      image: '/videos/new-balance-ohtani.mp4',
+      image: '/videos/posters/new-balance-ohtani.jpg',
       alt: {
         en: 'New Balance Japan Shohei Ohtani paid media activation campaign video',
         ja: 'ニューバランスジャパンの大谷翔平ペイドメディアアクティベーションキャンペーン映像',
@@ -922,7 +922,7 @@ export const projectCatalog: CatalogProject[] = [
     },
     media: {
       video: '/videos/shein-japan.mp4',
-      image: '/videos/shein-japan.mp4',
+      image: '/videos/posters/shein-japan.jpg',
       alt: {
         en: 'SHEIN Japan paid social activation campaign video for the Japanese fashion market',
         ja: '日本のファッション市場向けSHEIN Japanペイドソーシャルアクティベーションキャンペーン映像',
@@ -995,7 +995,7 @@ export const projectCatalog: CatalogProject[] = [
     },
     media: {
       video: '/videos/kuoe-kyoto.mp4',
-      image: '/videos/kuoe-kyoto.mp4',
+      image: '/videos/posters/kuoe-kyoto.jpg',
       alt: {
         en: 'KUOE Kyoto brand film: Japanese microbrand watches hand-assembled in Kyoto, founded 2020 by Kenji Uchimura',
         ja: 'KUOE 京都ブランドフィルム：内村健司氏により2020年に京都で創業された、手組みの日本マイクロブランド時計',
@@ -1068,7 +1068,7 @@ export const projectCatalog: CatalogProject[] = [
     },
     media: {
       video: '/videos/ritz-carlton-kyoto.mp4',
-      image: '/videos/ritz-carlton-kyoto.mp4',
+      image: '/videos/posters/ritz-carlton-kyoto.jpg',
       alt: {
         en: 'The Ritz-Carlton Kyoto private dining hospitality campaign video produced by Streetshow Productions',
         ja: 'Streetshow Productionsが制作したザ・リッツ・カールトン京都プライベートダイニングホスピタリティキャンペーン映像',
@@ -1141,7 +1141,7 @@ export const projectCatalog: CatalogProject[] = [
     },
     media: {
       video: '/videos/qc-running-on-japan.mp4',
-      image: '/videos/qc-running-on-japan.mp4',
+      image: '/videos/posters/qc-running-on-japan.jpg',
       alt: {
         en: 'QC Running x On Japan paid social activation campaign video for the Japanese running community',
         ja: '日本のランニングコミュニティ向けQC Running × On Japanペイドソーシャルアクティベーションキャンペーン映像',
@@ -1214,7 +1214,7 @@ export const projectCatalog: CatalogProject[] = [
     },
     media: {
       video: '/videos/fuditalyco-japan.mp4',
-      image: '/videos/fuditalyco-japan.mp4',
+      image: '/videos/posters/fuditalyco-japan.jpg',
       alt: {
         en: 'FUDITALYCO Japan launch campaign: Puglia Italian food brand featuring pasta sauce, olive oil, wine, and pasta from the Francavilla family',
         ja: 'FUDITALYCO 日本ローンチキャンペーン：フランカヴィッラ家によるパスタソース、オリーブオイル、ワイン、パスタを特色とするプーリアのイタリアンフードブランド',
@@ -1287,7 +1287,7 @@ export const projectCatalog: CatalogProject[] = [
     },
     media: {
       video: '/videos/soumei-cgi.mp4',
-      image: '/videos/soumei-cgi.mp4',
+      image: '/videos/posters/soumei-cgi.jpg',
       alt: {
         en: 'SOUMEI Champagne CGI product visualization: 3D bottle rendering and brand animation by Streetshow',
         ja: 'SOUMEI シャンパーニュ CGI商品ビジュアライゼーション：Streetshowによる3Dボトルレンダリングとブランドアニメーション',
