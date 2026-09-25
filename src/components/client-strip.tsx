@@ -17,7 +17,7 @@ const label = {
 
 function ClientName({ name }: { name: string }) {
   return (
-    <span className="whitespace-nowrap text-[11px] md:text-[13px] font-medium uppercase tracking-[0.2em] text-[#F5F0E8]/40 transition-all duration-300 hover:text-[#F5F0E8]/90">
+    <span className="whitespace-nowrap text-xs md:text-xs font-medium uppercase tracking-[0.2em] text-[#F5F0E8]/40 transition-all duration-300 hover:text-[#F5F0E8]/90">
       {name}
     </span>
   );
@@ -31,7 +31,7 @@ export function ClientStrip({ locale = 'en' }: { locale?: 'en' | 'ja' }) {
   return (
     <section className="border-y border-[#C9A84C]/15 bg-[#111111]">
       <div className="mx-auto max-w-6xl px-6 md:px-10 lg:px-16">
-        <p className="pt-5 pb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#8A8070] md:pt-4 md:pb-1">
+        <p className="pt-5 pb-2 text-xs font-medium uppercase tracking-[0.2em] text-[#8A8070] md:pt-4 md:pb-1">
           {locale === 'ja' ? label.ja : label.en}
         </p>
       </div>

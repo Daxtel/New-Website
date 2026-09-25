@@ -69,10 +69,10 @@ export default async function JapanCreativePerformanceAuditPage() {
       <section className="border-b border-[#D4AF37]/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#D4AF37]">{pick(p.hero.eyebrow, locale)}</p>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#D4AF37]">{pick(p.hero.eyebrow, locale)}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
-            <h1 className="mt-5 max-w-4xl text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h1 className="mt-5 max-w-4xl text-display font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {pick(p.hero.h1, locale)}
             </h1>
           </ScrollReveal>
@@ -82,7 +82,7 @@ export default async function JapanCreativePerformanceAuditPage() {
           <ScrollReveal delay={0.24}>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-text">{pick(p.hero.priceLabel, locale)}</p>
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-text">{pick(p.hero.priceLabel, locale)}</p>
                 <p className="text-2xl font-bold text-[#D4AF37] md:text-3xl">{pick(p.hero.price, locale)}</p>
               </div>
               <div className="h-8 w-px bg-white/10" />
@@ -119,7 +119,7 @@ export default async function JapanCreativePerformanceAuditPage() {
       <section className={sectionCls}>
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading lg:sticky lg:top-28">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading lg:sticky lg:top-28">
               {pick(p.problem.heading, locale)}
             </h2>
           </ScrollReveal>
@@ -137,7 +137,7 @@ export default async function JapanCreativePerformanceAuditPage() {
       <section className={`bg-[#141414] ${sectionCls}`}>
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {pick(p.moments.heading, locale)}
             </h2>
           </ScrollReveal>
@@ -158,20 +158,20 @@ export default async function JapanCreativePerformanceAuditPage() {
       <section id="what-we-review" className={sectionCls}>
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {pick(p.review.heading, locale)}
             </h2>
-            <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-body-text">{pick(p.review.supporting, locale)}</p>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-body-text">{pick(p.review.supporting, locale)}</p>
           </ScrollReveal>
           <div className="mt-10 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
             {p.review.categories.map((cat, i) => (
               <ScrollReveal key={cat.title.en} delay={(i % 3) * 0.06}>
                 <div className="border-t border-white/10 pt-5">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-[11px] text-muted-text tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="font-mono text-xs text-muted-text tabular-nums">{String(i + 1).padStart(2, '0')}</span>
                     <h3 className="text-base font-bold uppercase tracking-[0.12em] text-[#D4AF37]">{pick(cat.title, locale)}</h3>
                   </div>
-                  <p className="mt-3 text-[15px] leading-relaxed text-body-text">{pick(cat.body, locale)}</p>
+                  <p className="mt-3 text-base leading-relaxed text-body-text">{pick(cat.body, locale)}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -184,10 +184,10 @@ export default async function JapanCreativePerformanceAuditPage() {
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <h2 className="text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+              <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
                 {pick(p.deliverables.heading, locale)}
               </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-body-text">{pick(p.deliverables.supporting, locale)}</p>
+              <p className="mt-4 text-base leading-relaxed text-body-text">{pick(p.deliverables.supporting, locale)}</p>
             </div>
           </ScrollReveal>
 
@@ -201,7 +201,7 @@ export default async function JapanCreativePerformanceAuditPage() {
                     <span className="font-mono text-sm text-[#D4AF37] tabular-nums">{item.n}</span>
                     <div>
                       <h3 className="text-base font-bold uppercase tracking-[0.12em] text-heading">{pick(item.title, locale)}</h3>
-                      <p className="mt-2 text-[15px] leading-relaxed text-body-text">{pick(item.body, locale)}</p>
+                      <p className="mt-2 text-base leading-relaxed text-body-text">{pick(item.body, locale)}</p>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -261,7 +261,7 @@ export default async function JapanCreativePerformanceAuditPage() {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <ScrollReveal>
             <div className="lg:sticky lg:top-28">
-              <h2 className="text-[clamp(1.4rem,2.8vw,2rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+              <h2 className="text-subtitle font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
                 {pick(p.notIncluded.heading, locale)}
               </h2>
               <p className="mt-6 text-base text-body-text">{pick(p.notIncluded.intro, locale)}</p>
@@ -270,7 +270,7 @@ export default async function JapanCreativePerformanceAuditPage() {
           <div>
             <ul className="grid gap-x-10 gap-y-3 sm:grid-cols-2">
               {p.notIncluded.items.map((item) => (
-                <li key={item.en} className="flex items-start gap-3 text-[15px] text-muted-text">
+                <li key={item.en} className="flex items-start gap-3 text-base text-muted-text">
                   <span aria-hidden="true" className="mt-[10px] h-px w-3 shrink-0 bg-white/25" />
                   <span>{pick(item, locale)}</span>
                 </li>
@@ -285,7 +285,7 @@ export default async function JapanCreativePerformanceAuditPage() {
       <section className={sectionCls}>
         <div className="mx-auto max-w-3xl text-center">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.6rem,3.4vw,2.5rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {pick(p.value.heading, locale)}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-body-text">{pick(p.value.body, locale)}</p>
@@ -298,7 +298,7 @@ export default async function JapanCreativePerformanceAuditPage() {
         <section className={sectionCls}>
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
-              <h2 className="text-[clamp(1.4rem,2.8vw,2rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+              <h2 className="text-subtitle font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
                 {pick(p.work.heading, locale)}
               </h2>
             </ScrollReveal>
@@ -318,7 +318,7 @@ export default async function JapanCreativePerformanceAuditPage() {
                         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                       </div>
                       <div className="p-6">
-                        <p className="text-[11px] uppercase tracking-[0.15em] text-white/45">{project.category}</p>
+                        <p className="text-xs uppercase tracking-[0.15em] text-white/45">{project.category}</p>
                         <h3 className="mt-2 text-lg font-semibold leading-tight text-[#D4AF37]">{pick(project.title, locale)}</h3>
                       </div>
                     </a>
@@ -357,7 +357,7 @@ export default async function JapanCreativePerformanceAuditPage() {
       {/* ── Final CTA ── */}
       <section className="px-5 py-20 sm:px-6 md:px-10 md:py-28 lg:px-16">
         <div className="mx-auto max-w-5xl rounded-2xl bg-[#D4AF37] p-10 md:p-16">
-          <h2 className="max-w-3xl text-[clamp(1.6rem,3.4vw,2.6rem)] font-black uppercase leading-[0.95] tracking-tight text-[#0A0A0A]">
+          <h2 className="max-w-3xl text-display font-black uppercase leading-[0.95] tracking-tight text-[#0A0A0A]">
             {pick(p.finalCta.heading, locale)}
           </h2>
           <div className="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-[#0A0A0A]">
@@ -366,7 +366,7 @@ export default async function JapanCreativePerformanceAuditPage() {
             <span className="text-base">·</span>
             <span className="text-base">{pick(p.finalCta.duration, locale)}</span>
           </div>
-          <p className="mt-3 text-[15px] text-[#0A0A0A]/75">{pick(p.finalCta.deliverables, locale)}</p>
+          <p className="mt-3 text-base text-[#0A0A0A]/75">{pick(p.finalCta.deliverables, locale)}</p>
           <AuditCtaLink
             href={contactHref(locale)}
             event="japan_audit_cta_click"

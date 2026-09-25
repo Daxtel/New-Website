@@ -89,7 +89,7 @@ export default async function ServicesPage() {
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
-            <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+            <h1 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
               {pick(ui.sections.services, locale)}
             </h1>
             <p className="mt-6 text-base leading-relaxed text-body-text md:text-lg lg:text-xl">
@@ -121,7 +121,7 @@ export default async function ServicesPage() {
 
           {/* FAQ Section */}
           <ScrollReveal className="mt-20">
-            <h2 className="text-[clamp(2rem,5vw,3rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-display font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {locale === 'ja' ? 'よくある質問' : 'Frequently Asked Questions'}
             </h2>
           </ScrollReveal>

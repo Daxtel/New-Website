@@ -76,7 +76,7 @@ export default async function WorkPage() {
 
           <ScrollReveal>
             <div className="max-w-4xl">
-              <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+              <h1 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {pick(ui.sections.selectedWork, locale)}
               </h1>
               <p className="mt-6 text-base leading-relaxed text-body-text md:text-lg lg:text-xl">

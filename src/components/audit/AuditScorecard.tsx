@@ -12,10 +12,10 @@ export function AuditScorecard({ locale }: { locale: Locale }) {
   return (
     <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 shadow-[0_24px_60px_-16px_rgba(0,0,0,0.5)] md:p-8">
       <div className="flex items-center justify-between gap-4">
-        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#D4AF37]">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#D4AF37]">
           {pick(sc.title, locale)}
         </p>
-        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted-text">
+        <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted-text">
           {pick(sc.label, locale)}
         </span>
       </div>
@@ -25,14 +25,14 @@ export function AuditScorecard({ locale }: { locale: Locale }) {
           const lvl = sc.levels[row.level];
           return (
             <div key={row.label.en} className="flex items-center gap-3 sm:gap-4">
-              <span className="w-28 shrink-0 text-[13px] text-body-text">{pick(row.label, locale)}</span>
+              <span className="w-28 shrink-0 text-xs text-body-text">{pick(row.label, locale)}</span>
               <span className="relative h-px flex-1 bg-white/10">
                 <span
                   className="absolute left-0 top-1/2 h-px -translate-y-1/2 bg-[#D4AF37]"
                   style={{ width: `${lvl.width}%` }}
                 />
               </span>
-              <span className="w-[68px] shrink-0 text-right font-mono text-[10px] uppercase tracking-[0.1em] text-[#D4AF37]/85">
+              <span className="w-[68px] shrink-0 text-right font-mono text-xs uppercase tracking-[0.1em] text-[#D4AF37]/85">
                 {pick(lvl.label, locale)}
               </span>
             </div>
@@ -44,7 +44,7 @@ export function AuditScorecard({ locale }: { locale: Locale }) {
         {sc.tags.map((tag) => (
           <span
             key={tag.en}
-            className="rounded-full border border-[#D4AF37]/25 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-[#D4AF37]/85"
+            className="rounded-full border border-[#D4AF37]/25 px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] text-[#D4AF37]/85"
           >
             {pick(tag, locale)}
           </span>

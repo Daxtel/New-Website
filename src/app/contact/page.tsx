@@ -35,7 +35,7 @@ export default async function ContactPage({
       <section className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
-            <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+            <h1 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
               {isAuditInquiry
                 ? pick({ en: 'Request Your Japan Creative Performance Audit', ja: '日本向けクリエイティブ・パフォーマンス監査のリクエスト' }, locale)
                 : pick(contactPageBilingual.title, locale)}

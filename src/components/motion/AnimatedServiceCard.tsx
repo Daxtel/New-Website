@@ -24,13 +24,13 @@ export function AnimatedServiceCard({ title, description, index }: ServiceCardPr
       }
       className="group border-t border-white/10 pt-6 cursor-default"
     >
-      <span className="font-mono text-[11px] text-muted-text tabular-nums">
+      <span className="font-mono text-xs text-muted-text tabular-nums">
         {String(index + 1).padStart(2, '0')}
       </span>
       <h3 className="mt-3 text-lg font-semibold tracking-tight text-heading transition-colors group-hover:text-accent">
         {title}
       </h3>
-      <p className="mt-3 text-[15px] leading-relaxed text-body-text">{description}</p>
+      <p className="mt-3 text-base leading-relaxed text-body-text">{description}</p>
     </motion.div>
   );
 }

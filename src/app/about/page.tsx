@@ -33,7 +33,7 @@ export default async function AboutPage() {
           <ScrollReveal>
           <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
             <div className="max-w-4xl">
-              <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+              <h1 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {pick(aboutPageBilingual.title, locale)}
               </h1>
               <p className="mt-8 text-lg leading-relaxed text-[#D4AF37]/80 md:text-xl lg:text-2xl">

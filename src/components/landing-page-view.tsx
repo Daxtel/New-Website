@@ -60,7 +60,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="border-b border-[#D4AF37]/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+          <h1 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
             {h1}
           </h1>
           <p className="mt-6 max-w-4xl text-lg leading-relaxed text-body-text md:text-xl lg:text-2xl">
@@ -93,7 +93,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
           className={`px-6 py-16 md:px-10 md:py-24 ${idx % 2 === 1 ? 'bg-[#141414]' : ''}`}
         >
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {pick(section.heading, locale)}
             </h2>
             {section.body && (
@@ -170,7 +170,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
       {/* ── FAQ ─────────────────────────────────────────────────── */}
       <section className="border-t border-[#D4AF37]/10 px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+          <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
             {locale === 'ja' ? 'よくある質問' : 'Frequently Asked Questions'}
           </h2>
           <div className="mt-10 space-y-6 md:space-y-8">

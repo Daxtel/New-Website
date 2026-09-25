@@ -33,8 +33,8 @@ export function AuditCallout({
           <h3 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">
             {pick(c.title, locale)}
           </h3>
-          <p className="mt-3 text-[15px] leading-relaxed text-body-text md:text-base">{pick(c.body, locale)}</p>
-          <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.15em] text-muted-text">{pick(c.price, locale)}</p>
+          <p className="mt-3 text-base leading-relaxed text-body-text md:text-base">{pick(c.body, locale)}</p>
+          <p className="mt-3 font-mono text-xs uppercase tracking-[0.15em] text-muted-text">{pick(c.price, locale)}</p>
         </div>
         <AuditCtaLink
           href={href}

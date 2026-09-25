@@ -95,10 +95,10 @@ export function AnimatedWorkCard({
       </div>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <p className="text-[11px] uppercase tracking-[0.15em] text-white/45 md:text-xs">{proofLine}</p>
+        <p className="text-xs uppercase tracking-[0.15em] text-white/45 md:text-xs">{proofLine}</p>
         <h3 className="mt-3 text-lg font-semibold leading-tight text-[#D4AF37] md:text-xl">{title}</h3>
         <p className="mt-3 text-sm leading-relaxed text-body-text">{description}</p>
-        <div className="mt-auto pt-5 text-[11px] font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75 transition-colors group-hover:text-[#D4AF37] md:text-xs">
+        <div className="mt-auto pt-5 text-xs font-medium uppercase tracking-[0.15em] text-[#D4AF37]/75 transition-colors group-hover:text-[#D4AF37] md:text-xs">
           {ctaLabel} →
         </div>
       </div>

@@ -177,7 +177,7 @@ export function JapanExecutionQuiz() {
     <div className="mx-auto w-full max-w-xl">
       {/* Progress */}
       <div className="mb-8">
-        <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-muted-text">
+        <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-muted-text">
           <span>{`Step ${stepIndex + 1} of ${TOTAL_STEPS}`}</span>
           <span>{progress}%</span>
         </div>
@@ -295,7 +295,7 @@ export function JapanExecutionQuiz() {
 
             <div className="mt-6 space-y-4">
               <div>
-                <label htmlFor="je-name" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-[#D4AF37]">
+                <label htmlFor="je-name" className="mb-2 block font-mono text-xs uppercase tracking-[0.2em] text-[#D4AF37]">
                   {contactStep.fields.name}
                 </label>
                 <input
@@ -309,7 +309,7 @@ export function JapanExecutionQuiz() {
                 />
               </div>
               <div>
-                <label htmlFor="je-company" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-[#D4AF37]">
+                <label htmlFor="je-company" className="mb-2 block font-mono text-xs uppercase tracking-[0.2em] text-[#D4AF37]">
                   {contactStep.fields.company}
                 </label>
                 <input
@@ -323,7 +323,7 @@ export function JapanExecutionQuiz() {
                 />
               </div>
               <div>
-                <label htmlFor="je-email" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-[#D4AF37]">
+                <label htmlFor="je-email" className="mb-2 block font-mono text-xs uppercase tracking-[0.2em] text-[#D4AF37]">
                   {contactStep.fields.email}
                 </label>
                 <input
@@ -337,7 +337,7 @@ export function JapanExecutionQuiz() {
                 />
               </div>
               <div>
-                <label htmlFor="je-notes" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-[#D4AF37]">
+                <label htmlFor="je-notes" className="mb-2 block font-mono text-xs uppercase tracking-[0.2em] text-[#D4AF37]">
                   {contactStep.fields.notes}
                 </label>
                 <textarea

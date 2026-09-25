@@ -66,13 +66,13 @@ export default function JapanExecutionPage() {
       <section className="border-b border-[#D4AF37]/10 px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-28 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-4xl">
-            <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h1 className="text-display font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.hero.h1}
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-body-text md:text-xl">
               {p.hero.subhead}
             </p>
-            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-text">
+            <p className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-muted-text">
               {p.hero.proof.join(' · ')}
             </p>
             <a
@@ -106,7 +106,7 @@ export default function JapanExecutionPage() {
       <section className={sectionCls}>
         <div className="mx-auto max-w-4xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.6rem,3.2vw,2.5rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.problem.h2}
             </h2>
             <div className="mt-8 space-y-5">
@@ -124,7 +124,7 @@ export default function JapanExecutionPage() {
       <section className={`bg-[#141414] ${sectionCls}`}>
         <div className="mx-auto max-w-4xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.6rem,3.2vw,2.5rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.intent.h2}
             </h2>
             <p className="mt-8 text-base leading-relaxed text-body-text md:text-lg">
@@ -147,7 +147,7 @@ export default function JapanExecutionPage() {
       <section className={sectionCls}>
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <h2 className="max-w-4xl text-[clamp(1.6rem,3.2vw,2.5rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="max-w-4xl text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.scope.h2}
             </h2>
           </ScrollReveal>
@@ -180,7 +180,7 @@ export default function JapanExecutionPage() {
       <section className={`bg-[#141414] ${sectionCls}`}>
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.6rem,3.2vw,2.5rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.work.h2}
             </h2>
           </ScrollReveal>
@@ -203,7 +203,7 @@ export default function JapanExecutionPage() {
                     <h3 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">
                       {entry.title}
                     </h3>
-                    <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-text">
+                    <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-muted-text">
                       {entry.venue}
                     </p>
                     <p className="mt-5 text-base leading-relaxed text-body-text md:text-lg">
@@ -216,7 +216,7 @@ export default function JapanExecutionPage() {
           </div>
 
           <ScrollReveal>
-            <p className="mx-auto mt-20 max-w-4xl text-center text-[clamp(1.3rem,2.6vw,2rem)] font-semibold leading-snug text-[#D4AF37]">
+            <p className="mx-auto mt-20 max-w-4xl text-center text-subtitle font-semibold leading-snug text-[#D4AF37]">
               {p.work.pullQuote}
             </p>
           </ScrollReveal>
@@ -227,7 +227,7 @@ export default function JapanExecutionPage() {
       <section className={sectionCls}>
         <div className="mx-auto max-w-5xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.6rem,3.2vw,2.5rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.groundTruth.h2}
             </h2>
           </ScrollReveal>
@@ -255,7 +255,7 @@ export default function JapanExecutionPage() {
       <section className={`bg-[#141414] ${sectionCls}`}>
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.6rem,3.2vw,2.5rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.plugIn.h2}
             </h2>
           </ScrollReveal>
@@ -283,7 +283,7 @@ export default function JapanExecutionPage() {
       <section id="japan-brief" className={`scroll-mt-24 ${sectionCls}`}>
         <div className="mx-auto max-w-4xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.6rem,3.2vw,2.5rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.form.h2}
             </h2>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-body-text md:text-lg">
@@ -293,7 +293,7 @@ export default function JapanExecutionPage() {
           <div className="mt-14">
             <JapanExecutionQuiz />
           </div>
-          <p className="mt-16 text-center font-mono text-[11px] uppercase tracking-[0.2em] text-muted-text">
+          <p className="mt-16 text-center font-mono text-xs uppercase tracking-[0.2em] text-muted-text">
             {p.closingLine}
           </p>
         </div>

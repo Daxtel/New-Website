@@ -60,10 +60,10 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+              <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
                 {pick(whoWeWorkWith.title, locale)}
               </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-body-text">
+              <p className="mt-5 text-base leading-relaxed text-body-text">
                 {pick(whoWeWorkWith.intro, locale)}
               </p>
             </div>
@@ -73,10 +73,10 @@ export default async function Home() {
             {whoWeWorkWith.items.map((item, i) => (
               <ScrollReveal key={pick(item, 'en')} delay={i * 0.06}>
                 <div className="flex items-baseline gap-4 border-t border-white/10 py-5">
-                  <span className="font-mono text-[11px] text-muted-text tabular-nums">
+                  <span className="font-mono text-xs text-muted-text tabular-nums">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <p className="text-[15px] leading-snug text-body-text">
+                  <p className="text-base leading-snug text-body-text">
                     {pick(item, locale)}
                   </p>
                 </div>
@@ -92,10 +92,10 @@ export default async function Home() {
           <ScrollReveal>
             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div className="max-w-3xl">
-                <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+                <h2 className="text-title font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                   {pick(featuredWork.title, locale)}
                 </h2>
-                <p className="mt-5 text-[15px] leading-relaxed text-body-text">
+                <p className="mt-5 text-base leading-relaxed text-body-text">
                   {pick(featuredWork.subtitle, locale)}
                 </p>
               </div>
@@ -130,10 +130,10 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+              <h2 className="text-title font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {pick(services.title, locale)}
               </h2>
-              <p className="mt-6 text-[15px] leading-relaxed text-body-text">
+              <p className="mt-6 text-base leading-relaxed text-body-text">
                 {pick(services.subtitle, locale)}
               </p>
             </div>
@@ -166,10 +166,10 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+              <h2 className="text-title font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {pick(process.title, locale)}
               </h2>
-              <p className="mt-6 text-[15px] leading-relaxed text-body-text">
+              <p className="mt-6 text-base leading-relaxed text-body-text">
                 {pick(process.intro, locale)}
               </p>
             </div>
@@ -205,7 +205,7 @@ export default async function Home() {
 
         <div className="relative mx-auto max-w-4xl text-center">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
               {pick(
                 {
                   en: 'Planning a launch, repositioning, or premium campaign in Japan?',
@@ -217,7 +217,7 @@ export default async function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <p className="mx-auto mt-6 max-w-3xl text-[15px] leading-relaxed text-body-text lg:text-xl">
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-body-text lg:text-xl">
               {pick(
                 {
                   en: 'Streetshow Productions works with selected brands and operators where strategic clarity, cultural nuance, and execution quality decide whether a launch lands or stalls. If that describes your situation, we should discuss fit.',

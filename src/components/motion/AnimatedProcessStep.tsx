@@ -18,7 +18,7 @@ export function AnimatedProcessStep({ number, title, description, index }: Proce
       <div className="relative">
         <div className="mb-4 font-mono text-4xl font-medium leading-none text-accent/25">{number}</div>
         <h3 className="text-lg font-semibold tracking-tight text-heading">{title}</h3>
-        <p className="mt-3 text-[15px] leading-relaxed text-body-text">{description}</p>
+        <p className="mt-3 text-base leading-relaxed text-body-text">{description}</p>
       </div>
     );
   }
@@ -42,7 +42,7 @@ export function AnimatedProcessStep({ number, title, description, index }: Proce
         {number}
       </motion.div>
       <h3 className="text-lg font-semibold tracking-tight text-heading">{title}</h3>
-      <p className="mt-3 text-[15px] leading-relaxed text-body-text">{description}</p>
+      <p className="mt-3 text-base leading-relaxed text-body-text">{description}</p>
     </motion.div>
   );
 }

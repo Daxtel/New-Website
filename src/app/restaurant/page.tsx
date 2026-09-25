@@ -64,7 +64,7 @@ export default async function RestaurantLandingPage() {
               </span>
             </div>
 
-            <h1 className="text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h1 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {locale === 'en'
                 ? '1 Day of Shooting. 6 Weeks of Content. Zero Posting Stress.'
                 : '1日の撮影。6週間分のコンテンツ。投稿のストレスゼロ。'}

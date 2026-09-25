@@ -100,7 +100,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
             <div>
-              <h1 className="text-[clamp(1.8rem,3.5vw,2.75rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+              <h1 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {serviceTitle}
               </h1>
             </div>

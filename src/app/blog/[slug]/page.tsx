@@ -172,7 +172,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <span>{pick(post.readingTime, locale)}</span>
           </div>
 
-          <h1 className="mt-6 text-[clamp(1.7rem,3.2vw,2.6rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+          <h1 className="mt-6 text-display font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
             {title}
           </h1>
 

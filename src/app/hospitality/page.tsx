@@ -29,7 +29,7 @@ export default async function HospitalityPage() {
     <main className="bg-[#0A0A0A] text-white">
       <section className="border-b border-[#D4AF37]/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+          <h1 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
             {pick(shell.title, locale)}
           </h1>
           <p className="mt-6 max-w-4xl text-lg leading-relaxed text-[#D4AF37]/80 md:text-xl lg:text-2xl">
@@ -52,7 +52,7 @@ export default async function HospitalityPage() {
       <section className="bg-[#141414] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {pick(shell.sections.why.title, locale)}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-body-text md:text-lg">
@@ -74,7 +74,7 @@ export default async function HospitalityPage() {
 
       <section className="px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+          <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
             {pick(shell.sections.support.title, locale)}
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -89,7 +89,7 @@ export default async function HospitalityPage() {
 
       <section className="bg-[#141414] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+          <h2 className="text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
             {pick(shell.sections.fit.title, locale)}
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2 max-w-5xl">

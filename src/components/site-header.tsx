@@ -65,7 +65,7 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
             <Link
               key={link.href}
               href={localizeHref(link.href, locale)}
-              className="group relative whitespace-nowrap text-sm font-medium text-white/60 transition-colors hover:text-[#D4AF37]"
+              className="group relative whitespace-nowrap text-nav font-medium text-white/60 transition-colors hover:text-[#D4AF37]"
             >
               {pick(link.label, locale)}
               {/* Underline slides in from left */}
@@ -77,7 +77,7 @@ export function SiteHeader({ locale = 'en' }: { locale?: Locale }) {
           <div className="group relative">
             <button
               type="button"
-              className="flex items-center gap-1 whitespace-nowrap text-sm font-medium text-white/60 transition-colors group-hover:text-[#D4AF37]"
+              className="flex items-center gap-1 whitespace-nowrap text-nav font-medium text-white/60 transition-colors group-hover:text-[#D4AF37]"
               aria-haspopup="true"
             >
               {locale === 'ja' ? '業界' : 'Industries'}

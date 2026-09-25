@@ -135,7 +135,7 @@ export function CustomCursor() {
         <motion.span
           animate={{ opacity: isExpanded ? 1 : 0, scale: isExpanded ? 1 : 0.6 }}
           transition={{ duration: 0.2 }}
-          className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#0A0A0A]"
+          className="text-xs font-bold uppercase tracking-[0.15em] text-[#0A0A0A]"
         >
           {label}
         </motion.span>

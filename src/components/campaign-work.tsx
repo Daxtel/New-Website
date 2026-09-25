@@ -67,10 +67,10 @@ function WidescreenCard({ card }: { card: CampaignCard }) {
         <VideoPlayer src={card.videoSrc} className="h-full w-full object-cover" />
       </div>
       <div className="bg-[#111111] px-5 pb-5 pt-4 rounded-b-[3px]">
-        <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#8A8070]">{card.label}</p>
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#8A8070]">{card.label}</p>
         <h4 className="mt-1.5 text-base font-bold text-[#C9A84C]">{card.title}</h4>
         <p className="mt-0.5 text-sm text-white/50">{card.subtitle}</p>
-        <p className="mt-2 text-[10px] uppercase tracking-[0.15em] text-white/30">{card.tag}</p>
+        <p className="mt-2 text-xs uppercase tracking-[0.15em] text-white/30">{card.tag}</p>
       </div>
     </div>
   );
@@ -83,13 +83,13 @@ function PhoneCard({ card }: { card: CampaignCard }) {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70" />
       {/* Top: label */}
       <div className="absolute left-0 top-0 z-10 flex w-full flex-col items-center px-3 pt-10 md:px-5 md:pt-14">
-        <p className="text-center text-[10px] font-semibold uppercase leading-tight tracking-[0.15em] text-[#C9A84C] md:text-[11px]">{card.label}</p>
+        <p className="text-center text-xs font-semibold uppercase leading-tight tracking-[0.15em] text-[#C9A84C] md:text-xs">{card.label}</p>
       </div>
       {/* Bottom: title, subtitle, tag */}
       <div className="absolute bottom-0 left-0 z-10 flex w-full flex-col items-center gap-1 px-3 pb-4 md:px-5 md:pb-6">
-        <h4 className="text-center text-[13px] font-bold leading-tight text-[#C9A84C] drop-shadow-lg md:text-base">{card.title}</h4>
-        <p className="text-center text-[11px] text-body-text drop-shadow md:text-sm">{card.subtitle}</p>
-        <p className="mt-1 text-center text-[9px] uppercase tracking-[0.1em] text-white/60 md:text-[10px]">{card.tag}</p>
+        <h4 className="text-center text-xs font-bold leading-tight text-[#C9A84C] drop-shadow-lg md:text-base">{card.title}</h4>
+        <p className="text-center text-xs text-body-text drop-shadow md:text-sm">{card.subtitle}</p>
+        <p className="mt-1 text-center text-xs uppercase tracking-[0.1em] text-white/60 md:text-xs">{card.tag}</p>
       </div>
     </DeviceFrame>
   );

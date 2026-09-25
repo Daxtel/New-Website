@@ -101,7 +101,7 @@ export function ProjectDetailClient({
           <p className="text-xs uppercase tracking-[0.15em] text-white/45">{proofLine}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.12}>
-          <h1 className="mt-4 text-[clamp(1.8rem,3.5vw,2.75rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+          <h1 className="mt-4 text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
             {title}
           </h1>
         </ScrollReveal>

@@ -36,7 +36,7 @@ export function ReservedImage({ slot, className = '' }: { slot: ImageSlot; class
         )}
       </div>
       {slot.caption && (
-        <figcaption className="mt-3 text-[11px] leading-relaxed text-muted-text/70">
+        <figcaption className="mt-3 text-xs leading-relaxed text-muted-text/70">
           {slot.caption}
         </figcaption>
       )}

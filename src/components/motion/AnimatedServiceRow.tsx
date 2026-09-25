@@ -34,12 +34,12 @@ export function AnimatedServiceRow({ slug, number, title, description, index, lo
       >
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex items-start gap-5">
-            <span className="mt-1 font-mono text-[13px] text-muted-text tabular-nums">
+            <span className="mt-1 font-mono text-xs text-muted-text tabular-nums">
               {number}
             </span>
             <div>
               <h2 className="text-lg font-semibold tracking-tight text-heading transition-colors group-hover:text-accent md:text-xl">{title}</h2>
-              <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-body-text">
+              <p className="mt-2 max-w-3xl text-base leading-relaxed text-body-text">
                 {description}
               </p>
             </div>

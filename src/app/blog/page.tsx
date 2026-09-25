@@ -47,7 +47,7 @@ export default async function BlogIndexPage() {
               <p className="text-xs uppercase tracking-[0.2em] text-white/45">
                 {locale === 'ja' ? 'インサイト' : 'Insights'}
               </p>
-              <h1 className="mt-4 text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+              <h1 className="mt-4 text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
                 {locale === 'ja' ? 'インサイト・ブログ' : 'Insights & Blog'}
               </h1>
               <p className="mt-6 text-base leading-relaxed text-body-text md:text-lg lg:text-xl">

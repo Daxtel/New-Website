@@ -39,7 +39,7 @@ export default async function JapanMarketEntry() {
       <section className="border-b border-[#D4AF37]/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl text-center">
           <ScrollReveal>
-            <h1 className="mx-auto max-w-5xl text-[clamp(1.9rem,4vw,3rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <h1 className="mx-auto max-w-5xl text-display font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {pick(shell.title, locale)}
             </h1>
           </ScrollReveal>
@@ -67,7 +67,7 @@ export default async function JapanMarketEntry() {
       <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <h2 className="text-[clamp(1.7rem,3.5vw,2.6rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+            <h2 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
               {pick(shell.sections.whyJapan.title, locale)}
             </h2>
             <p className="mt-8 max-w-4xl text-lg leading-relaxed text-body-text md:text-xl">
@@ -88,7 +88,7 @@ export default async function JapanMarketEntry() {
 
       <section className="bg-[#141414] px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-[clamp(1.7rem,3.5vw,2.6rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+          <h2 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
             {pick(shell.sections.mistakes.title, locale)}
           </h2>
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#D4AF37]/80 md:text-lg">
@@ -118,7 +118,7 @@ export default async function JapanMarketEntry() {
 
       <section className="px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-[clamp(1.7rem,3.5vw,2.6rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+          <h2 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
             {pick(shell.sections.support.title, locale)}
           </h2>
           <p className="mt-6 max-w-4xl text-lg leading-relaxed text-body-text md:text-xl">
@@ -160,7 +160,7 @@ export default async function JapanMarketEntry() {
 
       <section className="bg-[#141414] px-6 py-16 md:px-10 md:py-24 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-[clamp(1.7rem,3.5vw,2.6rem)] font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
+          <h2 className="text-display font-extrabold uppercase leading-[0.9] tracking-tight text-heading">
             {pick(shell.sections.fit.title, locale)}
           </h2>
           <p className="mt-6 max-w-4xl text-base leading-relaxed text-body-text md:text-lg">
