@@ -171,6 +171,19 @@ export const japanExecution = {
         },
       },
       {
+        title: 'Asia Fashion Fair Tokyo 2025',
+        venue: 'Tokyo Big Sight',
+        body: "Booth build and screen content on the Big Sight floor. Five crew days on site, with our team reporting live to the client's APAC lead through the run.",
+        image: {
+          src: '/images/japan-execution/asia-fashion-fair-tokyo.webp',
+          alt: 'Visitors queuing at the registration counters under the 39th AFF Tokyo 2025 banner outside South Hall 1 at Tokyo Big Sight',
+          caption: '',
+          width: 1536,
+          height: 1024,
+          ready: true,
+        },
+      },
+      {
         title: 'Arena load-in',
         venue: 'Multi-day builds, Japan-wide',
         body: 'Stage, LED, rigging and floor seating going in on the venue clock. Load-in, show days and wrap with our production manager on the floor and the vendor conversations happening in Japanese.',
