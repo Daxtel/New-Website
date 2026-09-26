@@ -33,13 +33,22 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       siteName: 'Streetshow Productions',
       url: PATH,
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Streetshow Productions' }],
+      // Page-specific share image cut from the hero still, so a share of this
+      // page shows the arena rather than the site-wide default.
+      images: [
+        {
+          url: '/images/japan-execution/og-japan-execution.jpg',
+          width: 1200,
+          height: 630,
+          alt: p.hero.still.alt,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['/og-image.jpg'],
+      images: ['/images/japan-execution/og-japan-execution.jpg'],
     },
     ...(locale === 'ja' ? { robots: { index: false, follow: true } } : {}),
   };

@@ -36,9 +36,12 @@ export const japanExecution = {
   // metaTitle / metaDescription at the top level, matching blog.ts, catalog.ts
   // and landing-pages.ts. The route renders metaTitle absolute, so the layout
   // template cannot append a second brand suffix.
-  metaTitle: 'Japan Event Production and Execution Partner | Streetshow Productions',
+  // Title held under 60 characters and description under 155 so neither is
+  // truncated in the result. The description leads with the search phrase and
+  // keeps the venue proof, which is the part that earns the click.
+  metaTitle: 'Japan Event Production and Execution Partner | Streetshow',
   metaDescription:
-    'Japan-side production, fabrication, bilingual coordination and technical execution for international agencies and brands. Delivered at Kyocera Dome Osaka, TGC Kitakyushu and Asia Fashion Fair Osaka.',
+    'Event production and technical execution in Japan for international agencies and brands. Bilingual crew and fabrication. Kyocera Dome, TGC, Asia Fashion Fair.',
 
   hero: {
     h1: 'Your show, delivered in Japan the way you designed it.',
