@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { renderParagraph } from '@/components/inline-links';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { pick, ui, type Localized } from '@/lib/i18n';
@@ -113,7 +114,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-12">
             <div className="border-l-2 border-[#D4AF37]/25 pl-6">
               <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">{pick(service.whyTitle, locale)}</h2>
-              <p className="mt-4 text-base leading-relaxed text-body-text md:text-lg">{pick(service.whyBody, locale)}</p>
+              <p className="mt-4 text-base leading-relaxed text-body-text md:text-lg">{renderParagraph(pick(service.whyBody, locale), locale)}</p>
             </div>
             <div className="border-l-2 border-[#D4AF37]/25 pl-6">
               <h2 className="text-xl font-bold uppercase tracking-[0.15em] text-[#D4AF37] md:text-2xl">{pick(service.mistakesTitle, locale)}</h2>

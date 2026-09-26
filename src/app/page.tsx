@@ -139,13 +139,14 @@ export default async function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {services.items.map((service, i) => (
               <AnimatedServiceCard
                 key={pick(service.title, 'en')}
                 title={pick(service.title, locale)}
                 description={pick(service.description, locale)}
                 index={i}
+                href={'href' in service && service.href ? localizeHref(service.href, locale) : undefined}
               />
             ))}
           </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { renderParagraph } from '@/components/inline-links';
 import type { LandingPage } from '@/lib/landing-pages';
 import { getCatalogProject, getCatalogService } from '@/lib/catalog';
 import {
@@ -98,7 +99,7 @@ export function LandingPageView({ page, locale, breadcrumbParent }: Props) {
             </h2>
             {section.body && (
               <p className="mt-6 max-w-4xl text-base leading-relaxed text-body-text md:text-lg">
-                {pick(section.body, locale)}
+                {renderParagraph(pick(section.body, locale), locale)}
               </p>
             )}
             {section.points && (

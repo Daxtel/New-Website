@@ -304,8 +304,8 @@ export const serviceCatalog: CatalogService[] = [
       ja: '日本市場で重要な理由',
     },
     whyBody: {
-      en: 'Premium campaigns in Japan need local control without loosening global brand standards. Production quality, on-the-ground coordination, and cultural fit each show up in the final cut.',
-      ja: '日本でのプレミアムキャンペーンには、グローバルブランド基準を緩めることなく、現地でのコントロールが求められます。制作品質、現地での調整、文化的適合は、いずれも最終的な仕上がりに表れます。',
+      en: 'Premium campaigns in Japan need local control without loosening global brand standards. Production quality, on-the-ground coordination, and cultural fit each show up in the final cut. When a campaign needs a physical stage as well as a camera, the same team runs [event production and technical execution in Japan](/japan-execution).',
+      ja: '日本でのプレミアムキャンペーンには、グローバルブランド基準を緩めることなく、現地でのコントロールが求められます。制作品質、現地での調整、文化的適合は、いずれも最終的な仕上がりに表れます。カメラだけでなく実際のステージが必要なキャンペーンでは、同じチームが[日本でのイベント制作と技術実行](/japan-execution)を担います。',
     },
     mistakesTitle: {
       en: 'Where Brands Usually Get It Wrong',
@@ -532,8 +532,8 @@ export const serviceCatalog: CatalogService[] = [
       ja: '日本市場で重要な理由',
     },
     whyBody: {
-      en: 'A high-visibility format only pays off when it lines up with launch timing, location, and brand positioning. In Japan, spectacle without strategic fit can cheapen premium perception instead of building it.',
-      ja: '高視認性フォーマットは、ローンチのタイミング、場所、ブランドポジショニングと揃って初めて成果につながります。日本では、戦略との整合性を欠いたスペクタクルは、プレミアム認知を高めるどころか安っぽく見せかねません。',
+      en: 'A high-visibility format only pays off when it lines up with launch timing, location, and brand positioning. In Japan, spectacle without strategic fit can cheapen premium perception instead of building it. For launches that pair a billboard with a live moment, we also handle the [Japan-side event production](/japan-execution).',
+      ja: '高視認性フォーマットは、ローンチのタイミング、場所、ブランドポジショニングと揃って初めて成果につながります。日本では、戦略との整合性を欠いたスペクタクルは、プレミアム認知を高めるどころか安っぽく見せかねません。ビルボードとライブの瞬間を組み合わせるローンチでは、[日本側のイベント制作](/japan-execution)も私たちが担います。',
     },
     mistakesTitle: {
       en: 'Where Brands Usually Get It Wrong',

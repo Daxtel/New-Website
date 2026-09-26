@@ -75,7 +75,8 @@ export default function JapanExecutionPage() {
       <section className="border-b border-[#D4AF37]/10 px-5 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 md:px-10 md:pb-24 md:pt-28 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-4xl">
-            <h1 className="text-display font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+            <p className="eyebrow">{p.hero.eyebrow}</p>
+            <h1 className="mt-5 text-display font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
               {p.hero.h1}
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-body-text md:text-xl">

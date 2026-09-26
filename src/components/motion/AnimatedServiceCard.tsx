@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 
 const EASE_IN: [number, number, number, number] = [0.4, 0, 0.2, 1];
@@ -8,9 +9,11 @@ interface ServiceCardProps {
   title: string;
   description: string;
   index: number;
+  /** When set, the whole card is a link. */
+  href?: string;
 }
 
-export function AnimatedServiceCard({ title, description, index }: ServiceCardProps) {
+export function AnimatedServiceCard({ title, description, index, href }: ServiceCardProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -22,13 +25,19 @@ export function AnimatedServiceCard({ title, description, index }: ServiceCardPr
       whileHover={
         shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.25, ease: EASE_OUT } }
       }
-      className="group border-t border-white/10 pt-6 cursor-default"
+      className={`group border-t border-white/10 pt-6 ${href ? 'relative cursor-pointer' : 'cursor-default'}`}
     >
       <span className="font-mono text-xs text-muted-text tabular-nums">
         {String(index + 1).padStart(2, '0')}
       </span>
       <h3 className="mt-3 text-lg font-semibold tracking-tight text-heading transition-colors group-hover:text-accent">
-        {title}
+        {href ? (
+          <Link href={href} className="after:absolute after:inset-0">
+            {title}
+          </Link>
+        ) : (
+          title
+        )}
       </h3>
       <p className="mt-3 text-base leading-relaxed text-body-text">{description}</p>
     </motion.div>

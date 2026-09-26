@@ -44,6 +44,9 @@ export const japanExecution = {
     'Event production and technical execution in Japan for international agencies and brands. Bilingual crew and fabrication. Kyocera Dome, TGC, Asia Fashion Fair.',
 
   hero: {
+    // Keyword-bearing kicker above the H1. The H1 and every H2 are editorial
+    // and carry no search phrase, so this is where the page says what it is.
+    eyebrow: 'Japan event production · Technical execution · Bilingual crew',
     h1: 'Your show, delivered in Japan the way you designed it.',
     subhead:
       'Japan-side production, fabrication, bilingual coordination and technical execution for international agency and brand teams.',

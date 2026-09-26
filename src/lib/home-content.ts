@@ -104,6 +104,14 @@ export const services = {
         ja: '国際チームが期待する品質で、日本国内で管理する制作。キャンペーン、ローンチ、ブランドストーリーテリングを、距離の問題なく。',
       },
     },
+    {
+      title: { en: 'Event Production and Japan-Side Execution', ja: 'イベント制作と日本側の実行' },
+      description: {
+        en: 'Stage, LED, fabrication and bilingual coordination for international teams delivering in Japan. Domes, halls, trade floors.',
+        ja: '日本で本番を迎える国際チームのための、ステージ、LED、造作、バイリンガルの現場調整。ドーム、ホール、展示会場。',
+      },
+      href: '/japan-execution',
+    },
   ],
 };
 
