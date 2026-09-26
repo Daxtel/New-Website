@@ -197,6 +197,7 @@ export default function JapanExecutionPage() {
                     <ReservedImage
                       slot={entry.image}
                       className={entry.image.height > entry.image.width ? 'mx-auto max-w-sm' : ''}
+                      pan={i % 2 === 1 ? 'b' : 'a'}
                     />
                   </div>
                   <div className={i % 2 === 1 ? 'md:order-1' : ''}>
@@ -218,6 +219,34 @@ export default function JapanExecutionPage() {
           <ScrollReveal>
             <p className="mx-auto mt-20 max-w-4xl text-center text-subtitle font-semibold leading-snug text-[#D4AF37]">
               {p.work.pullQuote}
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── Reference band ──────────────────────────────────────────
+          Deliberately sits after the case entries and carries no venue and no
+          client. These illustrate the work, they do not evidence it, and the
+          note under them says so rather than leaving a reader to assume. */}
+      <section className={sectionCls}>
+        <div className="mx-auto max-w-6xl">
+          <ScrollReveal>
+            <p className="mx-auto max-w-4xl text-center text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
+              {p.reference.quote}
+            </p>
+          </ScrollReveal>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {p.reference.images.map((slot, i) => (
+              <ScrollReveal key={slot.src}>
+                <ReservedImage slot={slot} pan={i % 2 === 1 ? 'b' : 'a'} />
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal>
+            <p className="mt-6 text-center font-mono text-xs uppercase tracking-[0.2em] text-muted-text">
+              {p.reference.note}
             </p>
           </ScrollReveal>
         </div>

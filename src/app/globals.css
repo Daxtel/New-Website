@@ -102,6 +102,45 @@ html, body {
   color: var(--accent-dim);
 }
 
+/* Slow ambient pan on editorial imagery, so a still frame reads as a moment
+   rather than a placed rectangle.
+
+   Transform only: it composites on the GPU and cannot shift layout, so it
+   costs nothing in CLS. Both keyframes start and end above scale 1 so there
+   is always overscan and an edge can never slide into frame. 28s is
+   deliberately past the point of being noticeable as motion; it should read
+   as the room breathing, not as a slideshow.
+
+   Two directions so adjacent images in the alternating layout do not drift in
+   lockstep. */
+@keyframes ken-burns-a {
+  from { transform: scale(1.04) translate3d(-1.2%, -0.8%, 0); }
+  to   { transform: scale(1.11) translate3d(1.2%, 0.9%, 0); }
+}
+@keyframes ken-burns-b {
+  from { transform: scale(1.10) translate3d(1.1%, 0.7%, 0); }
+  to   { transform: scale(1.04) translate3d(-1.0%, -0.9%, 0); }
+}
+
+.ken-burns {
+  animation: ken-burns-a 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.ken-burns-alt {
+  animation-name: ken-burns-b;
+  animation-duration: 34s;
+}
+
+/* Ambient motion is exactly what reduced motion is for. No fallback needed:
+   the overscan means the still frame is already a valid crop. */
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns,
+  .ken-burns-alt {
+    animation: none;
+    transform: scale(1.04);
+  }
+}
+
 img, video {
   max-width: 100%;
   height: auto;

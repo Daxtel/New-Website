@@ -10,7 +10,21 @@ import type { ImageSlot } from '@/lib/japan-execution';
  * it renders the real image with width and height set, which reserves the same
  * box during load.
  */
-export function ReservedImage({ slot, className = '' }: { slot: ImageSlot; className?: string }) {
+export function ReservedImage({
+  slot,
+  className = '',
+  pan,
+}: {
+  slot: ImageSlot;
+  className?: string;
+  /**
+   * Slow ambient pan. Two directions so images stacked down the page do not
+   * drift in lockstep. Omit it for anything that has to hold still, and note
+   * that the keyframes carry their own overscan, so a panned image is cropped
+   * a little tighter than its slot.
+   */
+  pan?: 'a' | 'b';
+}) {
   return (
     <figure className={className}>
       <div
@@ -26,7 +40,9 @@ export function ReservedImage({ slot, className = '' }: { slot: ImageSlot; class
             height={slot.height}
             loading="lazy"
             decoding="async"
-            className="absolute inset-0 h-full w-full object-cover"
+            className={`absolute inset-0 h-full w-full object-cover${
+              pan ? ` ken-burns${pan === 'b' ? ' ken-burns-alt' : ''}` : ''
+            }`}
           />
         ) : (
           <div
