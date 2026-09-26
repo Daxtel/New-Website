@@ -244,15 +244,13 @@ export const japanExecution = {
   },
 
   /**
-   * Reference band. These are NOT case evidence and must never sit next to a
-   * named venue or a client claim: they illustrate what load-in and build look
-   * like, nothing more. The note under them says so in plain sight, and the
-   * alt text is written to describe the scene without asserting a location.
-   * If this band ever moves, it moves as a whole and the note moves with it.
+   * Reference band. These illustrate what load-in and build look like. They are
+   * not case evidence, so the band names no venue and no client, sits apart
+   * from the eight case entries, and its alt text describes each scene without
+   * asserting a location. Keep it that way if this section ever moves.
    */
   reference: {
     quote: 'A translator carries words. We carry intent.',
-    note: 'Reference images. Not documentation of a specific job.',
     images: [
       {
         src: '/images/japan-execution/reference-arena-load-in.webp',

@@ -226,8 +226,8 @@ export default function JapanExecutionPage() {
 
       {/* ── Reference band ──────────────────────────────────────────
           Deliberately sits after the case entries and carries no venue and no
-          client. These illustrate the work, they do not evidence it, and the
-          note under them says so rather than leaving a reader to assume. */}
+          client. These illustrate the work rather than evidence it, which is
+          why nothing here is attributed. */}
       <section className={sectionCls}>
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
@@ -243,12 +243,6 @@ export default function JapanExecutionPage() {
               </ScrollReveal>
             ))}
           </div>
-
-          <ScrollReveal>
-            <p className="mt-6 text-center font-mono text-xs uppercase tracking-[0.2em] text-muted-text">
-              {p.reference.note}
-            </p>
-          </ScrollReveal>
         </div>
       </section>
 
