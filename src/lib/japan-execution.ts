@@ -96,6 +96,37 @@ export const japanExecution = {
       'Written follow-ups in the Japanese business format that actually gets vendors to commit.',
       'Problems caught and settled in Japanese before they reach you in English.',
     ],
+    /**
+     * Reference imagery for this section. Illustrates what load-in and build
+     * look like. It is not case evidence, so it names no venue and no client,
+     * and the alt text describes each scene without asserting a location.
+     */
+    images: [
+      {
+        src: '/images/japan-execution/reference-arena-load-in.webp',
+        alt: 'Arena floor mid load-in, seen from above. Road cases laid out in rows, truss on dollies, a forklift working between open truck tails.',
+        caption: '',
+        width: 1536,
+        height: 1024,
+        ready: true,
+      },
+      {
+        src: '/images/japan-execution/reference-outdoor-stage-build.webp',
+        alt: 'Outdoor stage build under clear sky. Scissor lifts up at the roof truss, line array hung either side, crew assembling deck sections on the ground.',
+        caption: '',
+        width: 1536,
+        height: 1024,
+        ready: true,
+      },
+      {
+        src: '/images/japan-execution/reference-dome-apron.webp',
+        alt: 'Trucks and crew on the apron outside a domed arena at first light, cases coming off tail lifts and truss being made up on the ground.',
+        caption: '',
+        width: 1536,
+        height: 1024,
+        ready: true,
+      },
+    ] as ImageSlot[],
   },
 
   scope: {
@@ -241,42 +272,6 @@ export const japanExecution = {
     ] as CaseEntry[],
     pullQuote:
       'An international brand on one side. Local production on the other. Streetshow in between.',
-  },
-
-  /**
-   * Reference band. These illustrate what load-in and build look like. They are
-   * not case evidence, so the band names no venue and no client, sits apart
-   * from the eight case entries, and its alt text describes each scene without
-   * asserting a location. Keep it that way if this section ever moves.
-   */
-  reference: {
-    quote: 'A translator carries words. We carry intent.',
-    images: [
-      {
-        src: '/images/japan-execution/reference-arena-load-in.webp',
-        alt: 'Arena floor mid load-in, seen from above. Road cases laid out in rows, truss on dollies, a forklift working between open truck tails.',
-        caption: '',
-        width: 1536,
-        height: 1024,
-        ready: true,
-      },
-      {
-        src: '/images/japan-execution/reference-outdoor-stage-build.webp',
-        alt: 'Outdoor stage build under clear sky. Scissor lifts up at the roof truss, line array hung either side, crew assembling deck sections on the ground.',
-        caption: '',
-        width: 1536,
-        height: 1024,
-        ready: true,
-      },
-      {
-        src: '/images/japan-execution/reference-dome-apron.webp',
-        alt: 'Trucks and crew on the apron outside a domed arena at first light, cases coming off tail lifts and truss being made up on the ground.',
-        caption: '',
-        width: 1536,
-        height: 1024,
-        ready: true,
-      },
-    ] as ImageSlot[],
   },
 
   groundTruth: {

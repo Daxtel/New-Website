@@ -141,6 +141,19 @@ export default function JapanExecutionPage() {
             ))}
           </ul>
         </div>
+
+        {/* Reference imagery for this section. Wider than the text column on
+            purpose, so it reads as a band under the argument rather than an
+            inline figure. Carries no venue and no client. */}
+        <div className="mx-auto mt-14 max-w-6xl">
+          <div className="grid gap-5 md:grid-cols-3">
+            {p.intent.images.map((slot, i) => (
+              <ScrollReveal key={slot.src} delay={i * 0.06}>
+                <ReservedImage slot={slot} pan={i % 2 === 1 ? 'b' : 'a'} />
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ── Scope ───────────────────────────────────────────────── */}
@@ -224,27 +237,6 @@ export default function JapanExecutionPage() {
         </div>
       </section>
 
-      {/* ── Reference band ──────────────────────────────────────────
-          Deliberately sits after the case entries and carries no venue and no
-          client. These illustrate the work rather than evidence it, which is
-          why nothing here is attributed. */}
-      <section className={sectionCls}>
-        <div className="mx-auto max-w-6xl">
-          <ScrollReveal>
-            <p className="mx-auto max-w-4xl text-center text-title font-extrabold uppercase leading-[0.95] tracking-tight text-heading">
-              {p.reference.quote}
-            </p>
-          </ScrollReveal>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {p.reference.images.map((slot, i) => (
-              <ScrollReveal key={slot.src}>
-                <ReservedImage slot={slot} pan={i % 2 === 1 ? 'b' : 'a'} />
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── Ground truth ────────────────────────────────────────── */}
       <section className={sectionCls}>
